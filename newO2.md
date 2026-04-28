@@ -39,7 +39,7 @@
 		- strict flag in tsconfig aktivieren https://www.typescriptlang.org/tsconfig/#strict
 - Linter mit strikten Regeln um Conventions einzuhalten
 	- https://www.ultracite.ai/
-## Ghosty Terminal for multiple Agents and Split Screens
+## Ghosty Terminal for multiple Agents (mac)
 ---
 # code-server für VS Code auf VPS (mobiles Coding)
 - code-server installieren
@@ -191,3 +191,15 @@ anderer pc
 terminal: 
 - cd C:\Users\junih\Desktop\zählen
 - git clone https://github.com/junihey/G
+
+
+- [Node.js — Run JavaScript Everywhere](https://nodejs.org/en
+	- Lade die `nvm-setup.exe` von [nvm-windows](https://github.com/coreybutler/nvm-windows/releases) herunter.
+	- Bei der Installation setzt NVM die Pfade automatisch für dein Benutzerprofil.
+    - Danach tippst du im Terminal einfach: 
+    `nvm install lts` 
+    `nvm use lts`
+	- Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+- npm install -g @google/gemini-cli
+- terminal: gemini
+- [CLI commands | Gemini CLI](https://geminicli.com/docs/reference/commands/)
