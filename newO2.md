@@ -177,3 +177,11 @@ Latenz & Wandlercharakter
 [DeepWiki MCP - Devin Docs](https://docs.devin.ai/work-with-devin/deepwiki-mcp)
 [Web Search MCP - Exa](https://exa.ai/docs/reference/exa-mcp)
 [Inngest Dashboard](https://app.inngest.com/env/production/onboarding/create-app)
+
+vault erstellen
+repository erstellen
+terminal:
+- cd C:\Users\nolte\Desktop\G
+- git init
+- git remote add G https://github.com/junihey/G
+- git push --set-upstream G master
