@@ -183,6 +183,11 @@ terminal:
 terminal: 
 - cd C:\Users\junih\Desktop\zählen
 - git clone https://github.com/junihey/G
+## vergessen von commit -> zurucksetzen auf letzten remote stand (überschreibt alles auf lokal)
+- git fetch --all
+- git reset --hard G/master
+## letzten commit verwerfen
+- 
 ---
 # gemini cli 20260429
 ## setup
