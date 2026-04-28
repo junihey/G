@@ -199,7 +199,6 @@ terminal:
 
 
 
-
 [Firecrawl - Search, Scrape, and Interact with the Web for AI](https://www.firecrawl.dev/)
 [Zero-Config Linting for Biome, ESLint, and Oxlint | Ultracite](https://www.ultracite.ai/)
 [DeepWiki MCP - Devin Docs](https://docs.devin.ai/work-with-devin/deepwiki-mcp)
