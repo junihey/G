@@ -178,10 +178,16 @@ Latenz & Wandlercharakter
 [Web Search MCP - Exa](https://exa.ai/docs/reference/exa-mcp)
 [Inngest Dashboard](https://app.inngest.com/env/production/onboarding/create-app)
 
-vault erstellen
-repository erstellen
+erster pc
+obsidian: vault erstellen
+github: repository erstellen
 terminal:
 - cd C:\Users\nolte\Desktop\G
 - git init
 - git remote add G https://github.com/junihey/G
 - git push --set-upstream G master
+
+anderer pc
+terminal: 
+- cd C:\Users\junih\Desktop\zählen
+- git clone https://github.com/junihey/G
