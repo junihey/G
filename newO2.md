@@ -187,7 +187,12 @@ terminal:
 - git fetch --all
 - git reset --hard G/master
 ## letzten commit verwerfen
-- 
+- git reset --hard HEAD~1
+## gitignore
+```
+# to exclude Obsidian's settings (including plugin and hotkey configurations)
+.obsidian/
+```
 ---
 # gemini cli 20260429
 ## setup
