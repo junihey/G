@@ -168,17 +168,10 @@ Latenz & Wandlercharakter
 - n8n mir URL und API per prompt in Claude integrieren
 - /init zum Erstellen einer CLAUDE.md Datei
 - ![[Pasted image 20260425162824.png]]
-
-
-
-
-[Firecrawl - Search, Scrape, and Interact with the Web for AI](https://www.firecrawl.dev/)
-[Zero-Config Linting for Biome, ESLint, and Oxlint | Ultracite](https://www.ultracite.ai/)
-[DeepWiki MCP - Devin Docs](https://docs.devin.ai/work-with-devin/deepwiki-mcp)
-[Web Search MCP - Exa](https://exa.ai/docs/reference/exa-mcp)
-[Inngest Dashboard](https://app.inngest.com/env/production/onboarding/create-app)
-
-erster pc
+---
+# git extension obsidian 20260429
+## setup
+### erster pc
 obsidian: vault erstellen
 github: repository erstellen
 terminal:
@@ -186,13 +179,13 @@ terminal:
 - git init
 - git remote add G https://github.com/junihey/G
 - git push --set-upstream G master
-
-anderer pc
+### anderer pc
 terminal: 
 - cd C:\Users\junih\Desktop\zählen
 - git clone https://github.com/junihey/G
-
-
+---
+# gemini cli 20260429
+## setup
 - [Node.js — Run JavaScript Everywhere](https://nodejs.org/en
 	- Lade die `nvm-setup.exe` von [nvm-windows](https://github.com/coreybutler/nvm-windows/releases) herunter.
 	- Bei der Installation setzt NVM die Pfade automatisch für dein Benutzerprofil.
@@ -202,4 +195,13 @@ terminal:
 	- Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 - npm install -g @google/gemini-cli
 - terminal: gemini
-- [CLI commands | Gemini CLI](https://geminicli.com/docs/reference/commands/)
+## [CLI commands | Gemini CLI](https://geminicli.com/docs/reference/commands/)
+
+
+
+
+[Firecrawl - Search, Scrape, and Interact with the Web for AI](https://www.firecrawl.dev/)
+[Zero-Config Linting for Biome, ESLint, and Oxlint | Ultracite](https://www.ultracite.ai/)
+[DeepWiki MCP - Devin Docs](https://docs.devin.ai/work-with-devin/deepwiki-mcp)
+[Web Search MCP - Exa](https://exa.ai/docs/reference/exa-mcp)
+[Inngest Dashboard](https://app.inngest.com/env/production/onboarding/create-app)
