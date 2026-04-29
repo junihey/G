@@ -214,3 +214,94 @@ terminal:
 [DeepWiki MCP - Devin Docs](https://docs.devin.ai/work-with-devin/deepwiki-mcp)
 [Web Search MCP - Exa](https://exa.ai/docs/reference/exa-mcp)
 [Inngest Dashboard](https://app.inngest.com/env/production/onboarding/create-app)
+
+# seafile
+```bash
+mkdir -p /opt/seafile && cd /opt/seafile
+```
+- `nano docker-compose.yml`
+```yaml
+services:
+  db:
+    image: mariadb:10.11
+    container_name: seafile-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=Gynnys987654321!
+      - MYSQL_LOG_CONSOLE=true
+    volumes:
+      - ./mysql:/var/lib/mysql
+    restart: always
+
+  memcached:
+    image: memcached:1.6
+    container_name: seafile-memcached
+    restart: always
+
+  seafile:
+    image: seafileltd/seafile-mc:latest
+    container_name: seafile
+    ports:
+      - "8081:80"
+    volumes:
+      - ./seafile-data:/shared
+    environment:
+      - DB_HOST=db
+      - DB_ROOT_PASSWD=Gynnys987654321!
+      - TIME_ZONE=Europe/Berlin
+      - SEAFILE_ADMIN_EMAIL=contact@julianniklasheynert.xyz
+      - SEAFILE_ADMIN_PASSWORD=Gynnys987654321!
+      - SEAFILE_SERVER_LETSENCRYPT=false
+      - SEAFILE_SERVER_HOSTNAME=seafile.deinedomain.de
+    depends_on:
+      - db
+      - memcached
+    restart: always
+```
+- `docker compose up -d
+- http://217.154.113.12:8081
+	- Systemadministration - Einstellungen
+		- https://seafile.julianniklasheynert.xyz
+		- https://seafile.julianniklasheynert.xyz/seafhttp
+- Logs anschauen, falls was hängt `docker compose logs -f seafile`
+	- Beenden mit STRG + C
+- wenn Logs Errors zeigen
+```
+# 1. Container stoppen
+docker compose down
+
+# 2. Bestehende (fehlerhafte) Daten löschen
+# VORSICHT: Das löscht die bisherige DB-Struktur in diesem Ordner
+rm -rf mysql/ seafile-data/
+
+# 3. Docker-Compose Datei final prüfen
+nano docker-compose.yml
+# Stelle sicher, dass die Passwörter bei 'db' und 'seafile' gleich sind!
+
+# 4. Alles neu starten
+docker compose up -d
+```
+## nginx http://217.154.113.12:81
+- Tab "Details":
+    Domain Names: seafile.julianniklasheynert.xyz
+    Scheme: http
+    Forward Hostname / IP: 217.154.113.12
+    Forward Port: 8081
+    Websockets Support: AN (Wichtig für Seafile!).
+    Block Common Exploits: AN.
+- Tab "SSL":
+    SSL Certificate: Wähle "Request a new SSL Certificate".
+    Force SSL: AN.
+- bei Problemen in Ordner gehen wo nginx liegt `cd /root/nginx-proxy` und `docker compose restart`
+- DNS: A; seafile; 217.154.113.12
+- Fehler: Verboten (403) CSRF-Verifizierung fehlgeschlagen. Anfrage abgebrochen.
+	- `cd /opt/seafile/seafile-data/seafile/conf`
+	- `nano seahub_settings.py`
+	- `CSRF_TRUSTED_ORIGINS = ["https://seafile.julianniklasheynert.xyz"]` unten hinzufügen
+	- Seafile neustarten `cd /opt/seafile` `docker compose restart seafile`
+	- Cookies löschen Strg + F5
+	- 
+
+
+217.154.113.12
+root
+JydigKF2LYbb1rFY
