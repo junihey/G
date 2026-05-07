@@ -450,6 +450,45 @@ Use design-tokes and design-system-components skill to build HTML page with a si
 ## [How to Build a Design System with Claude + Figma MCP | Vibe to Vector Tutorial - YouTube](https://www.youtube.com/watch?v=WbUhThNIyUQ)
 - 
 
+# K-Accumulator 20260507
+- zwei Oszillatoren, Waveshaper, Funktionsgenerator (UFG) als Modulation für Oszillator, Clock für Delta-Sigma und Fenster für Pulsar-Algo, Delta-Sigma-Mustergenerator, alles um Root-Frequenz gebaut, Stretch für konstanten Grundton und Strecken der Obertöne, Morphmatrix um verschiedene Algos
+- Frequency Shifting
+	- Shift - Blend zwischen beiden nächstgelegenen ganzzahligen Obertönen des Grundton
+	- Stretch - konstanten Grundton und Strecken der Obertöne
+	- Bode Frequency Schifter verschiebt um linearen Wert das gesamte Spektrum
+	- Wavefolding mit TZPM
+		- Stretch
+			- Generate als Carrier (Full od. Core) ->
+			- zweiter OSC (TZPM fähig für XPM) als Mod -> Generate (Phase In) für symmetrische Seitenbänder um den Grundton
+			- Frequenz des Mod verschiebt Seitenbänder, während Grundton stabil bleibt
+		- Shift
+			- Blend von Generate (Odd) und Generate (Even)
+- Pulsar & Damped Sync
+	- Funktionsgenerator für AM -> VCA  <- OSC 
+	- Funktionsgenerator -> (Attenuator für Soft-Sync->) OSC (Hard-Sync)
+	- Ändern von Rise und Fall erzeugt Formanten
+- XPM
+	- Cross Phase Modulation 
+	- Phase In Loop zwischen zwei OSC
+	- Depth - Modulationstiefe (VCA in Feedback Path)
+	- Shift - Damping Filter Cutoff zusätzlich in Feedback Path
+- FMNT (Formant-Modus)
+	- Funktionsgenerator für AM -> VCA  <- OSC 
+	- Generate (Out) -> Lowpass -> Generate (Phase In)
+- FBPM (Feedback Phase Modulation)
+	- Generate (Full) -> VCA -> Generate (Phase In)
+- 2OP (2-Operator PM)
+	- OSC 1 für PM index-> VCA -> Lowpass -> OSC 2 (Phase In) 
+- 2OP2 (Getrennte Self-Modulation)
+	- Mix of OSC 1 & OSC 2 -> VCA -> Lowpass ->OSC 2 (Phase In)
+	
+
+# Claude 20260507
+## [Was Profis bei Claude Code anders machen (20 Tricks) - YouTube](https://www.youtube.com/watch?v=AwKjofI03Ms)
+- Befehl /init scannt Projekt Struktur, sucht Konventionen, erstellt CLAUDE.md
+	- wenn CLAUDE.md Datei zu lang, dann auslagern und in CLAUDE.md Datei referenzieren
+- sich selbst Korrigieren lassen
+- Befehl /context zeigt offen, wie Kontext belegt ist
 
 [Firecrawl - Search, Scrape, and Interact with the Web for AI](https://www.firecrawl.dev/)
 [Zero-Config Linting for Biome, ESLint, and Oxlint | Ultracite](https://www.ultracite.ai/)
