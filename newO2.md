@@ -489,9 +489,350 @@ Use design-tokes and design-system-components skill to build HTML page with a si
 	- wenn CLAUDE.md Datei zu lang, dann auslagern und in CLAUDE.md Datei referenzieren
 - sich selbst Korrigieren lassen
 - Befehl /context zeigt offen, wie Kontext belegt ist
+# OpenClaw 20260509
+- Why-or Agent Loop (WOOP)
+- Ziel verstehen: Aus deinem Satz („Erstelle einen Businessplan…“) rekonstruiert der Agent, was das eigentliche Ziel ist.
+	- Planen: Er legt sich Zwischenschritte zurecht (recherchieren, strukturieren, schreiben, formatieren).
+	- Handeln: Er führt Aktionen aus, z.B. Websuche, Dateien anlegen, Code schreiben, Tools über CLI aufrufen.
+	- Bewerten: Er schaut auf den aktuellen Stand („Reicht das schon?“) und entscheidet, ob er weitermachen muss. (Selbst überprüfen lassen, Test schreiben im aktuellen Kontext)
+	- Wiederholen: Solange das Ziel aus seiner Sicht nicht erreicht ist, läuft der Loop weiter.
+# Vercel Optimierungen 20260509
+- Alternativen für Frontend Frameworks: React, Vue, Angular
+- **Bilder optimieren**, am besten in WebP/AVIF und mit Lazy Loading. Das reduziert Ladezeit und Datenverbrauch.
+- **Statische Inhalte cachen**, damit CSS, JS und Bilder nicht bei jedem Besuch neu geladen werden.
+- **Ein CDN dazuschalten**, falls dein Paket oder dein Setup das erlaubt, damit Dateien näher am Nutzer ausgeliefert werden.
+- **Build-Artefakte vorab erzeugen**, also möglichst statisch deployen statt serverseitig alles bei jedem Request zu berechnen.
+	- Bei statischem Deployen wird diese Seite beim Build komplett als HTML-Datei erzeugt. Wenn jemand sie öffnet, schickt der Server nur diese Datei plus Assets raus.
+	- Bei serverseitiger Erzeugung würde der Server den Inhalt bei jedem Aufruf neu zusammensetzen, etwa aus Datenbank, Template und Logik. Das ist dann sinnvoll, wenn sich Inhalte ständig ändern oder personalisiert werden müssen.
+- **JS und CSS minimieren**, damit der Browser weniger laden und parsen muss
+---
+# Loris 20260509
+## **Python-API**: SWIG-generierte Bindings für Skripte – analysiere Samples, exportiere Partials als .sd-Dateien oder resynthetisiere in Echtzeit.
+## CLI 
+- https://www.cerlsoundgroup.org/Loris/docs/utils.html
+- Lade Loris von SourceForge (sourceforge.net/projects/loris) oder baue aus [github.com/tractal/loris]. Stelle sicher, dass `loris-analyze`, `loris-resynth` etc. im PATH sind (macOS/Linux: `./configure && make`).
+- generierte SDIF Datei mit CNMAT Externals in Max abspielen
+## SDIF erzeugen
+- Analysiere ein WAV-Sample: `loris analyze input.wav output.sdif -f partials` (für RBEP-Format mit Partials).
+- Passe Parameter an: `--freq-env 1 --bw-env 1` für Envelope-Tracking; teste mit `loris resynth output.sdif test.wav` zur Validierung.
+	- `--freq 400`: Frequenzrange (Hz)
+    - `--fade 10`: Fade-in/out (ms)
+    - `--crop start end`: Zeitbereich (ms).
+- `loris-morph file1.sdif file2.sdif morph.sdif` – mische zwei Analysen.
+## CNMAT
+- **sdif.read**: Lade SDIF, triggere mit "read" oder Metro.
+- **sdif.tuples**: Parse RBEP-Frames zu Partial-Listen (Freq/Amp/BW/Phasor).
+- **threefates**: Schmeiß schwache Partials raus (~100–200 behalten).
+- **sinusoids~**: Resynthese (~64–128 Sinus-Oszillatoren).
+## full max workflow
+- `[message sample.wav output.sdif]->[js loris-exec.js]->[sdif.read $2]`
+-  v8
+```js
+// loris-exec.js (in [js loris-exec.js])
+var cp = require('child_process');
+var fs = require('fs');
+
+function analyze(bang, samplefile, sdiffile) {
+    if (samplefile && sdiffile) {
+        var cmd = 'loris-analyze "' + samplefile + '" "' + sdiffile + '"';
+        cp.exec(cmd, function(err, stdout, stderr) {
+            if (err) post("Error: " + err);
+            else post("Loris done: " + sdiffile);
+            outlet(0, "read", sdiffile); // triggert sdif.read
+        });
+    }
+}
+```
+---
+# max sqlite 20260509
+- v8 built in sqlite https://docs.cycling74.com/apiref/js/sqlite/; https://docs.cycling74.com/apiref/js/sqlresult/
+- Connect an inlet for messages like `open <full_path>` and `query <sql>`
+```js
+// obsidian_db.js
+autowatch = 1;
+
+var sqlite = new SQLite();
+var result = new SQLResult();
+
+function open(path) {
+    try {
+        sqlite.open(path); // path = absolute path to .sqlite file
+        post("Opened DB:", path, "\n");
+    } catch (e) {
+        post("Error opening DB:", e, "\n");
+    }
+}
+
+function query(q) {
+    try {
+        sqlite.exec(q, result);
+        // send column names first
+        outlet(0, "columns", result.fieldnames());
+        // then each row
+        for (var i = 0; i < result.numrecords(); i++) {
+            var row = [];
+            for (var j = 0; j < result.numfields(); j++) {
+                row.push(result.value(i, j));
+            }
+            outlet(0, row);
+        }
+        result.reset();
+    } catch (e) {
+        post("Query error:", e, "\n");
+    }
+}
+
+function close() {
+    sqlite.close();
+    post("DB closed\n");
+}
+```
+---
+# threejs
+## breakpoint
+- Rendering wird automatisch an Canvas Größe angepasst
+- Reaktion auf `window.resize`-Events, um die Kamera und Szene dynamisch anzupassen
+```js
+window.addEventListener('resize', () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
+```
+- mobile
+```js
+function updateLayout() {
+  const width = window.innerWidth;
+  if (width < 768) {
+    // Mobile: Kamera zoom näher, UI vereinfachen
+    camera.position.z = 5;
+  } else {
+    // Desktop: Vollansicht
+    camera.position.z = 10;
+  }
+}
+window.addEventListener('resize', updateLayout);
+```
+## html overlay
+```html
+<div id="menu-overlay" style="position: absolute; top: 20px; right: 20px; z-index: 100;">
+  <button onclick="handleMenu()">Menü</button>
+  <ul id="menu-list" style="display: none;">
+    <li>Option 1</li>
+    <li>Option 2</li>
+  </ul>
+</div>
+```
+```css
+@media (max-width: 768px) {
+  #menu-overlay {
+    top: 10px; left: 10px; right: auto;
+  }
+  #menu-list { font-size: 14px; }
+}
+```
+## Kugel-Splats / Pixel-Cubes
+- Vektor in Strahlen Richtung
+```js
+const center = new THREE.Vector3(0, 0, 0); // Kugelmittelpunkt
+const spherical = new THREE.Spherical(1, Math.PI / 2, 0); // radius=1 (Richtung), phi=90°, theta=0°
+const direction = new THREE.Vector3();
+direction.setFromSpherical(spherical);
+```
+- für jeden Vektor einen Raycaster 
+```js
+const raycaster = new THREE.Raycaster(center, direction.normalize());
+const intersects = raycaster.intersectObjects(targetObjects);
+if (intersects.length > 0) {
+  // Trigger auslösen, z.B. intersects[0].object.userData.trigger();
+  const hitFace = intersects[0].face; // Zugriff auf getroffenem Face
+  console.log('Face-Index:', hitFace?.a, hitFace?.b, hitFace?.c); // Trigger pro Face
+}
+```
+- Herausfinden welche Objekte / Face auf Strahlen liegen
+	- Beim `raycaster.intersectObjects()` erhalten Sie Treffer; prüfen Sie `intersects.length > 0` und greifen auf `intersects[0].object` zu.  
+	- Via `userData` speichern Sie Trigger-Daten: `object.userData = { trigger: () => console.log('Hit!') };` und rufen `intersects[0].object.userData.trigger()` auf.  
+Für Signale (z.B. mit drei-signals) hängen Sie Events an: `object.userData.signal.dispatch('hit')`.
+- Positionieren von Objekten entlang Vektor (Addieren des skalierten Vector auf Zentrum) `object.position.copy(center).addScaledVector(direction, distance)`. Bei Intersect lösen Sie Events via `userData` oder Signalen aus. Für Performance: Begrenzen Sie `targetObjects` und updaten Sie Rays nur bei Bedarf.
+- mehrere Strahlen im Array
+### Splats von Iphone einfügen
+- library
+	- NPM: `@mkkellogg/gaussian-splats-3d`https://github.com/mkkellogg/GaussianSplats3D
+	    - Lädt direkt `.ply`, `.splat` oder `.ksplat` und rendert sie in einem Three‑Viewer, inklusive Integration in eine bestehende Three.js‑Scene.
+	- **Spark (sparkjs.dev)**
+		- bessere Multi-Scene Unterstützung mit Events
+```js
+import * as THREE from 'three';
+import * as GaussianSplats3D from '@mkkellogg/gaussian-splats-3d';
+
+// Optional: eigene Three.js-Szene
+const threeScene = new THREE.Scene();
+
+const viewer = new GaussianSplats3D.Viewer({
+  threeScene, // oder weglassen, wenn du nur die Splats zeigen willst
+  cameraUp: [0, 1, 0],
+  initialCameraPosition: [0, 0, 3],
+  initialCameraLookAt: [0, 0, 0],
+});
+
+viewer
+  .addSplatScene('/models/iphone_scan.splat', {
+    splatAlphaRemovalThreshold: 5,
+    position: [0, 0, 0],
+    rotation: [0, 0, 0, 1], // Quaternion
+    scale: [1, 1, 1],
+  })
+  .then(() => {
+    viewer.start();
+  });
+```
+- Desktop (High-End): 10M+ stabil. Laptop/Mobile: 500k–2M, sonst Dropped Frames.
+```js
+const viewer = new GaussianSplats3D.Viewer({
+  gpuAcceleratedSort: false,  // Für große Szenen (langsamer, aber stabil)
+  sortPrecision: 64,          // Höher = präziser, aber langsamer [0.25–128]
+  progressiveLoad: true,      // Lade schrittweise für bessere UX
+});
+```
+- volumetrisch (keine Meshes) und daher kein Raycasting (User Interaction) möglich
+	- Splat-Gruppen aus verschiedenen .splat Dateien
+	- Overlay unsichtbare Meshes 
+- Vertex Mapping auf Kugel
+```js
+import * as THREE from 'three';
+import * as GaussianSplats3D from '@mkkellogg/gaussian-splats-3d';
+
+// Nach Laden der Splats (viewer aus vorherigem Beispiel)
+const viewer = new GaussianSplats3D.Viewer({...});
+const splatScene = await viewer.addSplatScene('dein_iphone_scan.splat');
+
+// 1. Splat-Positionen extrahieren (sample ~10k für Performance)
+const splatPositions = splatScene.splatBuffer.positions; // Float32Array [x,y,z,...]
+const numVertices = Math.min(10000, splatPositions.length / 3);
+const vertices = new Float32Array(numVertices * 3);
+
+for (let i = 0; i < numVertices; i++) {
+  const idx = i * 3;
+  vertices[idx] = splatPositions[idx];
+  vertices[idx + 1] = splatPositions[idx + 1];
+  vertices[idx + 2] = splatPositions[idx + 2];
+}
+
+// 2. BufferGeometry mit Splat-Positionen
+const geometry = new THREE.BufferGeometry();
+geometry.setAttribute('position', new THREE.BufferAttribute(vertices, 3));
+
+// Optional: Farben von Splats übernehmen
+const colors = new Float32Array(numVertices * 3);
+for (let i = 0; i < numVertices; i++) {
+  const splatColorIdx = i * 4; // RGBA
+  colors[i * 3] = splatScene.splatBuffer.colors[splatColorIdx] / 255;
+  colors[i * 3 + 1] = splatScene.splatBuffer.colors[splatColorIdx + 1] / 255;
+  colors[i * 3 + 2] = splatScene.splatBuffer.colors[splatColorIdx + 2] / 255;
+}
+geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+// 3. Kugelkoordinaten-Mapping Shader (Vertex Shader)
+const material = new THREE.ShaderMaterial({
+  uniforms: {
+    sphereCenter: { value: new THREE.Vector3(0, 0, 0) }, // Dein Kugelmittelpunkt
+    sphereRadius: { value: 2.5 }, // Radius der Kugel
+    time: { value: 0 }
+  },
+  vertexShader: `
+    uniform vec3 sphereCenter;
+    uniform float sphereRadius;
+    uniform float time;
+    
+    void main() {
+      vec3 pos = position;
+      
+      // Zu Kugelkoordinaten mappen: radial vom Zentrum
+      vec3 toCenter = pos - sphereCenter;
+      float dist = length(toCenter);
+      
+      // Auf Kugeloberfläche projecten
+      vec3 direction = normalize(toCenter);
+      pos = sphereCenter + direction * sphereRadius;
+      
+      // Optional: Pulsing/Animation
+      float pulse = sin(time * 2.0 + dist * 0.1) * 0.1;
+      pos += direction * pulse;
+      
+      gl_Position = projectionMatrix * modelViewMatrix * vec3(pos);
+      vColor = color;
+    }
+  `,
+  fragmentShader: `
+    varying vec3 vColor;
+    void main() {
+      gl_FragColor = vec4(vColor, 0.8);
+    }
+  `,
+  vertexColors: true
+});
+
+// Mesh zur Szene
+const mesh = new THREE.Points(geometry, material); // oder Mesh mit Custom Shader
+viewer.threeScene.add(mesh);
+
+// Animate
+function animate() {
+  material.uniforms.time.value += 0.016;
+  requestAnimationFrame(animate);
+}
+```
 
 [Firecrawl - Search, Scrape, and Interact with the Web for AI](https://www.firecrawl.dev/)
 [Zero-Config Linting for Biome, ESLint, and Oxlint | Ultracite](https://www.ultracite.ai/)
 [DeepWiki MCP - Devin Docs](https://docs.devin.ai/work-with-devin/deepwiki-mcp)
 [Web Search MCP - Exa](https://exa.ai/docs/reference/exa-mcp)
 [Inngest Dashboard](https://app.inngest.com/env/production/onboarding/create-app)
+
+
+
+# canvas 20260509
+**Erweiterte Karplus-Strong-Percussion und Polyrhythmen** Nutze das **Delay 1** oder das **A-188-1 BBD Modul** als Kern für die Karplus-Strong-Synthese. Beim Delay 1 kannst du den integrierten Pluck-Eingang verwenden, um den internen Rauschgenerator anzuregen und saitenähnliche Klänge zu erschaffen. Alternativ kannst du das **Filter 8** nutzen, das auf maximale Resonanz eingestellt ist und über den "Ping"-Eingang perkussive Impulse erhält. Um komplexe, lebendige Rhythmen zu erzeugen, steuere die Trigger-Eingänge mit dem **Fractio Solum**. Dieses Modul teilt und multipliziert Clock-Signale und eignet sich hervorragend, um ungewöhnliche Metren (wie 13/8 oder 5/4) und Polyrhythmen zu generieren. Führe das Audiosignal durch ein Filter im Feedback-Loop (beispielsweise beim A-188-1 über den externen Feedback-Eingang oder beim Delay 1), um die Dämpfung natürlicher Saiten nachzubilden und den Klang weicher ausklingen zu lassen.
+
+**Granulares Wave-Stitching mit Jitter-Modulation** Hierbei werden Audiosignale zerschnitten und mit rhythmischen Unregelmäßigkeiten versehen. Verwende den **Mixwitch** als 4-Kanal-Switch im Clock-Modus. Führe vier verschiedene Wellenformen (z.B. vom **Generate 3** oder den verschiedenen Ausgängen des **Filter 8**) in die Mixer-Eingänge des Mixwitch. Wenn du nun ein Audiosignal als Clock verwendest, schaltet der Mixwitch rasend schnell zwischen den Wellenformen um und erzeugt so eine einfache Form der Granularsynthese. Um das Signal noch organischer zu machen, leite das Clock-Signal vorher durch die Logik-Sektion des **SW3 SPLICE**. Du kannst dieses Modul nutzen, um Jitter (Swing) zu erzeugen, indem du ein LFO-Signal hinzufügst, das die Schaltpunkte unvorhersehbar verschiebt und so einen schmutzigen, instabilen Rhythmus kreiert.
+
+**Variabler Wavemorpher mit Subharmonischen** Dieser Patch nutzt Logik- und Switch-Module für die Audiobearbeitung. Nimm zwei unterschiedliche Wellenformen, wie einen Sinus und eine Sägezahn-Welle, und patche sie in die beiden Signal-Eingänge des **Select 2**. Um das Filter 8 als reinen Sägezahn-Oszillator zu nutzen, kannst du dessen BP4-Ausgang in den exponentiellen FM-Eingang patchen und die FM-Tiefe voll aufdrehen. Verbinde den Pulse-Ausgang eines Oszillators mit dem "Select Gate"-Eingang des Select 2. Das resultierende Signal morpht zwischen den beiden anliegenden Wellenformen hin und her, und durch Ändern der Pulsweite des Gate-Signals ändert sich das Morphing-Verhältnis fließend. Schicke dieses komplexe Audiosignal anschließend in das **SW3 SPLICE** und nutze den Divisions-Schalter (auf /2 oder /4), um dem Signal analoge Subharmonische hinzuzufügen.
+
+**Generative Rhythmen durch Ratiometrische Phasenverschiebung** Da das **Generate 3** Frequenzen mathematisch teilt (der Fundamental-Ausgang ist doppelt so schnell wie der Core-Ausgang, der Even-Ausgang wiederum doppelt so schnell wie der Fundamental-Ausgang), kannst du diese Ausgänge im LF-Modus für "ratiometrische Rhythmen" verwenden. Führe diese Triggersignale in den **Octa Holdster**, den du als 8-stufiges analoges Schieberegister (ASR) nutzen kannst, bei dem der Trigger der Reihe nach von Kanal zu Kanal weitergegeben wird. Dies erzeugt eine fortlaufende Kette an zeitlich versetzten Steuerspannungen. Nutze diese Spannungen, um die Phasenlage (Phase Input) des Generate 3 kontinuierlich zu modulieren. So verschieben sich die Startpunkte deiner abgeleiteten Rhythmen dynamisch in Echtzeit, was extrem komplexe und generative Grooves erzeugt.
+
+**Komplexe Vactrol-Feedback-Zerstörung** Der **A-101-3 Modular Vactrol Phaser** bietet direkten Zugriff auf jeden seiner 12 Stufen-Ausgänge und Feedback-Eingänge. Nutze die integrierten Polarizer des Moduls, um frei wählbare positive und negative Rückkopplungsschleifen zwischen den Stufen zu patchen. Du kannst beispielsweise "Forward Loops" erstellen, indem du den Ausgang einer frühen Stufe über einen Polarizer in den Feedback-Eingang einer späteren Stufe leitest. Übersteuere das Modul bewusst durch den hochsensiblen Audio-Eingang, um komplexe Frequenzgänge mit multiplen Resonanzspitzen und harter Verzerrung zu erzeugen. Leite das ohnehin schon dichte Ergebnis abschließend in das **Fold 6**, um durch das 6-stufige Wavefolding und den eingebauten symmetrischen Overdrive (Shape-Regler) zusätzliche drückende Obertöne herauszukitzeln.
+
+**Dynamische Melodie-Analyse und Karplus-Plucking mit dem Wiretap** Der **U-he Wiretap** eignet sich hervorragend, um aus einer bestehenden CV-Sequenz völlig neue Rhythmen und Modulationen zu extrahieren. Führe eine unregelmäßige, unquantisierte Melodie-Sequenz (zum Beispiel aus den Random-Ausgängen des **Octa Holdster**) in den Channel 1 Input des Wiretap. Nutze den **Step-Ausgang** des Wiretap, der immer dann feuert, wenn die Tonhöhe um mindestens einen Halbton (1/12 Volt) springt. Patche diesen Ausgang in den **Pluck-Eingang des Delay 1**, um dort mit dem internen Transienten-Generator Karplus-Strong-Saitenklänge genau im Rhythmus der Halbtonsprünge anzuschlagen. Der Wiretap hat zudem zwei interne Hüllkurven (Envelopes), deren Amplituden dynamisch auf die Trigger reagieren. Nutze den **Falling-Ausgang**, der triggert, wenn die Melodie abwärts geht, um Envelope 2 zu starten. Sende den Ausgang von Envelope 2 in den **Feedback-CV-Eingang** des Delay 1. Dadurch entstehen lange Echos ausschließlich dann, wenn deine Melodie eine Abwärtsbewegung macht. Die **Rising-Envelope** (Env 1) kannst du zeitgleich nutzen, um den **Morph-Parameter des K-Accumulator** aufzudrehen, sodass aufsteigende Noten klanglich heller und aggressiver werden.
+
+**Probabilistisches Wave-Splicing mit dem Klavis Two Bits** Dieses Patch nutzt die CV-gesteuerten Logik-Funktionen des **Klavis Two Bits**, um organische Rhythmen zu erzeugen. Verwende die Sektion 2 des Two Bits im **Random-Modus**. Schicke eine Master-Clock in den Eingang 2A. Sende einen extrem langsamen LFO (z.B. den **A-171-2** im Cycle-Modus) in den CV-Eingang (2B). Dieser LFO moduliert nun kontinuierlich die Wahrscheinlichkeit (zwischen 1% und 99%), ob ein Clock-Signal durchgelassen wird oder nicht. Nimm diesen probabilistischen Trigger-Ausgang (Out 2) und patche ihn in den **D-Eingang (Control Input) des SW3 SPLICE**. Führe nun zwei verschiedene Audio-Signale – beispielsweise den sauberen **Fundamental-Ausgang** und den **Odd-Harmonics-Ausgang** des **Generate 3** – in die Eingänge A1 und B1 des SW3. Das Ergebnis ist ein Audiosignal, das basierend auf LFO-gesteuerten Wahrscheinlichkeiten rasend schnell und klickfrei zwischen Grundton und aggressiven Obertönen hin- und herschaltet.
+
+**Generative Rhythmus-Extraktion durch Hold-Logik (Wiretap + Two Bits)** Hier kombinieren wir beide Module zu einer generativen Groovebox, die aus reinen LFO-Schwingungen Beats generiert. Schicke eine langsame, unregelmäßige Dreiecksschwingung in den Wiretap. Aktiviere über Jumper B den **Hold Mode** des Wiretap. In diesem Modus bleiben die Ausgänge so lange auf einem "High"-Level, wie die Bedingung erfüllt ist – der **Rising-Ausgang** bleibt also durchgehend hoch, solange die LFO-Welle ansteigt. Verbinde diesen High/Low-Status des Rising-Ausgangs mit dem Clock-Eingang (In 2A) der Sektion 2 des **Two Bits**. Stelle Sektion 2 auf den **Div/Mult-Modus**. Der Two Bits generiert nun basierend auf den LFO-Richtungswechseln neue Clocks. Führe parallel den **Moving-Ausgang** des Wiretap (der bei jeder kleinsten Bewegung triggert) durch die interne Envelope des Wiretap und patche das Hüllkurvensignal in den **CV-Eingang (2B) des Two Bits**. Dadurch ändert das Two Bits dynamisch seine Clock-Multiplikation (z.B. von /4 auf x8 Ratter-Rhythmen), je nachdem, wie stark sich das Ursprungssignal gerade bewegt. Führe das resultierende Trigger-Gewitter in den "Ping"-Eingang des **Filter 8**, um extrem perkussive, lebendige Bongo- und Tom-Sounds zu generieren.
+# excalidraw 20260509
+## aufgeweichte Holzschichten
+- Mehrere Schichten Pappe oder Gipspappe mit Kleister
+	- Unterlage: Hart (z.B. Holz, Sperrholz, MDF).
+    - Darauf: Schicht aus Pappe / Gipspappe, die du bewusst mit Wasser befeuchtest.
+    - Dann dünne „Rinden‑Schichten“ aus Papier, Textil oder Vlies, die beim Trocknen oder beim nächsten Befeuchten aufreißen.
+- Dünne Schichten aus unterschiedlich porösem Ton (grobkörnig / feinkörnig) auftragen, roh lassen oder leicht brennen. Beim Befeuchten quellen bestimmte Schichten stärker auf und reißen auf
+- **Holz‑ähnliche Schichten aus Papier‑Pulk**
+	- Zeitung, Altpapier, Tapete zerkleinern, mit Wasser und Kleister zu einem zähen Pulp verrühren, in Schichten auf eine Unterlage schichten, jedes Mal ein wenig anderer Farbstoff oder Faserstärke.
+- **Regionaler Bezug durch Materialien**:
+	- Sägemehl, Hobelspäne oder Splitt aus regionaler Sägerei einarbeiten.
+    - Sächsische Fluss‑ oder Teichwasser in die Arbeit einbinden (probenhaft, symbolisch).  
+    → Das Objekt wirkt dann wie ein „geologischer Querschnitt“ aus feuchtem, abgestorbenem Material deiner Region.
+## smartphones mit android 7 
+- Samsung Galaxy S7
+- Nokia 7 Plus
+- Blackview A7
+- Google Pixel 3a
+- Nokia 1
+- Motorola Moto G5
+- Xiaomi Redmi 5
+- Samsung Galaxy A10
+- Huawei P8 Lite (2017)
+- Alcatel 1
+- Sony Xperia XA2
+- Asus Zenfone 4 Max
+- Honor 7X
+- LG Q6
+## Ummantelung
