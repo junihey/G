@@ -782,6 +782,36 @@ function animate() {
   requestAnimationFrame(animate);
 }
 ```
+## gyroscope button
+- openssl für live server (https)
+- zum Start Overlay umgestalten
+```css
+#gyroButton {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7); /* Halbdurchsichtig */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    border: none;
+    z-index: 1000;
+    cursor: pointer;
+}
+```
+
+```html
+<button id="gyroButton">Tippen zum Starten</button>
+```
+# n8n
+## MAX
+- **Live-Performance-Website**: Max sendet OSC-Daten an n8n-Webhook; n8n pusht sie per WebSocket an eine Web-App für Echtzeit-Visuals (z. B. Audioreaktive Grafiken).
+	- unidirektional (Webhook)
+	- bidirektional (WebSocket)
 
 [Firecrawl - Search, Scrape, and Interact with the Web for AI](https://www.firecrawl.dev/)
 [Zero-Config Linting for Biome, ESLint, and Oxlint | Ultracite](https://www.ultracite.ai/)
@@ -807,6 +837,22 @@ function animate() {
 **Probabilistisches Wave-Splicing mit dem Klavis Two Bits** Dieses Patch nutzt die CV-gesteuerten Logik-Funktionen des **Klavis Two Bits**, um organische Rhythmen zu erzeugen. Verwende die Sektion 2 des Two Bits im **Random-Modus**. Schicke eine Master-Clock in den Eingang 2A. Sende einen extrem langsamen LFO (z.B. den **A-171-2** im Cycle-Modus) in den CV-Eingang (2B). Dieser LFO moduliert nun kontinuierlich die Wahrscheinlichkeit (zwischen 1% und 99%), ob ein Clock-Signal durchgelassen wird oder nicht. Nimm diesen probabilistischen Trigger-Ausgang (Out 2) und patche ihn in den **D-Eingang (Control Input) des SW3 SPLICE**. Führe nun zwei verschiedene Audio-Signale – beispielsweise den sauberen **Fundamental-Ausgang** und den **Odd-Harmonics-Ausgang** des **Generate 3** – in die Eingänge A1 und B1 des SW3. Das Ergebnis ist ein Audiosignal, das basierend auf LFO-gesteuerten Wahrscheinlichkeiten rasend schnell und klickfrei zwischen Grundton und aggressiven Obertönen hin- und herschaltet.
 
 **Generative Rhythmus-Extraktion durch Hold-Logik (Wiretap + Two Bits)** Hier kombinieren wir beide Module zu einer generativen Groovebox, die aus reinen LFO-Schwingungen Beats generiert. Schicke eine langsame, unregelmäßige Dreiecksschwingung in den Wiretap. Aktiviere über Jumper B den **Hold Mode** des Wiretap. In diesem Modus bleiben die Ausgänge so lange auf einem "High"-Level, wie die Bedingung erfüllt ist – der **Rising-Ausgang** bleibt also durchgehend hoch, solange die LFO-Welle ansteigt. Verbinde diesen High/Low-Status des Rising-Ausgangs mit dem Clock-Eingang (In 2A) der Sektion 2 des **Two Bits**. Stelle Sektion 2 auf den **Div/Mult-Modus**. Der Two Bits generiert nun basierend auf den LFO-Richtungswechseln neue Clocks. Führe parallel den **Moving-Ausgang** des Wiretap (der bei jeder kleinsten Bewegung triggert) durch die interne Envelope des Wiretap und patche das Hüllkurvensignal in den **CV-Eingang (2B) des Two Bits**. Dadurch ändert das Two Bits dynamisch seine Clock-Multiplikation (z.B. von /4 auf x8 Ratter-Rhythmen), je nachdem, wie stark sich das Ursprungssignal gerade bewegt. Führe das resultierende Trigger-Gewitter in den "Ping"-Eingang des **Filter 8**, um extrem perkussive, lebendige Bongo- und Tom-Sounds zu generieren.
+
+Analoger Timestretch:
+**Methode 1: Der "Pseudo-Analog" Granular-Patch** Diesen komplexen Patch kannst du sehr elegant umsetzen, da du mit dem Mixwitch einen idealen Switch besitzt und zwei verschiedene BBD-Delays zur Verfügung hast.
+
+- **Audioquelle:** Nutze das **Joranalogue Generate 3** oder das **Filter 8** (als Oszillator genutzt) als reine Audioquelle.
+- **Delays:** Du hast zwei hochwertige BBD-Delays: Das **Doepfer A-188-1** und das **Joranalogue Delay 1**. Splite dein Audiosignal und schicke es in beide Delays. Stelle bei beiden extrem kurze Delay-Zeiten ein.
+- **Grains erzeugen (Umschalten):** Anstelle von VCAs oder dem simplen A-151 Sequential Switch ist der **Klavis Mixwitch** hier die perfekte Wahl. Das Handbuch des Mixwitch beschreibt sogar eine ähnliche "Simple Granular Synthesis"-Methode. Stelle den Switcher-Modus des Mixwitch auf "Clock, 4 channel" (eine Clock schaltet sequenziell zwischen den Eingängen um). Leite die Ausgänge der beiden Delays in verschiedene Eingänge des Mixwitch.
+- **Zerschneiden:** Schicke eine schnelle Audio-Rate-Clock (zum Beispiel vom **Doepfer A-171-2** im Cycle-Modus oder von einem der Ausgänge des **Filter 8**) in den CV/Clk-Eingang des Mixwitch. Der Mixwitch schaltet nun rasend schnell zwischen den beiden minimal verzögerten Delay-Signalen um und zerschneidet sie in analoge "Grains". (Alternativ kannst du für extrem sauberes, klickfreies Zerschneiden auch das **SW3 SPLICE** nutzen, welches speziell für das "Wavesplicing" von Audiosignalen entwickelt wurde).
+- **Time-Stretching:** Patche nun einen sehr langsamen LFO in die CV-Eingänge deiner beiden Delays (**A-188-1 CV1/CV2** und **Delay 1 Time Mod.**), um die Soundpartikel organisch in der Zeit zu verschmieren.
+
+**Methode 2: Tape-Style Pitch & Time (Der BBD-Trick)** Dieser Patch ist ein absoluter Klassiker für das Doepfer A-188-1.
+
+- **BBD Delay:** Nutze dein **Doepfer A-188-1**. Es verfügt über einen internen High Speed VCO (HSVCO) für die Delay-Clock, der direkt über die **CV1 und CV2 Eingänge** gesteuert wird. Das Modul hat bewusst keinen Anti-Aliasing-Filter verbaut, sodass du die Frequenz jenseits aller Spezifikationen modulieren kannst. (Alternativ geht auch das **Delay 1** über den 1V/Oct- oder Time Mod-Eingang).
+- **LFO / Hüllkurve:** Nimm das **Doepfer A-171-2**. Du kannst es im getriggerten Modus als Decay-Hüllkurve verwenden oder im Cycle-Modus als langsamen, fallenden Sägezahn-LFO.
+- **Der Patch:** Führe dein Audiosignal in das A-188-1 und drehe den **Mix-Regler** komplett auf "BBD" (100% Wet). Patche nun das abfallende Hüllkurven- oder LFO-Signal des A-171-2 in den CV1-Eingang des A-188-1.
+- **Das Ergebnis:** Wenn die Steuerspannung des A-171-2 fällt, wird die interne Clock des A-188-1 massiv verlangsamt. Das Audio im Eimerketten-Chip (BBD) wird analog in die Länge gezogen und die Tonhöhe bricht ein – der perfekte Tape-Stop-Effekt. Wenn du die Clock stark genug verlangsamst (unter 20 kHz), bekommst du beim A-188-1 als Bonus noch eine fantastische Form von analogem "Bit-Crushing", da die Delay-Clock selbst im Audiosignal als Schmutz hörbar wird.
 # excalidraw 20260509
 ## aufgeweichte Holzschichten
 - Mehrere Schichten Pappe oder Gipspappe mit Kleister
