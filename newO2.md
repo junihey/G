@@ -1,3 +1,7 @@
+# misc
+## logic 20260520
+- [A Logic Cookbook for Synthesis](https://doudoroff.com/logic/index.html)
+- [Your recommended logic module - MOD WIGGLER](https://www.modwiggler.com/forum/viewtopic.php?t=289814)
 # discord
 # ==01.01.2026 - 15.03.2026==
 ## 20260501
@@ -57,6 +61,9 @@
 - The way delay currently works, it will only ever be able to write one sample frame per sample of passing time (i.e. it does not allow random write access).  The workaround here is to use the Data directly to implement the delay.  In order to do this, you'll also need to implement the delay's write & read position indices.
 	- ![[Pasted image 20260501150117.png]]
 - [Max Tutorial: Phase Locked Loops (Part 2) - YouTube](https://www.youtube.com/watch?v=Dn05aJCz0Zg)
+## 20260524
+- [Real-time & ultra-transparent pitch shifting for all platforms.](https://products.zplane.de/products/elastiquepitch)
+- penguini [kmax / kmax · GitLab](https://gitlab.com/kmax2/kmax)
 ---
 # [Claude Code und Codex für Software Entwickler - Sauberer Code | deutsch - YouTube](https://www.youtube.com/watch?v=6tS_mfSrh1M)
 - Superset: [https://superset.sh/](https://www.youtube.com/redirect?event=comments&redir_token=QUFFLUhqbTZqRlRPYXZJZmlhR1ZCazlEcGdTdGhhWUVBQXxBQ3Jtc0trblVRV09jV1hMZ0NCUXRqWF93Ymk4VGtnMHY4QXRtQm1TbExPOENQb0ROb1RwWncybW56ZUFzcWlhaV9ValpSb09sWC1CcVlXV0NwUUMzV3lMVWs4djhCR3ZIdzZjajd0VHVtOUc2WDlMb2NNLXNnWQ&q=https%3A%2F%2Fsuperset.sh%2F) 
@@ -812,47 +819,1359 @@ function animate() {
 - **Live-Performance-Website**: Max sendet OSC-Daten an n8n-Webhook; n8n pusht sie per WebSocket an eine Web-App für Echtzeit-Visuals (z. B. Audioreaktive Grafiken).
 	- unidirektional (Webhook)
 	- bidirektional (WebSocket)
+- hatte es hier schon mehr?
+---
+# peter steinberger 20260514
+## [106 | Vibe Coding vs Agentic Engineering mit OpenClaw Creator Peter Steinberger - YouTube](https://www.youtube.com/watch?v=JGxyrPkAKiY)
+- Mit zweiten chat 7 leeren context outputs überprüfen lassen, Meinung zurückfüttern, in den chat, aus dem der zu überprüfende output stammte
+- komplexe Tasks in zweiten Branch, wenn mehrere Agents gleichzeitig bauen, sonst einfach in Foldern begrenzen
+- Spec nur am Anfang, und ab dann wird der Code genutzt, um neue Features zu schreiben
+	- spec als overview, in der alle features stehen, aber nur im groben detail
+	- spec als trigger, dann empfehlungen geben lassen und mit constraints verfeinern
+	- think hard / deep think https://gemini.google.com/app/53492093a29e68e8
+- Claude.md steht alles drin, um Porjekt zu bauen
+	- Projekt ausführen, Logs, Projektflow
+---
+# Luanti 20260514
+![[dateistruktur2]]
+## RNBO Runner / Web Interface
+- RNBO Patches auf Host Gerät (Raspberry Pi, Linux Stick)
+	- localhost im Browser für Fern-Steuerung, Abhängigkeit von einem Netzwerk
+	- dynamisches Austauschen von Patches
+	- Parameter Presets
+	- Sample Library
+	- CPU Auslastungsanzeige
+	- MIDI
+	- React/Vite Frontend mit WebSocket Verbindung und OSCQuery Protokoll zu Rust Backend mit JACK Routing Engine
+- Linux-Live-Stick
+	- Runner als Hintergrunddiesnt / Daemon
+	- Persistence Modus
+	- Notwendigkeit von Entwickler Abhängigkeiten (Python, Node.js, C++ Compiler auf Gast PC)
+	- im BIOS als Boot einstellen (F8, F11 oder F12), dann komplett eigener Admin ohne bisherige Systemrechts-Einschränkungen
+		- Virtuellen Maschine (z. B. VirtualBox) bootet in einem Fenster, aber mit Latenzen
+		- SHIFT + Klick auf Neustarten, bis blauer Bildschirm erscheint und dann den USB Stick auswählen
+	- Gast-PC stellt nur die Hardware zur Verfügung, wobei der Stick das eigenständige Betriebssystem ist, wodurch Abhängigkeiten auf Stick liegen
+	- PC als Hardware Möglichkeiten besser als beim Raspberry Pi 
+- Max Presentation Mode mehr Gestaltungsfreiheit, aber keine Entkopplung von Audio Engine und Interface, wodurch immer beides crasht
+## Standalone App
+- kein Browser Dashboard und immer ein neuer Export, weniger Verwaltungsmanagement-Möglichkeiten
+- keine zusätzlichen Entwickler-Abhängigkeiten notwendig, bereits compiliert
+- Cross-Compiling Problematik bei verschiedenen Betriebssystemen
+## Web Export
+- alles Browser-Based, grenzenlose Portabilität und Design Freiheit
+- WebAssembly ähnliche Performance als C++, Web Audio API aber höhere Latenz, schlechtere Interaktion, OSC muss über Websocket gesendet werden, was beim Runner bereits implementiert ist, Notwendigkeit Node.js Skript
+	- Web Eport: Luanti $\rightarrow$ UDP (OSC) $\rightarrow$ Node.js Bridge (2–5 ms) $\rightarrow$ **Websocket** $\rightarrow$ Webbrowser (Javascript/Web Audio API) (20–50 ms als Block-Buffer gegen Knackser) $\rightarrow$ Windows Audio-Treiber $\rightarrow$ Soundkarte.
+		- 40–70 ms
+		- keine anderen Tabs im Browser und Hardware Beschleunigung aktivieren
+	- Runner: Luanti $\rightarrow$ UDP (OSC) $\rightarrow$ **C++ Programm (Runner/EXE)** $\rightarrow$ ASIO/JACK Treiber $\rightarrow$ Soundkarte.
+		- insgesamt unter 1 ms
+- Webserver berechnet Sound nicht selbst, sondern schickt es als WebAssembly an Browser des Clients und nutzt eigene CPU und Soundcard
+## Überlegung RNBO Patches
+- Ausgelegt Vode zu generieren (WebAssembly, C++)
+- kein Jitter, keine Third-Party-Externals, schlechte Datenverwaltung, kein node.script
+- `@polyphony` besser als `poly~`
+	- keine seperate Datei, automatisches Voice Management und Targeting/Stealing (bei zu vielen Stimmen)
+- RNBO ist high-level und gen~ low-level 
+- Max als UI, Hardware Connections, Presets
+	- pattr in rnbo nur von außerhalb des Objekts über `param`
+## Hindernisse Schulnetzwerk
+- Client Isolation (PC kommuniziert mit Internet nach außen, aber nicht mit anderen Geräten im selben Netzwerk nach innen, kein IP ping möglich)
+	- eigenes Netzwerk als Lösung
+- gesperrte Ports in der Firewall
+	- am einfachsten vom Schulnetzwerk-Admin freizugeben
+- Netzwerk nur über LAN, eigener PC ist dadurch getrennt
+	- eigener Hotspot, Schwierigkeit mit Desktop PCs, die kein WLAN haben, Router wird notwendig, dann aber keine Rechte-Einschränkungen mehr beim Netzwerk
+	- gesperrte Netzwerkeinstellungen auf Schul-PC verhindern andere Netzwerke komplett
+- eigener/Schul-PC als Host
+	- eigener PC mit Möglichkeit auf Runner mit Linux-Stick
+		- MAC-Adressen-Filterung als Gästeliste der PCs, die im Netzwerk erlaubt sind
+	- Schul-PC mit Web Export
+- Luanti auf VPS
+	- Linux!
+	- schwankendes Internet, Latenzen bis 90 Millisekunden (vom Client zu VPS, von VPS zurück zum browser und Browser internes Berechnen) 
+		- 100 ms Wahrnehmungsgrenze
+		- bei localer Linux-Stick Variante nur Puffergröße von Browser, OS und Soundkarte, also insgesamt 20 ms (PipeWire Audioserver nutzen um Puffergrößen einzustellen)
+		- `latencyHint: 'interactive' im Browser setzen
+		- Soundkarte Pflicht (Motu Ultralite mk3 64 Samples, Zoom F3 128)
+	- Node.js und RNBO Web Export ebenfalls auf VPS
+	- alle Sicherheitseinschränkungungen werden umgangen. Clients verbinden sich mit IP des VPS und Port. Host öffnet RNBO Webseite
+	- für 20 Spieler 2vCPU Cores, 4 GB RAM, 20 - 40 GB SSD NVMe, Anbindung von **1 Gbit/s**
+		- VPS muss inbound erreichbar sein, auf VPS folgende Ports freigeben
+			- 30000 (UDP) – Das ist der Standard-Port für den Luanti-Server, damit die Schüler joinen können.
+			- 8080 (TCP) – (Oder ein anderer Port deiner Wahl) Für dein Node.js-Skript, damit der Host-PC die RNBO-Webseite aufrufen und die WebSockets verbinden kann.
+				- gegebenenfalls auf **Port `80` (HTTP)** oder noch besser **Port `443` (HTTPS)** ändern bei Zugriffsproblemen
+			- 22 (TCP) – Für SSH, damit du dich von zu Hause aus auf den Server aufschalten und alles einrichten kannst.
+			- im Schulnetzwerk nur outbound freigeben von 30000 und 8080
+		- **Sichtweite begrenzen:** Setze `max_block_send_distance = 6` oder `8`, **Active Block Range:** Setze `active_block_range = 2`. Das bestimmt, in welchem Umkreis um die Spieler herum die Welt aktiv simuliert wird
+		- `docker stop <containername>`, Vorsicht bei n8n webhook Trigger, wenn Sender nur einmalig funkt, geht es ins Leere
+## [20260517 Luanti_RNBO](file:///C:%5CUsers%5Cjunih%5CDesktop%5Czählen%5CG%5Cdata%5C20260517%20Luanti_RNBO)
+- [[dateistruktur]]
+- [[init.lua|\Luanti_RNBO\Luanti\mods\osc_sender\init.lua]]
+	- LuaSocket fehlt bei Windows Version, integriert in Linux
+	- kompilierte ddl Datei im internet suchen (core.ddl, socket.lua, mime.lua), hier für 32 bit https://studio.zerobrane.com/
+```
+bin/
+ ├── luanti.exe
+ ├── socket.dll        <-- (Die umbenannte core.dll aus ZeroBrane)
+ └── lua/
+      ├── socket.lua   <-- (Von GitHub)
+      └── socket/      <-- (Der Ordner von GitHub mit den restlichen .lua Dateien)
+```
+		- 32 Bit auf 4 GB RAM limitiert
+	- minetest.conf: `secure.trusted_mods = osc_sender` oder ingame settings: "Modsicherheit aktivieren" deaktivieren
+- \Luanti_RNBO\Bridge node.exe entpacken
+	- cmd: `npm install osc ws`
+	- [[bridge.js|\Luanti_RNBO\Bridge\bridge.js]]
+	- [[start_bridge.bat|\Luanti_RNBO\Bridge\start_bridge.bat]]
+	- Browser können standardmäßig kein reines UDP/OSC empfangen. Sie benötigen WebSockets (WS/WSS) oder WebRTC
+- \Luanti_RNBO\RNBO_Web mit https://github.com/Cycling74/rnbo.example.webpage
+	- in export Ordner aus Max Web export exportieren
+	- [[app.js\Luanti_RNBO\RNBO_Web\js\app.js]] konfigurieren auf Empfang des websockets im device, weil sie den Sound-Patch/device aufruft
+	- node.exe in \Luanti_RNBO\RNBO_Web kopieren
+	- [[server.js|\Luanti_RNBO\RNBO_Web\server.js]] anlegen
+	- [[start_web.bat|\Luanti_RNBO\RNBO_Web\start_web.bat]] RNBO starten auf http://127.0.0.1:8000
+		- [[index.html|\Luanti_RNBO\RNBO_Web\index.html]] konfigurieren mit websocket aus ws://127.0.0.1:8080 zum Testen der Verbindung bis zum Browser (nach Test wieder in Ausgangszustand, weil es sonst zu Fehlern durch Parallelität führt, so führt index.html nur app.js als script aus)
+## Linux 2026051724 BITTE IN ZUKUNFT WIE LUANTI_WINDOWS REFACTORING DARÜBER
+- Rufus + Xubuntu Minimal: Schalter für Persistente Partitionsgröße auf Maximal stellen
+- F12 Boot (NICHT INSTALLIEREN!) - Verbinden mit WLAN
+- Installationen
+``` bash
+sudo apt update && sudo apt install -y minetest lua-socket nodejs npm python3
+sudo apt update && sudo apt install unzip 
+sudo apt update && sudo apt install geany
+sudo apt update && sudo apt install firefox
+```
+- cd in den Pfad und dann `unzip dateiname.zip`
+- OSC Mod
+	- `mkdir -p ~/.minetest/mods/osc_sender`
+		- STRG + H für Hidden Ordner
+	- `nano ~/.minetest/mods/osc_sender/init.lua`
+		- Achtung: im mods Ordner dürfen sich nur Ordner zu den Mods finden und keine Dateien ("Not a mod!" Fehlermeldung beim Aktivieren der Mod)
+		- `nano ~/.minetest/minetest.conf` aktiv schalten mit `secure.trusted_mods = osc_sender`
+```lua
+local socket = require("socket")
+local udp = socket.udp()
 
-[Firecrawl - Search, Scrape, and Interact with the Web for AI](https://www.firecrawl.dev/)
-[Zero-Config Linting for Biome, ESLint, and Oxlint | Ultracite](https://www.ultracite.ai/)
-[DeepWiki MCP - Devin Docs](https://docs.devin.ai/work-with-devin/deepwiki-mcp)
-[Web Search MCP - Exa](https://exa.ai/docs/reference/exa-mcp)
-[Inngest Dashboard](https://app.inngest.com/env/production/onboarding/create-app)
+-- Sendet Daten lokal an die Node.js-Bridge auf Port 1234
+udp:setpeername("127.0.0.1", 1234)
 
+-- Event: Block abgebaut
+minetest.register_on_dignode(function(pos, oldnode, digger)
+    if digger and digger:is_player() then
+        local message = "/luanti/dig " .. oldnode.name
+        udp:send(message)
+    end
+end)
+```
+- Node.js-Bridge
+	- `mkdir ~/Bridge && cd ~/Bridge`
+	- `npm install osc ws`
+	- `nano bridge.js`
+```js
+const dgram = require("dgram");
+const WebSocket = require("ws");
 
+// Erstellt einen simplen UDP-Empfänger (statt der strengen OSC-Bibliothek)
+const udpServer = dgram.createSocket("udp4");
+const wss = new WebSocket.Server({ port: 8080 });
 
-# canvas 20260509
-**Erweiterte Karplus-Strong-Percussion und Polyrhythmen** Nutze das **Delay 1** oder das **A-188-1 BBD Modul** als Kern für die Karplus-Strong-Synthese. Beim Delay 1 kannst du den integrierten Pluck-Eingang verwenden, um den internen Rauschgenerator anzuregen und saitenähnliche Klänge zu erschaffen. Alternativ kannst du das **Filter 8** nutzen, das auf maximale Resonanz eingestellt ist und über den "Ping"-Eingang perkussive Impulse erhält. Um komplexe, lebendige Rhythmen zu erzeugen, steuere die Trigger-Eingänge mit dem **Fractio Solum**. Dieses Modul teilt und multipliziert Clock-Signale und eignet sich hervorragend, um ungewöhnliche Metren (wie 13/8 oder 5/4) und Polyrhythmen zu generieren. Führe das Audiosignal durch ein Filter im Feedback-Loop (beispielsweise beim A-188-1 über den externen Feedback-Eingang oder beim Delay 1), um die Dämpfung natürlicher Saiten nachzubilden und den Klang weicher ausklingen zu lassen.
+wss.on("connection", (ws) => {
+    console.log("✅ RNBO Web Interface (Browser) hat sich verbunden!");
+});
 
-**Granulares Wave-Stitching mit Jitter-Modulation** Hierbei werden Audiosignale zerschnitten und mit rhythmischen Unregelmäßigkeiten versehen. Verwende den **Mixwitch** als 4-Kanal-Switch im Clock-Modus. Führe vier verschiedene Wellenformen (z.B. vom **Generate 3** oder den verschiedenen Ausgängen des **Filter 8**) in die Mixer-Eingänge des Mixwitch. Wenn du nun ein Audiosignal als Clock verwendest, schaltet der Mixwitch rasend schnell zwischen den Wellenformen um und erzeugt so eine einfache Form der Granularsynthese. Um das Signal noch organischer zu machen, leite das Clock-Signal vorher durch die Logik-Sektion des **SW3 SPLICE**. Du kannst dieses Modul nutzen, um Jitter (Swing) zu erzeugen, indem du ein LFO-Signal hinzufügst, das die Schaltpunkte unvorhersehbar verschiebt und so einen schmutzigen, instabilen Rhythmus kreiert.
+udpServer.on("message", (msg) => {
+    // 1. Macht aus dem UDP-Paket einen normalen Text
+    const text = msg.toString(); 
+    console.log("📥 Signal von Luanti empfangen:", text);
+    
+    // 2. Trennt den String, z.B. "/luanti/dig" und "default:dirt"
+    const parts = text.split(" ");
+    const oscAddress = parts[0];
+    const oscValue = parts[1] || "";
 
-**Variabler Wavemorpher mit Subharmonischen** Dieser Patch nutzt Logik- und Switch-Module für die Audiobearbeitung. Nimm zwei unterschiedliche Wellenformen, wie einen Sinus und eine Sägezahn-Welle, und patche sie in die beiden Signal-Eingänge des **Select 2**. Um das Filter 8 als reinen Sägezahn-Oszillator zu nutzen, kannst du dessen BP4-Ausgang in den exponentiellen FM-Eingang patchen und die FM-Tiefe voll aufdrehen. Verbinde den Pulse-Ausgang eines Oszillators mit dem "Select Gate"-Eingang des Select 2. Das resultierende Signal morpht zwischen den beiden anliegenden Wellenformen hin und her, und durch Ändern der Pulsweite des Gate-Signals ändert sich das Morphing-Verhältnis fließend. Schicke dieses komplexe Audiosignal anschließend in das **SW3 SPLICE** und nutze den Divisions-Schalter (auf /2 oder /4), um dem Signal analoge Subharmonische hinzuzufügen.
+    // 3. Baut das Objekt, das RNBO auf der Webseite erwartet
+    const oscMsg = {
+        address: oscAddress,
+        args: [ oscValue ]
+    };
 
-**Generative Rhythmen durch Ratiometrische Phasenverschiebung** Da das **Generate 3** Frequenzen mathematisch teilt (der Fundamental-Ausgang ist doppelt so schnell wie der Core-Ausgang, der Even-Ausgang wiederum doppelt so schnell wie der Fundamental-Ausgang), kannst du diese Ausgänge im LF-Modus für "ratiometrische Rhythmen" verwenden. Führe diese Triggersignale in den **Octa Holdster**, den du als 8-stufiges analoges Schieberegister (ASR) nutzen kannst, bei dem der Trigger der Reihe nach von Kanal zu Kanal weitergegeben wird. Dies erzeugt eine fortlaufende Kette an zeitlich versetzten Steuerspannungen. Nutze diese Spannungen, um die Phasenlage (Phase Input) des Generate 3 kontinuierlich zu modulieren. So verschieben sich die Startpunkte deiner abgeleiteten Rhythmen dynamisch in Echtzeit, was extrem komplexe und generative Grooves erzeugt.
+    // 4. Sendet es per Websocket an den Browser
+    wss.clients.forEach(client => {
+        if (client.readyState === WebSocket.OPEN) {
+            client.send(JSON.stringify(oscMsg));
+        }
+    });
+});
 
-**Komplexe Vactrol-Feedback-Zerstörung** Der **A-101-3 Modular Vactrol Phaser** bietet direkten Zugriff auf jeden seiner 12 Stufen-Ausgänge und Feedback-Eingänge. Nutze die integrierten Polarizer des Moduls, um frei wählbare positive und negative Rückkopplungsschleifen zwischen den Stufen zu patchen. Du kannst beispielsweise "Forward Loops" erstellen, indem du den Ausgang einer frühen Stufe über einen Polarizer in den Feedback-Eingang einer späteren Stufe leitest. Übersteuere das Modul bewusst durch den hochsensiblen Audio-Eingang, um komplexe Frequenzgänge mit multiplen Resonanzspitzen und harter Verzerrung zu erzeugen. Leite das ohnehin schon dichte Ergebnis abschließend in das **Fold 6**, um durch das 6-stufige Wavefolding und den eingebauten symmetrischen Overdrive (Shape-Regler) zusätzliche drückende Obertöne herauszukitzeln.
+udpServer.bind(1234, "127.0.0.1", () => {
+    console.log("🚀 Bridge laeuft! Warte auf Luanti (Port 1234)...");
+});
+```
+- RNBO
+	- `mkdir ~/RNBO_Web`
+	- Ordner aus Windows Version oben kopieren
+		- <script></script> aus dieser Version löschen, wird nun direkt in app.js unter `const device = await createDevice({ context, patcher });` geschrieben
+```
 
-**Dynamische Melodie-Analyse und Karplus-Plucking mit dem Wiretap** Der **U-he Wiretap** eignet sich hervorragend, um aus einer bestehenden CV-Sequenz völlig neue Rhythmen und Modulationen zu extrahieren. Führe eine unregelmäßige, unquantisierte Melodie-Sequenz (zum Beispiel aus den Random-Ausgängen des **Octa Holdster**) in den Channel 1 Input des Wiretap. Nutze den **Step-Ausgang** des Wiretap, der immer dann feuert, wenn die Tonhöhe um mindestens einen Halbton (1/12 Volt) springt. Patche diesen Ausgang in den **Pluck-Eingang des Delay 1**, um dort mit dem internen Transienten-Generator Karplus-Strong-Saitenklänge genau im Rhythmus der Halbtonsprünge anzuschlagen. Der Wiretap hat zudem zwei interne Hüllkurven (Envelopes), deren Amplituden dynamisch auf die Trigger reagieren. Nutze den **Falling-Ausgang**, der triggert, wenn die Melodie abwärts geht, um Envelope 2 zu starten. Sende den Ausgang von Envelope 2 in den **Feedback-CV-Eingang** des Delay 1. Dadurch entstehen lange Echos ausschließlich dann, wenn deine Melodie eine Abwärtsbewegung macht. Die **Rising-Envelope** (Env 1) kannst du zeitgleich nutzen, um den **Morph-Parameter des K-Accumulator** aufzudrehen, sodass aufsteigende Noten klanglich heller und aggressiver werden.
+```
+- Python als Webserver
+- IP Adresse über `hostname -I`
+- Pipeline starten
+	- Terminal 1: `cd ~/Bridge && node bridge.js`
+	- Terminal 2: `cd ~/RNBO_Web && python3 -m http.server 8000`
+	- http://127.0.0.1:8000 (Prüfen in F12 Konsole, ob Events kommen)
+		- teilweise Neuladen mit SHIFT gedrückt hilft
+	- Terminal 3: `minetest`
+	- osc_sender in Mods aktivieren, und unter Einstellungen Sicherheit deaktivieren
+```javascript
+    // --- AB HIER STARTET DEIN LUANTI-WEBSOCKET ---
+    const ws = new WebSocket('ws://127.0.0.1:8080');
 
-**Probabilistisches Wave-Splicing mit dem Klavis Two Bits** Dieses Patch nutzt die CV-gesteuerten Logik-Funktionen des **Klavis Two Bits**, um organische Rhythmen zu erzeugen. Verwende die Sektion 2 des Two Bits im **Random-Modus**. Schicke eine Master-Clock in den Eingang 2A. Sende einen extrem langsamen LFO (z.B. den **A-171-2** im Cycle-Modus) in den CV-Eingang (2B). Dieser LFO moduliert nun kontinuierlich die Wahrscheinlichkeit (zwischen 1% und 99%), ob ein Clock-Signal durchgelassen wird oder nicht. Nimm diesen probabilistischen Trigger-Ausgang (Out 2) und patche ihn in den **D-Eingang (Control Input) des SW3 SPLICE**. Führe nun zwei verschiedene Audio-Signale – beispielsweise den sauberen **Fundamental-Ausgang** und den **Odd-Harmonics-Ausgang** des **Generate 3** – in die Eingänge A1 und B1 des SW3. Das Ergebnis ist ein Audiosignal, das basierend auf LFO-gesteuerten Wahrscheinlichkeiten rasend schnell und klickfrei zwischen Grundton und aggressiven Obertönen hin- und herschaltet.
+    ws.onmessage = (event) => {
+        const msg = JSON.parse(event.data);
+        console.log("🔥 Event von Luanti empfangen:", msg);
 
-**Generative Rhythmus-Extraktion durch Hold-Logik (Wiretap + Two Bits)** Hier kombinieren wir beide Module zu einer generativen Groovebox, die aus reinen LFO-Schwingungen Beats generiert. Schicke eine langsame, unregelmäßige Dreiecksschwingung in den Wiretap. Aktiviere über Jumper B den **Hold Mode** des Wiretap. In diesem Modus bleiben die Ausgänge so lange auf einem "High"-Level, wie die Bedingung erfüllt ist – der **Rising-Ausgang** bleibt also durchgehend hoch, solange die LFO-Welle ansteigt. Verbinde diesen High/Low-Status des Rising-Ausgangs mit dem Clock-Eingang (In 2A) der Sektion 2 des **Two Bits**. Stelle Sektion 2 auf den **Div/Mult-Modus**. Der Two Bits generiert nun basierend auf den LFO-Richtungswechseln neue Clocks. Führe parallel den **Moving-Ausgang** des Wiretap (der bei jeder kleinsten Bewegung triggert) durch die interne Envelope des Wiretap und patche das Hüllkurvensignal in den **CV-Eingang (2B) des Two Bits**. Dadurch ändert das Two Bits dynamisch seine Clock-Multiplikation (z.B. von /4 auf x8 Ratter-Rhythmen), je nachdem, wie stark sich das Ursprungssignal gerade bewegt. Führe das resultierende Trigger-Gewitter in den "Ping"-Eingang des **Filter 8**, um extrem perkussive, lebendige Bongo- und Tom-Sounds zu generieren.
+        // Wir prüfen, ob die Nachricht "dig" (Block abbauen) ist
+        if (msg.address === "/luanti/dig") {
+            const blockName = msg.args[0]; // Das ist der Name des Blocks (z.B. "default:dirt")
+            
+            // --- MÖGLICHKEIT A: EINEN PARAMETER ÄNDERN ---
+            // Ändert z.B. einen Parameter namens "pitch" auf einen Zufallswert,
+            // wenn ein Block abgebaut wird.
+            const pitchParam = device.parametersById.get("pitch");
+            if (pitchParam) {
+                pitchParam.value = Math.random() * 100; 
+                console.log("Pitch geändert!");
+            }
 
-Analoger Timestretch:
-**Methode 1: Der "Pseudo-Analog" Granular-Patch** Diesen komplexen Patch kannst du sehr elegant umsetzen, da du mit dem Mixwitch einen idealen Switch besitzt und zwei verschiedene BBD-Delays zur Verfügung hast.
+            // --- MÖGLICHKEIT B: EINEN TRIGGER (BANG) SENDEN ---
+            // Sendet einen "Bang" (eine 1) an einen "inport" in RNBO (z.B. benannt als "in1").
+            // Perfekt, um beim Block-Abbau ein Sample oder einen Synthie abzufeuern.
+            const messageEvent = new RNBO.MessageEvent(RNBO.TimeNow, "in1", [1]);
+            device.scheduleEvent(messageEvent);
+            console.log("Bang an in1 gesendet!");
+        }
+    };
+    // --- ENDE LUANTI-WEBSOCKET ---
+```
+- "in1" in Möglichkeit 2 im konkreten Beispiel durch "trig" ersetzen
+	- Infos aus json-Exportdatei
+## Philosophische Latenz-Überlegungen 20260525
+- DSP-Thread läuft in festen Blöcken in Sample Rate und schickt den nur Zustand des Zeitpunkts
+	- UDP Equivalent, zeitabhängig, mengenunabhängig, asynchron
+	- WebSocket über TCP aber mit dauerhaft aufgehaltenen Kanal asynchron
+- Scheduler-Thread schickt Event-basiert und sendet alle Zustände, welche FIFo ankommen
+	- HTTP Request/TCP Äquivalent mengenabhängig, synchron, nicht echtzeitfähig, jedes mal mit header
+	- Pakete nehmen unterschiedliche Wege im Internet + sie stauen sich bei großen Mengen (Bufferbloat und Congestion Control)
+- globaler Rahmen: Luanti-Server mit 11 Hz (0.09 Sekunden) Tick-Frequenz, nach der Events verarbeitet werden, Tick variiert mit Belastung
+	- dedicated_server_step = 0.09
+	- CPU single thread Überlastung
+	- **Der Sweetspot:** Ein Wert zwischen `0.05` ($20\text{ Hz}$) und `0.03` (ca. $33\text{ Hz}$) ist für Action-basierte Luanti-Server (wie PvP-Server) oft der beste Kompromiss. Es halbiert oder drittelt deine Audio-Latenz spürbar, ohne die CPU sofort zu grillen.
+	- Ändere den Wert in der `minetest.conf`, starte den Server, logge dich ein und drücke `F5`. Beobachte den Wert für **`dtime`** (oft als Jitter oder Lag oben links eingeblendet). Bleibt er stabil und nah an deinem eingestellten `dedicated_server_step`?
+> [!NOTE]- Zusammenfassung
+> Das ist die ultimative Latenz-Kette! Wenn man den kompletten Weg von der Aktion im Spiel bis zum Schall aus dem Lautsprecher aufdröselt, sieht man sehr deutlich, warum Echtzeit-Audio im Web so eine große Herausforderung ist.
+> 
+> Da dein Node.js-Server in der Mitte sitzt, teilen wir die Kette in drei Phasen auf: **Die Quelle** (Luanti), **Die Brücke** (Netzwerk & Node.js) und **Das Ziel** (Browser & Audio-Hardware).
+> 
+> Hier ist die detaillierte Aufschlüsselung aller Barrieren und Puffer für beide Wege.
+> 
+> ### Phase 1: Die Quelle (Für beide Wege identisch)
+> 
+> Bevor die Daten das Netzwerk überhaupt erreichen, entsteht bereits die größte Schwankung (Jitter).
+> 
+> - **Der Luanti Server-Tick:** Ein Event (z. B. ein Schwertschlag) passiert. Der Server verarbeitet Daten aber nur mit 11 Hz. Das Event muss im internen Speicher auf den nächsten Tick warten.
+>     
+>     - _Latenz:_ **0 bis ~90 ms** (stark schwankend / Jitter).
+>         
+> 
+> ### Phase 2: Die Brücke (Hier trennen sich die Wege)
+> 
+> Hier überwinden wir die Distanz von Luanti zum Node.js-Server und von dort zum Browser. _(Hinweis: Die reinen Netzwerklatenzen schwanken extrem, je nachdem, ob Node.js lokal auf deinem PC oder in einem Rechenzentrum läuft. Wir gehen hier von einer normalen Internetverbindung aus)._
+> 
+> #### Weg A: Die HTTP-Route (Der Flaschenhals)
+> 
+> Luanti sendet via HTTP an Node.js, Node.js leitet via WebSocket an den Browser weiter.
+> 
+> - **Der HTTP-Request (Luanti $\rightarrow$ Node.js):** * **TCP-Handshake & Header:** Für jedes Event muss eine neue Verbindung aufgebaut und schwere Text-Header gesendet werden.
+>     
+>     - **Betriebssystem-Puffer (Nagle-Algorithmus):** Das OS wartet oft kurz ab, ob noch mehr Daten kommen, bevor es das Paket an die Netzwerkkarte (NIC) übergibt.
+>         
+>     - **Bufferbloat & Congestion Control:** Wenn viele Events gleichzeitig passieren, stauen sich die großen HTTP-Pakete im Router oder der Netzwerkkarte. TCP drosselt die Geschwindigkeit.
+>         
+>     - _Latenz:_ **40 bis 200+ ms** (extrem stauanfällig, hoher Jitter).
+>         
+> - **Die Verarbeitung (Node.js & NIC):** Die Netzwerkkarte empfängt das Paket (Hardware-Interrupt). Node.js liest den Request, parst ihn und packt ihn in ein WebSocket-Frame.
+>     
+>     - _Latenz:_ **2 bis 10 ms**.
+>         
+> - **Der Weg zum Browser (Node.js $\rightarrow$ Browser):** Das Paket fließt über den dauerhaft offenen WebSocket zum Client.
+>     
+>     - _Latenz:_ **10 bis 50 ms**.
+>         
+> 
+> #### Weg B: Die WebSocket-Route (Die Echtzeit-Autobahn)
+> 
+> Luanti nutzt LuaSocket (TCP-Stream/WebSocket) zu Node.js, Node.js leitet via WebSocket an den Browser weiter.
+> 
+> - **Der WebSocket-Stream (Luanti $\rightarrow$ Node.js):**
+>     
+>     - **Kein Handshake:** Der Kanal ist bereits offen. Das Event wird als winziges Datenpaket sofort ins Netz geschoben. (dadurch auch kein Header und geringere Nutzlast)
+>         
+>     - **Kein Nagle-Algorithmus:** Bei Echtzeit-Sockets wird das Sammeln von Paketen (TCP_NODELAY) meist deaktiviert. Das Paket umgeht Warteschlangen effizienter.
+>       - trotzdem
+>         - **Congestion Control (Staukontrolle) bleibt AKTIV:** TCP ist von Natur aus rücksichtsvoll. Wenn dein Router meldet, dass das Netz überlastet ist, wird TCP gnadenlos auf die Bremse treten und die Senderate drosseln. Auch dein WebSocket wird dann plötzlich langsamer.
+> 	    - **Mengenabhängigkeit & Bufferbloat bleiben AKTIV:** Wenn jemand im selben Netzwerk einen 4K-Film herunterlädt und der Router-Puffer vollläuft (Bufferbloat), müssen sich die WebSocket-Pakete ganz normal hinten in der Schlange anstellen.
+> 	    - Head-of-Line Blocking, wenn ein Paket verloren geht
+>         
+>     - _Latenz:_ **10 bis 50 ms** (sehr konstant, fast reiner Ping).
+>         
+> - **Die Verarbeitung (Node.js & NIC):** Die Netzwerkkarte leitet das winzige Paket sofort weiter. Node.js muss keine riesigen Header parsen, sondern schiebt das Event fast latenzfrei durch.
+>     
+>     - _Latenz:_ **1 bis 3 ms**.
+>         
+> - **Der Weg zum Browser (Node.js $\rightarrow$ Browser):** Identisch wie oben, über den offenen WebSocket.
+>     
+>     - _Latenz:_ **10 bis 50 ms**.
+>         
+> 
+> ### Phase 3: Das Ziel (Für beide Wege identisch)
+> 
+> Das Event ist im Webbrowser angekommen. Jetzt muss es in hörbares Audio verwandelt werden.
+> 
+> - **Der Browser-Puffer (JavaScript Event Loop):** Das Paket kommt an, aber der Browser muss warten, bis der aktuelle JavaScript-Tick (Main Thread) Zeit hat, das Event auszuführen und an die Web Audio API zu übergeben.
+>     
+>     - _Latenz:_ **2 bis 15 ms**.
+>         
+> - **Web Audio Graph & OS Audio Buffer:** Das OS (z. B. Windows Audio, PulseAudio, CoreAudio) sammelt alle Systemklänge in einem großen Puffer, um CPU zu sparen. Web Audio übergibt den Sound an diesen Puffer.
+>     
+>     - _Latenz:_ **10 bis 40 ms** (je nach Treiber, ASIO wäre hier schneller, im Browser aber meist nicht nutzbar).
+>         
+> - **Soundkarten-Puffer (Hardware):** Der Digital-Analog-Wandler (DAC) wandelt die Bits in Spannung für die Lautsprecher um.
+>     
+>     - _Latenz:_ **1 bis 5 ms**.
+>         
+> 
+> ### Die finale Latenz-Gegenüberstellung
+> 
+> Hier ist die Zusammenfassung aller Stationen. Die wichtigste Kennzahl für Audio ist nicht nur das absolute Minimum, sondern das **Maximum (der Jitter)**, da dies darüber entscheidet, ob dein Audio stottert oder grob aus dem Takt gerät.
+> 
+> |**Station in der Kette**|**HTTP-Weg (Schlechteste Option)**|**WebSocket-Weg (Beste Option)**|
+> |---|---|---|
+> |**1. Luanti Server-Tick**|0 – 90 ms|0 – 90 ms|
+> |**2. Weg zu Node.js**|40 – 200+ ms _(Handshakes, Staus)_|10 – 50 ms _(Offener Kanal)_|
+> |**3. Node.js & NIC**|2 – 10 ms|1 – 3 ms|
+> |**4. Weg zum Browser**|10 – 50 ms|10 – 50 ms|
+> |**5. Browser Event Loop**|2 – 15 ms|2 – 15 ms|
+> |**6. OS & Audio Hardware**|11 – 45 ms|11 – 45 ms|
+> |---|---|---|
+> |**Gesamte Dauer (ca.)**|**65 ms bis über 410 ms**|**34 ms bis 253 ms**|
+> |**Spürbarer Effekt**|Starke Verzögerungen, Audio "ruckelt" oder verschluckt sich bei vielen Events.|Audio fühlt sich konstant an. Verzögerung kommt primär durch den Luanti-Tick.|
+> 
+> **Zusammenfassend:** Der Weg über WebSockets eliminiert den unberechenbaren Stau (Bufferbloat) in der Mitte fast vollständig. Das einzige Nadelöhr, das du nicht umgehen kannst, bleibt die 90 ms Latenz des Luanti-Servers ganz am Anfang der Kette.
+- HTTP hat eine "doppelte Latenz-Strafe": Du leidest unter den TCP-Staus (Congestion Control) **PLUS** dem ständigen Warten des Betriebssystems (Nagle) **PLUS** dem ständigen Neuaufbau der Verbindung.
+- Ein WebSocket entfernt all den künstlichen Software-Müll (Nagle, Handshakes, Header). Übrig bleibt eine "nackte" TCP-Verbindung. 
+- Solange dein Internet stabil ist und keine Pakete verloren gehen, fühlt sich eine `TCP_NODELAY` WebSocket-Verbindung exakt an wie ein blitzschneller UDP-Stream. Die Nachteile (Synchronität und Congestion Control) schlagen erst in dem Moment zu, in dem deine WLAN- oder Internetverbindung physisch ins Stolpern gerät.
+- NOCHMAL GROßES ABER: LuaSocket kann UDP und TCP senden - Szenario für UDP an Node.js über **localhost** (Luanti und Node.js auf selben Server/Rechner)
+	- Luanti zu Node.js: UDP über Localhost **< 1 ms**, Keine Staus, sofortige Übergabe im Arbeitsspeicher
+	- Node.js zu Browser: Obwohl der WebSocket **technisch immer noch das TCP-Protokoll nutzt, hebelt die lokale Umgebung alle Nachteile von TCP komplett aus.**
+	- insgesamt 0-90 ms + 1 ms + 1-2 ms+ 1ms + 13-60 ms = **150 ms**
+### HTTP Request
+- Request-Response-Modell, Pull-Prinzip, unidirektional, stateless (außer man arbeitet mit Cookies oder Sessions), TCP
+- Der Client (z. B. dein Browser) schickt eine Anfrage an den Server. Der Server verarbeitet diese und schickt eine Antwort zurück. Danach ist die Transaktion abgeschlossen
+- Laden von Webseiten, Abfragen von REST-APIs, Absenden von Formularen, Herunterladen von Bildern
+### Websocket
+- bidirektional, Push-Prinzip, Header entfallen weil Verbindung offen bleibt, TCP
+- Die Kommunikation beginnt mit einem normalen HTTP-Request (dem "Handshake"). Danach wird die Verbindung "aufgewertet" (Upgrade) und bleibt dauerhaft offen
+- Chat-Anwendungen, Live-Ticker, kollaborative Tools (wie Google Docs), Krypto-Börsen-Dashboards, Multiplayer-Browsergames
+### WebRTC (Web Real-Time Communication)
+- Peer-to-Peer (P2P), verbindet Nutzer direkt ohne Server miteinander, bidirektional, UDP
+	- Luanti Szenario hätte WebRTC Kommunikation zwischen Browser und Node.js, also nicht zwischen Browser und Browser, deshalb schwierigeres Setup (Websocket für Signaling, WebRTC sind in Node.js nicht integriert, STUN Server für herausfinden der eigenen IP, TURN Server als Relais Server bei blockierenden Firewalls)
+- WebRTC verbindet zwei Browser (Peers) direkt miteinander. Ein Server wird nur ganz am Anfang kurz benötigt, damit sich die beiden Browser überhaupt im Internet finden können (sogenanntes "Signaling"). Danach fließen die eigentlichen Daten direkt von Nutzer zu Nutzer
+- Videokonferenzen (Google Meet, Zoom im Browser), Audio-Chats, direkte P2P-Dateiübertragungen (z. B. Snapdrop)
+### weitere Kommunikationsprotokolle
+- Server-Sent Events (SSE) für unidirektionale Server-Client Übertragung (Live-Ticker (Sport), Aktienkurse, Social-Media-Feeds oder Benachrichtigungssysteme)
+- **WebTransport basiert auf HTTP/3 und nutzt das QUIC-Transportprotokoll (welches wiederum auf UDP aufbaut), sowohl zuverlässige Datenströme (wie TCP) als auch unzuverlässige Datagramme (wie UDP), kein Head-of-Line Blocking (Cloud-Gaming, Echtzeit-Metriken, High-Frequency-Datenübertragung und Web-Anwendungen, die die niedrige Latenz von UDP benötigen, aber die Client-Server-Architektur von WebSockets bevorzugen)**
+- Server-side Rendering (SSR) & Form Actions um Funktionen direkt im Server aufzurufen (Moderne Full-Stack-Webanwendungen, bei denen die Grenze zwischen Frontend und Backend verschwimmt)
+- Datenübertragung _innerhalb_ des Browsers (Tab-zu-Tab)
+## Client Events
+[luanti/doc/lua_api.md at master · luanti-org/luanti](https://github.com/luanti-org/luanti/blob/master/doc/lua_api.md) (Inhaltsverzeichnis rechts nutzen)
+- Alle Player Daten sind in C++ Objekt gespeichert, [ObjectRef](https://github.com/luanti-org/luanti/blob/master/doc/lua_api.md#objectref) und [Player](https://github.com/luanti-org/luanti/blob/master/doc/lua_api.md#player-only-no-op-for-other-objects) nutzen für einzelne Daten
+[Node und Item Callbacks - Luanti / Minetest Modding Book](https://rubenwardy.com/minetest_modding_book/de/items/callbacks.html)
+## Improvements
+Custom OSC-to-Game-UI
+Da das RNBO-Interface über das standardisierte OSCQuery-Protokoll seine gesamte Parameter-Struktur als JSON-Datei bereitstellt, könntest du ein Luanti-Mod schreiben, das sich beim Start des Spiels automatisch die Regler-Namen aus RNBO zieht. Du könntest dann **innerhalb von Luanti ein In-Game-Mischpult bauen** (aus Blöcken oder Menüs), das den Synthesizer im Hintergrund steuert, ohne dass du jemals das Spiel tabben oder einen Browser öffnen musst.
 
-- **Audioquelle:** Nutze das **Joranalogue Generate 3** oder das **Filter 8** (als Oszillator genutzt) als reine Audioquelle.
-- **Delays:** Du hast zwei hochwertige BBD-Delays: Das **Doepfer A-188-1** und das **Joranalogue Delay 1**. Splite dein Audiosignal und schicke es in beide Delays. Stelle bei beiden extrem kurze Delay-Zeiten ein.
-- **Grains erzeugen (Umschalten):** Anstelle von VCAs oder dem simplen A-151 Sequential Switch ist der **Klavis Mixwitch** hier die perfekte Wahl. Das Handbuch des Mixwitch beschreibt sogar eine ähnliche "Simple Granular Synthesis"-Methode. Stelle den Switcher-Modus des Mixwitch auf "Clock, 4 channel" (eine Clock schaltet sequenziell zwischen den Eingängen um). Leite die Ausgänge der beiden Delays in verschiedene Eingänge des Mixwitch.
-- **Zerschneiden:** Schicke eine schnelle Audio-Rate-Clock (zum Beispiel vom **Doepfer A-171-2** im Cycle-Modus oder von einem der Ausgänge des **Filter 8**) in den CV/Clk-Eingang des Mixwitch. Der Mixwitch schaltet nun rasend schnell zwischen den beiden minimal verzögerten Delay-Signalen um und zerschneidet sie in analoge "Grains". (Alternativ kannst du für extrem sauberes, klickfreies Zerschneiden auch das **SW3 SPLICE** nutzen, welches speziell für das "Wavesplicing" von Audiosignalen entwickelt wurde).
-- **Time-Stretching:** Patche nun einen sehr langsamen LFO in die CV-Eingänge deiner beiden Delays (**A-188-1 CV1/CV2** und **Delay 1 Time Mod.**), um die Soundpartikel organisch in der Zeit zu verschmieren.
+---
+Im Web-Export müsstest du eine eigene Javascript-Logik schreiben, um den Status deines Patches (z. B. im Local Storage des Browsers) zu speichern, wenn die Seite neu geladen wird.
 
-**Methode 2: Tape-Style Pitch & Time (Der BBD-Trick)** Dieser Patch ist ein absoluter Klassiker für das Doepfer A-188-1.
+---
+**Ausblick B: Visuelles In-Game-Feedback für die Schüler** Bisher sendet Luanti nur Daten _raus_ an RNBO. Du könntest das umdrehen: Wenn dein RNBO-Patch z.B. einen lauten Beat generiert oder ein bestimmter Filter-Wert erreicht ist, schickt RNBO (via Node.js Bridge) ein OSC-Signal _zurück_ an Luanti. Eine Mod könnte dann in der Spielwelt reagieren (z. B. Blöcke zum Leuchten bringen oder eine Chat-Nachricht an alle Schüler senden: "Der Bass-Drop ist da!").
 
-- **BBD Delay:** Nutze dein **Doepfer A-188-1**. Es verfügt über einen internen High Speed VCO (HSVCO) für die Delay-Clock, der direkt über die **CV1 und CV2 Eingänge** gesteuert wird. Das Modul hat bewusst keinen Anti-Aliasing-Filter verbaut, sodass du die Frequenz jenseits aller Spezifikationen modulieren kannst. (Alternativ geht auch das **Delay 1** über den 1V/Oct- oder Time Mod-Eingang).
-- **LFO / Hüllkurve:** Nimm das **Doepfer A-171-2**. Du kannst es im getriggerten Modus als Decay-Hüllkurve verwenden oder im Cycle-Modus als langsamen, fallenden Sägezahn-LFO.
-- **Der Patch:** Führe dein Audiosignal in das A-188-1 und drehe den **Mix-Regler** komplett auf "BBD" (100% Wet). Patche nun das abfallende Hüllkurven- oder LFO-Signal des A-171-2 in den CV1-Eingang des A-188-1.
-- **Das Ergebnis:** Wenn die Steuerspannung des A-171-2 fällt, wird die interne Clock des A-188-1 massiv verlangsamt. Das Audio im Eimerketten-Chip (BBD) wird analog in die Länge gezogen und die Tonhöhe bricht ein – der perfekte Tape-Stop-Effekt. Wenn du die Clock stark genug verlangsamst (unter 20 kHz), bekommst du beim A-188-1 als Bonus noch eine fantastische Form von analogem "Bit-Crushing", da die Delay-Clock selbst im Audiosignal als Schmutz hörbar wird.
+**Ausblick C: Die finale Hardware-Abkopplung (Der "Headless" Raspberry Pi)** Wenn das Projekt etabliert ist, machst du dich unabhängig von fremden PCs. Du packst den RNBO Runner auf einen Raspberry Pi 4 oder 5, steckst ihn in eine Steckdose im Klassenraum und verbindest ihn per LAN mit einem kleinen, eigenen WLAN-Router. Kein Bildschirm, keine Tastatur ("headless"). Der Pi spannt sein eigenes Netz auf, hostet den Luanti-Server und generiert den Sound. Die Schüler verbinden sich nur noch mit Laptops/Handys mit diesem WLAN. Das ist die professionellste und stabilste Endstufe für solche Installationen.
+
+---
+# Three.js Export 20260525
+## Nodes
+### Daten-Export (Koordinaten) & Generierung in Three.js
+- **`THREE.InstancedMesh`**. Damit kannst du eine Geometrie (den Würfel) zehntausendfach mit nur einem einzigen Draw Call rendern lassen, indem du nur die Matrix (Position, Skalierung, Rotation) pro Instanz anpasst
+- Textures fehlen
+> [!NOTE]- Batching in JSON Datei
+> Das ist ein hervorragender Gedankengang! Genau so macht man das in der Praxis.
+> 
+> Wenn du bei jedem einzelnen gesetzten oder abgebauten Block sofort ein Datenpaket über LuaSocket schickst, nennt man das "Overhead" – es verbraucht unnötig viel Leistung und kann deinen Server auf Dauer ins Stottern bringen (Lag).
+> 
+> Die bessere Methode ist das sogenannte **Batching**: Du sammelst alle Daten lokal im Arbeitsspeicher (in einer Lua-Tabelle) und sendest sie erst dann als eine große JSON-Datei ab, wenn die "Session" vorbei ist.
+> 
+> Hier ist die Schritt-für-Schritt-Anleitung, wie du das aufbaust:
+> 
+> ### 1. Einen Zwischenspeicher anlegen
+> 
+> Du brauchst eine Variable, die als Container für deine gesammelten Daten dient. Diese legst du ganz oben in deiner `init.lua` an.
+> 
+> Lua
+> 
+> ```
+> -- Diese Tabelle hält alle Aktionen der aktuellen Session
+> local session_log = {}
+> ```
+> 
+> ### 2. Die Events anpassen (Sammeln statt Senden)
+> 
+> Anstatt in `register_on_placenode` sofort LuaSocket aufzurufen, packen wir die Koordinaten mit dem Befehl `table.insert` einfach in unseren Zwischenspeicher. Ich empfehle hier dringend, auch einen Zeitstempel (`os.time()`) hinzuzufügen, da der externe Server sonst nicht weiß, in welcher Reihenfolge die Blöcke über die Session hinweg gesetzt wurden!
+> 
+> Lua
+> 
+> ```
+> minetest.register_on_placenode(function(pos, newnode, placer)
+>     local player_name = "unknown"
+>     if placer and placer:is_player() then
+>         player_name = placer:get_player_name()
+>     end
+> 
+>     -- Daten in die Tabelle einfügen (NICHT direkt senden)
+>     table.insert(session_log, {
+>         action = "place",
+>         time = os.time(),           -- Wann passierte es?
+>         player = player_name,
+>         block_type = newnode.name,
+>         x = pos.x, y = pos.y, z = pos.z
+>     })
+> end)
+> 
+> minetest.register_on_dignode(function(pos, oldnode, digger)
+>     local player_name = "unknown"
+>     if digger and digger:is_player() then
+>         player_name = digger:get_player_name()
+>     end
+> 
+>     table.insert(session_log, {
+>         action = "dig",
+>         time = os.time(),
+>         player = player_name,
+>         block_type = oldnode.name,
+>         x = pos.x, y = pos.y, z = pos.z
+>     })
+> end)
+> ```
+> 
+> ### 3. Den "Ende der Session"-Auslöser definieren
+> 
+> Jetzt musst du der Engine sagen, was genau das "Ende einer Session" ist. Dafür gibt es meistens drei gute Möglichkeiten: Wenn der Spieler geht, wenn der Server herunterfährt, oder über einen Chat-Befehl.
+> 
+> Hier ist ein Beispiel, das triggert, sobald ein Spieler den Server verlässt:
+> 
+> Lua
+> 
+> ```
+> minetest.register_on_leaveplayer(function(player)
+>     -- 1. Prüfen, ob überhaupt etwas gebaut wurde, um leere Sendungen zu vermeiden
+>     if #session_log == 0 then return end 
+> 
+>     -- 2. Die komplette gesammelte Tabelle in EINE einzige JSON verwandeln
+>     local full_json_payload = minetest.write_json({
+>         session_end_time = os.time(),
+>         events = session_log
+>     })
+> 
+>     -- 3. HIER kommt jetzt dein LuaSocket-Code hin
+>     -- socket:send(full_json_payload)
+>     
+>     minetest.log("action", "Session-Daten via JSON gesendet (" .. #session_log .. " Einträge).")
+> 
+>     -- 4. WICHTIG: Den Zwischenspeicher danach leeren, für die nächste Session!
+>     session_log = {} 
+> end)
+> ```
+> 
+> ### Alternative Auslöser (Tipps aus der Praxis)
+> 
+> - **Bei Server-Shutdown senden:** Wenn der Server per Konsolenbefehl gestoppt wird, verlassen Spieler oft nicht regulär das Spiel. Damit deine Daten nicht verloren gehen, solltest du das Senden auch hier triggern:
+>     
+>     Lua
+>     
+>     ```
+>     minetest.register_on_shutdown(function()
+>         -- Gleiche Logik wie oben (in JSON umwandeln und senden)
+>     end)
+>     ```
+>     
+> - **Periodisches Speichern (Auto-Save):** Wenn eine Session extrem lang ist (z.B. 10 Stunden bauen), könnte der Arbeitsspeicher vollaufen oder Daten bei einem Crash verloren gehen. Du kannst Luanti sagen, dass die Daten z.B. alle 10 Minuten gebatcht gesendet werden sollen:
+>     
+>     Lua
+>     
+>     ```
+>     local function send_periodic_data()
+>         if #session_log > 0 then
+>             -- Senden Logik hier...
+>             session_log = {} -- Danach leeren
+>         end
+>         -- Funktion ruft sich nach 600 Sekunden (10 Minuten) selbst wieder auf
+>         minetest.after(600, send_periodic_data) 
+>     end
+>     
+>     -- Timer einmalig beim Serverstart anstoßen
+>     minetest.after(600, send_periodic_data)
+>     ```
+>     
+> 
+> Mit diesem Setup hast du ein professionelles, netzwerkschonendes Logging-System gebaut!
+### Direkter Export als 3D-Modell (.obj oder .gltf)
+- Tools oder Mods (wie z.B. `mts2obj`, den WorldEdit-Export oder Luanti-interne Mapper)
+## Zonen
+### Audio-Aufnahmen
+- **Der Export (Luanti):** Du definierst in Luanti räumliche Cluster (Zonen), in denen die RNBO-Parameter identisch oder sehr ähnlich waren. Du berechnest den Mittelpunkt (Center Point) dieser Zone und exportierst dessen X, Y, Z Koordinaten zusammen mit einem Radius (oder einer Bounding Box) und dem Dateinamen der zugehörigen Audioaufnahme in dein JSON/CSV-Format.
+- **Der Import (Three.js):** Du nutzt **`THREE.PositionalAudio`**. An den importierten Mittelpunkten der Zonen platzierst du diese Audio-Objekte.
+- **Das Verhalten:** `PositionalAudio` nutzt die Web Audio API, um 3D-Sound zu simulieren. Du kannst Parameter wie `setRefDistance` (ab wann der Ton leiser wird) und `setMaxDistance` (ab wann er unhörbar ist) exakt auf den exportierten Radius deiner Zone abstimmen. Wenn der User durch die Three.js-Szene navigiert, faden die Zonen ganz natürlich über das Panning und die Distanz ein und aus.
+> [!NOTE]- Luanti Export
+> Das ist ein hervorragender Anwendungsfall für etwas angewandte Vektormathematik innerhalb von Luanti. Um das umzusetzen, müssen wir drei Schritte durchlaufen: Punkte sammeln, die Mathematik anwenden (Mittelpunkt und Radius berechnen) und das Ergebnis schließlich als Datei in deinem Welt-Ordner speichern.
+> 
+> Hier ist die Schritt-für-Schritt-Anleitung, wie du das als Lua-Skript in deiner Mod umsetzt.
+> 
+> ### 1. Die Mathematik dahinter
+> 
+> Bevor wir programmieren, kurz zur Logik:
+> 
+> - **Mittelpunkt (Centroid):** Um das Zentrum eines Clusters zu finden, addieren wir alle X-, Y- und Z-Koordinaten der gesammelten Punkte und teilen sie durch die Anzahl der Punkte ($N$).
+>     
+>     Mathematisch ausgedrückt: $\vec{C} = \frac{1}{N} \sum_{i=1}^{N} \vec{P}_i$
+>     
+> - **Radius:** Der Radius ist einfach die größte Distanz vom berechneten Mittelpunkt zu einem der Randpunkte des Clusters.
+>     
+> 
+> ### 2. Das Lua-Skript für Luanti
+> 
+> Hier ist der fertige Code-Block. Du kannst diesen in die `init.lua` deiner Mod kopieren oder als Chat-Kommando registrieren, um ihn bei Bedarf auszuführen.
+> 
+> Lua
+> 
+> ```
+> -- Angenommen, du hast diese Punkte im Spiel gesammelt (z.B. indem du 
+> -- an diesen Positionen warst und die RNBO-Parameter ähnlich waren)
+> local cluster_points = {
+>     {x = 10, y = 5, z = 10},
+>     {x = 12, y = 5, z = 8},
+>     {x = 8,  y = 6, z = 11},
+>     {x = 15, y = 4, z = 9}
+> }
+> 
+> local audio_file_name = "wald_ambient_01.wav"
+> 
+> -- Funktion 1: Berechnet den Mittelpunkt (Center Point)
+> local function calculate_center(points)
+>     local sum_x, sum_y, sum_z = 0, 0, 0
+>     local count = #points
+>     
+>     if count == 0 then return nil end
+> 
+>     for _, pos in ipairs(points) do
+>         sum_x = sum_x + pos.x
+>         sum_y = sum_y + pos.y
+>         sum_z = sum_z + pos.z
+>     end
+>     
+>     -- Gibt die gerundeten Koordinaten des Zentrums zurück
+>     return {
+>         x = math.floor(sum_x / count),
+>         y = math.floor(sum_y / count),
+>         z = math.floor(sum_z / count)
+>     }
+> end
+> 
+> -- Funktion 2: Berechnet den Radius (weiteste Entfernung vom Zentrum)
+> local function calculate_radius(center, points)
+>     local max_dist = 0
+>     
+>     for _, pos in ipairs(points) do
+>         -- Luanti bringt praktischerweise schon eine Vektor-Distanz-Funktion mit
+>         local dist = vector.distance(center, pos)
+>         if dist > max_dist then
+>             max_dist = dist
+>         end
+>     end
+>     
+>     -- Wir runden den Radius der Einfachheit halber auf die nächste ganze Zahl auf
+>     return math.ceil(max_dist)
+> end
+> 
+> -- Funktion 3: Daten zusammenfassen und als JSON exportieren
+> local function export_cluster_to_json()
+>     local center = calculate_center(cluster_points)
+>     local radius = calculate_radius(center, cluster_points)
+>     
+>     -- So soll unser JSON am Ende aussehen
+>     local zone_data = {
+>         zone_id = "zone_wald_nord",
+>         center_x = center.x,
+>         center_y = center.y,
+>         center_z = center.z,
+>         radius = radius,
+>         audio_track = audio_file_name
+>     }
+>     
+>     -- 1. In JSON-String umwandeln
+>     local json_string = minetest.write_json(zone_data, true) -- 'true' macht das JSON lesbarer (Pretty Print)
+>     
+>     -- 2. Pfad zum aktuellen Welt-Ordner holen (Sicherheitsrichtlinien erlauben das Schreiben hier!)
+>     local world_path = minetest.get_worldpath()
+>     local file_path = world_path .. "/audio_zonen_export.json"
+>     
+>     -- 3. Datei öffnen und schreiben
+>     local file = io.open(file_path, "w")
+>     if file then
+>         file:write(json_string)
+>         file:close()
+>         minetest.chat_send_all("Zonen-Export erfolgreich! Gespeichert in: " .. file_path)
+>     else
+>         minetest.log("error", "Konnte Export-Datei nicht schreiben.")
+>     end
+> end
+> 
+> -- Test-Befehl für den Chat, um den Export auszulösen
+> minetest.register_chatcommand("export_zone", {
+>     description = "Exportiert die aktuelle Audio-Zone als JSON",
+>     func = function(name, param)
+>         export_cluster_to_json()
+>         return true, "Export gestartet..."
+>     end
+> })
+> ```
+> 
+> ### 3. Wo findest du die Datei?
+> 
+> Wenn du nun im Spiel `/export_zone` in den Chat eingibst, führt Luanti die Berechnungen durch. Da wir `minetest.get_worldpath()` nutzen, speichert das Spiel die JSON-Datei direkt im Ordner deiner aktuellen Welt (z.B. `~/.minetest/worlds/MeineWelt/audio_zonen_export.json`).
+> 
+> Die Datei sieht dann in etwa so aus:
+> 
+> JSON
+> 
+> ```
+> {
+>     "audio_track": "wald_ambient_01.wav",
+>     "center_x": 11,
+>     "center_y": 5,
+>     "center_z": 9,
+>     "radius": 4,
+>     "zone_id": "zone_wald_nord"
+> }
+> ```
+> 
+> Diese JSON-Datei kann dann perfekt von einer anderen Software (wie z.B. einem Web-Interface oder einer Game-Engine) eingelesen werden, um die Sounds abzuspielen, sobald ein Spieler den Bereich betritt.
+> 
+> **Möchtest du diese Punkte live im Spiel markieren (z.B. durch das Abbauen von Blöcken mit einem speziellen Werkzeug), um die `cluster_points`-Tabelle dynamisch zu füllen, oder hast du die Koordinaten bereits als fertige Liste vorliegen?**
+#### weiteres zum Export
+- **Zonen-Definition:** Du kannst in Luanti entweder spezielle unsichtbare Blöcke platzieren, =="Schnittstellen-Blöcke"== nutzen oder Koordinaten-Bereiche per Chat-Befehl definieren.
+- **Dateiexport:** Der Lua-Mod nutzt die Luanti-I/O-Schnittstelle, um beim Serverstart (oder per Befehl) eine `world_map.json` zu schreiben. Diese Datei enthält die Positionen der Blöcke sowie die Mittelpunkte, Radien und RNBO-Parameter-Zuordnungen der jeweiligen Zonen.
+### dynamische RNBO Erzeugung
+- **Der Export (Luanti):** Du exportierst die Zonen wie oben beschrieben. Anstatt eines Audio-Dateinamens speicherst du jedoch die **konkreten RNBO-Parameter-Werte** (z. B. Filterfrequenz, Reverb-Decay, Synth-Pitch) als Metadaten für diese Zone.
+- **Der Import (Three.js):** Du bindest dein exportiertes RNBO-Web-Device per JavaScript ein. Es läuft unsichtbar im Hintergrund.
+- **Das Verhalten:** Du überwachst in der Render-Loop von Three.js die Position der Kamera. Sobald der Nutzer eine definierte Zone betritt, sendest du die Parameter-Werte dieser Zone per JavaScript an das RNBO-Device.
+- **Die Vorteile:**
+    - **Performance & Ladezeit:** Du musst keine Megabytes an `.wav` oder `.mp3` Dateien in den Browser laden. Die WASM-Datei des Patches ist winzig.
+    - **Nahtlose Übergänge:** Wenn der Nutzer zwischen zwei Zonen steht, kannst du die Parameter in Echtzeit interpolieren (Crossfading der Werte). Das erzeugt eine organischere Klanglandschaft als das einfache Überlappen von zwei starren Audio-Dateien.
+#### Parameter interpolieren
+- THREE.MathUtils.lerp(start, ende, alpha)
+#### Devices ausschalten, wenn diese weit weg sind
+- audioContext.suspend()
+### Live-Zonen-Map für Pre-Three.js-HTML Monitor/Backend Interface
+- Luanti X wird zu Bildschirm X
+- Luanti Z wird zu Bildschirm Y
+- HTML SVG Container
+```html
+<div id="map-container">
+  <svg id="zone-map" width="800" height="800">
+     </svg>
+</div>
+```
+```js
+// Beispiel-Daten aus deinem Luanti-Export
+const zones = [
+    { id: "Höhle", x: -50, z: -20, radius: 30, color: "rgba(100, 100, 255, 0.4)" },
+    { id: "Wald", x: 40, z: 60, radius: 45, color: "rgba(100, 255, 100, 0.4)" }
+];
+
+const svg = document.getElementById('zone-map');
+
+// 1. Zonen zeichnen
+zones.forEach(zone => {
+    const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    // Umrechnung: Wir verschieben den Nullpunkt in die Mitte (400, 400)
+    circle.setAttribute("cx", 400 + zone.x); 
+    circle.setAttribute("cy", 400 + zone.z);
+    circle.setAttribute("r", zone.radius);
+    circle.setAttribute("fill", zone.color);
+    svg.appendChild(circle);
+});
+
+// 2. Spieler-Punkt erstellen
+const playerDot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+playerDot.setAttribute("r", 5);
+playerDot.setAttribute("fill", "red");
+svg.appendChild(playerDot);
+
+// 3. WebSocket Update-Funktion (Pseudo-Code)
+socket.onmessage = function(event) {
+    const data = JSON.parse(event.data);
+    // Aktualisiere Position des roten Punktes
+    playerDot.setAttribute("cx", 400 + data.player.x);
+    playerDot.setAttribute("cy", 400 + data.player.z);
+};
+```
+#### zweiter Map-Layer ist urpsrüngliche Luanti Map
+- Du lässt `minetestmapper` über die `map.sqlite` (die Datenbank deiner Welt) laufen.
+- Das Tool liest alle Blöcke aus, schaut von oben auf die Welt und ordnet jeder Block-ID (z. B. `default:dirt_with_snow`, `default:desert_sand`, `default:lava_source`) eine exakte Farbe zu.
+#### dritter Map-Layer mit Live Positionen, aber nur auf Mouseclick
+#### Stapeln über CSS
+---
+# RNBO 20260526
+## mehrere Devices
+- RNBO Patch enthält AudioWorkletNode der Web Audio API
+- Serielles Connect-Verknüpfen und Paralelle Kanäle
+- dynamisches Routing während Laufzeit
+## Backend Interface
+- Spieler Monitor, wer spielt wann was und Lautstärke Regler als Freeze
+- Graph: Geräte mit Parametern + Verbindungen
+### JSON als "Source of Truth"
+- im Backend mit gleichzeitiger Event-Zuweisung
+```json
+{
+  "nodes": [
+    { "id": "synth1", "label": "Voxel Synth", "url": "/exports/synth.json" },
+    { "id": "dac", "label": "Audio Out" }
+  ],
+  "edges": [
+    { "from": "synth1", "to": "dac" }
+  ],
+  "mappings": [
+    {
+      "event": "player_speed",
+      "target": "synth1",
+      "param": "lfo_rate",
+      "min_in": 0,    "max_in": 20,
+      "min_out": 0.1, "max_out": 15.0
+    },
+    {
+      "event": "node_dig",
+      "target": "synth1",
+      "param": "trigger_decay",
+      "min_in": 0,    "max_in": 1,
+      "min_out": 0.2, "max_out": 0.8
+    }
+  ]
+}
+```
+- Fenster zur Browser-Bearbeitung der JSON hinzufügen
+- Log Fenster für Fehlermeldungen in der ganzen Pipeline hinzufügen
+- JSON nodes aus RNBO Export JSON dynamisch füttern für weniger Fehler, Bearbeitung nur in edges und mappings
+```json
+{
+  "global": {
+    "nodes": [
+      { "id": "dac", "label": "Main Audio Out" },
+      { "id": "master_reverb", "label": "Globaler Hall", "url": "/exports/reverb.json" }
+    ],
+    "edges": [
+      { "from": "master_reverb", "to": "dac" }
+    ]
+  },
+  
+  "zones": {
+    "oberwelt_wald": {
+      "nodes": [
+        { 
+          "id": "wald_ambience", 
+          "label": "Wind & Vögel (Synth)", 
+          "url": "/exports/wald_synth.json"
+        }
+      ],
+      "edges": [
+        { "from": "wald_ambience", "to": "master_reverb" }
+      ],
+      "buffers": [
+        {
+          "id": "footstep_dirt",
+          "url": "/audio/samples/dirt.wav",
+          "target": "wald_ambience",
+          "rnbo_buffer_id": "b_sample"
+        },
+        {
+          "id": "footstep_grass",
+          "url": "/audio/samples/grass.wav",
+          "target": "wald_ambience",
+          "rnbo_buffer_id": "b_sample_alt"
+        }
+      ],
+      "presets": {
+        "tageslicht": [
+          { "target": "wald_ambience", "param": "reverb_mix", "value": 0.1 },
+          { "target": "wald_ambience", "param": "filter_cutoff", "value": 2500 },
+          { "target": "wald_ambience", "param": "bird_density", "value": 0.8 }
+        ],
+        "nacht": [
+          { "target": "wald_ambience", "param": "reverb_mix", "value": 0.4 },
+          { "target": "wald_ambience", "param": "filter_cutoff", "value": 800 },
+          { "target": "wald_ambience", "param": "bird_density", "value": 0.0 }
+        ]
+      },
+      "mappings": [
+        {
+          "event": "player_speed",
+          "target": "wald_ambience",
+          "param": "wind_intensity",
+          "min_in": 0,    "max_in": 20,
+          "min_out": 0.1, "max_out": 1.0,
+          "ramp_time_ms": 150
+        }
+      ]
+    },
+
+    "tiefe_hoehle": {
+      "nodes": [
+        { 
+          "id": "cave_drone", 
+          "label": "Bedrohlicher Drone", 
+          "url": "/exports/drone_synth.json"
+        }
+      ],
+      "edges": [
+        { "from": "cave_drone", "to": "master_reverb" }
+      ],
+      "buffers": [
+        {
+          "id": "footstep_stone",
+          "url": "/audio/samples/stone.wav",
+          "target": "cave_drone",
+          "rnbo_buffer_id": "b_sample"
+        }
+      ],
+      "presets": {
+        "ruhig": [
+          { "target": "cave_drone", "param": "reverb_mix", "value": 0.9 },
+          { "target": "cave_drone", "param": "filter_cutoff", "value": 400 },
+          { "target": "cave_drone", "param": "distortion", "value": 0.1 }
+        ],
+        "gefahr_lava": [
+          { "target": "cave_drone", "param": "reverb_mix", "value": 0.6 },
+          { "target": "cave_drone", "param": "filter_cutoff", "value": 1800 },
+          { "target": "cave_drone", "param": "distortion", "value": 0.8 }
+        ]
+      },
+      "mappings": [
+        {
+          "event": "node_dig",
+          "target": "cave_drone",
+          "param": "rumble_trigger",
+          "min_in": 0,    "max_in": 1,
+          "min_out": 0.0, "max_out": 0.8
+        },
+        {
+          "event": "player_speed",
+          "target": "cave_drone",
+          "param": "breathing_speed",
+          "min_in": 0,    "max_in": 20,
+          "min_out": 0.5, "max_out": 3.0,
+          "ramp_time_ms": 300
+        }
+      ]
+    }
+  }
+}
+```
+- `device_manifest.json` zur Übersicht des Modellings in der oberen JSON
+```json
+{
+  "devices": {
+    "wald_ambience": {
+      "url": "/exports/wald_synth.json",
+      "description": "Generativer Synthesizer für Wind- und Waldgeräusche",
+      "parameters": [
+        { "id": "reverb_mix", "type": "float", "min": 0.0, "max": 1.0, "default": 0.2 },
+        { "id": "filter_cutoff", "type": "float", "min": 20.0, "max": 20000.0, "default": 2500.0 },
+        { "id": "bird_density", "type": "float", "min": 0.0, "max": 1.0, "default": 0.5 }
+      ]
+    },
+    "cave_drone": {
+      "url": "/exports/drone_synth.json",
+      "description": "Tiefer, modulierter FM-Drone für Höhlen",
+      "parameters": [
+        { "id": "pitch_offset", "type": "int", "min": -24, "max": 12, "default": 0 },
+        { "id": "distortion", "type": "float", "min": 0.0, "max": 1.0, "default": 0.1 }
+      ]
+    }
+  }
+}
+```
+- Luanti Map mit markierten Zonen hinzufügen
+- Web Audio API im Frontend, dafür Klasse "Graph Manager" bauen, die JSON liest
+```js
+class RnboGraphManager {
+    constructor(audioContext) {
+        this.context = audioContext;
+        this.devices = {}; // Speichert alle aktiven RNBO-Instanzen anhand ihrer ID
+    }
+
+    // 1. Nodes dynamisch laden und instanziieren
+    async loadGraph(graphDef) {
+        for (const node of graphDef.nodes) {
+            if (node.type === "destination") {
+                this.devices[node.id] = { node: this.context.destination };
+                continue;
+            }
+
+            // Patcher-JSON vom Server fetchen
+            const response = await fetch(node.patcherUrl);
+            const patcher = await response.json();
+
+            // RNBO Device erstellen
+            const device = await RNBO.createDevice({ 
+                context: this.context, 
+                patcher: patcher 
+            });
+
+            this.devices[node.id] = device;
+
+            // Initiale Parameter setzen, falls im Graph definiert
+            if (node.params) {
+                for (const [paramName, value] of Object.entries(node.params)) {
+                    this.setParameter(node.id, paramName, value);
+                }
+            }
+        }
+
+        // 2. Edges (Verbindungen) herstellen
+        for (const edge of graphDef.edges) {
+            this.connect(edge.source, edge.target);
+        }
+    }
+
+    // Hilfsfunktion zum Verbinden
+    connect(sourceId, targetId) {
+        const source = this.devices[sourceId];
+        const target = this.devices[targetId];
+
+        if (source && target) {
+            // Beachte: RNBO Devices haben ihre AudioNode unter ".node"
+            const sourceNode = source.node || source; 
+            const targetNode = target.node || target;
+            
+            sourceNode.connect(targetNode);
+            console.log(`Connected: ${sourceId} --> ${targetId}`);
+        }
+    }
+
+    // 3. Parameter-Zuweisung zur Laufzeit
+    setParameter(nodeId, paramId, value) {
+        const device = this.devices[nodeId];
+        if (!device || !device.parameters) return;
+
+        // RNBO Parameter suchen und aktualisieren
+        const param = device.parameters.find(p => p.id === paramId || p.name === paramId);
+        if (param) {
+            param.value = value;
+        }
+    }
+}
+```
+- Node.js Skript für Parameter Dynamik ändern `graphManager.setParameter("synth_1", "cutoff", 2500);`
+### Mermaid als UI
+```js
+function jsonToMermaid(config) {
+    // Startet einen von oben nach unten verlaufenden Graphen (Top-Down)
+    let mermaidString = "graph TD\n";
+
+    // 1. Knoten (Nodes) definieren
+    config.nodes.forEach(node => {
+        let displayName = node.label || node.id;
+        
+        // Parameter auslesen und dem Label hinzufügen
+        if (node.params && Object.keys(node.params).length > 0) {
+            const paramString = Object.entries(node.params)
+                .map(([key, value]) => `${key}: ${value}`)
+                .join('<br>'); // HTML Break für Mermaid
+            
+            displayName += `<br><i>${paramString}</i>`;
+        }
+
+        // Mermaid Node-Syntax: id["Label Text"]
+        mermaidString += `    ${node.id}["${displayName}"]\n`;
+    });
+
+    mermaidString += "\n";
+
+    // 2. Verbindungen (Edges) definieren
+    config.edges.forEach(edge => {
+        mermaidString += `    ${edge.from} --> ${edge.to}\n`;
+    });
+
+    return mermaidString;
+}
+```
+- in HTML rendern
+```html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>RNBO Graph Viewer</title>
+    <!-- Mermaid.js via CDN laden -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        
+        // Mermaid initialisieren
+        mermaid.initialize({ startOnLoad: false, theme: 'dark' });
+
+        // Deine JSON-Konfiguration (in der Praxis via fetch() geladen)
+        const audioGraphConfig = {
+            "nodes": [
+                { "id": "synth1", "label": "FM Synthesizer", "params": { "freq": 440 } },
+                { "id": "reverb1", "label": "Plate Reverb", "params": { "mix": 0.5 } },
+                { "id": "dac", "label": "Audio Out" }
+            ],
+            "edges": [
+                { "from": "synth1", "to": "reverb1" },
+                { "from": "reverb1", "to": "dac" }
+            ]
+        };
+
+        async function renderGraph() {
+            // 1. JSON in Mermaid-Syntax umwandeln (Funktion von oben)
+            const mermaidCode = jsonToMermaid(audioGraphConfig);
+            
+            // 2. Den DOM-Container holen
+            const container = document.getElementById('graph-container');
+            
+            // 3. SVG mit Mermaid rendern und in den Container injizieren
+            const { svg } = await mermaid.render('rnbo-graph', mermaidCode);
+            container.innerHTML = svg;
+        }
+
+        // 4. JSON -> Mermaid String Funktion
+        function jsonToMermaid(config) {
+            let mermaidString = "graph TD\n";
+            config.nodes.forEach(n => {
+                let text = n.label || n.id;
+                if (n.params) {
+                    text += "<br><small>" + Object.entries(n.params).map(([k,v]) => `${k}:${v}`).join(', ') + "</small>";
+                }
+                mermaidString += `    ${n.id}["${text}"]\n`;
+            });
+            config.edges.forEach(e => {
+                mermaidString += `    ${e.from} --> ${e.to}\n`;
+            });
+            return mermaidString;
+        }
+
+        // Ausführen
+        renderGraph();
+    </script>
+</head>
+<body style="background: #1e1e1e; color: white; font-family: sans-serif;">
+    
+    <h2>Aktuelles Audio Routing</h2>
+    <!-- Hier landet das fertige SVG-Diagramm -->
+    <div id="graph-container" style="display: flex; justify-content: center; padding: 20px;"></div>
+
+</body>
+</html>
+```
+
+---
+# SPEC is Code / Code is SPEC 20260517
+tree /F /A > dateistruktur.md
+folder reference: STRG + Drag&Drop from file explorer
+- init stack zum Weiterentwickeln
+```markdown
+# Project Name: [Name]
+**Author:** [Dein Name / KI-Assistent]
+**Status:** Draft / Approved
+
+## 1. Project Overview & Goals (Executive Summary)
+*Dient als primärer Kontext für die KI.*
+* **Vision & Core Problem:** Kurze Beschreibung, was die App macht, welches Kernproblem sie löst und warum sie existiert.
+* **Target Audience:** Wer genau ist die Zielgruppe?
+* **Non-Goals:** Was soll die App explizit *nicht* tun? (Extrem wichtig, um Feature-Creep und Halluzinationen der KI zu vermeiden).
+
+## 2. Technical Stack
+*Präzise Vorgaben, um zu verhindern, dass die KI mitten im Projekt das Framework wechselt.*
+* **Language:** Swift 6
+* **Framework:** SwiftUI
+* **Architecture:** MVVM oder The Composable Architecture (TCA)
+* **Storage:** SwiftData / SQLite / Core Data
+
+## 3. Core Features (MVP) & Functional Requirements
+*Detaillierte Liste der Funktionen für die erste Version (Minimum Viable Product).*
+* **[Feature 1]:** Beschreibung der Funktionalität, detailliertes Verhalten und Berücksichtigung von Edge Cases.
+* **[Feature 2]:** [Beschreibung]
+
+## 4. User Flows & UI/UX Design Principles
+*Vorgaben zur Bedienung und Optik.*
+* **Aesthetic:** Klares, minimalistisches Design.
+* **User Flows:** Beschreibung der wichtigsten Screens und wie der Nutzer durch die App navigiert.
+* **UI Rules:** Keine Custom Navigation Logic (nutze nativen `NavigationStack`), voller Support für Dynamic Type und Dark Mode.
+
+## 5. Data Model & Schema
+*Definition der wichtigsten Datenstrukturen und Relationen.*
+* `EntityName`: `{ id: UUID, timestamp: Date, ... }`
+* **Relations:** Beschreibung der Abhängigkeiten (z.B. One-to-Many zwischen User und Settings).
+
+## 6. Implementation Details & Coding Guidelines
+*Spezifische Leitplanken für die Code-Generierung.*
+* Nutze ausschließlich natives SwiftUI.
+* Vermeide Third-Party-Libraries strengstens, es sei denn, sie werden in Sektion 2 explizit definiert.
+* [Weitere spezifische Projekt-Guidelines einfügen]
+
+## 7. Milestones
+*Schritt-für-Schritt-Planung der Umsetzung.*
+* **Phase 1:** Basic UI, User Flows und lokaler Storage (MVP).
+* **Phase 2:** Erweiterte Features, CloudKit-Sync und Polish.
+```
+---
+# Weiteres zum Kontext 20260524
+## Webhosting Plus
+- Initiales Laden der Grundstruktur (in RAM des Browsers): HTML, CSS, JS (Three.JS Bibliothek, RNBO-Export), kleinere Texturen und 3D-Modelle
+- integrierte SQL-Datenbank für Laden von initialen Zuständen, Highscores und Profile
+## VPS
+- DB für hunderte Lese-Schreibezugriffe pro Sekunde oder Echtzeitdaten
+	- VPS sendet Steuerdaten und eigentliche Rechnung findet beim Client lokal im Browser statt
+	- Beispiel Positiondaten bewegter Objekte: diese aber auch auf 10 - 20 Mal pro Sekunde begrenzen und Three.js Interpolation im Browser nutzen
+- Node.js Server der WebSocket bereitstellt
+	- nach initialen Laden oben Verbindung (persistent, bidirektional) zum WebSocket aufgebaut
+	- Nutzen von Binary (ArrayBuffer, Float32Array), kein JSON, welches gepackt und entpackt werden muss
+	- hier findet erst die Echtzeit Kommunikation / Interaktion statt
+- WebRTC (UDP) für Multiplayer Interaktionen
+## Seafile
+- große Assets (Texturen, Modelle, Audio-Samples) 
+	- Node.js Server gibt Download Links für asynchrones Laden
+## n8n
+- latenz-un-kritische Signalwege
+- Schreiben in DB über WebHook
+---
+# eduroam 20260515
+1. Öffne die **Systemsteuerung** > **Netzwerk- und Freigabecenter**.
+2. Klicke auf **Neue Verbindung oder neues Netzwerk einrichten**.
+3. Wähle **Manuell mit einem Funknetzwerk verbinden**.
+4. Trage bei Netzwerkname exakt **eduroam** ein. Wähle als Sicherheitstyp **WPA2-Enterprise**. Klicke auf Weiter.
+5. Klicke jetzt auf **Verbindungseinstellungen ändern**.
+6. Gehe in den Reiter **Sicherheit** und klicke auf **Einstellungen** (neben der Methode PEAP).
+7. **Der wichtigste Schritt:** Entferne ganz oben das Häkchen bei _„Identität des Servers mittels Zertifikatsprüfung überprüfen“_.
+8. Klicke auf **Konfigurieren** (neben EAP-MSCHAP v2) und nimm das Häkchen bei _„Automatisch eigenen Windows-Anmeldenamen... verwenden“_ heraus.
+9. Bestätige alles mit OK. Wenn du nun unten rechts auf das WLAN-Symbol klickst und eduroam auswählst, fragt er dich nach Benutzername und Passwort.
+---
+# Ultralite mk3 Wandlungen/Latenzen 20260517
+- Rauschen (Noise Floor) und harmonische Verzerrung (THD)
+	- Gain Staging für Sweet Spot der Wandler
+	- symmetrische Verkabelung
+	- einheitliche Bit-Tiefe und Sample-Rate
+- Phase nur beim Mischen von Signalen
+- Latenz
+	- Ping über click~ herausschicken und mit `timer` messen
+	- sub-sample nach Gehör: 2x noise~, 1x über tapin~ tapout~, 1x über x~ -1 und Punkt maximaler Auslöschung finden
+---
+# Claude als Harness mit kostenlosen Modellen nutzen 20260520
+- [OpenRouter](https://openrouter.ai/)
+	- gpt-oss-120b
+	- MiniMax M2.5
+	- Nemotron 3 Nano
+	- DeepSeek V4 Flash
+	- API Key holen
+	- 10 $ aufladen erhöht die Rate Limits
+- Claude
+	- /.claude/settings.json erstellen
+```json
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "https://openrouter.ai/api",
+    "ANTHROPIC_AUTH_TOKEN": "DEIN_OPENROUTER_API_KEY",
+    "ANTHROPIC_API_KEY": "",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "openrouter/free",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "openrouter/free",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "openrouter/free"
+  }
+}
+```
+- Gemini Modelle hier ebenfalls über OpenRouter nutzbar
+	- gemini-for-claude-code
+	- claude-code-router
+	- Formatierungsbefehle können Probleme machen (Werkzeuge werden in Gemini über JSON genutzt, bei Claude über XML, ebenso bei Datei-Änderungen)
+---
+# cli's terminals 20260521
+- [Warp — The Agentic Development Environment](https://www.warp.dev/)
+---
+# rebel technology open sound module 20260521
+- IP address OSM: 192.168.0.1 (send to 8000, receive on 9000)
+	- HEXFPCJE password
+- Trigger Kanal A: /osm/a/tr
+	- No argument: toggle
+	- Integer argument: 0 for off, 1 for on
+	- Float argument: less than 0.5 for off, more than 0.5 for on
+- CV Kanal A: /osm/a/cv
+	- 0.0 to 1.0 for a unipolar input signal from 0 to 5v.
+	- -1.0 to 1.0 for a bipolar input signal from -5 to 5v.
+- Trigger Kanal B: /osm/b/tr
+- CV Kanal B: /osm/b/cv
+## Access Point Modus (grüne LED)
+- eigener WLAN Router, Einwählen mit IP address 
+## Client Modus
+- Client in anderem WLAN-Netzwerk
+- mit AP-Modus verbinden und auf Router des OSM im Browser zugreifen http://192.168.0.1 und Eintragen der Zugangsdaten für anderes WLAN-Netzwerk
+	- SSID WLAN Name einfach!
+	- http verwenden, hat bei mir nur über Lenovo Laptop geklappt
+- Drücken der LED-Taste für 6 Sekunden (gelbe LED) oder direkt über Web Interface
+	- ab dann wählt es sich automatisch ein
+## Drambo / DataOSC für Fluss-Ausstellung 20260522
+### Drambo
+- Hintergrund-Audio aktivieren, damit App im Hintergrund trotzdem arbeitet
+- MIDI OUT Modul (Destination "Drambo"), TouchOSC nach "Drambo" suchen
+### Data OSC 
+- über localhost "127.0.0.1" senden und Port aus TouchOSC holen, TouchOSC IP adress kann frei bleiben, aber Hintergrund-Audio nicht möglich (Kamera und Mikro werden nicht mal im Hintergrund weitergegeben, nur Motion, Gyro und Midi)
+	- Senden an zweites Gerät (IPhone: Data OSC -> IPad: TouchOSC, Drambo -> OSM)
+	- OSM im Client Mode, IPad als WLAN-Hotspot/Router (IP address vom Router in Einstellungen auf blauen i herausfinden), IPhone sendet in Data OSC an IP (172.20.10.1) und frei wählbaren Port, der auch in TouchOSC eingestellt sein muss
+### TouchOSC
+- hineinkommende Connection nur auf Receive, Host frei, Port 8002 (frei wählbar)
+	- Fader OSC-Message 1 auf Receive, Address: constant "/data/motion/accelerometer/z", Argument: x "-1" "1" 
+- ausgehende Connect nur auf Send, Host 172.20.5 (bzw. suchen), Port 8000 (vorgegeben von OSM)
+	- Fader OSC-Message 2 auf Send, Address: constant "/osm/a/cv", Argument: x "-1" "1" (ist hier bipolar cv)
+
+---
+# MAX json patches
+- .maxpat, dict und pattrstorage
+- dynamisch aufbauen während runtime mit js/v8/node.script 
+	- js Objekt mit Max-API erzeugt Patch im RAM (läuft im Main-Thread und kann GUI freezen)
+	- bang an js Objekt, mit `myPatcher.front();` öffnet sich Fenster, sonst Arbeit im Hintergrund
+	- Ändern in existierenden Patches ebenfalls möglich (Subpatcher)
+```js
+// Funktion wird ausgelöst, wenn ein "bang" an das js-Objekt gesendet wird
+function bang() {
+    // 1. Einen neuen, leeren Patcher erstellen
+    var newPatcher = new jsthis.patcher; // Alternativ: new Patcher()
+    
+    // 2. Das Fenster für den Benutzer sichtbar machen (öffnen)
+    newPatcher.front();
+    
+    // 3. Objekte im neuen Patch erstellen (X-Koordinate, Y-Koordinate, Objektname/Text)
+    var toggle = newPatcher.newdefault(50, 50, "toggle");
+    var metro  = newPatcher.newdefault(50, 100, "metro", 400);
+    var beep   = newPatcher.newdefault(50, 150, "beep");
+    
+    // 4. Die Objekte miteinander verbinden (Quell-Objekt, Outlet-Index, Ziel-Objekt, Inlet-Index)
+    newPatcher.connect(toggle, 0, metro, 0);
+    newPatcher.connect(metro, 0, beep, 0);
+}
+```
+- v8 und node-script in eigener Umgebung kann json Dateien schreiben, Max Patch aber nicht in Runtime manipulieren, keine API
+	- nach Erstellung `open dynamischer_patch.maxpat` oder `load dynamisch.maxpat`) an ein `[poly~]`-Objekt
+		- poly~ als beste Hülle für dynamisches Instanzieren von unterschiedliche vielen Stimmen und komplettes Muten
+	- asynchron, im Filesystem gespeichert und nicht im RAM und kein wiederholender GUI Freeze
+	- erst beim Öffnen in einem Rutsch potenzieller GUI Freeze
+	- kann über externe APIs Daten holen
+## neu geladene Patches/Fenster über global namespace verbinden
+- send, receive, send~, receive~, value
+## globales Audio-Thread Knacksen
+- DSP Chain wird neu kompiliert bei Änderung der Kabel oder ~Objekte, auch beim Laden neuer Dateien in bpatcher oder poly~
+- Lösungen
+	- verschiedene MAX-Instanzen auf unterschiedlichen Threads 
+		- keine globalen Objekte mehr!
+		- Ebene des OS
+		- Nutzen von OSC und JACK
+	- Vorladen so weit es geht + Verwendung von pass~ und `mute 1` bei poly~
+---
+# Vactrols 20260522
+## LPG
+- VCF + VCA, der aber passiv läuft, also abschwächt
+- lichtsensitive Widerstände, über LED oder +Fluoreszierendes Material (längeres, aufladbares Decay) über CV-In gezündet
+	- Öffnen des Gate und Durchlassen des Audio Signals
+- schnelles Signal im CV-In lässt Vactrol verschlicken, Amplituden-Modulation zerreißt den Klang
+- Feedback-Loop mit verstärkten LPG Ausgag zurückmischen
+- kurze Trigger sampleweise mit ES Modulen und direkt ins LPG ohne analoge Umwege, die dämpfen, Sweetspot suchen
+## Phaser 101-3
+- Vactrols steuern Allpass Filter, veränderbare Widerstände für bestimmte Widerstände mit Ausklingen
+---
+### PuTTY, SSH Alternative
+- VS Code: Erweiterung "Remote - SSH"
+- Befehl "Connect to Host..." 
+	- ssh root@deine-ip-adresse
+- **"Host key verification failed"** Fehlermeldung, weil Ausweise aus erster Anmeldung geprüft worden sind
+	- Ausweis löschen mit `ssh-keygen -R 217.154.113.12`
+---
+# canvas 2026050920
+## patch 
+### Granulares Wave-Stitching mit Jitter-Modulation
+- Clock in SW3 mit LFO modulieren für Jitter (Swing) und Mixwitch auf schneller Geschwindigkeit im Clock Modus betreiben
+### Time-Stretching über Delay Modulation
+### k-Torus Phase Space
+- combining multiple oscillators with strictly incommensurate (irrational) frequency relationships and routing them through cross-phase modulation, we create a sonic trajectory that endlessly wraps around the torus without ever perfectly repeating
+### Modified Harmonic Bases (k-Harmonic Polynomial Spaces)  
+- Generate3 Even and Odd into Fold6, LFO modulating Shape and Symmetry 
+### Multi-D Quantum Harmonic Oscillator (Discrete Energy Level Spacings)  
+- A171 End also Trigger in X Disting F-6 (Shift Register Random Quantized CVs), mit Z Änderugswahrsheinlichkeit  
+- A171 End also Trigger in 8Holdster, Ausgänge in Filter8, Generate3, Delay1  
+### k-Torus Phasenraum (Inkommensurable Frequenzen & Quasi-periodische Topologien)  
+- Generate3 Full in Filter8 lin/expFM, LP4 und HP1 in Select2, Generate3 Pulse in Select2 Gate  
+- Springen zwischen auf der Oberfläche des Torus (Zustand des Phasenraums, Position und Impuls, stabiles/integrierbares Schwingen)  
+- Inkommensurabel, dass zwei irrationale Frequenzen nicht ineinander passen, Pfadtrajektorie wickelt sich nicht wiederholend um den Torus und schließt ihn nach und nach  
+- Polynomial mit Basen (orthogonal Vektoren, die Raum aufspannen), aus denen jede Funktion gemischt werden kann, Gleichgewichts- und Symmetriefunktionen mit dem Parameter k, welcher Dimension der Lösungsräume modifiziert  
+- Phasenraum als multidimensionaler Raum, der durch Phasenverschiebungen geöffnet wird  
+### Poincaré-Sektion (Stroboskopische Phasenraum-Abtastung)  
+- Filter8 zum Öffnen des 8-dimensionalen Phasenraums in 8Holdster als simultanes SH, Generate3 Pulse in 8Holdster Trigger  
+- Einfrieren des Phasenraumes bei gleicher Frequenz, ansonsten wandert Sektion durch den Raum  
+### Takens-Einbettungstheorem (Phasenraum-Rekonstruktion durch Zeitverzögerung)  
+- 1-dimensionaler Schwinger in Kopien in Delays als fehlende Dimensionen
+- Der Attraktor (Rückkopplung): Patche das gefaltete Delay-Signal zurück in den Phase (TZPM) Input des Generate 3. Jetzt moduliert das vergangene, gefaltete Ich des Oszillators seine eigene gegenwärtige Phasenlage. Wenn du nun den internen Feedback-Regler des Delays sowie die PM-Tiefe am Generate 3 feinfühlig aufdrehst, fängt das System an, deterministisches Chaos zu erzeugen. Die Tonhöhe bleibt stabil, aber das Timbre bricht in fraktale, raue "Attraktoren" auf.  
+### Chaos
+- Chaostheorie (etwa bei der Smale-Hufeisen-Abbildung) wird ein Phasenraum gedehnt und wieder zusammengefaltet. Dieser Vorgang des Dehnens (Phasenverschiebung) und Faltens (Wavefolding) erzeugt extrem dichte Informationsstrukturen.  
+- 101 zum Dehnen, 101 Ausgänge4 in Mixwitch zum Schneiden, in Fold6 zum Weichfalten  
+### Projektive Geometrie im Phasenraum  
+- Parallele Linien auf Punkt projiziert, unendlicher Raum auf geschlossenem Raum, Variable die gegen Unendlich konvergiert wird umgeklappt und kehrt mit geänderter Richtung zurück  
+- A171 als langsam wachsende Spannung in Fold6 als Projektive Ebene, im größten Wert auf Null zurückgefalten, Fold6 Ausgang in Generate3 TZFM  
+### Ramanujan-Kettenbrüche (Continued Fractions)  
+- Clock in FractioSolum für Verhältnis in TwoBits Clock DIV/Mult-Modus für weiteres Verhältnis, über Attenuator zurück in den FractioSolum RatioCV  
+### Das Dualitätsprinzip (Punkt-Gerade-Dualität)  
+- Trigger als Punkt Linie als Hüllkurve oder Schwingung  
+- SinusOSC in Persephone für Linie zu Punkt für Zero Cross Durchgang, Trigger an A171 für Hüllkurve, in Select2 + weiteren Trigger in Select2 Hold  
+### Fluchtpunkte und die Horizontlinie (Perspektivische Kompression)
+- Abstände der Linien zum Fluchtpunkt (Schnittpunkt der Parallelen) exponentiell komprimiert
+- A171 mit Response Kurve auf Exponential in Generate3 V/Oct als Clock
+- Generate3 Out 8Holdster mit zufälliger Spannung als 8 räumlich getrennte Linien
+### Doppelverhältnis (Die projektive Invariante)
+- Egal aus welcher Perspektive man vier Punkte auf einer Linie betrachtet (egal wie sie gestaucht oder verzerrt werden), ihr mathematisches Verhältnis (A,B;C,D)=BC⋅AD/AC⋅BD​ zueinander bleibt immer absolut konstant (invariant)
+- Generate3 als gekoppelte Punkte (Fundamental-Ausgang ist doppelt so schnell wie der Core-Ausgang, der Even-Ausgang wiederum doppelt so schnell wie der Fundamental-Ausgang) + Filter8
+- Multiplikation in MingRod, 2. Multiplikation in Disting A-2 (Four Quadrant Multiplier) 
+- beide Ausgänge zusammen in FMAid
+### Sample als statische Topologie (Der "Scrub"-Phasenraum)
+- Disting I-6 Audio Playback with Scrub, LFO in Y
+### Cassinische Kurven und Lemniskaten-Metamorphose
+- Eine Cassinische Kurve ist definiert durch das konstante Produkt der Abstände zu zwei festen Brennpunkten (r1​⋅r2​=a²). Verändert man diese Konstante a, durchläuft die Kurve eine topologische Metamorphose: Von zwei getrennten Ovalen berühren sie sich in einem Punkt (der Lemniskate) und verschmelzen schließlich zu einem einzigen großen, kreisähnlichen Oval
+- zwei OSC leicht unterschiedlicher Frequenz in MingRod
+- MingRod in Veils mit A171 für Offset
+- Veils in Fold6 verschmilzt die beiden Ovale zur Lemniskate
+### Projektive Involutionen (Elliptisch und Hyperbolisch)
+- Involution als eine spezielle Projektivität, die – wenn sie zweimal angewendet wird – wieder die Identität ergibt
+- Generate3 Odd und Odd invertiert in Mixwitch, Square LFO in Mixwitch CV
+- Frequenz des Square LFO mit Noise modulieren
+### 3D-Wegkurven: "Geradenwickel" und "Irrkurven" (Strays)
+- Eine Form ist der Geradenwickel (Line winding), bei dem die Kurve sich unendlich um eine Achse windet und sich ihr asymptotisch annähert, während sie sich im umgekehrten Zeitverlauf um eine andere, dazu windschiefe Achse wickelt. Wenn ein bestimmter Parameter (der Radius) exakt 1 ist, entsteht eine Irrkurve (Stray), die völlig ziellos über die Oberfläche eines Hyperboloids irrt und dieses dicht ausfüllt
+- A101 12. Stufe in Delay1 mit kurzer Verzögerung, Feedback hoch, als Line Winding um Z-Achse (Vactrol Stufen)
+- Jitter aus TwoBits in Delay1 Zeit, als zusätzliche Irrkurve
+---
 # excalidraw 20260509
 ## aufgeweichte Holzschichten
 - Mehrere Schichten Pappe oder Gipspappe mit Kleister
@@ -882,3 +2201,13 @@ Analoger Timestretch:
 - Honor 7X
 - LG Q6
 ## Ummantelung
+
+
+
+[Firecrawl - Search, Scrape, and Interact with the Web for AI](https://www.firecrawl.dev/)
+[Zero-Config Linting for Biome, ESLint, and Oxlint | Ultracite](https://www.ultracite.ai/)
+[DeepWiki MCP - Devin Docs](https://docs.devin.ai/work-with-devin/deepwiki-mcp)
+[Web Search MCP - Exa](https://exa.ai/docs/reference/exa-mcp)
+[Inngest Dashboard](https://app.inngest.com/env/production/onboarding/create-app)
+whisperflow
+playwright
