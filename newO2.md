@@ -2105,12 +2105,308 @@ function bang() {
 ## Phaser 101-3
 - Vactrols steuern Allpass Filter, veränderbare Widerstände für bestimmte Widerstände mit Ausklingen
 ---
-### PuTTY, SSH Alternative
+# PuTTY, SSH Alternative
 - VS Code: Erweiterung "Remote - SSH"
 - Befehl "Connect to Host..." 
 	- ssh root@deine-ip-adresse
 - **"Host key verification failed"** Fehlermeldung, weil Ausweise aus erster Anmeldung geprüft worden sind
 	- Ausweis löschen mit `ssh-keygen -R 217.154.113.12`
+---
+# Backend SQL Überlegungen 20260527
+## Max Patches laufen mit JSON (dict, pattr) [[newO2#MAX json patches]]
+## RNBO Instanzierung für Luanti ebenfalls JSON [[newO2#RNBO 20260526]]
+## Vorteile SQL
+- sichere gleichzeitige Zugriffe
+- Indizierung und Schnelligkeit (JSON lädt gesamte Datei in Arbeitsspeicher)
+- gute Suchoptionen
+- SQLite ohne Server Installation und aus einziger Datei
+- JSON nur bei kleinen lokalen Projekten und Tests oder Konfigurationsdaten, die nie geändert werden
+## Kombination SQL und JSON
+- einzelne Parameter müssen nicht in einzelne Spalten geschrieben werden, sondern können als gesamte JSON in einer Spalte abgelegt werden
+- SQL validiert die JSON Datei
+- Dein Frontend fragt das Backend nach einem bestimmten Patch (z. B. via `GET /api/patches/42`). Das Backend macht eine simple SQL-Abfrage (`SELECT * FROM rnbo_patches WHERE id = 42`), holt die Zeile aus der Datenbank und sendet sie an den Client.
+- `device.getPreset()`
+	- Tabellen von globalen Patches und einzelne Presets trennen
+	- Preset verweist über patch_id auf RNBO Device
+	- Tabelle: patches (Die Basis-Geräte)
+		- id (Primary Key)
+		- name (z. B. "Granular Delay")
+		- rnbo_source_code (JSON – Das exportierte RNBO-Patch)
+	- Tabelle: presets (Die dynamischen Zustände)
+		- id (Primary Key)
+		- patch_id (Foreign Key -> verweist auf patches.id)
+		- name (z. B. "Ambient Space Preset", "Default State")
+		- is_factory_default (BOOLEAN – Ein Standard-Preset, das man nicht überschreiben darf)
+		- state_data (JSON / JSONB) – Hier wird das aktuelle RNBO-Preset-Standard-JSON gespeichert.
+- Aggregation (beim Laden) und Dekonstruktion/Dekomposition (beim Speichern) für UI-JSON-Objekt, welche Werte aus beiden Tabellen benötigt
+	- Backend teilt beim Speichern im Frontend die Daten wieder auf
+```SQL
+UPDATE patches 
+SET name = 'Neuer Patch Name', rnbo_source_code = '...' 
+WHERE id = 42;
+
+UPDATE presets 
+SET state_data = '...' 
+WHERE id = 105;
+```
+## Obsidian Bases als UI der SQL
+- Jeder Datensatz (jede Zeile) deiner SQL-Tabelle muss zu einer einzelnen Markdown-Datei werden, und die Spaltenwerte werden zu YAML-Eigenschaften (Properties)
+```Python
+import sqlite3
+import os
+
+# 1. Mit der Datenbank verbinden
+conn = sqlite3.connect('meine_datenbank.db')
+cursor = conn.cursor()
+
+# 2. Gewünschte Daten abrufen
+cursor.execute("SELECT id, titel, status, notiz_text FROM meine_tabelle")
+rows = cursor.fetchall()
+
+# 3. Zielordner in deinem Obsidian-Vault erstellen
+output_dir = "Meine_Bases_Datenbank"
+os.makedirs(output_dir, exist_ok=True)
+
+# 4. Für jede Tabellenzeile eine Markdown-Datei erstellen
+for row in rows:
+    id, titel, status, notiz_text = row
+    
+    # Dateinamen aus dem Titel generieren (Sonderzeichen ggf. vorher bereinigen)
+    filename = f"{output_dir}/{titel}.md"
+    
+    # YAML-Frontmatter und Inhalt zusammensetzen
+    markdown_content = f"""---
+id: {id}
+titel: "{titel}"
+status: {status}
+---
+
+{notiz_text}
+"""
+    
+    # Datei in den Ordner schreiben
+    with open(filename, 'w', encoding='utf-8') as file:
+        file.write(markdown_content)
+
+conn.close()
+print(f"Erfolgreich {len(rows)} Dateien generiert!")
+```
+- n-m-Zuordnungen von SQL relationaler Datenbank (extra Junction Tabelle) zu Obsidian Graphen Datenbank (Wiki Links)
+- generisches Python-Skript mit allen Relationen-Übersetzungen, nur der SQL-String QUERY muss angepasst werden
+```python
+import sqlite3
+import os
+
+# --- 1. KONFIGURATION ---
+DB_NAME = 'meine_datenbank.db'
+OUTPUT_DIR = 'Meine_Bases_Datenbank'
+TRENNZEICHEN = '|||' # Trennzeichen für GROUP_CONCAT
+
+# --- 2. DEIN SQL-BEFEHL ---
+# Hier bestimmst du völlig frei, welche Tabellen abgerufen werden.
+# Achte auf die Aliase (AS dateiname, AS inhalt, AS liste_...)
+QUERY = """
+SELECT 
+    b.id, 
+    b.titel AS dateiname, 
+    b.titel,
+    b.status, 
+    b.notiz_text AS inhalt,
+    GROUP_CONCAT(a.name, '|||') AS liste_autoren,
+    GROUP_CONCAT(g.name, '|||') AS liste_genres
+FROM buecher b
+LEFT JOIN buch_autor ba ON b.id = ba.buch_id
+LEFT JOIN autoren a ON ba.autor_id = a.id
+LEFT JOIN buch_genre bg ON b.id = bg.buch_id
+LEFT JOIN genres g ON bg.genre_id = g.id
+GROUP BY b.id
+"""
+
+# --- 3. DIE GENERISCHE SKRIPT-LOGIK (Ab hier nichts mehr ändern) ---
+def export_to_obsidian():
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    conn = sqlite3.connect(DB_NAME)
+    # Row-Factory aktiviert den Zugriff über Spaltennamen (statt über Index)
+    conn.row_factory = sqlite3.Row 
+    cursor = conn.cursor()
+    
+    cursor.execute(QUERY)
+    rows = cursor.fetchall()
+    
+    # Spaltennamen dynamisch aus der Abfrage extrahieren
+    columns = [description[0] for description in cursor.description]
+    
+    for row in rows:
+        yaml_lines = ["---"]
+        dateiname = "Unbenannt"
+        notiz_inhalt = ""
+        
+        # Gehe jede Spalte der aktuellen Zeile durch
+        for col in columns:
+            wert = row[col]
+            
+            # Leere Datenbankfelder überspringen, um das YAML sauber zu halten
+            if wert is None:
+                continue
+                
+            # Regel A: Dateiname abfangen
+            if col == "dateiname":
+                # Ungültige Dateizeichen entfernen
+                dateiname = str(wert).replace("/", "_").replace("\\", "_").replace(":", "")
+                continue
+                
+            # Regel B: Notiz-Inhalt abfangen
+            if col == "inhalt":
+                notiz_inhalt = str(wert)
+                continue
+                
+            # Regel C: Listen (n:m Verknüpfungen) erkennen
+            if col.startswith("liste_"):
+                # "liste_autoren" wird im YAML zu "autoren:"
+                eigenschafts_name = col.replace("liste_", "")
+                yaml_lines.append(f"{eigenschafts_name}:")
+                
+                # Die mit ||| getrennten Werte aufsplitten
+                eintraege = str(wert).split(TRENNZEICHEN)
+                # Duplikate entfernen (passiert oft bei mehrfachen JOINs)
+                eintraege = list(set(eintraege)) 
+                
+                for eintrag in eintraege:
+                    if eintrag.strip(): # Nur wenn nicht leer
+                        yaml_lines.append(f'  - "[[{eintrag.strip()}]]"')
+            
+            # Regel D: Normale Werte (Text, Zahlen)
+            else:
+                # Bei Textwerten Anführungszeichen setzen, bei Zahlen nicht
+                if isinstance(wert, (int, float)):
+                    yaml_lines.append(f"{col}: {wert}")
+                else:
+                    yaml_lines.append(f'{col}: "{wert}"')
+        
+        yaml_lines.append("---")
+        
+        # YAML und Textkörper zusammensetzen
+        markdown_content = "\n".join(yaml_lines) + "\n\n" + notiz_inhalt
+        
+        # Datei speichern
+        filepath = os.path.join(OUTPUT_DIR, f"{dateiname}.md")
+        with open(filepath, 'w', encoding='utf-8') as f:
+            f.write(markdown_content)
+            
+    conn.close()
+    print(f"Erfolgreich {len(rows)} Dateien generiert!")
+
+if __name__ == "__main__":
+    export_to_obsidian()
+```
+- Trennen von Logik und Konfiguration (Logik Datei muss nie geändert werden) und Befehl `python sql_to_obsidian.py firmendaten.db export_projekte.sql Mein_Obsidian_Ordner` verknüpft beides
+	- sql_to_obsidian.py: Logik-Skript
+	- firmendaten.db: SQLite-Datenbankdatei
+	- export_projekte.sql: Datei mit SQL-Befehl (Konfiguration)
+- Logik
+```python
+import sqlite3
+import os
+import argparse
+
+def export_to_obsidian(db_path, query_file, output_dir, trennzeichen='|||'):
+    # 1. SQL-Befehl aus der externen Datei lesen
+    with open(query_file, 'r', encoding='utf-8') as f:
+        query = f.read()
+
+    os.makedirs(output_dir, exist_ok=True)
+    conn = sqlite3.connect(db_path)
+    conn.row_factory = sqlite3.Row 
+    cursor = conn.cursor()
+    
+    cursor.execute(query)
+    rows = cursor.fetchall()
+    columns = [description[0] for description in cursor.description]
+    
+    for row in rows:
+        yaml_lines = ["---"]
+        dateiname = "Unbenannt"
+        notiz_inhalt = ""
+        
+        for col in columns:
+            wert = row[col]
+            if wert is None:
+                continue
+                
+            if col == "dateiname":
+                dateiname = str(wert).replace("/", "_").replace("\\", "_").replace(":", "")
+            elif col == "inhalt":
+                notiz_inhalt = str(wert)
+            elif col.startswith("liste_"):
+                eigenschafts_name = col.replace("liste_", "")
+                yaml_lines.append(f"{eigenschafts_name}:")
+                eintraege = list(set(str(wert).split(trennzeichen))) 
+                
+                for eintrag in eintraege:
+                    if eintrag.strip():
+                        yaml_lines.append(f'  - "[[{eintrag.strip()}]]"')
+            else:
+                if isinstance(wert, (int, float)):
+                    yaml_lines.append(f"{col}: {wert}")
+                else:
+                    yaml_lines.append(f'{col}: "{wert}"')
+        
+        yaml_lines.append("---")
+        markdown_content = "\n".join(yaml_lines) + "\n\n" + notiz_inhalt
+        
+        filepath = os.path.join(output_dir, f"{dateiname}.md")
+        with open(filepath, 'w', encoding='utf-8') as f:
+            f.write(markdown_content)
+            
+    conn.close()
+    print(f"Erfolgreich {len(rows)} Dateien nach '{output_dir}' exportiert!")
+
+if __name__ == "__main__":
+    # Kommandozeilen-Argumente definieren
+    parser = argparse.ArgumentParser(description="Exportiert SQL-Daten nach Obsidian Markdown.")
+    parser.add_argument("db", help="Pfad zur SQLite-Datenbankdatei (z.B. datenbank.db)")
+    parser.add_argument("sql", help="Pfad zur Datei mit dem SQL-Befehl (z.B. abfrage.sql)")
+    parser.add_argument("out", help="Zielordner für die Markdown-Dateien")
+    
+    args = parser.parse_args()
+    
+    export_to_obsidian(args.db, args.sql, args.out)
+```
+- Konfigurationsbeispiele für 1:1 1:n n:m Relationen
+```sql
+SELECT 
+    b.id,
+    b.benutzername AS dateiname,  -- Wird der Name der .md Datei
+    b.email,                      -- Landet als normale Eigenschaft im YAML
+    p.geburtsdatum,               -- Kommt aus der Profil-Tabelle, landet im YAML
+    p.biografie AS inhalt         -- Wird der eigentliche Text der Notiz
+FROM benutzer b
+LEFT JOIN profile p ON b.id = p.benutzer_id
+```
+```sql
+SELECT 
+    p.id,
+    p.projektname AS dateiname,
+    p.budget,
+    p.zielbeschreibung AS inhalt,
+    -- Hier fassen wir die vielen Aufgaben zusammen
+    GROUP_CONCAT(a.titel, '|||') AS liste_aufgaben
+FROM projekte p
+LEFT JOIN aufgaben a ON p.id = a.projekt_id
+GROUP BY p.id
+```
+```sql
+SELECT 
+    s.matrikelnummer AS id,
+    s.name AS dateiname,
+    s.studiengang,
+    -- Wir gehen über die Verknüpfungstabelle zu den Kursen
+    GROUP_CONCAT(k.kursname, '|||') AS liste_kurse
+FROM studenten s
+LEFT JOIN student_kurs sk ON s.id = sk.student_id
+LEFT JOIN kurse k ON sk.kurs_id = k.id
+GROUP BY s.id
+```
 ---
 # canvas 2026050920
 ## patch 
