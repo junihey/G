@@ -1,4 +1,7 @@
 # misc
+
+^545451
+
 ## logic 20260520
 - [A Logic Cookbook for Synthesis](https://doudoroff.com/logic/index.html)
 - [Your recommended logic module - MOD WIGGLER](https://www.modwiggler.com/forum/viewtopic.php?t=289814)
@@ -2407,6 +2410,368 @@ LEFT JOIN student_kurs sk ON s.id = sk.student_id
 LEFT JOIN kurse k ON sk.kurs_id = k.id
 GROUP BY s.id
 ```
+---
+# Second Brain / Knowledge Graph 20260529
+- Claude generated Wiki in Obsidian
+- original idea from Andrej Karpathy [llm-wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)
+	- open claude code in the vault over vs code
+	- copy the llm wiki description and paste it in
+	- add this prompt ![[Pasted image 20260529231334.png]]
+- Instead of just retrieving from raw documents at query time, the LLM **incrementally builds and maintains a persistent wiki** — a structured, interlinked collection of markdown files that sits between you and the raw sources.
+## Nate Herk - [Andrej Karpathy hat gerade den Claude-Code aller verzehnfacht. - YouTube](https://www.youtube.com/watch?v=sboNwYmH3AY)
+- no vector DB, embeddings, complex rag infra - obsidian as ide which handles indexing and synthesis via index.md
+	- ![[Pasted image 20260529232811.png]]
+	- ![[Pasted image 20260529232920.png]]
+- three layers
+		- raw - raw resources 
+		- wiki - generated wiki
+			- index.md - table of contents
+				- ![[Pasted image 20260529230846.png]]
+				- Tools, Techniques, Concepts, Sources, Peoples headings
+			- log.md - operation history
+				- ![[Pasted image 20260529231019.png]]
+			- `*.md` - all wiki pages
+		- schema - claude.md for claude code / agents.md for cortex as the structure template of the wiki, conventions, workflows to follow when ingesting soirces, answering questions, maintaining the wiki
+- operations
+	- 1ingest
+	- 2query
+		- add with the path to the vault in an other claude.md
+```markdown
+## Knowledge Base
+Business knowledge lives in the Herk Brain wiki (Obsidian vault). When a task needs business context (team info, OTAs, priorities, metrics, strategic decisions), follow this retrieval protocol:
+**Wiki path:** `C:\Users\nateh\OneDrive\Desktop\Herk Brain\wiki\`
+1. **Hot cache first.** Read `_hot.md` (~500 tokens). Contains active threads and key numbers. Resolves most queries.
+2. **Master index.** Read `_index.md` if hot cache isn't enough. Check "Recently Active" section.
+3. **Domain sub-index.** Open 1-2 relevant `_index-{domain}.md` files. NEVER open all sub-indexes at once.
+4. **Grep fallback.** Search `wiki//*.md` by keyword if the page isn't indexed.
+5. **Page limit.** NEVER read more than 5 wiki pages per query.    
+Do NOT read from the wiki unless the task needs business context execution, content generation, and technical work often don
+```
+- hot.ms is the most recent things gave to the vault or talked about (inside wiki folder)
+	- 3lint	
+		- finding incosistent data, interesting connections for new articles, cleaning up 
+		- contradictions between pages, stale claims that newer sources have superseded, orphan pages with no inbound links, important concepts mentioned but lacking their own page, missing cross-references, data gaps that could be filled with a web search
+## Julian Ivanov - [Obsidian + Claude Code: So baust du dein zweites Gehirn - YouTube](https://www.youtube.com/watch?v=NVUCQ-pzBn4&t=961s)
+- Skills in Obsidian ![[Pasted image 20260530011739.png]]
+- Brat Plugin mit https://github.com/YishenTu/claudian
+- Obsidian Skill https://github.com/kepano/obsidian-skills
+- bereitgestellte Onboarding Claude.md file, die interviewt und dabei alles neu aufsetzt
+	- [[CLAUDE]]
+	- einzelne Claude.md Datei in leeren Vault legen und Claude schreiben "Mach das Onboarding!"
+	- die selbe Claude.md Datei wird anschließend geändert (Headings: Über mich, Vault-Struktur (Ordner Erklärung), Vault-Regeln, Session Routinen)
+	- ![[Pasted image 20260530115531.png]]
+	- ![[Pasted image 20260530115550.png]]
+- Use Cases
+	- Daily Notes für Tageszusammenfassungen
+	- Meeting Notizen Transkript in Inbox + Action Items
+	- Weekly Review
+- Kleine Schritte!
+- "Merk dir das" (Regeln, Präferenzen, Entscheidungen)
+## [Karpathys „Second Brain“ einfach erklärt (und wie du es ohne Programmierung selbst aufbaust) | Viral X/Twitter Article Tracking - YouMind](https://youmind.com/de-DE/landing/x-viral-articles/karpathy-ai-second-brain-guide)
+- Claude.md
+```markdown
+# Wissensdatenbank-Schema
+
+## Was dies ist
+Eine persönliche Wissensdatenbank zu [DEIN THEMA].
+
+## Wie es organisiert ist
+- raw/ enthält unverarbeitetes Quellmaterial. Diese Dateien niemals verändern.
+- wiki/ enthält das organisierte Wiki. Die KI pflegt es vollständig.
+- outputs/ enthält generierte Berichte, Antworten und Analysen.
+
+## Wiki-Regeln
+- Jedes Thema erhält eine eigene .md-Datei in wiki/
+- Jede Wiki-Datei beginnt mit einer einleitenden Zusammenfassung
+- Verknüpfe verwandte Themen mit dem Format [[Themenname]]
+- Pflege eine INDEX.md, die jedes Thema auflistet
+- Wenn neue Rohquellen hinzugefügt werden, aktualisiere die relevanten Wiki-Artikel
+
+## Meine Interessen
+[Liste 3-5 Dinge auf, auf die sich diese Wissensdatenbank konzentrieren soll]
+```
+- Sobald dein Wiki 10+ Artikel hat, fange an, Fragen zu stellen:
+	- „Basierend auf allem in wiki/, was sind die drei größten Lücken in meinem Verständnis von [Thema]?"
+	- „Vergleiche, was Quelle A über [Konzept] sagt, mit Quelle B. Wo widersprechen sie sich?"
+	- „Schreibe mir ein 500-Wörter-Briefing zu [Thema], das nur das verwendet, was in dieser Wissensdatenbank ist."
+## AI Impact - [Don't Use Karpathy's Second Brain (I BUILT SOMETHING BETTER) - YouTube](https://www.youtube.com/watch?v=z02Y-1OvWSM)
+- Pillars of AI First Design
+	- atomic notes: one concept, 30-500 words
+	- typed notes: note categories with a folder for each
+		- pillar: Foundational identity or principle. Auto-injects on matching context. 
+		- decision: A concrete choice made between alternatives. ADR style. 
+		- concept: A defined term or framework the agent should reason from. 
+		- question: A known unknown being tracked. Becomes a hypothesis once testable. 
+		- playbook: A repeatable procedure with steps, triggers, expected outcomes. 
+		- task: An actionable item, usually synced from a real task system. 
+		- event: A dated event the agent should reason about temporally. 
+		- pattern: An observed regularity in data or behavior. Heuristic. 
+		- hypothesis: A falsifiable prediction with a measurable test. 
+		- fact: A verified atomic statement with a specific source and date. 
+		- source: An external reference (book, article, talk) plus your synthesis. 
+		- bookmark: A saved link with light annotation, not yet a source. 
+		- note: Low-priority scratch or pre-atomized observation. 
+		- contact: A person node with relationship metadata. 
+		- reference: A pointer to a config, schema, or pinned doc. 
+		- custom: Workspace-specific type that does not fit the 15 above.
+	- typed links / edges
+		- supports: Source provides evidence for target. 
+		- contradicts: Source disagrees with or invalidates target. 
+		- depends_on: Target must be true before source makes sense. 
+		- derived_from: Source was created based on target. Lineage edge. 
+		- related_to: Topical connection, no stronger relationship known. 
+		- part_of: Source is a component of target. 
+		- preceded_by: Source comes after target in time. 
+		- followed_by: Source comes before target in time. 
+		- authored_by: Target is the author or originator of source. 
+		- tagged_with: Source carries a topic tag that is itself a node.
+	- trust metadata:
+	- namespaces with visibility:
+- ![[Pasted image 20260529212009.png]]
+	- summary muss in anderes file, weil es sonst ja bereits das file hier geladen hat
+- PARA-Methode ist ein von Tiago Forte entwickeltes System zur Organisation digitaler Informationen für Menschen (nicht für KI!)
+	- Projects (Projekte mit konkreten Zielen und Deadlines)
+	- Areas (Laufende Verantwortungsbereiche wie Finanzen oder Gesundheit)
+	- Resources (Nützliche Materialien und Interessensthemen)
+	- Archive (Inaktive Unterlagen)
+- LightRAG für Retrieval
+	- Dual-Level: spezifisch und abstrakt
+	- keine Änderung der Markdown Dateien und Abspeichern der Graph- und 
+	- Vektorendatenbank extern
+	- [Under the Covers With LightRAG: Retrieval](https://neo4j.com/blog/developer/under-the-covers-with-lightrag-retrieval/)
+- Neo4J für Graph 
+	- Neo4j and Juggl Obsidian plugin
+## AI Impact - [How To Build an AI Infinite Brain (BETTER THAN SECOND BRAIN) - YouTube](https://www.youtube.com/watch?v=xUnVQkPrnrA)
+- ![[Pasted image 20260529215445.png]]
+## graphify for codebases
+## [Build An AI Second Brain Knowledge Base (Step-By-Step) - YouTube](https://www.youtube.com/watch?v=yke4fLQUsh4)
+- ![[Pasted image 20260530122839.png|238]]
+- ![[Pasted image 20260530122920.png]]
+- ![[Pasted image 20260530122949.png]]
+## [Karpathy's LLM Wiki - Full Beginner Setup Guide - YouTube](https://www.youtube.com/watch?v=iXd0t60YmMw) 20260602
+- RAG has no memory between questions, no accumulation over time, nothing compounds, each question starts from scratch
+- Obsidian Approach with Wiki as the Codespace, the LLM as the as programmer and Obsidian as IDE
+> [!NOTE]- CLAUDE.md 
+> # LLM Wiki
+> 
+> A personal knowledge base maintained by Claude Code.
+> Based on Andrej Karpathy's LLM Wiki pattern.
+> 
+> ## Purpose
+> 
+> This wiki is a structured, interlinked knowledge base for planning a trip to Japan.
+> Claude maintains the wiki. The human curates sources, asks questions, and guides the analysis.
+>
+> ## Folder structure
+> 
+> ```
+> raw/          -- source documents (immutable -- never modify these)
+> wiki/         -- markdown pages maintained by Claude
+> wiki/index.md -- table of contents for the entire wiki
+> wiki/log.md   -- append-only record of all operations
+> ```
+>  
+> ## Ingest workflow
+> 
+> When the user adds a new source to `raw/` and asks you to ingest it:
+> 
+> 1. Read the full source document
+> 2. Discuss key takeaways with the user before writing anything
+> 3. Create a summary page in `wiki/` named after the source
+> 4. Create or update concept pages for each major idea or entity
+> 5. Add wiki-links ([[page-name]]) to connect related pages
+> 6. Update `wiki/index.md` with new pages and one-line descriptions
+> 7. Append an entry to `wiki/log.md` with the date, source name, and what changed
+> 
+> A single source may touch 10-15 wiki pages. That is normal.
+> 
+> ## Page format
+>  
+> Every wiki page should follow this structure:
+> 
+> ```markdown
+> # Page Title
+> 
+> **Summary**: One to two sentences describing this page.
+> 
+> **Sources**: List of raw source files this page draws from.
+> 
+> **Last updated**: Date of most recent update.
+> ---
+> 
+> Main content goes here. Use clear headings and short paragraphs.
+> 
+> Link to related concepts using [[wiki-links]] throughout the text.
+> 
+> ## Related pages
+> 
+> - [[related-concept-1]]
+> - [[related-concept-2]]
+> ```
+> 
+> ## Citation rules
+> 
+> - Every factual claim should reference its source file
+> - Use the format (source: filename.pdf) after the claim
+> - If two sources disagree, note the contradiction explicitly
+> - If a claim has no source, mark it as needing verification
+> 
+> ## Question answering
+> 
+> When the user asks a question:
+> 
+> 1. Read `wiki/index.md` first to find relevant pages
+> 2. Read those pages and synthesize an answer
+> 3. Cite specific wiki pages in your response
+> 4. If the answer is not in the wiki, say so clearly
+> 5. If the answer is valuable, offer to save it as a new wiki page
+> 
+> Good answers should be filed back into the wiki so they compound over time.
+> 
+> ## Lint
+> 
+> When the user asks you to lint or audit the wiki:
+> 
+> - Check for contradictions between pages
+> - Find orphan pages (no inbound links from other pages)
+> - Identify concepts mentioned in pages that lack their own page
+> - Flag claims that may be outdated based on newer sources
+> - Check that all pages follow the page format above
+> - Report findings as a numbered list with suggested fixes
+> 
+> ## Rules
+> 
+> - Never modify anything in the `raw/` folder
+> - Always update `wiki/index.md` and `wiki/log.md` after changes
+> - Keep page names lowercase with hyphens (e.g. `machine-learning.md`)
+> - Write in clear, plain language
+> - When uncertain about how to categorize something, ask the user
+---
+# Karpathy 20260529
+## Claude.md 
+- [andrej-karpathy-skills/CLAUDE.md at main · multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills/blob/main/CLAUDE.md)
+## AutoResearch
+- [karpathy/autoresearch: AI agents running research on single-GPU nanochat training automatically](https://github.com/karpathy/autoresearch)
+- Hyperparameter Tuning, Code-Optimierung, Algorithmische Forschung 
+- vollständig autonom über Tage
+---
+## Higgsfield MCP 20260602
+- https://www.youtube.com/watch?v=Wgs8MS86Dc0
+---
+# Scraping 20260529
+- [Obsidian Web Clipper](https://obsidian.md/clipper)
+- [unclecode/crawl4ai: 🚀🤖 Crawl4AI: Open-source LLM Friendly Web Crawler & Scraper. Don't be shy, join here: https://discord.gg/jP8KfhDhyN](https://github.com/unclecode/crawl4ai)
+- API [Scrape | Firecrawl](https://docs.firecrawl.dev/features/scrape)
+- [Jina AI - Ihre Suchbasis – mit Turbolader.](https://jina.ai/)
+---
+# BAROm1 by Yasushi Utsunomiya 20260530
+- für Infraschall und Luftdruckänderungen bis unter 0,1 Hz
+- kleine Luftlöcher bei Mikrofonen (Primo EM272), um Luftdruck auszugleichen, die wie ein Hochpassfilter wirken
+	- luftdichtes und mechanisch gedämpftes Gehäuse, welches Kapsel umhüllt, für akustische Druckkammer
+	- ändert sich atmosphärischer Luftdruck (Infraschall), drückt Luft von vorn auf die Membran, während eingeschlossenes Luftvolumen hinten als Dämpfer wirkt
+	- hintere Kammer mit kappilaren Loch oder Sintermetall für langsamen Druckausgleich
+- DC gekoppelten Preamp ohne Kondesnatoren im Signalweg
+---
+# Quartz 20260530
+- im entsprechenden Ordner `git clone https://github.com/jackyzha0/quartz.git`
+- `cd quartz`
+- `npm install`
+- `npx quartz create`
+	- Obsidian Theme
+	- copy
+	- localhost
+- `npx quartz plugin install --from-config`
+- `npx quartz plugin install --latest`
+- create /content/index.md
+```markdown
+---
+title: Mein lokales Wiki
+---
+
+# Willkommen in meinem Quartz-Wiki!
+
+Wenn du das hier siehst, funktioniert die Verbindung.
+```
+- `npx quartz build --serve`
+- alle Dateien brauchen Frontmatter mit title: um erkannt zu werden
+- für lokale Dateien in `quartz.config.yaml` kein git
+```yaml
+CreatedModifiedDate: priority: ["frontmatter", "filesystem"]
+```
+- Webseiten Daten dann im Ordner /public
+## Comments Plugin 
+- [Comments](https://quartz.jzhao.xyz/plugins/comments)
+```yaml
+- source: github:quartz-community/comments
+    enabled: true
+    options:
+      provider: giscus
+      options:
+        repo: DEIN_USER/DEIN_REPO
+        repoId: DEINE_REPO_ID_VON_GISCUS
+        category: Announcements # Oder die Kategorie, die du bei Giscus gewählt hast
+        categoryId: DEINE_CATEGORY_ID_VON_GISCUS
+        mapping: pathname
+        reactionsEnabled: true
+        inputPosition: bottom
+    layout:
+      position: afterBody
+      priority: 10
+```
+---
+# Luanti 20260531
+## "debug.txt" Tailreading in VS Code
+- cd C:\Users\junih\Desktop\luanti-5.16.1-win64\luanti-5.16.1-win64
+- Get-Content "debug.txt" -Wait | Select-String "ERROR" -Context 2,2
+- oder Chat-Mod [player_events_chat](file:///C:%5CUsers%5Cjunih%5CDesktop%5Czählen%5CG%5Cdata%5Cplayer_events_chat)
+## wichtige Navigation Befehle
+- H - Geistmodus
+- Y - Zoom
+- J - Schnellmodus (+E) (/grantme fast)
+## Mods
+- [Hypertrace - ContentDB](https://content.luanti.org/packages/Mantar/hypertrace/) Hypertrace Item für Node Defintions
+- [Minetest-WorldEdit/ChatCommands.md at master · Uberi/Minetest-WorldEdit](https://github.com/Uberi/Minetest-WorldEdit/blob/master/ChatCommands.md) WorldEdit
+	- [Minetest-WorldEdit/Tutorial.md at master · Uberi/Minetest-WorldEdit](https://github.com/Uberi/Minetest-WorldEdit/blob/master/Tutorial.md)
+- [Minetest-WorldEditAdditions/Chat-Command-Reference.md at main · sbrl/Minetest-WorldEditAdditions](https://github.com/sbrl/Minetest-WorldEditAdditions/blob/main/Chat-Command-Reference.md#terrain)
+	- [WorldEdit Additions - ContentDB](https://content.luanti.org/packages/Starbeamrainbowlabs/worldeditadditions/?protocol_version=52&engine_version=5.16.1)
+- [Markers - ContentDB](https://content.luanti.org/packages/Sokomine/markers/) Markers um Bereiche zu schützen
+- [Classroom - ContentDB](https://content.luanti.org/packages/rubenwardy/classroom/) Classroom für Audience Feature
+## World Edits
+### Biome Building
+- `//replacemix` ersetzt einen Bereich und mixed mit den bereits vorhandenen Blöcken
+- `//overlay` überzieht die Blöcke mit einer Lage neuer Blöcke
+- `//forest` und `//flora`
+- `//layers` - _Beispiel:_ `//layers default:dirt_with_snow default:dirt 3 default:stone` - _Wirkung:_ Legt als oberste Schicht verschneite Erde, darunter exakt 3 Blöcke normale Erde und füllt den gesamten Rest nach unten mit Stein auf
+- `//erode` flacht steile Kanten ab, `//smooth` ist genauer
+- Nimm einen Stock in die Hand und tippe `//brush sphere 4 default:sand`
+- `//replacenear 10 default:dirt default:clay` verwandelt alle Erde im Umkreis von 10 Blöcken in Lehm
+- `//clearcut` löscht alles außer die Landschaftsebene
+- `//fill` füllt Löcher, Höhlen, Senken
+- `//lua` für direkten Code Zugang, mathematische Formeln, Noise und Metadaten
+### Appearing of Buildings
+- Position 1 und 2 markieren
+- `//save` (`//set air` um zu löschen)
+- `//load` (Position 1 muss nur gesetzt sein)
+- gespeicherte Dateien unter / worlds / Name_deiner_Welt / schems / Save_Name.we
+- funktioniert auch für gefüllte Kisten 
+	- Alternative: Skeleton Key für verschlossene Kisten
+	- Alternative: `/grant Name protection_bypass` kann alle verschlüsselten Kisten öffnen (verschlüsselte Kisten sind an Spielernamen gebunden)
+---
+# Nate Herk 20260602
+## [Claude Code Dynamic Workflows Clearly Explained](https://www.youtube.com/watch?v=jZgcWCzxh1I&pp=ugUEEgJlbg%3D%3D)
+- Skill as a saved recipe
+- Skill Indexing
+![[Pasted image 20260602230100.png]]
+- Dynamic Workflow as a parallel search
+	- reviewing many files at once
+	- stress test a big decision
+	- 
+- Prompt for the Skill Indexing
+	- "read every skill file, one Haiku agent each, score them, then rank work-to-best into a scorecard"
+	- OR ![[Pasted image 20260602231109.png]]
+- /workflows to view all workflows running
+- it write a real javascript file
+- /effort to ultramode = workflows + xhigh (high thinking)
 ---
 # canvas 2026050920
 ## patch 
