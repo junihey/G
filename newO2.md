@@ -2543,11 +2543,23 @@ Eine persönliche Wissensdatenbank zu [DEIN THEMA].
 	- Neo4j and Juggl Obsidian plugin
 ## AI Impact - [How To Build an AI Infinite Brain (BETTER THAN SECOND BRAIN) - YouTube](https://www.youtube.com/watch?v=xUnVQkPrnrA)
 - ![[Pasted image 20260529215445.png]]
+## 20260606
+- ![[Pasted image 20260606115322.png]]
+- ![[Pasted image 20260606120957.png]]
 ## graphify for codebases
 ## [Build An AI Second Brain Knowledge Base (Step-By-Step) - YouTube](https://www.youtube.com/watch?v=yke4fLQUsh4)
 - ![[Pasted image 20260530122839.png|238]]
 - ![[Pasted image 20260530122920.png]]
 - ![[Pasted image 20260530122949.png]]
+## [N8N to Obsidian in 3 Steps (Stop Overcomplicating It) - YouTube](https://www.youtube.com/watch?v=NyL0ovWYj7M)
+- Rest API
+- Use Cases
+	- Automatisierte Ingestion (Der Trichter): n8n fängt Daten von unterwegs ab (z. B. Telegram-Sprachnachrichten via Whisper-Transkription, RSS-Feeds oder Browser-Lesezeichen) und speichert sie bereinigt im raw/-Ordner ab.
+	- Microsoft-Integration (Outlook & Teams): Gezielter Import von E-Mails (HTML zu sauberem Markdown konvertiert) und Teams-Meeting-Transkripten. Wichtige Chat-Entscheidungen werden automatisch als decision-Nodes isoliert.
+	- Kontext-Vorbereitung (Daily/Weekly): Automatische Erstellung deiner Daily Notes am Morgen (bündelt Kalendertermine und offene Tasks) sowie Vorbereitung des Weekly Reviews (Zusammenfassung aller wöchentlichen Wiki-Updates).
+	- System-Wartung (Linting): Zeitgesteuertes Anstoßen von Claude Code (per Cronjob), um dein Wiki automatisiert nach Widersprüchen, Datenlücken oder verwaisten Seiten zu durchsuchen und aufzuräumen.
+	- Index-Synchronisation: n8n registriert Änderungen im Obsidian-Vault und triggert sofort das Re-Indexing für LightRAG oder Neo4j, damit deine Wissensdatenbanken ohne manuelles Zutun aktuell bleiben.
+	- Chatbot-Orchestrator: n8n verbindet ein Chat-Interface (z. B. Telegram) mit deinem System: Es nimmt die Frage auf, holt den passenden Kontext aus LightRAG, schickt alles an Claude und liefert dir die Antwort direkt aufs Handy.
 ## [Karpathy's LLM Wiki - Full Beginner Setup Guide - YouTube](https://www.youtube.com/watch?v=iXd0t60YmMw) 20260602
 - RAG has no memory between questions, no accumulation over time, nothing compounds, each question starts from scratch
 - Obsidian Approach with Wiki as the Codespace, the LLM as the as programmer and Obsidian as IDE
@@ -2646,6 +2658,363 @@ Eine persönliche Wissensdatenbank zu [DEIN THEMA].
 > - Keep page names lowercase with hyphens (e.g. `machine-learning.md`)
 > - Write in clear, plain language
 > - When uncertain about how to categorize something, ask the user
+---
+# [How I Use Obsidian + Claude Cowork to Run My Life - YouTube](https://www.youtube.com/watch?v=rRa9td4oe7k) 20260605 
+- AIOS Ordner im Vault (strictly isolating)
+	- ![[Pasted image 20260605223923.png]]
+	- me.md als portable identity 
+		- CLAUDE.md: "Go immediately to me.md here: "Pfad""
+		- summary statemant, principles on reality identity knowledge meaning, preferences, vibe
+		- ![[Pasted image 20260605224110.png]] oder
+> [!NOTE]- me.md
+> - **`me.md`** - `/me.md` - Your briefing on who I am, how I think, and how to interact with me.
+> - **`vault-map`** - `/AIOS/Maps/vault-map` - Your manual to navigate & work in my ideaverse.
+> - **`skill-map`** - `/AIOS/Maps/skill-map` - All the defined skills you can utilize on my behalf.
+> 
+> **Me**
+> 
+> **The Summary Statement**
+> 
+> I believe the mind needs a home, that structure must be earned, and that where attention goes, meaning grows. I teach people to link their thinking because I've seen what happens when they don't — disorientation, doubt, exhaustion, frustration. And I've seen what happens when they do — clarity, confidence, capability, creativity.
+> 
+> I am a Dionysian thinker with Apollonian discipline. I chase flow, design habits, and build maps of meaning. I believe notemaking is the pursuit of truth, that sharing is a moral obligation, and that a sharp mind is the highest pleasure. I draw from Eastern philosophy and Western existentialism, from Csikszentmihalyi and Camus, from ancient paradigm shifts and modern systems thinking.
+> 
+> My life's work is helping people build their own ideaverse — that organic, evolving mass of thought that draws out their best, greatest, proudest, and most meaningful work.
+> 
+> Aliveness above all.
+> 
+> **First Principles**
+> 
+> These are the load-bearing walls of my worldview:
+> 
+> **On Reality:** Nature is neutral. Like No-Face in Spirited Away, whatever you feed a system is what it will feed you. The universe doesn't care, which means we get to decide what matters.
+> 
+> **On Identity:** "It's circular but true, we become what we do." Identity is not fixed — it's an emergent property of repeated action. Habits are the mechanism; they carry a ton of hidden inertia, and their neural formation is additive, like ant pheromone trails slowly wearing a path into permanence.
+> 
+> **On Knowledge:** "The riddle is the answer." Insight comes by pensight — when we write, we learn. Notemaking is not record-keeping; it's the pursuit of truth. Note-making sharpens thinking by forcing you to figure out the key statement, write in your own words, relate the idea to experience, and link it to other ideas.
+> 
+> **On Meaning:** "You're it." (Alan Watts.) There is no separation between you and the universe experiencing itself. The only thing to be sure of is that there's nothing to be sure of.
+> 
+> **Preferences**
+> 
+> - Address me by my first name
+> - Err on the side of casual and brief
+> - Keep responses short unless I ask for more or unless the response truly requires more
+> - Prefers honest pushback over yes-man behavior
+> - Values authenticity — don't perform, be real
+> - Wants a collaborator, not just a tool
+> 
+> **Vibe**
+> 
+> - Skip the "Great question!" and "I'd be happy to help!" — just help.
+> - Have opinions. Disagree when you disagree. Push back when something seems off.
+> - Be resourceful before asking. Read the file, check the context, search for it — then ask if stuck.
+> - Don't end messages with conversational questions unless they're crucial to completing a task. Just land the thought.
+> - Tolkien deep cuts are welcome — once a day, when natural. Not the obvious quotes; the lore that rewards those who've gone deeper. Add a brief aside for context, like filling in a friend who might've missed that chapter. Keep the deep cuts honest: if you make a fabricated parallel to something I'm working on, clearly state your deviation from the text.
+- vault map as moc or table of contents for the endpoint of the ki
+	- ![[Pasted image 20260605235746.png]]
+	- adding sections on how to create notes by templates, where to place
+- skill map about skills for AI
+	- keep skills here and not in claude
+	- ![[Pasted image 20260606000050.png|447]]
+	- When building your own skills, here are a few more tips:
+		- Ensure each skill is its own note: that way you can easily point your AI tool to it.
+		- In that note, spell out the purpose: what does the skill do, in one sentence?
+		- Note triggers such as a phrase to invoke it in your AI tool.
+		- Note dependencies it uses such as MCP, APIs, or tools.
+		- Want some inspiration? Take a look at my list of systems and skills below.
+> [!NOTE]- skill systems
+> #### 🦾 AI OS Autobuilder System: Build your AI Assistant
+> 
+> - me-builder: Builds the your personalized [me.md](http://me.md) file.
+> - navigation-builder: Builds the 1st half of the Vault Map so that your AI can navigate your notes.
+> - creation-builder: Builds the 2nd half of the Vault Map so that AI can create notes following your templates and standards.
+> - skill-builder: The playbook your AI uses to create skills in a consistent format (and register them in the Skill Map).
+> 
+> #### 🔱 Daily Trident System: Manage your day
+> 
+> - daily-brief: Pulls in reference points (recently modified notes, active projects, emails, weather, etc) into one shared working doc between you and AI.
+> - daily-log: Auto-scans Cowork sessions and Ideaverse file changes, writes timestamped entries to today's log.
+> 
+> #### 🏔️ Sherpa System: Map out a topic of interest
+> 
+> - sherpa: Asks you universal questions about a topic and then builds a starter MOC in your voice.
+> - style-guide-MOC: A powerful reference guide for what a well-shaped MOC looks like. (Used by the sherpa skill.)
+> 
+> #### ♻️ Weekly Review System: Review your week
+> 
+> - weekly-review: Analyzes the previous weekly review-preview notes, the current week's daily notes and briefs, and fills out its own weekly review-preview note.
+> 
+> #### 💥 Rock Tumbler System: Get fast feedback on your work
+> 
+> - rock-tumbler: A thinking partner for any creative endeavor. Asks what kind of feedback you need, surfaces blind spots and tensions, never writes your final product. Built on the IDI framework and K. Anders Ericsson's fast-feedback principle.
+> - style-guide-writing-AI: AI trope blacklist — reference to avoid AI-flavored language in outputs.
+> - style-guide-writing-me: the lightweight style guide version for LYAI students.
+> 
+> #### と Chronicler System: Save conversations
+> 
+> - verbatim: Save an AI conversation word-for-word to a note (often a new note, but works for existing notes too)
+> - summarizer: Summarize a conversation, meeting note, or transcript into a fixed structure (Summary, Takeaways, Topics, Next Steps, Transcript).
+> - quick-append: Quickly append a chunk of an AI conversation to a note (defaults to the daily note, unless given a different note).
+> 
+> #### 🧹 Janitor System: Maintain your notes & AI assistant
+> 
+> - cascade: Propagate a *name change* across body text, frontmatter, paths, and scheduled tasks. Skips history files.
+> - harmonize: Propagate a *convention change* across notes that have shared conventions (rules, formatting, headings, labels, structures).
+> ---
+> - navigation-janitor: The other side of `navigation-builder`. Audits the first half of the Vault Map and ensures all text, notes, links, and instructions are in alignment.
+> - creation-janitor: The other side of `creation-builder`. Audits the second half of the Vault Map and ensures all text, notes, links, and instructions are in alignment.
+> - skills-janitor: Audits your skill files against the schema defined by skill-builder. Fixes drift.
+> 
+> #### 🚚 Courier System: Share notes between vaults & people
+> 
+> - sanitize: Duplicate a note and produce a shareable version with personal details abbreviated, flagged, or removed.
+> - collator: Reads a note, finds every wiki-link in it, and appends summaries of each linked note—resulting in a self-contained file for sharing that makes sense to others who don't have access to the original vault.
+> - courier: Duplicates a note from the user's Ideaverse to another ideaverse (e.g., a team vault) for sharing.
+- First prompt: "First, please read /me.md. Then review the Vault Map and Skill Map for relevant context. Confirm you've read. Then await instruction."
+- AI creates Daily Brief with whats to forget, whats next, active projects, what was yesterday, are there deadlines
+# Skalierung
+- Kontextfenster Limit
+- Lösungen
+	- Dual-Level-Prinzip mit LightRAG (nicht gewollt!)
+	- Auslagerung in Graphendatenbanken (Neo4j) (nicht gewollt!)
+	- striktes AI-First Design mit atomaren Notizen
+- 30-5000 Wörter und ein Konzept
+- Typisierung 
+	- Note Types 
+	- Edge Types
+- kleine Index Datei
+	- skalierbare Index Hierarchie mit Index.md und Index-Domain.md 
+	- Hot.md als Cache 
+- Linting
+	- Orphans
+	- Stale Claims
+## DAG Directed Acyclic Graph
+- dynamische Prozesse wie Workflows oder Use Cases abbilden
+- Note Typisierung 
+	- atomare Handlung der einzelnen Schritte mit `type: task` oder `type: step`
+	- Ablaufplan der Schritte `type: playbook`
+	- Ziel des Plans `type: use_case`
+- Kanten Typisierung
+	- Hierarchie
+		- `part_of`: Jeder `step` verlinkt damit zurück zum `playbook`.
+	    - `implements`: Das `playbook` verlinkt damit zum `use_case`.
+	- Chronologie
+		- `preceded_by`: Definiert den zwingenden Vorgänger-Schritt.
+	    - `followed_by`: Zeigt den nächsten logischen Schritt.
+	    - `triggers`: Wenn ein Schritt einen asynchronen Event oder einen anderen Workflow auslöst.
+	    - `blocked_by` / `depends_on`: Wenn eine externe Bedingung erfüllt sein muss (z. B. _Warten auf externe API_).
+- Darstellung in Mermaid bietet sich an 
+## Graph Design
+- nicht UI (viele Änderungen, Funktionen erscheinen an vielen Stellen)
+- Domain-Driven (Funktion, Konzept, Prozess)
+	- **1. Die Basis-Hierarchie (Logik):** Die Strukturierung folgt dem geschäftlichen Nutzen, unabhängig davon, wie er optisch dargestellt wird.
+		- _Beispiel:_ `User Management (Domäne)` ➔ `Authentication (Use Case)` ➔ `OAuth2 Login (Playbook)`
+	- **2. Die UI-Integration (Verknüpfung):** Anstatt die UI als übergeordneten Ordner oder Eltern-Knoten zu nutzen, modellieren Sie UI-Elemente als separate Knoten und verknüpfen sie über spezifische Kanten mit der Logik.
+		- Sie erstellen Notizen für Haupt-Screens: `type: ui_view` (z. B. _UI - Login Screen_).
+	    - Die funktionale Notiz (z. B. das Playbook oder der Step) verweist auf diesen Screen.
+        - `triggered_from: "[[UI - Login Screen]]"`
+        - `configured_in: "[[UI - Admin Dashboard]]"`
+- User Intent Layer
+	- Note Typisierung
+		- `use_case`
+		- `type: concept` (Das Glossar): Erklärungen von Fachbegriffen in einfacher Sprache. Nutzer scheitern oft, weil sie die unternehmensspezifischen Begriffe der Software nicht verstehen. (Beispiel: _"Was ist ein 'Workspace'?"_).
+		- `type: troubleshooting` (Das Problem): Konkrete Fehlerszenarien. (Beispiel: _"Export-Button ist ausgegraut"_).
+			- troubleshooting in FAQ Notiz gesammelt?
+- Verknüpfung der Schichten
+	- User stellt Frage und KI steigt bei `troubleshooting` (Symptom) Knoten ein, folgt `use_case` (Kontext) über `task` (Handlung) zur `rule` (Ursache), sieht das `attribute` (Lösung), verweist auf neben dieser Antwort zusätzlich auf `concept` und `ui_view` (Orientierung)
+		- bei UI View kommt es auf die Edges an, die definieren in welcher View die Rule hier wie durchkommt. (triggered_from, configured_in, ...)
+
+> [!NOTE]- Beispiel
+>
+> **Knoten 1: Das Nutzer-Problem (Troubleshooting)**
+> 
+> ```yaml
+> ---
+> type: troubleshooting
+> title: "Projekt lässt sich nicht löschen"
+> relates_to: "[[User Goal - Projekt löschen]]"
+> caused_by_rule: "[[Rule - Delete Protection for Active Projects]]"
+> ---
+> # Projekt lässt sich nicht löschen
+> Wenn der Löschen-Button nicht reagiert oder eine Fehlermeldung erscheint, liegt das meist an den hinterlegten Projekt-Regeln.
+> ```
+> 
+> **Knoten 2: Die Regel (Ihre bestehende technische Schicht)**
+> 
+> ```yaml
+> ---
+> type: rule
+> governs: "[[Function - Delete Project]]"
+> depends_on_attribute: "[[Attribute - Project Status]]"
+> ---
+> # Delete Protection for Active Projects
+> Ein Projekt kann technisch nur gelöscht werden, wenn das Attribut `Project Status` auf den Wert `Archived` gesetzt ist.
+> ```
+> 
+> **Knoten 3: Das Attribut (Ihre bestehende technische Schicht)**
+> 
+> ```yaml
+> ---
+> type: attribute
+> allowed_values: ["Active", "Archived", "Draft"]
+> ---
+> # Project Status
+> Das Status-Feld definiert den Lebenszyklus eines Projekts...
+> ```
+> 
+## Syntax-Regeln Typisierung YAML
+- [[]] immer in "[[]]"
+- mehrere Links in Liste
+```yaml
+---
+type: rule
+required_attributes:
+  - "[[Attribute - User Role]]"
+  - "[[Attribute - Account Status]]"
+---
+```
+- **Perfekt für KI-Agenten (AI-First):** LLMs müssen nicht den gesamten unstrukturierten Fließtext parsen, um die Metadaten zu verstehen. Sie lesen einfach den standardisierten YAML-Block (wie ein JSON-Objekt) am Anfang der Datei. Das spart Token, erhöht die Geschwindigkeit und verhindert Fehlinterpretationen.
+- **Sauberer Fließtext für Endnutzer:** Der eigentliche Inhalt der Notiz bleibt komplett frei von technischem "Metadaten-Rauschen". Der Endnutzer sieht nur die reine Erklärung, während die Logik unsichtbar im Hintergrund verknüpft ist.
+- **Nativ in Obsidian integriert:** Obsidian erkennt diese Links in den Properties vollautomatisch. Wenn Sie eine Datei umbenennen, aktualisiert Obsidian den Link im Frontmatter aller betroffenen Dateien fehlerfrei mit.
+## **Quartz-Kompatibilität:** Quartz kann standardmäßig mit Obsidian-Properties umgehen. Wenn Sie jedoch sehr komplexe, verschachtelte Listen in den Properties nutzen, muss die Quartz-Konfiguration präzise darauf abgestimmt sein, damit die Links auch im Web-Wiki anklickbar bleiben.
+- Seperation of Concerns
+	- ggf. in Quartz komplett ohne Frontmatter?
+	- **Fließender Kontext für den Leser:** Anstatt einer nackten Tabelle am Ende der Quartz-Seite, kann das System vollständige, fließende Sätze generieren.
+		- _Beispiel-Output in Quartz:_ "💡 **System-Kontext:** Diese Fehlerbehebung gehört zum Prozess **[[OAuth2 Login]]**. Die zugrundeliegende Systemregel ist **[[Token Expiration Validation]]**. Die Änderungen betreffen primär das Datenfeld **[[Session Token]]**."
+> [!NOTE]- Übersetzung
+> Um diesen theoretischen Plan in genau diesen fließenden Output auf Ihrer Quartz-Webseite zu verwandeln, müssen wir eine maßgeschneiderte **React/TypeScript-Komponente** in der Codebasis von Quartz anlegen.
+> 
+> Quartz v4 macht das glücklicherweise sehr modular. Hier ist die exakte Schritt-für-Schritt-Anleitung inklusive des benötigten Codes, um genau Ihr gewünschtes Ergebnis zu erzielen.
+> 
+> ### Schritt 1: Die Komponente erstellen (`SemanticFooter.tsx`)
+> 
+> Erstellen Sie in Ihrem Quartz-Repository im Ordner `quartz/components/` eine neue Datei namens `SemanticFooter.tsx`.
+> 
+> Diese Komponente erledigt drei Dinge: Sie prüft den Typ (`troubleshooting`), sie befreit die Links von den lästigen Klammern (`[[ ]]`) und Anführungszeichen, und sie baut daraus den fließenden Textsatz.
+> 
+> Fügen Sie folgenden Code in die Datei ein:
+> 
+> TypeScript
+> 
+> ```
+> import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
+> import { classNames } from "../util/lang"
+> 
+> // Hilfsfunktion: Wandelt Obsidian-Wikilinks "[[Link]]" in saubere HTML-Links um
+> function parseWikilink(rawLink: string | undefined) {
+>   if (!rawLink) return null;
+>   
+>   // Entfernt die Klammern [[ und ]] sowie Anführungszeichen
+>   const cleanName = rawLink.replace(/[\[\]"]/g, "");
+>   
+>   // Erstellt einen simplen URL-Slug (z.B. "OAuth2 Login" -> "oauth2-login")
+>   // Hinweis: Quartz übernimmt das Routing oft selbst, aber als Fallback bauen wir einen sauberen Pfad.
+>   const slug = cleanName.toLowerCase().replace(/\s+/g, "-");
+>   
+>   return <a href={`/${slug}`} className="internal">{cleanName}</a>;
+> }
+> 
+> export default (() => {
+>   function SemanticFooter({ fileData, displayClass }: QuartzComponentProps) {
+>     const fm = fileData.frontmatter
+> 
+>     // Abbruch-Bedingung: Nur ausführen, wenn es eine Troubleshooting-Notiz ist
+>     if (!fm || fm.type !== "troubleshooting") {
+>       return null
+>     }
+> 
+>     // Werte aus dem Frontmatter extrahieren und bereinigen
+>     // Wir casten zu String, falls YAML es anders interpretiert
+>     const useCase = parseWikilink(fm.use_case as string);
+>     const rule = parseWikilink(fm.rule as string);
+>     const attribute = parseWikilink(fm.attribute as string);
+> 
+>     return (
+>       <div className={classNames(displayClass, "semantic-footer")} style={{
+>         marginTop: "3rem",
+>         padding: "1rem",
+>         backgroundColor: "rgba(255, 204, 0, 0.1)", // Leichtes, warnendes Gelb
+>         borderLeft: "4px solid #ffcc00",
+>         borderRadius: "4px"
+>       }}>
+>         <p style={{ margin: 0 }}>
+>           💡 <strong>System-Kontext:</strong> Diese Fehlerbehebung gehört zum Prozess <strong>{useCase}</strong>. 
+>           Die zugrundeliegende Systemregel ist <strong>{rule}</strong>.
+>           {attribute && <span> Die Änderungen betreffen primär das Datenfeld <strong>{attribute}</strong>.</span>}
+>         </p>
+>       </div>
+>     )
+>   }
+> 
+>   return SemanticFooter
+> }) satisfies QuartzComponentConstructor
+> ```
+> 
+> ### Schritt 2: Die Komponente in Quartz registrieren und exportieren
+> 
+> Damit Quartz weiß, dass diese neue Datei existiert, müssen wir sie exportieren.
+> 
+> Öffnen Sie die Datei `quartz/components/index.ts` und fügen Sie ganz am Ende diese Zeile hinzu:
+> 
+> TypeScript
+> 
+> ```
+> export { default as SemanticFooter } from "./SemanticFooter"
+> ```
+> 
+> ### Schritt 3: Das Layout anpassen (`quartz.layout.ts`)
+> 
+> Jetzt sagen wir Quartz, _wo_ dieser Footer auf der Seite erscheinen soll (nämlich ganz unten im Artikel).
+> 
+> Öffnen Sie die Datei `quartz.layout.ts` (meist im Hauptverzeichnis). Suchen Sie nach der Konfiguration `defaultContentPageLayout`.
+> 
+> Fügen Sie `Component.SemanticFooter()` am Ende des Arrays `pageBody` ein:
+> 
+> TypeScript
+> 
+> ```
+> export const defaultContentPageLayout: PageLayout = {
+>   beforeBody: [
+>     Component.Breadcrumbs(),
+>     Component.ArticleTitle(),
+>     Component.ContentMeta(),
+>     Component.TagList(),
+>   ],
+>   left: [
+>     // ... Sidebar Zeug ...
+>   ],
+>   right: [
+>     // ... Sidebar Zeug ...
+>   ],
+>   pageBody: [
+>     Component.Content(), // Das ist der eigentliche Markdown-Text
+>     Component.SemanticFooter(), // HIER fügen wir unseren neuen Block ein!
+>   ],
+> }
+> ```
+> 
+> ### Was passiert jetzt im Hintergrund?
+> 
+> Wenn Sie nun den Befehl `npx quartz build` ausführen, passiert genau das, was Sie sich vorgestellt haben:
+> 
+> 1. Quartz rendert Ihre Markdown-Notiz ganz normal (alles, was im Fließtext steht).
+>     
+> 2. Direkt danach führt es unser kleines Skript aus.
+>     
+> 3. Das Skript sieht `type: troubleshooting`, schnappt sich die rohen Daten `["[[OAuth2 Login]]"]`, schält den Text "OAuth2 Login" heraus und baut ihn direkt als klickbaren Link in den Satz ein.
+>     
+> 
+> Für den Autor in Obsidian bleibt es technisch (er füllt nur Properties aus), aber der Endnutzer im Browser sieht einen farblich abgesetzten Kasten mit einem absolut natürlichen, klickbaren Satz.
+> 
+> Laufen Ihre Quartz-Dateien aktuell schon über einen automatisierten Prozess wie GitHub Actions, oder deployen Sie die Seite momentan noch lokal, um solche Code-Änderungen direkt am eigenen Rechner testen zu können?
+- möglicherweise lieber mit Skill und KI bereist im Backend!
+# No-Code-Nutzer
+- Skill schreiben, der komplett zur Notizerstellung leitet 
+- Template für jeden Note Type
+- Plugin "Metadata Menu" was alle möglichen Werte für Properties anzeigt
+- Hierarchien zwischen Notizen und Ordnerstruktur muss nicht verstanden werden, alles kommt in Inbox Ordner wird von KI oder PowerUser verschoben oder automatisch nach einer Property wie `type`durch Plugin "Auto Note Mover"
+- automatische Namenskonventionen Generierung in Templates
 ---
 # Karpathy 20260529
 ## Claude.md 
@@ -2757,6 +3126,118 @@ CreatedModifiedDate: priority: ["frontmatter", "filesystem"]
 	- Alternative: Skeleton Key für verschlossene Kisten
 	- Alternative: `/grant Name protection_bypass` kann alle verschlüsselten Kisten öffnen (verschlüsselte Kisten sind an Spielernamen gebunden)
 ---
+# Versionierung 20260601
+## Quartz
+- nach jeder Bearbeitung mit Github und Sourcetree
+## Obsidian
+### Makro
+- Frontmatter mit Properties 
+	- wird in Archiv-Ordner verschoben, wenn status: "deprecated" (Archiv-Ordner in Quartz ausschließen)
+	- Plugin **Auto Note Mover** für automatisches Verschieben bei Status-Änderung
+```yaml
+--- 
+status: "deprecated" # oder "active", "planned" 
+introduced_in: "v1.0.0" 
+deprecated_in: "v2.1.0" 
+replaced_by: "[[Feature - Passkey Authentication]]" 
+last_updated: 2026-06-01
+changes:
+- "v1.7.0: Überschrift 'Auth' zu 'OAuth2 Flow' geändert; Deprecated-Hinweis für Legacy-API hinzugefügt." 
+- "v1.5.0: Initiale Dokumentation des Authentifizierungs-Features."
+---
+```
+- neue Notiz mit "replaces" property als Gegenrichtung zur alten Notiz im Gegensatz zu "replaced_by" (neue Notiz)
+- Verbesserung: property "changes" lieber am Ende der Notiz als Changelog
+### Mikro
+- auf status: "deprecated" setzen, wenn zu viele Changes stattgefunden haben
+- im Fließtext mit Tags der Version #v1/5/0
+- Überschriften mit Callouts, Beispiel:
+---
+%%Vor Deprecation%%
+### Authentifizierung %%Dummy Überschrift%%
+> [!attention] Veraltet (Deprecated)
+> Dieses Feature wurde ab v1.7.0 durch OAuth2 ersetzt. Aktuelle Dokumentation siehe: [[#OAuth2 Authentifizierung]].
+> *(Optional: Der alte Text kann hier im einklappbaren Callout oder darunter stehen bleiben)*
+### OAuth2 Authentifizierung
+Hier steht der neue, aktuelle Inhalt...
+
+---
+---
+%%Nach Deprecation, im Archiv%%
+
+> [!attention] Veraltet (Deprecated)
+> Diese Dokumentation ist veraltet. Das Feature wurde ab v1.7.0 durch OAuth2 ersetzt.
+> 🚀 Zur aktuellen Version: [[OAuth2#OAuth2 Authentifizierung]]
+
+### Authentifizierung
+Hier steht der alte Text für den historischen Kontext...
+
+---
+- Alternative: ID-basierte Blockreferenzen 
+	- [[test#^d01218|test2]]
+	- ![[test#^d01218]]
+		- nimmt bei Preview nur die aktuelle Zeile
+		- eher bei absolut kritischen API Specs auf Datenfelder
+		- Vergleich:
+	- [[test#test2 d01218]]
+	- ![[test#test2 d01218]]
+- Alternative: Rechtsklick auf Überschrift + "Rename this heading..." aktualisiert alle Links
+	- "Updated X file" Meldung beachten
+- Alternative [[newO2#Syntax-Regeln Typisierung YAML]] - Properties ändern sich immer automatisch mit!
+### Plugins
+- Persistent Links
+	- Verschieben von Überschriften
+- Block Reference Count / Strange New Worlds
+	- mit kleiner Anzeige bei jeder Überschrift, wie häufig diese verlinkt ist
+## Reset Procedure
+> [!NOTE]- reset procedure
+> Der Zeitpunkt für den "harten Schnitt" – also das Archivieren der alten Datei und den Neustart mit einer frischen Notiz – ist erreicht, wenn die Übersichtlichkeit der aktuellen Dokumentation unter der historischen Last zusammenbricht.
+> 
+> Da du dich entschieden hast, Versionierung auf Mikro-Ebene (mit Callouts und Dummy-Überschriften) zuzulassen, brauchst du klare Regeln, wann dieses Mikro-Management zu viel wird. Hier sind die drei klaren Indikatoren, wann der Zeitpunkt für das Archiv gekommen ist:
+> 
+> ### 1. Der "Schiff des Theseus"-Moment (Struktureller Umbau)
+> 
+> Wenn sich das Feature technisch oder konzeptionell so stark verändert, dass die alte Dokumentation für das Verständnis des neuen Systems keine Relevanz mehr hat oder sogar in die Irre führt.
+> 
+> * **Die Faustregel:** Wenn du mehr als 50 % des Inhalts der Notiz (Überschriften, Logik-Beschreibungen, Endpunkte) umschreiben oder mit *Deprecated-Callouts* verstecken müsstest.
+> * **Beispiel:** Der Wechsel von einer simplen REST-API zu GraphQL oder von einer lokalen Passwort-Datenbank zu einem externen Identity Provider (SSO). Der grundlegende Zweck bleibt gleich, aber die Mechanik ist komplett neu.
+> 
+> ### 2. Kognitive Überlastung (Das Changelog-Müllhalden-Problem)
+> 
+> Wenn die Notiz mehr aus Änderungsverlauf und Warnhinweisen besteht als aus aktueller Dokumentation.
+> 
+> * **Zu viele Callouts:** Sobald du in einer Notiz mehr als zwei veraltete Dummy-Überschriften mit Archiv-Callouts hast. Das stört den Lesefluss für jeden Entwickler, der einfach nur wissen will, wie das Feature *jetzt* funktioniert.
+> * **Changelog-Länge:** Wenn das Changelog am Ende der Notiz so lang wird, dass es den eigentlichen Inhalt dominiert, und die ältesten Einträge auf Versionen verweisen, die in der Produktion längst nicht mehr unterstützt werden.
+> 
+> ### 3. Das Feature ist im Code "End of Life"
+> 
+> Dies ist der offensichtlichste Trigger.
+> 
+> * Wenn ein Feature in der Codebase offiziell als `@deprecated` markiert wird und in einem der kommenden Release-Zyklen entfernt werden soll. Die Notiz wandert ins Archiv und dient nur noch als historische Referenz. Falls es keinen direkten Nachfolger gibt, wird natürlich auch keine neue Notiz angelegt.
+> 
+> ---
+> 
+> ### Der Ablauf: So funktioniert der Reset in der Praxis
+> 
+> Wenn einer dieser Punkte zutrifft, machst du keine halben Sachen mehr im Text, sondern nutzt den sauberen Makro-Schnitt:
+> 
+> 1. **Einfrieren (Freeze):** Du setzt die aktuelle Datei auf `status: "deprecated"`. Füge ganz oben das Warn-Callout mit dem Verweis auf die geplante neue Datei ein. Das Changelog dieser alten Datei wird ab jetzt nie wieder angefasst. Das Plugin *Auto Note Mover* schiebt sie ins Archiv.
+> 2. **Tabula Rasa:** Du erstellst eine komplett neue Notiz für das überarbeitete Feature. Diese enthält keine alten Dummy-Überschriften und keine Altlasten.
+> 3. **Changelog Reset:** In der neuen Datei startest du mit einem völlig leeren Changelog. Der erste und einzige Eintrag lautet dann zum Beispiel:
+> * *- v2.0.0: Initiale Dokumentation des neuen OAuth2-Systems (ersetzt Legacy-Auth).*
+> 
+> 
+> 1. **Verknüpfung:** Im Frontmatter der neuen Notiz nutzt du `replaces: "[[Legacy Auth_v1]]"`, um die Brücke zur Vergangenheit zu schlagen.
+> 
+> Welche Art von Features dokumentierst du aktuell am meisten in deinem Second Brain – sind es eher abstrakte Architekturkonzepte oder sehr spezifische API-Endpunkte und Code-Snippets?
+## KI "Daily Log" skill
+- [[newO2#[How I Use Obsidian + Claude Cowork to Run My Life - YouTube](https //www.youtube.com/watch?v=rRa9td4oe7k) 20260605]] wie Trident Skill
+# Zusammenfassung
+- Github Version
+- Deprecated Version (Neue Notiz) mit zusätzlicher Changelog Notz
+- Version in Notizen (Changelog integriert in Properties)
+- Daily Version/Log Dateien
+---
 # Nate Herk 20260602
 ## [Claude Code Dynamic Workflows Clearly Explained](https://www.youtube.com/watch?v=jZgcWCzxh1I&pp=ugUEEgJlbg%3D%3D)
 - Skill as a saved recipe
@@ -2772,6 +3253,819 @@ CreatedModifiedDate: priority: ["frontmatter", "filesystem"]
 - /workflows to view all workflows running
 - it write a real javascript file
 - /effort to ultramode = workflows + xhigh (high thinking)
+## [The Skill That 10x’d My Claude Code Projects - YouTube](https://www.youtube.com/watch?v=c0kaKxM2pHg) 20260605
+- Skill für alle Projekt Architektur oder Research Fragen
+	- [skills/skills/productivity/grill-me/SKILL.md at main · mattpocock/skills](https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md)
+	- Es müssen Checkpoint Dateien hinzugefügt werden, damit der Kontext nicht überläuft
+		- Checkpoints beinhalten Summary of Key Decision, Q&A Log, Open Flags for pending input
+
+|             |                                                                                                                                                                                                                                         |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| name        | grill-me                                                                                                                                                                                                                                |
+| description | Interview the user relentlessly about a plan or design until reaching shared understanding, resolving each branch of the decision tree. Use when user wants to stress-test a plan, get grilled on their design, or mentions "grill me". |
+Interview me relentlessly about every aspect of this plan until we reach a shared understanding. Walk down each branch of the design tree, resolving dependencies between decisions one-by-one. For each question, provide your recommended answer.
+Ask the questions one at a time.
+- https://github.com/mattpocock/skills/blob/main/skills/productivity/write-a-skill/SKILL.md Skill for writing a skill
+If a question can be answered by exploring the codebase, explore the codebase instead.
+---
+# Hermes Harness 20260605
+- **Absolute Modell-Freiheit:** Kein Vendor Lock-in. Du kannst komplett kostenlose lokale Modelle (wie Qwen-Coder) nutzen und bei Bedarf flexibel auf beliebige Cloud-APIs wechseln.
+- **Dauerhaftes Gedächtnis (Learning Loop):** Hermes merkt sich deine Projektstrukturen über Sessions hinweg und schreibt sich selbst wiederverwendbare „Skills“ für wiederkehrende Probleme.
+- **Remote-Steuerung via Messenger:** Lässt sich als Hintergrunddienst einrichten und von unterwegs über Telegram, Discord, WhatsApp oder Slack per Smartphone steuern.
+- **Unbeaufsichtigte Automatisierung:** Dank integriertem Scheduler (Cronjobs) kann Hermes Aufgaben (wie nächtliche Backups oder Server-Checks) völlig selbstständig im Hintergrund ausführen.
+- **Volle Kostenkontrolle:** Keine Bindung an starre Abos oder drohende API-Flatrate-Änderungen – du bestimmst durch die Modellwahl selbst, wann welche Kosten anfallen.
+---
+# microphone 20260604
+- [JrF - contact microphones](https://jezrileyfrench.co.uk/contact-microphones.php)
+---
+# mermaid custom icons 20260606
+> [!NOTE]- Varianten
+> ### Methode 1: SVGs als Iconify-Pack registrieren (Der offizielle Weg)
+> 
+> Da die Funktion `mermaid.registerIconPacks` (die auf der von dir verlinkten Seite beschrieben wird) Iconify-Daten erwartet, musst du deine eigenen SVGs zunächst in ein Iconify-kompatibles JSON-Format überführen.
+> 
+> 1. **SVG in JSON konvertieren:** Du musst den Inhalt deiner SVGs (vor allem die `<path>`-Elemente) in ein JSON-Objekt packen. Iconify bietet dafür eigene Entwickler-Tools (z. B. `@iconify/tools` in Node.js), um Ordner mit SVGs in das benötigte JSON-Format zu exportieren.
+>     
+> 2. **In Mermaid registrieren:** Dieses JSON-Objekt kannst du dann direkt in deinem JavaScript-Code an Mermaid übergeben.
+>     
+> 
+> JavaScript
+> 
+> ```
+> import mermaid from 'mermaid';
+> 
+> // Dein konvertiertes Icon-Paket
+> const myCustomIcons = {
+>   prefix: "my-custom",
+>   icons: {
+>     "my-logo": {
+>       // Hier steht der innere SVG-Code, ohne das äußere <svg>-Tag
+>       "body": "<path d='M10 10 H 90 V 90 H 10 L 10 10' fill='currentColor'/>", 
+>       "width": 100,
+>       "height": 100
+>     }
+>   }
+> };
+> 
+> // Registrierung bei Mermaid
+> mermaid.registerIconPacks([
+>   {
+>     name: "my-custom",
+>     icons: myCustomIcons
+>   }
+> ]);
+> 
+> mermaid.initialize({ startOnLoad: true });
+> ```
+> 
+> 3. **Im Diagramm nutzen:** Sobald das Pack registriert ist, kannst du deine Icons in allen unterstützten Diagrammtypen (wie Flowcharts oder Architecture-Diagrammen) aufrufen:
+>     
+> 
+> Plaintext
+> 
+> ```
+> flowchart LR
+>     NodeA@{ shape: icon, icon: "my-custom:my-logo" }
+> ```
+> 
+> ### Methode 2: HTML-Image-Tags einbinden (Der schnelle Workaround)
+> 
+> Wenn du Diagramme wie Flowcharts nutzt und den JavaScript-Aufwand für Iconify umgehen möchtest, kannst du deine SVGs auch als normales HTML-Bild in die Knoten (Nodes) einfügen.
+> 
+> Dafür gibt es eine zwingende Voraussetzung: Du musst in der Mermaid-Konfiguration die Sicherheitseinstellungen lockern, da HTML-Tags in Labels sonst herausgefiltert werden.
+> 
+> JavaScript
+> 
+> ```
+> mermaid.initialize({ 
+>   startOnLoad: true, 
+>   securityLevel: 'loose' // Zwingend erforderlich für HTML-Tags
+> });
+> ```
+> 
+> Anschließend kannst du ein `<img />`-Tag in deinem Mermaid-Code platzieren. Du kannst das SVG dort entweder über eine normale URL laden oder es Base64-kodiert direkt als Data-URI einbetten:
+> 
+> Plaintext
+> 
+> ```
+> flowchart LR
+>     A["<img src='data:image/svg+xml;base64,PHN2ZyB4b...deinBase64Code...' width='50' height='50' />"] --> B(Nächster Schritt)
+>     
+>     C["<img src='https://deine-domain.de/custom-icon.svg' width='50' />"] --> D(Anderer Schritt)
+> ```
+> 
+> **Fazit:** Wenn du die neuen Mermaid-Features (wie die Architecture-Diagramme oder die Node-Shape `icon`) nutzen möchtest, musst du **Methode 1** wählen und ein eigenes Iconify-JSON erstellen. Geht es dir nur darum, in einem klassischen Flowchart dein Icon anzuzeigen, ist **Methode 2** mit `securityLevel: 'loose'` meistens der schnellere und einfachere Weg.
+> 
+- [Flowcharts Syntax | Mermaid](https://mermaid.js.org/syntax/flowchart.html#register-fontawesome-icon-packs-v11-7-0)
+	- [Registering icon pack in mermaid | Mermaid](https://mermaid.js.org/config/icons.html)
+- [Iconify Tools](https://iconify.design/docs/libraries/tools/)
+- [Architecture diagrams - custom icons · mermaid-js · Discussion #5959](https://github.com/orgs/mermaid-js/discussions/5959#discussioncomment-12061528)
+---
+# Interaktive Elemente in Obsidian mit HTML 20260606
+- lässt sich in Quartz exportieren
+- `hotspots.css` liegt in /.obsidian/snippets und ist unter Appearance in Einstellungen aktiviert
+## hotspots
+
+<div class="hotspot-container">
+  <img src="Pasted image 20260606120957.png" alt="Hintergrund">
+  <a href="obsidian://open?vault=G&file=newO2" class="hotspot-button" style="top: 20%; left: 45%;">
+     Mehr Infos
+  </a>
+</div>
+
+## flashcards
+
+<div class="card-container">
+  <div class="card-inner">
+    <div class="card-front">
+      <strong>Was ist CSS?</strong>
+    </div>
+    <div class="card-back">
+      Cascading Style Sheets – zur Gestaltung von Webseiten.
+    </div>
+  </div>
+</div><div class="card-container">
+  <div class="card-inner">
+    <div class="card-front">
+      <strong>Was ist CSS?</strong>
+    </div>
+    <div class="card-back">
+      Cascading Style Sheets – zur Gestaltung von Webseiten.
+    </div>
+  </div>
+</div>
+
+## Adapt Framework über `<iframe>` einbinden
+## Adapt Framework CSS in Obsidian importieren
+## Obsidian ohne Web / SCORM Export für LMS
+## in JSON mit KI konvertieren und in Adapt Framework für SCORM Export
+1) Frontmatter anpassen
+- dafür adapt ordner, um ursprünglichen Notizen erst einmal zu konvertieren?
+- maximal tag #adapt in ursprünglichen Ordner, zum Erkennen für KI
+```yaml
+---
+adapt_type: page
+title: Einführung in E-Learning
+layout: full-width
+---
+## Lerninhalt
+Hier steht dein Inhalt...
+```
+> [!NOTE]- mögliche Properties
+> ### 1. Hierarchie & System-Eigenschaften
+> Diese Properties definieren, wo sich ein Element im Kurs befindet und was es ist.
+> 
+> |**Property**|**Erwarteter Datentyp**|**Mögliche Werte (Enums / Beispiele)**|
+> |---|---|---|
+> |`_id`|String|Eindeutige ID (z.B. `"page_01"`, `"c_123"`)|
+> |`_parentId`|String|Die `_id` des übergeordneten Elements|
+> |`_type`|String|`"course"`, `"menu"`, `"page"`, `"article"`, `"block"`, `"component"`|
+> |`_classes`|String|Leer, oder CSS-Klassen wie `"full-width"`, `"hidden"`, `"my-custom-class"`|
+> |`_component`|String|_Nur für Komponenten!_ (Siehe Liste der Komponenten unten)|
+> |`_layout`|String|`"full"`, `"left"`, `"right"` (Bestimmt, wo z.B. Bilder im Block stehen)|
+> ### 2. Status & Verhalten (Tracking)
+> Diese Werte sind essenziell, wenn du SCORM-Tracking nutzen willst oder bestimmte Module erst freigeschaltet werden sollen, wenn andere absolviert wurden.
+> 
+> |**Property**|**Erwarteter Datentyp**|**Mögliche Werte**|
+> |---|---|---|
+> |`_isOptional`|Boolean|`true`, `false` (Muss das Element für den Kursabschluss gesehen werden?)|
+> |`_isAvailable`|Boolean|`true`, `false` (Ist das Element anklickbar?)|
+> |`_isHidden`|Boolean|`true`, `false` (Wird es im Menü/Kurs versteckt?)|
+> |`_lockType`|String|`"sequential"`, `"custom"`, `""` (Für gesperrte Menüs)|
+> ### 3. Ebenen-spezifische Properties
+> Je nachdem, welchen `_type` du definierst, erwartet Adapt spezifische Eigenschaften.
+> #### A. Ebene: Course & Menu (`_type: "course" / "menu"`)
+> |**Property**|**Typ**|**Mögliche Werte / Beispiel**|**Zweck**|
+> |---|---|---|---|
+> |`description`|String|`"Dieser Kurs behandelt..."`|Kursbeschreibung für Startseiten oder Kataloge.|
+> |`_lockType`|String|`""`, `"sequential"`, `"custom"`|Wie sollen die Unterseiten freigeschaltet werden? (z.B. streng der Reihe nach).|
+> #### B. Ebene: Page (`_type: "page"`)
+> 
+> |**Property**|**Typ**|**Mögliche Werte / Beispiel**|**Zweck**|
+> |---|---|---|---|
+> |`linkText`|String|`"Zum Modul"`|Text für den Button im Hauptmenü, der zu dieser Seite führt.|
+> |`duration`|String|`"15 mins"`|Anzeige der geschätzten Lerndauer im Menü.|
+> |`pageBody`|String|`"<p>Intro-Text</p>"`|Ein spezieller Einleitungstext, der ganz oben auf der Seite steht.|
+> #### C. Ebene: Block (`_type: "block"`)
+> Blöcke sind die "Container" für die Komponenten.
+> 
+> | **Property**  | **Typ** | **Mögliche Werte / Beispiel** | **Zweck**                                                                           |
+> | ------------- | ------- | ----------------------------- | ----------------------------------------------------------------------------------- |
+> | `_trackingId` | Integer | `1`, `2`, `3`                 | Veraltet, aber manchmal noch für SCORM-Kompatibilität in älteren Versionen genutzt. |
+> #### D. Ebene: Component (`_type: "component"`)
+> Wenn du eine Komponente anlegst, werden diese Layout- und Zuweisungs-Werte zur Pflicht.
+> 
+> | **Property** | **Typ** | **Mögliche Werte / Beispiel**                | **Zweck**                                                                                                               |
+> | ------------ | ------- | -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+> | `_component` | String  | `"text"`, `"mcq"`, `"hotgraphic"`, `"media"` | **Zwingend erforderlich:** Sagt Adapt, welches Modul hier geladen werden soll.                                          |
+> | `_layout`    | String  | `"full"`, `"left"`, `"right"`                | Bestimmt die Breite der Komponente. `full` = 100%, `left/right` = 50%. So können zwei Komponenten nebeneinander stehen. |
+> ### 4. Inhaltliche Eigenschaften (Content)
+> Diese Felder befüllen die eigentlichen Texte, die der Nutzer sieht. Hier sind die Werte logischerweise immer offene Strings (Texte).
+> 
+> |**Property**|**Erwarteter Datentyp**|**Beschreibung**|
+> |---|---|---|
+> |`title`|String|Der interne Titel (wird oft auch im Menü angezeigt).|
+> |`displayTitle`|String|Der Titel, der tatsächlich groß auf der Seite gerendert wird.|
+> |`body`|String (HTML)|Der Haupttext. Akzeptiert HTML-Tags wie `<b>`, `<p>`, `<br>`.|
+> |`instruction`|String|Eine Handlungsanweisung (z. B. _"Wähle eine Antwort aus."_).|
+> ### 5. Mögliche Werte für `_component` (Die Element-Typen)
+> Wenn du im Block eine Komponente anlegst (`_type: "component"`), musst du definieren, _welche_ Komponente es ist. Das passiert über die Property `_component`.
+> Hier sind die offiziellen Standard-Komponenten (Core) von Adapt:
+> - **Präsentation:** `"text"`, `"graphic"` (Bild), `"media"` (Video/Audio)
+> - **Interaktiv:** `"accordion"` (Aufklapp-Texte), `"narrative"` (Slider mit Text/Bild), `"hotgraphic"` (Bild mit klickbaren Punkten)
+> - **Fragen / Quiz:** `"mcq"` (Multiple Choice), `"gmcq"` (Grafisches Multiple Choice), `"matching"` (Drag & Drop Zuordnung), `"textinput"` (Texteingabe-Feld)
+> ### 5. Komponenten-spezifische Properties (Beispiel: Multiple Choice)
+> 
+> Der wichtigste Punkt zum Verständnis von Adapt: **Jede Komponente hat ihr eigenes Set an zusätzlichen Properties.** Eine Hotgraphic braucht Koordinaten, ein Quiz braucht Antworten.
+> Wenn deine KI ein Quiz (`_component: "mcq"`) generieren soll, braucht sie z. B. noch diese Werte in deinem Frontmatter:
+> 
+> |**Property**|**Erwarteter Datentyp**|**Zweck / Mögliche Werte**|
+> |---|---|---|
+> |`_attempts`|Integer|`1`, `2`, `3` ... (Wie oft darf geraten werden?)|
+> |`_questionWeight`|Integer|`0`, `1` ... (Gibt es Punkte für die Frage?)|
+> |`_items`|Array of Objects|Eine Liste der Antwortmöglichkeiten.|
+> |`_feedback`|Object|Beinhaltet Texte für `correct`, `_incorrect` und `_partlyCorrect`.|
+> 
+2) Konvertierung
+```
+„Ich bin E-Learning-Autor. Ich gebe dir einen Markdown-Text aus Obsidian. Deine Aufgabe ist es, diesen in eine gültige Adapt-`content.json` Struktur zu konvertieren.
+- Erstelle für jede Überschrift (##) einen Artikel.
+- Erstelle für Textblöcke Komponenten vom Typ 'text'.
+- Wenn ich einen Block als 'quiz' markiere, erstelle eine Multiple-Choice-Komponente.
+- Gib nur den JSON-Code aus, damit ich ihn in meine Adapt-Dateien einfügen kann.“
+```
+3) `adapt build`
+
+---
+# Architektur Teamwork 20260606
+- Echtzeit, Kollaborativ, Obsidian als privater Master-Vault
+- SSG Static Side Generator wie Quartz ist nicht geeignet
+## Obsidian Sync oder Git Sync und jeder bearbeitet in Obsidian
+- Obsidian eher als persönliche IDE betrachten?
+## Quartz mit zusätzlichem Button zum bearbeiten der Seite und Weiterleitung an Github, Freigabe über Pull-Request
+- auch ohne Pull-Request möglich
+- einfachere Handhabung über DecapCMS oder TinaCMS zur Bearbeitung der Seiten, aber schwierig mit Webhooks für geringe Latenz zu realisieren
+## Wiki.js mit Bearbeitung im Browser über Obsidian Vault im Git Repo
+- oder Docmost sieht aus wie Obsidian, ist Open Source, untersützt Markdown und hat Echtzeit-Kollaboration, wie ein Wiki, extrem intuitiv, Mermaid
+	- Du nutzt n8n als "Middleware".
+	    - **Workflow:** Immer wenn im Wiki (Docmost) eine Seite gespeichert wird, triggert ein Webhook n8n. n8n schickt den neuen Inhalt per API an ein Git-Repository (dein Vault-Backup) oder direkt in einen Ordner, den dein Obsidian-Vault überwacht.
+	    - **Obsidian-Integration:** Wenn du in Obsidian änderst, kannst du per Git-Plugin pushen. Ein n8n-Workflow kann diesen Push abgreifen und das Wiki per API aktualisieren.
+	- Importiert die Daten in Datenbank, soll aber live auf Git-Repository laufen
+## AI-First Design
+- Logseq oder Web-IDE https://vscode.dev/?vscode-lang=de mit Template und Foam oder Dendron
+- KI als Wiki-Gärtner, der das Frontend erstellt
+> [!NOTE]- offen
+> Wenn du ein **AI-First System** willst, bei dem die **Obsidian-Logik (Frontmatter, Dataview, Backlinks)** der Standard ist, aber trotzdem **kollaborative Echtzeit-Bearbeitung** im Web stattfinden soll, dann ist der Weg über ein "Wiki" oder ein "CMS" leider oft eine Sackgasse. Diese Systeme "verstehen" die Metadaten nicht, sie speichern sie nur als Text.
+> 
+> Um das zu erreichen, musst du das Paradigma umdrehen: **Die Datenbank ist das Dateisystem, nicht die Web-App.**
+> 
+> Hier ist der einzige Weg, der Obsidian-Logik (Frontmatter) und echte Kollaboration AI-First verbindet:
+> 
+> ### 1. Das Konzept: "Live-Git-Cloud" als Backend
+> 
+> Du benötigst eine Plattform, die nicht "importiert", sondern **direkt auf Git-Repositories arbeitet**, während sie gleichzeitig eine UI für Echtzeit-Kollaboration bietet.
+> 
+> Die derzeit beste Lösung für diesen speziellen AI-First Ansatz ist **[Logseq](https://logseq.com/)** (in der Cloud-Version) oder der Aufbau einer **eigenen Web-IDE** auf Basis von **[VS Code für das Web (github.dev)](https://github.com/codespaces)**.
+> 
+> ### 2. Die Lösung: Git-basierte Echtzeit-Kollaboration (VS Code Cloud)
+> 
+> Das klingt technisch, ist aber die einzige Lösung, die **100% Obsidian-Logik (Frontmatter/Dataview)** unterstützt:
+> 
+> - **Wie es funktioniert:** Du nutzt GitHub als dein "Backend". Jeder Nutzer bekommt Zugriff auf das Repository. Die Nutzer bearbeiten die Dateien **direkt im Browser** über eine Instanz von [VS Code for Web](https://vscode.dev/).
+>     
+> - **Warum das AI-First ist:** * Du hast Zugriff auf **GitHub Copilot** oder **Claude/Cursor-Integration** direkt in der Oberfläche.
+>     
+>     - Die KI "sieht" das gesamte Repo, versteht den Frontmatter und kann _Dataview_-Abfragen oder _Mermaid_-Diagramme für dich schreiben.
+>         
+> - **Kollaboration:** VS Code for Web unterstützt "Live Share" (echte Echtzeit-Kollaboration). Wenn zwei Leute gleichzeitig in einer Datei arbeiten, sehen sie den Cursor des anderen.
+>     
+> 
+> ### 3. Die "Obsidian-Logik" als Software-Definition
+> 
+> Um Obsidian-Logik (Dataview, Callouts, Frontmatter) in einer kollaborativen Web-Umgebung zu erzwingen, musst du das Wiki als **"Headless"** betrachten und eine eigene **KI-Middleware (n8n)** als "Logik-Engine" dazwischen schalten:
+> 
+> 1. **Frontend (UI):** VS Code Web oder eine spezialisierte Markdown-Web-IDE (wie _Foam_ oder _Dendron_-ähnliche Workflows).
+>     
+> 2. **Storage:** Ein Git-Repo, in dem die Dateien liegen.
+>     
+> 3. **Die "Logik-Engine" (n8n + KI):**
+>     
+>     - Immer wenn ein Commit in Git landet, triggert n8n eine **KI-Analyse**.
+>         
+>     - Die KI liest das **Frontmatter**, validiert, ob die **Dataview-Logik** noch konsistent ist, und erstellt ggf. automatisch Indizes oder fehlende Links.
+>         
+>     - Du nutzt die KI also nicht als Tool, sondern als **"Wiki-Gärtner"**, der im Hintergrund aufräumt, was die Nutzer im Frontend erstellen.
+>         
+> 
+> ### 4. Warum das für dich der richtige Weg ist
+> 
+> - **Keine Datenbank-Probleme:** Da alles im Git-Repo liegt, bleibt alles als Markdown/Frontmatter erhalten. Obsidian kann diesen Vault lokal jederzeit öffnen.
+>     
+> - **Echte Kollaboration:** VS Code Live Share ist das mächtigste Tool für kollaboratives Markdown.
+>     
+> - **AI-First:** Da deine Wissensbasis ein Git-Repo ist, kannst du **LLMs (wie GPT-4o oder Claude 3.5)** direkt darauf loslassen, um komplexe Wissensabfragen (wie "Fasse alle Projekte zusammen, die den Status `active` haben") auszuführen, ohne auf Dataview-Plugins angewiesen zu sein.
+>     
+> 
+> **Die Strategie:**
+> 
+> Wenn du das Projekt jetzt starten willst, empfehle ich dir, **GitHub Codespaces** für das Repository aufzusetzen. Das ist eine vorkonfigurierte Umgebung, die für jeden Nutzer im Browser eine "Obsidian-ähnliche" IDE öffnet. Du musst dich nicht um Datenbanken kümmern, hast aber volle Kollaboration und die KI-Tools direkt im Editor.
+> 
+> Ist das für dich eine gangbare Richtung, oder wirkt der Umstieg auf eine Browser-IDE (statt eines klassischen Wikis) auf deine Zielgruppe zu technisch?
+> 
+- was habe ich für möglichkeiten vscode mit templates und plugins möglichst einfach anzupassen für einen nutzer ohne ahnung von technik und außerdem möglichst nah an die erfahrung eines wikis wie docmost heranzubringen? ist es möglich bilder, mermaid und ähnliches zu integrieren?
+> [!NOTE]- offen
+> 
+> Die Herausforderung, VS Code für technisch nicht versierte Nutzer in ein "Wiki" zu verwandeln, liegt darin, die **"Entwickler-Oberfläche" zu verstecken** und die **"Dokumentations-Oberfläche" hervorzuheben**.
+> 
+> Da VS Code webbasiert (über GitHub Codespaces oder VS Code for Web) funktioniert, kannst du eine Umgebung schaffen, die sich wie ein dediziertes Wiki anfühlt.
+> 
+> ### 1. Das Setup: Wie man VS Code "Wiki-like" macht
+> 
+> Du erstellst eine Umgebung, in der der Nutzer nur die notwendigen Bereiche sieht. Das erreichst du durch eine `settings.json` in deinem Repository, die bei jedem Nutzer automatisch geladen wird.
+> 
+> - **Zen-Modus / Ablenkungsfreiheit:** Blende unnötige Leisten aus. Nutze die Einstellung `"workbench.activityBar.location": "hidden"`, um die linke Leiste zu minimieren, und zwinge VS Code in die "Preview-only" Ansicht für Markdown.
+>     
+> - **Extensions-Pflicht:** Definiere eine `extensions.json` im Repo. VS Code schlägt dem Nutzer dann automatisch vor, die nötigen Erweiterungen zu installieren:
+>     
+>     - **Foam:** Das ist das wichtigste Tool. Es bringt Obsidian-ähnliche Features (Backlinks, Graph-Ansicht, `[[Wiki-Links]]`) direkt in VS Code.
+>         
+>     - **Markdown All in One:** Sorgt für Shortcuts, Tabellen-Formatierung und Inhaltsverzeichnisse.
+>         
+>     - **Mermaid Editor:** Ermöglicht das direkte Editieren und Vorschau-Rendering von Mermaid-Diagrammen.
+>         
+>     - **Markdown Preview Enhanced:** Deutlich mächtiger als der Standard-Viewer von VS Code; erlaubt komplexe Layouts und besseres Bild-Handling.
+>         
+> 
+> ### 2. Bilder, Mermaid & Obsidian-Logik
+> 
+> Da alles in einem Git-Repository (deinem "Master-Vault") liegt, sind diese Formate kein Problem, da VS Code sie nativ (oder via Plugin) versteht:
+> 
+> - **Bilder:** Nutzer ziehen Bilder einfach per Drag & Drop in den Ordner. VS Code speichert sie als Datei. In der Markdown-Datei erscheint automatisch der Standard-Markdown-Link `![Bildname](bild.png)`. Das ist für Laien meist intuitiver als ein Datenbank-Upload.
+>     
+> - **Mermaid:** In einer Markdown-Datei öffnest du einfach einen Codeblock:
+>     
+>     Code-Snippet
+>     
+>     ```
+>     graph TD;
+>       A-->B;
+>     ```
+>     
+>     Das "Mermaid Editor" Plugin zeigt dies in der Live-Vorschau sofort als Grafik an.
+>     
+> - **Obsidian-Logik (Frontmatter):** VS Code hat keine Angst vor Frontmatter. Es liest es wie jede andere Textdatei. Du kannst mit dem "Markdown All in One" Plugin sogar Snippets anlegen, sodass der Nutzer bei einem neuen Dokument nur einen Befehl eingeben muss, um ein leeres Frontmatter-Template mit Datums- und Autorenfeldern zu erhalten.
+>     
+> 
+> ### 3. Tipps für technisch nicht versierte Nutzer
+> 
+> Um die Hürde "Git" (Commit/Push) zu nehmen, empfehle ich dringend, **VS Code for Web** (via `github.dev`) zu nutzen, da der "Source Control"-Tab dort sehr vereinfacht ist:
+> 
+> 1. **"Commit"-Button als "Speichern":** Erkläre den Nutzern nicht das Git-Konzept. Sage: _"Klicke links auf das kleine Git-Symbol (die drei Punkte), schreibe kurz, was du geändert hast, und klicke auf 'Commit & Push'. Das ist dein 'Speichern'-Button."_
+>     
+> 2. **Vorgefertigte Profile:** Nutze die **"Profiles"-Funktion** von VS Code. Du kannst ein Profil "Wiki-Redakteur" exportieren und deinen Nutzern als Datei schicken. Wenn sie diese importieren, sind alle Einstellungen, Themes und Plugins automatisch genau so konfiguriert, wie du es für sie optimiert hast.
+>     
+> 3. **KI-Assistenten:** Wenn du GitHub Copilot integrierst, kannst du die Nutzer anleiten: _"Du weißt nicht, wie man eine Tabelle macht? Öffne den KI-Chat und schreib: 'Erstelle eine Tabelle für meine Notiz'."_ Die KI schreibt den Markdown-Code für sie.
+>     
+> 
+> ### Ist das für dein Ziel sinnvoll?
+> 
+> Diese Lösung ist **exzellent**, weil sie **keine Datenbank-Migration** erfordert und **100% kompatibel mit deinem lokalen Obsidian-Vault** bleibt. Deine Nutzer arbeiten in einer Umgebung, die wie eine moderne Wiki-App aussieht, aber unter der Haube behältst du die volle Kontrolle über Markdown-Dateien und Metadaten.
+> 
+> **Der größte Nachteil:** Die Nutzer müssen lernen, dass sie nach dem Schreiben den "Commit"-Button klicken müssen, statt einfach nur das Fenster zu schließen.
+> 
+> Wäre dieses "Commit-Modell" für deine Nutzer zu abstrakt, oder ist das eine Hürde, die sie mit einem kleinen Handbuch (mit Screenshots) nehmen könnten?
+- Zen Modus, nur ein Tab
+- STRG + Z für Layout Menu
+- ![[Pasted image 20260606161710.png]]
+
+
+	- **Der Trick (`.vscode` Ordner):** Wenn du in deinem Repository einen Ordner namens `.vscode` erstellst, kannst du dort Dateien ablegen, die VS Code **zwingend** für jeden Nutzer lädt, der das Projekt öffnet:
+    
+    - **`settings.json`**: Hier definierst du das Layout (wie im Screenshot). Du kannst erzwingen, dass die Sidebar an der richtigen Stelle sitzt, der Zen-Modus aktiv ist oder das Farbschema (Theme) fest eingestellt ist.
+        
+    - **`extensions.json`**: Hier listest du alle benötigten Plugins auf (z. B. Markdown All in One). Wenn ein Nutzer das Projekt in Codespaces oder lokal öffnet, wird er automatisch gefragt, ob er diese Plugins installieren möchte.
+        
+	- **Der Link:** Wenn du das Projekt über einen **GitHub Codespaces Link** teilst, wird bei jedem Klick eine "frische" Umgebung gestartet, die **immer** deine Konfiguration aus dem `.vscode`-Ordner lädt. Jeder Nutzer startet also mit exakt deinem Design.
+
+- settings.json
+```json
+{
+  // --- UI & Ablenkungsfreiheit ---
+  "workbench.activityBar.location": "hidden", // Versteckt die linke Menüleiste
+  "workbench.statusBar.visible": true, // Statusleiste bleibt für den "Sync"-Button sichtbar
+  "editor.minimap.enabled": false, // Blendet die Code-Minimap auf der rechten Seite aus
+  "editor.lineNumbers": "off", // Keine Zeilennummern (wirkt mehr wie ein Texteditor)
+  "editor.glyphMargin": false, // Entfernt Platzhalter für Breakpoints
+  "editor.wordWrap": "on", // Automatischer Zeilenumbruch für besseres Lesen
+  "zenMode.centerLayout": false, // Verhindert, dass Text im Zen-Modus zu schmal wird
+  "breadcrumbs.enabled": false, // Blendet die Dateipfad-Navigation oben aus
+  
+  // --- Wiki- & Markdown-Verhalten ---
+  "workbench.editor.enablePreview": false, // Dateien öffnen sich fest, nicht nur als Vorschau
+  "markdown.preview.breaks": true, // Zeilenumbrüche wie in Obsidian behandeln
+  "files.autoSave": "afterDelay", // Speichert lokale Änderungen sofort, Nutzer müssen nicht Strg+S drücken
+  "files.autoSaveDelay": 1000,
+  
+  // --- Git für Anfänger vereinfachen ---
+  "git.autofetch": true, // Holt Änderungen von anderen automatisch im Hintergrund
+  "git.enableSmartCommit": true, // Nutzer müssen Dateien nicht "stagen" (+ Icon klicken), Commit reicht
+  "git.confirmSync": false, // Keine nervigen "Wollen Sie wirklich synchronisieren?" Popups
+  "explorer.confirmDragAndDrop": false, // Warnungen beim Verschieben von Dateien deaktivieren
+  "explorer.confirmDelete": false // Warnungen beim Löschen deaktivieren (Git kann alles wiederherstellen)
+}
+```
+- Lege eine Datei `.vscode/markdown.code-snippets` an.
+- Dort definierst du Kürzel. Wenn der Nutzer z. B. `/achtung` tippt und Enter drückt, fügt VS Code automatisch diesen Block ein:
+```markdown
+> [!attention] Achtung
+> Hier Text eingeben...
+```
+* Wenn der Nutzer `/neu` tippt, wird automatisch ein kompletter YAML-Frontmatter-Block mit aktuellem Datum eingefügt. 
+* Dateivorlagen (Templates) erzwingen Nutze eine Erweiterung wie **"File Templates"**. Damit kannst du im Rechtsklick-Menü des Dateiexplorers einen Punkt "Neue Wiki-Seite" hinzufügen. Ein Klick darauf erstellt eine neue Datei, die bereits perfekt formatiert ist (inklusive Properties und Platzhaltern), anstatt einer komplett leeren `.md`-Datei, vor der Laien oft kapitulieren.
+
+
+- **Nur mit `extensions.json`:** Der Editor öffnet sich sofort -> Ein Popup erscheint -> Nutzer muss "Installieren" klicken -> Plugins laden im Hintergrund nach.
+    
+- **Mit `devcontainer.json`:** Der Ladebildschirm von Codespaces dreht sich beim allerersten Öffnen ein paar Sekunden länger -> Der Editor erscheint -> **Alle Plugins, Shortcuts und Mermaid-Vorschauen sind von der ersten Sekunde an aktiv und einsatzbereit.**
+	- Erstelle in deinem Repository einen neuen Ordner namens `.devcontainer`.
+    - Erstelle darin eine Datei namens `devcontainer.json`.
+    - Füge folgenden Code ein:
+```json
+{
+  "name": "Wiki Environment",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "yzhang.markdown-all-in-one",
+        "shd101wyy.markdown-preview-enhanced",
+        "bierner.markdown-mermaid",
+        "foam.foam-vscode"
+      ]
+    }
+  }
+}
+```
+- Zen Modus in den settings.json imitieren
+```json
+{
+  // --- Den Zen-Modus im normalen Modus imitieren ---
+  "workbench.editor.centeredLayout": true,      // Zentriert den Text in der Mitte (wie im Zen-Modus)
+  "workbench.editor.showTabs": "none",          // Versteckt die Tab-Leiste oben (wirkt wie eine einzelne Wiki-Seite)
+  "window.menuBarVisibility": "hidden",         // Versteckt die obere Menüleiste (Datei, Bearbeiten, etc.)
+  "workbench.editor.editorActionsLocation": "hidden", // Versteckt die kleinen Icons oben rechts im Editor
+  
+  // --- Maximale Reduktion ---
+  "workbench.header.visible": false,            // Versteckt den obersten Header-Bereich im Web-Editor
+  "workbench.tips.enabled": false,              // Keine nervigen Tipps oder Willkommensseiten
+  "editor.renderLineHighlight": "none",         // Versteckt die Hervorhebung der aktuellen Zeile
+  "editor.occurrencesHighlight": "off",         // Keine farbige Markierung von gleichen Wörtern
+  "editor.selectionHighlight": false            // Verhindert visuelle Ablenkung beim Markieren
+}
+```
+
+
+### A. Die "Doppelklick-to-Edit" Illusion (Vorschau standardmäßig)
+In einem echten Wiki sieht man zuerst die schön gerenderte Seite (inkl. Bildern und Mermaid) und editiert erst bei Bedarf. Du kannst VS Code zwingen, Markdown-Dateien standardmäßig als Vorschau zu öffnen:
+- Nutze das Plugin **"Markdown Preview Full Editor"** (in die `devcontainer.json` packen).
+- Ergänze in den Settings:
+```json
+    "workbench.editorAssociations": {
+      "*.md": "vscode.markdown.preview.editor"
+    }
+```
+* **Ergebnis:** Klickt der Nutzer auf eine Datei, sieht er sofort das fertige Wiki-Dokument. Erst wenn er ein Tastaturkürzel drückt oder auf die Seite doppelklickt, springt der Editor in den Schreibmodus. 
+### B. Automatischer "Titel-Sync" aus dem Frontmatter Nicht-technische Nutzer vergessen oft, den Dateinamen zu ändern, wenn sie die Überschrift im Text anpassen. 
+* Erweiterung: **"Auto Rename Markdown File"** 
+* Wenn der Nutzer die Hauptüberschrift (`# Mein neuer Titel`) im Dokument ändert, benennt das Plugin automatisch die `.md`-Datei im Hintergrund um. Das verhindert Chaos im Obsidian-Vault. 
+### C. Drag & Drop für Anhänge sauber strukturieren Wenn Nutzer Bilder oder PDFs in den Editor ziehen, landen diese standardmäßig unstrukturiert im Hauptordner. Das vermüllt den Vault. 
+* Zwinge VS Code dazu, Anhänge in einen versteckten Medienordner zu legen: 
+```json 
+"markdown.copyFiles.destination": { "**/*": "assets/${documentBaseName}/" }
+```
+
+
+
+- Er klickt auf den GitHub-Link.
+    
+- Der Browser öffnet eine komplett cleane, weiße (oder dunkle) Seite.
+    
+- In der Mitte steht der Text. Es gibt keine Knöpfe, die ihn verwirren könnten.
+    
+- Er schreibt seinen Text, zieht ein Bild hinein (das im Hintergrund sauber einsortiert wird) und nutzt die KI im rechten Seitenfenster, um Formatierungen vorzunehmen.
+    
+- Zum Schluss klickt er auf den einzigen sichtbaren Button in der Statusleiste: `[ Wiki Veröffentlichen ]`.
+
+
+
+
+
+
+
+Um aus deiner VS-Code-Umgebung ein echtes, rundes "Wiki-Produkt" für Laien zu machen, lösen wir das über ein cleveres Onboarding-System und ein automatisiertes Skript. Da deine Umgebung in GitHub Codespaces (also auf einem Linux-Server im Hintergrund) läuft, können wir das perfekt automatisieren.
+
+## 1. Onboarding & Templates: Wie finden Laien sich zurecht?
+
+Für nicht-technische Nutzer darf es keine versteckten Menüs geben. Alles muss sichtbar oder über einfache Sprache (KI) steuerbar sein.
+
+### A. Das "Dashboard" (Die Startseite)
+
+Zwinge VS Code dazu, beim Öffnen immer eine zentrale `Willkommen.md`-Datei anzuzeigen. Das ist dein Dashboard.
+
+Füge das zu deiner `.vscode/settings.json` hinzu:
+
+JSON
+
+```
+"workbench.startupEditor": "readme"
+```
+
+_(Wenn deine Startseite `README.md` heißt, öffnet sie sich nun immer automatisch im Vorschau-Modus)._
+
+**Inhalt dieser Startseite:**
+
+- Ein großer Button oder Link: `[Klicke hier, um eine neue Notiz zu erstellen]`
+    
+- Eine kurze Tabelle mit den 3 wichtigsten KI-Befehlen.
+    
+
+### B. Templates (Vorlagen mit Properties) über Snippets
+
+Anstatt dass Nutzer komplizierte Vorlagen-Ordner durchwuchen, nutzen wir **VS Code Snippets**. Wenn der Nutzer in einer neuen Datei `/neu` tippt, baut VS Code automatisch das gesamte Gerüst inklusive Properties (YAML Frontmatter) auf.
+
+Erstelle eine Datei namens `.vscode/wiki.code-snippets` und füge das ein:
+
+JSON
+
+```
+{
+  "Neue Wiki Seite": {
+    "prefix": "/neu",
+    "body": [
+      "---",
+      "status: \"active\"",
+      "created_at: \"$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE\"",
+      "author: \"${1:Dein Name}\"",
+      "tags: [${2:tag1, tag2}]",
+      "---",
+      "",
+      "# ${3:Titel der Notiz}",
+      "",
+      "## Beschreibung",
+      "Hier Text eingeben... $0"
+    ],
+    "description": "Erstellt ein neues Wiki-Dokument mit Obsidian-Properties"
+  }
+}
+```
+
+### C. KI-Onboarding: Die "Magic Prompts"
+
+Da du (wie im Screenshot von **Pasted image 20260606161710.png** zu sehen) ein KI-Chatfenster rechts integriert hast, gib den Nutzern auf der Startseite 3 feste Prompts mit, die sie einfach kopieren und in den Chat jagen können:
+
+> 💡 **KI-Assistent Kurzanleitung:**
+> 
+> Markiere einen Text und schreibe der KI im Chat einfach:
+> 
+> - `"/callout Achtung"` -> _Macht aus dem Text eine gelbe Obsidian-Warnbox._
+>     
+> - `"/mermaid Ablauf"` -> _Erstellt ein visuelles Diagramm aus meinen Stichpunkten._
+>     
+> - `"/properties"` -> _Ergänze fehlende Metadaten im Kopf der Datei._
+>     
+
+## 2. Das 1-Klick "Wiki veröffentlichen" Skript
+
+Wir bauen jetzt den "Speichern"-Button. Dafür brauchen wir drei kleine Teile: Das eigentliche Linux-Skript, die Definition als VS-Code-Task und den Button in der UI.
+
+### Schritt A: Das Skript (`publish.sh`)
+
+Erstelle im Hauptverzeichnis deines Repositories eine Datei namens `publish.sh`. Dieses Skript zieht zuerst Updates von anderen, sammelt alle Änderungen des Nutzers, speichert sie und lädt sie hoch.
+
+Bash
+
+```
+#!/bin/bash
+
+# 1. Neueste Änderungen von anderen holen, um Konflikte zu vermeiden
+git pull --rebase origin main
+
+# 2. Alle neuen Dokumente und Bilder einsammeln
+git add .
+
+# 3. Automatischen Commit-Namen mit Zeitstempel erstellen
+TIMESTAMP=$(date +"%d.%m.%Y %H:%M")
+git commit -m "Wiki Update ($TIMESTAMP)"
+
+# 4. Hochladen ins Git-Backend (triggert Quartz/Vercel)
+git push origin main
+
+echo "🎉 Wiki erfolgreich aktualisiert und veröffentlicht!"
+```
+
+### Schritt B: Das Skript ausführbar machen
+
+Da Git unter Linux Rechte verwaltet, musst du das Skript einmalig in deinem Terminal (unten in VS Code) für alle ausführbar machen. Tippe dort ein:
+
+Bash
+
+```
+chmod +x publish.sh
+```
+
+### Schritt C: Den Task definieren (`tasks.json`)
+
+Erstelle im Ordner `.vscode` eine Datei namens `tasks.json`. Sie sagt VS Code, wie das Skript gestartet wird.
+
+JSON
+
+```
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Wiki Veroeffentlichen",
+      "type": "shell",
+      "command": "./publish.sh",
+      "problemMatcher": [],
+      "presentation": {
+        "echo": true,
+        "reveal": "silent", // Versteckt das technische Terminal, außer es gibt einen Fehler
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      }
+    }
+  ]
+}
+```
+
+### Schritt D: Den Button in die Statusleiste zaubern
+
+Damit der Nutzer den Task per Klick starten kann, fügen wir das Plugin **"Commands"** (ID: `ryu1kn.commands`) zu deiner `.devcontainer/devcontainer.json` hinzu.
+
+Ergänze dann in deiner `.vscode/settings.json` folgenden Code, um den Button unten links in die Statusleiste zu setzen:
+
+JSON
+
+```
+"commands.commands": [
+  {
+    "command": "workbench.action.tasks.runTask",
+    "args": "Wiki Veroeffentlichen",
+    "label": "🚀 Wiki live aktualisieren",
+    "alignment": "left",
+    "color": "#4AF626" // Ein schönes, auffälliges Grün
+  }
+]
+```
+
+## Das Endergebnis für deine Nutzer
+
+Wenn ein technisch nicht versierter Nutzer nun dein Wiki über den Browser-Link öffnet:
+
+1. Er sieht sofort die schicke Startseite (`README.md`).
+    
+2. Er erstellt eine neue Datei, tippt `/neu` und hat sofort alle Obsidian-Properties parat.
+    
+3. Er zieht Bilder per Drag & Drop rein und lässt die KI via Chat die Formatierung (wie Callouts oder Mermaid aus **Pasted image 20260606161710.png**) übernehmen.
+    
+4. Wenn er fertig ist, klickt er unten links einfach auf den leuchtend grünen Button **`🚀 Wiki live aktualisieren`**. Das Terminal blitzt kurz auf, meldet Erfolg, und im Hintergrund baut Quartz die Seite neu.
+    
+
+Möchtest du, dass wir für das Dashboard (`README.md`) direkt ein schönes, übersichtliches Markdown-Template entwerfen, das du als Startseite nutzen kannst?
+
+
+
+
+
+
+
+
+Das Prinzip, das du hier beschreibst, nennt man **"Optimistic Publishing"** (erst veröffentlichen, dann prüfen). Das ist für die Nutzer extrem motivierend, weil sie sofort ihr Ergebnis sehen, während die Qualitätssicherung im Hintergrund greift.
+
+Da dein gesamtes Setup auf Git basiert, ist die mächtigste Funktion für diesen Anwendungsfall bereits nativ vorhanden: Jeder Speichervorgang ist ein isolierter Schnappschuss. Man kann jede noch so kleine Änderung chirurgisch rückgängig machen.
+
+Hier ist der Bauplan, wie du diesen Approval Loop nahtlos in dein bestehendes System integrierst.
+
+## 1. Die Benachrichtigung (Der Trigger)
+
+Sobald ein Nutzer auf deinen "Wiki live aktualisieren"-Button klickt, pusht das Skript die Änderung zu GitHub. Das ist der Moment, an dem wir den Supervisor informieren.
+
+Wir lagern diese Logik aus VS Code aus und lassen GitHub die Arbeit machen, um die Nutzer-Oberfläche nicht zu verlangsamen.
+
+- **Der Mechanismus:** Wir nutzen GitHub Actions (oder einen Webhook zu n8n).
+    
+- **Das Ereignis:** "On Push" (Immer wenn neue Daten auf dem Haupt-Ast landen).
+    
+- **Der Inhalt:** Das System generiert eine Nachricht mit dem Namen des Autors, der geänderten Datei und einem direkten Link zum sogenannten "Diff".
+    
+
+## 2. Die Prüfung (Der Supervisor-Blick)
+
+Der Supervisor benötigt kein komplexes Setup, sondern kann die Prüfung komplett im Browser am Smartphone oder Laptop durchführen.
+
+- Der Klick auf den Link in der Benachrichtigung öffnet direkt die GitHub-Ansicht für diesen spezifischen Speicherpunkt (Commit).
+    
+- Die Oberfläche zeigt einen Vorher-Nachher-Vergleich.
+    
+- Rote Zeilen wurden vom Nutzer gelöscht, grüne Zeilen hinzugefügt.
+    
+- Sogar Änderungen an den Obsidian-Properties (YAML) sind hier sofort und klar lesbar.
+    
+
+## 3. Das Zurücksetzen (Der Rollback-Prozess)
+
+Sollte der Supervisor feststellen, dass ein Nutzer die Formatierung zerschossen oder falsche Inhalte publiziert hat, muss der alte Stand wiederhergestellt werden. Git macht das über einen "Revert". Ein Revert löscht die neue Änderung nicht aus der Historie (aus Gründen der Nachvollziehbarkeit), sondern erstellt einen neuen Speicherpunkt, der exakt aussieht wie der alte.
+
+|**Plattform**|**Vorgehen für den Supervisor**|
+|---|---|
+|**GitHub Browser (Empfohlen)**|Der Supervisor klickt im betrachteten Commit oben rechts auf den Button "Revert". Ein Klick bestätigt die Aktion, und die Live-Seite aktualisiert sich wieder auf den alten Stand.|
+|**VS Code (Experten-Weg)**|Der Supervisor nutzt die Erweiterung "GitLens", klickt in der Historie mit der rechten Maustaste auf den fehlerhaften Eintrag und wählt "Revert Commit".|
+
+## 4. Wie man den Loop technisch einrichtet
+
+Um das in Gang zu setzen, benötigst du lediglich eine kleine Automatisierungs-Datei in deinem Repository.
+
+- Erstelle den Ordner `.github/workflows/` in deinem Projekt.
+    
+- Lege dort eine Datei an (z. B. `supervisor-alert.yml`).
+    
+- Diese Datei instruiert die GitHub-Server, bei jedem eingehenden Push die Metadaten auszulesen und über eine Schnittstelle (API) oder per E-Mail den Alarm auszulösen.
+    
+
+Welcher Kommunikationskanal (wie E-Mail, Slack, Microsoft Teams oder Discord) wäre für den Supervisor am praktischsten, damit wir die Benachrichtigungs-Logik passend strukturieren können?
+
+
+
+---
+# Multiple Agents (nach Steinberger) 20260606
+- Programmieren mit cmux als Terminal-Multiplexer (auf Ghostyy basierend) 
+	- Split Panes, jeder Agent läuft in isoliertem Workspace
+	- **VS Code: beliebig viele Terminal-Fenster nebeneinander splitten (`Strg` + `Shift` + `5` oder das Split-Icon oben rechts am Terminal)**
+- jeder Agent in eigenem Repository, kein Mono-Repo für das Projekt
+	- **`cd frontend` und `cd backend` in den Panes des Terminals für einzelne Unterordner**
+		- **einzelne Repos über API Ports miteinander verknüpft**
+		- **wenn es Code gibt, den mehrere Agenten brauchen, wird daraus ein eigenes Repo gemacht und zu einem lokalen Paket oder auf npmjs.com veröffentlicht**
+	- **VS Code: "Add Folder to Workspace" für /frontend, /backend und /vault ==(siehe in newO)==**
+```
+/MeinProjekt_Workspace (Kein Git!)
+│
+├── /frontend  (Git Repo 1: Vite, Three.js, UI)
+│   ├── .git/
+│   ├── package.json       <-- Neu: Nur Vite & Frontend-Abhängigkeiten
+│   ├── vite.config.js
+│   ├── src/               <-- Dein alter src/ Ordner
+│   ├── static/            <-- Dein alter static/ Ordner
+│   └── assets/            <-- Dein alter assets/ Ordner
+│
+├── /backend   (Git Repo 2: Express, SQLite, Sync)
+│   ├── .git/
+│   ├── package.json       <-- Neu: Nur Express, SQLite & Backend-Abhängigkeiten
+│   ├── .env               <-- VAULT_PATH=../vault
+│   ├── api/
+│   ├── db/
+│   ├── schema/
+│   └── export/
+│
+└── /vault     (Git Repo 3: Obsidian Content)
+    ├── .git/
+    ├── .obsidian/
+    ├── 01_Project/
+    ├── 02_Website/
+    └── ... (deine restlichen Ordner)
+```
+- **VS Code:**
+	- **"Save Workspace As" in /MeinProjekt_Workspace**
+	- **Wenn der Frontend-Agent im `/frontend`-Ordner läuft, muss er wissen, wie er an die Configs kommt: `/add ../vault/02_Website/config/`**
+	- **Das Backend muss eine `openapi.json` (Swagger) generieren, oder du hast ein drittes Repo namens `/shared-types` (mit Zod-Schemas), das beide importieren. Das ist die einzige Brücke zwischen den Repos.**
+	- **Automatisierte Start-Skripte (`launch.json` oder `.bat`): Anstatt jedes Mal VS Code zu öffnen, drei Panes zu splitten und in jedem Pane `claude` plus den richtigen `/add`-Befehl einzutippen, kannst du dir ein kleines Powershell-Skript schreiben. Das öffnet VS Code, splittet die Terminals und startet die Claude-Instanzen mit ihrem jeweiligen Standard-Kontext automatisch vor.**
+- Wissensarbeit, Lesen, Lernen in der App
+	- **Claude App**
+- autonomer Green Loop als Workflow mit Tests und Error Logs und selbstständiger Korrektur, bis alle Tests grün sind
+	- **Beispiel**
+	- **"Deine Aufgabe ist es, Task X aus der Datei _Tasks.md zu lösen. Gehe dabei strikt nach folgendem Ablauf vor:**
+		1) **Analysiere den Kontext aus _Context.md.**
+		2) **Schreibe als Erstes die Unit-Tests für diese spezifische Aufgabe (z. B. in einer neuen Datei task-x.test.js).**
+		3) **Führe npm test aus. Erwarte, dass die Tests fehlschlagen, da der eigentliche Code noch fehlt.**
+		4) **Implementiere nun den eigentlichen Code für Task X.**
+		5) **Führe nach jeder Änderung npm test aus. Wenn die von dir geschriebenen Tests fehlschlagen, lese den Error-Log und korrigiere deinen Code selbstständig.**
+		6) **Höre erst auf und melde dich bei mir, wenn alle deine Tests erfolgreich durchlaufen (grün sind)."**
+	- **Der Supervisor-Agent (Architekt): Aktuell gehst du davon aus, dass _du_ die `_Tasks.md` schreibst. Du kannst aber einen übergeordneten Agenten im Root-Workspace (oder im Vault) starten. Sein einziger Job: _"Lies mein Projekt-Briefing und generiere/aktualisiere die `_Tasks.md` für das Frontend und Backend, damit die Sub-Agenten dort arbeiten können."_**
+	- **CI/CD für die "Green Loop": Aktuell läuft die Test-Schleife nur lokal in deinem VS Code Terminal. Der nächste Schritt wäre, GitHub Actions einzurichten. Wenn ein Agent glaubt, er ist fertig, pusht er den Code. GitHub lässt die Tests auf einem neutralen Server laufen. Schlagen sie fehl, liest der Agent den GitHub-Error-Log und korrigiert nach.**
+	- **THREE.js: Playwright oder Puppeteer in das Frontend-Repo integrieren. Der Agent bekommt den Befehl: _"Starte die Szene, mach einen automatischen Screenshot des Canvas und vergleiche ihn mit dem Referenzbild im Ordner `/tests/snapshots/`."_ Wenn der Screenshot abweicht (z. B. weil die Beleuchtung kaputt ist), gibt das Test-Tool dem Agenten eine Fehlermeldung, und er korrigiert seinen Three.js-Code. So macht er die KI "sehend".**
+	- **Agenten committen ihren eigenen Code. Der Prompt lautet: _"Wenn alle Tests grün sind, schreibe eine präzise Commit-Message im Format 'feat(backend): ...' und führe `git commit` aus. Mach danach direkt mit dem nächsten Task aus der `_Tasks.md` weiter."_ Dadurch entsteht eine saubere Historie winziger, funktionierender Schritte. Wenn der Agent bei Task 4 alles kaputt macht, macht Steinberger einfach ein `git revert` auf Task 3.**
+- mit OpenClaw ein Harness gebaut, welches Agenten selbst auf Tools zugreifen lässt
+	- Peekaboo für Screenshots zum Testen visueller Oberflächen
+	- Poltergeist für automatisches Hot-Reloading, damit Agenten nicht durch lange Build-Zeiten ausgebremst werden
+	- Oracle für anderes KI-Modell, was Logik reviewed
+- ggf. isolierte DevContainer, in denen der Agent läuft
+---
+# littlescale ki modelle 20260607
+- Magenta Real Time 2 (Small) von Google DeepMind
+	- Audio Stream ohne Berechnung
+[Magenta RealTime 2 (Apps & Plugins)](https://magenta.withgoogle.com/mrt2)
 ---
 # canvas 2026050920
 ## patch 
@@ -2832,6 +4126,26 @@ CreatedModifiedDate: priority: ["frontmatter", "filesystem"]
 - Eine Form ist der Geradenwickel (Line winding), bei dem die Kurve sich unendlich um eine Achse windet und sich ihr asymptotisch annähert, während sie sich im umgekehrten Zeitverlauf um eine andere, dazu windschiefe Achse wickelt. Wenn ein bestimmter Parameter (der Radius) exakt 1 ist, entsteht eine Irrkurve (Stray), die völlig ziellos über die Oberfläche eines Hyperboloids irrt und dieses dicht ausfüllt
 - A101 12. Stufe in Delay1 mit kurzer Verzögerung, Feedback hoch, als Line Winding um Z-Achse (Vactrol Stufen)
 - Jitter aus TwoBits in Delay1 Zeit, als zusätzliche Irrkurve
+### Desargues 20260607
+- Wenn bei zwei Dreiecken die gemeinsamen Linien sich entsprechender Ecken in einem Punkt treffen, dann liegen die gemeinsamen Punkte sich entsprechender Seiten in einer Linie, und umgekehrt
+- ![[Pasted image 20260607175705.png]]
+	- Dreiecke entstehen aus einem Projektionszentrum/Punkt
+- Solumn Out + 2x -> A-171 + Contour -> Mixwitch (Clk Eingang mit weiteren Eingang von Solumn)
+## Pascal
+- Wenn die Eckpunkte eines (beliebigen) Sechsecks einem Kegelschnitt angehören, dann liegen die Begegnungspunkte der Gegenseitenpaare in einer geraden Linie
+- ![[Pasted image 20260607180058.png]]
+- 
+### Brianchon 
+- Die gemeinsamen Linien sich entsprechender Punktpaare eines einem Kegelschnitt umschriebenen Sechsseits liegen in einem Punkte
+- ![[Pasted image 20260607175652.png]]
+- ![[Pasted image 20260607175846.png]]
+### Metamorphosen
+#### Atmende Involution
+- Contour langsamer LFO als Atemzug
+#### Polare Reziprozität
+- Objekte an Kreis spiegeln lässt sie von innen nach außen umstülpen, von Ferne zu Mittelpunkt 
+- Select Gate/Select als Polarizer
+
 ---
 # excalidraw 20260509
 ## aufgeweichte Holzschichten
