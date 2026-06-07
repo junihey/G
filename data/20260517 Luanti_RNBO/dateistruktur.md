@@ -1,4 +1,4 @@
-Auflistung der Ordnerpfade fr Volume PARADIES
+Auflistung der Ordnerpfade fï¿½r Volume PARADIES
 Volumeseriennummer : 6442-23D4
 D:.
 |   dateistruktur.md

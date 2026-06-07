@@ -836,7 +836,7 @@ function animate() {
 	- Projekt ausführen, Logs, Projektflow
 ---
 # Luanti 20260514
-![[dateistruktur2]]
+[[dateistruktur]]
 ## RNBO Runner / Web Interface
 - RNBO Patches auf Host Gerät (Raspberry Pi, Linux Stick)
 	- localhost im Browser für Fern-Steuerung, Abhängigkeit von einem Netzwerk
@@ -4061,6 +4061,27 @@ Welcher Kommunikationskanal (wie E-Mail, Slack, Microsoft Teams oder Discord) w�
 	- Poltergeist für automatisches Hot-Reloading, damit Agenten nicht durch lange Build-Zeiten ausgebremst werden
 	- Oracle für anderes KI-Modell, was Logik reviewed
 - ggf. isolierte DevContainer, in denen der Agent läuft
+## [/handoff is my new favourite skill - YouTube](https://www.youtube.com/watch?v=dtAJ2dOd3ko) 20260608
+- /compact simlilarity, but handoff at any time not just limit and referring it to other sessions
+- parsing back handoff from child to parent
+---
+# github search 20260608
+- 1000 Anfragen mit einmal maximal über API
+	- 10 Seiten á 100 Einträge
+- code lässt sich nicht nach stars durchsuchen, dafür nach. claude-plugin Ordner
+	- [Code search results](https://github.com/search?q=path%3A.claude-plugin&type=code)
+- repository nach stars und topic durchsuchbar
+	- [Repository search results](https://github.com/search?q=topic%3Aclaude+stars%3A%3E1000+in%3Arepositories&type=repositories)
+	- ohne sort: Probleme bei Dateien mit wenig "claude" Namensbezug
+	- sort=stars
+	- sort=indexed: nach Erstellung
+- [github-suche](file:///C:%5CUsers%5Cjunih%5CDesktop%5Czählen%5CG%5Cdata%5Cgithub-suche)
+- 
+## Ergebnisse
+### [bradautomates/claude-video: Give Claude the ability to watch any video. /watch downloads, extracts frames, transcribes, hands it all to Claude.](https://github.com/bradautomates/claude-video) 
+- durchsucht Videos per Screenshots, braucht Audio nicht
+- kann mit den Screenshots neue Notizen mit diesen
+- Vergleich von content (Marketing Analyse)
 ---
 # littlescale ki modelle 20260607
 - Magenta Real Time 2 (Small) von Google DeepMind
