@@ -4076,7 +4076,6 @@ Welcher Kommunikationskanal (wie E-Mail, Slack, Microsoft Teams oder Discord) w√
 	- sort=stars
 	- sort=indexed: nach Erstellung
 - [github-suche](file:///C:%5CUsers%5Cjunih%5CDesktop%5Cz√§hlen%5CG%5Cdata%5Cgithub-suche)
-- 
 ## Ergebnisse
 ### [bradautomates/claude-video: Give Claude the ability to watch any video. /watch downloads, extracts frames, transcribes, hands it all to Claude.](https://github.com/bradautomates/claude-video) 
 - durchsucht Videos per Screenshots, braucht Audio nicht
