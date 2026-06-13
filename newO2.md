@@ -2015,6 +2015,61 @@ folder reference: STRG + Drag&Drop from file explorer
 	- gemini-for-claude-code
 	- claude-code-router
 	- Formatierungsbefehle können Probleme machen (Werkzeuge werden in Gemini über JSON genutzt, bei Claude über XML, ebenso bei Datei-Änderungen)
+> [!NOTE]- ## Modelle über Skills mit Openrouter für bestimmte Aufgaben umschalten 20260608
+> ### Schritt 1: Erstelle die Skill-Datei
+> 
+> Erstelle in deinem Projekt (oder global in deinem Benutzerverzeichnis unter `~/.claude/...`) folgende Ordnerstruktur und Datei:
+> 
+> **Pfad:** `.claude/skills/smart-review/SKILL.md`
+> 
+> ### Schritt 2: Füge diesen Code ein
+> 
+> Markdown
+> 
+> ```
+> ---
+> description: Führt ein kostengünstiges Code-Review durch, nachdem das Modell geprüft wurde.
+> ---
+> 
+> # SCHRITT 1: MODELL-CHECK (WICHTIG!)
+> Überprüfe sofort, welches Modell aktuell aktiv ist. 
+> 
+> Wenn das aktuelle Modell NICHT "openrouter/deepseek/deepseek-chat" (oder dein gewünschtes Review-Modell) ist, stoppe HIER sofort die Ausführung und gib mir EXAKT folgende Nachricht aus:
+> 
+> "🛑 STOPP! Du nutzt aktuell noch das Hauptmodell. 
+> Bitte tippe kurz Folgendes ein, um Geld zu sparen:
+> 👉  /model openrouter/deepseek/deepseek-chat
+> Führe danach einfach noch mal /smart-review aus."
+> 
+> ---
+> 
+> # SCHRITT 2: REVIEW-LOGIK (Wird nur ausgeführt, wenn das Modell stimmt)
+> Wenn das Modell korrekt eingestellt ist, fahre fort:
+> 1. Nutze das `git diff` Tool, um die uncommitted Änderungen zu analysieren.
+> 2. Prüfe den Code auf:
+>    - Kritische Bugs & Edge Cases
+>    - Performance-Engpässe
+>    - Lesbarkeit und Clean Code Prinzipien
+> 3. Gib mir ein strukturiert kurzes Feedback.
+> ```
+> 
+> ### Wie sich das im Alltag verhält (Der Workflow)
+> 
+> Das Ganze fühlt sich in der Praxis extrem flüssig an. Hier sind die zwei Szenarien, wie dein Terminal reagieren wird:
+> 
+> #### Szenario A: Du hast das Umschalten vergessen (Der Schutz greift)
+> 
+> 4. Du tippst: `> /smart-review`
+>     
+> 5. Claude (Sonnet) liest die Instruktion, sieht Schritt 1 und bricht sofort ab.
+>     
+> 6. **Ausgabe im Terminal:**
+>     
+>     > 🛑 STOPP! Du nutzt aktuell noch das Hauptmodell. Bitte tippe kurz Folgendes ein, um Geld zu sparen: 👉 /model openrouter/deepseek/deepseek-chat Führe danach einfach noch mal /smart-review aus.
+>     
+> 7. Du kopierst den Befehl, wechselst das Modell und startest den Skill erneut. **Kosten gespart.**
+> 
+
 ---
 # cli's terminals 20260521
 - [Warp — The Agentic Development Environment](https://www.warp.dev/)
@@ -4086,6 +4141,96 @@ Welcher Kommunikationskanal (wie E-Mail, Slack, Microsoft Teams oder Discord) w�
 - Magenta Real Time 2 (Small) von Google DeepMind
 	- Audio Stream ohne Berechnung
 [Magenta RealTime 2 (Apps & Plugins)](https://magenta.withgoogle.com/mrt2)
+---
+# playwright 20260608
+## cli [Playwright for Beginners. Install and run tests using the CLI - YouTube](https://www.youtube.com/watch?v=SLhz2KmBh2Q)
+## mcp [Playwright MCP | Playwright](https://playwright.dev/docs/getting-started-mcp)
+## agent cli 
+> [!NOTE]- ## Komplettanleitung: Isoliertes Playwright CLI Agent Setup
+> 
+> ### Schritt 1: Ordner erstellen und öffnen
+> 
+> Öffne dein Terminal (PowerShell) und erstelle einen neuen Ordner an einem beliebigen Ort (z. B. auf dem Desktop) und springe hinein:
+> 
+> PowerShell
+> 
+> ```
+> mkdir C:\Users\nolte\Desktop\mein-ki-browser-ordner
+> cd C:\Users\nolte\Desktop\mein-ki-browser-ordner
+> ```
+> 
+> _Öffne diesen Ordner jetzt am besten direkt in **VS Code**._
+> 
+> ### Schritt 2: Projekt initialisieren
+> 
+> Erstelle die grundlegende `package.json`-Datei, die alle lokalen Installationen verwaltet:
+> 
+> PowerShell
+> 
+> ```
+> npm init -y
+> ```
+> 
+> ### Schritt 3: Browser-Pfad isolieren (Wichtig!)
+> 
+> Teile Windows mit, dass die dicken Browser-Dateien (Chromium, Firefox etc.) nicht im System, sondern genau hier im Projektordner landen sollen:
+> 
+> PowerShell
+> 
+> ```
+> $env:PLAYWRIGHT_BROWSERS_PATH=".\.playwright-browsers"
+> ```
+> 
+> ### Schritt 4: Playwright und die Agent-CLI lokal installieren
+> 
+> Jetzt installieren wir das Test-Framework und die spezielle Agent-CLI für die KI direkt in den Ordner:
+> 
+> PowerShell
+> 
+> ```
+> npm install -D @playwright/test
+> npm install @playwright/cli@latest
+> ```
+> 
+> ### Schritt 5: Die isolierten Browser herunterladen
+> 
+> Lade die eigentlichen Browser-Pakete in deinen lokal definierten Ordner herunter:
+> 
+> PowerShell
+> 
+> ```
+> npx playwright install
+> ```
+> 
+> _(Du wirst sehen, dass in deinem Projekt nun ein neuer Ordner namens `.playwright-browsers` auftaucht.)_
+> 
+> ### Schritt 6: KI-Anleitung (Skills) generieren
+> 
+> Erstelle die "Landkarte" für deine KI, damit sie weiß, welche Befehle sie im Terminal nutzen kann:
+> 
+> PowerShell
+> 
+> ```
+> npx playwright-cli install --skills
+> ```
+> 
+> ## So nutzt du es ab jetzt in VS Code
+> 
+> Dein Projektordner ist nun eine komplett eigenständige Sandbox. Wenn du mit **Gemini Code Assist**, **Claude Code** oder einem anderen KI-Assistenten in diesem Projektordner chattest, gib ihm den Befehl immer mit dem Zusatz `npx`:
+> 
+> **Beispiel-Prompt für deinen KI-Chat:**
+> 
+> > „Nutze die lokale Installation in diesem Ordner. Führe im Terminal `npx playwright-cli open [https://news.ycombinator.com](https://news.ycombinator.com)` aus, mache einen `snapshot` und zeige mir die Top 3 Überschriften.“
+> 
+> oder
+> 
+> > „Nutze die lokale Installation in diesem Ordner. Setze zuerst die Umgebungsvariable `$env:PLAYWRIGHT_BROWSERS_PATH=".\.playwright-browsers"` und führe dann im Terminal `npx playwright-cli open [https://news.ycombinator.com](https://news.ycombinator.com)` aus. Mache danach einen `snapshot` und zeige mir die Top 3 Überschriften.“
+> 
+> ### 💡 Profi-Tipp für die Zukunft:
+> 
+> Wenn du VS Code oder deinen PC neu startest und die KI manuell über das Terminal steuern willst (oder die KI Probleme hat, die Browser zu finden), tippe im VS Code Terminal einfach noch einmal kurz den Befehl aus **Schritt 3** ein, um die Umgebungsvariable für die aktuelle Sitzung wieder zu aktivieren.
+- Live-Tracking `playwright-cli show`
+
 ---
 # canvas 2026050920
 ## patch 
