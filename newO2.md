@@ -4119,6 +4119,27 @@ Welcher Kommunikationskanal (wie E-Mail, Slack, Microsoft Teams oder Discord) w�
 ## [/handoff is my new favourite skill - YouTube](https://www.youtube.com/watch?v=dtAJ2dOd3ko) 20260608
 - /compact simlilarity, but handoff at any time not just limit and referring it to other sessions
 - parsing back handoff from child to parent
+## API 20260613
+### NestJS 
+- Variante 1: Event Driven per Message Broker
+	- Events in zentralen Bus (Redis, RabbitMQ oder Kafka), asynchron und besser als http
+	- jede KI muss nur das zentrale Event-Schema kennen
+- API Gateway mit NestJS
+	- Schnittstellen Verträge mit DTO (Data Transfer Objects) als vordefinierter Nachrichtencontainer (Klassendefinition in NestJS)
+	- DTO Klasse in TypeScript Typisierung
+	- Microservices, Event Driven Architecture
+		- jedes Repo als Microservice
+	- Validierung der richtigen Nutzung von DTOs
+- Shared Repo
+	- Erstelle ein separates, schreibgeschütztes Repo (oder ein npm-Paket), das **nur** die TypeScript-Interfaces, DTOs und Event-Namen enthält
+	- jeder Agent zieht sich dieses Repo als Abhängigkeit und nutzt DTO um Nachricht zu senden und andere KI nutzt gleiches DTO um Nachricht zu erhalten
+- OpenAPI in Laufzeit
+	- OpenAPI verbindet DTO mit konkreter Adresse und Validierungsregeln, gibt Auskunft über die Services und deren Events für jede KI, um Entscheidung der anderen KI zum Für und Gegen der Kontaktaufnahme zu ermöglichen
+	- Swagger macht OpenAPI sichtbar
+	- DTO als einzelnes Bauteil und OpenAPI als Dokumentationen der KI über verwendete DTOs
+- NestJS Gateway zwischen Frontend und Ki Repos zum Rate Limiting und Validierung
+	- Übersetzung von REST(HTTP), Validierung mit DTO, in Event
+	- Agent B validiert Event mit selben DTO
 ---
 # github search 20260608
 - 1000 Anfragen mit einmal maximal über API
@@ -4232,6 +4253,26 @@ Welcher Kommunikationskanal (wie E-Mail, Slack, Microsoft Teams oder Discord) w�
 - Live-Tracking `playwright-cli show`
 
 ---
+# Recurrence Pattern Correlation RPC 20260613
+- Recurrence Plot RP zeichnet zwei Zeitreihen gegeneinander
+	- Diagonalen bei Patterns
+	- Punkte bei Übereinstimmungen
+- RPC - _„Wenn an Punkt A (Zeit i,j) eine Rekurrenz auftritt, wie hoch ist die Wahrscheinlichkeit, dass in einer bestimmten geometrischen Richtung und Entfernung (einem Mustervektor) ein weiteres Rekurrenz-Teilmuster existiert?“_
+- Periodizität rekurriert maximal (Sinus)
+- Anwendung:
+	- Strukturelles Mapping: Rekurrenz an Dichte koppeln, bei hoher Rekurrenz in Dichte treiben
+	- Chaos Limiting: Chaotisch werden wird bereits detektiert, indem RPC Wert abkippt
+## gen~
+- Verzögerung um wenige Samples (**Phase Space Embedding, Ausfalten des eindimensionalen Signals in den mehrdimensionalen Raum**)
+- Originalsignal, verzögertes Signal 1, verzögertes Signal 2 als **dreidimensionaler Zustandsvektor**
+- Speichern des Vektors in Delay-Line 
+- aktueller Zustand - Zustand aus der Delay-Line
+- Schwellenwert für Differenz festlegen
+- Boolean Ausgabe 0/1 für Differenz unter/über Schwellenwert
+	- 1 für Rekurrenz
+- Rekurrenzen verschiedener Delay-Line Abfragen miteinander multiplizieren (logisches UND 0,0=0/1,1=1)
+- ggf. glätten mit mix
+---
 # canvas 2026050920
 ## patch 
 ### Granulares Wave-Stitching mit Jitter-Modulation
@@ -4310,6 +4351,40 @@ Welcher Kommunikationskanal (wie E-Mail, Slack, Microsoft Teams oder Discord) w�
 #### Polare Reziprozität
 - Objekte an Kreis spiegeln lässt sie von innen nach außen umstülpen, von Ferne zu Mittelpunkt 
 - Select Gate/Select als Polarizer
+
+### ![[Pasted image 20260619170859.png]]
+### Zusammenhang Kegel, Kegelschnitte, konzentrische Kreisfamilien, Parallelen
+- Kegelschnitt (Kreis, Ellipse, Parabel, Hyperbel) durch Schnitt mit Ebenen unterschiedlicher Neigung
+	- Kegel als Gerüst, an dem die Form des Kreises im Raum erscheint
+	- Maß Rhythmen / Projektive Skalen
+		- Hyperbolisch (Wachstumsmaß): Multiplikative Folge (r_n​=r_0​⋅q^n).
+		- Parabolisch (Schrittmaß): Additive Folge (r_n​=r_0​+n⋅d).
+		- Elliptisch (Kreismaß): Periodische Folge, die mit dem Winkelmaß und der Zahl π zusammenhängt
+- konzentrische Kreisfamilien als Zusammenspiel von positiven, nach außen wachsenden, physischen Raum und negativen, nach innen wachsenden, ätherischen Raum
+	- Produkt der Radien als Konstante bildet Cassini Kurven und Lemniskate im Grenzfall
+	- $$r_o*r_u=a^2$$
+	- Lemniskate: Wenn das Produkt der Radien (a^2) exakt dem Quadrat der halben Entfernung der beiden Zentren O und U entspricht, berühren sich die beiden Kreisscharen in der Mitte
+	- Schnittebenen, die nicht waagerecht liegen, zeigen keine Lemniskaten mehr, sondern sich in **Zykloiden** (Planetenschleifen) oder **Kegelschnitte** verwandeln
+- Parallelen treffen sich in unendlich fernem Punkt, Horizont als unendlich ferne Gerade und Punktlinie der Schnittpunkte aller Parallelen einer Ebene 
+	- imaginäre Punkte I und J auf dieser Geraden bilden Schnittpunkte mit dem absoluten Kreis, sowohl Kreise im Endlichen und Unendlichen wachsen von O und U gegen Kreispunkte I und J, wobei die Kreise von I und J nach U wachsen (wie O im Endlichen, sind I und J die Quellen der Kreise)
+		- I und J als ideelle Repräsentanten der unterschiedlich gerichteten Rotation und Rechtwinklingkeit (Kreishaftigkeit)
+		- I und J beinhalten alle Kreise einer Ebene
+		- mehrere Ebenen mit jeweils I und J bilden zusammen den absoluten Kreis (ideale Urform, Bezugspunkt euklidischer Metrik)
+		- Kreis trägt die Metrik des Raumes in sich, die perfekte Symmetrie in alle Richtungen, indem er I und J schneidet und andere Formen die Ferngerade an beliebigen Stellen schneiden
+	- wenn das unendliche Zentrum U (ebenfalls auf der Geraden) konzentrischer Kreise in den endlichen Raum rückt, bilden sich Parabeln, Ellipsen und Hyperbeln als verzerrte Kreise (atmende Form)
+		- Kreis wird im Unendlichen, also U im Unendlichen, selbst Gerade (zentrische Kraft verschmilzt mit Peripherie)
+		- wenn Kreis im Unendlichen eine Gerade wird (unendlicher Radius), erscheint er im Endlichen als Kreis
+### Laguerresche Formel
+- zentrale Metrik
+- $$\omega = \frac{i}{2}ln DV(u,u',J,J')$$
+### ==**Sphärische Distanz:** Auf der Riemannschen Zahlenkugel wird die Distanz zwischen zwei Punkten z1​,z2​ (die die Projektion des Kreises auf die Ebene darstellen) metrisch erfasst durch: d(z1​,z2​)===
+### Platonisches Weltenjahr
+- Atemrhythmus (18 Atemzüge/Min × 1.440 Min/Tag = 25.920) steht
+- 25.920 hat genau 70 ganzzahlige Teiler**, die harmonikalen Proportionen für Tonleitern
+- 1:4 Pulsschlag-Atemzug
+
+
+Exklusiv zum Thema des Zusammenhangs zwischen Kegel, Kreis und den imaginären Kreispunkten I und J lassen sich aus den Quellen folgende Metriken, Gesetze und mathematische Verhältnisse ableiten:
 
 ---
 # excalidraw 20260509
