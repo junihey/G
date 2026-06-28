@@ -4567,7 +4567,10 @@ flowchart TD
 - zwei Netzwerke für weitere Isolierung: agent-net zwischen 1 Agent und Orchestrator, backendnet für Orchestrator
 ## Entscheidung für hybride Variante: Sandcastle Worktree(Host) + Worktree(Docker)
 - SPEC [[hybrid-worktree-docker-spec]] 
-
+---
+# Matt Pocock 20260628
+## [Full Walkthrough: Workflow for AI Coding — Matt Pocock - YouTube](https://www.youtube.com/watch?v=-QFHIoCo-Ko&t=526s)
+- 
 ---
 # canvas 2026050920
 ## patch 
