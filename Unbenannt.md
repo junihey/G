@@ -1,0 +1,10 @@
+Wo ist das Wasser hin? Wir sehen uns nach den Zeiten, als die Bewegungen nicht waren zu unterscheiden es die Zyklen noch bestimmten den Lauf der Zeiten. nun malen wir Heuschrecken, die Diener des Todes zum Essen die Pferde in Joy und heuklappen Der Weißton dem Wind, dem Feuer, dem Stein widersteht der Schläger verbittert, Wachholder und Zeder uns die Sucht des Vergessens leeren, deshalb als Kranz auf den heuern getragen dem Blut abgeschworen und zu erinnern, dass wir aus Wasser geboren so bring es uns süß und sauer entgegen wie die Kirschen Den Tag auch durch die Monde geteilt. Du wirst dich im goldenen Schnitt nicht verirren, musst aber atmen ein und aus. dieses Mal sagt der Vater das, was er sieht, alles richtig ist und allen Vieren sich die schönste Begegnung zeigt, um mit Schlafsand beschenkt, die Sonne erneut zu begrüßen
+
+Will die Begriffe nicht mehr an den Sachen kleben haben, damit sie den Bewegungen entweichen und nur im Herzen Verständnis entsteht, es später zu begreifen ein Gestänge mit Dach in den Steinbruch gebaut. Hier können wir bleiben, von Baumscheiben zu speisen. ich weiß, was du meinst Das wird nicht reichen im Sommer müssen wir die keimrafft des Winters und zeichnen einer Stoffflagge unerreicht einem Stock entsperrt, dazwischen spielt das Leben
+
+
+An der Steilwand, ein quadratisch gelbes Gemälde hängt in der Ferne. Die Sonne erkennen, stand im Fluss, um flüchtige Worte zu sprechen. in der Dürre versammelt, bis die Stärke gewinnt und nur noch verständnislose Weisheit rinnt
+
+Das schwelgen der Begriffe geht zum Schreiben und schick mir ins Schicksal über. Wer sind die anderen beiden nixen, die sich in der Kluft vom verschwimmen und ertrinken retten?
+
+Und wer hält dir den Zuckerhut hin mein viel geliebter Muck? Wenn du beginnst, zu reden und ich ebenfalls zuhören will
