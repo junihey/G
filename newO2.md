@@ -1,7 +1,6 @@
 # misc
-
+[Luna Display | Turn your Mac or iPad into a second display](https://astropad.com/product/lunadisplay/)
 ^545451
-
 ## logic 20260520
 - [A Logic Cookbook for Synthesis](https://doudoroff.com/logic/index.html)
 - [Your recommended logic module - MOD WIGGLER](https://www.modwiggler.com/forum/viewtopic.php?t=289814)
@@ -2714,7 +2713,7 @@ Eine persönliche Wissensdatenbank zu [DEIN THEMA].
 > - Write in clear, plain language
 > - When uncertain about how to categorize something, ask the user
 ---
-# [How I Use Obsidian + Claude Cowork to Run My Life - YouTube](https://www.youtube.com/watch?v=rRa9td4oe7k) 20260605 
+## [How I Use Obsidian + Claude Cowork to Run My Life - YouTube](https://www.youtube.com/watch?v=rRa9td4oe7k) 20260605 
 - AIOS Ordner im Vault (strictly isolating)
 	- ![[Pasted image 20260605223923.png]]
 	- me.md als portable identity 
@@ -2828,7 +2827,56 @@ Eine persönliche Wissensdatenbank zu [DEIN THEMA].
 > - courier: Duplicates a note from the user's Ideaverse to another ideaverse (e.g., a team vault) for sharing.
 - First prompt: "First, please read /me.md. Then review the Vault Map and Skill Map for relevant context. Confirm you've read. Then await instruction."
 - AI creates Daily Brief with whats to forget, whats next, active projects, what was yesterday, are there deadlines
-# Skalierung
+## [GitHub - starmynd-org/infinite-brain-os: A git-backed operating system for running a business with AI agents. Plain Markdown and YAML, readable by any file-reading agent, owned by you. · GitHub](https://github.com/starmynd-org/infinite-brain-os) 20260625
+ entities
+	- slash command 
+	- rule
+	- workflow
+	- knowledge
+	- skill
+	- memory
+	- data
+	- project
+	- tool
+	- agent
+	- output
+## [Every Level of a Claude Second Brain Explained - YouTube](https://www.youtube.com/watch?v=DTCyvo6cC54) 20260626
+- retrieval levels
+	- folder + claude.md about you
+	- llm wiki + memory.md (just backlinks and links)
+	- semantic search (meaning and similarity)
+		- no vector database chunking for full context search
+		- not every folder must be llm wiki or vector rag
+	- knowledge graph for relationship chains (with types of edges)
+	- always-on brain-os with cron jobs automatically updating
+## [I Turned Claude Into the Ultimate Second Brain - YouTube](https://www.youtube.com/watch?v=8QQ_INxAhRs) 20260627
+- [GitHub - nateherkai/AIS-OS: AI Operating System starter kit for Claude Code — three-skill kit (/onboard, /audit, /level-up) + 3Ms framework. Companion to the AIOS masterclass. · GitHub](https://github.com/nateherkai/AIS-OS)
+- Alternative Graph UI ![[photo_10_2026-06-27_22-42-13.jpg]]
+	- /goal Create an interactive HTML for my students that goes through my YouTube video transcripts. If you look within our transcript wiki, you can see a bunch of transcripts with a bunch of different concepts and a bunch of different relationships. I want a simple way for my students to be able to click through the different layers and understand the relationships between tools and harnesses and how everything that I've talked about on YouTube for the past couple of months, how it all connects together. And then once you have built that, use a dynamic workflow to verify that everything is accurate and works as expected. This is for a demonstration for a YouTube video, so don't feel the need to make this a production-ready application, but this should be easy to understand, so don't make it confusing, don't make there be too much text or too much noise; it should be visually pleasing, so don't make the interface clunky. It's really important that you are visually checking your work and testing that different personas would be able to click through and understand, meaning a beginner, a software engineer, a business owner, etc.
+- connection - static or live data, cadence automation![[photo_1_2026-06-27_22-42-13.jpg]]
+	- green is already ai os
+- Cadence triggered manual, by event, by schedule ![[photo_11_2026-06-27_22-42-13.jpg]]
+- claude.md ![[photo_2_2026-06-27_22-42-13.jpg]]
+	- follow this retrieval protocol: **Wiki path:** `C:\Users\nateh\OneDrive\Desktop\Herk Brain\wiki\`
+		1. **Hot cache first.** Read `_hot.md` (~500 tokens). Contains active threads and key numbers. Resolves most queries.
+		2. **Master index.** Read `_index.md` if hot cache isn't enough. Check "Recently Active" section.
+		3. **Domain sub-index.** Open 1-2 relevant `_index-{domain}.md` files. NEVER open all sub-indexes at once.
+		4. **Grep fallback.** Search `wiki/**/*.md` by keyword if the page isn't indexed.
+		5. **Page limit.** NEVER read more than 5 wiki pages per query.
+	- All API keys are stored in `.env` at the project root. Rules:
+		- **Never ask Nate for API keys.** Just read them from `.env`.
+		- When a new integration needs an API key, create a placeholder entry in `.env` with a comment explaining where to get the key, then tell Nate to drop his key in there.
+	- Skills live in `.claude/skills/`. Each skill is a folder with a `SKILL.md` file inside it. Ski... natural language or `/skill-name`. 
+	- Skill Structure Every SKILL.md file **must** start with YAML frontmatter: ```yaml --- name: skill-name description: Use when someone asks to [what triggers this skill]. ---
+	- How skills work:
+		- Each skill has its own instructions, configuration, and trigger phrases
+		- The frontmatter `name` should match the folder name
+		- The frontmatter `description` tells Claude when to activate the skill
+		- Skills that pull heavy data delegate to an agent to keep context clean
+		- Skills are built over time as recurring workflows emerge
+
+---
+# Skalierung (Nodes)
 - Kontextfenster Limit
 - Lösungen
 	- Dual-Level-Prinzip mit LightRAG (nicht gewollt!)
@@ -3323,12 +3371,17 @@ Ask the questions one at a time.
 - https://github.com/mattpocock/skills/blob/main/skills/productivity/write-a-skill/SKILL.md Skill for writing a skill
 If a question can be answered by exploring the codebase, explore the codebase instead.
 ---
+# Matt Pocock
+## [Matt Pocock’s Agentic Engineering Workflow (just copy him) - YouTube](https://www.youtube.com/watch?v=nQwJVHCtDDY) 20260626
+
+---
 # Hermes Harness 20260605
 - **Absolute Modell-Freiheit:** Kein Vendor Lock-in. Du kannst komplett kostenlose lokale Modelle (wie Qwen-Coder) nutzen und bei Bedarf flexibel auf beliebige Cloud-APIs wechseln.
 - **Dauerhaftes Gedächtnis (Learning Loop):** Hermes merkt sich deine Projektstrukturen über Sessions hinweg und schreibt sich selbst wiederverwendbare „Skills“ für wiederkehrende Probleme.
 - **Remote-Steuerung via Messenger:** Lässt sich als Hintergrunddienst einrichten und von unterwegs über Telegram, Discord, WhatsApp oder Slack per Smartphone steuern.
 - **Unbeaufsichtigte Automatisierung:** Dank integriertem Scheduler (Cronjobs) kann Hermes Aufgaben (wie nächtliche Backups oder Server-Checks) völlig selbstständig im Hintergrund ausführen.
 - **Volle Kostenkontrolle:** Keine Bindung an starre Abos oder drohende API-Flatrate-Änderungen – du bestimmst durch die Modellwahl selbst, wann welche Kosten anfallen.
+## [Hermes Architecture EXPLAINED: Memory, Context & Gateways - YouTube](https://www.youtube.com/watch?v=n32qq7Kwzh0) 20260525
 ---
 # microphone 20260604
 - [JrF - contact microphones](https://jezrileyfrench.co.uk/contact-microphones.php)
@@ -3692,17 +3745,18 @@ Hier steht dein Inhalt...
 - Zen Modus, nur ein Tab
 - STRG + Z für Layout Menu
 - ![[Pasted image 20260606161710.png]]
-
-
-	- **Der Trick (`.vscode` Ordner):** Wenn du in deinem Repository einen Ordner namens `.vscode` erstellst, kannst du dort Dateien ablegen, die VS Code **zwingend** für jeden Nutzer lädt, der das Projekt öffnet:
-    
-    - **`settings.json`**: Hier definierst du das Layout (wie im Screenshot). Du kannst erzwingen, dass die Sidebar an der richtigen Stelle sitzt, der Zen-Modus aktiv ist oder das Farbschema (Theme) fest eingestellt ist.
-        
-    - **`extensions.json`**: Hier listest du alle benötigten Plugins auf (z. B. Markdown All in One). Wenn ein Nutzer das Projekt in Codespaces oder lokal öffnet, wird er automatisch gefragt, ob er diese Plugins installieren möchte.
-        
-	- **Der Link:** Wenn du das Projekt über einen **GitHub Codespaces Link** teilst, wird bei jedem Klick eine "frische" Umgebung gestartet, die **immer** deine Konfiguration aus dem `.vscode`-Ordner lädt. Jeder Nutzer startet also mit exakt deinem Design.
-
-- settings.json
+## vs code setup 20260627
+- `%userprofile%\.vscode` Ordner mit Dateien für jeden Nutzer geladen, der das Projekt öffnet
+	- `.vscode/markdown.code-snippets`
+		- Dort definierst du Kürzel. Wenn der Nutzer z. B. `/achtung` tippt und Enter drückt, fügt VS Code automatisch diesen Block ein:
+```markdown
+> [!attention] Achtung
+> Hier Text eingeben...
+```
+* Wenn der Nutzer `/neu` tippt, wird automatisch ein kompletter YAML-Frontmatter-Block mit aktuellem Datum eingefügt. 
+	* weitere Templates wie für eine neue Notiz/Node
+- `settings.json`für das Layout (Positionierung Sidebars, Zen-Modus, color scheme 
+	- in `%appdata%\Code\User`
 ```json
 {
   // --- UI & Ablenkungsfreiheit ---
@@ -3729,22 +3783,127 @@ Hier steht dein Inhalt...
   "explorer.confirmDelete": false // Warnungen beim Löschen deaktivieren (Git kann alles wiederherstellen)
 }
 ```
-- Lege eine Datei `.vscode/markdown.code-snippets` an.
-- Dort definierst du Kürzel. Wenn der Nutzer z. B. `/achtung` tippt und Enter drückt, fügt VS Code automatisch diesen Block ein:
-```markdown
-> [!attention] Achtung
-> Hier Text eingeben...
+- settings.json, die zen modus imitiert
+```json
+{
+  // --- Den Zen-Modus im normalen Modus imitieren ---
+  "workbench.editor.centeredLayout": true,      // Zentriert den Text in der Mitte (wie im Zen-Modus)
+  "workbench.editor.showTabs": "none",          // Versteckt die Tab-Leiste oben (wirkt wie eine einzelne Wiki-Seite)
+  "window.menuBarVisibility": "hidden",         // Versteckt die obere Menüleiste (Datei, Bearbeiten, etc.)
+  "workbench.editor.editorActionsLocation": "hidden", // Versteckt die kleinen Icons oben rechts im Editor
+  
+  // --- Maximale Reduktion ---
+  "workbench.header.visible": false,            // Versteckt den obersten Header-Bereich im Web-Editor
+  "workbench.tips.enabled": false,              // Keine nervigen Tipps oder Willkommensseiten
+  "editor.renderLineHighlight": "none",         // Versteckt die Hervorhebung der aktuellen Zeile
+  "editor.occurrencesHighlight": "off",         // Keine farbige Markierung von gleichen Wörtern
+  "editor.selectionHighlight": false            // Verhindert visuelle Ablenkung beim Markieren
+}
 ```
-* Wenn der Nutzer `/neu` tippt, wird automatisch ein kompletter YAML-Frontmatter-Block mit aktuellem Datum eingefügt. 
-* Dateivorlagen (Templates) erzwingen Nutze eine Erweiterung wie **"File Templates"**. Damit kannst du im Rechtsklick-Menü des Dateiexplorers einen Punkt "Neue Wiki-Seite" hinzufügen. Ein Klick darauf erstellt eine neue Datei, die bereits perfekt formatiert ist (inklusive Properties und Platzhaltern), anstatt einer komplett leeren `.md`-Datei, vor der Laien oft kapitulieren.
+- `extensions.json` Nutzer wird er automatisch gefragt, ob er diese Plugins installieren möchte.
+	- "File Templates" oder in code-snippets siehe oben
+	- "Commands" und erweitern der settings.json, damit zusätzliche UI Elemente wie Buttons zum speichern erzeugt werden
+> [!NOTE]- Wiki-Live-Aktualiseren Button
+> ## Das 1-Klick "Wiki veröffentlichen" Skript
+> 
+> Wir bauen jetzt den "Speichern"-Button. Dafür brauchen wir drei kleine Teile: Das eigentliche Linux-Skript, die Definition als VS-Code-Task und den Button in der UI.
+> 
+> ### Schritt A: Das Skript (`publish.sh`)
+> 
+> Erstelle im Hauptverzeichnis deines Repositories eine Datei namens `publish.sh`. Dieses Skript zieht zuerst Updates von anderen, sammelt alle Änderungen des Nutzers, speichert sie und lädt sie hoch.
+> 
+> Bash
+> 
+> ```
+> #!/bin/bash
+> 
+> # 1. Neueste Änderungen von anderen holen, um Konflikte zu vermeiden
+> git pull --rebase origin main
+> 
+> # 2. Alle neuen Dokumente und Bilder einsammeln
+> git add .
+> 
+> # 3. Automatischen Commit-Namen mit Zeitstempel erstellen
+> TIMESTAMP=$(date +"%d.%m.%Y %H:%M")
+> git commit -m "Wiki Update ($TIMESTAMP)"
+> 
+> # 4. Hochladen ins Git-Backend (triggert Quartz/Vercel)
+> git push origin main
+> 
+> echo "🎉 Wiki erfolgreich aktualisiert und veröffentlicht!"
+> ```
+> 
+> ### Schritt B: Das Skript ausführbar machen
+> 
+> Da Git unter Linux Rechte verwaltet, musst du das Skript einmalig in deinem Terminal (unten in VS Code) für alle ausführbar machen. Tippe dort ein:
+> 
+> Bash
+> 
+> ```
+> chmod +x publish.sh
+> ```
+> 
+> ### Schritt C: Den Task definieren (`tasks.json`)
+> 
+> Erstelle im Ordner `.vscode` eine Datei namens `tasks.json`. Sie sagt VS Code, wie das Skript gestartet wird.
+> 
+> JSON
+> 
+> ```
+> {
+>   "version": "2.0.0",
+>   "tasks": [
+>     {
+>       "label": "Wiki Veroeffentlichen",
+>       "type": "shell",
+>       "command": "./publish.sh",
+>       "problemMatcher": [],
+>       "presentation": {
+>         "echo": true,
+>         "reveal": "silent", // Versteckt das technische Terminal, außer es gibt einen Fehler
+>         "focus": false,
+>         "panel": "shared",
+>         "showReuseMessage": false,
+>         "clear": true
+>       }
+>     }
+>   ]
+> }
+> ```
+> 
+> ### Schritt D: Den Button in die Statusleiste zaubern
+> 
+> Damit der Nutzer den Task per Klick starten kann, fügen wir das Plugin **"Commands"** (ID: `ryu1kn.commands`) zu deiner `.devcontainer/devcontainer.json` hinzu.
+> 
+> Ergänze dann in deiner `.vscode/settings.json` folgenden Code, um den Button unten links in die Statusleiste zu setzen:
+> 
+> JSON
+> 
+> ```
+> "commands.commands": [
+>   {
+>     "command": "workbench.action.tasks.runTask",
+>     "args": "Wiki Veroeffentlichen",
+>     "label": "🚀 Wiki live aktualisieren",
+>     "alignment": "left",
+>     "color": "#4AF626" // Ein schönes, auffälliges Grün
+>   }
+> ]
+> ```
+> 
+> ## Das Endergebnis für deine Nutzer
+> 
+> Wenn ein technisch nicht versierter Nutzer nun dein Wiki über den Browser-Link öffnet:
+> 
+> 1. Er sieht sofort die schicke Startseite (`README.md`).
+>     
+> 2. Er erstellt eine neue Datei, tippt `/neu` und hat sofort alle Obsidian-Properties parat.
+>     
+> 3. Er zieht Bilder per Drag & Drop rein und lässt die KI via Chat die Formatierung (wie Callouts oder Mermaid aus **Pasted image 20260606161710.png**) übernehmen.
+>     
+> 4. Wenn er fertig ist, klickt er unten links einfach auf den leuchtend grünen Button **`🚀 Wiki live aktualisieren`**. Das Terminal blitzt kurz auf, meldet Erfolg, und im Hintergrund baut Quartz die Seite neu.
+> 	- Alternative .devcontainer/devcontainer.json als Konfigurationsdatei für den Container, in dem der Workspace läuft
 
-
-- **Nur mit `extensions.json`:** Der Editor öffnet sich sofort -> Ein Popup erscheint -> Nutzer muss "Installieren" klicken -> Plugins laden im Hintergrund nach.
-    
-- **Mit `devcontainer.json`:** Der Ladebildschirm von Codespaces dreht sich beim allerersten Öffnen ein paar Sekunden länger -> Der Editor erscheint -> **Alle Plugins, Shortcuts und Mermaid-Vorschauen sind von der ersten Sekunde an aktiv und einsatzbereit.**
-	- Erstelle in deinem Repository einen neuen Ordner namens `.devcontainer`.
-    - Erstelle darin eine Datei namens `devcontainer.json`.
-    - Füge folgenden Code ein:
 ```json
 {
   "name": "Wiki Environment",
@@ -3778,282 +3937,20 @@ Hier steht dein Inhalt...
   "editor.selectionHighlight": false            // Verhindert visuelle Ablenkung beim Markieren
 }
 ```
-
-
-### A. Die "Doppelklick-to-Edit" Illusion (Vorschau standardmäßig)
-In einem echten Wiki sieht man zuerst die schön gerenderte Seite (inkl. Bildern und Mermaid) und editiert erst bei Bedarf. Du kannst VS Code zwingen, Markdown-Dateien standardmäßig als Vorschau zu öffnen:
-- Nutze das Plugin **"Markdown Preview Full Editor"** (in die `devcontainer.json` packen).
-- Ergänze in den Settings:
-```json
-    "workbench.editorAssociations": {
-      "*.md": "vscode.markdown.preview.editor"
-    }
-```
-* **Ergebnis:** Klickt der Nutzer auf eine Datei, sieht er sofort das fertige Wiki-Dokument. Erst wenn er ein Tastaturkürzel drückt oder auf die Seite doppelklickt, springt der Editor in den Schreibmodus. 
-### B. Automatischer "Titel-Sync" aus dem Frontmatter Nicht-technische Nutzer vergessen oft, den Dateinamen zu ändern, wenn sie die Überschrift im Text anpassen. 
-* Erweiterung: **"Auto Rename Markdown File"** 
-* Wenn der Nutzer die Hauptüberschrift (`# Mein neuer Titel`) im Dokument ändert, benennt das Plugin automatisch die `.md`-Datei im Hintergrund um. Das verhindert Chaos im Obsidian-Vault. 
-### C. Drag & Drop für Anhänge sauber strukturieren Wenn Nutzer Bilder oder PDFs in den Editor ziehen, landen diese standardmäßig unstrukturiert im Hauptordner. Das vermüllt den Vault. 
-* Zwinge VS Code dazu, Anhänge in einen versteckten Medienordner zu legen: 
-```json 
-"markdown.copyFiles.destination": { "**/*": "assets/${documentBaseName}/" }
-```
-
-
-
-- Er klickt auf den GitHub-Link.
-    
-- Der Browser öffnet eine komplett cleane, weiße (oder dunkle) Seite.
-    
-- In der Mitte steht der Text. Es gibt keine Knöpfe, die ihn verwirren könnten.
-    
-- Er schreibt seinen Text, zieht ein Bild hinein (das im Hintergrund sauber einsortiert wird) und nutzt die KI im rechten Seitenfenster, um Formatierungen vorzunehmen.
-    
-- Zum Schluss klickt er auf den einzigen sichtbaren Button in der Statusleiste: `[ Wiki Veröffentlichen ]`.
-
-
-
-
-
-
-
-Um aus deiner VS-Code-Umgebung ein echtes, rundes "Wiki-Produkt" für Laien zu machen, lösen wir das über ein cleveres Onboarding-System und ein automatisiertes Skript. Da deine Umgebung in GitHub Codespaces (also auf einem Linux-Server im Hintergrund) läuft, können wir das perfekt automatisieren.
-
-## 1. Onboarding & Templates: Wie finden Laien sich zurecht?
-
-Für nicht-technische Nutzer darf es keine versteckten Menüs geben. Alles muss sichtbar oder über einfache Sprache (KI) steuerbar sein.
-
-### A. Das "Dashboard" (Die Startseite)
-
-Zwinge VS Code dazu, beim Öffnen immer eine zentrale `Willkommen.md`-Datei anzuzeigen. Das ist dein Dashboard.
-
-Füge das zu deiner `.vscode/settings.json` hinzu:
-
-JSON
-
-```
-"workbench.startupEditor": "readme"
-```
-
-_(Wenn deine Startseite `README.md` heißt, öffnet sie sich nun immer automatisch im Vorschau-Modus)._
-
-**Inhalt dieser Startseite:**
-
+- `keybindings.json`
+- Für nicht-technische Nutzer darf es keine versteckten Menüs geben. Alles muss sichtbar oder über einfache Sprache (KI) steuerbar sein.
+	- settings. json `"workbench.startupEditor": "readme"`
+## readme
 - Ein großer Button oder Link: `[Klicke hier, um eine neue Notiz zu erstellen]`
-    
 - Eine kurze Tabelle mit den 3 wichtigsten KI-Befehlen.
-    
-
-### B. Templates (Vorlagen mit Properties) über Snippets
-
-Anstatt dass Nutzer komplizierte Vorlagen-Ordner durchwuchen, nutzen wir **VS Code Snippets**. Wenn der Nutzer in einer neuen Datei `/neu` tippt, baut VS Code automatisch das gesamte Gerüst inklusive Properties (YAML Frontmatter) auf.
-
-Erstelle eine Datei namens `.vscode/wiki.code-snippets` und füge das ein:
-
-JSON
-
-```
-{
-  "Neue Wiki Seite": {
-    "prefix": "/neu",
-    "body": [
-      "---",
-      "status: \"active\"",
-      "created_at: \"$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE\"",
-      "author: \"${1:Dein Name}\"",
-      "tags: [${2:tag1, tag2}]",
-      "---",
-      "",
-      "# ${3:Titel der Notiz}",
-      "",
-      "## Beschreibung",
-      "Hier Text eingeben... $0"
-    ],
-    "description": "Erstellt ein neues Wiki-Dokument mit Obsidian-Properties"
-  }
-}
-```
-
-### C. KI-Onboarding: Die "Magic Prompts"
-
-Da du (wie im Screenshot von **Pasted image 20260606161710.png** zu sehen) ein KI-Chatfenster rechts integriert hast, gib den Nutzern auf der Startseite 3 feste Prompts mit, die sie einfach kopieren und in den Chat jagen können:
-
-> 💡 **KI-Assistent Kurzanleitung:**
-> 
-> Markiere einen Text und schreibe der KI im Chat einfach:
-> 
-> - `"/callout Achtung"` -> _Macht aus dem Text eine gelbe Obsidian-Warnbox._
->     
-> - `"/mermaid Ablauf"` -> _Erstellt ein visuelles Diagramm aus meinen Stichpunkten._
->     
-> - `"/properties"` -> _Ergänze fehlende Metadaten im Kopf der Datei._
->     
-
-## 2. Das 1-Klick "Wiki veröffentlichen" Skript
-
-Wir bauen jetzt den "Speichern"-Button. Dafür brauchen wir drei kleine Teile: Das eigentliche Linux-Skript, die Definition als VS-Code-Task und den Button in der UI.
-
-### Schritt A: Das Skript (`publish.sh`)
-
-Erstelle im Hauptverzeichnis deines Repositories eine Datei namens `publish.sh`. Dieses Skript zieht zuerst Updates von anderen, sammelt alle Änderungen des Nutzers, speichert sie und lädt sie hoch.
-
-Bash
-
-```
-#!/bin/bash
-
-# 1. Neueste Änderungen von anderen holen, um Konflikte zu vermeiden
-git pull --rebase origin main
-
-# 2. Alle neuen Dokumente und Bilder einsammeln
-git add .
-
-# 3. Automatischen Commit-Namen mit Zeitstempel erstellen
-TIMESTAMP=$(date +"%d.%m.%Y %H:%M")
-git commit -m "Wiki Update ($TIMESTAMP)"
-
-# 4. Hochladen ins Git-Backend (triggert Quartz/Vercel)
-git push origin main
-
-echo "🎉 Wiki erfolgreich aktualisiert und veröffentlicht!"
-```
-
-### Schritt B: Das Skript ausführbar machen
-
-Da Git unter Linux Rechte verwaltet, musst du das Skript einmalig in deinem Terminal (unten in VS Code) für alle ausführbar machen. Tippe dort ein:
-
-Bash
-
-```
-chmod +x publish.sh
-```
-
-### Schritt C: Den Task definieren (`tasks.json`)
-
-Erstelle im Ordner `.vscode` eine Datei namens `tasks.json`. Sie sagt VS Code, wie das Skript gestartet wird.
-
-JSON
-
-```
-{
-  "version": "2.0.0",
-  "tasks": [
-    {
-      "label": "Wiki Veroeffentlichen",
-      "type": "shell",
-      "command": "./publish.sh",
-      "problemMatcher": [],
-      "presentation": {
-        "echo": true,
-        "reveal": "silent", // Versteckt das technische Terminal, außer es gibt einen Fehler
-        "focus": false,
-        "panel": "shared",
-        "showReuseMessage": false,
-        "clear": true
-      }
-    }
-  ]
-}
-```
-
-### Schritt D: Den Button in die Statusleiste zaubern
-
-Damit der Nutzer den Task per Klick starten kann, fügen wir das Plugin **"Commands"** (ID: `ryu1kn.commands`) zu deiner `.devcontainer/devcontainer.json` hinzu.
-
-Ergänze dann in deiner `.vscode/settings.json` folgenden Code, um den Button unten links in die Statusleiste zu setzen:
-
-JSON
-
-```
-"commands.commands": [
-  {
-    "command": "workbench.action.tasks.runTask",
-    "args": "Wiki Veroeffentlichen",
-    "label": "🚀 Wiki live aktualisieren",
-    "alignment": "left",
-    "color": "#4AF626" // Ein schönes, auffälliges Grün
-  }
-]
-```
-
-## Das Endergebnis für deine Nutzer
-
-Wenn ein technisch nicht versierter Nutzer nun dein Wiki über den Browser-Link öffnet:
-
-1. Er sieht sofort die schicke Startseite (`README.md`).
-    
-2. Er erstellt eine neue Datei, tippt `/neu` und hat sofort alle Obsidian-Properties parat.
-    
-3. Er zieht Bilder per Drag & Drop rein und lässt die KI via Chat die Formatierung (wie Callouts oder Mermaid aus **Pasted image 20260606161710.png**) übernehmen.
-    
-4. Wenn er fertig ist, klickt er unten links einfach auf den leuchtend grünen Button **`🚀 Wiki live aktualisieren`**. Das Terminal blitzt kurz auf, meldet Erfolg, und im Hintergrund baut Quartz die Seite neu.
-    
-
-Möchtest du, dass wir für das Dashboard (`README.md`) direkt ein schönes, übersichtliches Markdown-Template entwerfen, das du als Startseite nutzen kannst?
-
-
-
-
-
-
-
-
-Das Prinzip, das du hier beschreibst, nennt man **"Optimistic Publishing"** (erst veröffentlichen, dann prüfen). Das ist für die Nutzer extrem motivierend, weil sie sofort ihr Ergebnis sehen, während die Qualitätssicherung im Hintergrund greift.
-
-Da dein gesamtes Setup auf Git basiert, ist die mächtigste Funktion für diesen Anwendungsfall bereits nativ vorhanden: Jeder Speichervorgang ist ein isolierter Schnappschuss. Man kann jede noch so kleine Änderung chirurgisch rückgängig machen.
-
-Hier ist der Bauplan, wie du diesen Approval Loop nahtlos in dein bestehendes System integrierst.
-
-## 1. Die Benachrichtigung (Der Trigger)
-
-Sobald ein Nutzer auf deinen "Wiki live aktualisieren"-Button klickt, pusht das Skript die Änderung zu GitHub. Das ist der Moment, an dem wir den Supervisor informieren.
-
-Wir lagern diese Logik aus VS Code aus und lassen GitHub die Arbeit machen, um die Nutzer-Oberfläche nicht zu verlangsamen.
-
-- **Der Mechanismus:** Wir nutzen GitHub Actions (oder einen Webhook zu n8n).
-    
-- **Das Ereignis:** "On Push" (Immer wenn neue Daten auf dem Haupt-Ast landen).
-    
-- **Der Inhalt:** Das System generiert eine Nachricht mit dem Namen des Autors, der geänderten Datei und einem direkten Link zum sogenannten "Diff".
-    
-
-## 2. Die Prüfung (Der Supervisor-Blick)
-
-Der Supervisor benötigt kein komplexes Setup, sondern kann die Prüfung komplett im Browser am Smartphone oder Laptop durchführen.
-
-- Der Klick auf den Link in der Benachrichtigung öffnet direkt die GitHub-Ansicht für diesen spezifischen Speicherpunkt (Commit).
-    
-- Die Oberfläche zeigt einen Vorher-Nachher-Vergleich.
-    
-- Rote Zeilen wurden vom Nutzer gelöscht, grüne Zeilen hinzugefügt.
-    
-- Sogar Änderungen an den Obsidian-Properties (YAML) sind hier sofort und klar lesbar.
-    
-
-## 3. Das Zurücksetzen (Der Rollback-Prozess)
-
-Sollte der Supervisor feststellen, dass ein Nutzer die Formatierung zerschossen oder falsche Inhalte publiziert hat, muss der alte Stand wiederhergestellt werden. Git macht das über einen "Revert". Ein Revert löscht die neue Änderung nicht aus der Historie (aus Gründen der Nachvollziehbarkeit), sondern erstellt einen neuen Speicherpunkt, der exakt aussieht wie der alte.
-
-|**Plattform**|**Vorgehen für den Supervisor**|
-|---|---|
-|**GitHub Browser (Empfohlen)**|Der Supervisor klickt im betrachteten Commit oben rechts auf den Button "Revert". Ein Klick bestätigt die Aktion, und die Live-Seite aktualisiert sich wieder auf den alten Stand.|
-|**VS Code (Experten-Weg)**|Der Supervisor nutzt die Erweiterung "GitLens", klickt in der Historie mit der rechten Maustaste auf den fehlerhaften Eintrag und wählt "Revert Commit".|
-
-## 4. Wie man den Loop technisch einrichtet
-
-Um das in Gang zu setzen, benötigst du lediglich eine kleine Automatisierungs-Datei in deinem Repository.
-
+## portability
+- gewährleistet
+## approval loop
+- Optimistic Publishing, erst veröffentlichen dann prüfen
+- Github Actions, wenn jemand jemand Wiki-Live-Aktualisieren Button klickt und auf Git gepusht wird, mit Benachrichtigung (Name des Autors, geänderter Datei und direkter Link zum Diff und Anzeige der Änderungen)
 - Erstelle den Ordner `.github/workflows/` in deinem Projekt.
-    
 - Lege dort eine Datei an (z. B. `supervisor-alert.yml`).
-    
 - Diese Datei instruiert die GitHub-Server, bei jedem eingehenden Push die Metadaten auszulesen und über eine Schnittstelle (API) oder per E-Mail den Alarm auszulösen.
-    
-
-Welcher Kommunikationskanal (wie E-Mail, Slack, Microsoft Teams oder Discord) wäre für den Supervisor am praktischsten, damit wir die Benachrichtigungs-Logik passend strukturieren können?
-
-
-
 ---
 # Multiple Agents (nach Steinberger) 20260606
 - Programmieren mit cmux als Terminal-Multiplexer (auf Ghostyy basierend) 
@@ -4116,6 +4013,30 @@ Welcher Kommunikationskanal (wie E-Mail, Slack, Microsoft Teams oder Discord) w�
 	- Poltergeist für automatisches Hot-Reloading, damit Agenten nicht durch lange Build-Zeiten ausgebremst werden
 	- Oracle für anderes KI-Modell, was Logik reviewed
 - ggf. isolierte DevContainer, in denen der Agent läuft
+## Environment/Docker 20260626
+- Bug: eigene Remote Box / Docker Container od. Micro-VM wird aufgebaut, um spezifisches Environment zu simulieren, in dem Fehler reproduziert wird, Loop (End-to-End-Test)
+- Interaktion mit Docker über Tools (File-System-Tools, Bash-Execution-Tools, Terminalausgabe stdout und Fehlermeldungen stderr)
+- Bevor Code im Container geändert wird, wird ein Test geschrieben, der den Fehler reproduziert. Test muss fehlschlagen, damit der Agent den Bug erfolgreich isoliert und verstanden hat
+	- nachdem Code gefixt wurde und Test erfolgreich war, Regression aller Tests des Projektes
+- Unterschied von Bugfixes in Container und Feature-Coding
+	- Bugfixes sind für den Agenten oft der einfachste Einstieg. Der Agent bekommt einen fehlschlagenden Test oder eine Fehlermeldung, isoliert den Fehler im Container, passt den Code an und prüft, ob der Test grün wird.
+	- Komplett frische Features werden durch sogenanntes Agentic TDD (Test-Driven Development) umgesetzt. Der Agent stürzt sich nicht einfach blind in den Code. Zuerst zerlegt er das Feature in vertikale Abschnitte (sogenannte Slices, die z.B. Datenbank, Backend und Frontend eines kleinen Teilbereichs abdecken). Dann schreibt der Agent zuerst im Container einen Test, der das neue Feature beschreibt (welcher logischerweise fehlschlägt, da der Code noch nicht existiert). Erst danach schreibt er den Code, um den Test zu erfüllen. Der Container dient hier als sichere Werkbank, um das Fundament hochzuziehen und live gegen die bestehende Codebase zu testen, ohne das Hauptprojekt zu gefährden.
+- Sandcastle von Pocock: erstellt automatisch den Git Worktree, fährt den Sandbox-Provider (wahlweise lokales Docker, Podman oder cloudbasierte Vercel MicroVMs) hoch, leitet die KI sicher in diese isolierte Box, überwacht den Agenten bei seiner Arbeit, sammelt am Ende die Commits ein und zerstört die Sandbox wieder
+	- Skalierungsniveau von Steinberger ohne Worktrees, weil Katastrophe eines Git-Merge-Konflikts und der Nachverfolgbarkeit
+	- sondern API-getriebene Monorepos und zentralem Orchestrator (OpenClaw), der nicht selbst codet sondern delegiert und verwaltet (über API mit Github, Discord und CI/CD Pipeline verbunden), nimmt Bug-Reports auf und entscheidet über Sub-Agenten und lässt diesen in Docker spawnen
+	- Mitteilungen nicht über geteiltes Dateisystem sonder API (Status, Testergebnisse,...) - Domain Isolation
+		- Pull Requests und kein blindes Pushen, Orchestrator mit strikter Merge Queue (Wird ein PR gemerged, weist der Orchestrator die wartenden Agenten via API an, ihre Branches automatisch auf den neuesten Stand (Rebase) zu ziehen und ihre Verifikations-Tests im Container noch einmal laufen zu lassen, bevor der nächste PR integriert wird.)
+	- intelligenter Checkout
+		- kein komplettes Klonen des Monorepos für temporären Docker
+		- git sparse-checkout
+		- **Die Logik:** Der Agent fragt den Orchestrator: „Ich muss den Login-Bug fixen.“
+		- **Die Aktion:** Der Orchestrator prüft die Abhängigkeiten (z.B. via `CODEOWNERS` oder Dependency-Graph) und sagt dem System: „Lade nur `packages/auth`, `shared/types` und die `package.json` im Root.“
+		- **Der Effekt:** Der Rest des gigantischen Repos bleibt für den Agenten „unsichtbar“. Das spart massiv Speicherplatz, Netzwerk-Bandbreite und verhindert, dass der Agent versehentlich in Bereichen „herumpfuscht“, für die er keine Berechtigung hat.
+	- API-basierte Kontext-Injection
+		- Der Orchestrator nutzt eine API, um den Code quasi in den Arbeitsspeicher des Agenten zu „streamen“
+		- Erst wenn der Agent eine Datei wirklich liest, wird sie geladen. Muss der Agent später eine Konfigurationsdatei aus einem ganz anderen Bereich des Monorepos sehen, fordert er sie einfach per API nach.
+### orchestrator-ablaufplan 20260627
+[[steinberger environment]]
 ## [/handoff is my new favourite skill - YouTube](https://www.youtube.com/watch?v=dtAJ2dOd3ko) 20260608
 - /compact simlilarity, but handoff at any time not just limit and referring it to other sessions
 - parsing back handoff from child to parent
@@ -4140,6 +4061,10 @@ Welcher Kommunikationskanal (wie E-Mail, Slack, Microsoft Teams oder Discord) w�
 - NestJS Gateway zwischen Frontend und Ki Repos zum Rate Limiting und Validierung
 	- Übersetzung von REST(HTTP), Validierung mit DTO, in Event
 	- Agent B validiert Event mit selben DTO
+## final + DB-pro-Task und NestJS-Anpassungen 20260627
+[[orchestrator-ablaufplan]]
+->Verwirrung!!!
+
 ---
 # github search 20260608
 - 1000 Anfragen mit einmal maximal über API
@@ -4273,6 +4198,377 @@ Welcher Kommunikationskanal (wie E-Mail, Slack, Microsoft Teams oder Discord) w�
 - Rekurrenzen verschiedener Delay-Line Abfragen miteinander multiplizieren (logisches UND 0,0=0/1,1=1)
 - ggf. glätten mit mix
 ---
+# agentic loop 20260625
+## [AddyOsmani.com - Loop Engineering](https://addyosmani.com/blog/loop-engineering/)
+components
+	- **Automations** that go off on a schedule and do discovery and triage by themselves.
+	- **Worktrees** so two agents working in paralell dont step on each other.
+	- **Skills** to write down the project knowledge the agent would otherwise just guess.
+	- **Plugins and connectors** to plug the agent into the tools you already use.
+	- **Sub-agents** so one of them has the idea and a different one checks it.
+	- Memory
+
+|Primitive|Job in the loop|Codex app|Claude Code|
+|---|---|---|---|
+|**Automations**|discovery + triage on a schedule|[Automations tab](https://developers.openai.com/codex/app/automations): pick project, prompt, cadence, environment; results land in a Triage inbox; `/goal` for run-until-done|Scheduled tasks and cron, `/loop`, `/goal`, hooks, GitHub Actions|
+|**Worktrees**|isolate parallel features|Built-in worktree per thread|`git worktree`, `--worktree`, `isolation: worktree` on a subagent|
+|**Skills**|codify project knowledge|[Agent Skills](https://developers.openai.com/codex/skills) (`SKILL.md`), invoked with `$name` or implicitly|[Agent Skills](https://addyosmani.com/blog/agent-skills/) (`SKILL.md`)|
+|**Plugins / connectors**|connect your tools|Connectors (MCP) plus plugins for distribution|MCP servers plus plugins|
+|**Sub-agents**|ideate and verify|[Subagents](https://developers.openai.com/codex/subagents) defined as TOML in `.codex/agents/`|Task subagents in `.claude/agents/`, agent teams|
+|**State**|track what’s done|Markdown or Linear via a connector|Markdown (`AGENTS.md`, progress files) or Linear via MCP|
+- claude /loop for cronjobs or push it to github actions for activated jobs without running computer
+	- An automation runs every morning on the repo. Its prompt calls a triage skill that reads yesterdays CI failures, the open issues, the recent commits, and writes the findings into a markdown file. For each finding that is worth doing the thread opens an isolated worktree and sends a sub-agent to draft the fix, and a second sub-agent reviews that draft against the project skills and the existing tests. Anything the loop can not handle lands in the triage inbox for me. 
+	- The state file is the spine of the whole thing, it remembers what got tried, what passed, what is still open, so tomorrow morning the run picks up where today stopped.
+- /goal until a condition you wrote is actually true
+- git worktree fixes it, its a separate working directory on its own branch sharing the same repo history, so one agent’s edits literally can not touch the other one’s checkout.
+	- YOU are still the ceiling, your review bandwith decides how many you can actually run, not the tool
+- run skills by /skill or if the description of the skill matches the prompt
+	- plugin is a portable skill or multiple skills
+- splitting the agent who writes from the agent who checks (different instruction and different model and no context)
+	- You define your own agents as TOML files in `.codex/agents/` or `.claude/agents/` , each with a name, a description, instructions and optional model and reasoning effort
+	- one agent explores, one implements, one verifies against the spec.
+	- This is also basically what Claude Code’s `/goal` does under the hood, a fresh model decides if the loop is done instead of the one that did the work, the maker and checker split applied to the stop condition itself.
+- That said, go ahead and set up your loops, but don’t forget that prompting your agents directly is also effective. It’s all about finding the right balance.
+## [Matthew Berman Loop Library vs ExplainX.ai: Best AI Agent Loops (2026) | explainx.ai Blog | explainx.ai](https://www.explainx.ai/blog/matthew-berman-loop-library-forward-future-ai-agents-2026)
+- **Trigger** — what starts the loop (cron, ticket arrival, manual kickoff)
+- **Action** — what the agent does each iteration
+- **Proof** — how success is verified (tests, benchmarks, second-agent review)
+- **Memory** — what persists across iterations so work does not reset
+- **Stopping condition (Verification)** — when to exit, including honest failure reporting
+- Steinberger - "Tell codex to maintain your repos, wake up every 5 minutes and direct work to threads. That makes it easy to parallelize + steer work as needed."
+	- combines an **orchestrator skill** with triage, autoreview, and computer-use skills so some work lands without manual steering
+- How to Run Your First Loop Safely
+	- **1. Pick a bounded task.** Docs drift, single-service error logs, or one stale PR batch — not "refactor the entire monorepo" on night one.
+	- **2. Wire cheap checks first.** Compilation, typecheck, unit tests, lint. Reserve a second agent or frontier-model review for what deterministic tools cannot judge.
+	- **3. Set hard exits.** Max iterations, token budget, wall-clock timeout. Dan Bochman's viral "87 times × 13 hours" thread is what happens when the exit criterion is "does the human like it?" — not a loop, a conversation. See [loop engineering goes mainstream](https://www.explainx.ai/blog/loop-engineering-mainstream-ai-skill-june-2026) for that breakdown.
+	- **4. Keep humans at acceptance, not inside every retry.** Define success upfront. Let the loop converge. Review the artifact once.
+	- **5. Log iteration state.** ExplainX workflow steps, Steinberger's `/tmp/refactor-{projectname}.md`, or Forward Future's verify/stop tables all serve the same purpose: the agent must not lose context between runs.
+## [az9713/loop-library: Paste-ready /loop prompts for Claude Code — Matt Berman's 22 Loop Library concepts as runnable prompts](https://github.com/az9713/loop-library)
+## [cobusgreyling/loop-engineering: Practical patterns, starters & CLI tools for loop engineering with AI coding agents. Design systems that prompt and orchestrate agents (inspired by Addy Osmani and Boris Cherny). Includes loop-audit, loop-init, loop-cost.](https://github.com/cobusgreyling/loop-engineering)
+
+## [(1) Gabriel Chua on X: "The Inner and Outer Loops of Codex Automations " / X](https://x.com/gabrielchua/status/2067262326043287852)
+- ![[Pasted image 20260625225408.png]]
+- I find it useful to think about context in two categories.
+	- First, there's the context needed before the work begins: history, facts, constraints, relationships, and prior decisions.
+		- The inner loop brings the right context to the task and produces a draft.
+	- Second, there's the context revealed after the work: what a person keeps, changes, rejects, sends, or leaves pending during review.
+		- The outer loop learns from review and makes that context available the next time the work runs.
+	- The loops run at different speeds. The inner loop helps quickly, perhaps every two hours. The outer loop waits for enough examples, running at day’s end
+## [OODA Loop + Infinite Brain = the AI System Everyone's Missing - YouTube](https://www.youtube.com/watch?v=yP4p3reZUcU&pp=ugUEEgJlbg%3D%3D)
+- Observe (Prompt, Memorie, Context), Orient (Reason, Bewertung mit Goal), Decide (Tool Auswahl und Planung der Parameter), Act (Agent verlässt Umgebung und führt generierten Tool Code aus)
+## [Finally. Agent Loops Clearly Explained. - YouTube](https://www.youtube.com/watch?v=EuzYhzB0vbI)
+- Your goal (what "done" means) -> Reason (think the next step) -> done? -> Act (use a tool) -> Observe (read what just happens) -> Wdh. Reason
+	- other loops: maker - checker agents, agent orchestrator - multiple sub agents
+- done? 
+	- functional, judgment, visual, human-in-the-loop 
+	- just build a loop, when the AI can decide if done criterium is checked
+## [Matt Pocock’s Agentic Engineering Workflow (just copy him) - YouTube](https://www.youtube.com/watch?v=nQwJVHCtDDY) 20260626
+- /teach Skill mit Lernzusammenfassung auf html und Memory 
+	- https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/SKILL.md
+	- Skills können stateless oder stateful (memory) sein
+	- Skills als abilities (coding standards) oder procedures (stateless grill-me)
+	- description of Skills fließen alle in Kontext Fenster ein (Option auswählen)
+- Sandcastle mit Guithub Actions [GitHub - mattpocock/sandcastle: Orchestrate sandboxed coding agents in TypeScript with sandcastle.run() · GitHub](https://github.com/mattpocock/sandcastle)
+	- Orchestrator
+- Agentic Loop hat nur damit zu tun, afk zu sein und human-in-the-loop möglichst weit zum Ergebnis zu verschieben
+	- Reviews sollen seamless sein und less human effort haben
+## gemini
+- polling loops in festen intervallen für wiederkehrende Aufgaben
+- dynamische loops für neue features (Code schreiben -> Review -> Test -> Browser-Verifizierung -> Commit)
+- innere loops 
+	- code review loop
+	- build/lint loop
+	- browser verify loop 
+## steinberger
+- https://docs.openclaw.ai/concepts/agent-loop
+	- hooks als Einstiegspunkte in Loops
+		- `before_prompt_build`: Bevor der Agent loslegt, kann hier dynamisch Kontext in den System-Prompt injiziert werden (z. B. die aktuellen Fehlermeldungen aus einem CI-Lauf).
+		- `before_agent_reply`: Erlaubt es, die geplante Antwort des Agenten abzufangen, zu modifizieren oder durch eine synthetische Antwort zu ersetzen, bevor sie den Loop verlässt.
+		- `before_tool_call` / `after_tool_call`: Hier können Parameter eines Werkzeugs blockiert (z. B. aus Sicherheitsgründen) oder Ergebnisse modifiziert werden.
+- Grader (sub-agent) als Kritiker
+- Progress.md als dauerhafter Loop Fortschritt, unabhängig von Compact
+---
+# audio ingest 20260627
+## Obsidian Plugins
+- Note Companion / NeuroVox
+- AI Transcriber
+- Obsidian Transcription (Whisper ASR)
+## Mobile
+- AudioPen
+- Whisper Memos / Plaud
+## Audio Channel Based (for Meetings)
+- Screenpipe
+- OpenWhispr
+---
+# Verwirrung Peter Steinberger Setup 20260627
+- zwei Szenarien! minimal -> complex
+- Refactoring dazwischen für höheres Skaling in Scenario 2
+## Scenario 1: daily
+- Worktree mit Geschwindigkeit (kein ewiges Klonen) und ohne Speicherverbrauch
+- Mensch als Orchestrator
+- Sandcastle
+	- TypeScript ist hier der "Enforcer" oder das "DTO als Single Source of Truth" 
+		- Typsicherheit für Tool-Calls: Wenn der Agent ein Tool aufruft (z. B. `write_file`), sorgt TypeScript dafür, dass die Argumente exakt dem entsprechen, was dein Dateisystem-Tool erwartet.
+		- Strukturierte Kommunikation: Da LLMs oft unvorhersehbare Antworten geben, dient das Typsystem als "Schutzwall". Wenn das LLM Unsinn zurückgibt, schlägt die Validierung sofort fehl, bevor der Agent den Code anfasst.
+	- TDD Loop Protokoll
+		1. REPRODUKTION:
+		   - Erstelle eine Datei `test_reproduction.py`.
+		   - Schreibe einen Test, der das gemeldete Problem exakt abbildet.
+		   - Führe den Test aus. WENN DER TEST BESTEHT, IST DER BUG NICHT REPRODUZIERBAR (STOPP).
+		   - WENN DER TEST FEHLSCHLÄGT, IST DIE REPRODUKTION ERFOLGREICH.
+		2. FIX:
+		   - Ändere den minimal nötigen Code, um den Test zu bestehen.
+		   - Keine Refactorings, die nicht direkt mit dem Bug zu tun haben.
+		3. VERIFIKATION:
+		   - Führe `test_reproduction.py` erneut aus.
+		   - Führe die gesamte Test-Suite aus, um Regressionen auszuschließen.
+		4. BERICHT:
+		   - Wenn alle Tests grün sind: Gib den Befehl `git commit` und `git push`.
+		   - Bei Fehler: Analysiere den Traceback und gehe zu Schritt 2.
+		- auch hier sind Agent Loops möglich, es braucht keinen autonomen Orchestrator! Logik und Regeln liegen nicht im Backend sondern in Skills oder System-Prompt
+		- für Features: **Komplett frische Features** werden durch sogenanntes _Agentic TDD (Test-Driven Development)_ umgesetzt. Der Agent stürzt sich nicht einfach blind in den Code. Zuerst zerlegt er das Feature in vertikale Abschnitte (sogenannte Slices, die z.B. Datenbank, Backend und Frontend eines kleinen Teilbereichs abdecken). Dann schreibt der Agent _zuerst_ im Container einen Test, der das neue Feature beschreibt (welcher logischerweise fehlschlägt, da der Code noch nicht existiert). Erst danach schreibt er den Code, um den Test zu erfüllen. Der Container dient hier als sichere Werkbank, um das Fundament hochzuziehen und live gegen die bestehende Codebase zu testen, ohne das Hauptprojekt zu gefährden.
+	- Sandcastle kann auch bereits fertig geschriebenen Python-Loop ausführen, Sandcastle ist als Host-Container oder Host-Wrapper oder Runner gebaut
+	- Rufe die LLM-API auf (mit dem System-Prompt und dem aktuellen Code-Zustand).
+		- Das LLM antwortet mit einem Tool-Aufruf (z. B. `Führe npm run test aus`).
+		- Dein Skript führt diesen Befehl _direkt lokal_ über die Shell im aktuellen Worktree aus.
+		- Dein Skript nimmt die Konsolenausgabe (`stdout`/`stderr`) und den Exit-Code (0 oder 1) - Exit Codes vom deterministischen Test und Ignorieren von LLM Gerede, welches einen bestandenen Test halluzinieren könnte
+### Kombination mit Harness 
+- Trennung von der "Verwaltung der physischen Umgebung" (Sandcastle) von der "Intelligenz und Orchestrierung" (Antigravity)
+- Du triggerst eine Aktion in Antigravity $\rightarrow$ Antigravity führt ein lokales `node` oder `bash` Skript aus $\rightarrow$ dieses Skript fungiert als **Entrypoint** für die Sandcastle-API $\rightarrow$ Sandcastle führt den Shell-Befehl aus, der den Worktree erstellt.
+- Sandcastle startet standardmäßig einen Docker Container, für Worktree muss es "In-Place" arbeiten
+- III run-agent.ts für Worktree
+```typescript
+import { wt, noSandbox } from '@ai-hero/sandcastle';
+
+async function runBugFix(issueId: string) {
+  // 1. Sandcastle bereitet den Worktree vor
+  const worktree = await wt.create({ branch: `fix-${issueId}` });
+  
+  try {
+    // 2. Antigravity/Agent arbeitet in diesem Pfad
+    // noSandbox() sorgt dafür, dass wir auf dem Host bleiben
+    await wt.run({
+      provider: noSandbox({ cwd: worktree.path }), 
+      prompt: `Fix issue ${issueId}`,
+      // Hier kommen die Steinberger-Skills rein
+      skills: ["./skills/tdd-loop.md"]
+    });
+    console.log("Erfolg: Test grün!");
+  } catch (e) {
+    console.error("Test fehlgeschlagen, Worktree wird verworfen.");
+  } finally {
+    // 3. Aufräumen: Worktree entfernen
+    await wt.delete(worktree);
+  }
+}
+
+runBugFix(process.argv[2]);
+```
+- IV auch das Starten eines Dockers ist mit Sandcastle möglich, zum Beispiel wenn zusätzliche Komponenten installiert werden müssen, die im späteren Host aber nicht relevant sind (Datenbank), ein anderes OS gebraucht wird (Test auf Linux-spezifischen Bibliotheken), übergeordnete Ordner keinen zugriff erlauben sollen, Möglichkeit von Lokal auf CI Server zu wechseln
+	- für Docker muss nur eine Zeile Code geändert werden `import { dockerProvider } from '@ai-hero/sandcastle'`
+	- Verlassen des "Host"-Modus und Starten des "Runtime"-Modus von Sandcastle 
+		- Docker mounted Worktree Ordner und schaut als Client auf die Dateien
+	- für jeden Agenten ein eigener Worktree Branch und ggf. Docker
+	- direkt mit Antigravity durch Parameter switchen `--mode=container`, dafür run-agent.ts anpassen
+```typescript
+function getProvider(mode: 'host' | 'container', path: string) {
+  return mode === 'container' 
+    ? dockerProvider({ image: 'my-custom-env' }) 
+    : noSandbox({ cwd: path });
+}
+```
+- Antigravity triggert Sandcastle als Shell Tool, dazu Code für die tools.ts Konfigurationsdatei
+```typescript
+// Beispielhafte Tool-Definition für Antigravity
+{
+  name: "run-agent",
+  description: "Startet den Sandcastle-Agenten für ein Issue",
+  run: async (args: { issueId: string }) => {
+    // Führt dein lokales Skript aus
+    return execSync(`npx ts-node run-agent.ts ${args.issueId}`).toString();
+  }
+}
+```
+- Trigger von Antigravity aus der run-agent.ts heraus ebenfalls möglich
+- I Sandcastle nur als Git Controller auf Main laufen lassen, ohne Container und Worktrees
+	- Du nutzt `noSandbox()` ohne `wt.create()`
+	- Du initialisierst Sandcastle direkt auf deinem Pfad (cwd: process.cwd()). Jedes Mal, wenn dein Agent einen Schritt macht, lässt du Sandcastle den Git-Zustand prüfen.
+	- Tool/Funktion `create_snapshot()` in Antigravity registrieren , das getriggert wird, wenn gepromptet wird "committe das Ergebnis", "bei jedem Schritt" oder in anderer einfacher Sprache
+		- Das Tool führt `git add . && git commit -m "..."` oder `sandcastle.snapshot()` aus
+		- Tools notwendig für deterministische Trennung
+- Agenten parallel laufen lassen
+	- Agenten teilen sich selben .git Ordner und sehen alle Historie und Branches, d.h. der eine Agent sieht den Commit des anderen 
+	 Merging findet nicht auf Dateisystem-Ebene statt sondern auf Git-Ebene
+	- 
+	- für jeden Agenten einen `wt.create()` Aufruf
+```typescript
+const agent1 = await wt.create({ branch: "fix-bug-A" });
+const agent2 = await wt.create({ branch: "feature-B" });
+
+// Beide laufen unabhängig parallel
+runAgent(agent1.path);
+runAgent(agent2.path);
+```
+- Integrations-Phase von parallen Agenten
+	- Du nutzt eine GitHub Merge Queue (oder ein einfaches Tool-Skript, das git merge in einem temporären "Test-Worktree" ausführt).
+		- Wenn Agent A fertig ist, wird sein Branch gemergt. 
+		- Agent B bekommt den Befehl: git fetch origin && git rebase origin/main. Er holt sich also den Fortschritt von Agent A in seinen eigenen Branch.
+		- Der "Human-in-the-Loop"-Schutz: Wenn Agent B bemerkt, dass durch den Merge von A seine Tests plötzlich rot werden, stoppt er und meldet: "Konflikt durch A erkannt, brauche menschliche Entscheidung."
+	- **besser Merge Queue**
+		- eigner neutraler Worktree, wo alle Tests des Projektes laufen
+		- Agent A läuft auf Worktree und Commit (kein merge auf main)
+		- Orchestrator des neutralen Worktrees erhält Benachrichtigung "bereit für merge auf main"
+		- Test für A durchgeführt in neutralen Worktree
+		- wenn Test für A erfolgreich und auf main gemerged erhält B in anderem Worktree Benachrichtigung
+		- wenn Arbeit von B fertiggestellt, wird git fetch oder rebase ausgeführt
+		- Prüfung ob Änderungen immer noch mit eigener Lösung harmoniert
+		- Commit auf eigenen Worktree, Benachrichtigung Orchestrator-Queue
+			- nochmal anders
+			- Schritt 1: Isolation schaffen
+				- Der Orchestrator führt aus: `git branch agent-a-task-1` (Neuen Zeiger erstellen).
+			    - Der Orchestrator führt aus: `git worktree add ./worktrees/agent-a agent-a-task-1` (Physischen Ordner mit diesem Branch verknüpfen).
+		    - Schritt 2: Arbeiten und Committen
+				- Der Agent arbeitet im Ordner `./worktrees/agent-a`.
+			    - Er führt `git add .` und `git commit -m "Fixing bug X"` aus.
+			    - **Wichtig:** Der Agent **merged nicht** mit `main`. Er vergrößert lediglich seinen eigenen Branch (`agent-a-task-1`) um neue Commits. Sein Branch ist jetzt um die Änderungen weiter als `main`.
+		    - Schritt 3: Der Integrations-Prozess (Die Merge Queue) Jetzt kommt das "Merge-Queue-Prinzip" ins Spiel. Wenn der Agent fertig ist:
+			    1. **Der Integrations-Test:** Du (oder ein Bot) wechselst in einen temporären Integrations-Worktree: `git checkout integration-test-area`.
+			    2. **Merge-Versuch:** Du führst `git merge agent-a-task-1` aus.
+		        - Wenn Git meldet: `Auto-merging... SUCCESS`, dann ist der Code sauber.
+		        - Wenn Git meldet: `CONFLICT (content)...`, dann ist der Merge-Versuch gescheitert. Der Agent muss nachbessern.
+		        3. **Finaler Push:** Erst wenn der Test in der `integration-test-area` grün ist, führst du `git checkout main` und `git merge agent-a-task-1` aus.
+- II Agenten laufen nur auf logischer Trennung über Branch, und keiner physischen Trennung über Worktrees
+- Zusammenfassung (parallele Agents erst ab III gut möglich)
+```mermaid
+flowchart TD
+    Start{Welcher Grad an Parallelität &<br>Isolation wird benötigt?}
+
+    %% ----------------------------------------------------
+    %% Option 1: Main Only
+    %% ----------------------------------------------------
+    Start -->|Keine Isolation| Opt1[1: Direkt auf main arbeiten]
+    
+    subgraph G1 [Workflow 1: Alles auf main]
+        direction TB
+        O1_1[Arbeiten im Hauptordner]
+        O1_2(Checkpoints: Lineare Commits)
+        O1_3((Gefahr: git restore))
+        O1_4((Pause: git stash))
+        
+        O1_1 --> O1_2
+        O1_1 -.->|Fehler gemacht?| O1_3
+        O1_1 -.->|Kurz was anderes machen?| O1_4
+        
+        O1_3 -.-x |Achtung: Zerstört ungespeicherte Arbeit!| O1_1
+    end
+    
+    %% ----------------------------------------------------
+    %% Option 2: Branches
+    %% ----------------------------------------------------
+    Start -->|Logische Isolation| Opt2[2: Nur Branches nutzen]
+
+    subgraph G2 [Workflow 2: Feature Branches]
+        direction TB
+        O2_1[Erstellen: git checkout -b]
+        O2_2(Checkpoints: Commits im Branch)
+        O2_3((Kontextwechsel: git checkout))
+        O2_4((Konflikt-Vermeidung: git stash))
+        O2_5{Integration: git merge}
+
+        O2_1 --> O2_2
+        O2_2 -.->|Wechsel in anderen Branch| O2_3
+        O2_3 -.->|Blockiert wegen ungespeicherter Arbeit?| O2_4
+        O2_2 --> O2_5
+    end
+
+    %% ----------------------------------------------------
+    %% Option 3: Lokale Worktrees
+    %% ----------------------------------------------------
+    Start -->|Physische Isolation| Opt3[3: Nur Worktrees lokal]
+
+    subgraph G3 [Workflow 3: Git Worktrees]
+        direction TB
+        O3_1[Erstellen: git worktree add]
+        O3_2(Checkpoints: Commits pro Ordner)
+        O3_3((Kein checkout/stash nötig))
+        O3_5{Integration: git merge}
+        O3_6[Cleanup: git worktree remove]
+
+        O3_1 -->|Neuer physischer Ordner| O3_2
+        O3_2 -.->|Wechsel per Ordner-Klick| O3_3
+        O3_2 --> O3_5
+        O3_5 --> O3_6
+    end
+
+    %% ----------------------------------------------------
+    %% Option 4: Worktrees + Docker
+    %% ----------------------------------------------------
+    Start -->|Absolute System-Isolation| Opt4[4: Worktrees in Docker gemounted]
+
+    subgraph G4 [Workflow 4: Agenten-Architektur]
+        direction TB
+        O4_1[Host: git worktree add]
+        O4_2[Docker: Mount Ordner als Volume]
+        O4_3(Agent macht Checkpoints/Commits)
+        O4_5{Host: git merge in main}
+        O4_6[Host: Docker stop & worktree remove]
+
+        O4_1 --> O4_2
+        O4_2 -->|Agent arbeitet isoliert| O4_3
+        O4_3 -->|Ergebnis liegt zentral in .git| O4_5
+        O4_5 --> O4_6
+    end
+
+    %% ----------------------------------------------------
+    %% Verbindungen & Fazit
+    %% ----------------------------------------------------
+    Opt1 --> G1
+    Opt2 --> G2
+    Opt3 --> G3
+    Opt4 --> G4
+
+    G1 -.-> R1[Fazit: Unbrauchbar für Agenten.<br>Zu hohe Konfliktgefahr.]
+    G2 -.-> R2[Fazit: Standard für Menschen.<br>Ein Ordner, viele Zeitlinien.]
+    G3 -.-> R3[Fazit: Gut für manuelle Parallelarbeit.<br>Host-Abhängigkeiten mischen sich noch.]
+    G4 -.-> R4[Fazit: Goldstandard für KI.<br>Dateien + Ausführung streng getrennt.]
+```
+- V (nicht in Zusammenfassung)  Docker allein ohne Worktree, d.h. komplettes Repo an Container gemounted
+	- Github-Action-Runner arbeitet identisch
+	- atomare Trennung wird hier notwendig!
+		- Worktrees haben eigenen Index, d.h. wenn Container A git add . ausführt, sieht er eventuell Änderungen, die Container B gerade im Speicher hat und wenn sie `git checkout` machen, überschreiben sie sich gegenseitig das Arbeitsverzeichnis ("Race Condition").
+		- Damit du ohne Worktrees arbeiten kannst, musst du jedem Container "vorgaukeln", er habe ein eigenes, unabhängiges Git-Repository, obwohl er auf den gleichen Dateien arbeitet. Das erreichst du über die Umgebungsvariable **`GIT_INDEX_FILE`** und 
+	- Merge Queue
+		- **Start:** Orchestrator startet Container A und B. Beide erhalten ihre spezifischen `GIT_INDEX_FILE`-Pfade.
+		- **Arbeit:** Beide Agenten arbeiten im gemeinsamen Verzeichnis, schreiben aber ihre Commits in den zentralen `.git`-Objektspeicher. Da sie unterschiedliche Index-Dateien nutzen, "sehen" sie die Staging-Areas des jeweils anderen nicht.
+		- **Commit:** Wenn Agent A `git commit` ausführt, wird sein Commit im zentralen `.git`-Verzeichnis gespeichert. Er basiert auf seinem `HEAD`, den er über seinen Branch verwaltet.
+	- **Merge-Queue:** Hier schließt sich der Kreis. Sobald beide Agenten ihre Arbeit beendet haben, prüft die Merge-Queue, ob die Branches (die ja auf denselben Objektspeicher zeigen) mit `main` kompatibel sind.
+	- der Orchestrator ist die Merge-Queue
+		- Da es keine lokalen Git-Branches gibt, die man mit `git merge` oder `git rebase` fixen könnte, muss das System den Konflikt prozessual lösen
+		- Der Orchestrator nimmt den fehlgeschlagenen Patch, den neuen (geänderten) Zustand des Codes und die ursprüngliche Aufgabe und schickt alles zurück an den Sub-Agenten B mit dem Prompt:	_"Dein Code konnte nicht integriert werden, da sich die Basis geändert hat. Hier ist der aktuelle Code, hier ist dein Versuch. Bitte passe deinen Code so an, dass er in den aktuellen Zustand passt."_
+		- Der Sub-Agent macht quasi einen **"kognitiven Rebase"** in seinem Container, anstatt dass Git das auf Dateiebene versucht.
+		- mehr Tokens als bei Git auf Dateiebene
+			- **Strikte Trennung:** Der Orchestrator ist so programmiert, dass er parallele Agenten niemals auf dieselben Dateien ansetzt. Einer macht das Frontend (`/ui`), einer die Datenbank (`/db`)
+			- **Sequenzielle Abarbeitung:** Wenn eine Datei zwingend von mehreren Features berührt wird, werden die Agenten _nicht_ parallel gespawnt. Der Orchestrator wartet, bis Agent A fertig ist, aktualisiert den Zustand im Haupt-Repo und startet erst dann Agent B.
+	- prozessuale Laufzeit-Isolation anstelle Worktree-Dateisystem-Isolation: Wenn Agenten parallel arbeiten sollen, tun sie das in der Cloud, in isolierten Containern oder CI/CD-Pipelines – aber nicht lokal auf dem Rechner des Nutzers, wo sie das lokale Setup zumüllen.
+		- Ein Agent soll nicht `git checkout` oder `git worktree` beherrschen müssen, um isoliert zu arbeiten. Er soll stattdessen in der Lage sein, ein spezifisches Tool oder ein Skript aufzurufen, das die Datei-Isolation für ihn übernimmt.
+		- Hier greift das Prinzip der **Separation of Concerns (Trennung von Zuständigkeiten)**. Steinberger baut Systeme so, dass der Agent sich auf das Schreiben von Code konzentriert, während das System (der Orchestrator) die Infrastruktur managt.
+			- **Fehlervermeidung durch Einschränkung:** Wenn du einem Agenten die Erlaubnis gibst, frei auf Git zuzugreifen, wird er früher oder später Dinge tun, die das Repository zerstören. Er führt vielleicht ein `git reset --hard` aus, löscht einen Branch, den er nicht löschen sollte, oder verheddert sich in einem "Detached HEAD"-Zustand. Ein Agent, der nicht weiß, wie man Git bedient, kann Git nicht kaputt machen.
+	- sinnvoll, wenn auch der Orchestrator KI-automatisiert wird und nicht mehr der Mensch ist
+## Dazwischen mit automatisierter Bug-Orchestrierung [[orchestrator-ablaufplan-minimal-steinberger]]
+
+## Scenario 2: enterprise [[newO2#final + DB-pro-Task und NestJS-Anpassungen 20260627]]
+- Github als State-Manager, stateless ohne Worktrees, ephemere Docker für Modularität und Portabilität zwischen Lokal und Network, Sicherheit ohne geteiltes Dateisystem und ohne geteilte Datenbank 
+- KI als Orchestrator (API-Gateway)
+- TDD-Loop (rot-grün-refactoring), Events über Redis Pub/Sub, eigentlicher Status in Orchestrator Datenbank 
+- RabbitMQ für Merge Queue (dass keine PR-Aufgabe verloren geht und fehlgeschlagene Retests nach einigen Versuchen in einer Dead-Letter-Queue für menschliche Prüfer landen)
+- Verträge zwischen Orchestrator und Agenten über DTO Klassen definiert, gleichzeitig OpenAPI Spezifikation für präzises Tool/Function-Calling
+- Openclaw
+- eigene Agent Datenbank, damit Zustand rückstandslos verschwindet
+- zwei Netzwerke für weitere Isolierung: agent-net zwischen 1 Agent und Orchestrator, backendnet für Orchestrator
+## Entscheidung für hybride Variante: Sandcastle Worktree(Host) + Worktree(Docker)
+- SPEC [[hybrid-worktree-docker-spec]] 
+
+---
 # canvas 2026050920
 ## patch 
 ### Granulares Wave-Stitching mit Jitter-Modulation
@@ -4363,29 +4659,55 @@ Welcher Kommunikationskanal (wie E-Mail, Slack, Microsoft Teams oder Discord) w�
 - konzentrische Kreisfamilien als Zusammenspiel von positiven, nach außen wachsenden, physischen Raum und negativen, nach innen wachsenden, ätherischen Raum
 	- Produkt der Radien als Konstante bildet Cassini Kurven und Lemniskate im Grenzfall
 	- $$r_o*r_u=a^2$$
-	- Lemniskate: Wenn das Produkt der Radien (a^2) exakt dem Quadrat der halben Entfernung der beiden Zentren O und U entspricht, berühren sich die beiden Kreisscharen in der Mitte
-	- Schnittebenen, die nicht waagerecht liegen, zeigen keine Lemniskaten mehr, sondern sich in **Zykloiden** (Planetenschleifen) oder **Kegelschnitte** verwandeln
+	- Lemniskate: Wenn das Produkt der Radien (a^2) exakt dem Quadrat der halben Entfernung der beiden Zentren O und U entspricht, berühren sich die beiden Kreisscharen in der Mitte (perfektes Gleichgewicht der ausdehnenden Kraft des Zentrums und der zusammenziehenden Kraft der Peripherie)
+		- als eine Form, die sich ständig durch den Mittelpunkt (den Kreuzungspunkt) umstülpt, wobei das Innere der einen Schleife zum Äußeren der anderen wird
+	- Schnittebenen, die nicht waagerecht liegen, zeigen keine Lemniskaten mehr, sondern sich in **Zykloiden** (Ptolemäische Planetenschleifenkurve) oder **Kegelschnitte** verwandeln
+		- Die Lemniskate verwandelt sich in eine Zykloide, wenn man eine der beiden Brennlinien (die Achsen O und U, um welche die Fläche gewoben ist) durch eine perspektivische Transformation in die unendliche Ferne hinaussendet.
 - Parallelen treffen sich in unendlich fernem Punkt, Horizont als unendlich ferne Gerade und Punktlinie der Schnittpunkte aller Parallelen einer Ebene 
 	- imaginäre Punkte I und J auf dieser Geraden bilden Schnittpunkte mit dem absoluten Kreis, sowohl Kreise im Endlichen und Unendlichen wachsen von O und U gegen Kreispunkte I und J, wobei die Kreise von I und J nach U wachsen (wie O im Endlichen, sind I und J die Quellen der Kreise)
-		- I und J als ideelle Repräsentanten der unterschiedlich gerichteten Rotation und Rechtwinklingkeit (Kreishaftigkeit)
+		- I und J als ideelle Repräsentanten der unterschiedlich gerichteten Rotation und Rechtwinklingkeit (Kreishaftigkeit einer Form, Grundlage der euklidischen Metrik)
 		- I und J beinhalten alle Kreise einer Ebene
 		- mehrere Ebenen mit jeweils I und J bilden zusammen den absoluten Kreis (ideale Urform, Bezugspunkt euklidischer Metrik)
+			- Gesamtheit dieser imaginären Punkte aller Ebenen des Raumes bildet in der unendlich fernen Ebene ein Gebilde zweiter Ordnung: die imaginäre Kugeltreue oder den Absoluten Kreis des Raumes
+			- Unendlich ferne Ebene ist der absolute Kreis und der kosmische Anker, der Kreisform in alle endlichen Teilbereiche des Raumes projiziert
+				- Unendlich ferne Ebene als absolute Peripherie
+				- Jede Gerade des dreidimensionalen Raumes besitzt genau einen unendlich fernen Punkt, in dem sie die unendlich ferne Ebene „durchstößt“
+				- In der Kristallmorphologie werden harmonische Grundfiguren (wie Möbiusnetze oder Möbiusgitter) in der „Fernebene“ verankert.
+			- Invarianz des Absoluten Kreises: bleibt bei allen euklidischen Bewegungen unverändert
+			- Absoluter Kreis als imaginärer Kegelschnitt, der in unserer gewöhnlichen Raumwelt keine reellen Punkte besitzt und unsichtbar ist
 		- Kreis trägt die Metrik des Raumes in sich, die perfekte Symmetrie in alle Richtungen, indem er I und J schneidet und andere Formen die Ferngerade an beliebigen Stellen schneiden
+		- Sinus (0°) und Cosinus (90°) fungieren hierbei als deine orthogonalen Basis-Vektoren, welche die Punkte I und J in der unendlich fernen Ebene repräsentieren.
 	- wenn das unendliche Zentrum U (ebenfalls auf der Geraden) konzentrischer Kreise in den endlichen Raum rückt, bilden sich Parabeln, Ellipsen und Hyperbeln als verzerrte Kreise (atmende Form)
 		- Kreis wird im Unendlichen, also U im Unendlichen, selbst Gerade (zentrische Kraft verschmilzt mit Peripherie)
 		- wenn Kreis im Unendlichen eine Gerade wird (unendlicher Radius), erscheint er im Endlichen als Kreis
 ### Laguerresche Formel
 - zentrale Metrik
 - $$\omega = \frac{i}{2}ln DV(u,u',J,J')$$
+- Verhältnisse (Ratios) zu bilden, nutzt du Voltage Controlled Amplifiers (VCAs) oder Multiplizierer als Dividierer.
+- Subtraktion Disting C-1 oder dem Joranalogue Select 2
+- Logarithmisierung Disting A-5 (Basis 2)
+- u und u' als zwei gerichtete Strahlen von einem Zentrum (Geradenbüschel) im Unendlichen, hier als CV Spannungen, die die Richtung drehen
+- I und J als 90 ° versetzte Sinuswellen (Quadratur), sobald Phasenbeziehung von 90° abweicht, definiert die Kreishaftigkeit der Wellenform in eine Ellipse
+#### Anwendung
+- resultierende Log-Spannung in den CV-Eingang der Übergangsfrequenz eines Voltage Controlled Phasers (z. B. Doepfer A-101-3) 
+- Phasenmodulation (PM) am Generate 3 zu steuern, wodurch die „Kreishaftigkeit“ der Wellenform beeinflusst wird
+	- Multiplikation der Winkelspannung mit abfallender Exponentialkurve in PM des Generate 3 für eine loxodromische Spirale in und aus einem Singularitätspunkt
+- Contour 1 im Loopmodus für Rise oder Fall Zeit als Atmen des Obertonspektrums zwischen harmonischer Ordnung und inharmonischer Dehnung
+- Über den Phasenwinkel Zugriff auf Momentanfrequenz und Energie des Signals für Eingriffe in einzelne Frequenzbänder (Spectral Distortion)
+	- Phaseninkrement / Ableitung für Frequenz mit A-171-2 oder Contour 1 als Differentiator
+	- x²+y² der Quadratur Signale I und J für Energie (Hüllkurvenverfolger, Compander, Compressor) mit Quadrant Multiplier (I x I und J x J) des Mixwitch oder Disting A-2, Addition mit Select 2 oder Disting A-1
+- insgesamt ein "atmender" intermediate Parameter-Layer, sodas ein Regler nicht nur einen Parameter linear steuert sondern in einer mathematische Topologie (unvorhersehbar, aber logisch konsistent)
 ### ==**Sphärische Distanz:** Auf der Riemannschen Zahlenkugel wird die Distanz zwischen zwei Punkten z1​,z2​ (die die Projektion des Kreises auf die Ebene darstellen) metrisch erfasst durch: d(z1​,z2​)===
+[20.06.2026 21:40] Julian Niklas Heynert: Kompaktifizierung (Riemannsche Zahlenkugel): In der digitalen Signalverarbeitung (DSP) oder bei der Analyse komplexer Funktionen nutzt man die Riemann-Sphäre, um Unendlichkeit als einen einzigen, fassbaren Punkt (den Nordpol) zu behandeln. Dies ermöglicht Algorithmen, die Polstellen (wo ein Wert „unendlich“ wird) ohne Systemabsturz zu berechnen, indem sie die Arithmetik der Sphäre nutzen (z. B. ￼￼￼).￼￼  
+[20.06.2026 21:42] Julian Niklas Heynert: Gray-Code und FFT: In hocheffizienten Algorithmen für die Fast Fourier Transform (FFT) nutzt man bitweise Operationen und Gray-Code-Generatoren, um die symmetrischen Strukturen der „Wurzeln der Einheit“ (die den Einheitskreis unterteilen) algorithmisch auszubeuten
+### Symmetrische Partitionierung
+- Kreis als projektive Gerade viergeteilt: DV=-1 (harmonischer Wurf)
+	- Pentragramm: DV=-0,618 (goldener Schnitt, 8/13)
+	- Hexagramm: DV=-1/2
 ### Platonisches Weltenjahr
 - Atemrhythmus (18 Atemzüge/Min × 1.440 Min/Tag = 25.920) steht
 - 25.920 hat genau 70 ganzzahlige Teiler**, die harmonikalen Proportionen für Tonleitern
 - 1:4 Pulsschlag-Atemzug
-
-
-Exklusiv zum Thema des Zusammenhangs zwischen Kegel, Kreis und den imaginären Kreispunkten I und J lassen sich aus den Quellen folgende Metriken, Gesetze und mathematische Verhältnisse ableiten:
-
 ---
 # excalidraw 20260509
 ## aufgeweichte Holzschichten
