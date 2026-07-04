@@ -8,3 +8,22 @@ An der Steilwand, ein quadratisch gelbes Gemälde hängt in der Ferne. Die Sonne
 Das schwelgen der Begriffe geht zum Schreiben und schick mir ins Schicksal über. Wer sind die anderen beiden nixen, die sich in der Kluft vom verschwimmen und ertrinken retten?
 
 Und wer hält dir den Zuckerhut hin mein viel geliebter Muck? Wenn du beginnst, zu reden und ich ebenfalls zuhören will
+
+Hinunter geschaut, obwohl ich aufsteige Kosmos Wertung des Menschen Menschwerdung des Kosmos zu sich gekrümmt
+
+Zwischen euch, was wir nicht erkennen hinein geschaut, blau und grenzt der Himmel, der auf diesen Gemälden blau ist, grünes
+
+Aufgesehen der Stern, nichts physisches, ist als Zeichen eine Anwesenheit, Die Liebe rührt gespürt
+
+
+Berührung, als ich da war und das ewige ebenfalls da stand
+
+Nach dem Mond, die Furchen abgegeben beim Saturn geklärt, mit Wärme geglättet
+
+Willst du nicht mitkommen, so hüte dich vor den Elementen, denen du dich an verwandelt hast
+
+Alles zukünftige umwandelt, weil ich die Vergangenheit zuvor überblickter
+
+Melancholischer Enthusiasmus gewandelt
+
+Mit dem gesamten Gemüt, um gestülpt
