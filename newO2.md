@@ -3382,6 +3382,14 @@ If a question can be answered by exploring the codebase, explore the codebase in
 - **Unbeaufsichtigte Automatisierung:** Dank integriertem Scheduler (Cronjobs) kann Hermes Aufgaben (wie nächtliche Backups oder Server-Checks) völlig selbstständig im Hintergrund ausführen.
 - **Volle Kostenkontrolle:** Keine Bindung an starre Abos oder drohende API-Flatrate-Änderungen – du bestimmst durch die Modellwahl selbst, wann welche Kosten anfallen.
 ## [Hermes Architecture EXPLAINED: Memory, Context & Gateways - YouTube](https://www.youtube.com/watch?v=n32qq7Kwzh0) 20260525
+- Memory 
+	- external memory
+	- SQLite of full transcripts
+	- MD files
+- Cronjobs in jobs.json
+- Gateway
+	- session manager to interrupt, steer or queue up a prompt
+	- async loop with telegram, discord, mail, sms,... with websockets and webhooks
 ---
 # microphone 20260604
 - [JrF - contact microphones](https://jezrileyfrench.co.uk/contact-microphones.php)
@@ -4287,6 +4295,17 @@ components
 		- `before_tool_call` / `after_tool_call`: Hier können Parameter eines Werkzeugs blockiert (z. B. aus Sicherheitsgründen) oder Ergebnisse modifiziert werden.
 - Grader (sub-agent) als Kritiker
 - Progress.md als dauerhafter Loop Fortschritt, unabhängig von Compact
+## [Why I don't open Claude Code anymore. - YouTube](https://www.youtube.com/watch?v=gi0Lx6c84VE) 20260704
+- 
+## [wtf is Loop Engineer & how to setup for real](https://www.youtube.com/watch?v=W6x-hb44C0c&pp=ugUHEgVlbi1BVQ%3D%3D) 20260704
+- [https://github.com/JayZeeDesign/loop-...](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa29HS0x4aENIczF1bldocGlaQUU5Vjd2UncyUXxBQ3Jtc0ttMmdlcGhRaHg3VmFxMC1HM01CTkowcmRYR2lYOGViZk54X0FSb1ZZXzlJVi1BSnhDeU9VTnFyd09qd3hScHFtT2liajBRNjlLOUV0V3VJQlY4Y1F6WTdCaVhzZ00tZmtOOTl1UEZ6UGF5NTVkVlJ4Zw&q=https%3A%2F%2Fgithub.com%2FJayZeeDesign%2Floop-engineer-template&v=W6x-hb44C0c)
+- Artifacts are the shared library for every agent
+- Loop contract
+	- Goal
+	- Workflow
+	- Task (like Backlog for the next loop)
+	- Timeline
+- LOG.md for all agents
 ---
 # audio ingest 20260627
 ## Obsidian Plugins
@@ -4570,7 +4589,337 @@ flowchart TD
 ---
 # Matt Pocock 20260628
 ## [Full Walkthrough: Workflow for AI Coding — Matt Pocock - YouTube](https://www.youtube.com/watch?v=-QFHIoCo-Ko&t=526s)
+- not specs-to-code concept
+- /grill-me instead of /plan
+	- /plan is eagerly to get a plan
+	- grilling session for a shared design concept with the llm and aligning with it
+	- work in phases for refreshing contexts, plan should be look like this
+- product requirements document (prd) with /write-a-prd
+	- with or without /grill-me skill before
+	- this skill is to create a valuable asset out of a grilling session
+	- each prd is an issue in the git
+	- deleting prds, which must always be up to date for consistency of the codebase
+	- do all developing work in the QA's at the end for the looping of the agent
+- /prd-to-issues splits the prd into phases by creating a kanban board
+	- llm codes horizontally layer after layer (DB, API, Frontend) and not vertically all layers at once
+	- slices of verticality to feedback and test
+- ralph loop (self-improving) for AFK task for the different phases 
+	- one agent at a time sequentially
+	- human does the dayshift, agent does the AFK nightshift
+	- prompt
+> [!NOTE]- prompt
+> # ISSUES
+> 
+> Local issue files from `issues/` are provided at start of
+> context. Parse them to understand the open issues.
+> 
+> You will work on the AFK issues only, not the HITL ones.
+> 
+> You've also been passed a file containing the last few commits.
+> Review these to understand what work has been done.
+> 
+> If all AFK tasks are complete, output <promise>NO MORE TASKS
+> </promise>.
+> 
+> # TASK SELECTION
+> 
+> Pick the next task. Prioritize tasks in this order:
+> 
+> 1. Critical bugfixes
+> 2. Development infrastructure
+> 
+> Getting development infrastructure like tests and types and dev
+> scripts ready is an important precursor to building features.
+> 
+> 3. Tracer bullets for new features
+> 
+> Tracer bullets are small slices of functionality that go through
+> all layers of the system, allowing you to test and validate your
+> approach early. This helps in identifying potential issues and
+> ensures that the overall architecture is sound before investing
+> significant time in development.
+> 
+> TLDR - build a tiny, end-to-end slice of the feature first,
+> then expand it out.
+> 
+> 4. Polish and quick wins
+> 5. Refactors
+>    
+> # EXPLORATION
+> 
+> Explore the repo.
+> 
+> # IMPLEMENTATION
+> 
+> Use /tdd to complete the task.
+> 
+> # FEEDBACK LOOPS
+> 
+> Before committing, run the feedback loops:
+> 
+> - `npm run test` to run the tests
+> - `npm run typecheck` to run the type checker
+> 
+> # COMMIT
+> 
+> Make a git commit. The commit message must:
+> 
+> 1. Include key decisions made
+> 2. Include files changed
+> 3. Blockers or notes for next iteration
+> 
+- bash skript to grab all issues in the markdown files, grab the last 5 commits and the prompt `once.sh`
+```bash
+1  #!/bin/bin/bash
+2  
+3  issues=$(cat issues/*.md 2>/dev/null || echo "No issues found")
+4  commits=$(git log -n 5 --format="%H%n%ad%n%B---" --date=short 2>/dev/null || echo "No commits found")
+5  prompt=$(cat ralph/prompt.md)
+6  
+7  claude --permission-mode acceptEdits \
+8    "Previous commits: $commits Issues: $issues $prompt"
+9
+```
+- loop skript `afk.sh`
+```bash
+#!/bin/bash
+set -eo pipefail
+
+if [ -z "$1" ]; then
+  echo "usage: $0 <iterations>"
+  exit 1
+fi
+
+# jq filter to extract streaming text from assistant messages
+stream_text="select(.type == "assistant").message.content[?] | select(.type == "text").text //"
+
+# jq filter to extract final result
+final_result="select(.type == "result").result // empty'
+
+for ((i=1; i<$1; i++)); do
+  tmpfile=$(mktemp)
+  trap "rm -f $tmpfile" EXIT
+
+  commits=$(git log -n 5 --format="%H%n%xd%n%B--" --date=short 2>/dev/null || echo "No commits")
+  issues=$(cat issues/*.md 2>/dev/null || echo "No issues found")
+  prompt=$(cat raiph/prompt.md)
+
+  docker sandbox run claude . -- \
+    --verbose \
+    --print \
+    --output-format stream-json \
+    "Previous commits: $commits issues: $issues $prompt" \
+    | grep --line-buffered '^[' \
+    | tee "$tmpfile" \
+    | jq -unbuffered -rj '$stream_text"
+
+  result=$(jq -r "$final_result" "$tmpfile")
+
+  if [[ "$result" == *"promise>NO MORE TASKS</promise>"* ]]; then
+    echo "Raiph complete after $i iterations."
+    exit 0
+  fi
+done
+```
+- started the script outside claude with ./once.sh
+- raise the quality of feedback loops is essential for ai
+	- tdd for writing test before coding
+	- QA for manual code review: reviewing the tests first and than the code, giving new issues
+	- create deep modules/features with a lot of content for good testing, it reduces interlinked modules
+	- keep in context the structure of modules from the phases to know what it is doing in certain conditions
+		- not every code must be reviewed manually
+- /improve-codebase-architecture how to work within the codebase and find places to deepen the modules 
+	- searching for clusters
+	- deep is, when there is an interaction on frontend, which goes the way into the backend
+- sandcastle for parallelizing agents
+	- Planner A. as an orchestrator chooses a certain number of issues of github with title and branch to work on parallel
+	- for each issue is a sandbox created with an Implementer A. (pull the coding standards with Sonnett)
+	- if it creates commits, we review those with Reviewer A. (push the coding standards with Opus)
+	- Merger A. merges all the branches 
+- comments under the video
+	- I ask my agent to separate tasks into a directed acyclic graph, and work in parallel where possible via work trees
+---
+# austin marchese 20260629
+## [Stop Prompting Claude. Use Karpathy's Method Instead. - YouTube](https://www.youtube.com/watch?v=7zZy1QTvokM)
+- "I am building [describe your project]. Before we start coding or writing, please interview me to identify the actual goal and the core decision this project is intended to drive. Once we define that, let's break the project into small, agile buckets. We will build one bucket at a time, and I want you to present a plan for each, followed by a checkpoint where I can review the output before we move on. Please also verify key decisions explicitly as we go to ensure we don't drift from the original intent."
+> [!NOTE]- CLAUDE.md - Internal-OS
+> 
+> Knowledge management and agent orchestration for personal brand content creation.
+> 
+> ## How This Repo Works
+> 
+> - .claude/skills/ — Slack command workflows (scripts, newsletters, thumbnails, etc)
+> - .claude/agents/ — Consultant personas (brand briefs, X posts, and script tool
+> - knowledge/ — Three-layer knowledge base (one roles below)
+> - projects/ — Active or completed work (including, whitepapers, LinkedIn)
+> - scripts/ — Python utilities for transcript processing
+> 
+> Skills are the primary interface. When in doubt, invoke the skill.
+> 
+> Skill Routing
+> 
+> - Video Ideate/Brainstorm → /synthesize-1-idea-research
+> - Thumbnail test → /synthesize-1-thumbnail-1
+> - Thumbnail concepts → /synthesize-2-thumbnail1
+> - Deep research for a video → /synthesize-2-ideas
+> - Write or revise a script → /synthesize-4-script-writer
+> - Fill in a prompt template → /synthesize-4-script-simplifier
+> - Line-by-line script simplification (approx/project) → /synthesize-4-script-simplifier
+> 
+> Script pipeline order (do not skip): /synthesize-4-script-brainstorm → /synthesize-4-... → Workflow 4
+> pushes to Notion. The Notion path refuses to run until script-final-al has status:
+> ✓ title-complete [with YAML frontmatter but by 4c on completion]
+> - Video description → /synthesize-5-description
+> - Thumbnail A/B test → /synthesize-5-test
+> - Get expert feedback on packaging/positioning/scripts → /internal-test-group
+> - Improve a skill or capture learnings → /internal-capture
+> - Sync Notion/YouTube pipeline → /synthesize-sync
+> - Pull latest repo changes → /inc-qa-system
+> - Push changes safely → /inc-qa-save-system
+> - Ingest a new resource → /inc-qa-new-resource
+> 
+> Knowledge Architecture
+> 
+> Three layers with different ownership. Do not mix raw files.
+> - knowledge/raw/ — Immediate source material (Austin inputs, never edited)
+> - knowledge/wiki/ — Claude-generated synthesis (Claude-only)
+> - knowledge/frameworks/ — Actionable guides (Austin + Claude collaboration)
+> 
+> Project Lifecycle
+> 
+> Videos move through: projects/youtube/ — files/ — pasted
+>   - files/ and pasted/ are tracking state. Move complete work up.
+>   - knowledge/ teaches HOW to do things. projects/ shows Austin's actual style
+> 
+> Working Rules
+> 
+> - Role routing: Before starting any task, identify the right mode (planning, building, reviewing,
+>   debugging). Check skill descriptions. 
+> - Search before building. Before writing (new code, search the existing codebase for similar
+>   functionality). Never duplicate. What already exists?
+> - Effort matching: Match your depth to the task. Quick fixes get quick responses. Architecture
+>   decisions get thorough analysis with tradeoffs. ↑
+> 
+> Environment
+## [How Anthropic Employees ACTUALLY Use Claude Skills - YouTube](https://www.youtube.com/watch?v=3UWxMPUko1k)
+- **Utility Skills (Dienstprogramm-Skills):** Kleine, wiederverwendbare Bausteine für eine spezifische Aufgabe (z. B. das Anpassen des Schreibstils oder die Interaktion mit einer API).
+	- **Verification Skills (Verifizierungs-Skills):** Diese überprüfen das Endprodukt (z. B. Qualitätskontrolle des Codes oder Überprüfung des Markenauftritts).
+	- **Data Enrichment Skills (Datenanreicherungs-Skills):** Ziehen externe Daten heran, um das Resultat zu verbessern (z. B. Website-Traffic-Daten oder Konkurrenzanalysen).
+	- **Orchestration Skills (Orchestrierungs-Skills):** Diese Skills verbinden die vorherigen Typen miteinander, um komplexe Aufgabenabfolgen zu automatisieren. Ein Skill sollte immer eindeutig in eine dieser Kategorien fallen und nicht versuchen, zu viele Funktionen auf einmal abzudecken.
+- Ein Skill ist nicht einfach nur eine reine Textdatei. Er ist ein ganzer Ordner, der verschiedene Komponenten enthält, die von der KI erkundet und genutzt werden können. Drei Bausteine sind dabei besonders wichtig:
+	- Skripte: Durch den Einsatz von festem Code für deterministische (immer gleich ablaufende) Aufgaben wird Claude entlastet. Die KI muss das Rad nicht neu erfinden, sondern kann ihre Ressourcen auf komplexe Entscheidungen konzentrieren.
+	- Assets und Templates (Vorlagen): Das Hinterlegen von Dokumentvorlagen stellt sicher, dass das finale Output-Format stets standardisiert ist und die KI nicht improvisieren muss.
+	- Setup Prompts: Um Skills zukunftssicher und benutzerfreundlich zu machen, sollten Konfigurationsdateien oder interaktive Abfragen (wie Multiple-Choice-Fragen) eingebaut werden, damit sich die KI bei fehlenden Informationen direkt an den Nutzer wenden kann.
+- Verifizierungs-Skills mit größtem messbaren Einfluss!
+## [Stop Prompting Claude. Start Loop Engineering. - YouTube](https://www.youtube.com/watch?v=YAS4ojuhbW4)
+- memory component prompt: "Update my loop orchestration skill to write two files at the end of every run: (1) the actual Output (the document, code, or message the loop produced), and (2) a Memory file that logs what happened, what worked, what failed, and what to remember next run."
+- build small loops with single checkpoints to a greater loop to don't loose the smaller checkpoints
+---
+# skills 20260701
+## [Building Great Agent Skills: The Missing Manual - YouTube](https://www.youtube.com/watch?v=UNzCG3lw6O0)
 - 
+- Structuring
+	- Skill für unterschiedliche Aufgaben, der. z.b. entweder lokales Glossar oder Erchitektur-Entscheidungs-Dokument erstellt oder beides
+	- Referenzmaterialien und Templates im Skill-Ordner und nicht in der skill.md und hier nur mit Context Pointer referenziert
+- Pruning
+	- Aufräumen von Sediment (veralteter Anweisung), damit Agent nicht durch unnötige No-Ops verwirrt wird
+## Unterscheidung
+### Skill (Wissen und Methodik)
+- Methoden ohne Ausführungslogik
+- Fähigkeiten (Strukturierung, Zusammenfassung,...) oder Arbeitsanweisungen (Rückfragen, Kontextabfragen)
+- stateless (einfache Ausführung) oder stateful (lernen aus Memory)
+- Bedienungsanleitung zu externe Werkzeuge und Tools für den Agenten
+- integriertes Skript nur als Kontext oder Template, um den Agent dieses in neue Datei schreiben zu lassen (mit Tool "write_file") und es auszuführen (Tool "run_terminal")
+- ein Skill der mehrere Skills sequenzier, schafft einen Inner Loop der nur im Kontextfenster existiert (ohne hartes Limit, mit Halluzinationen weil LLM entscheidet)
+### Agentic Loop (Rhythmus)
+- Runtime Ablauf
+- Outer Loop (deterministisch über Skript, fängt ab wenn Agent hängen bleibt, bereinigt Kontextfenster, erzwingt routing zu Überprüfungsagenten)
+- über /loop oder /goal oder Skripte (Python, Typescript)
+- Hooks und Events für dynamische Steuerung des Loops, Push und Pull von Kontext
+- Durch externe Automatisierung: Über GitHub Actions oder Cronjobs, die den Agenten nach einem Zeitplan aufwecken (z. B. nächtliche Triage-Aufgaben auf Basis von CI-Fehlern)
+- Maker & Checker Sub-Agents
+- Gedächtnis für State Tracking der einzelen Iterationen mit .md Dateien oder Worktrees
+### Tool (Fähigkeit)
+- auch Function Calling 
+- als Hand, mit der der Agent aus dem Text-Universum in die echte Welt greift
+- JSON definierte Schnittstelle (z.B. im MCP)
+- Tool mit Python-Skript im Hintergrund und Agent wird maximal auf einen Parameter des Skripts gewiesen
+- robustes Tool validiert nicht nur, _dass_ ein Skript aufgerufen wird, sondern prüft die Parameter bereits **vor** der Ausführung
+- Logging mit Terminalausgabe stdout und Fehlermeldungen stderr
+---
+# terminals 20260704
+- tmux multiplexer
+## [Herdr: one terminal for the whole herd](https://herdr.dev/)
+- [Is Herdr Terminal Worth the Hype? - YouTube](https://www.youtube.com/watch?v=5GtkyPvuvbQ)
+- mouse control
+- notification
+- skill to automatically open agents
+- with opencode
+- mobile access (ssh)
+- JSON-API
+	- ~/.config/herdr
+	- keys could be commands (https://github.com/jesseduffield/lazygit)
+### mit Sandcastle
+> [!NOTE]- howto
+> Die Integration von **Sandcastle** (zur Orchestrierung von Git-Worktrees und Docker-Isolierung) und **Herdr** (als Terminal-Multiplexer und State-Tracker für Agents) ist eine hervorragende Kombination. Sandcastle fungiert hierbei als dein programmatisches Backend, während Herdr als interaktive, persistente Kontrollschicht im Terminal dient.
+> 
+> Da beide Tools stark auf Automatisierung und Programmierbarkeit ausgelegt sind (Sandcastle via TypeScript, Herdr via CLI und JSON-Socket-API), kannst du sie nahtlos miteinander verknüpfen. Hier ist ein Konzept, wie du das Management von Worktrees und Docker-Containern aus Sandcastle in den Herdr-Workflow integrierst:
+> 
+> ### 1. Herdr-Panes aus dem Sandcastle-Skript steuern
+> 
+> Anstatt dass deine über Sandcastle gestarteten Agents im Hintergrund oder unübersichtlich im Standard-Terminal laufen, kannst du Herdr anweisen, für jeden isolierten Agent-Run (und dessen Docker-Container) ein eigenes Pane (Fenster) zu öffnen.
+> 
+> Nutze in deinem TypeScript-Code – in der Nähe der Stelle, wo du `sandcastle.run()` aufrufst – den Node-internen `child_process`, um die Herdr CLI anzusprechen:
+> 
+> - **Pane erstellen:** `herdr pane split w1:p1 --direction right` (Erzeugt einen neuen Bereich).
+>     
+> - **Agent im Pane starten:** Mit `herdr pane run <pane_id> "dein_agent_start_befehl"` kannst du den Agent-Prozess direkt in diesem neuen Herdr-Pane ausführen lassen.
+>     
+> 
+> Dadurch erhält jeder Sandbox-Lauf von Sandcastle einen eigenen, persistierten Bereich in deinem Terminal, auf den du jederzeit zurückgreifen kannst.
+> 
+> ### 2. Live-Einsicht in Git-Worktrees ermöglichen
+> 
+> Sandcastle isoliert die Arbeit der Agents durch eigene Git-Branches und Worktrees, die per Bind-Mount in den Docker-Container gemountet werden. Du kannst Herdr nutzen, um dir als Entwickler sofort eine Shell im entsprechenden Worktree-Ordner bereitzustellen, während der Agent läuft.
+> 
+> Wenn dein Sandcastle-Skript den temporären Pfad zum Git-Worktree ermittelt hat, öffnest du programmatisch ein Herdr-Pane genau dort:
+> 
+> `herdr pane split --cwd <pfad-zum-sandcastle-worktree>`
+> 
+> So hast du auf der einen Seite deines Terminals die Log-Ausgabe des Docker-Containers (den Agent) und auf der anderen Seite befindest du dich direkt im isolierten Code-Verzeichnis, um via `git diff` Änderungen live zu prüfen, bevor Sandcastle den Branch nach Abschluss zurückmergt.
+> 
+> ### 3. Agent-Status mit Herdr synchronisieren (State Tracking)
+> 
+> Eine der größten Stärken von Herdr ist das Erkennen von semantischen Agent-Status (`working`, `blocked`, `done`, `idle`). Wenn du einen Agent in Sandcastle ausführst, solltest du dessen Lifecycle-Events in Herdr widerspiegeln.
+> 
+> - Sobald Sandcastle den Docker-Container hochfährt und der Agent aktiv wird, meldest du über die Herdr CLI (z. B. `herdr agent rename` oder die Socket-API) den Status als `working`.
+>     
+> - Wenn der Agent in der Sandbox auf menschlichen Input wartet oder ein Skript fehlschlägt, setzt du den Status auf `blocked`. In Herdr leuchtet dieses Pane dann sofort für dich auf. Du kannst direkt dorthin springen, die Docker-Logs einsehen und dem Agent helfen.
+>     
+> - Sobald `sandcastle.run()` erfolgreich abschließt, meldest du Herdr den Status `done`.
+>     
+> 
+> ### 4. Orchestrierung paralleler Agents mit der Herdr "wait"-Funktion
+> 
+> Sandcastle ist ideal dafür geeignet, mehrere "AFK Agents" parallel laufen zu lassen. Du kannst Herdr hierbei als Kontrollinstanz für deine Pipeline einsetzen.
+> 
+> Mit dem CLI-Befehl `herdr wait agent-status <pane_id> --status done` kann ein übergeordnetes Skript darauf warten, dass ein spezifischer Agent im Herdr-Pane (und seinem jeweiligen Docker-Container) mit dem Worktree fertig ist. Erst dann wird beispielsweise der nächste Agent in Sandcastle getriggert oder der automatische Git-Merge durchgeführt.
+> 
+> **Zusammenfassender Workflow:**
+> 
+> 1. Dein TypeScript-Orchestrator startet.
+>     
+> 2. Er ruft die **Herdr CLI** auf, um ein neues Tab/Pane vorzubereiten.
+>     
+> 3. Er richtet den Git-Worktree ein, konfiguriert den Docker-Provider und ruft `sandcastle.run()` auf. Die Standardausgabe wird an das Herdr-Pane gebunden.
+>     
+> 4. Der Agent arbeitet im **Docker**-Container, isoliert im Worktree.
+>     
+> 5. Du verfolgst den Fortschritt (working/blocked/done) über alle parallelen Sandcastles hinweg visuell in **Herdr**.
+>     
+> 6. Sobald der Lauf stoppt, gibt Herdr die "Done"-Rückmeldung, Sandcastle übernimmt den Merge-Prozess, und das Pane kann entweder geschlossen oder für ein Review offengelassen werden.
+> 
+
 ---
 # canvas 2026050920
 ## patch 
