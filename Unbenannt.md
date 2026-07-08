@@ -27,3 +27,50 @@ Alles zukünftige umwandelt, weil ich die Vergangenheit zuvor überblickter
 Melancholischer Enthusiasmus gewandelt
 
 Mit dem gesamten Gemüt, um gestülpt
+
+Mit der Zitrone, Wärme und Wasser vermengt, damit sich zahlreiche Geister begegnen und sich Versteuern
+
+Am Spieß wird geschrien
+
+Zitrusgold küsst warme Fluten,
+
+Geister in der Tiefe gluten.
+
+Aus der Säure wildem Streit
+
+wird süße Duft-Unsterblichkeit.
+
+
+
+Mit der Zitrone Wärme und Wasser starr vermengt,
+
+damit sich zahlreiche Geister begegnen
+
+und im direkten Kontakt unweigerlich versäuern,
+
+nur um am Ende süßlich zu riechen
+
+Specs as code
+Codified agent
+Spec to obsodian (wiki context optimization log )
+
+Codebase structuring agent (refactor after build)
+
+Skill looping improve
+
+Arrtofact/component/skill extraction for the ai os 
+
+
+Automation seeking 
+
+Review always from other chat
+–loop skills (ai Jason)
+
+Slice to agent in build (loop contract)
+
+Top level (loop)
+
+Goal spec (obsidian log)
+Reasoning build 
+Review verify
+Refactor lint (obsidian re-log)
