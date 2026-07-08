@@ -2874,7 +2874,29 @@ Eine persönliche Wissensdatenbank zu [DEIN THEMA].
 		- The frontmatter `description` tells Claude when to activate the skill
 		- Skills that pull heavy data delegate to an agent to keep context clean
 		- Skills are built over time as recurring workflows emerge
+## [He's right, LLM Knowledge Bases are incredible. - YouTube](https://www.youtube.com/watch?v=cxdjY_42lHA) 20260707
+- original folder structure + enrich notes + visualizations folder
+	- build wiki with additional sub-wikis from karpathy is the second step after enriching (tags, properties, links)
+	- ![[Pasted image 20260708151442.png]]
+- voice transcription tools
+	- [Installation - VoiceInk Docs](https://tryvoiceink.com/docs/installation)
+	- [Download Handy](https://handy.computer/download)
+- [GitHub - bholmesdev/llm-knowledge-base-skills: Agent skills that turn raw markdown notes into a self-updating LLM knowledge base · GitHub](https://github.com/bholmesdev/llm-knowledge-base-skills)
+	- [[llm-knowledge-base-skills-main.zip]] 
 
+|                                                                                                                                      |                                                                                                                                                                                                                          |
+| ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [enrich-note](https://github.com/bholmesdev/llm-knowledge-base-skills/blob/main/skills/enrich-note/SKILL.md)                         | Enrich one note with topic tags (from a shared [tag registry](https://github.com/bholmesdev/llm-knowledge-base-skills/blob/main/skills/enrich-note/references/tags.md)), source attribution, and links to related notes. |
+| [enrich-notes-loop](https://github.com/bholmesdev/llm-knowledge-base-skills/blob/main/skills/enrich-notes-loop/SKILL.md)             | Run enrich-note across every un-enriched note in the vault, unattended. Uses an `enrichedAt` frontmatter stamp to skip finished notes.                                                                                   |
+| [refresh-wiki](https://github.com/bholmesdev/llm-knowledge-base-skills/blob/main/skills/refresh-wiki/SKILL.md)                       | Maintain every llm-wiki under `wikis/`: ingest new source notes, update entity/concept pages, and lint for stale claims and orphan pages.                                                                                |
+| [enrich-notes-loop-cloud](https://github.com/bholmesdev/llm-knowledge-base-skills/blob/main/skills/enrich-notes-loop-cloud/SKILL.md) | enrich-notes-loop wrapped for scheduled cloud runs: sync an Obsidian vault down, enrich, sync back up.                                                                                                                   |
+| [refresh-wiki-cloud](https://github.com/bholmesdev/llm-knowledge-base-skills/blob/main/skills/refresh-wiki-cloud/SKILL.md)           | refresh-wiki wrapped the same way for scheduled cloud runs.                                                                                                                                                              |
+| [setup-oz-automations](https://github.com/bholmesdev/llm-knowledge-base-skills/blob/main/skills/setup-oz-automations/SKILL.md)       | Walks your agent through creating the [Oz](https://oz.dev) environment and schedules that run the cloud skills.                                                                                                          |
+- git clone to a container and git push after automization (or obsidian sync)
+- oz with the loop skills ![[Pasted image 20260708085601.png]]
+	- setups with java script for obsidian cli to work
+	- ![[Pasted image 20260708085718.png]]
+- 
 ---
 # Skalierung (Nodes)
 - Kontextfenster Limit
@@ -4296,16 +4318,189 @@ components
 - Grader (sub-agent) als Kritiker
 - Progress.md als dauerhafter Loop Fortschritt, unabhängig von Compact
 ## [Why I don't open Claude Code anymore. - YouTube](https://www.youtube.com/watch?v=gi0Lx6c84VE) 20260704
-- 
+- [GitHub - warpdotdev/oz-for-oss: Workflows and skills to help people and agents collaborate on open-source software with the power of Oz! · GitHub](https://github.com/warpdotdev/oz-for-oss)
+	- Das LLM wird nicht direkt durch das CLI-Skript „getriggert“, sondern durch die Oz-Infrastruktur. Die Plattform fungiert als Middleware: Sie nimmt deinen Befehl, packt ihn zusammen mit dem System-Prompt für den gewählten Skill (z. B. warp:update-triage) und sendet diesen Kontext über eine API an ein LLM (wie GPT-4o oder Claude 3.5 Sonnet).
+		- bsph Befehl: `oz schedule create --team --name "Update triage" --cron "0 9 * * 1" --skill warp:update-triage --environment 6qDvDbgkCLF3IOrLFEMiFo --output-format text`
+	- Github Issues with Labels, that trigger the agent loops
+	
+	- triage-issue skill for a github issue
+		- and more [triage-issue | Agent Skill | SkillsMP](https://skillsmp.com/creators/warpdotdev/oz-for-oss/agents-skills-triage-issue)
+		- https://agentskill.sh/@warpdotdev/triage-issue-local
+		- https://mdskill.dev/warpdotdev/oz-for-oss/triage-issue
+		- ![[IMG_1931.png]]
+		- dieser oz-for-oss bot postet dann auch direkt unter den Github Issue, wie zum Stellen weiterer Fragen
+- symlink of new features to main to sync back (e.g. for api keys)
+> [!NOTE]- merge worktree skill
+> name: done description: When we finish a feature. Use when the user says work is done, asks to merge a worktree back to main/master, or clean up a worktree.
+> 
+> Review remaining uncommitted code. If all changes are related and can fit into an atomic commit, create a single commit. If work should be broken into multiple atomic commits, do so and commit all.
+> 
+> If we're on a worktree, merge back into the main/master. Then, clean up the worktree.
+> 
+> If work on this feature was tied to a GitHub issue, close that issue as completed.
+- reply-learning skill
+	- extract durable patterns from specific feedback and codify them
+	- [Buzz's reply-learning skill (read more about self-improving agents → https://x.com/petradonka/status/2054897826149101588) · GitHub](https://gist.github.com/tomdwipo/0bc744839f4e7fcda02f22b35379c8ab)
 ## [wtf is Loop Engineer & how to setup for real](https://www.youtube.com/watch?v=W6x-hb44C0c&pp=ugUHEgVlbi1BVQ%3D%3D) 20260704
-- [https://github.com/JayZeeDesign/loop-...](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa29HS0x4aENIczF1bldocGlaQUU5Vjd2UncyUXxBQ3Jtc0ttMmdlcGhRaHg3VmFxMC1HM01CTkowcmRYR2lYOGViZk54X0FSb1ZZXzlJVi1BSnhDeU9VTnFyd09qd3hScHFtT2liajBRNjlLOUV0V3VJQlY4Y1F6WTdCaVhzZ00tZmtOOTl1UEZ6UGF5NTVkVlJ4Zw&q=https%3A%2F%2Fgithub.com%2FJayZeeDesign%2Floop-engineer-template&v=W6x-hb44C0c)
-- Artifacts are the shared library for every agent
-- Loop contract
-	- Goal
-	- Workflow
-	- Task (like Backlog for the next loop)
-	- Timeline
+- history of engineering
+	- prompt
+	- context (system prompt, compaction, skills vs tools, tool call info, mcp)
+	- harness (legible/constraints; executable like dev-local or dev-local.sh, worktree friendly and state switching like auth and un-auth; verifiable like playwright, unit/integration test, end-to-end tests, and always cross-verify with other agents)
+	- loop (+ bundled infrastructure like fs, sandbox, browser; orchestration logic like subagent spawning, handoffs and routing; hooks and middleware for deterministic execution, triggering by cron job, webhooks or other agents)
+- example loop: trigger -> investigate and act (formatting) -> backlog generation -> task assignment and orchestration -> review
+- agents examples
+	- support agents triggered every 30 minutes for support tickets
+	- seo agent everyday 9am for research topics
+	- product growth agent every 2 hours with product analysis and pr delivering 
+- [GitHub - AI-Builder-Club/skills: Codebase harness + loop engineer · GitHub](https://github.com/AI-Builder-Club/skills)
+- each agent in Domains/ folder
+	- after a test run ("i want you to handle my support, which means fetch support tickets from past hr, review and draft response save in tickets, and also save signals for product ideas, user frictions, etc. for clear bugs you can spawn and agent to fix directly and creating a task for engineer ticket; we run this every hr, but lets do a test run first")
+	- create the Loop contract ("/loop now help me setup a loop but create a README first as contract including goal, workflow, timeline in Users/json_backup/Desktop/looopps/domains/support/README.md, and setup the loop to this session")
+- Loop core ingredients
+	- Trigger (Cron, Webhook, Daemon)
+	- FS (artifacts, loop contract, docs, logs)
+	- Tools (Skills, Workflow, MCP)
+	- Verify (other modell/agent)
+- Artifacts are the shared library for every agent (each has a README)
+	- Docs/
+	- Signals/ (export_to_hidden.md, conversion_gap.md)
+	- Tasks/
+	- Contents/
+- Loop contract for a single loop
+	- README with
+		- Goal
+		- Workflow
+		- Task (like Backlog for the next loop)
+		- Timeline
+> [!NOTE]- README example
+> 
+> ---
+> kind: domain
+> domain: support
+> status: active
+> goal: triage the Intercom inbox; reply or escalate; surface product/growth signals
+> cadence: hourly triage (ops Area – no end-state)
+> tags: [support, domain]
+> ---
+> 
+> # support – inbox triage (domain)
+> 
+> The ops Area that triages Superdesign's Intercom inbox. This folder holds the charter + the 
+> **run-log** (`## Timeline`). The artifacts it produces live in the **global** 
+> kind-stores 
+> (queryable across the whole brain), tagged `domain: support`. Run it with the 
+> **`triage-support-tickets`** skill. Viewer: `app.py` at the repo root (the HQ 
+> dashboard — covers 
+> tickets, signals, tasks, domains, and the SEO scorecard).
+> 
+> ## Cron
+> 
+> Runs hourly on the in-session cron (`7 * * * *`, hourly at :07). Prompt:
+> please pull tickets from intercom from past 1 hr, triage and handle based on
+> 
+> Each fire runs the skill: **Step 1** (new + newly-active convos, last 1h) **+ Step 1b** (review 
+> `needs_followup` tickets due today). Public replies still need Jason's approval 
+> unless he's pre-OK'd 
+> the follow-up.
+> 
+> ## What lives where (schemas in each kind's README)
+> 
+> | Output | Kind | Lives in | Schema |
+> |---|---|---|---|
+> | one note per conversation (`SUP-<n>`) | `ticket` | **`/tickets/`** | `tickets/README.md` |
+> | deduped product-feedback themes (`FB-<n>`, `frequency`) | `signal` (feedback) | **`/signals/`** | `signals/README.md` |
+> | growth/attribution signals | `signal` (observation) | **`/signals/`** | `signals/README.md` |
+> | engineering bugs | `task` **and/or** multica engineer issue | **`/tasks/`** + multica | `tasks/README.md` |
+> | the run-log | — | this README's **`## Timeline`** | (one terse dated line per run) |
+> 
+> > Schemas are **not** duplicated here — each kind's README is its source of truth. 
+> > This file is the 
+> > charter + the support-workflow specifics below.
+> 
+> ## Workflow specifics
+> 
+> - **Signal tags on tickets** (so themes roll up): `signal:feature-request`, `signal:friction`, `signal:bug-pattern`, `signal:pricing`, `signal:docs-gap`, `signal:attribution`.
+> - **Feedback rollup:** one `signal` per *theme* (not per ticket); a recurrence **+ frequency** and 
+>   appends a `## Timeline` line — never a duplicate. Mirror product ideas to the 
+>   multica **product** 
+>   project; record it in the signal's `multica` field.
+> - **Engineering bugs -> both, on purpose** (we're A/B-ing the two trackers): a `tasks/ENG-<n>.md` 
+>   **and** a multica **engineer** issue, cross-linked. ⚠ multica auto-assigns its own `SUP-n` identifiers that **overlap numerically** with our `SUP-n` but are unrelated — cite the multica issue's **uuid**.
+> - **Dedupe:** a returning *conversation* = match `id` (Intercom conversation id); a returning 
+>   *user* across tickets = match `user_email`.
+> 
+> ## Timeline
+> 
+> The triage run-log — one terse dated line per run; per-ticket detail lives in the linked `[[SUP-n]]`.
+> 
+> 2026-06-13 | triage + loop re-armed in new session (hourly :07) — [[SUP-34]] e-commerce/glowing-icon how-to (new signup, Fin handled). [[SUP-18]] conversion check-in approved + sent (→ replied, followups=1). Later 12h safety-sweep caught [[SUP-35]] (Aanvi, arrows-preview-single-frame how-to, new signup, Fin handled) from the session-gap window. Several quiet hourly fires otherwise.
+> 2026-06-12 | triage + loop re-armed in new session (hourly cron :07) — 0 new convos past 1h; Jason approved + sent the 3 held follow-ups: [[SUP-5]] FR nudge, [[SUP-25]] free skill-path answer, [[SUP-28]] credits-display correction (all → replied, followups=1). [[SUP-18]] due tomorrow. Later hourly fires: quiet (no customer replies yet).
+> 2026-06-12 | triage — [[SUP-33]] Discord-link click (.edu, Fin handled) otherwise.
+> 2026-06-11 | triage — [[SUP-32]] Free user vented "30+ min for a simple..." (self-resolved); folded into [[FB-1]] as the slow/stuck-gen variant (noted).
+> 2026-06-11 | triage — quiet; [[SUP-31]] export-to-zip (Pro, Fin handled); noticed [[FB-8]] (critique-existing-site = onboarding wedge). Restructured 4 existing human-
 - LOG.md for all agents
+	- ![[IMG_1973.png]]
+- ARCHITECTURE.md file summarizes the structure above (artifacts, loop contract, log.md)
+	- referenced in CLAUDE.md
+> [!NOTE]- ARCHITECTURE.md example
+> # Knowledge-base architecture
+> 
+> reviewable,
+> agent-writable. This doc is the durable record of the model + the options we rejected and
+> why.
+> 
+> ---
+> 
+> ## The model (v1 — deliberately minimal)
+> 
+> Two ideas only:
+> 
+> 1. **Artifacts** are global, foldered by **kind**; `domain:` is a **field (a list)**, not
+> a folder.
+>    Each artifact has exactly one home (by *what it is*). Cross-cutting is handled by tags
+> + links
+>    — never by duplicating or by nesting inside a domain.
+> 1. **Domains** are "agent beats" — a thread of work with a charter, cadence, and metrics.
+> A domain
+>    folder holds only its **README (charter)** + **machinery** (metrics, collectors). It
+> **links**
+>    artifacts; it never contains them.
+> 
+> ### Kinds (now)
+> 
+> | kind | what it is | folder | key frontmatter |
+> |---|---|---|---|
+> only for now) | `content/` | `type, status, subreddit, thread_url, posted_url, outcome, domain[]` |
+> 
+> ### Domains (now)
+> 
+> - **product** — drive conversion + revenue (the growth engine; consumes signals → spawns tasks)
+> - **seo** — non-brand acquisition / prompt library
+> - **support** — inbox triage (ops Area; the daily log lives here, but its artifacts go to the global stores: tickets → `tickets/`, feedback/growth → `signals/`)
+> - **reddit** — rebuild u/jzdesign into a founder account that drives signups + AI citations
+>   (daily comment brief; artifacts → `content/`)
+> 
+> ### Body convention — two layers (borrowed from gbrain)
+> 
+> Each artifact = a normal **main body** + an optional appended **`## Timeline`**
+> (append-only,
+> dated: `YYYY-MM-DD | source — what happened`). *"What's true now"* = body; *"what
+> happened"* =
+> Timeline. This gives every artifact its own history, absorbs daily logs, and lets a
+> `signal`
+> accumulate evidence (frequency = Timeline entries). Git holds the mechanical diff history.
+> 
+> ### Logs & data
+> 
+> - **`log.md`** (root) — global activity feed: one line per ship/ingest. Detail lives in each
+>   artifact's `## Timeline`.
+> - **No separate `daily`/`journal` kind.** A domain's run-log is its `README`'s `## Timeline`
+>   (one terse dated line per run); rich per-item detail lives in the items it links. So there are
+>   exactly two log surfaces: per-artifact `## Timeline` + the global `log.md`.
+> - **`domains/<x>/metrics/*.jsonl`** — numeric time-series, written by **deterministic collectors**
+>   (code/skills, *not* the LLM). Agents read & interpret. Scorecards are generated from these.
+- CLAUDE.md for spawning agents
+	- ![[IMG_1974.png]]
 ---
 # audio ingest 20260627
 ## Obsidian Plugins
@@ -4586,6 +4781,22 @@ flowchart TD
 - zwei Netzwerke für weitere Isolierung: agent-net zwischen 1 Agent und Orchestrator, backendnet für Orchestrator
 ## Entscheidung für hybride Variante: Sandcastle Worktree(Host) + Worktree(Docker)
 - SPEC [[hybrid-worktree-docker-spec]] 
+### Überarbeitung 20260705
+- Skill Workflow mit Github Issues von [[newO2#Matt Pocock 20260628]]
+- OZ als Orchestrator und weitere Automatisierung von Github
+- Herdr als Terminal
+### Versionen zu den Specs
+[[hybrid-worktree-docker-spec(2)]]
+[[hybrid-worktree-docker-spec(3)]]
+[[hybrid-worktree-docker-spec(4)]]
+[[hybrid-worktree-docker-spec(5)]]
+[[hybrid-worktree-docker-spec(6)]]
+[[hybrid-worktree-docker-spec(7)]]
+[[hybrid-worktree-docker-spec(8)]]
+[[hybrid-worktree-docker-spec(9)]]
+### Infrastruktur für SPEC-Build 20260708
+[[infrastructure-spec]]
+
 ---
 # Matt Pocock 20260628
 ## [Full Walkthrough: Workflow for AI Coding — Matt Pocock - YouTube](https://www.youtube.com/watch?v=-QFHIoCo-Ko&t=526s)
@@ -4817,10 +5028,16 @@ done
 ---
 # skills 20260701
 ## [Building Great Agent Skills: The Missing Manual - YouTube](https://www.youtube.com/watch?v=UNzCG3lw6O0)
-- 
+- [skills/skills/productivity/writing-great-skills at main · mattpocock/skills · GitHub](https://github.com/mattpocock/skills/tree/main/skills/productivity/writing-great-skills)
+- Trigger
+	- "disable-model-invocation" (kognitive or context load)
 - Structuring
 	- Skill für unterschiedliche Aufgaben, der. z.b. entweder lokales Glossar oder Erchitektur-Entscheidungs-Dokument erstellt oder beides
 	- Referenzmaterialien und Templates im Skill-Ordner und nicht in der skill.md und hier nur mit Context Pointer referenziert
+- Steering
+	- use leading words throughout all skills ("vertical slice")
+	- no repetitions
+	- increase legwork by hiding future steps (step-by-step, multiple skills for a chain of steps)
 - Pruning
 	- Aufräumen von Sediment (veralteter Anweisung), damit Agent nicht durch unnötige No-Ops verwirrt wird
 ## Unterscheidung
@@ -4920,6 +5137,13 @@ done
 > 6. Sobald der Lauf stoppt, gibt Herdr die "Done"-Rückmeldung, Sandcastle übernimmt den Merge-Prozess, und das Pane kann entweder geschlossen oder für ein Review offengelassen werden.
 > 
 
+---
+# [GitHub - warpdotdev/oz-for-oss: Workflows and skills to help people and agents collaborate on open-source software with the power of Oz! · GitHub](https://github.com/warpdotdev/oz-for-oss) 20260706
+- for automated orchestration
+- trigger from cli, api (github), sdk, warp, cron job
+	- slack integration
+- isolated docker containers with access to as many repos as needed
+- steer the agent while working
 ---
 # canvas 2026050920
 ## patch 
