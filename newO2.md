@@ -159,6 +159,7 @@ git clone https://DEIN_TOKEN@github.com/DEIN_USERNAME/DEIN_VAULT.git /root/vault
 # jamal bosch 20260417
 - [OpenCode | Der Open-Source AI-Coding-Agent](https://opencode.ai/de)
 ---
+***
 # peter steinberger
 ## [Peter Steinberger — You Can Just Do Things - YouTube](https://www.youtube.com/watch?v=68BS5GCRcBo)
 - https://context7.com/ ähnlich deepwiki und exa? - wird von ihm nicht benutzt
@@ -459,6 +460,7 @@ Use design-tokes and design-system-components skill to build HTML page with a si
 ## [How to Build a Design System with Claude + Figma MCP | Vibe to Vector Tutorial - YouTube](https://www.youtube.com/watch?v=WbUhThNIyUQ)
 - 
 
+---
 # K-Accumulator 20260507
 - zwei Oszillatoren, Waveshaper, Funktionsgenerator (UFG) als Modulation für Oszillator, Clock für Delta-Sigma und Fenster für Pulsar-Algo, Delta-Sigma-Mustergenerator, alles um Root-Frequenz gebaut, Stretch für konstanten Grundton und Strecken der Obertöne, Morphmatrix um verschiedene Algos
 - Frequency Shifting
@@ -4796,7 +4798,59 @@ flowchart TD
 [[hybrid-worktree-docker-spec(9)]]
 ### Infrastruktur für SPEC-Build 20260708
 [[infrastructure-spec]]
+### spec muss neu gebildet werden, auch mit verständnis, deshalb spec-spec und allgemeine struktur
+---
+# architecture ==jetzt ideen. später skill verzeichnis==
+## trigger schedule hook
+## goal spec forge
+### *forge.md*
+- routing ...
+#### skill1 step
 
+### obsidian log
+- codify-spec
+	- spec as code concept
+- spec-to-obsidian
+	- wiki
+	- context optimization
+	- https://github.com/bholmesdev/llm-knowledge-base-skills
+	- os https://github.com/starmynd-org/infinite-brain-os
+		- [GitHub - nateherkai/AIS-OS: AI Operating System starter kit for Claude Code — three-skill kit (/onboard, /audit, /level-up) + 3Ms framework. Companion to the AIOS masterclass. · GitHub](https://github.com/nateherkai/AIS-OS)
+	- mehr tool-mäßig https://github.com/kepano/obsidian-skills
+	- hie rauch ncoh einmal die recherche anwerfen
+- 
+## reason build act
+- skill-loop
+	- for improvement of skills
+- automation-seek
+- loop...
+	- https://github.com/cobusgreyling/loop-engineering
+	- https://github.com/az9713/loop-library
+- where-is-the-human 
+	- hil decision
+## review verify test
+- /tdd
+- /diagnosing-bugs
+## refactor lint
+- /improve-codebase-architecture
+	- https://www.ultracite.ai/
+	- [[John Ousterhout - A Philosophy of Software Design.pdf]]
+- skill-extract 
+	- or component-extract
+	- for ai os
+- tdd
+### obsidian re-log
+- versioned
+## team- scale- up
+- example tour
+- learning nuggets 
+	- /teach mit fragen
+- [Buzz's reply-learning skill (read more about self-improving agents → https://x.com/petradonka/status/2054897826149101588) · GitHub](https://gist.github.com/tomdwipo/0bc744839f4e7fcda02f22b35379c8ab)
+---
+# hier zum sammeln
+[[files.zip]]
+[[files(1).zip]]
+***
 ---
 # Matt Pocock 20260628
 ## [Full Walkthrough: Workflow for AI Coding — Matt Pocock - YouTube](https://www.youtube.com/watch?v=-QFHIoCo-Ko&t=526s)
@@ -5144,6 +5198,12 @@ done
 	- slack integration
 - isolated docker containers with access to as many repos as needed
 - steer the agent while working
+---
+# Claude Pro Abo 20260708
+- Token pro Chat nur in der CLI
+- 5 stündiges und wöchentliches Fenster im Abo
+# AIOS 20260709
+- 
 ---
 # canvas 2026050920
 ## patch 

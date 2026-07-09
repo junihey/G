@@ -28,49 +28,76 @@ Melancholischer Enthusiasmus gewandelt
 
 Mit dem gesamten Gemüt, um gestülpt
 
-Mit der Zitrone, Wärme und Wasser vermengt, damit sich zahlreiche Geister begegnen und sich Versteuern
-
-Am Spieß wird geschrien
-
-Zitrusgold küsst warme Fluten,
-
-Geister in der Tiefe gluten.
-
-Aus der Säure wildem Streit
-
-wird süße Duft-Unsterblichkeit.
 
 
 
-Mit der Zitrone Wärme und Wasser starr vermengt,
+weitere Fragen:
 
-damit sich zahlreiche Geister begegnen
+1) prüft das framework, ob die slices tief sind also vertical anstelle von horizontal? oder wägt es ab, wann was besser ist?
 
-und im direkten Kontakt unweigerlich versäuern,
+2) würde ein handoff skill sinn machen, wenn ja zwischen welchen skills?
 
-nur um am Ende süßlich zu riechen
+3) skill de rnochmal genau architektur mit funktion und kommunikation erfragt und vorschläge macht
+- codeserver
+- vs code
+- hermes - stateful personal
+- claude code - stateless generic
+- herdr - spawn monitor
+- sandcastle - agent spawn
+- oz - teamwork - https://github.com/warpdotdev/oz-for-oss
+	- skills https://gist.github.com/tomdwipo/0bc744839f4e7fcda02f22b35379c8ab
+	- tools ...
+	- ....
+- vps
+- obsidian
+- openrouter
+- https://github.com/jesseduffield/lazygit
 
-Specs as code
-Codified agent
-Spec to obsodian (wiki context optimization log )
-
-Codebase structuring agent (refactor after build)
-
-Skill looping improve
-
-Arrtofact/component/skill extraction for the ai os 
 
 
-Automation seeking 
+# Slice to agent in build (loop contract)
 
-Review always from other chat
-–loop skills (ai Jason)
+- Loop contract for a single loop
+	- README with
+		- Goal
+		- Workflow
+		- Task (like Backlog for the next loop)
+		- Timeline
 
-Slice to agent in build (loop contract)
+[wtf is Loop Engineer & how to setup for real](https://www.youtube.com/watch?v=W6x-hb44C0c&pp=ugUHEgVlbi1BVQ%3D%3D)
 
-Top level (loop)
+# conceptual principles
+- portable
+- minimal
+- hackable
+- remote
+- auf augenhöhe 
+	- decode the jargon
+	- grill-with-docs
+- https://github.com/multica-ai/andrej-karpathy-skills/blob/main/CLAUDE.md
+- hier als skill https://github.com/multica-ai/andrej-karpathy-skills/blob/main/skills/karpathy-guidelines/SKILL.md
 
-Goal spec (obsidian log)
-Reasoning build 
-Review verify
-Refactor lint (obsidian re-log)
+# https://github.com/mattpocock/skills/blob/main/skills/productivity/write-a-skill/SKILL.md
+- https://github.com/mattpocock/skills/tree/main/skills/productivity/writing-great-skills
+- bisheriges skillrouting, um conventions zu übernehmen und step einzufügen
+- skills universell für alle modelle / harnesses gestalten
+
+# context enrich
+- https://github.com/bradautomates/claude-video 
+- idea-to-idea
+	- decode the jargon
+	- grill-with-docs
+- https://github.com/mattpocock/skills/blob/main/skills/engineering/research/SKILL.md
+
+# Erklären und in welche der vier Phasen?
+**[domain-modeling](https://github.com/mattpocock/skills/blob/main/skills/engineering/domain-modeling/SKILL.md)** — Actively build and sharpen a project's domain model — challenge terms against the glossary, stress-test with edge-case scenarios, and update `CONTEXT.md` and ADRs inline.
+
+# to-slices oder erst in refactor? 
+**[codebase-design](https://github.com/mattpocock/skills/blob/main/skills/engineering/codebase-design/SKILL.md)**
+
+# spec oder review?
+**[code-review](https://github.com/mattpocock/skills/blob/main/skills/engineering/code-review/SKILL.md)** — Two-axis review of the diff since a fixed point: **Standards** (does it follow the repo's coding standards, plus a Fowler smell baseline?) and **Spec** (does it faithfully implement the originating issue/PRD?), run as parallel sub-agents so neither pollutes the other.
+
+
+[[compass_artifact_wf-58d3ee8c-6fdf-4534-b53b-65d2e244b98d_text_markdown]]
+[[compass_artifact_wf-5b22f837-bc99-440f-a438-3a1e75ba5d95_text_markdown]]
