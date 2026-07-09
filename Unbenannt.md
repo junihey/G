@@ -141,3 +141,6 @@ Wie muss ein solches System gestaltet sein, damit es in der Praxis verlässlich 
 Zusammengefasst verlagert ein AIOS die Interaktion mit dem Computer von der **Befehlsebene** ("Öffne dieses Programm, kopiere diesen Text, speichere hier") auf die **Ziel- und Prozessebene** ("Erstelle den Monatsbericht auf Basis der üblichen Metriken und leg ihn mir zur Freigabe vor").
 
 Interessieren Sie sich bei diesen Prinzipien eher dafür, wie man ein solches System für den eigenen Gebrauch aufbaut (die praktische Umsetzung), oder für die technischen Herausforderungen, die noch gelöst werden müssen, damit so ein OS reibungslos funktioniert?
+
+
+
