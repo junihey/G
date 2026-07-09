@@ -143,4 +143,9 @@ Zusammengefasst verlagert ein AIOS die Interaktion mit dem Computer von der **Be
 Interessieren Sie sich bei diesen Prinzipien eher dafür, wie man ein solches System für den eigenen Gebrauch aufbaut (die praktische Umsetzung), oder für die technischen Herausforderungen, die noch gelöst werden müssen, damit so ein OS reibungslos funktioniert?
 
 
+Ai First mit Erkennung der ui 
+Erklärung was da passiert 
+Eingabe, welche Fehler auftreten (Screenshot, Audio, Video , Text)
+Grill me with docs um Kontext zu erfragen und zu erziehen
+Und dann über api steuern (zumindest api hinterlegen)
 

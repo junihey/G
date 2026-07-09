@@ -159,7 +159,6 @@ git clone https://DEIN_TOKEN@github.com/DEIN_USERNAME/DEIN_VAULT.git /root/vault
 # jamal bosch 20260417
 - [OpenCode | Der Open-Source AI-Coding-Agent](https://opencode.ai/de)
 ---
-***
 # peter steinberger
 ## [Peter Steinberger — You Can Just Do Things - YouTube](https://www.youtube.com/watch?v=68BS5GCRcBo)
 - https://context7.com/ ähnlich deepwiki und exa? - wird von ihm nicht benutzt
