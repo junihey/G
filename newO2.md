@@ -3141,6 +3141,9 @@ required_attributes:
 - Plugin "Metadata Menu" was alle möglichen Werte für Properties anzeigt
 - Hierarchien zwischen Notizen und Ordnerstruktur muss nicht verstanden werden, alles kommt in Inbox Ordner wird von KI oder PowerUser verschoben oder automatisch nach einer Property wie `type`durch Plugin "Auto Note Mover"
 - automatische Namenskonventionen Generierung in Templates
+## [I Love the Karpathy LLM Wiki but it Doesn't Scale. Here's What Does.](https://www.youtube.com/watch?v=R-5_2nsF_ZM&pp=ugUEEgJlbg%3D%3D)
+- live data
+- 1000 of people (customer service)
 ---
 # Karpathy 20260529
 ## Claude.md 
@@ -4805,6 +4808,7 @@ flowchart TD
 ### *forge.md*
 - routing ...
 #### skill1 step
+#### baseline review by [[infrastructure-spec]] danach datei bitte löschen
 
 ### obsidian log
 - codify-spec
@@ -4816,11 +4820,18 @@ flowchart TD
 	- os https://github.com/starmynd-org/infinite-brain-os
 		- [GitHub - nateherkai/AIS-OS: AI Operating System starter kit for Claude Code — three-skill kit (/onboard, /audit, /level-up) + 3Ms framework. Companion to the AIOS masterclass. · GitHub](https://github.com/nateherkai/AIS-OS)
 	- mehr tool-mäßig https://github.com/kepano/obsidian-skills
-	- hie rauch ncoh einmal die recherche anwerfen
-- 
+	- [[compass_artifact_wf-58d3ee8c-6fdf-4534-b53b-65d2e244b98d_text_markdown]]
 ## reason build act
+- slice-to-agent
+	- ausgangspunkt sind slices (vertikal, horizontal) -> übersetzung in parallel/mehrere agenten oder einzelnen agenten zum build des slices (und wonach wird das entschieden)
+	- wie funktioniert memory Übergabe zwischen zwei Slices (handoff skill, gesamter spec oder ganz anders)
+	- building loop contract [[compass_artifact_wf-5b22f837-bc99-440f-a438-3a1e75ba5d95_text_markdown]]
+		- ändert sich etwas, wenn sub-agenten pro slice parallel arbeiten?
 - skill-loop
 	- for improvement of skills
+	- https://github.com/mattpocock/skills/blob/main/skills/productivity/write-a-skill/SKILL.md
+	- https://github.com/mattpocock/skills/tree/main/skills/productivity/writing-great-skills
+	- bisherige skills als memory
 - automation-seek
 - loop...
 	- https://github.com/cobusgreyling/loop-engineering

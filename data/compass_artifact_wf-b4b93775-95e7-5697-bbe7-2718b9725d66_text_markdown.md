@@ -1,0 +1,112 @@
+# Writing Portable, Generic Agent Skills (SKILL.md) Across Models and Harnesses
+
+## TL;DR
+- The portable core is tiny and well-defined: a folder with a `SKILL.md` containing only `name` + `description` YAML frontmatter and plain-Markdown instructions, plus optional `scripts/`, `references/`, `assets/` — this exact surface works unchanged across Claude Code, OpenAI Codex, Gemini CLI, OpenCode, Cursor, VS Code Copilot and 30+ other harnesses; everything beyond it (`context: fork`, `hooks`, `allowed-tools`, `disable-model-invocation`) is a vendor extension that ties your skill to one runtime.
+- Matt Pocock and Anthropic converge on the same authoring physics — the `description` is the only thing loaded at selection time so it must carry both "what" and "when to use it"; keep SKILL.md lean (Pocock: under ~100 lines; Anthropic/spec: under 500 lines / ~5,000 tokens); use progressive disclosure one level deep; explain *why* rather than shouting ALWAYS/NEVER; and match "degree of freedom" to task fragility.
+- For genuine cross-model/cross-harness portability you must additionally: avoid model-specific formatting quirks (Claude-only XML tags), avoid harness assumptions (hardcoded paths, specific tool names, env vars, auto-discovery vs explicit invocation, network/package availability), never rely on a specific model's implicit reasoning style, and empirically test on the weakest model and every harness you target — because independent benchmarks show skills help small/weak models far more than strong ones and can even produce *negative* deltas on some tasks/models.
+
+## Key Findings
+
+### 1. Matt Pocock's guidelines (two references)
+Pocock actually ships two distinct skills. `write-a-skill` is a beginner scaffold; `writing-great-skills` is the sophisticated reference and reflects his mature thinking.
+
+**`write-a-skill` (the scaffold):**
+- Folder layout: `skill-name/` with `SKILL.md` (required), optional `REFERENCE.md`, `EXAMPLES.md`, and `scripts/`.
+- SKILL.md template sections: `## Quick start` (minimal working example) → `## Workflows` (step-by-step with checklists) → `## Advanced features` (links to separate files).
+- Description rules: "the only thing your agent sees" at selection; max 1024 chars; third person; first sentence = what it does; second sentence = "Use when [specific triggers]".
+- Split files when SKILL.md exceeds 100 lines (note: stricter than Anthropic's 500); add scripts when the operation is deterministic / repeated / needs explicit error handling.
+- Review checklist: description includes "Use when…"; SKILL.md under 100 lines; no time-sensitive info; consistent terminology; concrete examples; references one level deep.
+
+**`writing-great-skills` (the reference):** This is his real contribution and it is more conceptual:
+- **Root virtue = predictability**: "A skill exists to wrangle determinism out of a stochastic system. Predictability — the agent taking the same *process* every run, not producing the same output — is the root virtue."
+- **Invocation taxonomy**: model-invoked (keeps a `description`, autonomously fired, costs "context load" every turn) vs user-invoked (`disable-model-invocation: true`, description stripped to human-facing, zero context load but costs "cognitive load" — you must remember it). When user-invoked skills multiply, add a **router skill** that names the others.
+- **Information hierarchy ladder**: in-skill step → in-skill reference → external reference (pushed behind a "context pointer", loaded only when the pointer fires). Progressive disclosure = moving material down the ladder to keep SKILL.md legible. A "context pointer's *wording*, not its target, decides when and how reliably the agent reaches the material."
+- **Completion criteria** must be *checkable* and, where it matters, *exhaustive* ("every modified model accounted for", not "produce a change list") to avoid **premature completion**.
+- **Leading words**: a compact concept already in the model's pretraining (e.g. *tight*, *red*, *tracer bullets*) that "recruits priors the model already holds" and anchors behavior in the fewest tokens. Serves predictability in the body (anchors execution) and in the description (anchors invocation).
+- **Pruning discipline**: single source of truth; check every line for relevance; hunt **no-ops** sentence by sentence (a line the model already obeys by default) and delete whole sentences, not words.
+- **Named failure modes**: premature completion, duplication, **sediment** (stale layers that accrete because adding feels safe), **sprawl** (too long even if every line is live), no-op.
+
+### 2. Anthropic's official guidance (and the open standard)
+Anthropic authored the format, then published it as the open **Agent Skills** standard (agentskills.io) on December 18, 2025; Microsoft (VS Code/Copilot) and OpenAI (ChatGPT, Codex CLI) shipped support within 48 hours (Dec 18–20, 2025). Anthropic's own **Skill authoring best practices** doc is the canonical reference:
+
+- **Concise is key**: "The context window is a public good." Default assumption: "Claude is already very smart" — only add context it doesn't already have.
+- **Naming**: prefer gerund form (`processing-pdfs`, `analyzing-spreadsheets`); lowercase/numbers/hyphens only, ≤64 chars, no reserved words ("anthropic", "claude"); avoid vague names (`helper`, `utils`, `tools`).
+- **Descriptions**: always third person; include *both* what it does and specific triggers; the description is "critical for skill selection: Claude uses it to choose the right Skill from potentially 100+ available Skills."
+- **Degrees of freedom** (the robot-on-a-path analogy): high freedom (text instructions, many valid paths, e.g. code review), medium (parameterized scripts/pseudocode), low (exact scripts, "do not modify the command", e.g. database migrations — "narrow bridge with cliffs on both sides").
+- **Test with all models you plan to use**: "Skills act as additions to models, so effectiveness depends on the underlying model… What works perfectly for Opus might need more detail for Haiku. If you plan to use your Skill across multiple models, aim for instructions that work well with all of them." Per-model: Haiku ("Does the Skill provide enough guidance?"), Sonnet ("clear and efficient?"), Opus ("avoid over-explaining?").
+- **Progressive disclosure**: per Anthropic's best practices, "Keep SKILL.md body under 500 lines for optimal performance. If your content exceeds this, split it into separate files." References one level deep (nested chains cause partial reads via `head -100`); add a table of contents to reference files over 100 lines.
+- **Explain the why** (skill-creator flags all-caps MUST/ALWAYS/NEVER as a "yellow flag to reframe"): "Use constructor injection. Field injection breaks testability…" beats "MUST use constructor injection. NEVER use field injection." The reasoning becomes the rubric for unanticipated cases.
+- **Anti-patterns explicitly named in the doc**: Windows-style paths (always forward slashes, "Unix-style paths work across all platforms"); offering too many options (give a default with an escape hatch); assuming tools/packages are installed; using unqualified MCP tool names (use `ServerName:tool_name`); time-sensitive info (use an "old patterns" `<details>` section).
+- **Evaluation-driven development**: build evals first (three scenarios), establish a baseline without the skill, write minimal instructions, iterate. The **skill-creator** meta-skill automates this: spawns with-skill vs without-skill subagents in parallel, grades against assertions, benchmarks pass-rate/tokens/latency, and runs a **description optimizer** that splits evals 60/40 train/test (to avoid overfitting), runs each query 3× for a reliable trigger rate, and iterates the description up to 5 rounds. skill-creator also advises making descriptions a bit "pushy" because Claude tends to *under*-trigger: e.g. "Make sure to use this skill whenever the user mentions dashboards, data visualization, or internal metrics, even if they don't explicitly ask for a 'dashboard.'"
+- **Runtime/packaging caveats in the doc**: claude.ai can install from npm/PyPI/GitHub; the **Claude API has no network access and no runtime package installation** — list required packages and verify availability. Scripts should "solve, don't punt" (handle errors explicitly), avoid "voodoo constants" (justify magic numbers).
+
+**The open standard's exact frontmatter surface** (agentskills.io/specification): `name` (required, ≤64), `description` (required, ≤1024), `license` (optional), `compatibility` (optional, ≤500 chars — for environment requirements; "Most skills do not need" it), `metadata` (optional arbitrary key-value map — put `version` here, not top-level), `allowed-tools` (optional, space-separated, **Experimental — "Support for this field may vary between agent implementations"**). Body loading tiers: metadata ~100 tokens at startup → full body (<5,000 tokens recommended) on activation → resources on demand. Note the spec is minimal and "leaves routing to each runtime."
+
+### 3. Cross-model and cross-harness portability principles (broader community + benchmarks)
+
+**Frontmatter portability (the single biggest lever):**
+- Only `name`, `description`, `license`, `compatibility`, `metadata`, `allowed-tools` are defined by the open standard. Everything else — `context: fork`, `agent`, `model`, `effort`, `disable-model-invocation`, `user-invocable`, `hooks`, `argument-hint`, `paths`, `when_to_use`, dynamic `!`command`` injection — is a **Claude Code extension**. OpenCode's docs state plainly: "Unknown frontmatter fields are ignored." So vendor fields are safe to include but give you zero portable behavior.
+- Codex uses a *separate* file `agents/openai.yaml` for its extensions (UI metadata, `policy.allow_implicit_invocation: false`, MCP tool deps). Critically, Codex does **not** honor Claude's `disable-model-invocation`; to suppress auto-invocation on Codex you need `allow_implicit_invocation: false` in openai.yaml. A skill can carry both `agents/openai.yaml` and Claude's `when_to_use` without conflict.
+- The `name` **must match the parent directory** (case-sensitive on Linux/macOS) — a `Code-Reviewer` folder with `name: code-reviewer` silently fails to load.
+
+**Discovery-path portability:** each harness scans different directories — Claude Code `.claude/skills/` + `~/.claude/skills/`; Codex `.agents/skills/` (walked up to repo root) + `~/.agents/skills/` + `/etc/codex/skills`; Gemini CLI `~/.gemini/skills/` + `.gemini/skills/`; OpenCode reads six locations including `~/.claude/skills/` and `~/.agents/skills/`. The clean cross-harness pattern is a single canonical skills directory symlinked into each agent's discovery path.
+
+**Description/budget differences across harnesses:** the open spec caps `description` at 1024 chars. Claude Code truncates the combined description + `when_to_use` at 1536 chars in its skill listing, and applies a further metadata budget (~1% of context window; 8,000-char fallback). Codex's initial skills list "uses at most 2% of the model's context window, or 8,000 characters when the context window is unknown. If many skills are installed, Codex shortens skill descriptions first." Practical consequence: **front-load** the key use case and trigger words in the first ~200 characters so triggering survives truncation on any harness.
+
+**Model-specific formatting is the classic portability trap:**
+- Claude is XML-native (Anthropic recommends `<instructions>`/`<context>`/`<examples>` tags; per the Anthropic Prompt Engineering Guide, "internal testing showing structured XML prompts produce 20-40% more consistent outputs than unstructured plain-text equivalents"); GPT-5 is Markdown-first (OpenAI notes XML delimiters degrade when documents themselves contain XML); Gemini/open-source models: Markdown is safer. The durable, model-agnostic discipline: **use Markdown headers for structure and always separate the three zones — instructions, data, examples — regardless of format.** Don't bake Claude-only `<thinking>` scaffolds into a skill you want to run on GPT/Gemini.
+- Reasoning models invert the advice: "prefer general instructions over prescriptive steps"; before writing an elaborate chain-of-thought scaffold, check whether the model has a native reasoning mode. Over-scripted CoT tuned to one model's style is a portability hazard.
+- Few-shot examples partly transfer but can overfit to one model's output format; keep examples diverse and spanning the variation the skill should support.
+
+**Benchmark reality on model-dependence (the strongest evidence to plan around):**
+- SkillsBench (arXiv:2602.12670, Li et al. 2026) tested three commercial harnesses (Claude Code, Codex CLI, Gemini CLI) across seven frontier models — GPT-5.2, Claude Opus 4.5/4.6, Sonnet 4.5, Haiku 4.5, Gemini 3 Pro, Gemini 3 Flash — over 7,308 valid trajectories. Verbatim: "Curated Skills raise average pass rate by 16.2 percentage points (pp), but effects vary widely by domain (+4.5pp for Software Engineering to +51.9pp for Healthcare) and 16 of 84 tasks show negative deltas." Skills close *procedural* gaps, not conceptual ones, and "Skills efficacy depends not only on Skills quality but also on how the harness implements Skills." Haiku+skills (27.7%) beats Haiku alone (11.0%) and even edges Opus-without-skills (22.0%) — skills partly substitute for model scale. Self-generated skills give no benefit: they score "−1.3pp on average compared to the no-Skills baseline. Only Opus 4.6 shows a modest improvement (+1.4pp); Codex + GPT-5.2 degrades substantially (−5.6pp)."
+- A second framework paper (arXiv:2606.17819) shows some non-Anthropic models (Nemotron family, Kimi K2.6) "barely benefit at all" from a skill that helps Claude models, and "the relative impact of skills is larger for smaller models than for bigger ones." Direct evidence that a skill tuned on one model can under-deliver on another.
+
+**Failure modes that specifically break portability** (synthesized from the docs, community, and research):
+- Hardcoded absolute/OS-specific paths (`~/`, `/etc/`, `C:\…`), reliance on specific env vars, or Windows backslashes.
+- Assuming a specific tool exists or is named a certain way (unqualified tool names, assuming `Bash`/`Write` are present, assuming network/package installation).
+- Assuming auto-discovery/model-invocation everywhere (Cursor requires manual placement/invocation; Codex needs its own field to suppress auto-invocation).
+- Assuming YAML fields are interpreted identically (they aren't — vendor fields are ignored; the same skill valid in Claude Code can be *rejected* on Claude API upload if the description exceeds 1024 or the name uses reserved words).
+- Relying on one model's implicit reasoning style, context-window size, or chain-of-thought behavior.
+- Over-fitting few-shot examples / eval-set to one model's output format.
+- Skills that crowd out a stronger native strategy (SkillsBench "Pattern A/B" negative deltas) — mark optional steps and provide a fast path.
+
+**Security/supply-chain (relevant because portable skills get shared):** a skill inherits the full permission set of the agent running it and can manipulate reasoning via prompt injection. Snyk's ToxicSkills audit (3,984 skills from ClawHub and skills.sh, as of Feb 5, 2026) found "36.82% of all skills (1,467 total) contain at least one security flaw, and 13.4% contain at least one critical-level issue," with 76 confirmed malicious payloads (8 still live at publication) and 91% of confirmed malware combining prompt injection with shell payloads; OWASP published an Agentic Skills Top 10. Anthropic's own guidance: "Use Skills only from trusted sources." Never hardcode secrets (reference env vars by name), scope file access to the project dir, and specify exact commands rather than "run whatever is needed."
+
+## Details
+
+**Where Pocock and Anthropic differ:** SKILL.md length ceiling (Pocock ~100 lines vs Anthropic 500 / spec ~5,000 tokens) — reconcile by treating 100 lines as a "start worrying" threshold and 500 as a hard ceiling. Pocock's `writing-great-skills` adds vocabulary (leading words, context pointers, negative space, information-hierarchy ladder, no-op/sediment/sprawl) that the Anthropic doc lacks; Anthropic adds the executable-code depth (plan-validate-execute, self-correcting loops, utility scripts, eval harness) that Pocock's reference skips. Use both together.
+
+**The 14 recurring authoring patterns** (Bilgin Ibryam's synthesis of Anthropic's best practices + skill-creator) map cleanly onto five categories and are explicitly "not product-specific tricks": Activation Metadata + Exclusion Clause (discovery); Context Budget + Progressive Disclosure (economy); Control Tuning, Explain-the-Why, Template Scaffold, In-Skill Examples, Known Gotchas (calibration); Execution Checklist, Self-Correcting Loop, Plan-Validate-Execute (workflow); Utility Bundle, Autonomy Calibration (code). The Exclusion Clause ("Do NOT use for…") is called "the single most important line" after the positive trigger by one practitioner, and directly addresses over-triggering — a portability concern when your skill coexists with a harness's built-ins.
+
+**Applying this to your Spec-Forge / hybrid-worktree-docker pipeline specifically:**
+- Your custom Fastify TypeScript orchestrator is *not* a standard harness, so it will only load the portable core unless you write a loader. Design every Spec-Forge skill to the open-standard surface (`name`+`description`+Markdown+`scripts/`/`references/`), and if you want Claude-Code niceties (`context: fork`, `allowed-tools`) keep them as additive frontmatter that your orchestrator ignores.
+- Docker sandboxing = treat it like the Claude API constraint: no assumption of network/package availability at runtime. List dependencies in `compatibility` (or a reference file), bake them into the image, and use forward-slash relative paths only.
+- git-worktree isolation means CWD varies; never hardcode absolute repo paths. Use relative paths from the skill root and let the harness resolve discovery.
+- Because you run Claude Code CLI *and* a custom orchestrator (potentially different models), the "test on the weakest model + every harness" rule is not optional for you — build a small eval harness (mirror skill-creator's with/without-skill subagent design) into your CI.
+
+## Recommendations
+
+**Stage 1 — Author to the portable core (do this for every Spec-Forge skill now):**
+1. Frontmatter = only `name` (gerund, matches folder, ≤64, no reserved words) + `description` (≤1024, third person, "what" + "Use when…" + an exclusion clause, key triggers front-loaded in first ~200 chars). Put `version`/author under `metadata`.
+2. Body: Markdown headers only (no Claude-only XML as load-bearing structure); separate instructions/data/examples; explain *why* instead of ALWAYS/NEVER; SKILL.md ≤500 lines (start splitting at ~100–150).
+3. Progressive disclosure one level deep into `references/`; TOC on any reference >100 lines; forward-slash relative paths only.
+4. No hardcoded paths, env-var assumptions, tool-name assumptions, network/package assumptions, or time-sensitive info.
+
+**Stage 2 — Add vendor extensions as *additive, ignorable* layers:** keep `context: fork`/`allowed-tools`/`hooks`/`when_to_use` for Claude Code and `agents/openai.yaml` for Codex; never let core behavior depend on them. Maintain one canonical skills dir, symlink into each harness's discovery path.
+
+**Stage 3 — Evaluate before shipping (the benchmark that changes decisions):** build ≥3 evals per skill; measure baseline without the skill; run with/without-skill A/B; test on your weakest target model (Haiku-class or a non-Anthropic model) and on each harness (Claude Code CLI + your Fastify orchestrator). Use skill-creator's description optimizer (60/40 train/test, 3× per query) to tune triggering.
+
+**Thresholds that should change your approach:**
+- If a skill shows a **negative delta** on any target model/task (SkillsBench found this in 16 of 84 tasks, ~19%): mark steps optional, add a fast path, or gate the skill (narrower description / exclusion clause / user-invoke only).
+- If trigger rate <~90% on the weakest model after optimization: rewrite the description (more/other trigger phrases), don't touch the body.
+- If SKILL.md >500 lines or metadata is being truncated (Claude Code warns at startup; watch the 1536-char listing cap): push content to `references/`.
+- If a skill needs `context: fork`/`hooks`/dynamic injection to work *at all*: it is no longer portable — either split the portable knowledge out, or accept it as a Claude-Code-only skill and document that in `compatibility`.
+- If distributing beyond your team: run a security scan (safedep/vet, cisco skill-scanner), pin versions, and audit every bundled script.
+
+## Caveats
+- **Fast-moving, partly-undocumented surface.** The 1536-char Claude Code listing cap and the ~1%/2% metadata budgets come from changelogs, binary inspection, and expert analysis, not stable official docs — verify against your installed CLI version. Gemini CLI's skill support is the least-settled of the major harnesses; test before relying on it.
+- **"Portable" ≠ "identical behavior."** The same SKILL.md loads everywhere, but triggering (auto vs manual), tool permissions, sandboxing, and context budgets differ per harness; the community phrase is "shared language, not identical behavior."
+- **Skills can hurt.** Independent benchmarks show negative deltas on a meaningful minority of tasks/models, and self-authored skills give no average benefit (−1.3pp) — treat every skill as a hypothesis to be measured, not an unconditional win.
+- **Prompt-engineering literature is split** on portability philosophy: some argue you must "translate, not copy-paste" between model families for best results, while the pragmatic middle ground (which the skills spec embodies) is "portable core + optional per-vendor/per-model tuning." For a production pipeline running multiple models, plan for a portable core plus a thin per-model tuning layer rather than one universal artifact.
+- Sourcing on some cross-harness specifics (field-support matrices, Gemini paths) leans on expert blogs rather than vendor docs; the primary standard (agentskills.io), Anthropic best-practices, Claude Code docs, OpenAI Codex docs, OpenCode docs, and the arXiv benchmarks are the high-confidence anchors.

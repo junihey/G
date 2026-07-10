@@ -174,3 +174,23 @@ Aus Repo-Analyse + breiterer Literatur destilliert, hier die wiederkehrenden Pri
 - **Die OS-Analogie ist heuristisch.** Ein LLM ist kein deterministischer Kernel; Scheduling/Speicherverwaltung im echten Sinn existieren nur im Rutgers-AIOS, nicht in den Community-Kits.
 - **"Infinite"/"unendlich"** ist in keinem System wörtlich erfüllt — es bleibt begrenzter Kontext + externer Speicher + Kompression, mit Informationsverlust bei aggressiver Zusammenfassung.
 - **"Paperclip"** (in Infinite Brain OS erwähnt) ist eine undokumentierte proprietäre Runtime des ableitenden Deployments; im Repo nur Platzhalter.
+
+# zusätzlich hinzugefügt!
+
+- **Werkzeug- und API-Abstraktion (Tool Calling):** Ein Gehirn ohne Hände kann nichts verändern. Ein AIOS stellt dem LLM standardisierte Schnittstellen zur Verfügung. Das OS gibt der KI die Fähigkeit, im Internet zu suchen, E-Mails zu lesen, Code auszuführen oder Kalendertermine zu erstellen, regelt aber gleichzeitig die Zugriffsrechte (Permissions).
+
+- **Agenten-Orchestrierung (Multi-Agent Systems):** Komplexe Aufgaben werden selten von einem einzigen Modell-Aufruf gelöst. Ein AIOS funktioniert oft wie ein Manager, der Sub-Agenten orchestriert. Ein "Planungs-Agent" zerlegt die Aufgabe, ein "Recherche-Agent" sammelt Daten, ein "Code-Agent" schreibt das Skript und ein "Kritiker-Agent" überprüft das Ergebnis.
+
+## Gestaltungsprinzipien (Design Principles)
+
+Wie muss ein solches System gestaltet sein, damit es in der Praxis verlässlich funktioniert?
+
+- **Zustandsbehaftung (Statefulness):** Das System muss immer wissen, wo es steht. Wenn Sie Ihren Computer aufklappen, weiß das AIOS, an welchen Projekten Sie gestern gearbeitet haben, welche E-Mails unbeantwortet sind und welcher Schritt in einem Prozess als Nächstes ansteht.
+    
+- **Natural Language First (LUI):** Das primäre Interface ist nicht die grafische Benutzeroberfläche (GUI), sondern das Language User Interface (LUI). Man klickt sich nicht mehr durch verschachtelte Menüs, sondern beschreibt das gewünschte Endresultat. Das OS übersetzt diese Beschreibung in die nötigen Klicks, API-Aufrufe und Skripte.
+    
+- **Human-in-the-Loop (Der Mensch als Kontrollinstanz):** Da KI-Systeme halluzinieren oder Fehler machen können, ist ein gutes AIOS nach dem Prinzip der Eskalation und Freigabe gebaut. Bei kritischen Entscheidungen (z. B. Geld überweisen, Verträge verschicken, Firmendaten löschen) bereitet das System alles vor, hält aber an und fordert eine explizite menschliche Signatur. Sie wechseln von der Rolle des "Machers" zum "Manager".
+    
+- **Beobachtbarkeit und Transparenz (Observability):** Wenn eine KI autonom handelt, muss der Mensch nachvollziehen können, _warum_ sie etwas getan hat. Prinzipien wie ein "Audit Trail" (Logs) oder "Data Lineage" sind essenziell. Wenn das AIOS ein Briefing erstellt, muss es referenzieren können, aus welchen Quelldokumenten (oder Pointern) es diese Informationen gezogen hat.
+    
+- **Asynchrone Autonomie (Cadence/Hintergrundbetrieb):** Ein echtes OS arbeitet auch dann, wenn Sie nicht hinsehen. Ein Prinzip von AIOS ist die ereignisgesteuerte (event-driven) Architektur. Das System wird nicht nur durch Ihre Eingaben aktiv, sondern reagiert autonom auf Trigger (z. B. eine eingehende Kundenreklamation, ein Serverausfall oder ein terminierter Wochenabschluss).

@@ -1,43 +1,12 @@
-Wo ist das Wasser hin? Wir sehen uns nach den Zeiten, als die Bewegungen nicht waren zu unterscheiden es die Zyklen noch bestimmten den Lauf der Zeiten. nun malen wir Heuschrecken, die Diener des Todes zum Essen die Pferde in Joy und heuklappen Der Weißton dem Wind, dem Feuer, dem Stein widersteht der Schläger verbittert, Wachholder und Zeder uns die Sucht des Vergessens leeren, deshalb als Kranz auf den heuern getragen dem Blut abgeschworen und zu erinnern, dass wir aus Wasser geboren so bring es uns süß und sauer entgegen wie die Kirschen Den Tag auch durch die Monde geteilt. Du wirst dich im goldenen Schnitt nicht verirren, musst aber atmen ein und aus. dieses Mal sagt der Vater das, was er sieht, alles richtig ist und allen Vieren sich die schönste Begegnung zeigt, um mit Schlafsand beschenkt, die Sonne erneut zu begrüßen
-
-Will die Begriffe nicht mehr an den Sachen kleben haben, damit sie den Bewegungen entweichen und nur im Herzen Verständnis entsteht, es später zu begreifen ein Gestänge mit Dach in den Steinbruch gebaut. Hier können wir bleiben, von Baumscheiben zu speisen. ich weiß, was du meinst Das wird nicht reichen im Sommer müssen wir die keimrafft des Winters und zeichnen einer Stoffflagge unerreicht einem Stock entsperrt, dazwischen spielt das Leben
-
-
-An der Steilwand, ein quadratisch gelbes Gemälde hängt in der Ferne. Die Sonne erkennen, stand im Fluss, um flüchtige Worte zu sprechen. in der Dürre versammelt, bis die Stärke gewinnt und nur noch verständnislose Weisheit rinnt
-
-Das schwelgen der Begriffe geht zum Schreiben und schick mir ins Schicksal über. Wer sind die anderen beiden nixen, die sich in der Kluft vom verschwimmen und ertrinken retten?
-
-Und wer hält dir den Zuckerhut hin mein viel geliebter Muck? Wenn du beginnst, zu reden und ich ebenfalls zuhören will
-
-Hinunter geschaut, obwohl ich aufsteige Kosmos Wertung des Menschen Menschwerdung des Kosmos zu sich gekrümmt
-
-Zwischen euch, was wir nicht erkennen hinein geschaut, blau und grenzt der Himmel, der auf diesen Gemälden blau ist, grünes
-
-Aufgesehen der Stern, nichts physisches, ist als Zeichen eine Anwesenheit, Die Liebe rührt gespürt
-
-
-Berührung, als ich da war und das ewige ebenfalls da stand
-
-Nach dem Mond, die Furchen abgegeben beim Saturn geklärt, mit Wärme geglättet
-
-Willst du nicht mitkommen, so hüte dich vor den Elementen, denen du dich an verwandelt hast
-
-Alles zukünftige umwandelt, weil ich die Vergangenheit zuvor überblickter
-
-Melancholischer Enthusiasmus gewandelt
-
-Mit dem gesamten Gemüt, um gestülpt
-
-
 
 
 weitere Fragen:
 
-1) prüft das framework, ob die slices tief sind also vertical anstelle von horizontal? oder wägt es ab, wann was besser ist?
+1) prüft das framework, ob die slices tief sind also vertical anstelle von horizontal? wägt es ab, wann horizontale oder vertikale slices besser sind?
 
 2) würde ein handoff skill sinn machen, wenn ja zwischen welchen skills?
 
-3) skill de rnochmal genau architektur mit funktion und kommunikation erfragt und vorschläge macht
+3) skill der zu beginn nochmal genau architektur mit funktion und kommunikation erfragt und research vorschläge macht
 - codeserver
 - vs code
 - hermes - stateful personal
@@ -52,35 +21,27 @@ weitere Fragen:
 - obsidian
 - openrouter
 - https://github.com/jesseduffield/lazygit
+- [Durable Execution for Workflows & AI | Inngest](https://www.inngest.com/
 
-
-
-# Slice to agent in build (loop contract)
-
-- Loop contract for a single loop
-	- README with
-		- Goal
-		- Workflow
-		- Task (like Backlog for the next loop)
-		- Timeline
-
-[wtf is Loop Engineer & how to setup for real](https://www.youtube.com/watch?v=W6x-hb44C0c&pp=ugUHEgVlbi1BVQ%3D%3D)
-
-# conceptual principles
+4) nach konzeptionellen prinzipien fragen conceptual principles
 - portable
 - minimal
 - hackable
 - remote
+- generisch/spezifisch
 - auf augenhöhe 
 	- decode the jargon
 	- grill-with-docs
 - https://github.com/multica-ai/andrej-karpathy-skills/blob/main/CLAUDE.md
 - hier als skill https://github.com/multica-ai/andrej-karpathy-skills/blob/main/skills/karpathy-guidelines/SKILL.md
 
-# https://github.com/mattpocock/skills/blob/main/skills/productivity/write-a-skill/SKILL.md
+5) ich habe viele skills die jetzt mit Kontextanreicherung helfen und den spec erfragen (xxxx). ist es sinnvoll diese so zu belassen oder alle in einen skill zu bündeln?
+
+nutze dafür: 
+- https://github.com/mattpocock/skills/blob/main/skills/productivity/write-a-skill/SKILL.md
 - https://github.com/mattpocock/skills/tree/main/skills/productivity/writing-great-skills
-- bisheriges skillrouting, um conventions zu übernehmen und step einzufügen
-- skills universell für alle modelle / harnesses gestalten
+  
+Überprüfe bitte, ob die Skills modellagnostisch sind mit den Richtlinien vom anhang übereinstimmen
 
 # context enrich
 - https://github.com/bradautomates/claude-video 
@@ -89,6 +50,67 @@ weitere Fragen:
 	- grill-with-docs
 - https://github.com/mattpocock/skills/blob/main/skills/engineering/research/SKILL.md
 
+```
+ich will einen skill bauen, der wie ein context-enrich skill oder idea-to-idea skill zum erstellen des specs wirkt und ähnlich wirkt wie grill-me, grill-with-docs oder https://github.com/mattpocock/skills/blob/main/skills/engineering/research/SKILL.md. so dass die fremden ideen, die es gibt in meinen eigenen ideenkosmos eingegliedert werden und meine eigenen ideen werden, dafür braucht es das verstehen und anpassen an meinen begriffskosmos, so dass der jargon von den fremden ideen in mein denken übersetzt wird.
+
+eine zweite und dritte idee sind:
+
+2) skill der zu eines specs nochmal genau architektur mit funktion und kommunikation erfragt und research vorschläge macht. Beispielhafte Architekturkomponenten, die dadurch erfragt und in Interaktion gebracht werden sollten sind:
+
+* codeserver
+
+* vs code
+
+* hermes - stateful personal
+
+* claude code - stateless generic
+
+* herdr - spawn monitor
+
+* sandcastle - agent spawn
+
+* oz - teamwork - https://github.com/warpdotdev/oz-for-oss
+
+* skills https://gist.github.com/tomdwipo/0bc744839f4e7fcda02f22b35379c8ab
+
+* tools ...
+
+* ....
+
+* vps
+
+* obsidian
+
+* openrouter
+
+* https://github.com/jesseduffield/lazygit
+
+* [Durable Execution for Workflows & AI | Inngest](https://www.inngest.com/
+
+3. nach konzeptionellen und grundlegenden Prinzipien fragen, wie:
+
+* portable
+
+* minimal
+
+* hackable
+
+* remote
+
+* generisch/spezifisch
+
+* auf augenhöhe
+
+* decode the jargon
+
+* grill-with-docs
+
+* https://github.com/multica-ai/andrej-karpathy-skills/blob/main/CLAUDE.md
+
+(hier als skill https://github.com/multica-ai/andrej-karpathy-skills/blob/main/skills/karpathy-guidelines/SKILL.md)
+
+allgemein ist die skill pipeline im anhang bereits ein riesiger grill-me skill. deshalb frage ich mich wie ich diese einzelskills zur Kontextanreicherung mittels Erfragen sinnvoll strukturiere. welche sind redundant, lassen sich besser gemeinsam bündeln oder doch eher vereinzeln? wie ist die reihenfolge das routing am schlausten zu wählen?
+```
 # Erklären und in welche der vier Phasen?
 **[domain-modeling](https://github.com/mattpocock/skills/blob/main/skills/engineering/domain-modeling/SKILL.md)** — Actively build and sharpen a project's domain model — challenge terms against the glossary, stress-test with edge-case scenarios, and update `CONTEXT.md` and ADRs inline.
 
@@ -98,54 +120,89 @@ weitere Fragen:
 # spec oder review?
 **[code-review](https://github.com/mattpocock/skills/blob/main/skills/engineering/code-review/SKILL.md)** — Two-axis review of the diff since a fixed point: **Standards** (does it follow the repo's coding standards, plus a Fowler smell baseline?) and **Spec** (does it faithfully implement the originating issue/PRD?), run as parallel sub-agents so neither pollutes the other.
 
+   
+# Retrieval Optionen
+Wann macht ein hybrides Retrieval für diesen Usecase Sinn?
 
-[[compass_artifact_wf-58d3ee8c-6fdf-4534-b53b-65d2e244b98d_text_markdown]]
-[[compass_artifact_wf-5b22f837-bc99-440f-a438-3a1e75ba5d95_text_markdown]]
+- Obsidian Graph mit Typisierung von Links und Nodes über Properties im Frontmatter für Multihopping und index.md für dynamischen Kontext
+  
+Ich habe diese Retrieval-Strategien gefunden, wie würden sich diese hybrid nutzen lassen. 
 
-Wenn man von den spezifischen Implementierungen (wie _AIS-OS_ oder _Infinite Brain OS_) einen Schritt zurücktritt, zeigt sich, dass der Begriff **AI Operating System (AIOS)** einen Paradigmenwechsel beschreibt.
+- semantic search (finds the decision even when you don't phrase it like the stored note), keyword search (still catches exact IDs, function names, rare terms), a knowledge graph (what supersedes what, what depends on what), and reranking (fresh, relevant memory outranks stale context)
 
-Ein klassisches Betriebssystem (wie Windows, macOS oder Linux) verwaltet Hardwareressourcen – es teilt CPU-Zeit zu, verwaltet den Arbeitsspeicher und kommuniziert mit Hardware-Treibern. Ein AIOS hingegen abstrahiert noch eine Ebene höher: **Es verwaltet kognitive Ressourcen, Wissen und digitale Werkzeuge.**
+Zum Beispiel denke ich daran: schnell keywords zu suchen, das vielleicht auch semantisch und dadurch die richtigen Dateien im index.md vor allem schnell zu finden, an welchen dann die graph suche ansetzt. 
 
-Hier sind die allgemeinen Konzepte und Prinzipien, auf denen moderne AIOS-Architekturen basieren:
+Bedenke zum Beispiel folgendes: 
 
-### 1. Kernkonzepte der Architektur
+sorting the library by category still forces the agent to read every doc in the relevant section hoping the fact is in there. Past a few hundred files you're burning the context window on lookup, and the token cost grows with the size of the library instead of the size of the question.
+  
+wäre es dann auch sinnvoll den prompt der user, der das retrieval triggert, in diese unterschiedlichen strategien zu routen? wenn ja, würdest du das in einem skill abbilden?
+# Google Classroom 
+Es wird auf zwei Class Data Dateien Recherche betrieben, um Variationen zu erstellen. Unter verschiedenen Prinzip Prinzipien, dann den Class Data bei Spielkurs zu Refund und mit diesen Varianten zu füllen und Entscheidungskriterien für diese Varianten ebenfalls hinzuzufügen.
 
-- **Das LLM als "Kernel" (Prozessor):** In einem AIOS ist das Large Language Model (wie Claude, GPT-4 oder Llama) das zentrale Rechenwerk. Anstatt binären Code auszuführen, verarbeitet dieser "Prozessor" natürliche Sprache, interpretiert Absichten (Intents), plant Lösungswege und delegiert Aufgaben.
-    
-- **Semantische Speicherverwaltung (Memory Management):** Ein leeres ChatGPT-Fenster ist wie ein Computer ohne Festplatte – es vergisst alles, sobald man es schließt. Ein AIOS implementiert komplexe Speicherschichten:
-    
-    - _Working Memory (Kurzzeitgedächtnis):_ Das aktuelle Kontextfenster des Modells für die laufende Aufgabe.
-        
-    - _Episodic & Semantic Memory (Langzeitgedächtnis):_ Über Vektordatenbanken (RAG – Retrieval-Augmented Generation) oder strukturierte Graphen (wie im _Infinite Brain OS_) speichert das System langfristiges Unternehmenswissen, vergangene Entscheidungen und Benutzerpräferenzen und holt sie bei Bedarf automatisch in den Kontext.
-        
-- **Werkzeug- und API-Abstraktion (Tool Calling):** Ein Gehirn ohne Hände kann nichts verändern. Ein AIOS stellt dem LLM standardisierte Schnittstellen zur Verfügung. Das OS gibt der KI die Fähigkeit, im Internet zu suchen, E-Mails zu lesen, Code auszuführen oder Kalendertermine zu erstellen, regelt aber gleichzeitig die Zugriffsrechte (Permissions).
-    
-- **Agenten-Orchestrierung (Multi-Agent Systems):** Komplexe Aufgaben werden selten von einem einzigen Modell-Aufruf gelöst. Ein AIOS funktioniert oft wie ein Manager, der Sub-Agenten orchestriert. Ein "Planungs-Agent" zerlegt die Aufgabe, ein "Recherche-Agent" sammelt Daten, ein "Code-Agent" schreibt das Skript und ein "Kritiker-Agent" überprüft das Ergebnis.
-    
-
-### 2. Gestaltungsprinzipien (Design Principles)
-
-Wie muss ein solches System gestaltet sein, damit es in der Praxis verlässlich funktioniert?
-
-- **Zustandsbehaftung (Statefulness):** Das System muss immer wissen, wo es steht. Wenn Sie Ihren Computer aufklappen, weiß das AIOS, an welchen Projekten Sie gestern gearbeitet haben, welche E-Mails unbeantwortet sind und welcher Schritt in einem Prozess als Nächstes ansteht.
-    
-- **Natural Language First (LUI):** Das primäre Interface ist nicht die grafische Benutzeroberfläche (GUI), sondern das Language User Interface (LUI). Man klickt sich nicht mehr durch verschachtelte Menüs, sondern beschreibt das gewünschte Endresultat. Das OS übersetzt diese Beschreibung in die nötigen Klicks, API-Aufrufe und Skripte.
-    
-- **Human-in-the-Loop (Der Mensch als Kontrollinstanz):** Da KI-Systeme halluzinieren oder Fehler machen können, ist ein gutes AIOS nach dem Prinzip der Eskalation und Freigabe gebaut. Bei kritischen Entscheidungen (z. B. Geld überweisen, Verträge verschicken, Firmendaten löschen) bereitet das System alles vor, hält aber an und fordert eine explizite menschliche Signatur. Sie wechseln von der Rolle des "Machers" zum "Manager".
-    
-- **Beobachtbarkeit und Transparenz (Observability):** Wenn eine KI autonom handelt, muss der Mensch nachvollziehen können, _warum_ sie etwas getan hat. Prinzipien wie ein "Audit Trail" (Logs) oder "Data Lineage" sind essenziell. Wenn das AIOS ein Briefing erstellt, muss es referenzieren können, aus welchen Quelldokumenten (oder Pointern) es diese Informationen gezogen hat.
-    
-- **Asynchrone Autonomie (Cadence/Hintergrundbetrieb):** Ein echtes OS arbeitet auch dann, wenn Sie nicht hinsehen. Ein Prinzip von AIOS ist die ereignisgesteuerte (event-driven) Architektur. Das System wird nicht nur durch Ihre Eingaben aktiv, sondern reagiert autonom auf Trigger (z. B. eine eingehende Kundenreklamation, ein Serverausfall oder ein terminierter Wochenabschluss).
-    
-
-Zusammengefasst verlagert ein AIOS die Interaktion mit dem Computer von der **Befehlsebene** ("Öffne dieses Programm, kopiere diesen Text, speichere hier") auf die **Ziel- und Prozessebene** ("Erstelle den Monatsbericht auf Basis der üblichen Metriken und leg ihn mir zur Freigabe vor").
-
-Interessieren Sie sich bei diesen Prinzipien eher dafür, wie man ein solches System für den eigenen Gebrauch aufbaut (die praktische Umsetzung), oder für die technischen Herausforderungen, die noch gelöst werden müssen, damit so ein OS reibungslos funktioniert?
-
-
-Ai First mit Erkennung der ui 
+# bosch
+Ai First mit Erkennung der ui (https://github.com/bradautomates/claude-video; playwright)
 Erklärung was da passiert 
 Eingabe, welche Fehler auftreten (Screenshot, Audio, Video , Text)
 Grill me with docs um Kontext zu erfragen und zu erziehen
 Und dann über api steuern (zumindest api hinterlegen)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# retrieval strategies
+Agreed it works for a while ! I started exactly there, file-based. But there are two walls : The first is retrieval, and better file organization doesn't fix it: sorting the library by category still forces the agent to read every doc in the relevant section hoping the fact is in there. Past a few hundred files you're burning the context window on lookup, and the token cost grows with the size of the library instead of the size of the question. The fix is composite retrieval, combining the industry-standard pieces instead of file-walking: semantic search (finds the decision even when you don't phrase it like the stored note), keyword search (still catches exact IDs, function names, rare terms), a knowledge graph (what supersedes what, what depends on what), and reranking (fresh, relevant memory outranks stale context). The agent gets the 5 entries it needs, not 40 files. The second wall is governance: which of 3 conflicting notes is current truth, who approved that rule, OKF explicitly leaves permissions/approval/audit out of the spec. I hit both limits on my own projects, so I assembled those standards into one layer that plugs into the AI tools you already use, over MCP. Just opened the free beta (GAAI Cloud) — happy to share if anyone's interested.
+
+
+
+
+
+
+
+
+# UI-Bug-Recognition
+
+### 1. Den "Happy Path" bereitstellen (Kontext)
+
+Um Gemini zu sagen, wie die App _eigentlich_ funktionieren soll, fütterst du die CLI mit der Dokumentation des Happy Paths. Das kann in verschiedenen Formen geschehen:
+
+- **User Stories / Anforderungen:** Eine Markdown-Datei (`happy_path.md`), die Schritt für Schritt beschreibt, was passieren soll.
+    
+- **Gherkin-Syntax:** Deine bestehenden Cucumber/SpecFlow-Szenarien (`Given-When-Then`).
+    
+- **Code-Basis:** Die bestehenden UI-Testskripte (z. B. Playwright, Cypress oder Selenium).
+    
+
+### 2. Die Fehlaufzeichnung übergeben (Input)
+
+Du nimmst ein kurzes Screen-Recording (.mp4 oder .webm) auf, in dem der UI-Bug auftritt (z. B. ein endloser Lade-Spinner, ein abgeschnittener Button oder eine falsche Fehlermeldung).
+
+### 3. Der CLI-Prompt
+
+Du rufst Gemini über das Terminal auf und verknüpfst die Dateien. Der Prompt könnte so aussehen:
+
+Bash
+
+```
+gemini "Analysiere das Video bug_aufzeichnung.mp4. Gleiche das gezeigte Verhalten mit dem erwarteten 'Happy Path' aus der Datei happy_path.md ab. Identifiziere visuelle oder funktionale UI-Bugs, beschreibe die Abweichung präzise und erstelle ein Ticket-Draft für Jira."
+```
+
+## Warum Gemini CLI hier besonders stark ist
+
+- **Verständnis von Timing und Animationen:** Gemini erkennt, wenn eine UI-Animation hakt, ein Pop-up zu spät erscheint oder ein Element unnatürlich flackert – Dinge, die auf statischen Screenshots oft verloren gehen.
+    
+- **Präzise Lokalisierung:** Du kannst das Modell im Prompt bitten: _"Nenne mir die genaue Sekunde im Video, in der das Fehlverhalten beginnt."_ Gemini liefert dir präzise Timecodes.
+    
+- **Automatisierte Ticket-Erstellung:** Da du dich in der CLI befindest, kannst du die Ausgabe von Gemini direkt weiterverarbeiten. Du kannst die Antwort (das analysierte Bug-Ticket) per Pipe (`|`) in eine Datei schreiben oder über ein CLI-Tool direkt in dein Projektmanagement-Tool (wie Jira oder GitHub Issues) pushen.
