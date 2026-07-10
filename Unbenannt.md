@@ -1,10 +1,11 @@
-
+To whi53paper 
+To expose
 
 weitere Fragen:
 
 1) prüft das framework, ob die slices tief sind also vertical anstelle von horizontal? wägt es ab, wann horizontale oder vertikale slices besser sind?
 
-2) würde ein handoff skill sinn machen, wenn ja zwischen welchen skills?
+2) manche skills oder sogar einzelne Recherche Themen brauchen in der spec Erstellung einen isolierten neuen Chat. würde ein handoff skill sinn machen, wenn ja zwischen welchen skill? Oder sollte einfach bei der spec Erstellung das routing der einzelnen skills durchgegangen werden und wenn das Kontext Fenster voll ist, der Zustand des specs in ein neues Chat Fenster kopiert werden? 
 
 3) skill der zu beginn nochmal genau architektur mit funktion und kommunikation erfragt und research vorschläge macht
 - codeserver
@@ -120,8 +121,15 @@ allgemein ist die skill pipeline im anhang bereits ein riesiger grill-me skill. 
 # spec oder review?
 **[code-review](https://github.com/mattpocock/skills/blob/main/skills/engineering/code-review/SKILL.md)** — Two-axis review of the diff since a fixed point: **Standards** (does it follow the repo's coding standards, plus a Fowler smell baseline?) and **Spec** (does it faithfully implement the originating issue/PRD?), run as parallel sub-agents so neither pollutes the other.
 
-   
-# Retrieval Optionen
+# Spec Bosch
+## very first prompt
+Whitepaper
+Ai First mit Erkennung der ui (https://github.com/bradautomates/claude-video; playwright)
+Erklärung was da passiert 
+Eingabe, welche Fehler auftreten (Screenshot, Audio, Video , Text)
+Grill me with docs um Kontext zu erfragen und zu erziehen
+Und dann über api steuern (zumindest api hinterlegen
+## sub agent research: Retrieval Optionen
 Wann macht ein hybrides Retrieval für diesen Usecase Sinn?
 
 - Obsidian Graph mit Typisierung von Links und Nodes über Properties im Frontmatter für Multihopping und index.md für dynamischen Kontext
@@ -137,42 +145,8 @@ Bedenke zum Beispiel folgendes:
 sorting the library by category still forces the agent to read every doc in the relevant section hoping the fact is in there. Past a few hundred files you're burning the context window on lookup, and the token cost grows with the size of the library instead of the size of the question.
   
 wäre es dann auch sinnvoll den prompt der user, der das retrieval triggert, in diese unterschiedlichen strategien zu routen? wenn ja, würdest du das in einem skill abbilden?
-# Google Classroom 
-Es wird auf zwei Class Data Dateien Recherche betrieben, um Variationen zu erstellen. Unter verschiedenen Prinzip Prinzipien, dann den Class Data bei Spielkurs zu Refund und mit diesen Varianten zu füllen und Entscheidungskriterien für diese Varianten ebenfalls hinzuzufügen.
 
-# bosch
-Ai First mit Erkennung der ui (https://github.com/bradautomates/claude-video; playwright)
-Erklärung was da passiert 
-Eingabe, welche Fehler auftreten (Screenshot, Audio, Video , Text)
-Grill me with docs um Kontext zu erfragen und zu erziehen
-Und dann über api steuern (zumindest api hinterlegen)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# retrieval strategies
-Agreed it works for a while ! I started exactly there, file-based. But there are two walls : The first is retrieval, and better file organization doesn't fix it: sorting the library by category still forces the agent to read every doc in the relevant section hoping the fact is in there. Past a few hundred files you're burning the context window on lookup, and the token cost grows with the size of the library instead of the size of the question. The fix is composite retrieval, combining the industry-standard pieces instead of file-walking: semantic search (finds the decision even when you don't phrase it like the stored note), keyword search (still catches exact IDs, function names, rare terms), a knowledge graph (what supersedes what, what depends on what), and reranking (fresh, relevant memory outranks stale context). The agent gets the 5 entries it needs, not 40 files. The second wall is governance: which of 3 conflicting notes is current truth, who approved that rule, OKF explicitly leaves permissions/approval/audit out of the spec. I hit both limits on my own projects, so I assembled those standards into one layer that plugs into the AI tools you already use, over MCP. Just opened the free beta (GAAI Cloud) — happy to share if anyone's interested.
-
-
-
-
-
-
-
-
-# UI-Bug-Recognition
+## UI-Bug-Recognition
 
 ### 1. Den "Happy Path" bereitstellen (Kontext)
 
@@ -199,10 +173,42 @@ Bash
 gemini "Analysiere das Video bug_aufzeichnung.mp4. Gleiche das gezeigte Verhalten mit dem erwarteten 'Happy Path' aus der Datei happy_path.md ab. Identifiziere visuelle oder funktionale UI-Bugs, beschreibe die Abweichung präzise und erstelle ein Ticket-Draft für Jira."
 ```
 
-## Warum Gemini CLI hier besonders stark ist
+### Warum Gemini CLI hier besonders stark ist
 
 - **Verständnis von Timing und Animationen:** Gemini erkennt, wenn eine UI-Animation hakt, ein Pop-up zu spät erscheint oder ein Element unnatürlich flackert – Dinge, die auf statischen Screenshots oft verloren gehen.
     
 - **Präzise Lokalisierung:** Du kannst das Modell im Prompt bitten: _"Nenne mir die genaue Sekunde im Video, in der das Fehlverhalten beginnt."_ Gemini liefert dir präzise Timecodes.
     
 - **Automatisierte Ticket-Erstellung:** Da du dich in der CLI befindest, kannst du die Ausgabe von Gemini direkt weiterverarbeiten. Du kannst die Antwort (das analysierte Bug-Ticket) per Pipe (`|`) in eine Datei schreiben oder über ein CLI-Tool direkt in dein Projektmanagement-Tool (wie Jira oder GitHub Issues) pushen.
+
+
+
+
+# Google Classroom 
+Es wird auf zwei Class Data Dateien Recherche betrieben, um Variationen zu erstellen. Unter verschiedenen Prinzip Prinzipien, dann den Class Data bei Spielkurs zu Refund und mit diesen Varianten zu füllen und Entscheidungskriterien für diese Varianten ebenfalls hinzuzufügen.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# retrieval strategies
+Agreed it works for a while ! I started exactly there, file-based. But there are two walls : The first is retrieval, and better file organization doesn't fix it: sorting the library by category still forces the agent to read every doc in the relevant section hoping the fact is in there. Past a few hundred files you're burning the context window on lookup, and the token cost grows with the size of the library instead of the size of the question. The fix is composite retrieval, combining the industry-standard pieces instead of file-walking: semantic search (finds the decision even when you don't phrase it like the stored note), keyword search (still catches exact IDs, function names, rare terms), a knowledge graph (what supersedes what, what depends on what), and reranking (fresh, relevant memory outranks stale context). The agent gets the 5 entries it needs, not 40 files. The second wall is governance: which of 3 conflicting notes is current truth, who approved that rule, OKF explicitly leaves permissions/approval/audit out of the spec. I hit both limits on my own projects, so I assembled those standards into one layer that plugs into the AI tools you already use, over MCP. Just opened the free beta (GAAI Cloud) — happy to share if anyone's interested.
+
+
+
+
+
+
+
+
