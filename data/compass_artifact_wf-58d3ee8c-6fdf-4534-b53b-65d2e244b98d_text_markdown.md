@@ -194,3 +194,7 @@ Wie muss ein solches System gestaltet sein, damit es in der Praxis verlässlich 
 - **Beobachtbarkeit und Transparenz (Observability):** Wenn eine KI autonom handelt, muss der Mensch nachvollziehen können, _warum_ sie etwas getan hat. Prinzipien wie ein "Audit Trail" (Logs) oder "Data Lineage" sind essenziell. Wenn das AIOS ein Briefing erstellt, muss es referenzieren können, aus welchen Quelldokumenten (oder Pointern) es diese Informationen gezogen hat.
     
 - **Asynchrone Autonomie (Cadence/Hintergrundbetrieb):** Ein echtes OS arbeitet auch dann, wenn Sie nicht hinsehen. Ein Prinzip von AIOS ist die ereignisgesteuerte (event-driven) Architektur. Das System wird nicht nur durch Ihre Eingaben aktiv, sondern reagiert autonom auf Trigger (z. B. eine eingehende Kundenreklamation, ein Serverausfall oder ein terminierter Wochenabschluss).
+
+# für den prompt
+
+Scheduler, Context/Memory/Storage/Tool/Access Manager

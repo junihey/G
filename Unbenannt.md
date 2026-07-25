@@ -1,13 +1,83 @@
-To whi53paper 
-To expose
 
-weitere Fragen:
+# 0 
+Macht es Sinn, neue ideen und features bei /scope oder /integrate immer mit der obsidian frontmatter property labeln aus dem mental framework: trigger → spec → build → verify → refactor → scale ist eine saubere SDLC-Wirbelsäule
 
-1) prüft das framework, ob die slices tief sind also vertical anstelle von horizontal? wägt es ab, wann horizontale oder vertikale slices besser sind?
+mir ist wichtig, dass ich in einem neuen chat weiß, welchen mentalen schritt ich beim letzten chat noch nicht abgeschlossen habe. 
 
-2) manche skills oder sogar einzelne Recherche Themen brauchen in der spec Erstellung einen isolierten neuen Chat. würde ein handoff skill sinn machen, wenn ja zwischen welchen skill? Oder sollte einfach bei der spec Erstellung das routing der einzelnen skills durchgegangen werden und wenn das Kontext Fenster voll ist, der Zustand des specs in ein neues Chat Fenster kopiert werden? 
+keywords prompt überarbeitung
 
-3) skill der zu beginn nochmal genau architektur mit funktion und kommunikation erfragt und research vorschläge macht
+
+# 2
+sind die schnittstellen, kommunikation und geteilte dateien zwischen den frameworks explizit implementiert und dokumentiert?
+
+Welche Lücken findest du? welche regeln und designprinzipien lassen sich finden, die nicht dokumentiert sind, aber wichtig zum sichern der struktur sind?
+# 4
+Ich habe weitere externe Strukturprinzipien in [[John Ousterhout - A Philosophy of Software Design.pdf]] im Anhang gefunden. Welche würden meine frameworks revolutionieren oder Lücken schließen oder die bisherige Struktur besser abstrahieren? 
+# 5
+Wäre es sinnvoll die Strukturprinzipien und Grundlagen von Ousterhout auch in einem refactor/review skill im foundry framework zu integrieren?
+# 6
+Was hältst du für https://www.ultracite.ai/ im foundry framework. Oder gibt es andere Linting-Skill Ideen?
+# 7 im universal skill chat
+
+Mir ist aufgefallen, dass die Skills viel zu lang sind. Beispiel: "## Adopted, not authored here" mit viel Text. Könnte das nicht ausgelagert werden als doku?
+Reviewe alle frameworks und alle skills unter folgenden Prinzipien: 
+
+1) Skills sollen modellagnostisch sein
+2) 
+
+Beachte auch folgende Repos für deine Bewertung und Konzeptualisierung:
+1) https://github.com/mattpocock/skills/blob/main/skills/productivity/write-a-skill/SKILL.md
+2) https://github.com/mattpocock/skills/tree/main/skills/productivity/writing-great-skills
+3) 
+# 8
+einen Loop, der einen Skill reviewed, basierend auf einem Memory von der Nutzung des Skills, um diesen stetig zu verbessern und gleichzeitig zu versionieren
+# 9
+globalen Skill "skill-extract" oder "component-extract" in xxx, der einzelne skills oder componenten der frameworks ein layer höher hebt und für alle frameworks oder sogar alle projekte extrahiert?
+# 10 im loop contract chat
+erstellung eines loop contract als skill in foundry framework integrieren. beachte dafür folgende Grundlagen und Prinzipien: 
+
+1) 
+
+Beachte auch folgende Repos für deine Bewertung und Konzeptualisierung:
+1) https://github.com/cobusgreyling/loop-engineering
+2) https://github.com/az9713/loop-library
+# 11 in aios chat
+bisher wird obsidian genutzt um die issues zu verwalten und sozusagen teil der orchestrierungsschicht zu sein, wenn ich es richtig verstanden habe?
+
+ich frage, ob die ganze projekt doku eines forge/foundry build noch einmal in obsidian abgebildet werden sollte, sodass Obsidian als Wiki (LLM Brain) und AI OS nach folgenden Überlegungen genutzt wird:
+
+1) 
+2) Context Management durch Graph Multi Hopping
+
+Ich habe dabei an den Skill "whitepaper" im forge framework gedacht, der den spec zur visualisierung in ein whitepaper umwandelt. So wäre es hier eine Übersetzung der verschiedenen frameworks in obsidian struktur / features (yaml frontmatter properties with typed nodes and edges between nodes, node links,...)
+
+Beachte auch folgende Repos für deine Bewertung und Konzeptualisierung:
+1) https://github.com/bholmesdev/llm-knowledge-base-skills
+2) https://github.com/starmynd-org/infinite-brain-os
+3) https://github.com/kepano/obsidian-skills
+# 12 Google Classroom 
+Es wird auf zwei Class Data Dateien Recherche betrieben, um Variationen zu erstellen. Unter verschiedenen Prinzip Prinzipien, dann den Class Data bei Spielkurs zu Refund und mit diesen Varianten zu füllen und Entscheidungskriterien für diese Varianten ebenfalls hinzuzufügen.
+
+
+
+
+
+
+
+
+# Spec Hybrid-Docker-Worktree
+## presets TENETS.md
+- portable
+- minimal
+- hackable
+- remote
+- generisch/spezifisch
+- auf augenhöhe 
+	- decode the jargon
+	- grill-with-docs
+- https://github.com/multica-ai/andrej-karpathy-skills/blob/main/CLAUDE.md
+- hier als skill https://github.com/multica-ai/andrej-karpathy-skills/blob/main/skills/karpathy-guidelines/SKILL.md
+## presets STACK.md
 - codeserver
 - vs code
 - hermes - stateful personal
@@ -23,103 +93,6 @@ weitere Fragen:
 - openrouter
 - https://github.com/jesseduffield/lazygit
 - [Durable Execution for Workflows & AI | Inngest](https://www.inngest.com/
-
-4) nach konzeptionellen prinzipien fragen conceptual principles
-- portable
-- minimal
-- hackable
-- remote
-- generisch/spezifisch
-- auf augenhöhe 
-	- decode the jargon
-	- grill-with-docs
-- https://github.com/multica-ai/andrej-karpathy-skills/blob/main/CLAUDE.md
-- hier als skill https://github.com/multica-ai/andrej-karpathy-skills/blob/main/skills/karpathy-guidelines/SKILL.md
-
-5) ich habe viele skills die jetzt mit Kontextanreicherung helfen und den spec erfragen (xxxx). ist es sinnvoll diese so zu belassen oder alle in einen skill zu bündeln?
-
-nutze dafür: 
-- https://github.com/mattpocock/skills/blob/main/skills/productivity/write-a-skill/SKILL.md
-- https://github.com/mattpocock/skills/tree/main/skills/productivity/writing-great-skills
-  
-Überprüfe bitte, ob die Skills modellagnostisch sind mit den Richtlinien vom anhang übereinstimmen
-
-# context enrich
-- https://github.com/bradautomates/claude-video 
-- idea-to-idea
-	- decode the jargon
-	- grill-with-docs
-- https://github.com/mattpocock/skills/blob/main/skills/engineering/research/SKILL.md
-
-```
-ich will einen skill bauen, der wie ein context-enrich skill oder idea-to-idea skill zum erstellen des specs wirkt und ähnlich wirkt wie grill-me, grill-with-docs oder https://github.com/mattpocock/skills/blob/main/skills/engineering/research/SKILL.md. so dass die fremden ideen, die es gibt in meinen eigenen ideenkosmos eingegliedert werden und meine eigenen ideen werden, dafür braucht es das verstehen und anpassen an meinen begriffskosmos, so dass der jargon von den fremden ideen in mein denken übersetzt wird.
-
-eine zweite und dritte idee sind:
-
-2) skill der zu eines specs nochmal genau architektur mit funktion und kommunikation erfragt und research vorschläge macht. Beispielhafte Architekturkomponenten, die dadurch erfragt und in Interaktion gebracht werden sollten sind:
-
-* codeserver
-
-* vs code
-
-* hermes - stateful personal
-
-* claude code - stateless generic
-
-* herdr - spawn monitor
-
-* sandcastle - agent spawn
-
-* oz - teamwork - https://github.com/warpdotdev/oz-for-oss
-
-* skills https://gist.github.com/tomdwipo/0bc744839f4e7fcda02f22b35379c8ab
-
-* tools ...
-
-* ....
-
-* vps
-
-* obsidian
-
-* openrouter
-
-* https://github.com/jesseduffield/lazygit
-
-* [Durable Execution for Workflows & AI | Inngest](https://www.inngest.com/
-
-3. nach konzeptionellen und grundlegenden Prinzipien fragen, wie:
-
-* portable
-
-* minimal
-
-* hackable
-
-* remote
-
-* generisch/spezifisch
-
-* auf augenhöhe
-
-* decode the jargon
-
-* grill-with-docs
-
-* https://github.com/multica-ai/andrej-karpathy-skills/blob/main/CLAUDE.md
-
-(hier als skill https://github.com/multica-ai/andrej-karpathy-skills/blob/main/skills/karpathy-guidelines/SKILL.md)
-
-allgemein ist die skill pipeline im anhang bereits ein riesiger grill-me skill. deshalb frage ich mich wie ich diese einzelskills zur Kontextanreicherung mittels Erfragen sinnvoll strukturiere. welche sind redundant, lassen sich besser gemeinsam bündeln oder doch eher vereinzeln? wie ist die reihenfolge das routing am schlausten zu wählen?
-```
-# Erklären und in welche der vier Phasen?
-**[domain-modeling](https://github.com/mattpocock/skills/blob/main/skills/engineering/domain-modeling/SKILL.md)** — Actively build and sharpen a project's domain model — challenge terms against the glossary, stress-test with edge-case scenarios, and update `CONTEXT.md` and ADRs inline.
-
-# to-slices oder erst in refactor? 
-**[codebase-design](https://github.com/mattpocock/skills/blob/main/skills/engineering/codebase-design/SKILL.md)**
-
-# spec oder review?
-**[code-review](https://github.com/mattpocock/skills/blob/main/skills/engineering/code-review/SKILL.md)** — Two-axis review of the diff since a fixed point: **Standards** (does it follow the repo's coding standards, plus a Fowler smell baseline?) and **Spec** (does it faithfully implement the originating issue/PRD?), run as parallel sub-agents so neither pollutes the other.
 
 # Spec Bosch
 ## very first prompt
@@ -184,24 +157,8 @@ gemini "Analysiere das Video bug_aufzeichnung.mp4. Gleiche das gezeigte Verhalte
 
 
 
-# Google Classroom 
-Es wird auf zwei Class Data Dateien Recherche betrieben, um Variationen zu erstellen. Unter verschiedenen Prinzip Prinzipien, dann den Class Data bei Spielkurs zu Refund und mit diesen Varianten zu füllen und Entscheidungskriterien für diese Varianten ebenfalls hinzuzufügen.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+----
+memory
 # retrieval strategies
 Agreed it works for a while ! I started exactly there, file-based. But there are two walls : The first is retrieval, and better file organization doesn't fix it: sorting the library by category still forces the agent to read every doc in the relevant section hoping the fact is in there. Past a few hundred files you're burning the context window on lookup, and the token cost grows with the size of the library instead of the size of the question. The fix is composite retrieval, combining the industry-standard pieces instead of file-walking: semantic search (finds the decision even when you don't phrase it like the stored note), keyword search (still catches exact IDs, function names, rare terms), a knowledge graph (what supersedes what, what depends on what), and reranking (fresh, relevant memory outranks stale context). The agent gets the 5 entries it needs, not 40 files. The second wall is governance: which of 3 conflicting notes is current truth, who approved that rule, OKF explicitly leaves permissions/approval/audit out of the spec. I hit both limits on my own projects, so I assembled those standards into one layer that plugs into the AI tools you already use, over MCP. Just opened the free beta (GAAI Cloud) — happy to share if anyone's interested.
 

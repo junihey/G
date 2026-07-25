@@ -2466,7 +2466,7 @@ LEFT JOIN kurse k ON sk.kurs_id = k.id
 GROUP BY s.id
 ```
 ---
-# Second Brain / Knowledge Graph 20260529
+# Infinite Brain / Knowledge Graph / LLM Wiki 20260529
 - Claude generated Wiki in Obsidian
 - original idea from Andrej Karpathy [llm-wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)
 	- open claude code in the vault over vs code
@@ -2897,7 +2897,12 @@ Eine persönliche Wissensdatenbank zu [DEIN THEMA].
 - oz with the loop skills ![[Pasted image 20260708085601.png]]
 	- setups with java script for obsidian cli to work
 	- ![[Pasted image 20260708085718.png]]
-- 
+## [This Open-Source Repo Gives Your AI Superpowers (Unlimited Memory) - YouTube](https://www.youtube.com/watch?v=fF_sJGILBX8)
+- 4 layers
+	- knowledge with project folders
+	- memory with important knowledge for the sessions
+	- session with active, closed, review, log and template folder
+	- outputs with all outputs ever done
 ---
 # Skalierung (Nodes)
 - Kontextfenster Limit
@@ -4505,6 +4510,8 @@ components
 >   (code/skills, *not* the LLM). Agents read & interpret. Scorecards are generated from these.
 - CLAUDE.md for spawning agents
 	- ![[IMG_1974.png]]
+## [I was building loops wrong...](https://www.youtube.com/watch?v=JQ_We_ztxrI&pp=ugUHEgVlbi1BVQ%3D%3D) 20260713
+- https://github.com/superdesigndev/loopany-platform
 ---
 # audio ingest 20260627
 ## Obsidian Plugins
@@ -4804,7 +4811,7 @@ flowchart TD
 ---
 # architecture ==jetzt ideen. später skill verzeichnis==
 ## trigger schedule hook
-## goal spec forge
+## forge (aliases: goal spec)
 ### *forge.md*
 - routing ...
 #### skill1 step
@@ -4821,6 +4828,12 @@ flowchart TD
 		- [GitHub - nateherkai/AIS-OS: AI Operating System starter kit for Claude Code — three-skill kit (/onboard, /audit, /level-up) + 3Ms framework. Companion to the AIOS masterclass. · GitHub](https://github.com/nateherkai/AIS-OS)
 	- mehr tool-mäßig https://github.com/kepano/obsidian-skills
 	- [[compass_artifact_wf-58d3ee8c-6fdf-4534-b53b-65d2e244b98d_text_markdown]]
+#### context enrich
+- https://github.com/bradautomates/claude-video 
+- idea-to-idea
+	- decode the jargon
+	- grill-with-docs
+- https://github.com/mattpocock/skills/blob/main/skills/engineering/research/SKILL.md
 ## reason build act
 - slice-to-agent
 	- ausgangspunkt sind slices (vertikal, horizontal) -> übersetzung in parallel/mehrere agenten oder einzelnen agenten zum build des slices (und wonach wird das entschieden)
@@ -4856,6 +4869,17 @@ flowchart TD
 - learning nuggets 
 	- /teach mit fragen
 - [Buzz's reply-learning skill (read more about self-improving agents → https://x.com/petradonka/status/2054897826149101588) · GitHub](https://gist.github.com/tomdwipo/0bc744839f4e7fcda02f22b35379c8ab)
+
+
+
+
+**[domain-modeling](https://github.com/mattpocock/skills/blob/main/skills/engineering/domain-modeling/SKILL.md)** — Actively build and sharpen a project's domain model — challenge terms against the glossary, stress-test with edge-case scenarios, and update `CONTEXT.md` and ADRs inline.
+
+**[codebase-design](https://github.com/mattpocock/skills/blob/main/skills/engineering/codebase-design/SKILL.md)**
+
+**[code-review](https://github.com/mattpocock/skills/blob/main/skills/engineering/code-review/SKILL.md)** — Two-axis review of the diff since a fixed point: **Standards** (does it follow the repo's coding standards, plus a Fowler smell baseline?) and **Spec** (does it faithfully implement the originating issue/PRD?), run as parallel sub-agents so neither pollutes the other.
+
+
 ---
 # hier zum sammeln
 [[files.zip]]
@@ -5212,8 +5236,10 @@ done
 # Claude Pro Abo 20260708
 - Token pro Chat nur in der CLI
 - 5 stündiges und wöchentliches Fenster im Abo
-# AIOS 20260709
-- 
+# 20260716
+- bash command history [Atuin - Making Your Terminal Magical](https://atuin.sh/)
+- hosted llm abo router [GitHub - router-for-me/CLIProxyAPI: Wrap Antigravity, ChatGPT Codex, Claude Code, Grok Build as an OpenAI/Gemini/Claude/Codex compatible API service, allowing you to enjoy the free Gemini 3.1 Pro, GPT 5.5, Grok 4.3, Claude model through API · GitHub](https://github.com/router-for-me/CLIProxyAPI)
+
 ---
 # canvas 2026050920
 ## patch 
