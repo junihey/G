@@ -5276,7 +5276,7 @@ Lange Zeit galt die Regel, sich bei Plänen oder Projekt-Spezifikationen auf ein
 - search hierarchy: index.yaml (wie claude.md als router) -> routed wikipage -> wiki derivatives (subfolders of categories within the wiki folder) -> raw folder
 ## vercel skills
 - [agent-skills/skills/react-best-practices/SKILL.md at main · vercel-labs/agent-skills · GitHub](https://github.com/vercel-labs/agent-skills/blob/main/skills/react-best-practices/SKILL.md) for three.js
-test
+- test
 ---
 # canvas 2026050920
 ## patch 
