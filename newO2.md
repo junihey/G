@@ -5242,10 +5242,11 @@ done
 - hosted llm abo router [GitHub - router-for-me/CLIProxyAPI: Wrap Antigravity, ChatGPT Codex, Claude Code, Grok Build as an OpenAI/Gemini/Claude/Codex compatible API service, allowing you to enjoy the free Gemini 3.1 Pro, GPT 5.5, Grok 4.3, Claude model through API · GitHub](https://github.com/router-for-me/CLIProxyAPI)
 - voice-input [Handy](https://handy.computer/)
 - extractor [PandaExtracthttps://ultimatewebscraper.comUltimate Web Scraper - Easy Data Scraper](https://ultimatewebscraper.com/)
--# domain modeling, typisierung grundlagen 20260725
+# domain modeling, typisierung grundlagen 20260725
 - [[John Ousterhout - A Philosophy of Software Design.pdf]]
 - [[Functional Programming in Scala.pdf]]
 - [[vdoc.pub_domain-modeling-made-functional-tackle-software-complexity-with-domain-driven-design-and-f.pdf]]
+
 # 20260803
 - Ablation - alles von Grund auf neu bauen (Skripts, Skills, Systemprompt), wenn das Modell wechselt
 - Hobbling - Skills drücken die eigentliche Leistung des Modells
@@ -5256,6 +5257,8 @@ done
 - [How To Kill The Bloat In Claude Code's System Prompt](https://www.aihero.dev/how-to-kill-the-bloat-in-claude-codes-system-prompt)
 # 20260808
 ## [Claude Code Just Changed Forever (6 NEW Rules by Anthropic Engineers) - YouTube](https://www.youtube.com/watch?v=gQeRjkb_Hlc&t=71s)
+
+[Claude Code Just Changed Forever (6 NEW Rules by Anthropic Engineers) - YouTube](https://www.youtube.com/watch?v=gQeRjkb_Hlc&t=71s)
 1. **Urteilsvermögen statt strikter Regeln nutzen** [[05:38](https://www.youtube.com/watch?v=gQeRjkb_Hlc&t=338)]:
 Früher war es wichtig, der KI sehr genaue, einschränkende Regeln vorzugeben (z. B. "schreibe niemals Kommentare"). Die neuen Claude-Modelle sind jedoch intelligent genug, dass es effektiver ist, ihnen mehr Freiraum für eigenes Urteilsvermögen zu lassen, um bessere und kreativere Ergebnisse zu erzielen.    
 2. **Design-Schnittstellen (Interfaces) statt spezifischer Beispiele geben** [[08:26](https://www.youtube.com/watch?v=gQeRjkb_Hlc&t=506)]:
@@ -5273,6 +5276,7 @@ Lange Zeit galt die Regel, sich bei Plänen oder Projekt-Spezifikationen auf ein
 - search hierarchy: index.yaml (wie claude.md als router) -> routed wikipage -> wiki derivatives (subfolders of categories within the wiki folder) -> raw folder
 ## vercel skills
 - [agent-skills/skills/react-best-practices/SKILL.md at main · vercel-labs/agent-skills · GitHub](https://github.com/vercel-labs/agent-skills/blob/main/skills/react-best-practices/SKILL.md) for three.js
+
 ---
 # canvas 2026050920
 ## patch 
