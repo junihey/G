@@ -5242,7 +5242,7 @@ done
 - hosted llm abo router [GitHub - router-for-me/CLIProxyAPI: Wrap Antigravity, ChatGPT Codex, Claude Code, Grok Build as an OpenAI/Gemini/Claude/Codex compatible API service, allowing you to enjoy the free Gemini 3.1 Pro, GPT 5.5, Grok 4.3, Claude model through API · GitHub](https://github.com/router-for-me/CLIProxyAPI)
 - voice-input [Handy](https://handy.computer/)
 - extractor [PandaExtracthttps://ultimatewebscraper.comUltimate Web Scraper - Easy Data Scraper](https://ultimatewebscraper.com/)
-# domain modeling, typisierung grundlagen 20260725
+-# domain modeling, typisierung grundlagen 20260725
 - [[John Ousterhout - A Philosophy of Software Design.pdf]]
 - [[Functional Programming in Scala.pdf]]
 - [[vdoc.pub_domain-modeling-made-functional-tackle-software-complexity-with-domain-driven-design-and-f.pdf]]
