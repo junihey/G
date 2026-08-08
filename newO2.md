@@ -5236,7 +5236,8 @@ done
 # Claude Pro Abo 20260708
 - Token pro Chat nur in der CLI
 - 5 stündiges und wöchentliches Fenster im Abo
-# 20260716
+---
+# 20260716 
 - bash command history [Atuin - Making Your Terminal Magical](https://atuin.sh/)
 - hosted llm abo router [GitHub - router-for-me/CLIProxyAPI: Wrap Antigravity, ChatGPT Codex, Claude Code, Grok Build as an OpenAI/Gemini/Claude/Codex compatible API service, allowing you to enjoy the free Gemini 3.1 Pro, GPT 5.5, Grok 4.3, Claude model through API · GitHub](https://github.com/router-for-me/CLIProxyAPI)
 - voice-input [Handy](https://handy.computer/)
@@ -5245,7 +5246,33 @@ done
 - [[John Ousterhout - A Philosophy of Software Design.pdf]]
 - [[Functional Programming in Scala.pdf]]
 - [[vdoc.pub_domain-modeling-made-functional-tackle-software-complexity-with-domain-driven-design-and-f.pdf]]
-
+# 20260803
+- Ablation - alles von Grund auf neu bauen (Skripts, Skills, Systemprompt), wenn das Modell wechselt
+- Hobbling - Skills drücken die eigentliche Leistung des Modells
+- Model Overhang - Das Modell kann mehr als erwartet
+	- neues Modell als neuen Mitarbeiter betrachten, den man kennenlernen muss und dann Skills oder alles weitere hinzubaut, wo er Probleme hat
+- [Bun — A fast all-in-one JavaScript runtime](https://bun.com/)
+- [GitHub - AgriciDaniel/claude-obsidian: Self-organizing AI second brain for Obsidian + Claude Code. Drop any source and Claude reads, links, and files it into one connected knowledge graph of plain Markdown you own. AI note-taking, personal knowledge management (PKM), and an open-source Notion alternative. Based on Karpathy's LLM Wiki pattern. · GitHub](https://github.com/AgriciDaniel/claude-obsidian)
+- [How To Kill The Bloat In Claude Code's System Prompt](https://www.aihero.dev/how-to-kill-the-bloat-in-claude-codes-system-prompt)
+# 20260808
+## [Claude Code Just Changed Forever (6 NEW Rules by Anthropic Engineers) - YouTube](https://www.youtube.com/watch?v=gQeRjkb_Hlc&t=71s)
+1. **Urteilsvermögen statt strikter Regeln nutzen** [[05:38](https://www.youtube.com/watch?v=gQeRjkb_Hlc&t=338)]:
+Früher war es wichtig, der KI sehr genaue, einschränkende Regeln vorzugeben (z. B. "schreibe niemals Kommentare"). Die neuen Claude-Modelle sind jedoch intelligent genug, dass es effektiver ist, ihnen mehr Freiraum für eigenes Urteilsvermögen zu lassen, um bessere und kreativere Ergebnisse zu erzielen.    
+2. **Design-Schnittstellen (Interfaces) statt spezifischer Beispiele geben** [[08:26](https://www.youtube.com/watch?v=gQeRjkb_Hlc&t=506)]:
+Anstatt Claude mit vielen genauen Beispielen zu füttern (was die Lösungswege der KI oft einschränkt), ist es nun besser, umfassende Design-Systeme und Leitlinien bereitzustellen. Das gibt der KI die nötige Freiheit, innerhalb der Vorgaben eigene, optimale Lösungen zu entwerfen.   
+3. **Schrittweise Offenlegung (Progressive Disclosure) statt allem Kontext auf einmal** [[10:53](https://www.youtube.com/watch?v=gQeRjkb_Hlc&t=653)]:
+Es wurde früher oft geraten, den gesamten Kontext in einer großen Hauptdatei (wie `claude.md`) zu sammeln. Heute ist es viel token- und kosteneffizienter, diese Datei nur als eine Art "Router" zu nutzen. Die KI lädt spezifischen Kontext aus Unterverzeichnissen also erst dann in den Speicher, wenn er für die aktuelle Aufgabe auch wirklich benötigt wird.
+4. **Einfachere Werkzeugbeschreibungen** [[15:03](https://www.youtube.com/watch?v=gQeRjkb_Hlc&t=903)]:
+Bei älteren Modellen mussten Anweisungen oft wiederholt werden, damit die KI sie nicht vergisst ("Context Rot"). Da die neuen Modelle deutlich aufmerksamer sind, kann man Werkzeugbeschreibungen heute sehr simpel halten und redundante Anweisungen (etwa Wiederholungen im System-Prompt und in den Tool-Infos) einfach löschen.
+5. **Auf automatische Erinnerung (Automatic Memory) vertrauen** [[16:26](https://www.youtube.com/watch?v=gQeRjkb_Hlc&t=986)]:
+Bisher mussten Nutzer die KI häufig manuell dazu auffordern, bestimmte Dinge dauerhaft abzuspeichern. Die Weiterentwicklung von Claude Code ermöglicht es dem System nun, relevante Details und Ergebnisse aus den Arbeitsschritten automatisch in seiner Erinnerung zu behalten.
+6. **Reichhaltigere Referenzen statt nur simpler Markdown-Dateien** [[18:04](https://www.youtube.com/watch?v=gQeRjkb_Hlc&t=1084)]:
+Lange Zeit galt die Regel, sich bei Plänen oder Projekt-Spezifikationen auf einfache Text- oder Markdown-Dateien zu beschränken. Die neuen Modelle können jedoch problemlos mit komplexeren Formaten (wie z. B. visuellen HTML-Artefakten) umgehen, die zur Erklärung von Zusammenhängen oft deutlich besser geeignet sind.
+## [iusztinpaul/ai-research-os-workshop: How to turn your Second Brain into a living research memory that your agents maintain. Workshop with slides, video and code.](https://github.com/iusztinpaul/ai-research-os-workshop)
+- ![[Pasted image 20260808151439.png]]
+- search hierarchy: index.yaml (wie claude.md als router) -> routed wikipage -> wiki derivatives (subfolders of categories within the wiki folder) -> raw folder
+## vercel skills
+- [agent-skills/skills/react-best-practices/SKILL.md at main · vercel-labs/agent-skills · GitHub](https://github.com/vercel-labs/agent-skills/blob/main/skills/react-best-practices/SKILL.md) for three.js
 ---
 # canvas 2026050920
 ## patch 
@@ -5416,14 +5443,3 @@ done
 - Honor 7X
 - LG Q6
 ## Ummantelung
-
-
-openrouter
-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
-
-claude
-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
-
-$env:CLAUDE_CODE_OAUTH_TOKEN = "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"
-
-powercfg -devicequery wake_armed
