@@ -5239,6 +5239,12 @@ done
 # 20260716
 - bash command history [Atuin - Making Your Terminal Magical](https://atuin.sh/)
 - hosted llm abo router [GitHub - router-for-me/CLIProxyAPI: Wrap Antigravity, ChatGPT Codex, Claude Code, Grok Build as an OpenAI/Gemini/Claude/Codex compatible API service, allowing you to enjoy the free Gemini 3.1 Pro, GPT 5.5, Grok 4.3, Claude model through API · GitHub](https://github.com/router-for-me/CLIProxyAPI)
+- voice-input [Handy](https://handy.computer/)
+- extractor [PandaExtracthttps://ultimatewebscraper.comUltimate Web Scraper - Easy Data Scraper](https://ultimatewebscraper.com/)
+# domain modeling, typisierung grundlagen 20260725
+- [[John Ousterhout - A Philosophy of Software Design.pdf]]
+- [[Functional Programming in Scala.pdf]]
+- [[vdoc.pub_domain-modeling-made-functional-tackle-software-complexity-with-domain-driven-design-and-f.pdf]]
 
 ---
 # canvas 2026050920
@@ -5412,11 +5418,12 @@ done
 ## Ummantelung
 
 
+openrouter
+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
 
-[Firecrawl - Search, Scrape, and Interact with the Web for AI](https://www.firecrawl.dev/)
-[Zero-Config Linting for Biome, ESLint, and Oxlint | Ultracite](https://www.ultracite.ai/)
-[DeepWiki MCP - Devin Docs](https://docs.devin.ai/work-with-devin/deepwiki-mcp)
-[Web Search MCP - Exa](https://exa.ai/docs/reference/exa-mcp)
-[Inngest Dashboard](https://app.inngest.com/env/production/onboarding/create-app)
-whisperflow
-playwright
+claude
+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
+
+$env:CLAUDE_CODE_OAUTH_TOKEN = "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"
+
+powercfg -devicequery wake_armed
