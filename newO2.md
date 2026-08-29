@@ -5278,6 +5278,21 @@ Lange Zeit galt die Regel, sich bei Plänen oder Projekt-Spezifikationen auf ein
 - [agent-skills/skills/react-best-practices/SKILL.md at main · vercel-labs/agent-skills · GitHub](https://github.com/vercel-labs/agent-skills/blob/main/skills/react-best-practices/SKILL.md) for three.js
 ## https://github.com/mattpocock/dictionary-of-ai-coding
 ---
+# k-accumulator 20260815
+- [Accumulating Complexity with K-Accumulator: An Interview with Tristan Clutterbuck and Graham Wakefield | Perfect Circuit](https://www.perfectcircuit.com/signal/k-accumulator-interview); [[Perfect Circuit - Accumulating Complexity with K-Accumulator.pdf]]
+- [[k-accumulator-notizen]]: morph-matrix, sample modulation, principles of system engineering
+---
+# remote server 20260829
+- [GMKtec K11 Mini PC Gaming Ryzen 9 8945HS 32GB DDR5 RAM 512 GB SSD Mini Desktop Computer, HDMI/Oculink/DisplayPort/USB4*2: Amazon.de: Computer & Zubehör](https://www.amazon.de/dp/B0FG2KRDSM/?smid=AP467HBAJR1UF&tag=idealode-mp-pk-21&linkCode=asn&creative=6742&camp=1638&creativeASIN=B0FG2KRDSM&ascsubtag=2026-08-23_9bd703fbc3abd0e9a70a7dc74d566bbac1b916e57de4f8494cb3f283914ffeb3&th=1)
+	- [GEEKOM AI Mini PC A9 Max mit AMD Ryzen AI 9 HX 370, 32GB DDR5 + 2TB SSD | bis zu 5.1GHz Business Mini Computer, Copilot+ PC, 2.5G Dual-LAN, 2×USB4, HDMI2.1, Wi‑Fi 7 für Alle Einsatzszenarien: Amazon.de: Computer & Zubehör](https://www.amazon.de/GEEKOM-Mini-Ryzen-32GB-DDR5/dp/B0GSR33SFP?th=1)
+- [Mosh, Caddy & Tailscale: A Remote Dev Deep Dive - YouTube](https://www.youtube.com/watch?v=0lAUBeTBtYY&list=WL&index=6&t=520s)
+	- [I don't use my macbook anymore - YouTube](https://www.youtube.com/watch?v=a1Vfvx9RIqE&t=627s)
+# plotter laser
+- [iDraw H A3 Premium Stiftplotter – All-in-One Zeichen- und Schreibrobot – UUNA TEK - Germany](https://uunatek.de/products/uuna-tek-h-version-pen-plotter-a3-size-handwriting-machine-xy-plotter-laser-engraver?srsltid=AfmBOoqte4efkUszOg3_240fT-MoRy1nXwjIlppIsb_sqVEo7SdUGKht)
+# webmcp
+- [GitHub - jillesme/webmcp-coffee-store: A WebMCP coffee storefront where people and browser agents share the same cart · GitHub](https://github.com/jillesme/webmcp-coffee-store)
+- [GitHub - webmachinelearning/webmcp: 🤖 WebMCP · GitHub](https://github.com/webmachinelearning/webmcp)
+---
 # canvas 2026050920
 ## patch 
 ### Granulares Wave-Stitching mit Jitter-Modulation
