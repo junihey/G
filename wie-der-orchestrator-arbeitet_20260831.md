@@ -178,6 +178,8 @@ Farben stimmen, und beide sind an der Aufgabe vorbei. Prüfung 4 misst gegen den
 Issue-Body — den einzigen Text im ganzen Lauf, den der Agent nicht selbst
 geschrieben hat.
 
+==~~Warum wird der Test dann nicht erst nach Prüfung 4 geschrieben?~~==
+
 Wo der TDD-Test überhaupt läuft: im Worktree des Agenten, gestartet vom Agenten
 selbst. `runSuite` ist etwas anderes und später — der Orchestrator im
 Integrations-Worktree, nach dem Merge. Dieselbe Suite, zwei verschiedene Läufe an
@@ -285,7 +287,7 @@ the gate required real commands."*
 
 ---
 
-## 3b · Es gibt keine Merge-Warteschlange und kein Rebase
+## 3b · ==Es gibt keine Merge-Warteschlange und kein Rebase==
 
 Beides fehlt. Das Wort `rebase` kommt in keiner Quell- und in keiner Testdatei des
 Orchestrators vor.
@@ -532,11 +534,11 @@ selbst wieder aufweckt — sitzt ausschließlich in `src/runner.ts` und umgibt d
 **Bau**-Agenten. Der Review-Pfad kennt sie nicht. `rate_limited` taucht in
 `review.ts` und `integrator.ts` kein einziges Mal auf.
 
-Warum das so gebaut ist: parken heißt warten, und ein wartender Merge ist ein
-Merge, der nicht stattfindet. Eine geparkte Notiz blockiert dabei einen Platz und
-einen ganzen Worktree. Das Review nachzuholen hieße, den fertigen, grün geprüften
-Code stundenlang liegen zu lassen — für einen Bericht, der ohnehin nichts
-aufhält.
+==Warum das so gebaut ist: parken heißt warten, und ein wartender Merge ist ein==
+==Merge, der nicht stattfindet. Eine geparkte Notiz blockiert dabei einen Platz und==
+==einen ganzen Worktree. Das Review nachzuholen hieße, den fertigen, grün geprüften==
+==Code stundenlang liegen zu lassen — für einen Bericht, der ohnehin nichts==
+==aufhält.==
 
 Der Preis steht in Abschnitt 14 als eigene Zeile: ein Rate-Limit zur Review-Zeit
 lässt den Diff ungeprüft nach `main`. Die Notiz sagt es ehrlich, aber sie sagt es
@@ -844,7 +846,7 @@ beantworten verschiedene Fragen.
 Der Reihe nach.
 
 **`runSuite` startet den `testCommand`** aus `pipeline.config.json`, Voreinstellung
-`npm test`. Das sind die Tests, die das Projekt für sich selbst geschrieben hat.
+`npm test`. Das sind die Tests, die das Projekt für sich selbst geschrieben hat. ==~~Sind das die tdd Tests?~~==
 Mit Guardrails hat das nichts zu tun.
 
 **`runChecks` startet den `checkCommand`.** Das *sind* die Guardrails, angewandt
