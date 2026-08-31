@@ -65,7 +65,7 @@ Der ganze Ablauf einmal als Geschichte. Alles Weitere unten ist Detail dazu.
 5. **Der Worktree entsteht.** Frischer Ordner, frischer Branch, danach
    `provision()` — die Pakete werden installiert. Die Notiz steht auf
    `provisioning`, dann `running`.
-6. **Der Agent arbeitet.** Er bekommt einen festen Vertragstext plus den Body
+6. **Der Agent arbeitet.** Er bekommt einen festen ==Vertragstext== plus den Body
    deiner Notiz (Abschnitt 8) und schreibt Code, Tests und Commits.
 7. **Der Integrations-Worktree entsteht** — ein *dritter* frischer Ordner, auf dem
    aktuellen `main`. Hier laufen die vier Prüfungen (Abschnitt 3).
@@ -83,19 +83,18 @@ Das ist das Herzstück. Vier Prüfungen, feste Reihenfolge, alle im selben frisc
 Integrations-Worktree. **Keine kann für eine andere einspringen** — jede
 beantwortet eine andere Frage.
 
-| # | Prüfung | Die Frage | Bei Rot |
-|---|---|---|---|
-| 1 | `git merge --no-ff` | Passt der Text überhaupt auf das heutige `main`? | **Mensch.** Kein neuer Versuch |
-| 2 | `runSuite` | Läuft es? | zurück an den Agenten, mit der Fehlerausgabe |
-| 3 | `runChecks` | Bricht es eine mechanische Regel? | dasselbe |
-| 4 | `review` | Tut es, was verlangt war? | **nichts.** Es berichtet nur |
+| #   | Prüfung             | Die Frage                                        | Bei Rot                                                                                    |
+| --- | ------------------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| 1   | `git merge --no-ff` | Passt der Text überhaupt auf das heutige `main`? | **Mensch.** Kein neuer Versuch                                                             |
+| 2   | `runSuite`          | Läuft es?                                        | ==zurück an den Agenten, mit der Fehlerausgabe== ~~läuft hier der tdd Test~~               |
+| 3   | `runChecks`         | Bricht es eine mechanische Regel?                | dasselbe                                                                                   |
+| 4   | `review`            | Tut es, was verlangt war?                        | ==**nichts.** Es berichtet nur== ~~gibt es hier einen Loop path und wo berichtet es hin ~~ |
 
 ### Warum Prüfung 1 nicht an den Agenten zurückgeht
 
 Ein Textkonflikt heißt: jemand anders hat dieselben Zeilen geändert, während
 unser Agent arbeitete. Der Agent sitzt in seinem eigenen Worktree und **sieht die
-andere Seite gar nicht.** Ihn das lösen zu lassen wäre, ihn raten zu lassen. Also
-landet die Arbeit auf dem Branch, der Worktree wird abgeräumt, und du entscheidest.
+andere Seite gar nicht.** Ihn das lösen zu lassen wäre, ihn raten zu lassen. Also landet die Arbeit auf dem Branch, der Worktree wird abgeräumt, und du entscheidest. ==~~Zieht hier rebase, was ist die merge queue~~==
 
 ### Warum es einen dritten, frischen Worktree braucht
 
@@ -117,7 +116,7 @@ auch in den übergeordneten Ordnern, und dort lag zufällig ein fremdes
 Prüfung 2 und 3 sind mechanisch: ein Testname, eine Regel, eine Datei. Der Agent
 kann damit etwas anfangen. Prüfung 4 ist ein Urteil eines anderen Modells. Ein
 Urteil, das einen sauberen Lauf stoppen kann, ist ein Urteil, das man bald
-abschalten wird. Also berichtet es und stoppt nichts.
+abschalten wird. Also berichtet es und stoppt nichts.==~~wo berichtet es hin?~~==
 
 ### Der Satz, um den es eigentlich geht
 
@@ -128,15 +127,15 @@ Er steht im Kopf von `review.ts`:
 Denn geschrieben hat sie derselbe Agent, der den Code schrieb. Hat er die Aufgabe
 falsch verstanden, testet er das, was er sich vorgestellt hat — und das ist grün.
 Von unten sieht ein falsch verstandenes Issue **exakt aus wie Erfolg.** Das ist
-der Grund, warum es Prüfung 4 überhaupt gibt.
+der Grund, warum es Prüfung 4 überhaupt gibt. ==~~Warum kein falscher Test geschrieben~~==
 
 ### Und wenn alles durch ist
 
-Der letzte Schritt heißt `publish` und ist ein `git merge --ff-only` im
-Haupt-Checkout — **nicht** `git branch -f`. Grund: git weigert sich, einen Branch
-zwangszubewegen, der irgendwo ausgecheckt ist, und `main` ist immer ausgecheckt.
-Aufgefallen ist das erst, als ein Test gegen echtes git lief. Die Attrappe im
-Test hatte `branch -f` fröhlich angenommen.
+==Der letzte Schritt heißt `publish` und ist ein `git merge --ff-only` im==
+==Haupt-Checkout — **nicht** `git branch -f`. Grund: git weigert sich, einen Branch==
+==zwangszubewegen, der irgendwo ausgecheckt ist, und `main` ist immer ausgecheckt.==
+==Aufgefallen ist das erst, als ein Test gegen echtes git lief. Die Attrappe im==
+==Test hatte `branch -f` fröhlich angenommen==.
 
 ---
 
@@ -197,9 +196,9 @@ Warum das *hier* geprüft wird und nicht schon beim menschlichen Gate: die Antwo
 eine Frage der Reihenfolge — keine Frage der Freigabe.
 
 **3 · Läuft dieses Issue schon?**
-Der nebenläufige Fall: zwei Ereignisse zur selben Notiz rasen los, bevor eines
-fertig ist. Der Anspruch wird deshalb **synchron** gesetzt. Alles, was vorher auf
-etwas wartet, ist ein Rennen.
+==Der nebenläufige Fall: zwei Ereignisse zur selben Notiz rasen los, bevor eines==
+==fertig ist. Der Anspruch wird deshalb **synchron** gesetzt. Alles, was vorher auf==
+==etwas wartet, ist ein Rennen.==
 
 **4 · Ist ein Platz frei?** (`RunGate`)
 Den Fall sieht keiner der ersten drei: zwei Ereignisse auf **zwei verschiedenen**
@@ -283,10 +282,10 @@ geerbten Kontext.** Genau das könnte ein Skill nicht leisten: der läuft in
 derselben Session, die ihn aufrief.
 
 **Die Zahl der gleichzeitigen Aufrufe ist gedeckelt, und das ist keine
-Geschwindigkeitsfrage.** Fünf `claude -p` gehen auf *ein* Rate-Limit-Fenster.
-Ungedeckelt tauscht man „das Review dauerte länger" gegen „drei Achsen sind
-gestorben" — und eine tote Achse sagt nichts über einen Diff, den danach niemand
-mehr ansieht.
+Geschwindigkeitsfrage.** ==Fünf `claude -p` gehen auf *ein* Rate-Limit-Fenster.==
+==Ungedeckelt tauscht man „das Review dauerte länger" gegen „drei Achsen sind==
+==gestorben" — und eine tote Achse sagt nichts über einen Diff, den danach niemand==
+==mehr ansieht.==
 
 ### Was zurückkommt, und der eine Fall, der verweigert wird
 
@@ -326,12 +325,12 @@ Suite hatte.
 Vor deinem Issue-Text stehen vier feste Blöcke. **Dein Text steht zuletzt**, damit
 die eigentliche Aufgabe die frischeste Information im Prompt ist.
 
-| Block | Wann | Warum es ihn gibt |
-|---|---|---|
-| `CONTRACT` | immer | Drei Fakten: niemand schaut zu, ein **Commit** ist das einzige Fertig-Signal, frag nicht um Erlaubnis |
-| `TDD` | immer | Rot → Grün → Prüfen → Commit |
-| `PRIOR_WORK` | wenn der Branch schon Commits trägt | ein Neustart ohne Gedächtnis |
-| `verifyFailureBlock` | nach roter Integrations-Suite | die Fehlerausgabe des letzten Versuchs |
+| Block                | Wann                                | Warum es ihn gibt                                                                                     |
+| -------------------- | ----------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| ==`CONTRACT`==       | immer                               | Drei Fakten: niemand schaut zu, ein **Commit** ist das einzige Fertig-Signal, frag nicht um Erlaubnis |
+| `TDD`                | immer                               | Rot → Grün → Prüfen → Commit                                                                          |
+| `PRIOR_WORK`         | wenn der Branch schon Commits trägt | ein Neustart ohne Gedächtnis                                                                          |
+| `verifyFailureBlock` | nach roter Integrations-Suite       | die Fehlerausgabe des letzten Versuchs                                                                |
 
 **Warum `CONTRACT`:** der allererste echte Lauf baute die Sache korrekt — und
 blieb dann stehen, um einen Menschen um Erlaubnis für den Commit zu fragen. Es
@@ -468,13 +467,13 @@ als eine volle Festplatte.
 Ein **Guardrail** ist eine mechanische Regel, die der Build durchsetzt. Die Teile
 liegen an vier Orten, weil sie **verschieden schnell altern.**
 
-| Stück | Datei | Altert wodurch |
-|---|---|---|
-| **Regel** | `forge/GUARDRAILS.md` | gar nicht — sie nennt kein Werkzeug |
-| **Bindung** an ein Werkzeug | `STACK.md` | Werkzeug-Versionen |
-| **Beweis** | `gates/<regel>/` im Projekt | läuft in der CI bei jedem Commit |
-| **Quittung** | `GUARDRAILS-INSTALLED.md` | ein Mensch liest sie |
-| **Auftrag ans Review** | `REVIEW-STANDARDS.md` | wird an einen Sub-Agenten gereicht |
+| Stück                       | Datei                       | Altert wodurch                                                                              |
+| --------------------------- | --------------------------- | ------------------------------------------------------------------------------------------- |
+| **Regel**                   | `forge/GUARDRAILS.md`       | gar nicht — sie nennt kein Werkzeug                                                         |
+| **Bindung** an ein Werkzeug | `STACK.md`                  | Werkzeug-Versionen ==~~wie werden die Werkzeuge für jedes einzelne guardrails gefunden?~~== |
+| **Beweis**                  | `gates/<regel>/` im Projekt | läuft in der CI bei jedem Commit ~~==wo genau?==~~                                          |
+| **Quittung**                | `GUARDRAILS-INSTALLED.md`   | ein Mensch liest sie ==~~die im Projekt genutzt werden?~~==                                 |
+| **Auftrag ans Review**      | `REVIEW-STANDARDS.md`       | wird an einen Sub-Agenten gereicht                                                          |
 
 Vier Arten, eine Regel durchzusetzen: eine **Deklaration** (eine Datei nennt
 erlaubte Kanten, ein Werkzeug macht Build-Fehler daraus — mit Abstand die
@@ -486,11 +485,11 @@ Drei Klassen von Regeln, und die mittlere ist der ganze Grund für
 `REVIEW-STANDARDS.md`: `checked` wird ganz mechanisch geprüft, `partial` nur zur
 Hälfte — die andere Hälfte geht ans Review —, `judgment` gar nicht.
 
-**Der tragende Satz des ganzen Baus:** ein Gate, dessen Regelname umbenannt wurde,
-**bricht nicht ab.** Es läuft und findet nichts. Und das sieht aus wie ein
-sauberes Repo. Nur ein Test-Fixture, das durchfallen *muss*, unterscheidet die
-beiden. Die Prüfung lautet deshalb nie „lässt sauberer Code das Gate passieren",
-sondern immer **„lässt dreckiger Code es scheitern".**
+**==Der tragende Satz des ganzen Baus:** ein Gate, dessen Regelname umbenannt wurde,==
+==**bricht nicht ab.** Es läuft und findet nichts. Und das sieht aus wie ein==
+==sauberes Repo. Nur ein Test-Fixture, das durchfallen *muss*, unterscheidet die==
+==beiden. Die Prüfung lautet deshalb nie „lässt sauberer Code das Gate passieren",==
+==sondern immer **„lässt dreckiger Code es scheitern".**==
 
 **Installiert ist am 2026-08-03: keine.** `orchestrator/` hat strenges `tsc` von
 Hand gesetzt, das ist eine Zeile der Typ-Art. Sonst nichts.
@@ -506,18 +505,18 @@ git, den Agenten, das Review, eine einzelne Review-Achse und den Reaper.
 Der Grund ist immer derselbe: **die Entscheidungen prüfbar machen, ohne einen
 echten Claude-Lauf zu bezahlen.**
 
-Eine Methode ist als einzige **optional**: `runChecks`. Sie zur Pflicht zu machen
-hätte in acht Testdateien einen Platzhalter erzwungen, die sie gar nicht
-benutzen — Rauschen, das sich später wie eine echte Guardrail-Änderung liest. Eine
-fehlende Methode liest sich dagegen als das, was sie ist: eine Installation ohne
-mechanische Regeln.
+==Eine Methode ist als einzige **optional**: `runChecks`. Sie zur Pflicht zu machen==
+==hätte in acht Testdateien einen Platzhalter erzwungen, die sie gar nicht==
+==benutzen — Rauschen, das sich später wie eine echte Guardrail-Änderung liest. Eine==
+==fehlende Methode liest sich dagegen als das, was sie ist: eine Installation ohne==
+==mechanische Regeln.==
 
 **Stand der Messung am 2026-08-03:** 22 Quelldateien, 33 Testdateien mit 238
 Tests, alle grün, dazu 8 Proof-Skripte.
 
 Fast jede Testdatei trägt denselben Kopf: **FALSIFY FIRST.** Also nicht „beweise,
 dass es geht", sondern „konstruiere den Fall, in dem es **still** danebengeht".
-Fünf Testdateien existieren, weil ein echter Lauf oder eine falsche Vorhersage sie
+Fünf ==Testdateien== existieren, weil ein echter Lauf oder eine falsche Vorhersage sie
 erzwungen hat — nicht, weil jemand sie sich ausgedacht hat:
 
 - Beim Start lagen drei Notizen bereit, `concurrency: 3` war gesetzt, und trotzdem
@@ -531,12 +530,12 @@ erzwungen hat — nicht, weil jemand sie sich ausgedacht hat:
 
 ### Proof-Skripte sind keine Tests
 
-Ein **Proof** kostet echtes Geld, echtes Docker oder echte Wartezeit. Acht Stück,
-darunter: zwei Review-Achsen finden je ihren gepflanzten Fehler; der
-Permission-Prüfer wird beim Durchlassen von `rm -rf` ertappt; das Gateway wird
-gegen die **echte** `claude`-Binärdatei geprüft statt gegen seine Doku; ein echtes
-Fünf-Stunden-Fenster wird geparkt und wacht selbst auf; ein Issue läuft von Anfang
-bis Merge durch.
+==Ein **Proof** kostet echtes Geld, echtes Docker oder echte Wartezeit. Acht Stück,==
+==darunter: zwei Review-Achsen finden je ihren gepflanzten Fehler; der==
+==Permission-Prüfer wird beim Durchlassen von `rm -rf` ertappt; das Gateway wird==
+==gegen die **echte** `claude`-Binärdatei geprüft statt gegen seine Doku; ein echtes==
+==Fünf-Stunden-Fenster wird geparkt und wacht selbst auf; ein Issue läuft von Anfang==
+==bis Merge durch.==
 
 Zwei davon waren beim Archivieren beinahe verloren. Sie lebten in der Pipeline, in
 der der Orchestrator gebaut wurde, und kamen gerade noch mit. Die Lehre: **Beweise
@@ -544,7 +543,7 @@ gehören neben den Code, den sie beurteilen.**
 
 ---
 
-## 14 · Was am 2026-08-03 nicht funktioniert
+## ==14 · Was am 2026-08-03 nicht funktioniert==
 
 Alles hier ist belegt, nichts davon ist Vermutung.
 
