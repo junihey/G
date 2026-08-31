@@ -837,11 +837,11 @@ installiert.
 Hier werden drei Befehle verwechselt. Sie laufen an verschiedenen Orten und
 beantworten verschiedene Fragen.
 
-| Befehl im Projekt | Läuft über | Beantwortet | Wo im Lauf |
-|---|---|---|---|
-| `npm test` | den echten Code | **Läuft es?** | Prüfung 2, `runSuite` |
-| `npm run lint`, `typecheck`, `struktur` | den echten Code | **Bricht es eine Regel?** | Prüfung 3, `runChecks` |
-| `node gates/run.mjs` | die absichtlich kaputten Dateien | **Sind die Regeln überhaupt noch scharf?** | **gar nicht im Lauf** — nur in der CI |
+| Befehl im Projekt                       | Läuft über                       | Beantwortet                                | Wo im Lauf                            |
+| --------------------------------------- | -------------------------------- | ------------------------------------------ | ------------------------------------- |
+| `npm test`                              | den echten Code                  | **Läuft es?**                              | Prüfung 2, `runSuite`                 |
+| `npm run lint`, `typecheck`, `struktur` | den echten Code                  | **Bricht es eine Regel?**                  | Prüfung 3, `runChecks`                |
+| `node gates/run.mjs`                    | die absichtlich kaputten Dateien | **Sind die Regeln überhaupt noch scharf?** | **gar nicht im Lauf** — nur in der CI |
 
 Der Reihe nach.
 
