@@ -5293,6 +5293,14 @@ Lange Zeit galt die Regel, sich bei Plänen oder Projekt-Spezifikationen auf ein
 - [GitHub - jillesme/webmcp-coffee-store: A WebMCP coffee storefront where people and browser agents share the same cart · GitHub](https://github.com/jillesme/webmcp-coffee-store)
 - [GitHub - webmachinelearning/webmcp: 🤖 WebMCP · GitHub](https://github.com/webmachinelearning/webmcp)
 ---
+# durchgearbeitet 20260907
+- claude.md [GitHub - jasonku09/agents-md-snippets: Copy-paste AGENTS.md / CLAUDE.md snippets from my AI coding workflow videos: context re-entry, worktrees, TDD, builder/driver gate split · GitHub](https://github.com/jasonku09/agents-md-snippets)
+	- test and review gate [GitHub - kunchenguid/no-mistakes: git push no-mistakes · GitHub](https://github.com/kunchenguid/no-mistakes)
+- skills repo [GitHub - davidondrej/skills: access to david ondrej's personal agent skills · GitHub](https://github.com/davidondrej/skills)
+- vps skills [GitHubhttps://github.comjmilinovich/vps-setup-skill: Claude skill for setting up a VPS](https://github.com/jmilinovich/vps-setup-skill)
+	- [skills/skills/agent-orchestration/cmux/SKILL.md at main · davidondrej/skills · GitHub](https://github.com/davidondrej/skills/blob/main/skills/agent-orchestration/cmux/SKILL.md)
+- ki and workflow tips [advanced-context-engineering-for-coding-agents/wsff.md at main · humanlayer/advanced-context-engineering-for-coding-agents](https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/wsff.md)
+---
 # canvas 2026050920
 ## patch 
 ### Granulares Wave-Stitching mit Jitter-Modulation
