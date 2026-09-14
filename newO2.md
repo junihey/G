@@ -5301,6 +5301,17 @@ Lange Zeit galt die Regel, sich bei Plänen oder Projekt-Spezifikationen auf ein
 	- [skills/skills/agent-orchestration/cmux/SKILL.md at main · davidondrej/skills · GitHub](https://github.com/davidondrej/skills/blob/main/skills/agent-orchestration/cmux/SKILL.md)
 - ki and workflow tips [advanced-context-engineering-for-coding-agents/wsff.md at main · humanlayer/advanced-context-engineering-for-coding-agents](https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/wsff.md)
 ---
+# 20260914
+- mcps
+	- arxiv
+	- comfy lokal
+	- claude.ai figma
+	- claude-in-chrome
+	- blender [GitHub - ahujasid/blender-mcp: Community plugin to control Blender 3D with any LLM of your choice · GitHub](https://github.com/ahujasid/blender-mcp)
+		- clay render [Seed News - ByteDance Seed Team](https://seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5)
+- eleonor burger obsidian retrieval [GitHub - intellectronica/context-camp-knowledge-management-personal-agents · GitHub](https://github.com/intellectronica/context-camp-knowledge-management-personal-agents)
+	- [GitHub - tobi/qmd: mini cli search engine for your docs, knowledge bases, meeting notes, whatever. Tracking current sota approaches while being all local · GitHub](https://github.com/tobi/qmd)
+---
 # canvas 2026050920
 ## patch 
 ### Granulares Wave-Stitching mit Jitter-Modulation

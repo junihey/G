@@ -7,16 +7,6 @@
 
 
 
-	- Gedankenform/Elemental/Tulpa durch bewusste, fokussierte Intention, Emotion und Visualisierung als eigenständige und lebendige Entitäten
-		- künstlich erschaffen für einen Zweck (Schutz, Stärkung,...), autonom und energetisch
-		- bestehen aus mehreren Begriffen
-		- Steiner - reale, lebendige Gebilde der geistigen Welt, die aus Denktätigkeit, Gefühl und Willen entstehen
-		- unkontrollierte Gedankenformen können schädlich wirken durch Irrelichtelieren (chaotischem Gedankenfluss) 
-		- klare moralische Schulung mit klaren, logischen Gedankenfluss mit ersten drei Nebenübungen (Gedanke formt Struktur, Gefühl die Energie und Wille die Richtung)
-		- Einschätzen anhand der Aura (gold und violett für Harmonie)
-		- Fragment als Vergleich zu den Elementalen
-			- bewusste und unvollständige Gedankeneinheit (Denkanstoß und Sämerei zum Anregen eines Weltdenkens im Leser)
-			- nach innen offen nach außen scharf abgeschlossen gegen starres Wisse
 
 Als Idee:
 
