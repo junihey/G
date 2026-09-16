@@ -320,7 +320,7 @@ Es gibt **kein** dokumentiertes „X Aufrufe pro Sekunde”-Limit; der Durchsatz
 
 ### Analytics-Ausweg
 
-Da Convex kein OLAP kann, exportiert man Daten für Analytik nach außen:
+Da Convex ==kein OLAP== kann, exportiert man Daten für Analytik nach außen:
 
 - **Fivetran** und **Airbyte** bieten Streaming-Export von Convex in ein Data Warehouse (BigQuery, Snowflake etc.).
 - **Backups** / Snapshot-Export sind eingebaut.
@@ -343,7 +343,7 @@ Weitere Details: DB-I/O bei Free 1 GB/Monat, bei Professional 50 GB/Monat inkl. 
 Seit Februar 2025 ist Convex vollständig **Open Source** unter der **FSL-Lizenz** (Functional Source License, konkret FSL-1.1-Apache-2.0). Der Convex-Blog formuliert es so: „Our particular take on the FSL converts all convex-backend source code to Apache 2.0 two years after its release.” „Fair Source” heißt: Du darfst fast alles wie unter Apache 2.0 — außer ein Konkurrenzprodukt zum gehosteten Convex Cloud bauen. Jede Version wird nach zwei Jahren automatisch zu Apache 2.0.
 
 - **Deployment**: per **Docker** (empfohlen) oder vorgefertigtem Binary; auch auf Fly.io, Coolify, Dokploy.
-- **Storage-Layer**: standardmäßig **SQLite**; für Produktion **PostgreSQL** oder **MySQL** (auch Neon). Achtung: Das ist die *interne* Persistenzschicht, nicht deine App-Tabellen.
+- **Storage-Layer**: ==standardmäßig **SQLite**; für Produktion **PostgreSQL** oder **MySQL**== (auch Neon). Achtung: Das ist die *interne* Persistenzschicht, nicht deine App-Tabellen.
 - **Single-Node-Limitierung**: Das Open-Source-Backend läuft als einzelner Knoten — kein automatisches horizontales Skalieren, kein Load-Balancing, keine automatische Wiederherstellung wie in der Cloud.
 - **Was „kostenlos” hier wirklich bedeutet**: Die Software ist gratis, aber DU trägst den Betriebsaufwand: Server bereitstellen, Backups/Replikation einrichten, Monitoring, Datenbank-Migrationen bei jedem Backend-Update selbst durchführen, bei Ausfall selbst neu starten. Realistisch braucht man dafür einen VPS (Entwicklung ab 2 GB RAM mit SQLite; Produktion ~4 GB RAM mit Postgres, z.B. bei Hetzner/DigitalOcean) plus Zeit und Ops-Wissen. „Kostenlos” ≠ „aufwandsfrei”.
 
@@ -353,7 +353,7 @@ Seit Februar 2025 ist Convex vollständig **Open Source** unter der **FSL-Lizenz
 
 -----
 
-## TEIL 4 — DIE ALTERNATIVEN IM VERGLEICH
+## TEIL 4 — DIE ==ALTERNATIVEN== IM VERGLEICH
 
 *Alle Preise/Limits Stand 2026, können sich ändern — jeweils auf der Anbieter-Preisseite prüfen.*
 
@@ -428,7 +428,7 @@ Statt eines integrierten BaaS kombiniert man Einzelteile selbst:
 
 - **Neon**: Serverless Postgres mit „Scale-to-Zero” (schläft bei Inaktivität) und Branching (DB-Kopien in Sekunden). Free: 0,5 GB Speicher, 100 Compute-Stunden/Monat pro Projekt. Bezahlt: rein nutzungsbasiert, seit Dezember 2025 kein Monatsminimum (Compute ~0,106 $/CU-Stunde auf Launch, Speicher 0,35 $/GB-Monat). Am **14. Mai 2025 für rund 1 Mrd. $ von Databricks übernommen**. Ideal für spikey/idle-lastige Workloads, unvorhersehbar bei Dauerlast.
 - **PlanetScale**: Serverless MySQL (Vitess) mit Branching und Zero-Downtime-Schema-Änderungen. **Free-Tier abgeschafft**; Pläne ab 39 $/Monat (Einstieg teils ab 5 $ genannt). Für produktive MySQL-Workloads mit hoher Verfügbarkeit.
-- Kombination: z.B. **Neon/Supabase + Drizzle/Prisma + eigenes API-Layer** (z.B. mit Next.js oder Hono). Maximale Kontrolle und kein Lock-in, aber du baust und wartest mehr selbst.
+- Kombination: z.B. ==**Neon/Supabase + Drizzle/Prisma + eigenes API-Layer**== (z.B. mit Next.js oder Hono). Maximale Kontrolle und kein Lock-in, aber du baust und wartest mehr selbst.
 
 ### Große Vergleichstabelle
 
@@ -459,20 +459,20 @@ Statt eines integrierten BaaS kombiniert man Einzelteile selbst:
 ### Grundbegriffe
 
 - **Object Storage**: Ein Speichersystem für „Objekte” (Dateien beliebiger Größe) mit einem Schlüssel (Pfad). Kein Dateisystem im klassischen Sinn, sondern über HTTP-API ansprechbar. Prototyp: Amazon S3. Skaliert praktisch unbegrenzt und ist günstig pro GB.
-- **CDN** (Content Delivery Network): Ein Netz aus Servern weltweit, das Kopien deiner Dateien nah am Nutzer zwischenspeichert (cached). Ergebnis: schnellere Downloads, weniger Last am Ursprung.
+- **CDN** (Content Delivery Network): Ein Netz aus Servern weltweit, das Kopien deiner Dateien nah am Nutzer zwischenspeichert (cached). Ergebnis: ==schnellere Downloads, weniger Last am Ursprung.==
 - **Egress**: Der ausgehende Datenverkehr — die Bytes, die aus dem Speicher zu den Nutzern fließen. **Das ist bei vielen Anbietern der versteckte Hauptkostentreiber**, nicht die Speicherung selbst.
 
 ### Warum große Dateien NICHT in die Datenbank/BaaS-Storage?
 
 3D-Modelle und Audio sind groß (Megabytes bis Hunderte MB). Wenn du sie in eine Datenbank oder in teuren BaaS-Storage legst:
 
-- Datenbanken sind für kleine, strukturierte Datensätze optimiert, nicht für große Binärblobs — das bläht Backups auf und verlangsamt Abfragen. (Convex hat sogar ein hartes Dokumentgrößen-Limit von 1 MiB — ein einzelnes 3D-Modell passt gar nicht als Dokument.)
+- Datenbanken sind für kleine, strukturierte Datensätze optimiert, nicht für große Binärblobs — das bläht Backups auf und verlangsamt Abfragen. (==Convex hat sogar ein hartes Dokumentgrößen-Limit von 1 MiB== — ein einzelnes 3D-Modell passt gar nicht als Dokument.)
 - BaaS-Storage und Function-Egress sind oft teuer (Convex-Free hat z.B. nur 1 GB File-Egress/Monat).
 - Auslieferung großer Dateien über Backend-Funktionen kostet Function Calls und Bandbreite.
 
-**Best Practice:** Lege die eigentliche Datei in **Object Storage** (idealerweise mit CDN davor) und speichere in der Datenbank nur die **Metadaten** (Name, Typ, Größe, Tags, den Storage-Schlüssel/URL). Die Datenbank verwaltet die Bibliothek; der Object Storage liefert die Bytes.
+**Best Practice:** Lege die eigentliche Datei in **Object Storage** (==idealerweise mit CDN davor==) und speichere in der ==Datenbank nur die **Metadaten**== (Name, Typ, Größe, Tags, den Storage-Schlüssel/URL). Die Datenbank verwaltet die Bibliothek; der Object Storage liefert die Bytes.
 
-### Vergleich Object-Storage-Anbieter (Stand 2026)
+### Vergleich Object-Storage-Anbieter (Stand 2026) ~~==seafile==~~
 
 *Preise ändern sich — auf den offiziellen Preisseiten prüfen.*
 
@@ -485,7 +485,7 @@ Statt eines integrierten BaaS kombiniert man Einzelteile selbst:
 
 **Begriffserklärung Class A/B:** Objektspeicher berechnen nicht nur Speicherplatz, sondern auch **Operationen**. „Class A” sind teurere schreibende/auflistende Operationen (PUT, LIST); „Class B” sind billigere lesende (GET). Bei vielen kleinen Dateien mit hohem Zugriff können diese Operationskosten relevant werden.
 
-**Empfehlung für dein Projekt:** **Cloudflare R2** ist 2026 die risikoärmste Standardwahl für 3D-/Audio-Auslieferung — null Egress-Kosten (entscheidend, da 3D/Audio bandbreitenhungrig sind), S3-kompatibel (Standard-Tools/SDKs funktionieren) und integriertes CDN. Backblaze B2 + Cloudflare ist noch billiger im reinen Speicher, aber R2 ist einfacher. S3 nur, wenn du ohnehin tief im AWS-Ökosystem steckst.
+**Empfehlung für dein Projekt:** **Cloudflare R2** ist 2026 die risikoärmste Standardwahl für 3D-/Audio-Auslieferung — null Egress-Kosten (entscheidend, da 3D/Audio bandbreitenhungrig sind), S3-kompatibel (Standard-Tools/SDKs funktionieren) und ==integriertes CDN==. Backblaze B2 + Cloudflare ist noch billiger im reinen Speicher, aber R2 ist einfacher. S3 nur, wenn du ohnehin tief im AWS-Ökosystem steckst.
 
 ### Presigned URLs / sicherer Upload-Flow
 
@@ -537,7 +537,7 @@ Inhaltlich identisch — GLB ist nur die verpackte Binärform.
 Die **Geometrie** (Vertices/Meshes) kann komprimiert werden:
 
 - **Draco** (Google): Sehr hohe Kompression — bei Modellen, wo Geometrie dominiert (>1 MB), oft **~95 % Größenreduktion**. Trade-off: Der WASM-Decoder muss geladen und die Geometrie **vor** dem GPU-Upload dekomprimiert werden — das kostet CPU-Zeit beim Laden. Bei kleiner Geometrie (<1 MB) kann der Decoder-Overhead die Ersparnis auffressen. Draco ist verlustbehaftet (Quantisierung) — daher immer die Originale behalten und Kompression als letzten Schritt der Pipeline anwenden.
-- **Meshopt** (meshoptimizer): Etwas geringere Kompression als Draco, aber **deutlich schnellere Dekompression**. Braucht zusätzlich gzip/brotli auf dem Server für vollen Effekt; dann ähnliche Ratios wie Draco bei viel schnellerem Decoding.
+- **Meshopt** (meshoptimizer): ==Etwas geringere Kompression als Draco, aber **deutlich schnellere Dekompression==**. Braucht zusätzlich gzip/brotli auf dem Server für vollen Effekt; dann ähnliche Ratios wie Draco bei viel schnellerem Decoding.
 
 **Wichtig:** Weder Draco noch Meshopt verbessern die **Laufzeit-Framerate** — sie verkleinern nur die Download-Größe. Die Dekompression passiert vor dem GPU-Upload. Für bessere FPS musst du die Geometrie *vereinfachen* (weniger Vertices/Draw-Calls), nicht nur komprimieren.
 
@@ -559,7 +559,7 @@ loader.load("/models/asset.glb", (gltf) => {
 
 Normale Bildformate (**PNG/JPG/WebP**) müssen beim Laden vollständig dekodiert und als **unkomprimierte** Pixel in den Grafikspeicher (**VRAM**) geladen werden. Eine 2048×2048-RGBA-Textur belegt so **16 MB VRAM**, egal wie klein die PNG war.
 
-**KTX2** ist ein Container-Format für GPU-Texturen; kombiniert mit **Basis Universal**-Supercompression bleibt die Textur **komprimiert bis in den VRAM**, indem sie beim Laden in ein GPU-natives Format transkodiert wird (BC auf Desktop, ASTC/ETC2 auf Mobile). Das **spart typischerweise das 4- bis 8-fache an Texturspeicher**. Beispiel aus der Praxis: 4 Bilder = 128 MB VRAM als JPG vs. 32 MB als KTX2, bei ähnlicher Qualität.
+==**KTX2** ist ein Container-Format für GPU-Texturen; kombiniert mit **Basis Universal**-Supercompression bleibt die Textur **komprimiert bis in den VRAM**, indem sie beim Laden in ein GPU-natives Format transkodiert wird (BC auf Desktop, ASTC/ETC2 auf Mobile)==. Das **spart typischerweise das 4- bis 8-fache an Texturspeicher**. Beispiel aus der Praxis: 4 Bilder = 128 MB VRAM als JPG vs. 32 MB als KTX2, bei ähnlicher Qualität.
 
 - **UASTC**: höhere Qualität (für Hero-Art, Normal-Maps), größere Dateien.
 - **ETC1S**: kleiner, für die Masse der Texturen.
@@ -577,15 +577,15 @@ loader.setKTX2Loader(ktx2Loader); // an GLTFLoader hängen
 
 - **WAV**: Unkomprimiert, verlustfrei, ~10 MB/Minute (CD-Qualität). Ideal für die **Quelldateien**/Bearbeitung, zu groß für die Auslieferung.
 - **MP3**: Universell kompatibel (jedes Gerät, Autoradio), ~2,4 MB/Minute bei 320 kbps. Guter Fallback für maximale Kompatibilität.
-- **Opus**: Moderner, offener, lizenzfreier Codec (IETF RFC 6716, standardisiert 2012). **Bei gleicher Qualität etwa halb so groß wie MP3**: Opus bei 64 kbps klingt wie MP3 bei 128 kbps; bei 96 kbps praktisch nicht vom Original unterscheidbar. Sehr niedrige Latenz (5–20 ms), Standard für WebRTC/Discord/WhatsApp. Von allen modernen Browsern unterstützt. Nachteil: nicht auf allen dedizierten Hardware-Playern (Autoradios).
+- **Opus**: Moderner, offener, lizenzfreier Codec (IETF RFC 6716, standardisiert 2012). ==**Bei gleicher Qualität etwa halb so groß wie MP3**:== Opus bei 64 kbps klingt wie MP3 bei 128 kbps; bei 96 kbps praktisch nicht vom Original unterscheidbar. Sehr niedrige Latenz (5–20 ms), Standard für WebRTC/Discord/WhatsApp. Von allen modernen Browsern unterstützt. Nachteil: nicht auf allen dedizierten Hardware-Playern (Autoradios).
 
 **Empfehlung:** Originale als WAV behalten, für die Web-Auslieferung **Opus** ausliefern (kleinste Dateien bei bester Qualität), optional MP3 als Fallback für exotische Clients.
 
-**Audio-Sprites** sind mehrere kurze Sounds in **einer** Audiodatei zusammengefasst; per Zeit-Offset spielt man einzelne Segmente ab. Vorteil: weniger HTTP-Requests, weniger Latenz beim Abspielen kurzer Samples (z.B. UI-Sounds).
+==**Audio-Sprites** sind mehrere kurze Sounds in **einer** Audiodatei zusammengefasst; per Zeit-Offset spielt man einzelne Segmente ab. Vorteil: weniger HTTP-Requests, weniger Latenz beim Abspielen kurzer Samples (z.B. UI-Sounds).==
 
 **Web Audio API** ist die Browser-Schnittstelle für präzise Audio-Steuerung (Laden in einen `AudioBuffer`, Abspielen mit exaktem Timing, Effekte, Mischen) — mächtiger als ein simples `<audio>`-Element und die Grundlage für 3D-Positional-Audio in Three.js (`THREE.PositionalAudio`).
 
-### Lade-Strategien
+### ==Lade-Strategien==
 
 - **Lazy Loading**: Assets erst laden, wenn sie gebraucht werden (z.B. beim Scrollen/Betreten eines Bereichs), nicht alles vorab.
 - **LOD** (Level of Detail): Mehrere Detailstufen eines Modells; entfernte Objekte nutzen die niedrig aufgelöste Version — spart GPU-Leistung.
@@ -629,7 +629,7 @@ export default defineSchema({
 
 Kernfelder für beide: eindeutige ID, Name, Typ, Format, Storage-Schlüssel, Größe, Tags, Besitzer, Sichtbarkeit, Erstellungszeit, Thumbnail/Vorschau. Dazu typ-spezifische Felder (Vertex-Count/Bounding-Box für 3D; Dauer/Sample-Rate/BPM für Audio).
 
-### Multiplayer / kollaborative 3D-Szenen: Positions-Updates NICHT über die DB
+### Multiplayer / kollaborative 3D-Szenen: Positions-Updates NICHT über die DB ==~~nicht relevant~~==
 
 Wenn mehrere Nutzer sich in einer 3D-Szene bewegen, entstehen **sehr viele, sehr schnelle** Positions-Updates (z.B. 20–60 pro Sekunde pro Nutzer). Diese durch eine Datenbank oder Convex-Mutations zu schleusen wäre fatal:
 
@@ -644,7 +644,7 @@ Wenn mehrere Nutzer sich in einer 3D-Szene bewegen, entstehen **sehr viele, sehr
 
 ### Entscheidungsbaum
 
-**Szenario A — Reines Showcase / Portfolio (keine Nutzerkonten, keine Uploads):**
+**==Szenario== A — Reines Showcase / Portfolio (keine Nutzerkonten, keine Uploads):**
 Du zeigst deine eigenen 3D-Modelle und spielst Audio ab. Keine Datenbank nötig!
 → Statische Website (Vite/Next.js) auf **Vercel/Cloudflare Pages** + Assets auf **Cloudflare R2** (mit CDN). Optional eine kleine JSON-Datei oder ein einfaches CMS als „Katalog”.
 
@@ -693,7 +693,7 @@ Mehrere Nutzer bewegen sich/bearbeiten gemeinsam eine Szene in Echtzeit.
 
 ### Typische Anfängerfehler und wie man sie vermeidet
 
-- **Große Dateien in die Datenbank/BaaS-Storage legen.** → Immer Object Storage + nur Metadaten in der DB.
+- **Große Dateien in die Datenbank/BaaS-Storage legen.** → ==Immer Object Storage + nur Metadaten in der DB.==
 - **Positions-Updates über die Datenbank schicken.** → Realtime-Transport nutzen, DB nur für persistenten Zustand.
 - **Unkomprimierte Assets ausliefern** (PNG-Texturen, WAV-Audio, rohe Meshes). → KTX2, Opus, Draco/Meshopt einsetzen.
 - **Egress-Kosten ignorieren.** → R2 (0 $ Egress) statt S3 wählen; Caching-Header setzen.
