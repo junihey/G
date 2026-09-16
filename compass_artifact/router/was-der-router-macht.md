@@ -147,7 +147,11 @@ sind. Die Hardware erlaubt bis zu **16 pro Funkmodul**.
 Installation mehrere Eintrittspunkte haben soll — Besucher an Standort A starten
 an einem anderen Punkt der 3D-Welt als an Standort B —, braucht das nicht
 mehrere Router. Drei Namen auf einem Gerät genügen, jeder mit eigenem
-Adressbereich. Der Server sieht an der Adresse, aus welchem Netz jemand kommt.
+Adressbereich.
+
+Wie die Anwendung danach erfährt, aus welchem Netz jemand kam, ist eine eigene
+Frage — und der naheliegende Weg über die Absenderadresse trägt nicht. Das steht
+in Abschnitt 14, nachdem die Begriffe dafür da sind.
 
 Der einzige Unterschied zu drei Geräten ist die **Reichweite**: Ein Router
 strahlt von einem Punkt. Liegen die Standorte in verschiedenen Räumen, kommt das
@@ -285,8 +289,227 @@ erreichbar ist. Das führt in die Irre:
 **Für die Frage „kommt ein Besucher durch" taugt nur ein Besucher-Gerät.** Ein
 Handy im WLAN, mit dem Browser, den ein Gast auch benutzen würde.
 
+## 13 · Die drei Netze, die am 2026-09-11 entstanden sind
+
+Abschnitt 6 sagt, dass ein Funkmodul mehrere Netze ausstrahlen kann. Hier ist
+der Fall dazu. Auf dem 2,4-GHz-Modul laufen jetzt drei zusätzliche Netze:
+
+| WLAN-Name | Adressbereich | Der Router ist darin |
+|---|---|---|
+| `Metall Hass` | 192.168.11.x | 192.168.11.1 |
+| `Scham Kleid` | 192.168.12.x | 192.168.12.1 |
+| `Element Geist` | 192.168.13.x | 192.168.13.1 |
+
+Sie sind **offen**, ohne Passwort. Besucher einer Installation sollen sich
+einwählen, nicht ein Passwort abtippen.
+
+Jedes Netz brauchte drei Dinge, und jedes davon kennst du schon:
+
+1. **Ein eigenes Netz mit eigener Adresse** für den Router darin — Abschnitt 1.
+2. **Einen DHCP-Bereich**, aus dem die Handys ihre Adressen bekommen —
+   Abschnitt 3.
+3. **Ein ausgestrahltes WLAN**, das an dieses Netz gebunden ist — Abschnitt 6.
+
+Dazu ein vierter Punkt, den man leicht vergisst: Die drei Netze mussten in
+dieselbe **Firewall-Zone** wie das Kabelnetz aufgenommen werden. Eine Zone ist
+eine Gruppe von Netzen, zwischen denen der Router Verkehr durchlässt. Ohne
+diesen Schritt wären die drei Netze zwar da, könnten aber den Rechner nicht
+erreichen.
+
+## 14 · Warum der Standort in die Adresszeile gehört und nicht in die IP
+
+Die Installation soll erkennen, aus welchem der drei Netze ein Besucher kommt,
+um ihn an einer anderen Stelle der 3D-Welt starten zu lassen.
+
+**Der naheliegende Weg ist die Absenderadresse**, und er ist der falsche. Am
+2026-09-11 gemessen: Anfragen aus allen drei Netzen kamen beim Server als
+dieselbe Adresse an. Docker Desktop unter Windows schiebt einen eigenen
+Vermittler dazwischen, der die ursprüngliche Adresse verliert. Auf einem
+Linux-Rechner bliebe sie erhalten — aber eine Lösung, die vom Betriebssystem des
+Rechners abhängt, ist keine.
+
+**Der bessere Weg führt über das Captive-Portal-Fenster.** Um ihn zu verstehen,
+zuerst: was das überhaupt ist.
+
+### Was ein Captive Portal ist
+
+Du kennst es aus Hotels und Cafés: Du wählst dich ins WLAN ein, und es springt
+von selbst ein Fenster auf — „Bitte Bedingungen akzeptieren".
+
+Dahinter steckt eine Prüfung, die jedes Handy nach dem Einwählen automatisch
+macht. Es ruft eine feste Adresse im Internet auf und schaut, was zurückkommt:
+
+| System | Ruft auf |
+|---|---|
+| iOS | `captive.apple.com` |
+| Android | `connectivitycheck.gstatic.com` |
+| Windows | `msftconnecttest.com` |
+
+Kommt die erwartete Antwort, meldet das Handy „Internet vorhanden". Kommt
+stattdessen eine Weiterleitung, schließt es: „Hier sitzt ein Portal davor" — und
+öffnet die Seite, auf die weitergeleitet wurde, in einem kleinen Fenster.
+
+### Was daraus folgt
+
+**Der Router kann diese Prüfung abfangen und selbst antworten.** Und er weiß
+dabei, aus welchem seiner WLANs die Anfrage kam — die Netze sind getrennt, das
+ist Abschnitt 13.
+
+Also kann er für jedes Netz auf eine andere Adresse weiterleiten:
+
+| Aus dem Netz | Weiterleitung auf |
+|---|---|
+| `Metall Hass` | `https://installation.julianniklasheynert.xyz/?entry=a` |
+| `Scham Kleid` | `…/?entry=b` |
+| `Element Geist` | `…/?entry=c` |
+
+Der Teil hinter dem Fragezeichen heißt **Query-Parameter**. Er ist Teil der
+Adresse und wandert mit, wohin sie auch geht. Die Webseite liest ihn mit einer
+Zeile aus:
+
+```js
+const eintritt = new URLSearchParams(location.search).get('entry')
+```
+
+**Damit muss der Server gar nichts über die Absenderadresse wissen.** Der
+Standort steht in der Adresse, die der Besucher aufruft. Es ist egal, wie viele
+Vermittler dazwischen liegen und welches Betriebssystem der Rechner hat.
+
+### Warum das Portal ohnehin gebraucht wird
+
+Das Fenster, das da aufspringt, ist **kein vollwertiger Browser**. Auf iOS heißt
+es *Captive Network Assistant*, auf Android ist es eine eingeschränkte
+Web-Ansicht. Dort gibt es die Freigabe für Bewegungssensoren nicht, und wenn das
+Fenster schließt, ist die Sitzung weg.
+
+**Die Anwendung kann dort also gar nicht laufen.** Das Portal darf nur einen Satz
+und einen Link zeigen: „Tippe hier". Der Besucher tippt, das Handy öffnet den
+richtigen Browser, und dort läuft alles.
+
+Und genau dieser Link trägt den Standort mit. **Die Schwäche des Portals und die
+Lösung des Standort-Problems fallen zusammen:** Man braucht ohnehin einen
+Wegweiser, und ein Wegweiser kann sagen, wo er steht.
+
+Zwei Dinge sind dabei einzuhalten, beide aus Abschnitt 5: Der Link trägt den
+**Namen**, nie die Adresse. Und er beginnt mit `https`, nie mit `http`.
+
+## 15 · Wie das Portal am 2026-09-11 gebaut wurde
+
+Abschnitt 14 erklärt, warum der Standort in die Adresszeile gehört. Hier steht,
+aus welchen drei Teilen die Umsetzung besteht — jeder davon ist eine Sache, die
+du schon kennst.
+
+**Teil 1: Der Router beantwortet die Prüfadressen selbst.** Für jede der sieben
+Adressen aus Abschnitt 14 kam ein Eintrag ins eigene DNS-Verzeichnis von
+Abschnitt 4, der auf den Router zeigt. Ein Handy, das `captive.apple.com`
+aufruft, landet damit beim Router statt bei Apple.
+
+**Teil 2: Drei Antworten statt einer.** Auf dem Router läuft ein Webserver.
+Er bekam drei zusätzliche Zugänge — Port 8011, 8012 und 8013 —, die jeweils mit
+einer Weiterleitung antworten:
+
+```
+Port 8011  →  https://installation.julianniklasheynert.xyz/?entry=a
+Port 8012  →  …?entry=b
+Port 8013  →  …?entry=c
+```
+
+**Teil 3: Die Firewall sortiert nach Herkunft.** Eine Regel pro Netz leitet
+Anfragen an Port 80 des Routers auf den jeweils passenden dieser drei Ports um.
+Wer aus `Metall Hass` kommt, landet auf 8011, und bekommt damit `?entry=a`.
+
+Ein **Port** ist dabei nichts weiter als eine Nummer neben der Adresse: Ein
+Rechner kann viele Programme gleichzeitig bedienen, und die Portnummer sagt,
+welches gemeint ist. Port 80 ist die Voreinstellung für unverschlüsselte
+Webseiten, Port 443 für verschlüsselte.
+
+### Was dabei herauskam
+
+Der Lauf ist am 2026-09-11 mit einem iPhone durch alle drei Netze gegangen. Im
+Protokoll des Servers stand danach jeweils der richtige Buchstabe — `a` aus
+`Metall Hass`, `b` aus `Scham Kleid`, `c` aus `Element Geist`.
+
+**Daneben stand der Beleg für den Umweg.** Die Absenderadresse war bei jeder
+einzelnen Anfrage dieselbe: die von Docker, nicht die des Handys. Hätte die
+Zuordnung an der Adresse gehangen, wäre kein einziger Standort erkennbar
+gewesen.
+
+### Drei Stellen, an denen es hakte
+
+**Der Webserver auf dem Router übernimmt eine geänderte Konfiguration nicht beim
+Neuladen.** Der dafür übliche Befehl meldet keinen Fehler und tut nichts; nur
+ein vollständiger Neustart wirkt.
+
+**Die Firewall des Zielrechners kennt die neuen Netze nicht.** Die Regel aus
+Abschnitt 10 galt nur für das Kabelnetz. Ein Handy aus einem der neuen Netze
+wurde abgewiesen, und das iPhone meldete: *keine sichere Verbindung*. Die Regel
+musste um die drei Adressbereiche erweitert werden.
+
+**Diese Fehlermeldung ist selbst ein Beleg.** Der Portal-Assistent besteht auf
+einer verschlüsselten Verbindung mit gültigem Zertifikat — genauso wie der
+Browser bei den Bewegungssensoren, Abschnitt 5. Ein selbstgebautes Zertifikat
+oder eine nackte Adresse hätte hier dieselbe Meldung erzeugt.
+
+### Die Wegweiser-Seite
+
+Anfangs führte die Weiterleitung **direkt auf die Anwendung** — und damit in die
+Falle aus Abschnitt 14: Im Portal-Fenster laufen die Sensoren nicht.
+
+Seit dem 2026-09-11 liefert der Router stattdessen eine kleine Seite aus, eine
+je Standort. Sie zeigt den Namen des Ortes, einen Satz und einen Knopf, der auf
+die Anwendung führt — mit dem Buchstaben in der Adresse. Darunter steht dieselbe
+Adresse zum Abtippen, falls der Knopf ins Leere führt.
+
+**Sie wird unverschlüsselt ausgeliefert, und das ist richtig so.** Der
+Portal-Assistent muss dann keine gesicherte Verbindung aufbauen — genau daran
+war der erste Versuch gescheitert. Die Verschlüsselung braucht erst der Schritt
+danach, wenn der Besucher im richtigen Browser ist.
+
+### Warum dort kein Knopf steht
+
+Naheliegend wäre ein Knopf, der die Anwendung im richtigen Browser öffnet. **Auf
+iOS geht das nicht.**
+
+Am 2026-09-11 geprüft, in dieser Reihenfolge:
+
+| Versuch | Ergebnis |
+|---|---|
+| gewöhnlicher Link auf `https://…` | Der Portal-Assistent öffnet ihn **in sich selbst** — der Besucher landet wieder dort, wo die Sensoren nicht laufen |
+| `x-safari-https://…` | Ein früher übliches Adressschema, das Safari von außen startete. In aktuellen iOS-Versionen wirkungslos. |
+
+Apple hat diesen Weg absichtlich geschlossen. Ein Portal-Fenster soll keine
+fremden Programme starten können.
+
+**Deshalb steht auf der Seite eine Anleitung statt eines Knopfes:** Fenster
+schließen, Browser öffnen, Adresse eingeben. Die Adresse liegt in einem Feld,
+das sich beim Antippen vollständig auswählt — danach bietet iOS *Kopieren* an.
+Automatisch in die Zwischenablage schreiben geht ebenfalls nicht: Dafür bräuchte
+die Seite einen Secure Context, und sie wird bewusst unverschlüsselt
+ausgeliefert.
+
+**Das WLAN bleibt verbunden, auch wenn das Portal-Fenster zugeht.** Das ist die
+Eigenschaft, auf der die ganze Anleitung ruht.
+
+### Was das Portal dann überhaupt leistet
+
+Es sieht nach wenig aus, ist aber der Unterschied zwischen einer Installation,
+die funktioniert, und einer, die nicht gefunden wird:
+
+- Es **erscheint von selbst**, sobald sich jemand einwählt. Ohne es müsste an
+  jedem Standort ein Schild mit einer Adresse hängen.
+- Es **nennt den Standort** und gibt die passende Adresse aus — der Buchstabe
+  steht schon darin.
+- Es **hält das Handy im Netz**. Ohne Portal meldet das Gerät „kein Internet"
+  und wechselt oft von selbst auf Mobilfunk zurück.
+
+**Die letzte Handbewegung bleibt beim Besucher.** Wer das nicht will, braucht
+einen anderen Weg ins Handy: einen QR-Code an der Wand, den die Kamera-App
+öffnet, oder einen NFC-Aufkleber zum Antippen. Beide kosten den Automatismus,
+aber keiner von ihnen kämpft gegen das Betriebssystem.
+
 ## Verwandt
 
 - `zaehlen\wwww\router.md` — dieselben Schritte als Befehle zum Nachmachen
 - `claude-notes\drei-orte-einer-anwendung.md` — warum die Installation ein eigener Ort ist und was dort noch offen ist
 - `zaehlen\wwww\ARCHITEKTUR.md` — wo welcher Teil auf welchem Rechner liegt
+- `..\https\zertifikate-und-vertrauen.md` — warum der Browser dem Zertifikat traut, das hier ausgeliefert wird
