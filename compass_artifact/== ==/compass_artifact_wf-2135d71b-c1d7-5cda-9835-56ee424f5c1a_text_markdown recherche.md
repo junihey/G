@@ -6,9 +6,9 @@
 - **Skills**: Anthropic liefert produktionsreife Dokument-Skills (docx, pdf, pptx, xlsx); für den Wissenschaftsworkflow existieren Community-Skill-Suiten (z. B. `academic-research-skills`). Den deutschen Rechts-/Verfahrensrahmen (DFG-Kodex, DEAL, Citavi-Ausstieg, Promotions-Publikationspflicht, KI-Kennzeichnung) muss man in selbst gebauten Skills abbilden.
 
 ## Key Findings
-1. Die stabilste, vollständig kostenlose Basis sind **OpenAlex** (derzeit keine Kosten, nur E-Mail für den „polite pool"), **Semantic Scholar** (freier Key, höhere Rate Limits), **arXiv** (offene API) und **Crossref** (kein Key, mailto empfohlen). Für alle existieren mehrere gepflegte MCP-Server. **Wichtige Änderung**: OpenAlex hat laut einem Data-Quality-Audit von Pebblous (23.07.2026) am 13.02.2026 angekündigt, dass API-Keys verpflichtend werden und die Preise auf nutzungsbasierte Stufen umgestellt werden — der bisher key-freie Zugang läuft also aus (Stand vor Nutzung prüfen).
+1. Die stabilste, vollständig kostenlose Basis sind **==OpenAlex** (derzeit keine Kosten, nur E-Mail für den „polite pool"), **Semantic Scholar** (freier Key, höhere Rate Limits), **arXiv** (offene API) und **Crossref** (kein Key, mailto empfohlen)==. Für alle existieren mehrere gepflegte MCP-Server. **Wichtige Änderung**: OpenAlex hat laut einem Data-Quality-Audit von Pebblous (23.07.2026) am 13.02.2026 angekündigt, dass API-Keys verpflichtend werden und die Preise auf nutzungsbasierte Stufen umgestellt werden — der bisher key-freie Zugang läuft also aus (Stand vor Nutzung prüfen).
 2. **Zotero-MCP** ist der zentrale Workflow-Baustein: lokale Bibliothek (Local API) oder Zotero Web API, PDF-Volltext, Zitationsexport — mehrere reife Server (`54yyyu/zotero-mcp`, `kujenga/zotero-mcp`).
-3. **Philosophie-spezifisch**: PhilPapers/PhilArchive bietet eine freie OAI-PMH-Schnittstelle (nur Open-Access-Metadaten/Volltexte); dafür gibt es sogar einen fertigen Server (`sea9401/philosophy-mcp`). Deutsches Textarchiv (OAI-PMH + TEI-Download, CC BY-SA) und Perseus (CTS-API) sind ideale Bausteine für selbstgebaute Server.
+3. **Philosophie-spezifisch**: PhilPapers/PhilArchive bietet eine freie OAI-PMH-Schnittstelle (nur Open-Access-Metadaten/Volltexte); dafür gibt es sogar einen fertigen Server ==(`sea9401/philosophy-mcp`).== Deutsches Textarchiv (OAI-PMH + TEI-Download, CC BY-SA) und Perseus (CTS-API) sind ideale Bausteine für selbstgebaute Server.
 4. **Paywall/keine API**: JSTOR, Project MUSE, De Gruyter, TLG, Loeb, Philosopher's Index — hier gibt es keine freien MCP-Server; Zugang nur über Uni-Lizenz (Shibboleth/DFN-AAI).
 5. **Deutscher Kontext**: Citavi-Campuslizenzen laufen bundesweit aus (Wechsel zu Zotero); DEAL-Verträge (Wiley/Springer Nature/Elsevier) bis Ende 2028; DFG-Kodex verbindlich; KI muss gekennzeichnet werden und kann keine Autorschaft tragen; Dissertations-Publikationspflicht mit Pflichtexemplaren und DNB-Ablieferung.
 
@@ -16,36 +16,36 @@
 
 ### TEIL 1 — MCP-Server für die akademische Recherche
 
-**Grundlegende Einordnung (Aktualität):** Das MCP-Ökosystem verändert sich sehr schnell; viele Server sind Ein-Personen-Projekte ohne Wartungsgarantie. Prüfe vor Installation immer das letzte Commit-Datum, offene Issues und ob ein Paket auf PyPI/npm sauber gepflegt wird. Bevorzuge Server, die über `uvx`/`npx` direkt ausführbar sind.
+**Grundlegende Einordnung (Aktualität):** Das MCP-Ökosystem verändert sich sehr schnell; viele Server sind Ein-Personen-Projekte ohne Wartungsgarantie. ==Prüfe vor Installation immer das letzte Commit-Datum, offene Issues und ob ein Paket auf PyPI/npm sauber gepflegt wird. Bevorzuge Server, die über `uvx`/`npx` direkt ausführbar sind.==
 
 #### A. Metadaten & Literaturrecherche (offen, kostenlos)
 
 **OpenAlex** — vollständig offener Katalog; das OpenAlex Help Center nennt „over 320 million works … with tens of thousands added every day", die TU-Hamburg-Bibliothek (Feb. 2026) sogar „474+ million works". Derzeit keine API-Kosten und (noch) kein Pflicht-Key; für den schnelleren „polite pool" gibt man eine E-Mail (`OPENALEX_EMAIL`) an. **Achtung**: Ab 2026 werden API-Keys verpflichtend und die Nutzung wird in Preisstufen überführt (Ankündigung 13.02.2026) — das kann die „vollständig kostenlos"-Einordnung ändern; vor produktiver Nutzung den aktuellen Stand prüfen. MCP-Server u. a.:
-- `oksure/openalex-research-mcp` (auch als Claude Skill gebündelt)
+- ==`oksure/openalex-research-mcp`== (auch als Claude Skill gebündelt)
 - `cyanheads/openalex-mcp-server` (STDIO & HTTP)
 - `drAbreu/alex-mcp` (Autor-Disambiguierung)
 
-Einschränkung: OpenAlex speichert überwiegend keine Volltexte (Copyright), sondern Metadaten + Abstracts + OA-Links. Für Philosophie besonders wertvoll, weil breit interdisziplinär und ohne den STEM-Bias einer reinen arXiv/PubMed-Lösung.
+Einschränkung: OpenAlex speichert überwiegend ==keine Volltexte (Copyright), sondern Metadaten + Abstracts + OA-Links==. Für Philosophie besonders wertvoll, weil breit interdisziplinär und ohne den ==STEM-Bias== einer reinen arXiv/PubMed-Lösung.
 
-**Semantic Scholar (S2)** — großer Korpus (offizielle „Papers"-Abfragen ergaben zuletzt „the set of 206M papers"). Nutzung ohne Key möglich, aber mit strengen Rate Limits; ein kostenloser API-Key erhöht die Limits (Antrag über semanticscholar.org/product/api). MCP-Server:
-- `zongmin-yu/semantic-scholar-fastmcp-mcp-server` (16 Tools, an offizieller API ausgerichtet)
+**Semantic Scholar (S2)** — großer Korpus (offizielle „Papers"-Abfragen ergaben zuletzt „the set of 206M papers"). Nutzung ohne Key möglich, aber mit strengen Rate Limits; ==ein kostenloser API-Key erhöht die Limits== (Antrag über semanticscholar.org/product/api). MCP-Server:
+- ==`zongmin-yu/semantic-scholar-fastmcp-mcp-server`== (16 Tools, an offizieller API ausgerichtet)
 - `smaniches/semantic-scholar-mcp` (via `uvx s2-mcp-server`)
 
 Einschränkung: Abdeckung in den Geisteswissenschaften geringer als in STEM; als Ergänzung, nicht als alleinige Quelle.
 
-**arXiv** — offene API, kein Key. Für Philosophie nur begrenzt relevant (v. a. Logik, Philosophy of Physics, formale Erkenntnistheorie unter math.LO/physics.hist-ph). Reifer Server: `blazickjp/arxiv-mcp-server` (auf offiziellem MCP-Registry, PyPI `arxiv-mcp-server`); Achtung: gleichnamiges npm-Paket ist ein anderes Projekt.
+**arXiv** — offene API, kein Key. Für Philosophie nur begrenzt relevant (v. a. ==Logik, Philosophy of Physics, formale Erkenntnistheorie== unter math.LO/physics.hist-ph). Reifer Server: `blazickjp/arxiv-mcp-server` (auf offiziellem MCP-Registry, PyPI `arxiv-mcp-server`); Achtung: gleichnamiges npm-Paket ist ein anderes Projekt.
 
-**Crossref** — laut Crossref-Blog enthielt die Datenbank am 14.03.2026 „180.034.490 metadata records"; kein Key nötig, mailto für den „polite pool" empfohlen. MCP-Server: `JackKuo666/Crossref-MCP-Server`. Ideal für DOI-Auflösung und Metadaten-Anreicherung.
+**Crossref** — laut Crossref-Blog enthielt die Datenbank am 14.03.2026 „180.034.490 metadata records"; kein Key nötig, mailto für den „polite pool" empfohlen. MCP-Server: ==`JackKuo666/Crossref-MCP-Server`==. Ideal für DOI-Auflösung und Metadaten-Anreicherung.
 
-**Multi-Source-Server** (bündeln viele Quellen in einem Server):
+**Multi-Source-Server** (==bündeln viele Quellen in einem Server==):
 - `openags/paper-search-mcp` — „free-first"-Strategie, deckt arXiv, PubMed, bioRxiv, Semantic Scholar, Crossref, OpenAlex, CORE, Europe PMC, DOAJ, BASE, Zenodo, HAL, Unpaywall u. a. ab; optionale Keys. Enthält auch einen Sci-Hub-Workflow — den aus rechtlichen Gründen deaktiviert lassen (siehe Caveats).
 - `LinXueyuanStdio/academic-mcp`
 
 #### B. Open-Access-Volltexte
 
-**CORE.ac.uk** — laut core.ac.uk „the world's largest index of open access research literature serving over 400 million records and enabling machine access to over 40 million full text documents." Freier API-Key erforderlich (über core.ac.uk registrieren). In `paper-search-mcp` als Connector integriert (`PAPER_SEARCH_MCP_CORE_API_KEY`).
+**CORE.ac.uk** — laut core.ac.uk „the world's largest index of open access research literature serving over 400 million records and enabling machine access to over 40 million full text documents." ==Freier API-Key erforderlich== (über core.ac.uk registrieren). ==In `paper-search-mcp` als Connector integriert (`PAPER_SEARCH_MCP_CORE_API_KEY`).==
 
-**Unpaywall** — findet legale OA-Versionen per DOI. Kein Key, nur E-Mail-Angabe. MCP-Server: `ElliotPadfield/unpaywall-mcp` (inkl. PDF-Textextraktion). Sehr nützlich, um zu prüfen, ob ein Paywall-Artikel legal frei verfügbar ist.
+**Unpaywall** — findet legale OA-Versionen per DOI. ==Kein Key, nur E-Mail-Angabe==. MCP-Server: `ElliotPadfield/unpaywall-mcp` (inkl. PDF-Textextraktion). Sehr nützlich, um zu prüfen, ob ein Paywall-Artikel legal frei verfügbar ist.
 
 **OpenAIRE / BASE / DOAJ** — offene APIs; in Multi-Source-Servern (paper-search-mcp) enthalten. BASE (Bielefeld Academic Search Engine) hat eine eigene API (Registrierung/IP-Freischaltung nötig).
 
@@ -55,33 +55,33 @@ Google Scholar hat **keine offizielle API**. Es existieren zahlreiche „Google-
 1. **Scraping** (z. B. via `scholarly`-Bibliothek oder Playwright; z. B. `rnkarmakar/scholar-mcp`, docxmxm-Server). Das verstößt gegen die Google-ToS und führt schnell zu IP-Blocks und CAPTCHAs; für seriöse, reproduzierbare Forschung ungeeignet.
 2. **Kostenpflichtige Dienste**: SerpAPI oder Apify-Actors (Apify hostet mehrere Google-Scholar-Scraper als MCP, teils „pay per result", ~0,50 USD/1000). Stabiler, aber nicht kostenlos.
 
-**Empfehlung**: Google Scholar nicht als MCP betreiben. Die Kombination OpenAlex + Semantic Scholar + Crossref + CORE deckt die Abdeckung von Scholar weitgehend legal und kostenlos ab. Scholar selbst weiter manuell im Browser nutzen.
+**Empfehlung**: Google Scholar nicht als MCP betreiben. Die ==Kombination OpenAlex + Semantic Scholar + Crossref + CORE deckt die Abdeckung von Scholar weitgehend legal und kostenlos ab==. Scholar selbst weiter manuell im Browser nutzen.
 
 #### D. Zotero (zentral für den Workflow)
 
 Zotero ist der Dreh- und Angelpunkt. Zwei Zugangswege:
-- **Lokale API** (Zotero-App, „Allow other applications…" bzw. Local API aktivieren) — Daten bleiben lokal.
+- ==**Lokale API**== (Zotero-App, „Allow other applications…" bzw. Local API aktivieren) — Daten bleiben lokal.
 - **Zotero Web API** (API-Key + Library-ID unter zotero.org/settings/keys) — auch für Gruppenbibliotheken.
 
 Reife Server:
-- `54yyyu/zotero-mcp` — sehr umfangreich (`zotero-mcp setup` konfiguriert Claude Desktop automatisch; semantische Suche optional; PyPI `zotero-mcp-server`).
+- ==`54yyyu/zotero-mcp`== — sehr umfangreich (`zotero-mcp setup` konfiguriert Claude Desktop automatisch; ==semantische Suche== optional; PyPI `zotero-mcp-server`).
 - `kujenga/zotero-mcp` — Python, `uvx zotero-mcp`, Web-API oder lokal, Docker verfügbar.
-- `Xevos117/mcp-zotero` — 15 Tools inkl. Zitations-Injektion in .docx, OA-PDF-Discovery via Unpaywall.
+- `Xevos117/mcp-zotero` — 15 Tools inkl. ==Zitations-Injektion in .docx==, OA-PDF-Discovery via Unpaywall.
 - `masaki39/zotero-mcp` — schlank, lokale API + PDF-Volltextextraktion.
 
 #### E. Notizen & Wissensmanagement (MCP)
 
-- **Obsidian** (kein offizieller Server, mehrere Community-Server): `MarkusPfundstein/mcp-obsidian` (über das Community-Plugin „Local REST API"), `StevenStavrakis/obsidian-mcp`, `Piotr1215/mcp-obsidian` (direkter Vault-Dateizugriff). Alle Open Source. Besonders passend für die Zettelkasten-Methode.
+- **==Obsidian==** (kein offizieller Server, mehrere Community-Server): `MarkusPfundstein/mcp-obsidian` (über das Community-Plugin „Local REST API"), `StevenStavrakis/obsidian-mcp`, `Piotr1215/mcp-obsidian` (direkter Vault-Dateizugriff). Alle Open Source. Besonders passend für die Zettelkasten-Methode.
 - **Notion**: offizieller `makenotion/notion-mcp-server` (Open Source, benötigt Integrations-Token; Read-only-Modus möglich).
 - **Paperless-ngx** (Dokumenten-/PDF-Archiv): `nloui/paperless-mcp` (npx), `cubinet-code/paperless-ngx-mcp` (ISC). Erfordern eigene Paperless-ngx-Instanz + Token.
 
 #### F. PDF-Lesen & -Extraktion
 
-- Anthropics **pdf-Skill** (siehe Teil 2) deckt Textextraktion, Merge/Split, Formulare, OCR ab.
+- ==Anthropics **pdf-Skill** (siehe Teil 2) deckt Textextraktion, Merge/Split, Formulare, OCR== ab.
 - Die meisten Zotero-MCP-Server extrahieren PDF-Volltext direkt aus Anhängen.
 - Für reine Dateisystem-PDFs: Filesystem-MCP + pdf-Skill oder `unpaywall-mcp` (PDF-Text).
 
-#### G. Philosophie-spezifische Quellen
+#### G. ==Philosophie-spezifische Quellen==
 
 **PhilPapers / PhilArchive** — freie **OAI-PMH-Schnittstelle** v2.0 unter `https://philarchive.org/oai.pl`. Wichtig: Nur Open-Access-/nutzereingereichte Inhalte sind über OAI verfügbar; die kostenpflichtige PhilPapers-Indexierung (Universitätsabo, u. a. Philosopher's Index) ist **nicht** über OAI abrufbar. ToS beachten (keine Massenredistribution). Fertiger Server: `sea9401/philosophy-mcp` (keyless; zieht laut Beschreibung PhilPapers/PhilArchive, OpenAlex, Project Gutenberg und SEP ein; MIT; Wartungsstand vor Produktivnutzung prüfen).
 
@@ -122,22 +122,22 @@ Für all diese gibt es keine fertigen Philosophie-MCP-Server, aber die offenen S
 
 #### Öffentlich verfügbare Skills (Stand 2025/2026)
 
-**Anthropic offiziell** (`anthropics/skills`): Die **Dokument-Skills** docx, pdf, pptx, xlsx sind produktionsreif (source-available, nicht Open Source; die übrigen Beispiele Apache-2.0). Installation als Claude-Code-Plugin: `/plugin marketplace add anthropics/skills`, dann `/plugin install document-skills@anthropic-agent-skills`. Enthält außerdem `skill-creator` (zum Bauen eigener Skills) und `mcp-builder`. Auf bezahlten Claude.ai-Plänen sind die Dokument-Skills bereits aktiv.
+**Anthropic offiziell** (`anthropics/skills`): Die **Dokument-Skills** docx, pdf, pptx, xlsx sind produktionsreif (source-available, nicht Open Source; die übrigen Beispiele Apache-2.0). Installation als Claude-Code-Plugin: ==`/plugin marketplace add anthropics/skills`, dann `/plugin install document-skills@anthropic-agent-skills`==. Enthält außerdem `skill-creator` (zum Bauen eigener Skills) und ==`mcp-builder`==. Auf bezahlten Claude.ai-Plänen sind die Dokument-Skills bereits aktiv.
 
 **Community-Skills für Wissenschaft**:
-- `Imbad0202/academic-research-skills` (MIT) — Suite für die komplette Paper-Pipeline: research → write → review → revise → finalize.
+- ==`Imbad0202/academic-research-skills`== (MIT) — Suite für die komplette Paper-Pipeline: research → write → review → revise → finalize.
 - `ComposioHQ/awesome-claude-skills` (u. a. content-research-writer) — kuratierte Sammlung.
 - Diverse „academic-writing"/„research-paper-writer"-Skills in Marktplätzen (awesomeskill.ai, ClaudSkills) — Qualität stark schwankend; die meisten sind auf IEEE/ACM-STEM-Formate ausgelegt, nicht auf deutsche geisteswissenschaftliche Fußnotenzitation. Vor Nutzung inhaltlich prüfen.
 
-Da fertige Skills den **deutschen** Rahmen und die Philosophie-Konventionen kaum abdecken, empfiehlt sich, die zentralen Phasen als eigene Skills anzulegen (SKILL.md-Format).
+Da fertige Skills den **deutschen** Rahmen und die Philosophie-Konventionen kaum abdecken, empfiehlt sich, ==die zentralen Phasen als eigene Skills anzulegen== (SKILL.md-Format).
 
-#### Der Workflow — Phase für Phase
+#### Der ==Workflow — Phase für Phase==
 
 1. **Themenfindung & Exposé** — Skill mit Struktur-Templates (Fragestellung, Forschungsstand, Methode, Zeitplan). FINER-Kriterien für Forschungsfragen.
 2. **Literaturrecherche & Beschaffung** — MCP-gestützt (OpenAlex/S2/Crossref/PhilPapers). Beschaffung über Uni-Zugang (Shibboleth/DFN-AAI), Fernleihe und **Subito** (kostenpflichtiger Dokumentlieferdienst). OA-Versionen zuerst über Unpaywall/CORE prüfen. **Sci-Hub**: in Deutschland Urheberrechtsverletzung — nicht nutzen und nicht empfehlen; entsprechende MCP-Workflows deaktiviert lassen.
-3. **Literaturverwaltung** — **Citavi-Campuslizenzen laufen bundesweit aus** (Beispiele mit Datum: HTW Dresden Ende 02/2025, HS Bonn-Rhein-Sieg 31.01.2025, Uni Greifswald 31.05.2025, HS RheinMain 31.05.2027, Uni Göttingen 30.11.2026; frühere Ausstiege u. a. DHBW und Uni Konstanz 31.03.2024). Empfehlung nahezu aller Bibliotheken: Wechsel zu **Zotero** (kostenlos, Open Source, plattformübergreifend). Beim Import Citavi→Zotero gehen Kategorien/Schlagworte an Wissenselementen verloren; rechtzeitig migrieren (nach Lizenzende kein Zugriff mehr auf Cloud-Projekte). Alternativen: JabRef (BibTeX-nativ), für LaTeX BibLaTeX/biber. Zitationsstile: In der Philosophie oft deutsche Fußnotenzitation oder Chicago (Notes-Bibliography); CSL-Stile in Zotero. Es gibt keinen festen einheitlichen „DGPhil-Stil" — meist gelten die Vorgaben des jeweiligen Instituts/Verlags.
-4. **Lesen, Exzerpieren, Zettelkasten** — Obsidian/Logseq/Zettlr, Luhmann-Methode; MCP-Anbindung an Obsidian für KI-gestützte Verknüpfung. In der Philosophie besonders verbreitet.
-5. **Schreiben** — LaTeX (Overleaf, TeXLive) für formale/logische Arbeiten; Word für viele geisteswissenschaftliche Kontexte; Pandoc/Markdown-Workflows (Zettlr) als Brücke. Deutsche Uni-Vorlagen meist fakultätsspezifisch.
+3. **Literaturverwaltung** — **Citavi-Campuslizenzen laufen bundesweit aus** (Beispiele mit Datum: HTW Dresden Ende 02/2025, HS Bonn-Rhein-Sieg 31.01.2025, Uni Greifswald 31.05.2025, HS RheinMain 31.05.2027, Uni Göttingen 30.11.2026; frühere Ausstiege u. a. DHBW und Uni Konstanz 31.03.2024). Empfehlung nahezu aller Bibliotheken: Wechsel zu **==Zotero==** (kostenlos, Open Source, plattformübergreifend). Beim Import Citavi→Zotero gehen Kategorien/Schlagworte an Wissenselementen verloren; rechtzeitig migrieren (nach Lizenzende kein Zugriff mehr auf Cloud-Projekte). Alternativen: JabRef (BibTeX-nativ), für LaTeX BibLaTeX/biber. Zitationsstile: In der Philosophie oft deutsche Fußnotenzitation oder Chicago (Notes-Bibliography); CSL-Stile in Zotero. Es gibt keinen festen einheitlichen „DGPhil-Stil" — meist gelten die Vorgaben des jeweiligen Instituts/Verlags.
+4. **Lesen, Exzerpieren, ==Zettelkasten==** — Obsidian/Logseq/Zettlr, Luhmann-Methode; MCP-Anbindung an Obsidian für KI-gestützte Verknüpfung. In der Philosophie besonders verbreitet.
+5. **Schreiben** — LaTeX (Overleaf, TeXLive) für formale/logische Arbeiten; ==Word== für viele geisteswissenschaftliche Kontexte; Pandoc/Markdown-Workflows (Zettlr) als Brücke. Deutsche Uni-Vorlagen meist fakultätsspezifisch.
 6. **Qualitative Analyse** — MAXQDA, ATLAS.ti (Campuslizenzen) — für Philosophie selten nötig, eher bei empirisch/experimenteller Philosophie.
 7. **Forschungsdatenmanagement** — DFG verlangt Umgang mit Forschungsdaten nach **FAIR-Prinzipien**; Datenmanagementpläne (DMP) via RDMO oder DMPonline. Repositorien: Zenodo, RADAR. Für Geisteswissenschaften zentral: die NFDI-Konsortien **Text+** (sprach-/textbasiert) und **NFDI4Culture**, außerdem NFDI4Memory/NFDI4Objects (kooperieren als „Humanities@NFDI"/Memorandumsgruppe).
 8. **Gute wissenschaftliche Praxis** — **DFG-Kodex „Leitlinien zur Sicherung guter wissenschaftlicher Praxis"** (seit 01.08.2019 in Kraft, 19 Leitlinien, aktuelle Version v3 2025, DOI 10.5281/zenodo.14281892), von allen Hochschulen rechtsverbindlich in eigene Satzungen umgesetzt (Voraussetzung für DFG-Fördermittel); Ombudspersonen; Plagiatsvermeidung. **KI-Nutzung**: KI kann keine Autorschaft übernehmen („nur verantwortlich handelnde natürliche Personen"); der Einsatz muss offengelegt/gekennzeichnet werden; die konkrete Kennzeichnungspflicht regeln die Prüfungsordnungen der jeweiligen Hochschule (HRK-Empfehlungen; individuelle Regelungen z. B. an TUM/LMU/HU). Ab 16.04.2026 gelten neue DFG-Leitlinien zum KI-Einsatz auch in der Begutachtung (aktive Zustimmung im elan-Portal).
