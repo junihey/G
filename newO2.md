@@ -5312,6 +5312,29 @@ Lange Zeit galt die Regel, sich bei Plänen oder Projekt-Spezifikationen auf ein
 - eleonor burger obsidian retrieval [GitHub - intellectronica/context-camp-knowledge-management-personal-agents · GitHub](https://github.com/intellectronica/context-camp-knowledge-management-personal-agents)
 	- [GitHub - tobi/qmd: mini cli search engine for your docs, knowledge bases, meeting notes, whatever. Tracking current sota approaches while being all local · GitHub](https://github.com/tobi/qmd)
 ---
+# JEV 20260918
+## [Jev + Claude Code = The New Agentic Coding Loop - YouTube](https://www.youtube.com/watch?v=ScvXFi4MUSc)
+> **Jev** ist ein Modell der Firma TypeSafe AI. Es schreibt keinen Text, es entscheidet. Man gibt ihm eine Frage, die Daten dazu und die möglichen Antworten. Es liefert zu jeder Antwort eine Wahrscheinlichkeit, meist in 100 bis 300 ms. TypeSafe nennt es ein „System-1-Modell“, nach Kahnemans *Schnelles Denken, langsames Denken*. Gemeint ist schnelles, automatisches Urteilen im Gegensatz zum langsamen Nachdenken großer Sprachmodelle wie Claude oder GPT.
+>
+> **Drei Frageformen:**
+> - `nool`: eine Ja/Nein-Frage, zum Beispiel „Ist diese Rechnung Betrug?“, ergibt 94 % ja. Was „ja“ bedeutet, lässt sich mit eigenen Kriterien festlegen.
+> - `score`: ein Wert auf einer selbst definierten Skala mit höchstens 11 Stufen. Beispiel: „Wie ernst ist diese Log-Zeile?“, von 0 = Routine bis 3 = Ausfall.
+> - `choice`: eine Auswahl aus bis zu 255 vorgegebenen Optionen, zum Beispiel Betrug / sauber / Mensch prüft.
+>
+> Mehrere Fragen passen in einen Aufruf. Die Wahrscheinlichkeiten schwanken zwischen wiederholten Aufrufen nur um wenige Prozent, man kann also im Code feste Schwellen darauf setzen.
+>
+> **Wofür man es nutzt:**
+> - **Klassifizieren und Routen**: eingehende Anfragen, Leads oder Log-Zeilen sortieren und je nach Ergebnis weiterleiten.
+> - **Echtzeit-Entscheidungen**: Moderation, Überwachung laufender Systeme, Spiel-Agenten. Eine Demo lässt Jev Minecraft spielen, ein großes Modell plant die Strategie.
+> - **Skill-Auswahl für Agenten**: Jev wählt den passenden Skill, statt alle Skill-Beschreibungen in den Kontext zu laden. Laut Hersteller sank die Fehlwahl mit Haiku 4.5 von 16,8 % auf 7,3 %.
+> - **Qualitative Linter**: Code nach Eigenschaften prüfen, die kein Regelwerk erfasst, etwa „Wird hier ein Secret geloggt?“ oder „Ist dieser Kommentar überflüssig?“.
+> - **Code-Review vorsortieren**: Jev stellt viele billige Fragen an einen Diff. Nur die auffälligen Stellen gehen an ein großes Modell. Ein Sentry-Ingenieur berichtet von höherer Genauigkeit bei einem Fünftel der Kosten.
+> - **Tests im Browser**: schnelle Browser-Agenten klicken Nutzerwege durch und melden Fehler an den Coding-Agenten zurück.
+>
+> **Das Muster dahinter:** Jev entscheidet schnell und oft. Ein großes Modell liest ab und zu das Protokoll dieser Entscheidungen und ihrer Folgen. Dann schreibt es Jevs Kriterien, Beispiele und Schwellen neu.
+>
+> **Grenzen:** Jev ist nur als gehostete API erreichbar, über TypeSafe und Vercels AI Gateway, derzeit mit Warteliste. Es gibt keine offenen Gewichte und keinen lokalen Betrieb, alle Eingaben gehen an den Anbieter. Es erzeugt keinen Text, also auch keine Begründung. Die Antworten müssen vorher feststehen.
+---
 # canvas 2026050920
 ## patch 
 ### Granulares Wave-Stitching mit Jitter-Modulation
