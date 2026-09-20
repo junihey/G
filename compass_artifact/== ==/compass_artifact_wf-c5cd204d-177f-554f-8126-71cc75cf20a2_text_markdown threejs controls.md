@@ -7,8 +7,8 @@
 
 ## Key Findings
 1. **Vollständige offizielle Liste** (Ordner `examples/jsm/controls` im mrdoob/three.js-Repo, verifiziert): OrbitControls, MapControls, TrackballControls, ArcballControls, FlyControls, FirstPersonControls, PointerLockControls, DragControls, TransformControls. Alle sind Addons und müssen explizit importiert werden.
-2. **Gemeinsame Basisklasse `Controls`** (`src/extras/Controls.js`, Kern – kein Addon): abstrakte Basis („Abstract base class for controls.") mit `object`, `domElement`, `enabled` (Default `true`), `state`, `keys`, `mouseButtons`, `touches` und den Methoden `connect(element)`, `disconnect()`, `dispose()`, `update(delta)`. TransformControls ist nun davon abgeleitet – die visuelle Repräsentation wird über `scene.add(controls.getHelper())` hinzugefügt.
-3. **Kamera-Controls** (OrbitControls, MapControls, TrackballControls, ArcballControls, FlyControls, FirstPersonControls, PointerLockControls) bewegen die Kamera; **Objekt-Controls** (DragControls, TransformControls) manipulieren Objekte.
+2. **Gemeinsame Basisklasse `Controls`** (`src/extras/Controls.js`, Kern – kein Addon): ==abstrakte Basis== („Abstract base class for controls.") mit `object`, `domElement`, `enabled` (Default `true`), `state`, `keys`, `mouseButtons`, `touches` und den Methoden `connect(element)`, `disconnect()`, `dispose()`, `update(delta)`. TransformControls ist nun davon abgeleitet – die visuelle Repräsentation wird über `scene.add(controls.getHelper())` hinzugefügt.
+3. **Kamera-Controls** (OrbitControls, MapControls, TrackballControls, ArcballControls, FlyControls, FirstPersonControls, PointerLockControls) bewegen die Kamera; ==**Objekt-Controls**== (DragControls, TransformControls) manipulieren Objekte.
 4. **Entfernte/veraltete Klassen**: DeviceOrientationControls wurde entfernt (PR #22654), weil „a reliable implementation across all devices was not possible. It was also not sufficient for a XR fallback." – es gibt keinen offiziellen Ersatz (Issue #22996: „there is no alternative"); man muss DeviceOrientationEvent selbst implementieren. In der aktuellen Migration wurden zudem `DragControls.activate()/deactivate()` zu `connect()/disconnect()` umbenannt und `PointerLockControls.getObject()` entfernt (→ `controls.object`).
 5. **Barrierefreiheit** ist nicht „eingebaut": WebGL rendert in ein `<canvas>`, das ohne ARIA/Fallback für Assistenztechnologie unsichtbar ist. Lösungsmuster: fokussierbares Canvas (`tabindex="0"`), ARIA-Rolle + Label, paralleles interaktives DOM-Overlay, sichtbare Buttons für Zoom/Rotate, `prefers-reduced-motion`-Handling und `@react-three/a11y` (für R3F).
 
@@ -70,7 +70,7 @@ renderer.setAnimationLoop(() => {
 ```
 
 #### MapControls
-**Zweck:** Kamera-Bewegung über eine Karte aus der Vogelperspektive. Teilt die Implementierung mit OrbitControls, aber mit anderem Preset und deaktiviertem Screen-Space-Panning.
+**Zweck:** Kamera-Bewegung über eine Karte aus der Vogelperspektive. ==Teilt die Implementierung mit OrbitControls, aber mit anderem Preset und deaktiviertem Screen-Space-Panning.==
 **Gesten:** Pan: linke Maustaste oder Pfeiltasten / Touch: 1 Finger; Orbit: rechte Maustaste bzw. linke + Ctrl/Meta/Shift / Touch: 2 Finger rotieren; Zoom: mittlere Maustaste/Mausrad / Touch: Pinch.
 **Property-Unterschied:** `mouseButtons = {LEFT:PAN, MIDDLE:DOLLY, RIGHT:ROTATE}`, `screenSpacePanning = false`.
 
@@ -81,8 +81,8 @@ controls.enableDamping = true;
 // controls.update() im Animationsloop erforderlich
 ```
 
-#### TrackballControls
-**Zweck:** Freies Rotieren ohne feste „up"-Achse – die Kamera kann über die Pole hinausdrehen und sich „überschlagen" (kein Gimbal-Constraint wie bei OrbitControls). Gut für Inspektion von Objekten aus jedem Winkel.
+#### ==TrackballControls==
+**Zweck:** Freies Rotieren ohne feste „up"-Achse – die Kamera ==kann über die Pole hinausdrehen und sich „überschlagen"== (kein Gimbal-Constraint wie bei OrbitControls). Gut für Inspektion von Objekten aus jedem Winkel.
 **Gesten:** Rotate: linke Maustaste (oder Taste A) / Zoom: mittlere Maustaste, Mausrad (oder Taste S) / Pan: rechte Maustaste (oder Taste D).
 **Properties:** `rotateSpeed` (Default `1.0`), `zoomSpeed` (Default `1.2`), `panSpeed` (Default `0.3`), `noRotate`, `noZoom`, `noPan`, `staticMoving` (Default `false`; deaktiviert Damping), `dynamicDampingFactor` (Default `0.2`), `minDistance`/`maxDistance`, `keys` (Default `KeyA, KeyS, KeyD`).
 **Besonderheit:** `handleResize()` muss bei Fenstergrößenänderung aufgerufen werden; `update()` jeden Frame.
@@ -95,7 +95,7 @@ controls.staticMoving = false;   // Damping an
 addEventListener('resize', () => controls.handleResize());
 ```
 
-#### ArcballControls
+#### ==ArcballControls==
 **Zweck:** Präzises „Trackball"-Gefühl per virtueller Kugel (Gizmo), mit Rotation, Pan, Zoom, Fokus und Animationen. Unterstützt perspektivische und orthografische Kameras.
 **Gesten:** Rotate/Pan/Zoom per Maus/Touch, Doppelklick zum Fokussieren, Gizmos zum achsenweisen Drehen.
 **Properties:** `enableAnimations`, `enablePan`, `enableRotate`, `enableZoom`, `cursorZoom` (Default `false`), `adjustNearFar` (Default `false`), `scaleFactor`, `dampingFactor`, `wMax`, `setGizmosVisible()`, `setCamera()`.
@@ -109,7 +109,7 @@ controls.setGizmosVisible(true);
 
 #### FlyControls
 **Zweck:** Navigation wie im Flugmodus von DCC-Tools (Blender). Laut Doku: „You can arbitrarily transform the camera in 3D space without any limitations."
-**Gesten/Tasten:** WASD (vor/zurück/seitlich), R/F (hoch/runter), Q/E (Roll), Pfeiltasten (Pitch/Yaw), Maus-Look (dauerhaft, oder nur bei Drag wenn `dragToLook = true`).
+**Gesten/Tasten:** ==WASD== (vor/zurück/seitlich), R/F (hoch/runter), Q/E (Roll), Pfeiltasten (Pitch/Yaw), Maus-Look (dauerhaft, oder nur bei Drag wenn `dragToLook = true`).
 **Properties:** `movementSpeed` (Default `1`), `rollSpeed` (Default `0.005`), `dragToLook` (Default `false`), `autoForward` (Default `false`).
 **Event:** `change`. **Muss** `update(delta)` mit `clock.getDelta()` pro Frame aufrufen.
 
@@ -202,7 +202,7 @@ tcontrols.addEventListener('dragging-changed', e => orbit.enabled = !e.value);
 ### 2. Gesten & Eingaben, die keine Built-in-Control abdeckt
 
 #### Tap/Klick-Selektion, Hover via Raycaster + Pointer Events
-Der `Raycaster` übersetzt eine 2D-Zeigerposition in einen 3D-Strahl und liefert getroffene Objekte. Für Barrierefreiheit `pointerdown`/`click` (statt nur `mousedown`) und Pointer Events verwenden, da sie Maus, Touch und Stift vereinheitlichen.
+Der `Raycaster` übersetzt eine 2D-Zeigerposition in einen 3D-Strahl und liefert getroffene Objekte. ==Für Barrierefreiheit `pointerdown`/`click` (statt nur `mousedown`) und Pointer Events verwenden, da sie Maus, Touch und Stift vereinheitlichen.==
 
 ```js
 const raycaster = new THREE.Raycaster();
@@ -222,7 +222,7 @@ renderer.domElement.addEventListener('pointerdown', (e) => {
 ```
 
 #### Hover, Long-Press, Double-Tap, Swipe, eigenes Pinch
-Diese Gesten sind nicht als API vorhanden – man leitet sie aus Pointer/Touch-Events ab:
+Diese Gesten sind ==nicht als API vorhanden – man leitet sie aus Pointer/Touch-Events ab:==
 - **Hover:** `pointermove` + Raycaster (nur auf Geräten mit `hover`-Fähigkeit, per `matchMedia('(hover: hover)')` prüfen).
 - **Long-Press:** Timer bei `pointerdown` (~500 ms), Abbruch bei `pointerup`/`pointermove` über Schwellwert.
 - **Double-Tap:** zwei `pointerup` innerhalb ~300 ms und geringer Distanz.
@@ -262,7 +262,7 @@ el.addEventListener('pointerup', e => { active.delete(e.pointerId); startDist = 
 Wichtig: Auf dem Canvas `touch-action: none` (CSS) setzen, damit der Browser Swipe/Pinch nicht selbst als Scroll/Zoom abfängt.
 
 #### Tilt / Device Orientation (Neigungssteuerung)
-`DeviceOrientationControls` wurde entfernt. Man nutzt `DeviceOrientationEvent` direkt. **iOS 13+ verlangt** eine explizite Berechtigung über `DeviceOrientationEvent.requestPermission()`. Laut MDN „requires transient activation, meaning that it must be triggered by a UI event such as a button click", ist „available only in secure contexts (HTTPS)" und liefert „a Promise that resolves with a string which is either 'granted' or 'denied'." (Optionaler Parameter `absolute` bezieht das Magnetometer ein.)
+==`DeviceOrientationControls` wurde entfernt. Man nutzt `DeviceOrientationEvent` direkt. **iOS 13+ verlangt** eine explizite Berechtigung über `DeviceOrientationEvent.requestPermission()`.== Laut MDN „requires transient activation, meaning that it must be triggered by a UI event such as a button click", ist „available only in secure contexts (HTTPS)" und liefert „a Promise that resolves with a string which is either 'granted' or 'denied'." (Optionaler Parameter `absolute` bezieht das Magnetometer ein.)
 
 ```js
 const btn = document.getElementById('enable-tilt');
@@ -281,7 +281,7 @@ btn.addEventListener('click', async () => {
   });
 });
 ```
-**Barrierefreiheit (WCAG 2.5.4 Motion Actuation):** Tilt darf niemals die einzige Bedienung sein und muss abschaltbar sein – hier über den Opt-in-Button gelöst; zusätzlich müssen OrbitControls o. Ä. als Alternative bereitstehen.
+**Barrierefreiheit (WCAG 2.5.4 Motion Actuation):** ==Tilt darf niemals die einzige Bedienung sein und muss abschaltbar sein – hier über den Opt-in-Button gelöst; zusätzlich müssen OrbitControls o. Ä. als Alternative bereitstehen.==
 
 #### Gamepad API
 Polling-basiert im Animationsloop (kein Event pro Achse). `gamepadconnected`-Event abwarten, dann `navigator.getGamepads()` pro Frame lesen; Deadzone anwenden und für Buttons Edge-Detection nutzen.
@@ -354,7 +354,7 @@ renderer.setAnimationLoop(() => {
 });
 ```
 
-- **@react-three/drei (für React Three Fiber):** wrappt die three.js-Controls und ergänzt eigene: `OrbitControls`, `MapControls`, `TrackballControls`, `ArcballControls`, `FlyControls`, `PointerLockControls`, `FirstPersonControls`, `CameraControls` sowie **`PresentationControls`** (rotiert den Inhalt statt der Kamera, mit Federn/Snap-Back und Limits), **`ScrollControls`** (bindet Scroll-Position an Animation; `pages`, `damping`, `horizontal`, `infinite`), **`KeyboardControls`** (deklaratives Key-Mapping über den `useKeyboardControls`-Hook), `DragControls`, `PivotControls`, `TransformControls`, `MotionPathControls`.
+- **@react-three/drei (für React Three Fiber):** wrappt die three.js-Controls und ergänzt eigene: `OrbitControls`, `MapControls`, `TrackballControls`, `ArcballControls`, `FlyControls`, `PointerLockControls`, `FirstPersonControls`, `CameraControls` sowie ==**`PresentationControls`** (rotiert den Inhalt statt der Kamera, mit Federn/Snap-Back und Limits), **`ScrollControls`** (bindet Scroll-Position an Animation; `pages`, `damping`, `horizontal`, `infinite`),== **`KeyboardControls`** (deklaratives Key-Mapping über den `useKeyboardControls`-Hook), `DragControls`, `PivotControls`, `TransformControls`, `MotionPathControls`.
 
 ```jsx
 <PresentationControls global polar={[0, Math.PI/2]} azimuth={[-Infinity, Infinity]}>
@@ -369,14 +369,14 @@ renderer.setAnimationLoop(() => {
 </KeyboardControls>
 ```
 
-- **@react-three/a11y:** Bringt Fokus, Tab-Index, Screenreader-Support und Alt-Texte in R3F (siehe Abschnitt 4).
-- **Gesten-Bibliotheken:** **@use-gesture/react** (bzw. vanilla `@use-gesture/vanilla`) und **hammer.js** liefern robuste, normalisierte Erkennung von Drag, Pinch, Swipe, Long-Press etc. und lassen sich mit Raycasting/Controls kombinieren, statt Pointer-Logik selbst zu schreiben.
+- **@react-three/a11y:** Bringt ==Fokus==, Tab-Index, Screenreader-Support und Alt-Texte in R3F (siehe Abschnitt 4).
+- **Gesten-Bibliotheken:** **@use-gesture/react** (bzw. vanilla `@use-gesture/vanilla`) und **hammer.js** liefern robuste, normalisierte Erkennung von Drag, ==Pinch==, Swipe, Long-Press etc. und ==lassen sich mit Raycasting/Controls kombinieren, statt Pointer-Logik selbst zu schreiben.==
 
 ### 4. Barrierefreiheit in der Tiefe
 
-**Grundproblem:** Das `<canvas>` ist „only a image of pixels" – Screenreader sehen den 3D-Inhalt nicht. Man kann dem Canvas nur eine ARIA-Rolle + Label geben oder Fallback-Content bzw. ein paralleles DOM bereitstellen.
+**Grundproblem:** Das `<canvas>` ist „only a image of pixels" – Screenreader sehen den 3D-Inhalt nicht. Man kann dem Canvas nur eine ==ARIA-Rolle + Label geben oder Fallback-Content bzw. ein paralleles DOM bereitstellen.==
 
-**a) Fokus & Tastatur (WCAG 2.1.1 Keyboard).** Canvas mit `tabindex="0"` fokussierbar machen; `tabindex` allein macht das Element „TABable", aktiviert es aber nicht – Enter/Space-Handler ergänzen. Für Kamera-Pan `controls.listenToKeyEvents(window)` setzen. Jede Maus-/Touch-Interaktion braucht ein Tastatur-Äquivalent.
+**a) ==Fokus== & Tastatur (WCAG 2.1.1 Keyboard).** Canvas mit `tabindex="0"` fokussierbar machen; `tabindex` allein macht das Element „TABable", aktiviert es aber nicht – Enter/Space-Handler ergänzen. Für Kamera-Pan `controls.listenToKeyEvents(window)` setzen. Jede Maus-/Touch-Interaktion braucht ein Tastatur-Äquivalent.
 
 **b) ARIA & Live-Regions.**
 ```html
@@ -402,9 +402,9 @@ zoomInBtn.addEventListener('click', () => { camera.position.multiplyScalar(0.9);
 rotateLeftBtn.addEventListener('click', () => { controls.setAzimuthalAngle?.(controls.getAzimuthalAngle() - 0.2); });
 ```
 
-**d) Pointer Cancellation (WCAG 2.5.2).** Aktionen erst bei `pointerup`/`click` auslösen (nicht schon bei `pointerdown`), damit Nutzer eine begonnene Geste durch Wegziehen abbrechen können.
+==**d) Pointer Cancellation (WCAG 2.5.2).** Aktionen erst bei `pointerup`/`click` auslösen (nicht schon bei `pointerdown`), damit Nutzer eine begonnene Geste durch Wegziehen abbrechen können.==
 
-**e) Bewegung & Motion Sickness (WCAG 2.3.3 Animation from Interactions, 2.5.4 Motion Actuation).** `prefers-reduced-motion` respektieren: Auto-Rotate, Damping/Inertia, Kamera-Tweens und parallax-artige Effekte reduzieren oder abschalten. Das gilt auch für JS-getriebene Animationen (eine CSS-`@media`-Regel deckt three.js-Animationen NICHT ab – `matchMedia` in JS abfragen; vgl. W3C-Technik SCR40). Tilt-Steuerung immer optional und abschaltbar halten.
+**e) Bewegung & Motion Sickness (WCAG 2.3.3 Animation from Interactions, 2.5.4 Motion Actuation).** `prefers-reduced-motion` respektieren: ==Auto-Rotate, Damping/Inertia, Kamera-Tweens und parallax-artige Effekte reduzieren oder abschalten.== Das gilt auch für JS-getriebene Animationen (eine CSS-`@media`-Regel deckt three.js-Animationen NICHT ab – `matchMedia` in JS abfragen; vgl. W3C-Technik SCR40). ==Tilt-Steuerung immer optional und abschaltbar halten.==
 ```js
 const mq = matchMedia('(prefers-reduced-motion: reduce)');
 function applyMotionPref() {
@@ -415,11 +415,11 @@ applyMotionPref();
 mq.addEventListener('change', applyMotionPref);   // live auf Änderung reagieren
 ```
 
-**f) `touch-action` CSS.** `canvas { touch-action: none; }` verhindert, dass native Browser-Gesten mit den 3D-Gesten kollidieren – aber nur setzen, wenn eigene Alternativen existieren, sonst nimmt man Nutzern das native Scrollen.
+**f) `touch-action` CSS.** ==`canvas { touch-action: none; }`== verhindert, dass native Browser-Gesten mit den 3D-Gesten kollidieren – aber nur setzen, wenn eigene Alternativen existieren, sonst nimmt man Nutzern das native Scrollen.
 
 **g) Pointer-Lock-Vorbehalte.** PointerLockControls fangen die Maus und blenden den Cursor aus – für viele Nutzer (Motorik, Screenreader, Nutzer die Escape zum Verlassen brauchen) problematisch. Nur mit klarer Anleitung, Opt-in-Klick und einer Nicht-Pointer-Lock-Alternative einsetzen.
 
-**h) @react-three/a11y (R3F).** Stellt `<A11yAnnouncer/>` (Live-Region-Div für Screenreader) und `<A11y>` bereit, das fokussierbare Objekte mit Rolle (`content`→`<p>`, `button`→`<button>`, `togglebutton`→`<button aria-pressed>`, `link`→`<a>`), Alt-Text, Tab-Index und `focusCall`/`actionCall`-Callbacks versieht; der `useA11y()`-Hook liefert Hover/Focus/Pressed-Status zum visuellen Feedback. Es synchronisiert ein unsichtbares, aber semantisches DOM mit der 3D-Szene.
+**h) @react-three/a11y (R3F).** Stellt `<A11yAnnouncer/>` (==Live-Region-Div für Screenreader==) und `<A11y>` bereit, das fokussierbare Objekte mit ==Rolle== (`content`→`<p>`, `button`→`<button>`, `togglebutton`→`<button aria-pressed>`, `link`→`<a>`), ==Alt-Text, Tab-Index und `focusCall`/`actionCall`-Callbacks== versieht; der ==`useA11y()`-Hook liefert Hover/Focus/Pressed-Status zum visuellen Feedback.== Es synchronisiert ein unsichtbares, aber semantisches DOM mit der 3D-Szene.
 ```jsx
 import { A11y, A11yAnnouncer } from '@react-three/a11y';
 <Canvas>{/* ... */}
@@ -431,7 +431,7 @@ import { A11y, A11yAnnouncer } from '@react-three/a11y';
 ```
 Für Vanilla-three.js existiert das kleinere Paket **a3** (fokussierbare Meshes, Tab + Enter, Cursor-Wechsel).
 
-### 5. Zusammenfassungstabelle: Geste → Control/Technik → barrierefreie Alternative
+### 5. ==Zusammenfassungstabelle==: Geste → Control/Technik → barrierefreie Alternative
 
 | Geste / Eingabe | Bereitgestellt durch | Barrierefreie Alternative |
 |---|---|---|

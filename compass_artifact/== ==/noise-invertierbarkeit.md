@@ -20,7 +20,7 @@ Teil IX markiert den entscheidenden Bruch: Der graduelle Übergang von Sample zu
 
 ## 1. Was "invertierbar" genau bedeutet
 
-Eine Abbildung `F` ist invertierbar, wenn es eine Abbildung `F⁻¹` gibt mit `F⁻¹(F(x)) = x` für alle zulässigen `x`. Die notwendige und hinreichende Bedingung dafür ist **Injektivität**: Zwei verschiedene Eingaben dürfen niemals dieselbe Ausgabe erzeugen.
+Eine Abbildung `F` ist invertierbar, wenn es eine Abbildung `F⁻¹` gibt mit `F⁻¹(F(x)) = x` für alle zulässigen `x`. Die notwendige und hinreichende Bedingung dafür ist **Injektivität**: ==Zwei verschiedene Eingaben dürfen niemals dieselbe Ausgabe erzeugen.==
 
 Formal:
 
@@ -32,9 +32,9 @@ Alles, was in diesem Dokument folgt, ist eine Antwort auf die Frage: *Wie baue i
 
 ### Warum Hard Clipping durchfällt
 
-Betrachte `y = clip(x, T) = max(-T, min(T, x))`. Für jedes `x > T` gilt `y = T`. Die Urbildmenge des Wertes `T` ist das gesamte Intervall `[T, ∞)`. Die Abbildung kollabiert ein Kontinuum auf einen Punkt und ist damit nicht injektiv.
+Betrachte `y = clip(x, T) = max(-T, min(T, x))`. Für jedes `x > T` gilt `y = T`. Die Urbildmenge des Wertes `T` ist das gesamte Intervall `[T, ∞)`. ==Die Abbildung kollabiert ein Kontinuum auf einen Punkt und ist damit nicht injektiv.==
 
-Dasselbe Argument erledigt:
+==Dasselbe== Argument erledigt:
 
 | Verfahren | Grund für Nicht-Injektivität |
 |---|---|
@@ -52,7 +52,7 @@ Das ist der zentrale konzeptionelle Unterschied, aus dem später mehrere Verfahr
 
 **Punktweise Invertierbarkeit.** `y[n]` hängt nur von `x[n]` ab, und die Abbildung `ℝ → ℝ` ist injektiv. Jedes Sample lässt sich isoliert zurückrechnen. Sehr robust, aber stark eingeschränkt.
 
-**Folgen-Invertierbarkeit.** Die Abbildung `x[·] → y[·]` von der ganzen Folge auf die ganze Folge ist injektiv, obwohl die punktweise Abbildung es nicht ist. Der Dekoder darf beliebig viel Kontext benutzen.
+==**Folgen-Invertierbarkeit.**== Die Abbildung `x[·] → y[·]` von der ganzen Folge auf die ganze Folge ist injektiv, obwohl die punktweise Abbildung es nicht ist. Der Dekoder darf beliebig viel Kontext benutzen.
 
 Ein Verfahren kann also aus einer nicht-injektiven Punktabbildung bestehen und trotzdem als Ganzes umkehrbar sein. Genau das nutzen Lifting (Teil VII.1), rückwärtsadaptive Parameter (VII.3) und Modulo-Folding (VII.4). Wer diesen Unterschied nicht sauber trennt, wird die zweite Hälfte des Dokuments für falsch halten.
 
@@ -62,11 +62,11 @@ Der Begriff verschmilzt drei unabhängige Eigenschaften, und die Verwirrung dar�
 
 **(a) Spektral.** Flaches Betragsspektrum. Messbar über die spektrale Flachheit (geometrisches durch arithmetisches Mittel des Leistungsspektrums), Wert nahe 1 heißt rauschartig.
 
-**(b) Strukturell / phasisch.** Keine kohärenten Transienten, keine erkennbare zeitliche Gestalt. Ein Signal kann ein völlig unflaches Spektrum haben und trotzdem als Rauschen wahrgenommen werden, wenn nur die Phase zerstört ist. Das ist der Kern von Teil IV.
+**(b) Strukturell / phasisch.** Keine kohärenten Transienten, keine erkennbare zeitliche Gestalt. Ein Signal kann ein ==völlig unflaches Spektrum haben und trotzdem als Rauschen wahrgenommen werden, wenn nur die Phase zerstört ist.== Das ist der Kern von Teil IV.
 
 **(c) Informationstheoretisch.** Echter Informationsverlust, die Entropie der Quelle ist im Ergebnis nicht mehr enthalten.
 
-**Der Schlüsselsatz dieses Dokuments:** Invertierbare Verfahren können (a) und (b) beliebig weit treiben, aber (c) niemals erreichen. Eine Bijektion vernichtet keine Information, sie stellt sie nur unhörbar dar.
+**Der Schlüsselsatz dieses Dokuments:** ==Invertierbare Verfahren können (a) und (b) beliebig weit treiben, aber (c) niemals erreichen.== Eine ==Bijektion vernichtet keine Information==, sie stellt sie nur unhörbar dar.
 
 Daraus folgt eine hilfreiche Umdeutung: *Invertierbare Rauscherzeugung ist Verschlüsselung.* Die Verfahren in Teil III und VI sind buchstäblich Chiffren, das One-Time-Pad und die Stromchiffre. Wer nach Ideen sucht, findet in der Kryptografie einen unerschöpflichen Katalog bijektiver Abbildungen, die statistisch wie Rauschen aussehen.
 
@@ -78,12 +78,12 @@ Mathematische Invertierbarkeit ist notwendig, aber nicht hinreichend für prakti
 κ(x) = 1 / |F'(x)|
 ```
 
-Ist die Vorwärtskennlinie an einer Stelle flach, so ist die Rückwärtskennlinie dort steil, und jeder Fehler im Zwischensignal wird um `κ` verstärkt. Fehlerquellen sind Fließkomma-Rundung, jede Quantisierung auf dem Weg, jedes Dithering, jede verlustbehaftete Zwischenspeicherung.
+Ist die Vorwärtskennlinie an einer Stelle flach, so ist die Rückwärtskennlinie dort steil, und jeder Fehler im Zwischensignal wird um `κ` verstärkt. Fehlerquellen sind ==Fließkomma-Rundung, jede Quantisierung auf dem Weg, jedes Dithering, jede verlustbehaftete Zwischenspeicherung==.
 
 Drei praktische Konsequenzen:
 
-1. Durchgehend in **Float64** rechnen. Ein Zwischenexport nach 16 Bit zerstört die meisten schlecht konditionierten Verfahren vollständig.
-2. Verfahren mit **flachem Betragsgang** (Allpass, Vorzeichenmodulation, Permutation, XOR, Lifting) sind perfekt konditioniert. `κ = 1` überall.
+1. ==Durchgehend in **Float64** rechnen.== Ein Zwischenexport nach 16 Bit zerstört die meisten schlecht konditionierten Verfahren vollständig.
+2. Verfahren mit ==**flachem Betragsgang** (Allpass, Vorzeichenmodulation, Permutation, XOR, Lifting)== sind perfekt konditioniert. `κ = 1` überall.
 3. Immer den **Round-Trip-Fehler messen**, siehe Teil XI. Ein Verfahren, das formal invertierbar ist und bei −25 dB Fehler landet, ist praktisch nicht invertierbar.
 
 ### Der Sonderfall der exakten Arithmetik
@@ -92,10 +92,10 @@ In `ℤ/2ⁿ` (Integer mit natürlichem Overflow) und bei Bit-Operationen gibt e
 
 ---
 
-# TEIL II — KLASSE A: GEDÄCHTNISLOSE KENNLINIEN
+# TEIL II — KLASSE A: ==GEDÄCHTNISLOSE== KENNLINIEN
 
 **Prinzip.** `y[n] = f(x[n])`, dieselbe Funktion für jedes Sample.
-**Bedingung.** `f` muss **streng monoton** sein.
+**Bedingung.** `f` muss ==**streng monoton**== sein.
 **Inversion.** `x[n] = f⁻¹(y[n])`, punktweise.
 
 Das ist die einfachste Klasse und die einzige, in der man die Umkehrfunktion buchstäblich hinschreiben kann.
@@ -122,17 +122,17 @@ f⁻¹(y) = artanh(y) / g
 
 Ebenfalls streng monoton, also formal in Ordnung. Die Kondition ist jedoch **deutlich schlechter** als bei der Potenzkennlinie, weil `tanh` exponentiell abflacht: Die Fehlerverstärkung wächst wie `e^(2g|x|)/2`. Bei `g = 50` ist das astronomisch, und `artanh` divergiert zusätzlich, sobald durch Rundung ein Wert `|y| ≥ 1` entsteht.
 
-Praktische Regel: `tanh` ist als invertierbares Verfahren nur bis etwa `g ≈ 5` brauchbar. Wer härter will, nimmt die Potenzkennlinie.
+Praktische Regel: `tanh` ist als invertierbares Verfahren nur ==bis etwa `g ≈ 5==`== brauchbar. Wer härter will, nimmt die Potenzkennlinie.
 
-Besser konditionierte Verwandte: `arsinh(g·x)/arsinh(g)` (wächst logarithmisch statt zu sättigen) und `x/(1+g|x|)` mit rationaler Umkehrung.
+==Besser konditionierte Verwandte==: `arsinh(g·x)/arsinh(g)` (wächst logarithmisch statt zu sättigen) und `x/(1+g|x|)` mit rationaler Umkehrung.
 
 ## 3. Grenzen dieser Klasse
 
-Jede gedächtnislose monotone Kennlinie hat eine unüberwindbare Eigenschaft: Sie erhält die **Nulldurchgänge und die Ordnung der Samplewerte**. Das Ergebnis klingt immer nach "verzerrtes Original", niemals nach Rauschen im Sinne von Teil I.3(b). Für echte Dekohärenz braucht man Gedächtnis oder externe Modulation.
+Jede gedächtnislose monotone Kennlinie hat eine unüberwindbare Eigenschaft: Sie erhält die **Nulldurchgänge und die Ordnung der Samplewerte**. Das Ergebnis klingt immer nach "verzerrtes Original", niemals nach Rauschen im Sinne von Teil I.3(b). ==Für echte Dekohärenz braucht man Gedächtnis oder externe Modulation.==
 
 ## 4. Der Ausweg: Bijektionen in ℤ/2ⁿ
 
-Sobald man die reelle Achse verlässt und in Integer-Arithmetik mit natürlichem Überlauf rechnet, ist Monotonie keine Bedingung mehr. Gefordert ist nur noch, dass die Abbildung `ℤ/2ⁿ → ℤ/2ⁿ` bijektiv ist.
+==Sobald man die reelle Achse verlässt und in Integer-Arithmetik mit natürlichem Überlauf rechnet, ist Monotonie keine Bedingung mehr.== Gefordert ist nur noch, dass die Abbildung `ℤ/2ⁿ → ℤ/2ⁿ` bijektiv ist.
 
 **Wrap-Around statt Clipping.**
 
@@ -141,7 +141,7 @@ y = (int16)(g · x)          // Überlauf wird nicht abgefangen
 x = (int16)(y) / g          // exakt, solange g|x| im Wertebereich abgebildet wurde
 ```
 
-Der Überlauf ist modulo `2¹⁶` bijektiv. Klanglich ist das der härteste Digitalcharakter überhaupt, ein zersägtes Kreischen, weil bei jedem Überlauf ein Sprung über den gesamten Wertebereich stattfindet.
+Der Überlauf ist modulo `2¹⁶` bijektiv. ==Klanglich ist das der härteste Digitalcharakter überhaupt==, ein zersägtes Kreischen, weil bei jedem Überlauf ein Sprung über den gesamten Wertebereich stattfindet.
 
 **Multiplikation mit einer ungeraden Konstante.**
 
@@ -152,38 +152,38 @@ x = (a⁻¹ · y) mod 2ⁿ        a⁻¹ existiert, weil ggT(a, 2ⁿ) = 1
 
 Ein Sample mal 26317 modulo 65536 ergibt statistisch weißes Rauschen und ist trotzdem exakt umkehrbar. Das modulare Inverse berechnet man einmalig mit dem erweiterten euklidischen Algorithmus.
 
-Diese Verfahren sind **bitgenau** invertierbar, `κ` ist irrelevant, weil keine Rundung stattfindet. Der Preis ist, dass man den Integer-Pfad nicht verlassen darf.
+Diese Verfahren sind ==**bitgenau**== invertierbar, ==`κ` ist irrelevant==, weil keine Rundung stattfindet. Der Preis ist, dass man den Integer-Pfad nicht verlassen darf.
 
 ---
 
-# TEIL III — KLASSE B: MULTIPLIKATIVE MODULATION
+# TEIL III — KLASSE B: MULTIPLIKATIVE ==MODULATION==
 
-**Prinzip.** `y[n] = c[n] · x[n]` mit einem bekannten Modulator `c[n]`.
-**Bedingung.** `c[n] ≠ 0` für alle `n`.
+**Prinzip.** `y[n] = c[n] · x[n]` mit einem bekannten ==Modulator `c[n]`==.
+**Bedingung.** ==`c[n] ≠ 0` für alle `n`.==
 **Inversion.** `x[n] = y[n] / c[n]`.
 
-Der Modulator muss beim Dekodieren reproduzierbar sein, also entweder deterministisch berechenbar (Oszillator mit bekannter Phase) oder aus einem seedbaren PRNG.
+Der Modulator muss beim Dekodieren reproduzierbar sein, also entweder deterministisch berechenbar (Oszillator mit bekannter Phase) oder aus einem ==seedbaren PRNG==.
 
 ## 1. Rechteck-Modulation
 
-Ein Rechteck mit Werten `±1` erfüllt die Bedingung trivial. Bei hoher Modulationsfrequenz entstehen dichte Seitenband-Cluster, klanglich metallisch und ringmodulatorisch.
+Ein Rechteck mit Werten `±1` erfüllt die Bedingung trivial. ==Bei hoher Modulationsfrequenz entstehen dichte Seitenband-Cluster, klanglich metallisch und ringmodulatorisch.==
 
 ## 2. Zufällige Vorzeichenfolge
 
-Die Zuspitzung: `c[n] ∈ {−1, +1}`, pro Sample zufällig aus einem seedbaren PRNG oder LFSR.
+Die Zuspitzung: `c[n] ∈ {−1, +1}`, pro Sample zufällig aus einem seedbaren PRNG oder ==LFSR==.
 
 ```
 y[n] = c[n] · x[n]
 x[n] = c[n] · y[n]          // dieselbe Operation, denn c[n]² = 1
 ```
 
-Das Verfahren ist **involutorisch**, es ist sein eigenes Inverses. Keine Division, keine Rundung, exakt bis aufs Bit.
+Das Verfahren ist **==involutorisch==**, es ist sein eigenes Inverses. Keine Division, keine Rundung, exakt bis aufs Bit.
 
-**Ergebnis.** Perfekt weißes Rauschen mit der Amplitudenhüllkurve des Originals. Das Betragsspektrum wird vollständig flachgeklopft, weil eine Zufalls-Vorzeichenfolge ein flaches Spektrum hat und Multiplikation im Zeitbereich Faltung im Frequenzbereich bedeutet.
+**Ergebnis.** Perfekt weißes Rauschen ==mit der Amplitudenhüllkurve des Originals.== Das Betragsspektrum wird vollständig flachgeklopft, weil eine Zufalls-Vorzeichenfolge ein flaches Spektrum hat und Multiplikation im Zeitbereich Faltung im Frequenzbereich bedeutet.
 
 **Einordnung.** Das ist Direct-Sequence Spread Spectrum, beziehungsweise ein One-Time-Pad im Sample-Bereich. Die Information ist vollständig erhalten, nur maximal gespreizt.
 
-**Variation über die Rate.** Wechselt das Vorzeichen nicht jedes Sample, sondern alle 50 bis 500 Samples, entsteht statt Rauschen eine zerhackte, granulare Textur mit hörbaren Klick-Artefakten an den Vorzeichenwechseln. Die Umschaltrate ist eine eigenständige Klangachse, siehe Teil X.
+**==Variation über die Rate.==** Wechselt das Vorzeichen nicht jedes Sample, sondern alle 50 bis 500 Samples, entsteht statt Rauschen eine zerhackte, granulare Textur mit hörbaren Klick-Artefakten an den Vorzeichenwechseln. Die Umschaltrate ist eine eigenständige Klangachse, siehe Teil X.
 
 ## 3. Amplitudenmodulation mit Offset
 
@@ -195,21 +195,21 @@ c[n] = 1.2 + sin(2π f n / fs)          // Minimum 0.2, nie null
 
 Die Division bleibt stabil, solange der Offset komfortabel über der Modulationsamplitude liegt. Die Fehlerverstärkung ist `1/min(c)`, hier also Faktor 5.
 
-**Warnung.** Ein Sinus ohne Offset ist unbrauchbar, weil er bei jedem Nulldurchgang die Information des zugehörigen Samples vernichtet und die Division dort explodiert.
+**Warnung.** ==Ein Sinus ohne Offset ist unbrauchbar==, weil er bei jedem Nulldurchgang die Information des zugehörigen Samples vernichtet und die Division dort explodiert.
 
 ---
 
-# TEIL IV — KLASSE C: LINEARE PHASENVERFAHREN
+# TEIL IV — KLASSE C: LINEARE ==PHASEN==VERFAHREN
 
-Diese Klasse ist konzeptionell die eleganteste und numerisch die beste. Sie greift die Erkenntnis aus Teil I.3(b) auf: Rauschcharakter entsteht auch ohne jede Änderung des Betragsspektrums, allein durch Zerstörung der Phasenkohärenz.
+Diese Klasse ist konzeptionell die eleganteste und numerisch die beste. Sie greift die Erkenntnis aus Teil I.3(b) auf: Rauschcharakter entsteht auch ==ohne jede Änderung des Betragsspektrums==, ==allein durch Zerstörung der Phasenkohärenz.==
 
 **Prinzip.** Filterung mit `H(z)`, wobei `|H(e^{jω})| = 1` für alle `ω`.
-**Bedingung.** Allpass-Eigenschaft.
+**Bedingung.** ==Allpass-Eigenschaft.==
 **Inversion.** `1/H(z)`, realisiert über Zeitumkehr.
 
 ## 1. Warum das funktioniert
 
-Ein Allpass ändert nur die Phase jedes Frequenzanteils, nicht dessen Amplitude. Ein Schlagzeug-Transient ist ein Ereignis, bei dem alle Frequenzen phasenkohärent zusammenfallen. Zerstört man diese Kohärenz, verschmiert der Transient über hunderte Millisekunden zu einer diffusen Wolke. Das Spektrum bleibt dabei **exakt identisch**, weshalb der Klangcharakter durchgehend erkennbar bleibt.
+Ein Allpass ändert nur die Phase jedes Frequenzanteils, nicht dessen Amplitude. Ein ==Schlagzeug-Transient ist ein Ereignis, bei dem alle Frequenzen phasenkohärent zusammenfallen. Zerstört man diese Kohärenz, verschmiert der Transient über hunderte Millisekunden zu einer diffusen Wolke.== ==Das Spektrum bleibt dabei **exakt identisch**, weshalb der Klangcharakter durchgehend erkennbar bleibt.==
 
 Das ist genau die Wahrnehmung von "dasselbe Signal löst sich auf", im Gegensatz zu "ein anderes Signal wird eingeblendet".
 
@@ -221,13 +221,13 @@ Das direkte Inversfilter `1/A(z)` hat seine Pole dort, wo `A` seine Nullstellen 
 A(z) · A(1/z) = 1
 ```
 
-`A(1/z)` ist der zeitumgekehrte Filter. Also:
+==`A(1/z)` ist der zeitumgekehrte Filter.== Also:
 
 ```
 Rekonstruktion:  Signal umkehren → durch dasselbe A(z) → wieder umkehren
 ```
 
-Die Phasendrehung hebt sich exakt auf. **Einschränkung:** Zeitumkehr erfordert das vollständige Signal, das Verfahren ist damit offline-only oder blockbasiert mit entsprechender Latenz. Für Echtzeit muss man stattdessen eine parallele Trockenkopie mitführen oder auf Klasse VII ausweichen.
+Die Phasendrehung hebt sich exakt auf. **Einschränkung:** Zeitumkehr erfordert das vollständige Signal, das Verfahren ist damit ==offline-only oder blockbasiert mit entsprechender Latenz.== Für Echtzeit muss man stattdessen eine parallele Trockenkopie mitführen oder auf Klasse VII ausweichen.
 
 ## 3. Random-Phase-Impulsantwort
 
@@ -246,7 +246,7 @@ x = convolve(y, h[::-1])                   # Rückwärts, exakt
 
 Das Ergebnis ist ein "Rausch-Reverb" ohne Nachhallfahne im üblichen Sinn, das Signal wird in eine diffuse Wolke der Länge `N` verschmiert. Bei `N` von einigen tausend Samples ist von einem Drumhit nichts mehr als ein Zischen übrig.
 
-Zu beachten: lineare gegen zirkulare Faltung sauber trennen, sonst stimmt die Rekonstruktion an den Blockrändern nicht. Die Gesamtlatenz des Round-Trips beträgt `2N`.
+==Zu beachten: lineare gegen zirkulare Faltung sauber trennen, sonst stimmt die Rekonstruktion an den Blockrändern nicht. Die Gesamtlatenz des Round-Trips beträgt `2N`.==
 
 ## 4. Dispersiver Allpass in Kaskade
 
@@ -260,9 +260,9 @@ Bei 50 bis 200 Stufen entsteht die charakteristische frequenzabhängige Gruppenl
 
 ## 5. Frequenzverschiebung
 
-Echtes Frequency Shifting über die Hilbert-Transformation verschiebt alle Frequenzanteile um denselben absoluten Betrag, macht harmonische Verhältnisse also inharmonisch. Das klingt bei größeren Verschiebungen schnell nach Klingeln und schließlich nach Rauschen.
+Echtes Frequency Shifting über die Hilbert-Transformation verschiebt alle Frequenzanteile um denselben absoluten Betrag, macht harmonische Verhältnisse also inharmonisch. Das klingt ==bei größeren Verschiebungen schnell nach Klingeln und schließlich nach Rauschen.==
 
-**Invertierbar** durch Rückverschiebung, solange nichts über 0 Hz oder Nyquist hinausgefaltet wurde. Genau das ist die praktische Hürde, denn tiefe Anteile bei negativer Verschiebung falten sich an DC und sind dann verloren. Sicherheitshalber vorher hochpassfiltern.
+**Invertierbar** durch Rückverschiebung, ==solange nichts über 0 Hz oder Nyquist hinausgefaltet wurde.== Genau das ist die praktische Hürde, denn tiefe Anteile bei negativer Verschiebung falten sich an DC und sind dann verloren. Sicherheitshalber vorher hochpassfiltern.
 
 ## 6. Minimalphasige Filter
 
@@ -290,18 +290,18 @@ Sichere Praxisregel: `|m'(t)| < 1`. Wird die Bedingung verletzt, läuft der Lese
 
 **Inversion.** Numerische Umkehrung der Warp-Funktion, in der Praxis durch Aufbau einer Lookup-Tabelle von `τ` und Interpolation der Umkehrung.
 
-**Kondition.** Der wunde Punkt ist nicht die Mathematik, sondern die **Interpolation**. Jedes Lesen an nicht-ganzzahligen Positionen ist eine Näherung. Mit linearer Interpolation ist der Round-Trip hörbar dumpf, brauchbar wird es erst ab Sinc- oder hochordnungs-Lagrange-Interpolation. Rechne mit einem Round-Trip-Fehler um −60 bis −80 dB statt der −300 dB der Phasenverfahren.
+**Kondition.** Der wunde Punkt ist nicht die Mathematik, sondern die **Interpolation**. ==Jedes Lesen an nicht-ganzzahligen Positionen ist eine Näherung. Mit linearer Interpolation ist der Round-Trip hörbar dumpf, brauchbar wird es erst ab Sinc- oder hochordnungs-Lagrange-Interpolation.== Rechne mit einem Round-Trip-Fehler um −60 bis −80 dB statt der −300 dB der Phasenverfahren.
 
-**Klang.** Bei niedrigen Modulationsraten Wow und Flutter, bei hohen ein zerfetztes, körniges Chaos. Erreicht selten echtes Rauschen, ist aber ein hervorragender Zwischenzustand.
+**Klang.** Bei niedrigen Modulationsraten Wow und Flutter, bei hohen ein zerfetztes, körniges Chaos. Erreicht selten echtes Rauschen, ist aber ein hervorragender ==Zwischenzustand==.
 
 ## 2. Permutationen
 
-Umsortieren von Samples oder kurzen Grains nach einer seedbaren Permutation. **Per Konstruktion bijektiv**, die Umkehrung ist die inverse Permutation. Keinerlei Rundungsfehler, bitgenau.
+Umsortieren von Samples oder kurzen Grains nach einer seedbaren Permutation. **Per Konstruktion bijektiv**, die Umkehrung ist die inverse Permutation. Keinerlei Rundungsfehler, ==bitgenau==.
 
 Zwei orthogonale Parameter:
 
 - **Granulat.** Einzelsamples ergeben Rauschen mit unverändertem Amplitudenhistogramm. Grains von 20 bis 200 Samples ergeben körnige Texturen mit erhaltenem lokalen Spektrum.
-- **Radius.** Wie weit darf ein Element maximal verschoben werden? Kleine Radien geben Flatter und Zischeln, große geben vollständige Auflösung. Dieser Parameter ist für Teil X besonders wertvoll, weil Radius 0 exakt die Identität ergibt.
+- **Radius.** Wie weit darf ein Element maximal verschoben werden? ==Kleine Radien geben Flatter und Zischeln, große geben vollständige Auflösung==. Dieser Parameter ist für Teil X besonders wertvoll, weil Radius 0 exakt die Identität ergibt.
 
 ---
 
@@ -324,11 +324,11 @@ Verwandt: Bit-Permutation innerhalb des Wortes, ebenfalls bijektiv und exakt.
 
 # TEIL VII — DER UNIVERSALTRICK: STRUKTURELLE INVERTIERBARKEIT
 
-Alle bisherigen Klassen mussten eine Bedingung an die Zerstörungsoperation stellen: Monotonie, Nullstellenfreiheit, Allpass, Warp-Monotonie. Die folgenden Konstruktionen heben diese Beschränkung auf. Sie sind der Grund, warum man am Ende doch Hard Clipping, Gleichrichtung und Bitcrushing invertierbar bekommen kann.
+Alle bisherigen Klassen mussten eine Bedingung an die Zerstörungsoperation stellen: Monotonie, Nullstellenfreiheit, Allpass, Warp-Monotonie. Die folgenden Konstruktionen ==heben diese Beschränkung auf. Sie sind der Grund, warum man am Ende doch Hard Clipping, Gleichrichtung und Bitcrushing invertierbar bekommen kann.==
 
 ## 1. Lifting
 
-Teile das Signal in zwei Kanäle auf, etwa gerade und ungerade Samples oder Tief- und Hochband. Dann:
+==Teile das Signal in zwei Kanäle auf==, etwa gerade und ungerade Samples oder Tief- und Hochband. Dann:
 
 ```
 y₁ = x₁
@@ -342,9 +342,9 @@ x₁ = y₁
 x₂ = y₂ − f(y₁)          // f(x₁) ist rekonstruierbar, weil x₁ = y₁ unverändert vorliegt
 ```
 
-Die entscheidende Beobachtung: **`f` darf absolut beliebig sein.** Hard Clipping, Gleichrichtung, ein Chaos-Iterator, ein Bitcrusher, ein neuronales Netz, ein ganzer Effekt-Rack. `f` muss weder monoton noch stetig noch überhaupt sinnvoll sein. Die Invertierbarkeit kommt allein aus der Struktur, nicht aus `f`.
+Die entscheidende Beobachtung: ==**`f` darf absolut beliebig sein.**== Hard Clipping, Gleichrichtung, ein Chaos-Iterator, ein Bitcrusher, ein neuronales Netz, ein ganzer Effekt-Rack. `f` muss weder monoton noch stetig noch überhaupt sinnvoll sein. ==Die Invertierbarkeit kommt allein aus der Struktur, nicht aus `f`.==
 
-Der Preis: Ein Kanal bleibt unberührt. Das löst man durch **Kaskadierung mit wechselnder Rolle**:
+Der Preis: Ein Kanal bleibt unberührt. Das löst man durch ==**Kaskadierung mit wechselnder Rolle**==:
 
 ```
 y₂ = x₂ + f₁(x₁)
@@ -355,7 +355,7 @@ z₂ = y₂ + f₃(y₁)
 
 Jeder Schritt ist einzeln invertierbar, also auch die Kette, indem man sie rückwärts durchläuft. Nach drei bis vier Schritten ist kein Kanal mehr im Originalzustand, und beliebig brutale `f` sind im Spiel.
 
-**Integer-Variante.** Mit `y₂ = x₂ + round(f(x₁))` bleibt alles ganzzahlig und damit bitgenau. Das ist exakt das Prinzip hinter Integer-Wavelets und verlustfreien Audiocodecs.
+**Integer-Variante.** Mit `y₂ = x₂ + round(f(x₁))` ==bleibt alles ganzzahlig und damit bitgenau==. Das ist exakt das Prinzip hinter Integer-Wavelets und verlustfreien Audiocodecs.
 
 Für maximale Zerstörung bei garantierter Umkehrbarkeit ist Lifting der ergiebigste Ansatz im gesamten Dokument.
 
@@ -375,9 +375,9 @@ Das ist formal nur ein Lifting-Schritt, aber es formuliert das Grundprinzip in s
 
 ## 3. Rückwärtsadaptive Parameter
 
-Ein Mechanismus, der sich mit allen vorherigen Klassen kombinieren lässt und ihnen enorme Lebendigkeit gibt.
+Ein Mechanismus, der sich ==mit allen vorherigen Klassen kombinieren lässt und ihnen enorme Lebendigkeit gibt.==
 
-**Regel.** Jeder Parameter deiner Verzerrung, also Schwelle, Gain, Modulus, Modulationstiefe, Allpass-Koeffizient, darf beliebig wild in der Zeit variieren, **solange er sich ausschließlich aus bereits dekodierten vergangenen Samples berechnet.**
+**Regel.** Jeder Parameter deiner Verzerrung, also Schwelle, Gain, Modulus, Modulationstiefe, Allpass-Koeffizient, darf ==beliebig wild in der Zeit variieren, **solange er sich ausschließlich aus bereits dekodierten vergangenen Samples berechnet.**==
 
 ```
 Encoder:  T[n] = g(x[n-1], x[n-2], ...)   →   y[n] = F(x[n], T[n])
@@ -388,7 +388,7 @@ Der Dekoder läuft sequenziell, kennt beim Sample `n` bereits die gesamte Vergan
 
 Das ist das Prinzip rückwärtsadaptiver Quantisierer in ADPCM. Praktisch heißt es: Ein Peak-Follower steuert die Kennlinienhärte, ein vom Signal gefütterter Chaos-Oszillator moduliert die Vorzeichenfolge, ein Onset-Detektor schaltet die Allpass-Kaskade. Alles legal, alles exakt umkehrbar.
 
-**Wichtige Einschränkung.** Der Dekoder muss strikt sequenziell laufen, Sample für Sample. Keine Blockparallelisierung, keine Vektorisierung über die Zeitachse.
+**Wichtige Einschränkung.** ==Der Dekoder muss strikt sequenziell laufen, Sample für Sample. Keine Blockparallelisierung, keine Vektorisierung über die Zeitachse.==
 
 ## 4. Modulo-Folding mit Oversampling
 
@@ -458,7 +458,7 @@ und stetiger Abhängigkeit von d.
 Die Information wird nie zurückgerechnet, sie war nie weg.
 ```
 
-Mathematisch ist das zweite eine **Homotopie zur Identität**, nicht eine Bijektion. Der Rückweg besteht schlicht darin, `d` wieder auf 0 zu fahren, während das trockene Original weiterläuft. Bei `d = 0` tut der Prozess nichts, also erscheint das Original von selbst wieder.
+==Mathematisch ist das zweite eine **Homotopie zur Identität**, nicht eine Bijektion.== Der Rückweg besteht schlicht darin, `d` wieder auf 0 zu fahren, während das trockene Original weiterläuft. Bei `d = 0` tut der Prozess nichts, also erscheint das Original von selbst wieder.
 
 ## 2. Die beiden Eigenschaften sind unabhängig
 
@@ -471,14 +471,14 @@ Das ist der Punkt, an dem die meisten Missverständnisse entstehen. Alle vier Ko
 
 Für deinen Anwendungsfall zählt **nur die linke Spalte der Zeilenbedeutung**, also die obere Zeile. Ob das Verfahren zusätzlich invertierbar ist, spielt für das Hörergebnis keine Rolle.
 
-Konkret: Deine ursprüngliche Idee, die Clipping-Schwelle über die Signalamplitude hinauszuschieben, **erfüllt die Makro-Anforderung perfekt**, obwohl Clipping nicht invertierbar ist. Bei `T > max|x|` ist der Clipper die Identität. Genau das ist gefordert.
+Konkret: Deine ursprüngliche Idee, die Clipping-Schwelle über die Signalamplitude hinauszuschieben, **erfüllt die Makro-Anforderung perfekt**, obwohl Clipping nicht invertierbar ist. Bei `T > max|x|` ist der ==Clipper die Identität==. Genau das ist gefordert.
 
 ## 3. Wann Invertierbarkeit für den Makro doch nützt
 
-Drei Fälle rechtfertigen den Mehraufwand:
+Drei Fälle rechtfertigen den Mehraufwand: ==~~?~~==
 
 1. **Bitgenaue Rückkehr.** Wenn das Ergebnis bei `d = 0` exakt das Original sein muss, nicht nur perzeptiv, etwa weil weiterverarbeitet oder mit einer Trockenspur summiert wird.
-2. **Feedback-Strukturen.** Läuft das Signal wiederholt durch die Kette, akkumulieren sich Artefakte nicht-invertierbarer Verfahren. Ein Allpass kann tausendfach durchlaufen werden, ein Bitcrusher nicht.
+2. ==**Feedback-Strukturen.**== Läuft das Signal wiederholt durch die Kette, akkumulieren sich Artefakte nicht-invertierbarer Verfahren. Ein Allpass kann tausendfach durchlaufen werden, ein Bitcrusher nicht.
 3. **Konzeptuell.** Zu wissen, dass die Information die ganze Zeit vollständig vorhanden war und nur unhörbar dargestellt wurde, ist eine tragfähige kompositorische Idee, nicht nur ein technisches Detail.
 
 Für den reinen Höreffekt eines Sweeps ist Invertierbarkeit **keine Anforderung**.
@@ -499,7 +499,7 @@ Punkt 3 ist der schwierigste und wird in Abschnitt 4 und 5 behandelt.
 
 ## 2. Die beste Achse: Phasen-Dekohärenz
 
-Wenn der Übergang sich anfühlen soll wie *dasselbe Signal, das sich auflöst*, und nicht wie zwei übereinandergelegte Sounds, dann ist das die richtige Wahl. Begründung siehe Teil IV.1: Das Betragsspektrum bleibt unangetastet, also bleibt die Klangfarbe über den gesamten Weg erkennbar, während die zeitliche Gestalt zerfällt.
+Wenn der Übergang sich anfühlen soll wie *dasselbe Signal, das sich auflöst*, und nicht wie zwei übereinandergelegte Sounds, dann ist das die richtige Wahl. Begründung siehe Teil IV.1: Das Betragsspektrum bleibt unangetastet, also bleibt die ==Klangfarbe über den gesamten Weg erkennbar, während die zeitliche Gestalt zerfällt.==
 
 **FFT-Variante:**
 
@@ -509,9 +509,9 @@ Wenn der Übergang sich anfühlen soll wie *dasselbe Signal, das sich auflöst*,
 
 mit über die Zeit **eingefrorenem** `φ_rand`. Wird `φ_rand` pro Block neu gewürfelt, entsteht Flackern statt eines stabilen Zustands.
 
-**Zeitbereichs-Variante (echtzeitfähig):** Allpass-Kaskade nach IV.4, wobei `d` entweder den Koeffizienten `a` oder die Anzahl aktiver Stufen steuert. Bei `a = 0` ist der Filter die Identität, die Anforderung `F_0 = id` ist strukturell erfüllt.
+**==Zeitbereichs-Variante (echtzeitfähig):** Allpass-Kaskade nach IV.4, wobei `d` entweder den Koeffizienten `a` oder die Anzahl aktiver Stufen steuert.== Bei `a = 0` ist der Filter die Identität, die Anforderung `F_0 = id` ist strukturell erfüllt.
 
-**Verfeinerung mit großem Effekt.** Randomisiere die Phase nur oberhalb einer Grenzfrequenz `f_c` und fahre `f_c` von Nyquist nach unten. Der Klang löst sich dann von oben nach unten auf, was wesentlich filmischer wirkt als eine gleichmäßige Verwaschung. `f_c(d)` logarithmisch mappen.
+**Verfeinerung mit großem Effekt.** ==Randomisiere die Phase nur oberhalb einer Grenzfrequenz `f_c` und fahre `f_c` von Nyquist nach unten.== Der Klang löst sich dann von oben nach unten auf, was wesentlich filmischer wirkt als eine gleichmäßige Verwaschung. `f_c(d)` logarithmisch mappen.
 
 ## 3. Weitere Achsen mit brauchbarer Mitte
 
@@ -543,17 +543,17 @@ Das ist der Schritt, der über Erfolg oder Misserfolg entscheidet und der am hä
 
 **Die Lösung.**
 
-1. Definiere eine grobe Kohärenzmetrik `C(d)`, siehe Teil XI.2.
+1. Definiere eine grobe ==Kohärenzmetrik `C(d)`==, siehe Teil XI.2.
 2. Miss `C` an 20 bis 50 Stützstellen über `d`.
-3. Invertiere die gemessene Kurve numerisch und lege sie als Mapping-Tabelle zwischen Regler und Parameter.
+3. Invertiere die gemessene Kurve numerisch und lege sie als ==Mapping-Tabelle zwischen Regler und Parameter==.
 
 Ergebnis ist ein Regler, dessen wahrgenommene Zerstörung linear mit der Position wächst.
 
-**Lautheitskompensation.** Die meisten Verfahren ändern die Lautheit erheblich. Miss den RMS bei `d = 0` und bei `d = 1` und gleiche über eine Kompensationskurve aus, sonst wird der Sweep als Lautstärkefahrt gehört statt als Verwandlung.
+**Lautheitskompensation.** Die meisten Verfahren ändern die Lautheit erheblich. ==Miss den RMS bei `d = 0` und bei `d = 1` und gleiche über eine Kompensationskurve aus==, sonst wird der Sweep als Lautstärkefahrt gehört statt als Verwandlung.
 
 ## 6. Layering: mehrere Achsen auf einen Regler
 
-Der wichtigste Kniff für Punkt 3 der Anforderungen. Lege zwei oder drei Achsen mit **versetzten Startpunkten und Rampen** auf dasselbe Makro:
+Der wichtigste Kniff für Punkt 3 der Anforderungen. Lege zwei oder drei Achsen mit **==versetzten Startpunkten== und Rampen** auf dasselbe Makro:
 
 ```
 d ∈ [0.00 … 0.55]   Phasendispersion         (Allpass-Kaskade)
@@ -562,13 +562,13 @@ d ∈ [0.45 … 1.00]   Bit-XOR-Tiefe            (0 → 16 Bit)
 d ∈ [0.70 … 1.00]   Vorzeichen-Dropout       (0 → 0.5)
 ```
 
-Der Sweep erzählt dann über den gesamten Weg etwas Neues: erst löst sich die Zeitstruktur auf, dann frisst sich das Rauschen von oben ins Spektrum, dann steigt der Rauschboden von unten durch das Signal, zuletzt bleibt nur die Hüllkurve. Der Rückweg durchläuft dieselben Stationen umgekehrt.
+==Der Sweep erzählt dann über den gesamten Weg etwas Neues: erst löst sich die Zeitstruktur auf, dann frisst sich das Rauschen von oben ins Spektrum, dann steigt der Rauschboden von unten durch das Signal, zuletzt bleibt nur die Hüllkurve. Der Rückweg durchläuft dieselben Stationen umgekehrt.==
 
 Jede Teilrampe einzeln kalibrieren, bevor sie kombiniert werden.
 
 ---
 
-# TEIL XI — MESSEN UND TESTEN
+# TEIL XI — ==MESSEN UND TESTEN==
 
 ## 1. Round-Trip-Fehler (für Teil II–VII)
 
