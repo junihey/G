@@ -478,7 +478,7 @@ Konkret: Deine ursprüngliche Idee, die Clipping-Schwelle über die Signalamplit
 Drei Fälle rechtfertigen den Mehraufwand: ==~~?~~==
 
 1. **Bitgenaue Rückkehr.** Wenn das Ergebnis bei `d = 0` exakt das Original sein muss, nicht nur perzeptiv, etwa weil weiterverarbeitet oder mit einer Trockenspur summiert wird.
-2. ==**Feedback-Strukturen.**== Läuft das Signal wiederholt durch die Kette, akkumulieren sich Artefakte nicht-invertierbarer Verfahren. Ein Allpass kann tausendfach durchlaufen werden, ein Bitcrusher nicht.
+2. **Feedback-Strukturen.** Läuft das Signal wiederholt durch die Kette, akkumulieren sich Artefakte nicht-invertierbarer Verfahren. Ein Allpass kann tausendfach durchlaufen werden, ein Bitcrusher nicht.
 3. **Konzeptuell.** Zu wissen, dass die Information die ganze Zeit vollständig vorhanden war und nur unhörbar dargestellt wurde, ist eine tragfähige kompositorische Idee, nicht nur ein technisches Detail.
 
 Für den reinen Höreffekt eines Sweeps ist Invertierbarkeit **keine Anforderung**.
@@ -562,7 +562,7 @@ d ∈ [0.45 … 1.00]   Bit-XOR-Tiefe            (0 → 16 Bit)
 d ∈ [0.70 … 1.00]   Vorzeichen-Dropout       (0 → 0.5)
 ```
 
-==Der Sweep erzählt dann über den gesamten Weg etwas Neues: erst löst sich die Zeitstruktur auf, dann frisst sich das Rauschen von oben ins Spektrum, dann steigt der Rauschboden von unten durch das Signal, zuletzt bleibt nur die Hüllkurve. Der Rückweg durchläuft dieselben Stationen umgekehrt.==
+Der Sweep erzählt dann über den gesamten Weg etwas Neues: erst löst sich die Zeitstruktur auf, dann frisst sich das Rauschen von oben ins Spektrum, dann steigt der Rauschboden von unten durch das Signal, zuletzt bleibt nur die Hüllkurve. Der Rückweg durchläuft dieselben Stationen umgekehrt.
 
 Jede Teilrampe einzeln kalibrieren, bevor sie kombiniert werden.
 
