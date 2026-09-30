@@ -71,7 +71,7 @@ flowchart LR
 | 2 | 8–11 | Teppich, Punkte 5–8 | Genelec 2 |
 | 3 | 12–15 | Teppich, Punkte 9–12 | Genelec 3 |
 
-- **Die Lagen 1 und 2** des Butterfly mischen innerhalb jeder Gruppe. In der Stimmen-Gruppe stehen ihre Winkel auf 0, damit jedes Modell in seiner Leitung bleibt.
+- ==**Die Lagen 1 und 2**== des Butterfly mischen innerhalb jeder Gruppe. In der Stimmen-Gruppe stehen ihre Winkel auf 0, damit jedes Modell in seiner Leitung bleibt.
 - **Die Lagen 3 und 4** verbinden die Gruppen. Lage 3 verbindet Gruppe 0 mit 1 und Gruppe 2 mit 3. Lage 4 verbindet Gruppe 0 mit 2 und Gruppe 1 mit 3. Gruppe 3 erreicht eine Stimme über Gruppe 1 oder 2 im selben Umlauf.
 - **Zwischen den Teppich-Gruppen** stehen die Winkel fest. **Zwischen einer Stimme und dem Teppich** sind sie das Verschlucken.
 
