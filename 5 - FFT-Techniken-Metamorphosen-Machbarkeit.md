@@ -67,7 +67,7 @@ Bewertung der Machbarkeit: **sofort** (Klassen A–C, E, F ohne Sonderaufwand) �
 
 **Prinzip.** Beide Quellen werden mit identischen FFT-Parametern analysiert. Pro Bin werden Magnituden interpoliert, besser in dB als linear. Für die Phase gibt es drei Wege: (a) Phase der dominanten Quelle übernehmen, (b) per Schwellwert umschalten, (c) die *Instantanfrequenz* interpolieren und daraus eine neue Phase akkumulieren – der „echte“ Phase-Vocoder-Morph. Eine Verfeinerung trennt **Hüllkurve** (Formant, Klangfarbe) von **Feinstruktur** (Partials, Tonhöhe) und morpht beide getrennt. Optimal-Transport-Morphing (FluCoMa AudioTransport) verschiebt spektrale „Masse“ von Peak zu Peak, statt überzublenden – zwischen 220 Hz und 880 Hz entsteht eine Art Glissando statt zweier gleichzeitiger Töne; laut FluCoMa ist das Ergebnis „quantised to the resolution of the spectral bins“.
 
-**Klangliches Ergebnis.** Lineare Magnituden-Interpolation klingt bei unähnlichen Quellen oft wie ein Crossfade mit „Phasing“; erst Hüllkurven-/Feinstruktur-Trennung oder Peak-basiertes Morphing liefert das Gefühl, dass *ein* Objekt seine Form ändert. Caetano & Rodet (IEEE TASLP 21(8), 2013) berichten: „We found that interpolation of line spectral frequencies gives the most linear spectral envelope morphs … interpolation of cepstral coefficients results in the most linear temporal envelope morph.“ Trevor Wishart betont, dass bei Transformationen der Weg wichtiger ist als die Endpunkte und ähnliche Quellen sich leichter morphen lassen.
+**Klangliches Ergebnis.** Lineare Magnituden-Interpolation klingt bei unähnlichen Quellen oft wie ein Crossfade mit „Phasing“; ==erst Hüllkurven-/Feinstruktur-Trennung oder Peak-basiertes Morphing liefert das Gefühl, dass *ein* Objekt seine Form ändert.== Caetano & Rodet (IEEE TASLP 21(8), 2013) berichten: „We found that interpolation of line spectral frequencies gives the most linear spectral envelope morphs … interpolation of cepstral coefficients results in the most linear temporal envelope morph.“ Trevor Wishart betont, dass bei Transformationen der Weg wichtiger ist als die Endpunkte und ähnliche Quellen sich leichter morphen lassen.
 
 **Max/MSP.** pfft~ mit zwei fftin~ → cartopol~ → Magnituden-Mix in gen~ → Phase von A/B oder über framedelta~/frameaccum~ → poltocar~ → fftout~. Für Morphs zwischen eingefrorenen Frames: Charles' Patch „6-interpolate-2frames“. Fertig: fluid.audiotransport~, fluid.bufaudiotransport, fluid.nmfmorph~; CDP MORPH/NEWMORPH als Offline-Referenz.
 
@@ -80,7 +80,7 @@ Bewertung der Machbarkeit: **sofort** (Klassen A–C, E, F ohne Sonderaufwand) �
 
 **Prinzip.** Klassische Cross-Synthese: Amplitudenspektrum von A × Phasenspektrum von B oder komplexe Multiplikation der Spektren (A spielt durch den Resonanzkörper von B). Vocoder-artig: Nur die **spektrale Hüllkurve** von A wird auf B übertragen; B wird vorher durch seine eigene Hüllkurve geteilt (Whitening). Hüllkurven-Schätzung über (a) Glättung über Nachbar-Bins, (b) Cepstrum, (c) True Envelope (iteratives Cepstrum, SuperVP), (d) LPC im Zeitbereich.
 
-**Klangliches Ergebnis.** Hybride: „sprechende“ Synthesizer, Glocke mit Vokalfarbe, Regen mit den Formanten einer Stimme. Besonders wirkungsvoll, wenn der Hüllkurven-Anteil von 0 bis 1 eingeblendet wird (CDP COMBINE CROSS macht „a gradual transition from the amplitude of the first spectral envelope to that of the second“).
+**Klangliches Ergebnis.** Hybride: „sprechende“ Synthesizer, Glocke mit ==Vokalfarbe==, Regen mit den Formanten einer Stimme. Besonders wirkungsvoll, wenn der Hüllkurven-Anteil von 0 bis 1 eingeblendet wird (CDP COMBINE CROSS macht „a gradual transition from the amplitude of the first spectral envelope to that of the second“).
 
 **Max/MSP.** Beispiel-Patch cross-dog.maxpat, gen~ in pfft~; Bin-Glättung mit Jitter oder FrameLib. Hochwertig: SuperVP for Max (supervp.cross~, supervp.sourcefilter~, supervp.trans~ mit Hüllkurven-Warping). FluCoMa: fluid.bufnmfcross~ (offline).
 
@@ -93,9 +93,9 @@ Bewertung der Machbarkeit: **sofort** (Klassen A–C, E, F ohne Sonderaufwand) �
 
 ## 3. Spectral Sorting, Bin-Reordering, Shuffling, Swapping, Warping, Frequency Remapping
 
-**Prinzip.** Die Bins eines Frames werden umgeordnet: nach Magnitude sortiert, zufällig permutiert, paarweise vertauscht, oder eine Warping-Funktion bestimmt, welcher Eingangs-Bin auf welchen Ausgangs-Bin fällt (Stretching, Kompression, Inversion, Faltung). Frequency Remapping mit Phasenkorrektur erhält tonale Qualität; ohne Korrektur entstehen metallische, „zerbrochene“ Klänge. CDP-Verwandte: Specnu Slice 5/Specfold 2 (Inversion), Specfold 3 (Randomisieren), Fold (Oktavfaltung), Invert (Hüllkurve kopfstehend).
+**Prinzip.** Die Bins eines Frames werden umgeordnet: nach Magnitude sortiert, zufällig permutiert, paarweise vertauscht, oder eine Warping-Funktion bestimmt, welcher Eingangs-Bin auf welchen Ausgangs-Bin fällt (Stretching, Kompression, Inversion, Faltung). ==Frequency Remapping mit Phasenkorrektur erhält tonale Qualität; ohne Korrektur entstehen metallische, „zerbrochene“ Klänge.== CDP-Verwandte: Specnu Slice 5/Specfold 2 (Inversion), Specfold 3 (Randomisieren), Fold (Oktavfaltung), Invert (Hüllkurve kopfstehend).
 
-**Klangliches Ergebnis.** Sorting zerstört die harmonische Struktur zugunsten eines Energieprofils – glitzernde Klangflächen mit der Hüllkurve des Originals. Ein Morph-Parameter zwischen Original-Index und Ziel-Index ergibt eine kontrollierbare Verwandlung „von Instrument zu Textur“. Langsam animierte Warping-Kurven führen von harmonisch zu inharmonisch.
+**Klangliches Ergebnis.** Sorting zerstört die harmonische Struktur zugunsten eines Energieprofils – glitzernde Klangflächen mit der Hüllkurve des Originals. Ein ==Morph-Parameter zwischen Original-Index und Ziel-Index ergibt eine kontrollierbare Verwandlung== „von Instrument zu Textur“. ==Langsam animierte Warping-Kurven== führen von harmonisch zu inharmonisch.
 
 **Max/MSP.** Frame in buffer~ schreiben und im nächsten Frame umgemappt lesen; Jitter-Remapping (Sortieren in Jitter ist mühsam); FrameLib (Alex Harker) mit sort, percentiles, min/max – die eleganteste Lösung für echtes Per-Frame-Sorting.
 
@@ -107,10 +107,10 @@ Bewertung der Machbarkeit: **sofort** (Klassen A–C, E, F ohne Sonderaufwand) �
 ## 4. Smearing, Blur, Freeze, Spectral Delay, spektrale Diffusion
 
 **Prinzip.**
-- **Blur/Smearing:** Pro Bin wird die Magnitude über die Zeit gemittelt (CDP BLUR BLUR „averages spectral amplitudes over time“).
+- **Blur/Smearing:** ==Pro Bin wird die Magnitude über die Zeit gemittelt== (CDP BLUR BLUR „averages spectral amplitudes over time“).
 - **Freeze:** Ein Frame wird gehalten; die Phasen werden mit der Instantanfrequenz fortgeschrieben, plus etwas Phasenrauschen, damit der Freeze lebt (Cycling '74 PV-Tutorial II: „a very small amount of phase deviation from bin to bin actually breaks the mechanical sound of the freeze“). Charles' Patches gehen weiter: stochastischer Freeze, entrauschter Freeze, „harmonic freeze“ zum Schichten von Akkorden.
-- **Spectral Delay:** Jeder Bin bekommt eine eigene Verzögerung in Frames und ggf. Feedback (Kim-Boyle; jg.spectdelay~; IRCAM Chromax).
-- **Diffusion:** Freeze/Blur mit langen Zeitkonstanten, Phasenrandomisierung und frequenzabhängigem Feedback ergeben halligen Nachklang.
+- **Spectral Delay:** ==Jeder Bin bekommt eine eigene Verzögerung in Frames und ggf. Feedback== (Kim-Boyle; jg.spectdelay~; IRCAM Chromax).
+- **Diffusion:** Freeze/Blur mit langen Zeitkonstanten, ==Phasenrandomisierung und frequenzabhängigem Feedback== ergeben halligen Nachklang.
 
 **Klangliches Ergebnis.** Blur verwandelt Artikulation in Fläche – Sprache wird zu Chor, Perkussion zu Wolke. Freeze ist der klassische Moment, der zur Klangfläche wird. Spectral Delay zerlegt Klänge in kaskadierende Spektralschichten.
 
@@ -125,9 +125,9 @@ Bewertung der Machbarkeit: **sofort** (Klassen A–C, E, F ohne Sonderaufwand) �
 
 ## 5. Spektrale Operationen: Gating, Tracing, Masking, Arithmetik, Kompression, Tilt
 
-**Prinzip.** Gating (Bins unter einer Schwelle auf null), Denoising mit Rauschprofil (CDP Clean), Tracing (nur die N lautesten Bins, CDP Trace; Gegenteil Suppress), Masking (ein Spektrum steuert, welche Bins des anderen durchkommen), Arithmetik zweier Spektren (Summe, Differenz, Max, Min, Mittel; CDP COMBINE), spektrale Kompression/Expansion (Exponent < 1 bzw. > 1; CDP Exaggerate), Tilt.
+**Prinzip.** Gating (Bins unter einer Schwelle auf null), Denoising mit Rauschprofil (CDP Clean), ==Tracing== (nur die N lautesten Bins, CDP Trace; Gegenteil Suppress), Masking (ein Spektrum steuert, welche Bins des anderen durchkommen), ==Arithmetik zweier Spektren (Summe, Differenz, Max, Min, Mittel; CDP COMBINE)==, spektrale Kompression/Expansion (Exponent < 1 bzw. > 1; CDP Exaggerate), Tilt.
 
-**Klangliches Ergebnis.** Top-N mit langsam fallendem N „skelettiert“ einen Orchesterklang zu wenigen Sinuslinien. Max/Min zwischen zwei Quellen erzeugt Hybride, in denen pro Frequenz die dominante Quelle gewinnt. Masking stanzt eine Quelle in der Form der anderen aus.
+**Klangliches Ergebnis.** Top-N mit langsam fallendem N „==skelettiert==“ einen Orchesterklang zu wenigen Sinuslinien. Max/Min zwischen zwei Quellen erzeugt Hybride, in denen pro Frequenz die dominante Quelle gewinnt. Masking stanzt eine Quelle in der Form der anderen aus.
 
 **Max/MSP.** Alles in gen~ in pfft~; Rauschprofil in buffer~; Forbidden Planet (Settel/Lippe) als Vorbild; Top-N mit FrameLib.
 
@@ -143,11 +143,11 @@ Bewertung der Machbarkeit: **sofort** (Klassen A–C, E, F ohne Sonderaufwand) �
 - **Time-Stretching:** Frames werden mit anderer Rate gelesen als geschrieben; die Phase wird aus der Instantanfrequenz neu akkumuliert.
 - **Pitch-Shifting:** resampeln oder Peaks verschieben (Laroche & Dolson: Peak-Shifting).
 - **Phasenrandomisierung:** Phasen durch Zufall ersetzen – diffus, verwaschen; teilweise als Morph-Parameter von „klar“ zu „Wolke“.
-- **Phase-Locking** (Laroche & Dolson, IEEE Trans. Speech and Audio Processing 7(3), 1999): Bins um einen Peak übernehmen die Phasenbeziehung des Peaks – weniger Phasiness.
-- **Transient/Tonal-Trennung (HPSS):** FitzGerald (DAFx-10): Median über die Zeit betont Tonales, Median über die Frequenz betont Transienten; „The two resulting median filtered spectrograms are then used to generate masks.“ Für Metamorphosen: Anschlag und Klang getrennt morphen (die Idee steckt auch im „Transient Bypass“ von Zynaptiq MORPH 3).
+- **Phase-Locking** (Laroche & Dolson, IEEE Trans. Speech and Audio Processing 7(3), 1999): ==Bins um einen Peak übernehmen die Phasenbeziehung des Peaks== – weniger Phasiness.
+- **Transient/Tonal-Trennung (HPSS):** FitzGerald (DAFx-10): ==Median über die Zeit betont Tonales, Median über die Frequenz betont Transienten==; „The two resulting median filtered spectrograms are then used to generate masks.“ Für Metamorphosen: Anschlag und Klang getrennt morphen (die Idee steckt auch im „Transient Bypass“ von Zynaptiq MORPH 3).
 - **Spektrales Stretching/Shifting der Partials:** Frequenzen verschieben oder strecken – harmonisch → inharmonisch (Wishart: zentral für *Vox 5*; CDP Stretch, Shift, Waver).
 
-**Klangliches Ergebnis.** Extreme Zeitstreckung ist selbst eine Metamorphose. Inharmonisches Stretching verwandelt Stimme oder Saite in Glocke oder Metall.
+**Klangliches Ergebnis.** Extreme Zeitstreckung ist selbst eine Metamorphose. ==Inharmonisches Stretching verwandelt Stimme oder Saite in Glocke oder Metall.==
 
 **Max/MSP.** PV-Tutorials Teil I/II, phase-vocoder-sampler.maxpat, gizmo~, Charles' Time-Stretch-Patches, SuperVP (mit Transienten- und Hüllkurvenerhaltung), fluid.hpss~, fluid.sines~.
 
@@ -163,7 +163,7 @@ Bewertung der Machbarkeit: **sofort** (Klassen A–C, E, F ohne Sonderaufwand) �
 
 **Prinzip.** Peaks pro Frame finden (mit quadratischer Interpolation), über Frames zu Partials verbinden (McAulay-Quatieri), Residuum als gefiltertes Rauschen (Serra: SMS). Morphing: Partials von A und B zuordnen, Frequenzen und Amplituden interpolieren, Rausch-Hüllkurven getrennt morphen (Caetano & Rodet; Kyma und Alchemy als Referenz).
 
-**Klangliches Ergebnis.** Die überzeugendsten Morphs zwischen *tonalen* Klängen, weil Tonhöhe, Formant und Rauschanteil getrennt kontrolliert werden. Bei geräuschhaften Quellen versagt das Modell.
+**Klangliches Ergebnis.** Die ==überzeugendsten Morphs zwischen *tonalen* Klängen, weil Tonhöhe, Formant und Rauschanteil getrennt kontrolliert werden.== Bei geräuschhaften Quellen versagt das Modell.
 
 **Max/MSP.** sigmund~, fluid.sines~, IRCAM pm2, SPEAR (offline) → Resynthese per oscbank~/ioscbank~ oder MC-Oszillatoren; CNMAT-Tools als ältere Referenz.
 
@@ -177,7 +177,7 @@ Bewertung der Machbarkeit: **sofort** (Klassen A–C, E, F ohne Sonderaufwand) �
 
 - **Spektrale Granulation – Klasse E, sofort bis mit Aufwand.** „Körner“ sind Gruppen alter Frames aus dem Ring. Die Ringlänge bestimmt, wie weit zurück gegriffen werden kann (2 Sekunden ≈ 1,5 MB). Nur Vergangenheit; Körner aus späteren Stellen erst mit Zeitkontrolle.
 - **Spektrale „Drunk Walks“, Shuffle, Weave über Frames (CDP BLUR DRUNK, SHUFFLE, WEAVE) – Klasse E, mit derselben Grenze.**
-- **Accumulate/Sustain (CDP Accumulate) – Klasse E, sofort.** Peak-Hold mit Abklingen pro Bin.
+- **Accumulate/Sustain (CDP Accumulate) – Klasse E, sofort.** ==Peak-Hold mit Abklingen pro Bin.==
 - **Glisten/Scatter (CDP) – Klasse A, sofort.** Zufällige Maske pro Frame.
 - **NMF-Hybride (fluid.bufnmf~, fluid.bufnmfcross~, fluid.nmfmorph~) – nicht in RNBO.**
 - **CDP und Wishart als Ideenkatalog:** CDP gliedert Spektralprozesse in Reshape, Filter, Pitch/Frequency, Morph, Formants, Combine, Time und Utilities. MORPH, NEWMORPH, GLIDE und SPECROSS PARTIALS sind direkte Metamorphose-Vorlagen. Laut Archer Endrich wollte Wishart mit der CDP-Spektralsuite den Morph „Stimmen → Bienen“ aus *Red Bird* (1973–77) nachbilden, für den wenige Sekunden im Tonbandstudio zwei Wochen gedauert hatten. Eine WASM-Portierung (cdp-wasm) existiert für Node und Browser – nicht für RNBO, aber als Offline-Referenz nützlich.

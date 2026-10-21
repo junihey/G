@@ -65,16 +65,16 @@ flowchart LR
   C --> LIM[Limiter] --> G[drei Genelec]
 ```
 
-| Stufe | Was sie tut | Erklärt in |
-|---|---|---|
-| Tor | lässt eine Stimme ins Netz und zeichnet auf, was hineingeht | Teil 4 §15 |
-| Diffusor | macht aus jedem Echo viele, ohne Fahne | Teil 2 §6 |
-| Leitungen | 16 Delays als `Data` mit eigenem Zeiger | Teil 7 §2 |
-| Allpässe, Vorzeichen, Körner-Tausch | lassen den Klang pro Umlauf zerfließen | Teil 2 §3, Teil 4 §10 |
-| Butterfly | mischt die Leitungen, Menge nach `d` | Teil 3 §4–5 |
-| Dämpfung | Nachhallzeit, abschaltbar für den Freeze | Teil 1 §7, Teil 4 §4 |
-| Auskopplung | welche Leitung auf welches Genelec | Teil 4 §12 |
-| Limiter | hinter der Auskopplung, nie im Kreis | — |
+| Stufe                               | Was sie tut                                                 | Erklärt in            |
+| ----------------------------------- | ----------------------------------------------------------- | --------------------- |
+| Tor                                 | lässt eine Stimme ins Netz und zeichnet auf, was hineingeht | Teil 4 §15            |
+| Diffusor                            | macht aus jedem Echo viele, ohne Fahne                      | Teil 2 §6             |
+| Leitungen                           | 16 Delays als `Data` mit eigenem Zeiger                     | Teil 7 §2             |
+| Allpässe, Vorzeichen, Körner-Tausch | lassen den Klang pro Umlauf zerfließen                      | Teil 2 §3, Teil 4 §10 |
+| Butterfly                           | mischt die Leitungen, Menge nach `d`                        | Teil 3 §4–5           |
+| Dämpfung                            | Nachhallzeit, abschaltbar für den Freeze                    | Teil 1 §7, Teil 4 §4  |
+| Auskopplung                         | welche Leitung auf welches Genelec                          | Teil 4 §12            |
+| Limiter                             | hinter der Auskopplung, nie im Kreis                        | —                     |
 
 ### Der Regler `d`
 
