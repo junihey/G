@@ -5373,6 +5373,51 @@ Lange Zeit galt die Regel, sich bei Plänen oder Projekt-Spezifikationen auf ein
 - [Trigger.dev | The open source platform for durable AI agents](https://trigger.dev/)
 - [So erstellst du GPT-6 Astra-Automatisierungen (ohne dein Nutzungslimit aufzubrauchen) - YouTube](https://www.youtube.com/watch?v=FqnNL8fnUWo&t=1659s)
 ---
+# bb 202610013
+ist eine recht neue, KI-zentrierte Entwicklungsumgebung. bb ist eine kostenlose, quelloffene, „local-first“ IDE, die Coding-Agenten in Threads ausführt – Claude Code, Codex, Cursor und weitere, alle aus einer App heraus programmierbar. Es geht also weniger um einen klassischen Code-Editor als um eine Oberfläche, mit der du mehrere KI-Agenten parallel orchestrierst. bb erkennt die Provider-CLIs, bei denen du bereits angemeldet bist, und nutzt sie direkt; eine eigene Abrechnungsschicht gibt es nicht. Du zahlst also nur deine bestehenden Abos. [flaviocopes](https://flaviocopes.com/bb-agentic-ide)[flaviocopes](https://flaviocopes.com/bb-agentic-ide)
+Das Besondere ist, dass sich bb selbst umbauen lässt: Fast alles in bb kann mit einem einzigen Prompt verändert werden, und bb legt außerdem einen Skill an, der all deinen Agenten beibringt, wie sie bb bedienen. Desktop-App, Web-App, CLI und HTTP-API sind dabei gleichwertige Wege, bb zu steuern. Entwickelt wird es von Michael Yong, der auch open-codex gebaut hat. Zur Plattform: Die Desktop-App ist der empfohlene Einstieg; auf Intel-Macs und Linux startet man bb stattdessen per npx, unter Windows innerhalb von WSL2. Wichtig: bb ist noch in aktiver Entwicklung. [Product Thumbnail +4](https://hunted.space/product/bb)
+
+**Einordnung und Alternativen:** bbs Kernidee, das Werkzeug per Prompt zu erweitern, gibt es inzwischen auf mehreren Ebenen, nur mit unterschiedlicher Reichweite. **Claude Code** hat seit Version 2.1.287 sogenannte **Mods**: Plugins aus JavaScript oder TypeScript, die eigene Panes mit Tabs, Buttons und Textfeldern zeichnen, Tool-Aufrufe abfangen oder eigene Befehle hinzufügen können. Auch der eingebaute `/diff`-Review ist ein Mod, und neue Mods kann Claude selbst schreiben. Sie wirken allerdings nur innerhalb von Claude Code und laufen ungesandboxt mit deinen Rechten. **Pi**, der minimalistische Agent von Mario Zechner, geht denselben Weg mit **Extensions** in TypeScript: Pi schreibt sie auf Zuruf selbst und lädt sie per `/reload` neu. Fehlende Funktionen wie MCP oder Sub-Agents rüstet man über Community-Extensions nach (`pi-mcp-adapter`, `pi-subagents`). Auch das gilt aber nur für Pi. bb dagegen ist agentenübergreifend: Eine Oberfläche, ein Task-Board und eine Review-Ansicht für Claude Code, Codex, Pi und Co. gleichzeitig.
+
+Wer lieber im Terminal bleibt, findet in **herdr** die Gegenposition: ein Terminal-Multiplexer speziell für Coding-Agenten („tmux für Agenten“), der erkennt, ob ein Agent arbeitet, blockiert oder fertig ist. Sessions laufen über einen Hintergrund-Server weiter, auch bei zugeklapptem Laptop oder abgerissener SSH-Verbindung, und lassen sich per SSH oder vom Handy aus wieder aufnehmen. Wie bb ist herdr über CLI und Socket-API von Agenten selbst steuerbar und über Plugins erweiterbar, hat aber keine grafische Oberfläche. Grob gesagt: bb und herdr organisieren _mehrere_ Agenten (GUI vs. Terminal), Mods und Pi-Extensions erweitern _einen_ Agenten von innen. Beides lässt sich kombinieren, etwa herdr für die Orchestrierung, Claude-Code-Mods oder Pi-Extensions für agentenspezifische Workflows und ein Editor wie Zed für das agentenneutrale Review der Git-Diffs.
+# OrbStack
+ist etwas ganz anderes, nämlich ein Werkzeug für Container und VMs auf dem Mac. Es ist ein schneller, leichter Weg, Docker-Container und Linux-Maschinen auszuführen – quasi eine Alternative zu WSL und Docker Desktop in einer App. Für teams, die Docker Desktop nutzen, ist es ein Drop-in-Ersatz; beim Umstieg passt OrbStack automatisch den Symlink für /var/run/docker.sock an, damit Drittanbieter-Tools weiter funktionieren. Weitere Pluspunkte: Für x86-Emulation auf Apple Silicon nutzt es Rosetta statt QEMU, was Intel-Container deutlich schneller macht, und es bringt einen schlanken Single-Node-Kubernetes-Cluster für die Entwicklung mit. Praktisch ist auch, dass jeder Container automatisch eine Domain unter `<container>.orb.local` bekommt. Lizenz: für private Nutzung kostenlos, aber proprietär – für kommerzielle Nutzung fällt eine Lizenz an. [github.com +5](https://github.com/orbstack)
+
+Kurz gesagt: bb ist eine Steuerzentrale für KI-Coding-Agenten, OrbStack eine schnelle Docker-/Linux-Laufzeitumgebung für macOS. Beide können sich gut ergänzen, haben aber unterschiedliche Aufgaben.
+
+> [!NOTE]-  # Das Setup mit weiteren Modellen/Agenten
+> 
+> **herdr** (Orchestrierung) + **Claude Code** (Spec, Recherche, Vault, Review) + **Codex CLI** (Bau) + **Zed** (zentrales Review)
+> 
+> ## Warum diese Tools
+> 
+> - **herdr bleibt:** Zeigt agentenübergreifend, wer arbeitet, blockiert oder fertig ist. Sessions überleben zugeklappten Laptop und SSH-Abbrüche, Zugriff auch remote oder vom Handy. Steuerbar per CLI/Socket-API und erweiterbar über Plugins.
+> - **Claude Code bleibt:** Stark bei Wissensarbeit, Spezifikation und Review. Das Claude-Abo läuft offiziell nur in Claude Code und Claude.ai, ein Drittanbieter-Harness würde also extra kosten oder gegen die Bedingungen verstoßen. Mods bieten Erweiterungen direkt im Agenten.
+> - **Codex CLI kommt dazu:** Code schreiben ist der größte Tokenfresser, und Codex bietet bei 20 $ mehr Spielraum als Claude Pro. Herstellereigener Harness heißt: auf GPT abgestimmt, Sandbox eingebaut, ChatGPT-Abo offiziell nutzbar.
+> - **Zed kommt dazu:** Agentenneutrales Review aller Git-Diffs, egal wer sie erzeugt hat. Schnell bei großen Diffs. Optional können Agenten per ACP direkt im Editor laufen.
+> 
+> ## Wogegen und warum
+> 
+> - **Gegen bb:** Überschneidet sich stark mit herdr. Die Vorteile (GUI-Review, eigene Panels) decken Zed und Claude-Code-Mods ab. Außerdem noch in aktiver Entwicklung.
+> - **Gegen Pi:** Ein Harness für alle Modelle klingt einfacher, aber das Claude-Abo darf dort nicht genutzt werden. Und Sandbox, Berechtigungen, Sub-Agents, MCP müsste man selbst nachrüsten.
+> - **Gegen Claude Code mit Proxy für GPT:** Von Anthropic nicht unterstützt, wacklig, und GPT läuft nicht im dafür optimierten Harness.
+> 
+> ## Lücken und wie wir sie schließen
+> 
+> | Lücke                                      | Ausgleich                                                                                                                                   |
+> | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
+> | Zwei Konfigurationswelten                  | Gemeinsame `AGENTS.md` (+ schlanke `CLAUDE.md` mit `@AGENTS.md`), Skills im `SKILL.md`-Standard. Doppelt bleiben nur Hooks und MCP-Einträge |
+> | Kein Task-Board                            | Aufgaben als Dateien im Repo (z. B. agent-tasks) oder ein herdr-Plugin, nicht pro Agent bauen                                               |
+> | Mods wirken nur in Claude Code             | Regel: Agenten-Innenleben → Mods; Workflow (Tasks, Review, Status) → agentenneutral über herdr, Git, Zed                                    |
+> | Parallele Agenten kommen sich in die Quere | Ein Worktree bzw. Branch pro Agent, ein herdr-Workspace pro Worktree                                                                        |
+> | Schwächere UI-Ergebnisse möglich           | Verbindliches Design-System im Repo, visuelles Review durch Claude, anfangs A/B-Tests                                                       |
+> | Modellstärken ändern sich                  | Echte Funde im gegenseitigen Review zählen, nach Bereich aufgeschlüsselt, und die Aufteilung daran anpassen                                 |
+> | Mehr Agenten = mehr Risiko                 | Sandbox nutzen, keine Secrets im Arbeitsverzeichnis, Vault mit Git versionieren                                                             |
+> 
+# webmcp
+- [WebMCP  |  AI in Chrome  |  Chrome for Developers](https://developer.chrome.com/docs/ai/webmcp?hl=de)
+- [GitHub - GoogleChromeLabs/webmcp-tools: This repository contains a suite of developer utilities and demos designed to support the adoption of the WebMCP API. · GitHub](https://github.com/GoogleChromeLabs/webmcp-tools)
+---
 # canvas 2026050920
 ## patch 
 ### Granulares Wave-Stitching mit Jitter-Modulation
