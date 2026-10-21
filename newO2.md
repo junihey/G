@@ -5334,6 +5334,44 @@ Lange Zeit galt die Regel, sich bei Plänen oder Projekt-Spezifikationen auf ein
 > **Das Muster dahinter:** Jev entscheidet schnell und oft. Ein großes Modell liest ab und zu das Protokoll dieser Entscheidungen und ihrer Folgen. Dann schreibt es Jevs Kriterien, Beispiele und Schwellen neu.
 >
 > **Grenzen:** Jev ist nur als gehostete API erreichbar, über TypeSafe und Vercels AI Gateway, derzeit mit Warteliste. Es gibt keine offenen Gewichte und keinen lokalen Betrieb, alle Eingaben gehen an den Anbieter. Es erzeugt keinen Text, also auch keine Begründung. Die Antworten müssen vorher feststehen.
+- [I Tested Jev on 12 Real Use Cases. My Honest Thoughts. - YouTube](https://www.youtube.com/watch?v=ymgH8jS6Wb8)
+- [Jev Supercharged All Of Your AI Agents By 100x - YouTube](https://www.youtube.com/watch?v=sGDWOMbKGHk)
+- [Jev will 10x your Claude Code (Here's How) - YouTube](https://www.youtube.com/watch?v=tTnUcSj-QPA)
+- [Build Anything with Jev, Here’s How - YouTube](https://www.youtube.com/watch?v=f6We53TnkbU)
+---
+# UUNA TEK iDraw H A3 20261009
+- [Software Download, User Manual and Tutorials | UUNA TEK CO.,LIMITED](https://de.uunatek.com/pages/downloads?shpxid=9782b04b-b41f-4934-8a0f-7d59d297a8d7)
+- [REVIEW & TUTORIAL - iDraw H Pen Plotter with Laser Engraver by UUNA TEK® (XY Drawing Machine) - YouTube](https://www.youtube.com/watch?v=0d63VRaW114&list=WL&index=19&t=1780s)
+	- Spannung der Federn beim Pen Holder 
+	- Einrichtung Lightburn: Auto Home Return ausschalten
+		- Per Hand in die entgegengesetzte Ecke zum Plotter vor dem Start bringen
+	- Lightburn Jarvis Image Mode (oder Halftone)
+## Plotter
+### Setup
+- [How to Assemble iDraw H Handwriting Machine/XY Plotter - YouTube](https://www.youtube.com/watch?v=VQ9ugL1__jk&list=PLA2MtqsvPsTmMhqk-LDKrCyr2iCoPqwqt)
+- [How to Adjust the Y-axis Belt for iDraw H A0 Size Pen Plotters - YouTube](https://www.youtube.com/watch?v=U0pMd692T6c&list=PLA2MtqsvPsTmMhqk-LDKrCyr2iCoPqwqt&index=22)
+- [How to Install the Software of iDraw 1.0 Pen Plotter with Voiceover Guide - YouTube](https://www.youtube.com/watch?v=1-s5Ya48Vb4&list=PLA2MtqsvPsTlJWbs2XkAYLBj5a5myexuA)
+- [[iDraw 2.0 Plotter Software User Manual V1.9.pdf]]
+### Inspiration
+- [Dan Catt - YouTube](https://www.youtube.com/@revdancatt/videos)
+- [Paolo Durandetto Art - YouTube](https://www.youtube.com/@PaoloDurandetto/videos)
+	- [third landscape - YouTube](https://www.youtube.com/watch?v=v_xrR5msRYc)
+	- [Radio Cloud - YouTube](https://www.youtube.com/watch?v=rd6ZN5cwIxU)
+
+## Laser
+### Setup
+- [Assembly Video Guide of the Laser Module for iDraw 2.0 and H Pen Plotters Handwriting Machines - YouTube](https://www.youtube.com/watch?v=wFrz6tr3cu0&list=PLA2MtqsvPsTmMhqk-LDKrCyr2iCoPqwqt&index=7)
+- [How to Use LightBurn software for iDraw 2.0 - YouTube](https://www.youtube.com/watch?v=GqsP4t-bySc&list=PLA2MtqsvPsTmK1vIzcnc00-O2grEuLY7o&index=3)
+### Tutorials
+- Alternative zu LightBurn [Download – LaserGRBL](https://lasergrbl.com/download/)
+- Adjust and Trace Image [How To TRACE Image In LightBurn (EASY) 2026 - YouTube](https://www.youtube.com/watch?v=d0Qz1KY9wP0)
+	- Trace Image with Layers [How To Trace Images in LightBurn - YouTube](https://www.youtube.com/watch?v=bZ20R7dfQgo)
+- Ebenen und Bilder [Lightburn Tutorial | Ebenen erklärt | Fotos gravieren | Anfänger Tutorial - K40 Keller - YouTube](https://www.youtube.com/watch?v=dR4a2FYkCJQ&t=56s)
+---
+# Trigger.dev 20261009
+- Token-schonende Automatisierungen, di emit Claude erstellt werden
+- [Trigger.dev | The open source platform for durable AI agents](https://trigger.dev/)
+- [So erstellst du GPT-6 Astra-Automatisierungen (ohne dein Nutzungslimit aufzubrauchen) - YouTube](https://www.youtube.com/watch?v=FqnNL8fnUWo&t=1659s)
 ---
 # canvas 2026050920
 ## patch 
