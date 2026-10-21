@@ -5368,7 +5368,7 @@ Lange Zeit galt die Regel, sich bei Plänen oder Projekt-Spezifikationen auf ein
 ### Ramanujan-Kettenbrüche (Continued Fractions)  
 - Clock in FractioSolum für Verhältnis in TwoBits Clock DIV/Mult-Modus für weiteres Verhältnis, über Attenuator zurück in den FractioSolum RatioCV  
 ### Das Dualitätsprinzip (Punkt-Gerade-Dualität)  
-- Trigger als Punkt Linie als Hüllkurve oder Schwingung  
+- Trigger als Punkt, Linie als Hüllkurve oder Schwingung  
 - SinusOSC in Persephone für Linie zu Punkt für Zero Cross Durchgang, Trigger an A171 für Hüllkurve, in Select2 + weiteren Trigger in Select2 Hold  
 ### Fluchtpunkte und die Horizontlinie (Perspektivische Kompression)
 - Abstände der Linien zum Fluchtpunkt (Schnittpunkt der Parallelen) exponentiell komprimiert

@@ -1,21 +1,21 @@
 # Video-Feedback zwischen Beamer und Kurokesu C3: Mechanismen, Filter, Algorithmen und Praxis
 
-Eine Beamer-Kamera-Schleife mit der Kurokesu C3 ist ein diskretes, räumlich gekoppeltes dynamisches System: Jeder Umlauf wendet eine Abbildung I(n+1) = T(I(n)) auf das ganze Bild an. Welche Muster entstehen, bestimmen fast nur drei Dinge, nämlich die Schleifenverstärkung (Gain), der räumliche Frequenzgang (Blur/Sharpen/DoG) und die Geometrie (Zoom/Rotation). Farbraum-Tricks, Keys und zeitliche Filter formen dann aus, wie diese Dynamik aussieht. Der wichtigste praktische Schritt ist deshalb, alle Automatiken der Kamera abzuschalten (Belichtung, Weißabgleich, Gain, Schärfe, HDR/WDR). So wird die Kamera zu einem vorhersagbaren, linearen Glied, und die gesamte Nichtlinearität liegt kontrolliert in der eigenen Software.
+Eine Beamer-Kamera-Schleife mit der Kurokesu C3 ist ein diskretes, räumlich gekoppeltes dynamisches System: Jeder Umlauf wendet eine Abbildung I(n+1) = T(I(n)) auf das ganze Bild an. Welche Muster entstehen, bestimmen fast nur drei Dinge, nämlich die ==Schleifenverstärkung (Gain), der räumliche Frequenzgang (Blur/Sharpen/DoG) und die Geometrie (Zoom/Rotation)==. ==Farbraum-Tricks, Keys und zeitliche Filter formen dann aus, wie diese Dynamik aussieht.== Der wichtigste praktische Schritt ist deshalb, alle Automatiken der Kamera abzuschalten (Belichtung, Weißabgleich, Gain, Schärfe, HDR/WDR). So wird die Kamera zu einem vorhersagbaren, linearen Glied, und die gesamte Nichtlinearität liegt kontrolliert in der eigenen Software.
 
 ## TL;DR
 
 - **Hardware:** Für DLP-Beamer eignet sich die C3-234 (onsemi AR0234, Global Shutter, laut Kurokesu 2 MP @ 60 fps) am besten. Die C3-462 (Sony IMX462, 2,9 µm Pixel, 60 fps MJPEG) ist die lichtstarke Alternative mit Rolling Shutter. Die C3-415 (4K, nur 30 fps) ist für Feedback meist zu langsam. Man sollte immer MJPEG über USB 2.0 nutzen, alle Automatiken per UVC/v4l2 abschalten und die Belichtungszeit auf ein ganzzahliges Vielfaches der Beamer-Bildperiode legen.
-- **Mechanismen:** Die Schleife verhält sich wie Crutchfields Modell I(n+1) = L·I(n) + Diffusion + s·f·I(n)(b·R·x). Liegt die Gesamtverstärkung unter 1, klingt das Bild ab. Liegt sie über 1, wächst es, bis Clipping oder Sensorsättigung es begrenzen, und genau dort entstehen Muster. Blur plus Sharpen bzw. Difference of Gaussians wirkt als Bandpass und erzeugt Turing-/Reaction-Diffusion-Muster. Hue-Rotation pro Frame ergibt Farbzyklen, Luma-/Chroma-Keys wirken als Masken, die nur Teile des Bildes zurückführen.
-- **Umsetzung:** In Software reicht eine Kette aus Kamera → Homographie-Entzerrung → Farb-/Filterstufe → Mischung mit dem letzten Frame → Beamer. Das geht mit dem Feedback TOP in TouchDesigner, jit.gl.pix/jit.gl.slab in Max, src(o0) in Hydra, Waaave Pool auf dem Raspberry Pi oder Python/OpenCV. Die Parameter werden per MIDI/OSC gesteuert. Analoge Alternativen sind LZX-Module (z. B. der FKG3-Keyer), Video-Mischer und Colorizer in der Tradition des Sandin Image Processor.
+- **Mechanismen:** Die Schleife verhält sich wie Crutchfields Modell I(n+1) = L·I(n) + Diffusion + s·f·I(n)(b·R·x). Liegt die Gesamtverstärkung unter 1, klingt das Bild ab. Liegt sie ==über 1, wächst es, bis Clipping oder Sensorsättigung es begrenzen, und genau dort entstehen Muster. Blur plus Sharpen bzw. Difference of Gaussians wirkt als Bandpass und erzeugt Turing-/Reaction-Diffusion-Muster. Hue-Rotation pro Frame ergibt Farbzyklen, Luma-/Chroma-Keys wirken als Masken, die nur Teile des Bildes zurückführen.==
+- **Umsetzung:** In Software reicht eine Kette aus Kamera → ==Homographie-Entzerrung== → Farb-/Filterstufe → Mischung mit dem letzten Frame → Beamer. Das geht mit dem Feedback TOP in TouchDesigner, jit.gl.pix/jit.gl.slab in Max, src(o0) in Hydra, Waaave Pool auf dem Raspberry Pi oder Python/OpenCV. Die Parameter werden per MIDI/OSC gesteuert. Analoge Alternativen sind LZX-Module (z. B. der FKG3-Keyer), Video-Mischer und Colorizer in der Tradition des Sandin Image Processor.
 
 ## Key Findings
 
 1. **Die C3 ist eine Familie, kein einzelnes Modell.** Die drei Sensoren unterscheiden sich stark: IMX415 mit 3840×2160, 1,45 µm Pixeln, Rolling Shutter und „MJPG – 30fps in all modes“. IMX462 mit 1920×1080, 2,9 µm, Rolling Shutter und „MJPG – 60fps in all modes“. AR0234 als Global-Shutter-Sensor, laut Features-Seite mit 60 fps. Alle hängen an USB 2.0 High-Speed (480 Mb/s) mit MJPEG- und YUY2-Streams.\[1\]\[2\]\[3\] Unkomprimiertes YUY2 schafft über USB 2.0 volle Bildraten nur bei kleinen Auflösungen.
 2. **Die C3 bietet alle nötigen UVC-Steuerungen.** Dazu gehören Belichtung, Gain, Weißabgleich (2000–10000 K), Gamma, Backlight Compensation, Anti-Flicker, HDR/WDR, ROI und digitaler Zoom/Pan/Tilt. Die letzten Einstellungen speichert ein On-Board-EEPROM.\[2\]\[3\] Einen offiziellen Latenzwert nennt Kurokesu nicht, man muss ihn selbst messen.
-3. **Crutchfield (Physica D 10, 1984) liefert das passende Modell.** Er beschreibt Video-Feedback als dissipatives dynamisches System mit Fixpunkt-, Grenzzyklus- und chaotischen Attraktoren. Der Fokus wirkt als Gauß-Diffusion, Zoom und Rotation als nichtlokale Kopplung. Farbkopplungen werden über Matrizen modelliert.\[4\]
+3. **Crutchfield (Physica D 10, 1984) liefert das passende Modell.** ==Er beschreibt Video-Feedback als dissipatives dynamisches System mit Fixpunkt-, Grenzzyklus- und chaotischen Attraktoren. Der Fokus wirkt als Gauß-Diffusion, Zoom und Rotation als nichtlokale Kopplung. Farbkopplungen werden über Matrizen modelliert.==\[4\]
 4. **Blur + Unsharp Mask in der Schleife ist mathematisch ein Reaction-Diffusion-System.** Das zeigt Andrew Werth (Bridges 2015). Blur wirkt als Diffusion, Schärfen als Selbstverstärkung mit langreichweitiger Hemmung. Blurrt man zu stark, „diffundiert das System zu Grau“.\[5\]\[6\]
 5. **Pixelraster erzeugen eigene Fraktale.** Courtial, Leach und Padgett (Universität Glasgow, Nature 414, S. 864, Dezember 2001) zeigten, dass Feedback mit pixelbasierten Monitoren „stationary fractal patterns such as von-Koch snowflakes and Sierpinski gaskets“ erzeugen kann. Die ausführliche Fassung in Contemporary Physics 44(2), 137–143 (2003) führt als entscheidenden, „previously unidentified parameter“ die Lage des Zoom-Zentrums relativ zu den einzelnen Pixeln ein. Beim Beamer spielen Projektorpixel, Sensorpixel und Moiré dieselbe Rolle.
-6. **DLP-Beamer mit Farbrad zeigen Farben nacheinander.** Eine Rolling-Shutter-Kamera nimmt deshalb horizontale Farbbänder auf, die von Frame zu Frame wandern, weil jede Sensorzeile zu einem anderen Zeitpunkt belichtet.\[7\] In der Schleife werden diese Bänder verstärkt. Abhilfe schaffen lange, synchrone Belichtungszeiten, ein Global Shutter oder ein LCD-/3-Chip-Beamer.
+6. **DLP-Beamer mit Farbrad zeigen Farben nacheinander.** Eine Rolling-Shutter-Kamera nimmt deshalb horizontale Farbbänder auf, die von Frame zu Frame wandern, weil jede Sensorzeile zu einem anderen Zeitpunkt belichtet.\[7\] In der Schleife werden diese Bänder verstärkt. ==Abhilfe schaffen lange, synchrone Belichtungszeiten, ein Global Shutter== oder ein LCD-/3-Chip-Beamer.
 
 ## Details
 
@@ -36,7 +36,7 @@ Gemeinsam haben alle Varianten: USB-C mit UVC, „High-Speed 480Mb/s, MJPEG & YU
 
 **Was davon für Feedback relevant ist:**
 
-- **Automatiken abschalten.** Auto-Exposure und Auto-White-Balance bilden eine *zweite, langsame Regelschleife* innerhalb der optischen Schleife. Diese Regelung kämpft gegen jede Helligkeitsdynamik: Sie dunkelt ab, sobald das Feedback aufblüht, und hellt auf, sobald es verlischt. So entstehen träge „Atem“-Oszillationen, und die Belichtungssprünge wirken wie Grenzzyklen, die man nicht kontrollieren kann. Außerdem abschalten sollte man die kamerainterne Schärfung (ein unkontrollierter Hochpass in der Schleife), Backlight Compensation und HDR/WDR, weil beide nichtlineare, bildabhängige Tonkurven sind. Gamma stellt man auf neutral.
+- **==Automatiken abschalten.==** Auto-Exposure und Auto-White-Balance bilden eine *zweite, langsame Regelschleife* innerhalb der optischen Schleife. Diese Regelung kämpft gegen jede Helligkeitsdynamik: Sie dunkelt ab, sobald das Feedback aufblüht, und hellt auf, sobald es verlischt. So entstehen träge „Atem“-Oszillationen, und die Belichtungssprünge wirken wie Grenzzyklen, die man nicht kontrollieren kann. Außerdem abschalten sollte man die kamerainterne Schärfung (ein unkontrollierter Hochpass in der Schleife), Backlight Compensation und HDR/WDR, weil beide nichtlineare, bildabhängige Tonkurven sind. Gamma stellt man auf neutral.
 - **Beispiel mit v4l2-ctl (Linux).** Die Control-Namen stammen aus Kurokesus V4L2-Rezept. Die dort gezeigte Liste stammt von einer C2-Kamera,\[11\] deshalb vorher mit `v4l2-ctl --list-ctrls` an der eigenen C3 prüfen:
   ```
   v4l2-ctl -d /dev/video0 -c exposure_auto=1            # 1 = Manual Mode
@@ -80,13 +80,13 @@ Für Farbe werden L und L' zu Matrizen: Die Diagonale steuert den Abfall pro Kan
 Crutchfields Attraktortypen lassen sich direkt beobachten:
 - Standbild als Fixpunkt;
 - periodisch wiederkehrende Bildfolgen als Grenzzyklus;
-- aperiodische Bildfolgen als chaotischer Attraktor;
-- Lichtausbrüche zu zufälligen Zeitpunkten bei großem Zoom, weil dort Rauschen exponentiell verstärkt wird. Er nennt das „limit cycle with noise-modulated stability“.\[4\]
+- ==aperiodische Bildfolgen als chaotischer Attraktor;==
+- ==Lichtausbrüche zu zufälligen Zeitpunkten bei großem Zoom, weil dort Rauschen exponentiell verstärkt wird. Er nennt das „limit cycle with noise-modulated stability“.\[4\]==
 
 Bei Zoom deutlich unter 1 entsteht die unendliche Regression aus Bildern im Bild. Kommt etwas Rotation hinzu, windet sie sich zur logarithmischen Spirale. Ist das Bild nach einer Störung dunkel geblieben, braucht es oft einen Lichtimpuls von außen, etwa eine Taschenlampe, um zum Attraktor zurückzukehren.\[4\]
 
 **Nichtlinearitäten gezielt einsetzen.** Neben dem harten Clipping lohnen sich:
-- ein weicher Limiter y = tanh(g·x) oder x/(1+x);
+- ein ==weicher Limiter y = tanh(g·x) oder x/(1+x)==;
 - eine S-Kurve (Kontrast);
 - Solarisation;
 - eine Logistik-Abbildung pro Pixel, y = r·x·(1−x), die zusammen mit Blur ein „Coupled Map Lattice“ bildet. Crutchfield verweist selbst auf Logistic- und Circle-Lattices.
@@ -116,7 +116,7 @@ v = clamp(v·k_v + o, 0, 1) # Helligkeit = eigentlicher Schleifen-Gain
 I' = hsv2rgb(h, s, v)
 ```
 
-- Ein konstantes Δh erzeugt Regenbogenringe entlang der Zoom-Richtung: Jede „Generation“ im Tunnel hat einen anderen Farbton. Mit Δh ≈ 1/N wiederholt sich die Farbe alle N Umläufe.
+- Ein ==konstantes Δh erzeugt Regenbogen==ringe entlang der Zoom-Richtung: Jede „Generation“ im Tunnel hat einen anderen Farbton. Mit Δh ≈ 1/N wiederholt sich die Farbe alle N Umläufe.
 - k_s > 1 treibt alles zu gesättigten Primärfarben (Sättigungsclipping). Das Ergebnis sieht plakativ aus und erinnert an Colorizer.
 - Getrennte Dämpfung von H, S und V ist das Kernfeature von Andrei Jays Waaave Pool. Laut Hersteller entstehen damit „shimmering fading trails“ bis „bold super saturated reaction diffusion patterns“.\[21\]
 - Der Hue-Wert macht bei 0/1 einen Sprung. Blur sollte man daher nicht im HSV-Raum anwenden, sondern in RGB oder Lab, sonst entstehen Farbartefakte.
@@ -132,10 +132,10 @@ out = mix(neu, feedback, α)              # Feedback nur, wo hell
 Chroma-Key: α aus dem Abstand in der CbCr-Ebene bzw. aus dem Hue-Abstand zur Schlüsselfarbe, mit Toleranz und Weichheit.
 
 Typische Schleifentopologien:
-- *Key auf dem Feedback-Pfad:* Nur helle oder nur bestimmte Farben werden zurückgeführt. Diese Regionen wachsen mit jedem Umlauf, der Rest wird durch frisches Material (Kamera, Generator) ersetzt. Das ergibt „Flammen“ und selektive Trails.
+- *Key auf dem Feedback-Pfad:* Nur helle oder nur bestimmte Farben werden zurückgeführt. Diese Regionen wachsen mit jedem Umlauf, der Rest wird durch frisches Material (Kamera, Generator) ersetzt. Das ergibt „==Flammen==“ und selektive Trails.
 - *Invertierter Key:* Nur dunkle Bereiche werden rekursiv. Es entstehen Negativraum-Tunnel.
 - *Key als Schwellwert-Nichtlinearität:* Ein Hard-Key ist eine Stufenfunktion. Er macht aus weichen Verläufen scharfe Grenzen, die zusammen mit Blur wie ein Zellularautomat wirken. Crutchfield beschreibt Video-Feedback ausdrücklich als möglichen Simulator für 2D-Zellularautomaten.\[4\]
-- *Key-Schwelle modulieren* (LFO, Audio): Die Grenzen „atmen“.
+- *Key-Schwelle modulieren* (LFO, Audio): ==Die Grenzen „atmen“.==
 - Umsetzungen:
   - Max hat Shader wie `co.chromakey.hsv.jxs` und `co.lumakey.jxs` (Parameter binary, fade, tol) sowie die Vizzie-Module CHROMAKEYR und LUMAKEYR.\[22\]
   - TouchDesigner hat das RGB Key TOP bzw. das Chroma Key TOP.
@@ -152,13 +152,13 @@ Typische Schleifentopologien:
 
 ### 4. Räumliche Filter in der Schleife
 
-**4.1 Tiefpass / Gauß-Blur.** Im Frequenzraum gilt K̂(k) = exp(−σ²k²/2). Hohe Frequenzen sterben pro Umlauf ab, und das Bild wird zu weichen, fließenden Farbwolken („Rauch“). Optisch lässt sich Blur ganz ohne Software mit dem **Objektivfokus** erzeugen, denn nach Crutchfield ist der Fokus die bequemste Steuerung der Diffusionsrate.\[4\] Ein Gauß-Blur zusammen mit leichtem Zoom über 1 ergibt nach außen strömenden Nebel.
+**4.1 Tiefpass / Gauß-Blur.** Im Frequenzraum gilt K̂(k) = exp(−σ²k²/2). Hohe Frequenzen sterben pro Umlauf ab, und das Bild wird zu weichen, fließenden Farbwolken („Rauch“). Optisch lässt sich Blur ganz ohne Software mit dem **Objektivfokus** erzeugen, denn ==nach Crutchfield ist der Fokus die bequemste Steuerung der Diffusionsrate.==\[4\] Ein Gauß-Blur zusammen mit leichtem Zoom über 1 ergibt ==nach außen strömenden Nebel==.
 
 **4.2 Hochpass, Sharpen und Unsharp Mask.**
 ```
 USM: y = x + α·(x − G_σ*x)   → K̂(k) = 1 + α·(1 − exp(−σ²k²/2))
 ```
-Für hohe Frequenzen ist die Verstärkung 1 + α > 1. In der Schleife explodieren also Kanten und Rauschen, bis das Clipping sie fängt. Das Ergebnis sind harte Konturen, „elektrische“ Linien und Glitzern. Allein ist das oft instabil, erst in Kombination mit Blur wird es interessant.
+Für hohe Frequenzen ist die Verstärkung 1 + α > 1. In der Schleife ==explodieren also Kanten und Rauschen, bis das Clipping sie fängt==. Das Ergebnis sind harte Konturen, „elektrische“ Linien und Glitzern. ==Allein ist das oft instabil, erst in Kombination mit Blur== wird es interessant.
 
 **4.3 Blur + Sharpen = Reaction-Diffusion (Turing-Muster).** Werth hat gezeigt, dass wiederholtes Gauß-Blur mit anschließender Unsharp Mask dem generischen RD-Modell entspricht. In seinem Photoshop-Rezept (Bridges 2015, S. 459) wendet man einen Gauß-Blur mit etwa fünf Pixeln Radius an, danach eine Unsharp Mask mit 100 % Stärke, zehn Pixeln Radius und Schwellwert 0, und wiederholt beides immer wieder. Die Parameter bestimmen, ob überhaupt Muster entstehen („blur too much and the system diffuses to gray“), wie schnell sie sich stabilisieren und welche Wellenlänge sie haben. In der Beamer-Schleife passiert das *live* und mit Kamerarauschen als Keim. So entstehen Labyrinthe, Zebrastreifen und Leopardenflecken, die durch Zoom und Rotation zusätzlich driften und rotieren. Pseudocode für einen GLSL-Pass pro Frame:
 ```
@@ -169,7 +169,7 @@ x  = smoothstep(0.5−w, 0.5+w, x)// weiche Sättigung = Nichtlinearität
 out = mix(cam, x, fb)
 ```
 
-**4.4 Difference of Gaussians (DoG).** Ein DoG ist ein Bandpass mit K̂(k) = exp(−σ1²k²/2) − exp(−σ2²k²/2). Sein Maximum liegt bei einer bestimmten Frequenz k*. Nur diese Wellenlänge erreicht |H| > 1, und die Schleife „stimmt“ sich auf ein Muster dieser Größe ein. Das ist der sauberste Weg, die Mustergröße per Regler zu wählen: Das Verhältnis σ2/σ1 ≈ 1,6 ist klassisch, σ1 legt die Skala fest. Mehrere DoG-Bänder mit eigenen Gains ergeben „Multi-Scale-Turing-Muster“.
+**4.4 Difference of Gaussians (DoG).** Ein DoG ist ein Bandpass mit K̂(k) = exp(−σ1²k²/2) − exp(−σ2²k²/2). Sein Maximum liegt bei einer bestimmten Frequenz k*. Nur diese Wellenlänge erreicht |H| > 1, und die Schleife „==stimmt“ sich auf ein Muster dieser Größe== ein. Das ist der sauberste Weg, die Mustergröße per Regler zu wählen: Das Verhältnis σ2/σ1 ≈ 1,6 ist klassisch, σ1 legt die Skala fest. Mehrere DoG-Bänder mit eigenen Gains ergeben „Multi-Scale-Turing-Muster“.
 
 **4.5 Kantenfilter (Sobel, Laplace).** Sobel ergibt |∇I|. Zurückgeführt wird jede Kante zu einer Doppelkante, und es entstehen konzentrische Konturwellen („Topografie-Linien“). Der Laplace-Operator ∇²I ist genau der Diffusionsterm aus Crutchfields Gleichung (7).\[4\] Mit positivem Vorzeichen addiert wirkt er als Diffusion, mit negativem als Anti-Diffusion, also als Sharpen. In TouchDesigner ist das Edge TOP in der Schleife ein Klassiker. Im Tutorial von Akira Nakayasu reagiert die Feedback-„Strength“ im Bereich von etwa 0,06–0,09 besonders empfindlich.\[25\] Emboss liefert gerichtete Reliefmuster, die in Filterrichtung wandern.
 
@@ -189,11 +189,11 @@ Die Phase kann man verfremden, etwa per Phasenrotation oder Phasen-Randomisierun
   acc = a·acc + (1−a)·x        # a∈[0,1); Zeitkonstante τ ≈ −1/ln(a) Frames
   ```
   Bei a = 0,9 ist τ ≈ 9,5 Frames, bei a = 0,98 ≈ 50 Frames. In TouchDesigner entspricht das einem Level TOP mit Opacity 0,9–0,98 im Feedback-Pfad. Jede Generation wird mit 0,9, dann 0,81, dann 0,729 gewichtet.\[27\]\[28\] Beachten: Beim Beamer liefert die *optische* Schleife bereits ein Nachleuchten, denn das alte Bild steht auf der Wand und wird erneut abgefilmt. Software-Decay und optischer Gain multiplizieren sich.
-- **Max-/Min-Blending** (acc = max(a·acc, x)) ergibt Lichtspuren, die nie über das Maximum hinaus aufbauen und daher stabiler sind als additives Blending.
-- **Frame-Delay** (Ringpuffer mit N Frames): out = mix(x, buf[n−N], k). Die Verzögerung wird zum Parameter. Sie legt fest, wie schnell Tunnel und Spiralen „laufen“, und erzeugt Echos. Waaave Pool bietet eine Verzögerung von 33 bis 2000 ms aus einem Puffer von 2 s.\[21\] Achtung: Die physische Schleifenlatenz addiert sich immer dazu.
-- **Frame-Differencing:** d = |x(n) − x(n−k)|. Nur Veränderung wird zurückgeführt, statische Bereiche sterben ab. Das ergibt bewegungsgetriebenes Feedback, das bei Interaktion (Hand im Lichtkegel) aufblüht und in Ruhe verlischt, also ideal für Installationen. In Hydra erledigt das `diff()`.\[29\]
+- **Max-/Min-Blending** (acc = max(a·acc, x)) ergibt Lichtspuren, die nie über das Maximum hinaus aufbauen und daher ==stabiler sind als additives Blending.==
+- **==Frame-Delay==** (Ringpuffer mit N Frames): out = mix(x, buf[n−N], k). Die Verzögerung wird zum Parameter. Sie legt fest, wie schnell Tunnel und Spiralen „laufen“, und erzeugt Echos. Waaave Pool bietet eine Verzögerung von 33 bis 2000 ms aus einem Puffer von 2 s.\[21\] Achtung: Die physische Schleifenlatenz addiert sich immer dazu.
+- **Frame-Differencing:** d = |x(n) − x(n−k)|. Nur Veränderung wird zurückgeführt, statische Bereiche sterben ab. Das ergibt ==bewegungsgetriebenes Feedback, das bei Interaktion (Hand im Lichtkegel) aufblüht und in Ruhe verlischt==, also ideal für Installationen. In Hydra erledigt das `diff()`.\[29\]
 - **Zeitlicher Tiefpass:** Er glättet Strobo-Flackern (Periode-2-Oszillationen bei Invertierung) und das Beat-Flackern zwischen Kamera- und Beamerrate. Waaave Pool nennt seinen „temporal filter“ ausdrücklich als Mittel, um „strobing effects“ zu glätten.\[21\]
-- **Zeitlicher Hochpass:** x − acc (Bewegungsbetonung) zurückgeführt ergibt Oszillatoren und pulsierende Ränder.
+- **Zeitlicher Hochpass:** x − acc (==Bewegungsbetonung==) zurückgeführt ergibt Oszillatoren und pulsierende Ränder.
 - **Zeitliche Filter in der Kette:** Eine Hintereinanderschaltung aus Tiefpass und Hochpass ergibt einen zeitlichen Bandpass, sodass nur Veränderungen mit bestimmter Frequenz überleben. Damit kann man „Resonanzfrequenzen“ des Bildes einstellen.
 
 ### 6. Geometrische Transformationen
@@ -206,7 +206,7 @@ sample prev at x' (bilinear), außerhalb = 0 oder wrap/mirror
 - **Zoom b > 1** (optisch: näher heran oder Brennweite verlängern): Inhalte strömen nach außen, das Zentrum wird zur Quelle, Rauschen wird verstärkt, es entstehen Ausbrüche. **b < 1:** Tunnel, unendliche Regression.
 - **Rotation φ:** Spiralen, rotierende Sterne. Mit Zoom entstehen logarithmische Spiralen. Crutchfield empfiehlt für den Einstieg 20–60° Rotation bei variiertem Zoom.\[4\] Mit Winkeln φ = 360°/N entstehen N-zählige Symmetrien.
 - **Verschiebung t:** Driftende Vorhänge, Wasserfälle. In Hydra geht das etwa mit `src(o0).scrollY(-0.001)`.\[30\]
-- **Spiegelung / Kaleidoskop:** Polarwinkel mod 2π/N, jedes zweite Segment gespiegelt (Hydra `kaleid(N)`). In der Schleife werden Symmetrien *erzwungen*, und es entstehen Mandala-artige, stabile Muster. Auch physisch möglich: Spiegel im Strahlengang oder eine zweite Projektion.
+- **==Spiegelung / Kaleidoskop==:** Polarwinkel mod 2π/N, jedes zweite Segment gespiegelt (Hydra `kaleid(N)`). In der Schleife werden Symmetrien *erzwungen*, und es entstehen Mandala-artige, stabile Muster. Auch physisch möglich: Spiegel im Strahlengang oder eine zweite Projektion.
 - **Displacement / Feedback-Warping:** Abtastung bei x + k·D(x), wobei D Rauschen, ein Oszillator oder der *Gradient des Bildes selbst* ist. Selbstmodulation erzeugt Flüssigkeits- und Marmoreffekte. Hydra: `osc().modulate(src(o0))` oder `src(o0).modulate(noise(3), 0.02)`.\[30\] In TouchDesigner das Displace TOP mit einem Noise TOP als Quelle.
 - **Nichtlineare Warps:** Ein Swirl (Rotation abhängig vom Radius) ergibt Strudel. Eine Möbius-Transformation ergibt doppelte Spiralen mit zwei Fixpunkten.
 - **Optische Parameter** (Crutchfields Tabelle I):
@@ -214,7 +214,7 @@ sample prev at x' (bilinear), außerhalb = 0 oder wrap/mirror
   - Fokus = Diffusion bzw. Schärfe;
   - Blende = Gain;
   - Rotation und Translation zwischen Kamera- und Projektionsraster.
-  Dazu kommen beim Beamer der **Einfallswinkel** (Keystone, also perspektivische Verzerrung als Teil der Abbildung), die **Oberfläche** (Struktur, Krümmung, Stoff) und **Objekte im Lichtkegel**.\[31\] Mit manuellem Zoom, Fokus und Iris an einem CS-Varifokalobjektiv sind das echte „Hardware-Regler“. Eine Kombination aus optischer Grobeinstellung und digitaler Feinjustage ist ideal.
+  Dazu kommen beim Beamer der **Einfallswinkel** (==Keystone, also perspektivische Verzerrung== als Teil der Abbildung), die **Oberfläche** (Struktur, Krümmung, Stoff) und **Objekte im Lichtkegel**.\[31\] Mit manuellem Zoom, Fokus und Iris an einem CS-Varifokalobjektiv sind das echte „Hardware-Regler“. Eine Kombination aus optischer Grobeinstellung und digitaler Feinjustage ist ideal.
 
 **Pixelraster-Fraktale:** Nach Courtial et al. (ausführliche Fassung in Contemporary Physics 44, 2003) entscheidet bei pixelbasierten Displays die Lage des Zoom-Zentrums relativ zu den einzelnen Pixeln über die Art der entstehenden Fraktale (Sierpinski, Koch). Wer das gezielt will, projiziert scharf, zoomt digital mit Nearest-Neighbour-Sampling und verschiebt das Zentrum subpixelgenau.
 
@@ -254,7 +254,7 @@ while True:
 - Keys über RGB Key TOP bzw. Chroma Key TOP, Kanten über das Edge TOP, eigene DoG-/RD-Shader im GLSL TOP.
 - Steuerung über MIDI In CHOP bzw. OSC In CHOP.
 
-**Max/MSP/Jitter.** Man nimmt jit.grab → jit.gl.pix bzw. jit.gl.slab. Beide Objekte kopieren eingehende Texturen, was „prevents feedback from becoming an infinite loop“. Ein leeres jit.gl.slab dient als Feedback-Speicher um ein jit.gl.pix,\[35\] in dem Zoom, Offset und Farb-Scale/Bias passieren.\[36\] Keys laufen über `co.lumakey.jxs` bzw. `co.chromakey.hsv.jxs`, Crossfades über `jit.gl.pix @gen xfade`. Für Einsteiger gibt es Vizzie-Module wie LUMAKEYR, CHROMAKEYR und XFADR.\[22\] Die ältere CPU-Variante mit jit.op (+, *, avg), jit.xfade, jit.rota und jit.brcosa funktioniert,\[37\] ist aber langsamer.
+**Max/MSP/Jitter.** Man nimmt jit.grab → jit.gl.pix bzw. jit.gl.slab. Beide Objekte kopieren eingehende Texturen, was „prevents feedback from becoming an infinite loop“. Ein leeres jit.gl.slab dient als ==Feedback-Speicher== um ein jit.gl.pix,\[35\] in dem Zoom, Offset und Farb-Scale/Bias passieren.\[36\] Keys laufen über `co.lumakey.jxs` bzw. `co.chromakey.hsv.jxs`, Crossfades über `jit.gl.pix @gen xfade`. Für Einsteiger gibt es Vizzie-Module wie LUMAKEYR, CHROMAKEYR und XFADR.\[22\] Die ältere CPU-Variante mit jit.op (+, *, avg), jit.xfade, jit.rota und jit.brcosa funktioniert,\[37\] ist aber langsamer.
 
 **Hydra (Browser, Live-Coding).** Die Ausgabepuffer o0 bis o3 können sich selbst als Quelle nutzen. Hydra nennt Crutchfields Film ausdrücklich als Inspiration.\[30\]\[38\]
 ```js
@@ -301,38 +301,38 @@ src(o0).scale(1.015).rotate(0.01)              // Geometrie im Loop
 
 ### 9. Praktische Hinweise für Beamer-Kamera-Feedback
 
-1. **Umgebungslicht:** Möglichst dunkel arbeiten. Fremdlicht wirkt als konstanter Offset, der das System aus dem Nullzustand „anschiebt“ und dunkle Attraktoren verhindert. Crutchfield beschreibt, dass manche Verhaltensweisen bei Fremdlicht gar nicht erst auftreten. Umgekehrt ist gezielt dosiertes Licht (Taschenlampe) der Startknopf.\[4\] Bei Netzfrequenz-Lampen 50-Hz-Flimmern berücksichtigen (power_line_frequency) oder Lampen ausschalten.
-2. **Gain-Staging:** Die Grundhelligkeit mit Blende oder ND-Filter und fester Belichtung einstellen, sodass bei neutraler Software (Gain 1) *knapp unter* der Selbsterregung gearbeitet wird. Dann den Software-Gain als feinen, reproduzierbaren Regler um 1 herum nutzen. Kamera-Gain auf 0 lassen (Rauschen). Beamer im „Kino/Standard“-Modus betreiben, dynamischen Kontrast und Auto-Iris des Beamers **abschalten**, denn das ist die nächste versteckte Regelschleife.
-3. **Ausbrennen vermeiden:** Einen Soft-Clip (tanh, Knee) statt harter 8-Bit-Sättigung verwenden. Einen Decay < 1 immer im Pfad lassen und einen „Panic“-Reset per Taste haben (Feedback TOP: Reset Pulse).\[33\] Moderne CMOS-Sensoren brennen nicht ein wie Crutchfields Röhren, aber Weißflächen bleiben als Attraktor „kleben“.\[4\]
-4. **Geometrische Kalibrierung:** Eine Homographie Kamera→Beamer bestimmen. Dafür ein Schachbrett oder Gray-Code-Muster projizieren, Punkte finden und `cv2.findHomography` rechnen. Für präzise Anwendungen gibt es die Methode mit lokalen Homographien von Moreno & Taubin (2012) samt Open-Source-Tool procam-calibration.\[54\]\[55\] Mit der Homographie ist die „Identität“ definiert, also Zoom = 1 und Rotation = 0, und Zoom, Rotation und Verschiebung werden zu präzisen, reproduzierbaren Parametern statt Stativgefummel. Die Objektivverzeichnung der Kamera vorher entfernen (`cv2.undistort`).
-5. **Photometrische Kalibrierung:** Beamer und Kamera haben nichtlineare Tonkurven, und ihr Produkt ist die effektive Schleifen-Nichtlinearität. Zum Messen Graustufen von 0–255 projizieren, den Kameramittelwert aufnehmen und eine Inverse-LUT anlegen. Erst damit sind „Gain 1“ und Farbmatrizen in der Software wirklich linear. Den Weißabgleich fest auf die Farbtemperatur des Beamers legen.
-6. **Moiré:** Es entsteht aus der Interferenz von Projektorpixelraster, Sensorraster und Bayer-Muster. Gegenmittel:
+1. **Umgebungslicht:** Möglichst dunkel arbeiten. Fremdlicht wirkt als konstanter Offset, der das System aus dem Nullzustand „anschiebt“ und dunkle Attraktoren verhindert. Crutchfield beschreibt, dass ==manche Verhaltensweisen bei Fremdlicht gar nicht erst auftreten==. Umgekehrt ist gezielt dosiertes Licht (Taschenlampe) der Startknopf.\[4\] Bei Netzfrequenz-Lampen 50-Hz-Flimmern berücksichtigen (power_line_frequency) oder Lampen ausschalten.
+2. **Gain-Staging:** Die ==Grundhelligkeit mit Blende oder ND-Filter und fester Belichtung einstellen, sodass bei neutraler Software (Gain 1) *knapp unter* der Selbsterregung== gearbeitet wird. Dann den Software-Gain als feinen, reproduzierbaren Regler um 1 herum nutzen. Kamera-Gain auf 0 lassen (Rauschen). ==Beamer im „Kino/Standard“-Modus betreiben, dynamischen Kontrast und Auto-Iris des Beamers **abschalten**,== denn das ist die nächste versteckte Regelschleife.
+3. **Ausbrennen vermeiden:** Einen ==Soft-Clip (tanh, Knee) statt harter 8-Bit-Sättigung verwenden. Einen Decay < 1 immer im Pfad lassen und einen „Panic“-Reset per Taste== haben (Feedback TOP: Reset Pulse).\[33\] Moderne CMOS-Sensoren brennen nicht ein wie Crutchfields Röhren, aber ==Weißflächen bleiben als Attraktor „kleben“.==\[4\]
+4. **==Geometrische Kalibrierung:==** Eine Homographie Kamera→Beamer bestimmen. Dafür ein Schachbrett oder Gray-Code-Muster projizieren, Punkte finden und `cv2.findHomography` rechnen. Für präzise Anwendungen gibt es die Methode mit lokalen Homographien von Moreno & Taubin (2012) samt Open-Source-Tool procam-calibration.\[54\]\[55\] Mit der Homographie ist die „Identität“ definiert, also Zoom = 1 und Rotation = 0, und Zoom, Rotation und Verschiebung werden zu präzisen, reproduzierbaren Parametern statt Stativgefummel. Die Objektivverzeichnung der Kamera vorher entfernen (`cv2.undistort`).
+5. **==Photometrische Kalibrierung:==** Beamer und Kamera haben nichtlineare Tonkurven, und ihr Produkt ist die effektive Schleifen-Nichtlinearität. Zum Messen Graustufen von 0–255 projizieren, den Kameramittelwert aufnehmen und eine Inverse-LUT anlegen. Erst damit sind „Gain 1“ und Farbmatrizen in der Software wirklich linear. Den Weißabgleich fest auf die Farbtemperatur des Beamers legen.
+6. **==Moiré==:** Es entsteht aus der Interferenz von Projektorpixelraster, Sensorraster und Bayer-Muster. Gegenmittel:
    - (a) minimal defokussieren, also optischer Tiefpass;
    - (b) Kamera-Auflösung bzw. Bildausschnitt so wählen, dass ein Projektorpixel deutlich unter oder über einem Kamerapixel liegt;
    - (c) digitalen Blur mit σ ≈ 0,5–1 px vor der Verarbeitung;
    - (d) Kerbfilter im FFT-Raum.
    Man kann Moiré aber auch bewusst als Musterquelle nutzen (siehe Courtial).
 7. **Latenzmessung:**
-   - *Blink-Test:* Im eigenen Loop an Frame n ein Weißbild ausgeben, im Kamerastrom den Frame suchen, in dem die mittlere Helligkeit springt, und die Differenz in Frames bzw. ms ablesen. Wiederholen und die Verteilung auswerten.\[56\]
+   - *Blink-Test:* ==Im eigenen Loop an Frame n ein Weißbild ausgeben, im Kamerastrom den Frame suchen, in dem die mittlere Helligkeit springt, und die Differenz in Frames bzw. ms ablesen. Wiederholen und die Verteilung auswerten.==\[56\]
    - *Glass-to-Glass-Messung:* Eine Uhr mit ms-Anzeige wird abgefilmt und zusammen mit ihrem projizierten Bild fotografiert.\[56\]\[57\]\[58\]
    Für die Messung sollte man die Glättung durch lange Belichtung berücksichtigen.
-8. **Timing und Synchronisation:** Kamera und Beamer mit derselben Nennrate betreiben (60/60). Die unvermeidliche Schwebung zwischen beiden Takten zeigt sich als langsames Rollen oder Pulsieren. Das dämpft man mit einem zeitlichen Tiefpass oder mit einer Belichtung gleich der Frameperiode. Bei Ein-Chip-DLP gelten die Hinweise aus Abschnitt 1.
-9. **Echtzeit-Steuerung per MIDI/OSC:** Die wichtigsten Regler sind:
-   - Feedback-Gain bzw. Decay;
-   - Zoom, Rotation, Verschiebung;
-   - Hue-Δ und Sättigung;
-   - Key-Schwelle und Weichheit;
-   - σ1/σ2 und k (DoG/RD);
-   - Mix frisch/Feedback;
-   - Delay-Frames.
-   Parameter *glätten* (Slew/Lag, z. B. Lag CHOP bzw. `jit.slide`), weil Sprünge in Gain oder Zoom das System schlagartig in ein anderes Attraktorbecken werfen können. Für Gain und Zoom logarithmische Skalen mit feiner Auflösung um 1 herum verwenden (z. B. 14-Bit-MIDI oder OSC-Float). Werkzeuge sind MIDI In CHOP und OSC In CHOP (TouchDesigner), ctlin und udpreceive (Max), in Python `mido` bzw. `python-osc`. Waaave Pool bringt ein fertiges nanoKONTROL-Mapping mit uni- und bipolaren Reglern mit.\[39\]
-10. **Sicherheit:** Feedback kann schnelle Hell-Dunkel-Wechsel erzeugen, etwa Periode-2-Oszillationen bei Invertierung. Bei öffentlichem Einsatz Flash-Raten begrenzen (Richtwert nach W3C WCAG 2.x, Erfolgskriterium 2.3.1 „Three Flashes or Below Threshold“: nichts darf in einer Sekunde öfter als dreimal blitzen) und mit einem zeitlichen Tiefpass absichern.
+1. **Timing und Synchronisation:** ==Kamera und Beamer mit derselben Nennrate betreiben (60/60)==. Die unvermeidliche Schwebung zwischen beiden Takten zeigt sich als langsames Rollen oder Pulsieren. Das ==dämpft man mit einem zeitlichen Tiefpass== oder mit einer Belichtung gleich der Frameperiode. Bei Ein-Chip-DLP gelten die Hinweise aus Abschnitt 1.
+2. **Echtzeit-Steuerung per MIDI/OSC:** Die wichtigsten Regler sind:
+   - ==Feedback-Gain bzw. Decay;==
+   - ==Zoom, Rotation, Verschiebung;==
+   - ==Hue-Δ und Sättigung;==
+   - ==Key-Schwelle und Weichheit;==
+   - ==σ1/σ2 und k (DoG/RD);==
+   - ==Mix frisch/Feedback;==
+   - ==Delay-Frames.==
+   ==Parameter *glätten* (Slew/Lag, z. B. Lag CHOP bzw. `jit.slide`), weil Sprünge in Gain oder Zoom das System schlagartig in ein anderes Attraktorbecken werfen können==. Für Gain und Zoom ==logarithmische Skalen== mit feiner Auflösung um 1 herum verwenden (z. B. 14-Bit-MIDI oder OSC-Float). Werkzeuge sind MIDI In CHOP und OSC In CHOP (TouchDesigner), ctlin und udpreceive (Max), in Python `mido` bzw. `python-osc`. Waaave Pool bringt ein fertiges nanoKONTROL-Mapping mit uni- und bipolaren Reglern mit.\[39\]
+1. **Sicherheit:** Feedback kann schnelle Hell-Dunkel-Wechsel erzeugen, etwa Periode-2-Oszillationen bei Invertierung. Bei öffentlichem Einsatz Flash-Raten begrenzen (Richtwert nach W3C WCAG 2.x, Erfolgskriterium 2.3.1 „Three Flashes or Below Threshold“: nichts darf in einer Sekunde öfter als dreimal blitzen) und mit einem zeitlichen Tiefpass absichern.
 
 ## Recommendations
 
-1. **Kamera:** Mit einem DLP-Beamer die C3-234 (Global Shutter) nehmen. Mit einem LCD- oder Laser-3-Chip-Beamer und wenig Licht die C3-462C, für reines Luma-Feedback mit Software-Colorizer die C3-462M. Die C3-415 nur, wenn Auflösung wichtiger ist als Bildrate. Dazu ein manuelles CS-Varifokal (z. B. 2,8–12 mm), damit Zoom, Fokus und Iris als physische Regler dienen.
-2. **Signalweg:** MJPEG mit 1280×720 oder 1920×1080 bei 60 fps. Alle Automatiken aus, Belichtung = 16,7 ms oder 33,3 ms, Gain 0, Schärfe 0. Homographie und photometrische LUT einmal kalibrieren.
-3. **Algorithmus-Startpunkt:** Den Kern bilden IIR-Decay (0,85–0,95), Zoom 1,01–1,03, Rotation 0,5–3° pro Frame und ein weicher Clip. Dann schrittweise nacheinander hinzufügen:
+1. **Kamera:** Mit einem ==DLP-Beamer die C3-234 (Global Shutter) nehmen. Mit einem LCD- oder Laser-3-Chip-Beamer und wenig Licht die C3-462C==, für reines Luma-Feedback mit Software-Colorizer die C3-462M. Die C3-415 nur, wenn Auflösung wichtiger ist als Bildrate. Dazu ein manuelles CS-Varifokal (z. B. 2,8–12 mm), damit Zoom, Fokus und Iris als physische Regler dienen.
+2. **Signalweg:** ==MJPEG mit 1280×720 oder 1920×1080 bei 60 fps. Alle Automatiken aus, Belichtung = 16,7 ms oder 33,3 ms, Gain 0, Schärfe 0. Homographie und photometrische LUT einmal kalibrieren.==
+3. ==**Algorithmus-Startpunkt:** Den Kern bilden IIR-Decay (0,85–0,95), Zoom 1,01–1,03, Rotation 0,5–3° pro Frame und ein weicher Clip. Dann schrittweise nacheinander hinzufügen:==
    - (a) Hue-Rotation 1–3° pro Frame;
    - (b) Blur mit σ 1–3 px;
    - (c) DoG bzw. Unsharp für Turing-Muster;

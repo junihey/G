@@ -14,25 +14,25 @@ Der erste Bericht hat rund 30 Techniken übersehen. Die wichtigsten sind Spectra
 
 FFTease (Eric Lyon, Christopher Penrose, seit 1999) umfasst laut aktuellem README 38 Spektral-Objekte für Max und Pd. Der Quellcode steht unter MIT-artiger Lizenz und darf portiert werden, solange der Copyright-Hinweis erhalten bleibt. Die Externals laufen in RNBO nicht, aber die Algorithmen lassen sich in die Frame-Engine übertragen. Default ist FFT 1024 mit Overlap 8; die Live-Engine arbeitet mit Overlap 4.
 
-| Objekt | Was es tut | Metamorphose-Nutzen | Klasse | Live-Engine |
-| --- | --- | --- | --- | --- |
-| leaker~ | Sieb-Crossfade: Bins wechseln in zufälliger Reihenfolge von A nach B | Morph, der „durchsickert“ statt überblendet | A | sofort (2. Quelle) |
-| morphine~ | als Morph-Objekt beschrieben | direkter A→B-Morph | vermutlich A | Algorithmus im C-Code prüfen |
-| schmear~ | spektrales Verschmieren | Ereignis → Fläche | B | sofort |
-| disarray~ / disarrain~ | Umverteilung der Spektralenergie; disarrain~ interpoliert | Klang → glitzernde Textur | B | sofort |
-| reanimator~ | Textur-Mapper: ein Klang treibt gespeicherte Frames eines anderen | Streichquartett „spricht“ durch Stimme | Z | später, schwierig (Frame-Suche in einer Datenbank) |
-| pileup~ | spektrale Akkumulation | Klang baut sich zur Wolke auf | E | sofort |
-| loopsea~ | spektral geschichtetes, unabhängiges Looping | Bänder laufen auseinander | E | sofort bis mit Aufwand (Loops nur aus der Ring-Vergangenheit) |
-| resent~ / residency~ | Spektral-Sampler, resent~ mit Geschwindigkeit pro Bin-Block | Teile des Spektrums bewegen sich verschieden schnell | E / Z | langsamer: aus dem Ring; schneller als Original: später |
-| ether~ / vacancy~ | spektrales Compositing zweier Quellen | eine Quelle füllt Lücken der anderen | A | sofort (2. Quelle) |
-| swinger~ | Phasentausch zwischen zwei Quellen | Cross-Synthese-Variante | A | sofort (2. Quelle) |
-| mindwarp~ | Formant-Warping | Formantverschiebung ohne Tonhöhe | B | mit Aufwand (Hüllkurve per Glättung, dann verschoben anwenden) |
-| pvwarp~ / pvwarpb~ | nichtlinearer Frequenz-Warper, b-Version mit Warp-Tabelle | harmonisch → inharmonisch | B, F | mit Aufwand |
-| pvtuner~ | Spektrum auf beliebige Skala quantisieren | Geräusch → gestimmter Klang | B, F | mit Aufwand (Frequenz pro Bin aus dem Ring) |
-| cavoc~ / cavoc27~ | zelluläre Automaten erzeugen Spektren | selbst-evolvierende Spektren | B, E | sofort (Regel pro Bin aus Nachbarn des Vorframes) |
-| burrow~ | gegenseitig referenzierte Filterung | eine Quelle filtert die andere | A | sofort (2. Quelle) |
-| xsyn~ / taint~ / cross~ | Cross-Synthese-Varianten | Hybride | A | sofort (2. Quelle) |
-| dentist~ | Partials gezielt entfernen | Skelettierung | A | sofort |
+| Objekt                  | Was es tut                                                           | Metamorphose-Nutzen                                  | Klasse       | Live-Engine                                                    |
+| ----------------------- | -------------------------------------------------------------------- | ---------------------------------------------------- | ------------ | -------------------------------------------------------------- |
+| leaker~                 | Sieb-Crossfade: Bins wechseln in zufälliger Reihenfolge von A nach B | ==Morph, der „durchsickert“ statt überblendet==      | A            | sofort (2. Quelle)                                             |
+| morphine~               | als Morph-Objekt beschrieben                                         | direkter A→B-Morph                                   | vermutlich A | Algorithmus im C-Code prüfen                                   |
+| schmear~                | spektrales Verschmieren                                              | Ereignis → Fläche                                    | B            | sofort                                                         |
+| disarray~ / disarrain~  | Umverteilung der Spektralenergie; disarrain~ interpoliert            | Klang → glitzernde Textur                            | B            | sofort                                                         |
+| reanimator~             | Textur-Mapper: ein Klang treibt gespeicherte Frames eines anderen    | Streichquartett „spricht“ durch Stimme               | Z            | später, schwierig (Frame-Suche in einer Datenbank)             |
+| pileup~                 | spektrale Akkumulation                                               | Klang baut sich zur Wolke auf                        | E            | sofort                                                         |
+| loopsea~                | spektral geschichtetes, unabhängiges Looping                         | Bänder laufen auseinander                            | E            | sofort bis mit Aufwand (Loops nur aus der Ring-Vergangenheit)  |
+| resent~ / residency~    | Spektral-Sampler, resent~ mit Geschwindigkeit pro Bin-Block          | Teile des Spektrums bewegen sich verschieden schnell | E / Z        | langsamer: aus dem Ring; schneller als Original: später        |
+| ether~ / vacancy~       | spektrales Compositing zweier Quellen                                | ==eine Quelle füllt Lücken der anderen==             | A            | sofort (2. Quelle)                                             |
+| swinger~                | Phasentausch zwischen zwei Quellen                                   | Cross-Synthese-Variante                              | A            | sofort (2. Quelle)                                             |
+| mindwarp~               | Formant-Warping                                                      | Formantverschiebung ohne Tonhöhe                     | B            | mit Aufwand (Hüllkurve per Glättung, dann verschoben anwenden) |
+| pvwarp~ / pvwarpb~      | ==nichtlinearer Frequenz-Warper, b-Version mit Warp-Tabelle==        | harmonisch → inharmonisch                            | B, F         | mit Aufwand                                                    |
+| pvtuner~                | Spektrum auf beliebige Skala quantisieren                            | Geräusch → gestimmter Klang                          | B, F         | mit Aufwand (Frequenz pro Bin aus dem Ring)                    |
+| cavoc~ / cavoc27~       | zelluläre Automaten erzeugen Spektren                                | selbst-evolvierende Spektren                         | B, E         | sofort (Regel pro Bin aus Nachbarn des Vorframes)              |
+| burrow~                 | gegenseitig referenzierte Filterung                                  | eine Quelle filtert die andere                       | A            | sofort (2. Quelle)                                             |
+| xsyn~ / taint~ / cross~ | Cross-Synthese-Varianten                                             | Hybride                                              | A            | sofort (2. Quelle)                                             |
+| dentist~                | Partials gezielt entfernen                                           | Skelettierung                                        | A            | sofort                                                         |
 
 „2. Quelle“ heißt: ein zweiter Satz aus vier `fft~` für das zweite Audio-Element. Die beiden Streams laufen nicht samplegenau synchron; für spektrale Morphs ist das unkritisch.
 
@@ -64,18 +64,18 @@ Quellen: [Polansky & Erbe, „Spectral Mutation in Soundhack“](https://eamusic
 
 SoundMagic Spectral (Michael Norris, 23 freie AU-Plugins, v1.5) liefert vor allem zeitliche Hüllkurven pro Bin. Norris nennt Wisharts *Audible Design* und CDP als Vorbild.
 
-| Technik (SoundMagic) | Was sie tut | Klasse | Live-Engine |
-| --- | --- | --- | --- |
-| Gate and Hold | Bin über der Schwelle wird eingefroren und bekommt eine eigene Hüllkurve (Fade-in, Hold, Fade-out), optional frequenzabhängig verzögert, gepulst, verschoben | A, E | mit Aufwand (Zustandsautomat pro Bin) |
-| Weave | wartet auf stabile Klangstellen, speichert Schnappschüsse („Threads“) und blendet mehrere wellenförmig ineinander | C, E | mit Aufwand (Stabilität aus der Frame-Statistik, Schnappschüsse beim Einlesen kopieren) |
-| DroneMaker | interpoliert jeden Bin zwischen weit auseinanderliegenden Zeitpunkten, optional Peak-Werte; Kammfilterbank | E | sofort bis mit Aufwand |
-| Shimmer | Amplituden-Jitter pro Bin, wandernde Pulswelle, Delay pro Bin | A, E | sofort |
-| Pulsing | Bins schalten an/aus, Dauer abhängig von Frequenz und Zeit | A | sofort (Zähler pro Bin) |
-| Filterbank / Gliding Filters | sehr schmale FFT-Bandpässe auf Skalen bzw. gleitende Filter | A | sofort |
-| Bin Shift mit „instantaneous feedback“ | Verschiebung wird im selben Frame mehrfach zurückgeführt | B | sofort (mehrere versetzte Lesezugriffe auf Frame g−1) |
-| Stretch | Peaks nach β·ω + α·ω² verschoben – harmonisch → inharmonisch | B, F | mit Aufwand |
-| Emergence / Partial Glide | erkannte Partials bekommen eigene Hüllkurven bzw. gleiten einzeln | B, E | schwierig (braucht Tracking über Frames) |
-| Granulation | Blöcke aus Bins × Frames verzögert und verschoben | E | sofort bis mit Aufwand (nur Vergangenheit) |
+| Technik (SoundMagic)                   | Was sie tut                                                                                                                                                  | Klasse | Live-Engine                                                                             |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------ | --------------------------------------------------------------------------------------- |
+| Gate and Hold                          | Bin über der Schwelle wird eingefroren und bekommt eine eigene Hüllkurve (Fade-in, Hold, Fade-out), optional frequenzabhängig verzögert, gepulst, verschoben | A, E   | mit Aufwand (Zustandsautomat pro Bin)                                                   |
+| Weave                                  | ==wartet auf stabile Klangstellen, speichert Schnappschüsse („Threads“) und blendet mehrere wellenförmig ineinander==                                        | C, E   | mit Aufwand (Stabilität aus der Frame-Statistik, Schnappschüsse beim Einlesen kopieren) |
+| DroneMaker                             | interpoliert jeden Bin zwischen weit auseinanderliegenden Zeitpunkten, optional Peak-Werte; Kammfilterbank                                                   | E      | sofort bis mit Aufwand                                                                  |
+| Shimmer                                | Amplituden-Jitter pro Bin, wandernde Pulswelle, Delay pro Bin                                                                                                | A, E   | sofort                                                                                  |
+| Pulsing                                | ==Bins schalten an/aus, Dauer abhängig von Frequenz und Zeit==                                                                                               | A      | sofort (Zähler pro Bin)                                                                 |
+| Filterbank / Gliding Filters           | sehr schmale FFT-==Bandpässe== auf Skalen bzw. gleitende Filter                                                                                              | A      | sofort                                                                                  |
+| Bin Shift mit „instantaneous feedback“ | Verschiebung wird im selben Frame mehrfach zurückgeführt                                                                                                     | B      | sofort (mehrere versetzte Lesezugriffe auf Frame g−1)                                   |
+| Stretch                                | Peaks nach β·ω + α·ω² verschoben – harmonisch → inharmonisch                                                                                                 | B, F   | mit Aufwand                                                                             |
+| Emergence / Partial Glide              | ==erkannte== Partials ==bekommen eigene Hüllkurven bzw. gleiten einzeln==                                                                                    | B, E   | schwierig (braucht Tracking über Frames)                                                |
+| Granulation                            | ==Blöcke aus Bins × Frames verzögert und verschoben==                                                                                                        | E      | sofort bis mit Aufwand (nur Vergangenheit)                                              |
 
 Zwei Praxishinweise von Norris betreffen die Engine direkt: Er verzichtet aus CPU-Gründen auf Phase-Unwrapping und randomisiert stattdessen die Phasen, um Kammfilter-Klingeln bei Amplituden-Interpolation zu vermeiden. In der Live-Engine ist die Frequenz pro Bin dagegen ohnehin verfügbar; Phasenrandomisierung bleibt als klangliche Option. Außerdem: Die interessantesten Ergebnisse liegen oft knapp neben der Neutralstellung.
 
@@ -85,7 +85,7 @@ DroneMaker ist inspiriert von **Mammut** (Øyvind Hammer, NOTAM), das eine riesi
 
 Quellen: [SoundMagic Spectral Guide](https://michaelnorris.info/software/soundmagic-spectral/guide/), [SoundMagic Spectral Download/Liste](https://www.michaelnorris.info/software/soundmagicspectral), [Ableton: Spectral Time](https://www.ableton.com/en/blog/freeze-delay-and-deconstruct-sound-design-with-spectral-time/), [Ableton: Spektralklänge in Live 11](https://www.ableton.com/de/blog/spectral-sound-a-look-at-live-11s-new-spectral-devices/).
 
-## Spektrale Spatialisierung
+## ==Spektrale Spatialisierung==
 
 Jeder Bin oder jedes Band bekommt eine eigene Position im Raum – der Klang zerfällt räumlich in seine Bestandteile und kann sich wieder sammeln, ohne dass sich sein Spektrum ändert.
 
@@ -134,19 +134,19 @@ Quellen: [Holighaus et al.](https://arxiv.org/abs/1210.0084), [CiCueTea](https:/
 
 DAFX bestätigt die meisten bisherigen Techniken und ergänzt fünf: Robotisierung, Dispersion, Stabil/Transient-Trennung über die Phase, Frequenz-Warping per Laguerre-Transformation und adaptive Effekte. Geprüft habe ich die Kapitelgliederung der 2. Auflage (Wiley 2011) und die Unterkapitel der 1. Auflage; die MATLAB-Dateien konnte ich nicht einsehen.
 
-| Kapitel | Techniken | Neu? | Klasse | Live-Engine |
-| --- | --- | --- | --- | --- |
-| Zeit-Frequenz | Zeit-Frequenz-Filter, Mutation zweier Klänge, Entrauschen | nein | A | sofort |
-| ebenda | Time-Stretch, Pitch-Shift | nein | Z / B, F | später / mit Aufwand |
-| ebenda | **Robotisierung:** Phase jedes Bins pro Frame auf null; die Tonhöhe ergibt sich aus dem Frame-Abstand | ja | A | sofort |
-| ebenda | **Whisperization:** Zufallsphasen, meist mit kleinem Fenster | teils | A | sofort (mit N = 512 oder 1024 als eigener Satz Ketten) |
-| ebenda | **Dispersion:** frequenzabhängige Laufzeit | ja | E | sofort bis mit Aufwand (Mechanismus nicht nachgelesen) |
-| ebenda | **Stabil/Transient-Trennung:** stabile Momentanfrequenz = tonal, der Rest = Transient | ja | F | sofort – günstige Alternative zu Median-HPSS am Handy |
-| Quelle-Filter | Kanalvocoder, LPC, Cepstrum; Cross-Synthese, Formantverschiebung, formanterhaltendes Pitch-Shifting | nein | A, B, X | wie im Hauptbericht |
-| Spektralmodelle (Sinus + Residuum) | Spectral Shape Shift, Geschlechtswechsel, Harmonizer, Heiserkeit, Morphing | teils | B, E | mit Aufwand bis schwierig (vereinfachtes Tracking) |
-| Frequenz-Warping (Evangelista) | Frequenzachse per Allpass-Kette (Laguerre) stufenlos verbiegen; Inharmonizer, Morphing | ja | – | schwierig am Handy (zusätzliche Verarbeitung neben der Engine) |
-| Adaptive Effekte (Verfaille & Arfib) | Klangmerkmale steuern Effektparameter | ja | C | sofort |
-| Quellentrennung | Einkanal- und Binauraltrennung | nein | – | nicht live |
+| Kapitel                              | Techniken                                                                                             | Neu?  | Klasse   | Live-Engine                                                    |
+| ------------------------------------ | ----------------------------------------------------------------------------------------------------- | ----- | -------- | -------------------------------------------------------------- |
+| Zeit-Frequenz                        | Zeit-Frequenz-Filter, Mutation zweier Klänge, Entrauschen                                             | nein  | A        | sofort                                                         |
+| ebenda                               | Time-Stretch, Pitch-Shift                                                                             | nein  | Z / B, F | später / mit Aufwand                                           |
+| ebenda                               | **Robotisierung:** Phase jedes Bins pro Frame auf null; die Tonhöhe ergibt sich aus dem Frame-Abstand | ja    | A        | sofort                                                         |
+| ebenda                               | **Whisperization:** Zufallsphasen, meist mit kleinem Fenster                                          | teils | A        | sofort (mit N = 512 oder 1024 als eigener Satz Ketten)         |
+| ebenda                               | **Dispersion:** frequenzabhängige Laufzeit                                                            | ja    | E        | sofort bis mit Aufwand (Mechanismus nicht nachgelesen)         |
+| ebenda                               | **Stabil/Transient-Trennung:** stabile Momentanfrequenz = tonal, der Rest = Transient                 | ja    | F        | sofort – günstige Alternative zu Median-HPSS am Handy          |
+| Quelle-Filter                        | Kanalvocoder, LPC, Cepstrum; Cross-Synthese, Formantverschiebung, formanterhaltendes Pitch-Shifting   | nein  | A, B, X  | wie im Hauptbericht                                            |
+| Spektralmodelle (Sinus + Residuum)   | Spectral Shape Shift, Geschlechtswechsel, Harmonizer, Heiserkeit, Morphing                            | teils | B, E     | mit Aufwand bis schwierig (vereinfachtes Tracking)             |
+| Frequenz-Warping (Evangelista)       | Frequenzachse per Allpass-Kette (Laguerre) stufenlos verbiegen; Inharmonizer, Morphing                | ja    | –        | schwierig am Handy (zusätzliche Verarbeitung neben der Engine) |
+| Adaptive Effekte (Verfaille & Arfib) | Klangmerkmale steuern Effektparameter                                                                 | ja    | C        | sofort                                                         |
+| Quellentrennung                      | Einkanal- und Binauraltrennung                                                                        | nein  | –        | nicht live                                                     |
 
 Zwei Ideen davon sind für Metamorphosen besonders brauchbar. **Adaptive Steuerung** passt perfekt zur Engine: Schwerpunkt, Flux oder Lautheit entstehen als Frame-Statistik ohnehin (Klasse C) und können jeden Parameter steuern – etwa bestimmt die Helligkeit von Klang B, wie stark Klang A verwandelt wird. Das Verfaille/Arfib-Paper behandelt nur die Selbststeuerung; die Steuerung durch eine zweite Quelle ist meine Ableitung. **Frequenz-Warping** nach Evangelista verbiegt die Frequenzachse stufenlos, aber außerhalb der Bin-Logik; als Ersatz in der Engine dient Bin-Remapping mit Phasenkorrektur (Klassen B + F).
 
