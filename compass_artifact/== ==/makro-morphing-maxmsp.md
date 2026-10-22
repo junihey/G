@@ -36,17 +36,17 @@ Du hältst deine Zustandsmatrix im Speicher und rechnest bei jedem Update:
 1. finde die zwei (oder mehr) relevanten Zustände für den aktuellen Makrowert
 2. blende zwischen ihnen
 
-**Vorteile:** Zustände können sich zur Laufzeit ändern (User speichert einen neuen Preset, Zustände werden umsortiert). Kein Vorbereitungsschritt. Speicherbedarf = Anzahl Zustände × Parameter.
+**Vorteile:** ==Zustände können sich zur Laufzeit ändern (User speichert einen neuen Preset, Zustände werden umsortiert)==. Kein Vorbereitungsschritt. Speicherbedarf = Anzahl Zustände × Parameter.
 
 **Nachteile:** Kosten steigen mit der Interpolationsart. Bei Splines brauchst du Nachbarsuche und Tangentenberechnung im Audiothread oder zumindest im Kontrollpfad. Bei 50 Parametern und einem XY-Pad mit RBF-Gewichtung wird das schnell unangenehm.
 
-**Nimm das, wenn:** die Zustände sich zur Laufzeit ändern, du wenige Parameter hast, oder du noch in der Designphase bist.
+**Nimm das, wenn:** ==die Zustände sich zur Laufzeit ändern, du wenige Parameter hast, oder du noch in der Designphase bist.==
 
 ### LUT (Look-Up Table)
 
-Du wertest alle Kurven einmalig offline an z.B. 512 gleichmäßig verteilten Stellen aus und legst das Ergebnis als Tabelle ab. Zur Laufzeit: ein Index-Zugriff plus lineare Interpolation.
+Du wertest alle Kurven einmalig offline an z.B. 512 gleichmäßig verteilten Stellen aus und legst das Ergebnis als Tabelle ab. ==Zur Laufzeit: ein Index-Zugriff plus lineare Interpolation.==
 
-**Vorteile:** Konstante Kosten pro Parameter, unabhängig davon, wie kompliziert die Kurve ist. Cache-freundlich (alle Werte für einen Makropunkt liegen nebeneinander). Die Kurve kann aus einer PCHIP-Spline, einem gezeichneten Breakpoint-Editor, einer Messung oder einem Regressionsmodell stammen — dem Audiothread ist das egal. Speicherbar als Datei, versionierbar, deterministisch.
+**Vorteile:** ==Konstante Kosten== pro Parameter, unabhängig davon, wie kompliziert die Kurve ist. Cache-freundlich (alle Werte für einen Makropunkt liegen nebeneinander). Die Kurve kann aus einer PCHIP-Spline, einem gezeichneten Breakpoint-Editor, einer Messung oder einem Regressionsmodell stammen — dem Audiothread ist das egal. Speicherbar als Datei, versionierbar, deterministisch.
 
 **Nachteile:** Vorbereitungsschritt nötig. Zustandsänderungen erfordern Neubacken (bei 512×50 Floats aber Millisekunden). Quantisierungsfehler.
 
@@ -70,9 +70,9 @@ Das ist die wirkungsvollste einzelne Entscheidung in dieser ganzen Anleitung, un
 
 ### Warum
 
-Jeder Parameter in deinem Plugin hat bereits eine Abbildung `normalisiert → physikalisch`. Die GUI braucht sie (ein Cutoff-Regler ist logarithmisch skaliert), die Automation braucht sie (Hosts arbeiten in 0…1), die Presetdatei braucht sie. Diese Abbildung **enthält bereits die richtige Krümmung**.
+Jeder Parameter in deinem Plugin hat bereits eine Abbildung `normalisiert → physikalisch`. Die GUI braucht sie (ein Cutoff-Regler ist logarithmisch skaliert), die Automation braucht sie (Hosts arbeiten in 0…1), die Presetdatei braucht sie. ==Diese Abbildung **enthält bereits die richtige Krümmung**.==
 
-Wenn du im normalisierten Raum linear interpolierst und *danach* die vorhandene Abbildung anwendest, ist die Domänenfrage automatisch gelöst. Ein Morph von 0.2 nach 0.8 auf einem logarithmischen Cutoff-Regler bewegt sich exakt so, wie es sich anfühlt, wenn ein Mensch den Regler gleichmäßig zieht. Genau das willst du.
+==Wenn du im normalisierten Raum linear interpolierst und *danach* die vorhandene Abbildung anwendest, ist die Domänenfrage automatisch gelöst.== Ein Morph von 0.2 nach 0.8 auf einem logarithmischen Cutoff-Regler bewegt sich exakt so, wie es sich anfühlt, wenn ein Mensch den Regler gleichmäßig zieht. Genau das willst du.
 
 Speicherst du hingegen 100 Hz und 10000 Hz und interpolierst linear, passiert bei t=0.5 der Wert 5050 Hz — also nach der halben Reglerbewegung bist du schon fast oben. Der Morph fühlt sich an, als hätte er am Ende einen Sprung.
 
@@ -152,7 +152,7 @@ Mit einer eigenen Kurve pro Parameter bestimmst du, *wann* auf der Reglerbewegun
 
 Das erste Drittel des Reglers ist damit „Filter öffnet". Das mittlere Drittel bringt Raum dazu. Das letzte Drittel kippt es mit Resonanz über die Kante. Aus einem Crossfade wird eine Dramaturgie.
 
-`t' = pow(t, k)`, dabei bedeutet **k < 1** „früh viel", **k > 1** „spät viel", **k = 1** linear.
+==`t' = pow(t, k)`, dabei bedeutet **k < 1** „früh viel", **k > 1** „spät viel", **k = 1** linear.==
 
 ### Für Makros über mehrere Parameter: Staffelung als Entwurfsprinzip
 
@@ -162,11 +162,11 @@ Wenn dein Makro 20 oder 50 Parameter bewegt, ist die Kurvenwahl kein Feintuning 
 
 **Staffelung statt Gleichzeitigkeit.** Wenn alles gleichzeitig passiert, hört man einen einzigen undifferenzierten Effekt. Wenn die Ereignisse sich über den Reglerweg verteilen, hört man eine Entwicklung. Als Startpunkt: verteile die k-Werte deiner Gruppen über den Bereich 0.4 bis 3.0.
 
-**Gefährliches spät.** Parameter, die aus dem Ruder laufen können (Resonanz, Feedback, Drive, Modulationstiefe), bekommen ein hohes k. Dann ist der Regler auf den ersten 70 % gutmütig, und der Nutzer erreicht die extremen Zustände nur bewusst am oberen Ende. Das ist gleichzeitig ein Sicherheitsmechanismus.
+**Gefährliches spät.** ==Parameter, die aus dem Ruder laufen können (Resonanz, Feedback, Drive, Modulationstiefe), bekommen ein hohes k==. Dann ist der Regler auf den ersten 70 % gutmütig, und der Nutzer erreicht die extremen Zustände nur bewusst am oberen Ende. Das ist gleichzeitig ein Sicherheitsmechanismus.
 
 ### Wenn pow nicht reicht
 
-Ein häufiger Fall: ein Parameter soll in der Mitte ein Maximum haben und an beiden Enden niedrig sein — etwa eine Resonanz, die im Übergang aufblüht und in beiden Zielzuständen ruhig ist. Mit einem Exponenten geht das nicht. Das ist der Punkt, an dem du von `pow` auf echte Kurventabellen wechselst (Abschnitt 5).
+Ein häufiger Fall: ein Parameter soll in der Mitte ein Maximum haben und an beiden Enden niedrig sein — etwa eine Resonanz, die im Übergang aufblüht und in beiden Zielzuständen ruhig ist. Mit einem Exponenten geht das nicht. ==Das ist der Punkt, an dem du von `pow` auf echte Kurventabellen wechselst== (Abschnitt 5).
 
 Ein zweiter Fall: Plateaus. Ein Parameter soll auf dem ersten Reglerdrittel konstant bleiben und sich dann bewegen. Auch das braucht Stützstellen, keinen Exponenten.
 
@@ -182,7 +182,7 @@ Es gibt kein fertiges PCHIP-Objekt in Max. Drei Ansätze, in aufsteigender Genau
 
 Ein Breakpoint-Editor mit ziehbaren Punkten. Im `curve`-Modus (per Shift-Drag verstellbar) bekommt jedes Segment eine exponentielle Krümmung. Das ist kein PCHIP, aber innerhalb jedes Segments garantiert monoton — also kein Überschwingen, keine negativen Cutoffs.
 
-**Für Makrokurven ist das musikalisch fast immer ausreichend**, und du zeichnest sie mit der Maus statt sie auszurechnen. Ein `function` pro Parameter (oder pro Parametergruppe), alle über `pattr` benannt oder in einem `bpatcher` gesammelt.
+**Für Makrokurven ist das musikalisch fast immer ausreichend**, und du zeichnest sie mit der Maus statt sie auszurechnen. ==Ein `function` pro Parameter (oder pro Parametergruppe), alle über `pattr` benannt oder in einem `bpatcher` gesammelt.==
 
 Abfrage im Patch mit `next $1`:
 
@@ -215,13 +215,13 @@ function readFunction(objName) {
 ```
 
 **Vorteil:** schnellste Iteration, du hörst und siehst gleichzeitig.
-**Nachteil:** nur exponentielle Segmente, keine echte C¹-Glattheit über die Breakpoints hinweg.
+**Nachteil:** nur exponentielle Segmente, ==keine echte C¹-Glattheit über die Breakpoints hinweg==.
 
 ---
 
 ### Weg B: `curve~` im Signalpfad
 
-Wenn du keine Kurve über den Makrowert brauchst, sondern eine exponentielle **Rampe über die Zeit** zwischen zwei Werten — etwa beim harten Umschalten zwischen zwei Presets mit definierter Übergangszeit.
+Wenn du keine Kurve über den Makrowert brauchst, sondern eine exponentielle **==Rampe über die Zeit==** zwischen zwei Werten — etwa beim harten ==Umschalten zwischen zwei Presets mit definierter Übergangszeit==.
 
 ```
 [3000 500 0.5(          ← Zielwert 3000, in 500 ms, Krümmung 0.5
@@ -383,7 +383,7 @@ rebuild();
 ```
 
 **Vorteil:** exakte Kontrolle, garantiert kein Überschwingen, Kurven als Text versionierbar.
-**Nachteil:** kein visuelles Editieren. In der Praxis kombinierst du: Kurven in `function` zeichnen, Punkte auslesen, in v8 als PCHIP durchlegen, backen.
+**Nachteil:** kein visuelles Editieren. In der Praxis kombinierst du: ==Kurven in `function` zeichnen, Punkte auslesen, in v8 als PCHIP durchlegen, backen.==
 
 ---
 
