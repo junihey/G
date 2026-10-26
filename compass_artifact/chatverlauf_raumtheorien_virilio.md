@@ -43,7 +43,7 @@ Julian Niklas Heynert, [20 Okt 2026 um 21:22]
 
 **Meine wichtigste Empfehlung vorweg:** Von den sieben genannten Büchern halte ich **_Architecture Principe_ von Claude Parent und Paul Virilio** für den besten Ausgangspunkt, wenn dein Seminar einen klaren architektonischen Schwerpunkt hat. Möchtest du dagegen untersuchen, wie Architektur, Medien und das Unbewusste miteinander zusammenhängen, ist **_Blicke aus dem Bunker_ von Kay Kirchmann** besonders interessant.
 
-Für das Verhältnis zwischen physischen und virtuellen Räumen würde ich **_Rasender Stillstand_ von Paul Virilio** bevorzugen.
+Für das ==Verhältnis zwischen physischen und virtuellen Räumen== würde ich **_Rasender Stillstand_ von Paul Virilio** bevorzugen.
 
 Bei der Recherche ist mir allerdings noch ein Werk begegnet, das für dein Thema sogar geeigneter sein könnte als alle sieben genannten Bücher:
 
@@ -105,13 +105,13 @@ Die Verbindung zwischen räumlicher Tiefe und psychischer Tiefe muss jeweils beg
 
 Eine dritte Ebene entsteht, sobald Medien unsere Raumerfahrung verändern.
 
-Ein Bildschirm ermöglicht es uns, einen anderen Ort wahrzunehmen, ohne körperlich dort anwesend zu sein.
+Ein Bildschirm ermöglicht es uns, ==einen anderen Ort wahrzunehmen, ohne körperlich dort anwesend zu sein.==
 
 Wir sitzen in einem Zimmer und nehmen gleichzeitig an einem Ereignis teil, das Tausende Kilometer entfernt stattfindet.
 
-Auch das Kino ist ein solcher Raum: Der physisch anwesende Körper und die visuell wahrgenommene Welt befinden sich an unterschiedlichen Orten.
+Auch das ==Kino== ist ein solcher Raum: Der physisch anwesende Körper und die visuell wahrgenommene Welt befinden sich an unterschiedlichen Orten.
 
-Mit Virtual Reality, digitalen Kommunikationsplattformen und vernetzten Räumen wird diese Beziehung noch komplexer.
+Mit ==Virtual Reality, digitalen Kommunikationsplattformen und vernetzten Räumen wird diese Beziehung noch komplexer==.
 
 Die grundlegende Frage lautet:
 
@@ -146,11 +146,11 @@ Parent und Virilio kritisieren die traditionellen räumlichen Ordnungen moderner
 
 Sie unterscheiden dabei grundsätzlich zwischen einer horizontalen und einer vertikalen Ordnung.
 
-**Horizontale Ordnung:** Gebäude und Städte organisieren sich auf ebenen Flächen. Bewegung erfolgt vorwiegend horizontal.
+**==Horizontale Ordnung:** Gebäude und Städte organisieren sich auf ebenen Flächen. Bewegung erfolgt vorwiegend horizontal.==
 
-**Vertikale Ordnung:** Die Stadt wächst in die Höhe. Funktionen verteilen sich auf übereinanderliegende Geschosse.
+==**Vertikale Ordnung:** Die Stadt wächst in die Höhe. Funktionen verteilen sich auf übereinanderliegende Geschosse.==
 
-**Schräge Ordnung:** Durch geneigte Ebenen sollen diese Trennungen überwunden werden.
+==**Schräge Ordnung:** Durch geneigte Ebenen sollen diese Trennungen überwunden werden.==
 
 Die Schräge wird nicht nur als Rampe verstanden. Sie verändert das Verhältnis von Körper, Bewegung und Raum.
 
@@ -180,13 +180,13 @@ Ihre Architektur soll Bewegung und Aufenthalt miteinander verschmelzen lassen.
 
 Dafür entwickeln sie den Begriff:
 
-**« circulation habitable » – bewohnbare Zirkulation.**
+**« circulation habitable » – ==bewohnbare Zirkulation.==**
 
 ### Was bedeutet das für Zwischenwelten?
 
 Hier würde ich eine deiner zentralen Thesen entwickeln:
 
-**Die Zwischenwelt wird bei Parent und Virilio vom verbindenden Nebenraum zum eigentlichen Lebensraum.**
+**==Die Zwischenwelt wird bei Parent und Virilio vom verbindenden Nebenraum zum eigentlichen Lebensraum.==**
 
 Der Übergang zwischen zwei Orten wird damit nicht mehr als architektonisch untergeordnete Zone betrachtet.
 
@@ -215,13 +215,13 @@ Hier sehe ich eine besonders interessante Verbindung zu deinem Thema.
 
 Eine horizontale Fläche vermittelt häufig Stabilität.
 
-Ein geneigter Boden kann dagegen Unsicherheit erzeugen.
+Ein geneigter Boden kann dagegen ==Unsicherheit== erzeugen.
 
 Das bedeutet nicht, dass jeder Mensch diese Empfindung gleichermaßen erlebt. Es zeigt aber, dass architektonische Geometrie die Bedingungen körperlicher Wahrnehmung verändert.
 
-Ein Raum muss nicht dunkel oder unterirdisch sein, um psychologisch irritierend zu wirken.
+Ein Raum muss nicht dunkel oder unterirdisch sein, um ==psychologisch irritierend== zu wirken.
 
-Bereits die Verschiebung vertrauter räumlicher Ordnungen kann das Verhältnis zwischen Mensch und Umgebung verändern.
+==Bereits die Verschiebung vertrauter räumlicher Ordnungen kann das Verhältnis zwischen Mensch und Umgebung verändern.== ~~==Entstehung psychischer Raum==~~
 
 Die Schräge lässt sich deshalb als **architektonische Zwischenwelt zwischen Stabilität und Instabilität** interpretieren.
 
@@ -348,13 +348,13 @@ Ein Bildschirm verbindet einen physischen Raum mit einem medial vermittelten Rau
 
 Diese Verbindung ist allerdings nicht symmetrisch.
 
-Durch eine Tür kann der Körper hindurchgehen.
+==Durch eine Tür kann der Körper hindurchgehen.==
 
-Durch den Bildschirm können überwiegend Informationen, Bilder und Zeichen übertragen werden.
+==Durch den Bildschirm können überwiegend Informationen, Bilder und Zeichen übertragen werden.==
 
 Dennoch verändert er den Ort, an dem sich die Person befindet.
 
-Der Bildschirm kann daher als **mediale Schwelle** verstanden werden.
+==Der Bildschirm kann daher als **mediale Schwelle** verstanden werden.==
 
 Er schafft eine Verbindung zu einer anderen Welt, ohne dass der Mensch seinen physischen Aufenthaltsort verlassen muss.
 
@@ -390,13 +390,13 @@ Aber ihre Bedeutung für bestimmte Formen der Anwesenheit verändert sich.
 
 Für dein Seminar würde ich folgende Interpretation vorschlagen:
 
-**Der Medienraum bildet eine unsichtbare zweite Ebene innerhalb der sichtbaren Architektur.**
+**==Der Medienraum bildet eine unsichtbare zweite Ebene innerhalb der sichtbaren Architektur.==**
 
 Ein Gebäude besitzt eine materielle Oberfläche.
 
 Gleichzeitig existieren dort Kommunikationsnetze, Datenströme und digitale Zugänge, die nicht unmittelbar sichtbar sind.
 
-Diese verborgene Infrastruktur könnte als technologische Unterwelt der Architektur untersucht werden.
+Diese ==verborgene Infrastruktur könnte als technologische Unterwelt== der Architektur untersucht werden.
 
 Wichtig ist, dass dies meine Übertragung von Virilios Theorie ist und kein eigenständiger Begriff, den er in genau dieser Form verwendet.
 
@@ -404,11 +404,11 @@ Wichtig ist, dass dies meine Übertragung von Virilios Theorie ist und kein eige
 
 Auch psychologisch lässt sich der rasende Stillstand untersuchen.
 
-Die Gleichzeitigkeit zahlreicher Medienereignisse kann eine Situation erzeugen, in der ein Mensch körperlich an einem Ort verweilt, seine Aufmerksamkeit jedoch ständig zwischen verschiedenen Kontexten wechselt.
+Die Gleichzeitigkeit zahlreicher Medienereignisse kann eine Situation erzeugen, in der ein Mensch körperlich an einem Ort verweilt, seine ==Aufmerksamkeit jedoch ständig zwischen verschiedenen Kontexten wechselt==.
 
 Der Körper ist stationär, die Wahrnehmung wird permanent umgelenkt.
 
-Dadurch können sich widersprüchliche Formen von Ruhe und Unruhe überlagern.
+Dadurch können sich ==widersprüchliche Formen von Ruhe und Unruhe überlagern==.
 
 Ein Raum, der äußerlich ruhig erscheint, muss nicht als ruhig erlebt werden.
 
@@ -511,13 +511,13 @@ Etwas befindet sich hinter einer Wand, unter der Erde oder in einem abgeschlosse
 
 Kirchmanns Interpretation eröffnet die Möglichkeit, Verborgenheit auch medial zu denken.
 
-Eine Person muss nicht körperlich verborgen sein, um sich dem Zugriff anderer zu entziehen.
+==Eine Person muss nicht körperlich verborgen sein, um sich dem Zugriff anderer zu entziehen.==
 
-Sie kann durch Bilder, Texte und öffentliche Inszenierung sichtbar werden, während bestimmte Aspekte ihrer Persönlichkeit unsichtbar bleiben.
+==Sie kann durch Bilder, Texte und öffentliche Inszenierung sichtbar werden, während bestimmte Aspekte ihrer Persönlichkeit unsichtbar bleiben.==
 
-Die mediale Oberfläche ersetzt dann gewissermaßen die architektonische Schutzwand.
+==Die mediale Oberfläche ersetzt dann gewissermaßen die architektonische Schutzwand.==
 
-Aus diesem Verhältnis könnte man eine Theorie psychischer Zwischenwelten entwickeln.
+==Aus diesem Verhältnis könnte man eine Theorie psychischer Zwischenwelten entwickeln.==
 
 ### Der Unterschied zwischen Bunker und Keller
 
@@ -595,14 +595,14 @@ Du erhältst nicht nur Virilios eigene Argumentation, sondern auch unterschiedli
 
 Besonders relevant erscheinen mir folgende Beiträge:
 
-| Autor | Kapitel | Seiten | Relevanz |
-|---|---|---|---|
-| Neil Leach | *Virilio and Architecture* | 71–84 | Architektur und Raumtheorie |
-| Mike Gane | *Paul Virilio's Bunker Theorizing* | 85–102 | Bunker, Schutzräume und Militärarchitektur |
-| Douglas Kellner | *Virilio, War and Technology* | 103–126 | Militarisierung und technische Räume |
-| Sean Cubitt | *Virilio and New Media* | 127–142 | Digitale und mediale Zwischenwelten |
-| Scott McQuire | *Blinded by the (Speed of) Light* | 143–160 | Wahrnehmung, Licht und Geschwindigkeit |
-| Patrick Crogan | *The Tendency, the Accident and the Untimely* | 161–176 | Zeitlichkeit, Zukunft und Unfall |
+| Autor           | Kapitel                                       | Seiten  | Relevanz                                   |
+| --------------- | --------------------------------------------- | ------- | ------------------------------------------ |
+| Neil Leach      | *Virilio and Architecture*                    | 71–84   | Architektur und Raumtheorie                |
+| Mike Gane       | *Paul Virilio's Bunker Theorizing*            | 85–102  | Bunker, Schutzräume und Militärarchitektur |
+| Douglas Kellner | *Virilio, War and Technology*                 | 103–126 | Militarisierung und technische Räume       |
+| ==Sean Cubitt== | *Virilio and New Media*                       | 127–142 | Digitale und mediale Zwischenwelten        |
+| Scott McQuire   | *Blinded by the (Speed of) Light*             | 143–160 | Wahrnehmung, Licht und Geschwindigkeit     |
+| Patrick Crogan  | *The Tendency, the Accident and the Untimely* | 161–176 | Zeitlichkeit, Zukunft und Unfall           |
 
 Die Kapitel und Seitenbereiche sind im Inhaltsverzeichnis des Bandes nachgewiesen. ([Anderson University Online Bookstore](https://andersonuniversity.ecampus.com/paul-virilio-from-modernism-hypermodernism/bk/9780761959021))
 
@@ -683,7 +683,7 @@ Virilio interessiert sich dagegen für eine Stadt, die zunehmend durch Bewegung 
 
 Dabei treten die Begriffe Sesshaftigkeit und Nomadismus in ein neues Verhältnis.
 
-Flughäfen und große Verkehrsknotenpunkte sind dafür besonders anschauliche Beispiele.
+==Flughäfen== und große Verkehrsknotenpunkte sind dafür besonders anschauliche Beispiele.
 
 Sie besitzen umfangreiche architektonische Strukturen.
 
@@ -3588,23 +3588,25 @@ Bitte gib mir Vorschläge, wie ich den Vortrag schematisch auf das bisherige The
 # Vortragskonzept: Rasender Stillstand
 ## Paul Virilio und die Architektur psychischer, imaginärer und medialer Innenwelten
 
-Mit der konkreten Aufgabenstellung des Seminars würde ich deinen Vortrag etwas anders aufbauen als bisher. Die theoretische Richtung mit **Paul Virilio, Walter Benjamin, Siegfried Kracauer und Jacques Lacan** ist weiterhin sehr gut geeignet. Allerdings sollte der Vortrag weniger eine allgemeine Untersuchung virtueller Räume sein, sondern deutlicher zeigen, **wie sich psychische und gesellschaftliche Vorstellungen in konkreten räumlichen, architektonischen und künstlerischen Strukturen ausdrücken.**
+Mit der konkreten Aufgabenstellung des Seminars würde ich deinen Vortrag etwas anders aufbauen als bisher. Die theoretische Richtung mit **Paul Virilio, Walter Benjamin, Siegfried Kracauer und Jacques Lacan** ist weiterhin sehr gut geeignet. Allerdings sollte der Vortrag weniger eine allgemeine Untersuchung virtueller Räume sein, sondern deutlicher zeigen, **==wie sich psychische und gesellschaftliche Vorstellungen in konkreten räumlichen, architektonischen und künstlerischen Strukturen ausdrücken.==**
 
 Besonders wichtig finde ich eine Formulierung aus der Seminarankündigung:
 
-> „dem Makrokosmos der Außenwelt, eine radikale Innen- und/oder Unterwelt als eigenständigen Mikrokosmos entgegenzustellen.“
+> „==dem Makrokosmos der Außenwelt, eine radikale Innen- und/oder Unterwelt als eigenständigen Mikrokosmos entgegenzustellen.==“
 
 Das ist meiner Meinung nach der Schlüssel für deinen Vortrag.
 
 Denn Paul Virilios *Rasender Stillstand* lässt sich genau unter diesem Gesichtspunkt untersuchen:
 
-**Durch moderne Kommunikationstechnologien entsteht die Möglichkeit, sich körperlich in einem abgeschlossenen Innenraum aufzuhalten und gleichzeitig über technische Medien mit einer nahezu unbegrenzten Außenwelt verbunden zu sein.**
+**==Durch moderne Kommunikationstechnologien entsteht die Möglichkeit, sich körperlich in einem abgeschlossenen Innenraum aufzuhalten und gleichzeitig über technische Medien mit einer nahezu unbegrenzten Außenwelt verbunden zu sein.**==
 
-Daraus ergibt sich ein Paradox:
+==Daraus ergibt sich ein Paradox:==
 
-**Je umfassender die mediale Verbindung zur Außenwelt wird, desto weniger muss der Körper den Innenraum verlassen.**
+==**Je umfassender die mediale Verbindung zur Außenwelt wird, desto weniger muss der Körper den Innenraum verlassen.**==
 
-Diese Spannung zwischen **körperlicher Isolation und medialer Entgrenzung** könnte deine zentrale These sein.
+==~~Definition Innenraum (physisch, psychisch, virtuell) unterscheiden wie sich die Räume verhalten, virtuelle Räume physisch geschaffen, körperliche Isolation bis hin zu entgrenzung und psychischen Raum, mediale entgrenzung für physische Ortsunabhäbgigkeit~~==
+
+Diese Spannung zwischen **==körperlicher Isolation und medialer Entgrenzung==** könnte deine zentrale These sein.
 
 Ich würde dir drei mögliche Vortragskonzepte vorschlagen und anschließend eines davon ausführlich strukturieren.
 
@@ -3612,7 +3614,7 @@ Ich würde dir drei mögliche Vortragskonzepte vorschlagen und anschließend ein
 
 # I. Drei mögliche Ausrichtungen des Vortrags
 
-## Konzept A: Der Raum, der die Welt ersetzt
+## Konzept A: ==Der Raum, der die Welt ersetzt==
 
 ### Die mediale Innenwelt bei Paul Virilio
 
@@ -3628,7 +3630,7 @@ Im Mittelpunkt steht die Frage:
 
 Die Ausgangsthese wäre:
 
-*Die moderne Medienarchitektur ermöglicht es, die Außenwelt räumlich auszublenden und zugleich als technisch vermitteltes Bild in den Innenraum zurückzuholen.*
+==*Die moderne Medienarchitektur ermöglicht es, die Außenwelt räumlich auszublenden und zugleich als technisch vermitteltes Bild in den Innenraum zurückzuholen.*==
 
 Dabei konzentrierst du dich auf folgende theoretische Positionen:
 
@@ -3643,15 +3645,15 @@ Als konkrete künstlerische Position würde ich **Walter Pichlers *TV-Helm (Trag
 
 Dieses Werk ist nahezu ideal für deine Fragestellung.
 
-Es macht den Gedanken eines abgeschlossenen medialen Mikrokosmos in einer konkreten räumlichen Konstruktion sichtbar.
+Es macht den Gedanken eines ==abgeschlossenen medialen Mikrokosmos== in einer konkreten räumlichen Konstruktion sichtbar. ~~==Erweiterungen Absalon==~~
 
-Der Träger des Helms wird von seiner unmittelbaren Umgebung abgeschirmt und auf einen eingebauten Bildschirm ausgerichtet.
+Der Träger des Helms wird von seiner unmittelbaren Umgebung ==abgeschirmt== und auf einen eingebauten Bildschirm ausgerichtet.
 
 Damit lässt sich die Beziehung zwischen Architektur, Medien und psychischer Wahrnehmung unmittelbar untersuchen.
 
 **Vorteil:** Du hast einen klaren theoretischen Schwerpunkt und ein konkretes künstlerisches Werk, an dem du deine Argumentation nachvollziehbar entwickeln kannst.
 
-**Mögliche Schwierigkeit:** Du musst deutlich machen, warum ein tragbares Objekt als architektonische Innenwelt betrachtet werden kann. Genau darin liegt allerdings auch eine Stärke des Beispiels.
+**Mögliche Schwierigkeit:** Du musst deutlich machen, ==warum ein tragbares Objekt als architektonische Innenwelt betrachtet werden kann==. Genau darin liegt allerdings auch eine Stärke des Beispiels.
 
 ---
 
@@ -3681,11 +3683,12 @@ Schließlich gelangst du zu Virilio und seiner Vorstellung einer technisch verne
 
 Das Schema wäre:
 
-**Passage → Kinopalast → multimedialer Pavillon → Medienkapsel → telekommunikativer Wohnraum**
+**Passage → ==Kinopalast== → multimedialer Pavillon → ==Medienkapsel== → ==telekommunikativer Wohnraum==** 
+~~==Überlegung zu Telepathie / Sloterdijk oder Rheinheimer? Technische Vehikel, die uns bewusst unsere Fähigkeiten zurückerlernen lassen==~~
 
 Die übergeordnete These könnte lauten:
 
-*Während die Moderne zunächst besondere architektonische Orte zur Erzeugung kollektiver Traum- und Bilderwelten hervorbringt, können mediale Erfahrungen zunehmend in den privaten Wohnraum integriert werden.*
+*Während die Moderne zunächst besondere architektonische Orte zur Erzeugung ==kollektiver== Traum- und Bilderwelten hervorbringt, können mediale Erfahrungen zunehmend in den ==privaten== Wohnraum integriert werden.*
 
 **Vorteil:** Du kannst sehr gut zeigen, wie gesellschaftliche Veränderungen neue Raumtypologien und Wahrnehmungsformen hervorbringen.
 
@@ -3705,7 +3708,7 @@ Hier würdest du stärker psychoanalytisch argumentieren.
 
 Der Ausgangspunkt wäre Lacans Spiegelstadium.
 
-Du untersuchst, wie sich das Subjekt durch die Identifikation mit einem äußeren Bild konstituiert und in welchem Verhältnis dieses Bild zur körperlichen Erfahrung steht.
+Du untersuchst, ==wie sich das Subjekt durch die Identifikation mit einem äußeren Bild konstituiert und in welchem Verhältnis dieses Bild zur körperlichen Erfahrung steht==.
 
 Anschließend würdest du Virilios Medien- und Wahrnehmungstheorie hinzuziehen.
 
@@ -3714,10 +3717,10 @@ Die Frage wäre, wie technische Bilder das Verhältnis zwischen Körper, Selbstw
 Als Beispiele wären besonders interessant:
 
 - Walter Pichler: *TV-Helm (Tragbares Wohnzimmer)*, 1967.
-- Haus-Rucker-Co: *Mind Expander I*, 1967.
-- Haus-Rucker-Co: *Flyhead Helmet*, 1968.
+- ==Haus-Rucker-Co: *Mind Expander I*, 1967.==
+- ==Haus-Rucker-Co: *Flyhead Helmet*, 1968.==
 
-Alle drei Arbeiten beschäftigen sich auf unterschiedliche Weise mit der Veränderung der Wahrnehmung durch eine körpernahe räumliche Konstruktion.
+Alle drei Arbeiten beschäftigen sich auf unterschiedliche Weise mit der Veränderung der Wahrnehmung durch eine ==körpernahe== räumliche Konstruktion.
 
 **Vorteil:** Der Bezug zu den bewussten und unbewussten Spiegelungen der menschlichen Psyche wäre besonders ausgeprägt.
 
@@ -3744,7 +3747,7 @@ Das ergibt einen Vortrag, der sowohl die Seminaranforderungen als auch deine bis
 
 ## Zentrale These
 
-> Mit der zunehmenden Technisierung der Wahrnehmung verändert sich die Beziehung zwischen Innenraum und Außenwelt. Während die materielle Architektur den Körper räumlich begrenzt, ermöglichen technische Medien eine Wahrnehmung entfernter oder imaginärer Welten. Paul Virilios *Rasender Stillstand* beschreibt die daraus entstehende Spannung zwischen körperlicher Immobilität und medialer Entgrenzung. Diese Spannung lässt sich zugleich als Ausdruck gesellschaftlicher Wunschbilder und psychischer Konflikte untersuchen.
+> Mit der zunehmenden ==Technisierung der Wahrnehmung== verändert sich die Beziehung zwischen Innenraum und Außenwelt. Während die materielle Architektur den Körper räumlich begrenzt, ermöglichen technische Medien eine Wahrnehmung ==entfernter oder imaginärer== Welten. Paul Virilios *Rasender Stillstand* beschreibt die daraus entstehende Spannung zwischen körperlicher Immobilität und medialer Entgrenzung. Diese Spannung lässt sich zugleich als Ausdruck gesellschaftlicher Wunschbilder und psychischer Konflikte untersuchen.
 
 Damit würdest du Virilio unmittelbar mit der Fragestellung des Seminars verbinden.
 
@@ -3772,17 +3775,19 @@ Wenn wir diese Vorstellung auf die mediale Innenwelt übertragen, ergibt sich fo
 
 Mögliche Antworten wären:
 
-Der Wunsch, unabhängig von räumlichen Entfernungen zu werden.
+==Der Wunsch, unabhängig von räumlichen Entfernungen zu werden.==
 
-Der Wunsch, die Außenwelt kontrollieren zu können.
+==Der Wunsch, die Außenwelt kontrollieren zu können.==
 
-Der Wunsch nach vollständiger Verfügbarkeit von Informationen und Bildern.
+==Der Wunsch nach vollständiger Verfügbarkeit von Informationen und Bildern.==
 
-Aber auch der Wunsch nach Schutz, Abschirmung und Rückzug.
+==Aber auch der Wunsch nach Schutz, Abschirmung und Rückzug.==
 
 Hier entsteht eine Spannung zwischen zwei Bedürfnissen:
 
-**Abschottung von der Außenwelt und gleichzeitige Verfügbarkeit der Außenwelt.**
+**==Abschottung von der Außenwelt und gleichzeitige Verfügbarkeit der Außenwelt.==**
+
+~~==Finden der richtigen Handlung?==~~
 
 Das ist eine Interpretation, die du anhand der Texte und Projekte überprüfen könntest.
 
@@ -3800,7 +3805,7 @@ Diese Stelle ist für deinen Vortrag außerordentlich interessant!
 
 Denn hier lässt sich eine direkte theoretische Spannung zu Virilio herstellen.
 
-**Bei Kracauer erweitert das Radio den materiellen Wohnraum nicht.**
+**==Bei Kracauer erweitert das Radio den materiellen Wohnraum nicht.==**
 
 **Bei Virilio können elektronische Medien die Wahrnehmung und bestimmte Handlungsmöglichkeiten über die physischen Grenzen des Wohnraums hinaus ausdehnen.**
 
@@ -3812,7 +3817,7 @@ Virilio untersucht die Veränderung räumlicher Beziehungen durch technische Üb
 
 Aber gerade diese Unterscheidung ist interessant:
 
-*Kann ein Raum medial unbegrenzt erscheinen und gesellschaftlich oder körperlich dennoch beengt bleiben?*
+*==Kann ein Raum medial unbegrenzt erscheinen und gesellschaftlich oder körperlich dennoch beengt bleiben?==*
 
 Das könnte eine der wichtigsten Fragen deines gesamten Vortrags sein.
 
@@ -4179,7 +4184,7 @@ Der Blick ist bei ihm nicht einfach mit dem technischen Sehen oder einer Kamera 
 
 Er beschreibt eine komplexere Beziehung des Subjekts zum Sichtbaren.
 
-Das Subjekt ist nicht ausschließlich ein souveräner Betrachter, sondern selbst Teil eines Feldes von Sichtbarkeit.
+==Das Subjekt ist nicht ausschließlich ein souveräner Betrachter, sondern selbst Teil eines Feldes von Sichtbarkeit.==
 
 Für deinen Vortrag würde ich daraus folgende Frage entwickeln:
 
@@ -4294,7 +4299,7 @@ Und er lässt sich als Ausdruck gesellschaftlicher Vorstellungen über Isolation
 
 Die abschließende Frage an das Seminar könnte lauten:
 
-### Ist eine Architektur, die uns die Außenwelt medial verfügbar macht, eine Erweiterung unseres Raumes – oder eine neue Form seiner Begrenzung?
+### ==Ist eine Architektur, die uns die Außenwelt medial verfügbar macht, eine Erweiterung unseres Raumes – oder eine neue Form seiner Begrenzung?==
 
 Diese Frage bleibt offen und eignet sich gut als Ausgangspunkt für eine Diskussion.
 
@@ -4338,7 +4343,7 @@ Denn das Projekt ist kein unmittelbares Beispiel für Virilios körperlichen Sti
 
 Haus-Rucker-Co beschäftigte sich in den 1960er-Jahren mit der Erweiterung der menschlichen Wahrnehmung durch experimentelle architektonische Konstruktionen.
 
-Der *Mind Expander I* bestand aus einer Sitzkonstruktion für zwei Personen und einem darüber angeordneten transparenten Raumkörper.
+Der *Mind Expander I* bestand aus einer ==Sitzkonstruktion für zwei Personen und einem darüber angeordneten transparenten Raumkörper.==
 
 Die räumliche Umgebung sollte eine veränderte Wahrnehmung ermöglichen.
 
@@ -4476,7 +4481,7 @@ Dafür würde ich deinen Vortrag um drei zentrale Begriffe organisieren:
 
 **2. Übertragung:** Wie gelangt eine andere, medial vermittelte Wirklichkeit in diesen abgeschlossenen Raum?
 
-**3. Projektion:** Welche psychischen und gesellschaftlichen Vorstellungen lassen sich an dieser räumlichen Anordnung untersuchen?
+**3. ==Projektion==:** Welche psychischen und gesellschaftlichen Vorstellungen lassen sich an dieser räumlichen Anordnung untersuchen?
 
 Diese drei Begriffe lassen sich besonders gut mit deinen Theoretikern verbinden.
 
@@ -4492,13 +4497,13 @@ Und Walter Pichlers TV-Helm bietet eine konkrete räumliche Konstruktion, an der
 
 ## Der zentrale Gedanke, den ich durch den gesamten Vortrag führen würde:
 
-### Die Architektur der medialen Innenwelt ist zugleich ein Raum der Isolation und ein Raum der Entgrenzung.
+### Die Architektur der medialen Innenwelt ist zugleich ein ==Raum der Isolation und ein Raum der Entgrenzung.==
 
 Diese Doppelstruktur würde ich zum eigentlichen Untersuchungsgegenstand machen.
 
 Damit geht es nicht mehr nur um die Frage, wie technische Medien unsere Wahrnehmung verändern.
 
-Es geht vielmehr darum, **welche Form von Architektur eine Gesellschaft hervorbringt, die gleichzeitig den Rückzug aus der Welt und ihre permanente mediale Verfügbarkeit ermöglicht.**
+Es geht vielmehr darum, **welche Form von Architektur eine Gesellschaft hervorbringt, die gleichzeitig den ==Rückzug aus der Welt und ihre permanente mediale Verfügbarkeit== ermöglicht.**
 
 Und genau damit würdest du auf Kracauers Ausgangsthese zurückkommen:
 

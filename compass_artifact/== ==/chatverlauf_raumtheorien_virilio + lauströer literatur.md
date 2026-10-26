@@ -10,13 +10,13 @@ Dabei ist mir etwas besonders Interessantes aufgefallen: Die bereitgestellten Te
 
 Vor allem zwei Stellen sind für deine Fragestellung ausgesprochen wichtig.
 
-In einem Text von Claude Parent aus _Architecture Principe_ (1966) wird die psychische Wirkung abgeschlossener Innenräume ohne direkte Sicht nach außen ausdrücklich thematisiert.
+In einem Text von Claude Parent aus _Architecture Principe_ (1966) wird die ==psychische Wirkung abgeschlossener Innenräume ohne direkte Sicht nach außen== ausdrücklich thematisiert.
 
 Und André Bideau beschreibt 2002 in seinem Aufsatz _Den Raum ergründen_ den Übergang von der körperlichen Bewegung in der Stadt zur Erfahrung des häuslichen Bildschirms.
 
 Damit lässt sich eine bemerkenswerte Verbindung zu Virilios _Rasender Stillstand_ herstellen.
 
-**Meine wichtigste Empfehlung lautet deshalb: Entwickle den Vortrag nicht mehr ausschließlich anhand medialer Zwischenwelten, sondern anhand einer Transformation des architektonischen Innenraums: vom physischen Schutzraum über die körperlich aktivierende Architektur bis zum medial vernetzten, aber körperlich immobilisierenden Wohnraum.**
+**Meine wichtigste Empfehlung lautet deshalb: Entwickle den Vortrag nicht mehr ausschließlich anhand medialer Zwischenwelten, sondern anhand einer Transformation des architektonischen Innenraums: ==vom physischen Schutzraum über die körperlich aktivierende Architektur bis zum medial vernetzten, aber körperlich immobilisierenden Wohnraum.==**
 
 Die entscheidende Frage ist dabei, welche bewussten und unbewussten gesellschaftlichen Vorstellungen sich in diesen unterschiedlichen Raumkonzepten ausdrücken.
 
@@ -50,7 +50,9 @@ Walter Benjamin, Siegfried Kracauer und Jacques Lacan helfen dir anschließend, 
 
 Eine etwas zugespitztere Variante wäre:
 
-**Kann der technisch vernetzte Wohnraum als eine neue Form des Bunkers verstanden werden, in dem sich gesellschaftliche Wünsche nach Schutz, Kontrolle und Allgegenwart räumlich manifestieren?**
+**==Kann der technisch vernetzte Wohnraum als eine neue Form des Bunkers verstanden werden, in dem sich gesellschaftliche Wünsche nach Schutz, Kontrolle und Allgegenwart räumlich manifestieren?==** 
+
+~~==Übergabgsfrage Arved==~~
 
 Die zweite Frage halte ich für besonders interessant.
 
@@ -62,9 +64,9 @@ Sie ist allerdings bewusst provokativ. Du müsstest im Vortrag erklären, dass d
 
 Ich würde die These folgendermaßen formulieren:
 
-> **Paul Virilios _Rasender Stillstand_ lässt sich als Theorie einer neuen, medial organisierten Innenwelt verstehen. Während der Bunker den Menschen durch materielle Abschirmung vor einer bedrohlichen Außenwelt schützt, ermöglicht der technisch vernetzte Wohnraum eine vergleichbare räumliche Zurückgezogenheit, ohne auf die Wahrnehmung und begrenzte Kontrolle entfernter Ereignisse verzichten zu müssen. Der Körper verbleibt in einem abgeschlossenen Mikrokosmos, während seine Wahrnehmung durch technische Übertragung über dessen Grenzen hinausreicht.**
+> **Paul Virilios _Rasender Stillstand_ lässt sich als Theorie einer neuen, medial organisierten Innenwelt verstehen. ==Während der Bunker den Menschen durch materielle Abschirmung vor einer bedrohlichen Außenwelt schützt, ermöglicht der technisch vernetzte Wohnraum eine vergleichbare räumliche Zurückgezogenheit, ohne auf die Wahrnehmung und begrenzte Kontrolle entfernter Ereignisse verzichten zu müssen.== Der Körper verbleibt in einem abgeschlossenen Mikrokosmos, während seine ==Wahrnehmung== durch technische Übertragung über dessen Grenzen hinausreicht.**
 > 
-> **Darin manifestiert sich ein gesellschaftliches Spannungsverhältnis zwischen dem Wunsch nach Sicherheit und Rückzug einerseits und dem Wunsch nach vollständiger Verfügbarkeit und Kontrolle der Außenwelt andererseits.**
+> **Darin manifestiert sich ein ==gesellschaftliches Spannungsverhältnis zwischen dem Wunsch nach Sicherheit und Rückzug einerseits und dem Wunsch nach vollständiger Verfügbarkeit und Kontrolle der Außenwelt andererseits.==**
 
 Der zweite Absatz ist die psychologische und gesellschaftliche Interpretation, die du mit Kracauer, Benjamin und Lacan entwickeln kannst.
 
@@ -72,7 +74,7 @@ Gerade diese Dimension macht den Vortrag passend zur Aufgabenstellung deines Pro
 
 Es geht nicht nur darum, welche Raumformen entstehen, sondern auch darum, **welche Vorstellungen, Wünsche und Ängste sich in ihnen ausdrücken könnten**.
 
-Wichtig ist, dass du diese Wünsche und Ängste nicht als empirisch nachgewiesene kollektive psychische Zustände behauptest. Sie bilden eine Interpretationshypothese, die du anhand der Architektur und der theoretischen Texte überprüfst.
+Wichtig ist, dass du diese Wünsche und Ängste nicht als empirisch nachgewiesene kollektive psychische Zustände behauptest. Sie bilden eine ==Interpretationshypothese==, die du anhand der Architektur und der theoretischen Texte überprüfst.
 
 ---
 
@@ -172,11 +174,11 @@ Damit würdest du nicht nur die individuelle Psyche, sondern auch die gesellscha
 
 # 5. Eine entscheidende Entdeckung: Der Bunker ist bereits ein medialer Raum
 
-Eine besonders wichtige Stelle befindet sich in der _Bunkerarchäologie_ auf Seite 39.
+Eine besonders wichtige Stelle befindet sich in der _Bunkerarchäologie_ auf ==Seite 39.==
 
-Dort beschreibt Virilio die spezifischen Bestandteile der Bunkerarchitektur und nennt:
+==Dort beschreibt Virilio die spezifischen Bestandteile der Bunkerarchitektur und nennt:==
 
-> „Periskope, Bildschirme, Filter usw.“
+> ==„Periskope, Bildschirme, Filter usw.“==
 
 Diese kurze Aufzählung ist für deinen Vortrag vielleicht wichtiger, als sie zunächst erscheint.
 
@@ -222,13 +224,13 @@ Es handelt sich um einen Vergleich räumlicher und wahrnehmungstechnischer Prinz
 
 ---
 
-# 6. Zweiter Schwerpunkt: _Architecture Principe_ – Die Psyche wird durch Architektur aktiviert
+# 6. Zweiter Schwerpunkt: _Architecture Principe_ – Die ==Psyche wird durch Architektur aktiviert==
 
 Das zweite Dokument deines Professors ist für die Seminaraufgabe besonders wichtig.
 
 Es enthält ausgewählte Texte aus _Architecture Principe_ von 1966.
 
-In diesen Texten geht es nicht nur um die Funktion der Schräge.
+In diesen Texten geht es nicht nur um die ==Funktion der Schräge==.
 
 Es geht ausdrücklich um die **Veränderung der Wahrnehmung und des Bewusstseins durch architektonische Gestaltung**.
 
@@ -240,7 +242,7 @@ In dem Text _Struktur_ aus _Architecture Principe_, Heft 3, April 1966, entwicke
 
 Besonders relevant sind:
 
-**Aktivierung, Schwindel, Abgeschlossenheit, Depolarisierung, Kanalisierung und Kontinuum.**
+**==Aktivierung, Schwindel, Abgeschlossenheit, Depolarisierung, Kanalisierung und Kontinuum.==**
 
 Die deutsche Übersetzung befindet sich im bereitgestellten Dokument auf der gedruckten Seite 22.
 
@@ -250,7 +252,7 @@ Parent beschreibt unter dem Begriff Schwindel die psychische Reaktion auf den Ve
 
 Er schreibt:
 
-> „Schwindel: Verfassung der Psyche bei Aufgabe des konventionellen Bezugssystems von Vertikale und Horizontale.“
+> „==Schwindel: Verfassung der Psyche bei Aufgabe des konventionellen Bezugssystems von Vertikale und Horizontale.“==
 
 Damit formuliert er ausdrücklich einen Zusammenhang zwischen architektonischer Geometrie und psychischer Erfahrung.
 
@@ -272,9 +274,9 @@ Noch wichtiger finde ich Parents zweite Kategorie:
 
 **Abgeschlossenheit.**
 
-Er untersucht darunter die psychische Reaktion auf abgeschlossene, kryptische Innenräume ohne unmittelbare Sichtverbindung nach außen.
+Er untersucht darunter die psychische Reaktion auf abgeschlossene, kryptische Innenräume ==ohne unmittelbare Sichtverbindung nach außen==.
 
-Auch diese Überlegung befindet sich auf Seite 22.
+Auch diese Überlegung befindet sich auf Seite ==22==.
 
 Das ist eine bemerkenswerte Übereinstimmung mit der Seminarankündigung.
 
@@ -298,7 +300,7 @@ Die andere durch Abschirmung und den Verlust äußerer Orientierungsmöglichkeit
 
 Beide können psychische Reaktionen hervorrufen.
 
-Damit liefert Parent eine Grundlage, um unterschiedliche Innenwelten nicht nur anhand ihrer materiellen Form, sondern anhand ihrer **Wahrnehmungsbedingungen** zu vergleichen.
+Damit liefert Parent eine Grundlage, um unterschiedliche Innenwelten nicht nur anhand ihrer materiellen Form, sondern anhand ihrer **==Wahrnehmungsbedingungen==** zu vergleichen.
 
 ---
 
@@ -310,7 +312,7 @@ Hier sehe ich den stärksten Gedanken, der sich aus den Materialien deines Profe
 
 In _Architecture Principe_, Heft 3, April 1966, schreibt Virilio:
 
-> „In Zukunft wird Architektur im Wesentlichen ein Bewegungsraum sein.“
+> „==In Zukunft wird Architektur im Wesentlichen ein Bewegungsraum sein.==“ ==~~Absalon~~== 
 
 Anschließend formuliert er:
 
@@ -330,11 +332,11 @@ Wohnen und Bewegung sollen miteinander verbunden werden.
 
 Der Raum wird nicht mehr als statischer Behälter gedacht.
 
-Er wird zu einer Umgebung, die Bewegung hervorbringt, begleitet oder ermöglicht.
+Er wird zu einer Umgebung, ==die Bewegung hervorbringt, begleitet oder ermöglicht==.
 
 ### Virilio 1990: Der technisch vermittelte Stillstand
 
-In _Rasender Stillstand_ untersucht Virilio dagegen eine Entwicklung, in der die technische Beschleunigung dazu beiträgt, körperliche Bewegung für bestimmte Tätigkeiten überflüssig zu machen.
+In _Rasender Stillstand_ untersucht Virilio dagegen eine Entwicklung, in der die ==technische Beschleunigung== dazu beiträgt, körperliche Bewegung für bestimmte Tätigkeiten überflüssig zu machen.
 
 Der Mensch muss nicht mehr notwendigerweise einen Raum verlassen, um entfernte Ereignisse wahrzunehmen oder mit anderen Menschen zu kommunizieren.
 
@@ -342,27 +344,27 @@ Die technischen Systeme übernehmen einen Teil der räumlichen Vermittlung.
 
 In seiner Kritik der automatisierten Wohnumgebung verwendet Virilio die drastische Formulierung:
 
-> „bewohnbares Koma“
+> „==bewohnbares Koma==“
 
 _Rasender Stillstand_, 1992, S. 122. [Scribd](https://de.scribd.com/document/859959321/Edition-Akzente-Paul-Virilio-Rasender-Stillstand-Hanser-1992)
 
 ### Was bedeutet dieser Gegensatz?
 
-1966 entwickelt Virilio eine Vorstellung von Architektur, in der der Körper durch räumliche Bewegung aktiviert wird.
+==1966 entwickelt Virilio eine Vorstellung von Architektur, in der der Körper durch räumliche Bewegung aktiviert wird.==
 
-1990 beschreibt er eine technisch organisierte Umwelt, in der der Körper zunehmend immobil bleiben kann.
+==1990 beschreibt er eine technisch organisierte Umwelt, in der der Körper zunehmend immobil bleiben kann.==
 
 Diese Differenz würde ich unbedingt zum Gegenstand des Vortrags machen.
 
 Denn sie erlaubt es, **Virilios spätere Medienkritik mit seiner eigenen früheren Architekturtheorie zu konfrontieren**.
 
-|_Architecture Principe_, 1966|_Rasender Stillstand_, 1990|
-|---|---|
-|Bewegung wird zum architektonischen Prinzip.|Technische Übertragung kann körperliche Bewegung ersetzen.|
-|Die Schräge aktiviert den Körper.|Die Fernsteuerung konzentriert Handlungen an einem Ort.|
-|Der Raum wird durch körperliche Bewegung erschlossen.|Entfernte Räume werden durch technische Medien wahrnehmbar.|
-|Der menschliche Körper verändert ständig seine räumliche Position.|Der Körper kann trotz vielfältiger medialer Kontakte immobil bleiben.|
-|Architektur vermittelt Bewegung.|Technische Systeme vermitteln Wahrnehmung und Handlung.|
+| _Architecture Principe_, 1966                                      | _Rasender Stillstand_, 1990                                           |
+| ------------------------------------------------------------------ | --------------------------------------------------------------------- |
+| Bewegung wird zum architektonischen Prinzip.                       | Technische Übertragung kann körperliche Bewegung ersetzen.            |
+| Die Schräge aktiviert den Körper.                                  | Die ==Fernsteuerung== konzentriert Handlungen an einem Ort.           |
+| Der ==Raum wird durch körperliche Bewegung erschlossen.==          | Entfernte Räume werden durch technische Medien wahrnehmbar.           |
+| Der menschliche Körper verändert ständig seine räumliche Position. | Der Körper kann trotz vielfältiger medialer Kontakte immobil bleiben. |
+| ==Architektur vermittelt Bewegung.==                               | Technische Systeme vermitteln ==Wahrnehmung und Handlung.==           |
 
 ### Meine Interpretation
 
@@ -372,7 +374,7 @@ Das ist präziser, als von einer bloßen Auflösung des Raumes zu sprechen.
 
 Denn auch bei der Telepräsenz verschwindet der materielle Raum nicht.
 
-Vielmehr verändert sich das Verhältnis zwischen der Bewegung des Körpers und der Bewegung der Informationen.
+Vielmehr verändert sich das Verhältnis zwischen der ==Bewegung des Körpers und der Bewegung der Informationen.==
 
 Damit hast du einen interessanten roten Faden für den gesamten Vortrag.
 
@@ -388,7 +390,7 @@ Dieser Text ist für deine Arbeit besonders wertvoll.
 
 Bideau untersucht die Architekturtheorien von Parent und Virilio, betrachtet sie aber auch im Zusammenhang späterer technologischer und gesellschaftlicher Entwicklungen.
 
-Vor allem auf Seite 19 findet sich eine Passage, die sich nahezu unmittelbar mit _Rasender Stillstand_ verbinden lässt.
+Vor allem auf Seite ==19== findet sich eine Passage, die sich nahezu unmittelbar mit _Rasender Stillstand_ verbinden lässt.
 
 Bideau beschreibt eine spätere Rückschau Virilios auf das Ende der 1960er-Jahre.
 
@@ -396,11 +398,13 @@ Darin geht es um den Übergang von der räumlichen Erfahrung der Stadt zur zuneh
 
 Eine zentrale Formulierung lautet:
 
-> „die räumliche Einheit der städtischen Bühne“
+> ==„die räumliche Einheit der städtischen Bühne“==
 
-Diese wird der
+==Diese wird der==
 
-> „zeitlichen Einheit des häuslichen Bildschirms“
+> ==„zeitlichen Einheit des häuslichen Bildschirms“==
+
+~~==Auflösung Raum Zeit==~~
 
 gegenübergestellt.
 
@@ -412,13 +416,13 @@ Das ist meiner Einschätzung nach eine der wichtigsten Stellen der gesamten Mate
 
 Weil hier der Gegensatz zwischen körperlicher und medialer Erfahrung unmittelbar formuliert wird.
 
-Die Stadt besitzt eine räumliche Ordnung.
+Die ==Stadt besitzt eine räumliche Ordnung.==
 
 Menschen bewegen sich durch Straßen, Plätze und Gebäude.
 
 Sie begegnen einander in einer materiellen Umgebung.
 
-Die Wahrnehmung ist eng mit ihrer körperlichen Position verbunden.
+Die ==Wahrnehmung ist eng mit ihrer körperlichen Position verbunden.==
 
 Der häusliche Bildschirm ermöglicht dagegen die Wahrnehmung eines entfernten Geschehens, ohne dass der Mensch dafür den Wohnraum verlassen muss.
 
@@ -438,7 +442,7 @@ Sie kann körperlich abgeschlossen bleiben und dennoch visuelle oder kommunikati
 
 Daraus ergibt sich eine interessante Veränderung des architektonischen Mikrokosmos.
 
-**Der Innenraum ist nicht länger allein ein Rückzugsort gegenüber der Außenwelt. Er wird zugleich zu einem Ort, von dem aus die Außenwelt technisch wahrgenommen und teilweise beeinflusst werden kann.**
+**Der Innenraum ist nicht länger allein ein Rückzugsort gegenüber der Außenwelt. Er wird zugleich zu einem Ort, von dem aus die Außenwelt technisch wahrgenommen und ==teilweise beeinflusst== werden kann.**
 
 Das ist genau die Beziehung zwischen Makrokosmos und Mikrokosmos, die dein Professor in der Seminarankündigung beschreibt.
 
@@ -464,7 +468,7 @@ Hier taucht bereits ein Begriff auf, der für Virilios spätere Theorie von gro�
 
 1966 beschäftigt sich Virilio mit architektonischen Strukturen, die unterschiedliche räumliche Ebenen miteinander verbinden.
 
-Der Boden soll nicht mehr nur eine horizontale Trennfläche sein.
+Der ==Boden soll nicht mehr nur eine horizontale Trennfläche sein.==
 
 Durch die Schräge wird er zu einem kontinuierlichen, begehbaren Zusammenhang.
 
@@ -476,15 +480,15 @@ Nun interessieren Virilio technische Systeme, die räumliche Beziehungen durch B
 
 Daraus ergibt sich eine interessante theoretische Entwicklung:
 
-**1966 wird räumliche Kontinuität durch Architektur hergestellt.**
+**1966 wird ==räumliche Kontinuität== durch Architektur hergestellt.**
 
-**1990 wird räumliche Distanz durch technische Übertragung neu organisiert.**
+**1990 wird ==räumliche Distanz== durch technische Übertragung neu organisiert.**
 
-Dabei handelt es sich nicht um identische Formen der Vermittlung.
+Dabei handelt es sich nicht um identische Formen der ==Vermittlung==. ==~~Als Synthese~~==
 
-Die Schräge verbindet physische Raumpositionen.
+Die ==Schräge== verbindet physische Raumpositionen.
 
-Die Telepräsenz stellt eine Beziehung zwischen räumlich entfernten Menschen oder Ereignissen her, ohne die körperliche Distanz notwendig zu überwinden.
+Die ==Telepräsenz== stellt eine Beziehung zwischen räumlich entfernten Menschen oder Ereignissen her, ohne die körperliche Distanz notwendig zu überwinden.
 
 Diese Differenz eignet sich hervorragend für eine analytische Gegenüberstellung.
 
@@ -514,13 +518,13 @@ Gleichzeitig besitzt sie ungewöhnliche, geneigte Innenräume.
 
 Das Gebäude verbindet somit zwei räumliche Prinzipien.
 
-**Nach außen:** Abschirmung, Schwere und massive Begrenzung.
+==**Nach außen:** Abschirmung, Schwere und massive Begrenzung.==
 
-**Nach innen:** Bewegung, Instabilität und eine bewusste Veränderung der körperlichen Orientierung.
+==**Nach innen:** Bewegung, Instabilität und eine bewusste Veränderung der körperlichen Orientierung.==
 
 Diese Verbindung ist für deinen Vortrag besonders wertvoll.
 
-Denn die Kirche ist eine reale Architektur, in der du sowohl die physische Abgeschlossenheit als auch die psychische Wirkung der räumlichen Gestaltung untersuchen kannst.
+Denn die Kirche ist eine reale Architektur, in der du sowohl die ==physische Abgeschlossenheit== als auch die ==psychische Wirkung== der räumlichen Gestaltung untersuchen kannst.
 
 ### Der Raum als psychisches Instrument
 
@@ -534,15 +538,15 @@ Die massive Hülle schränkt zugleich die gewöhnliche Offenheit gegenüber der 
 
 Das Bauwerk könnte deshalb als Verbindung zweier scheinbar gegensätzlicher Raumkonzepte untersucht werden.
 
-Es vereint Schutz und Irritation.
+Es ==vereint Schutz und Irritation==.
 
-Abschirmung und körperliche Aktivierung.
+==Abschirmung und körperliche Aktivierung==.
 
 Räumliche Geschlossenheit und eine ungewöhnliche innere Bewegungsordnung.
 
 ### Die Verbindung zur Seminarankündigung
 
-Die Aufgabenstellung beschreibt Räume, in denen äußere Licht-, Zeit- und Ortsbezüge reduziert werden, sodass Bewusstseinsvorgänge stärker hervortreten können.
+Die Aufgabenstellung beschreibt Räume, in denen äußere ==Licht-, Zeit- und Ortsbezüge== reduziert werden, sodass ==Bewusstseinsvorgänge stärker hervortreten== können. ~~==12 Sinne von Steiner==~~
 
 Die Kirche eignet sich dafür als konkretes Beispiel.
 
@@ -556,13 +560,13 @@ Damit besitzt sie eine besondere Stellung zwischen sakraler Innenwelt und experi
 
 # 11. Walter Benjamin: Die abgeschlossene Innenwelt als Phantasmagorie
 
-Nachdem du die architektonischen Grundlagen vorgestellt hast, würde ich die psychische und gesellschaftliche Ebene vertiefen.
+Nachdem du die ==architektonischen Grundlagen== vorgestellt hast, ~~==Gliederung zu Beginn des Vortrags oder jeweils vor arved und vor mir==~~ würde ich die psychische und gesellschaftliche Ebene vertiefen.
 
 Hier kommt Walter Benjamin ins Spiel.
 
 Ich würde mich auf drei Begriffe aus dem _Passagen-Werk_ konzentrieren:
 
-**Traumhaus, Phantasmagorie und Schwelle.**
+**==Traumhaus, Phantasmagorie und Schwelle.==** ~~==Übergänge und Synthesen==~~
 
 ## 11.1 Die Traumhäuser des Kollektivs
 
@@ -570,21 +574,21 @@ Benjamin untersucht in seinem _Passagen-Werk_ die Pariser Einkaufspassagen des 1
 
 Diese sind nicht bloß technische oder funktionale Bauwerke.
 
-Sie sind zugleich Orte der gesellschaftlichen Imagination.
+Sie sind zugleich Orte der gesellschaftlichen ==Imagination==.
 
 Die überdachten Passagen, ihre Schaufenster und Wareninszenierungen erzeugen besondere Erfahrungswelten.
 
-Benjamin betrachtet solche Architekturen als materielle Ausdrucksformen gesellschaftlicher Wunschbilder.
+Benjamin betrachtet solche Architekturen als materielle ==Ausdrucksformen gesellschaftlicher Wunschbilder.==
 
 ### Verbindung zum Bunker
 
 Hier würde ich eine interessante Gegenüberstellung entwickeln.
 
-Die Passage schafft einen architektonischen Innenraum, in dem die Warenwelt eine besondere Inszenierung erhält.
+Die Passage schafft einen architektonischen Innenraum, in dem die Warenwelt eine ==besondere Inszenierung== erhält.
 
 Der Bunker schafft einen abgeschlossenen Innenraum, dessen räumliche Organisation durch die Erwartung äußerer Gefahr bestimmt wird.
 
-Beide Räume lassen sich als architektonische Ausdrucksformen gesellschaftlicher Vorstellungen interpretieren.
+Beide Räume lassen sich als architektonische ==Ausdrucksformen gesellschaftlicher Vorstellungen interpretieren==.
 
 Aber ihre Funktionen unterscheiden sich grundlegend.
 
@@ -596,11 +600,11 @@ Der Bunker auf Schutz und Verteidigung.
 
 Der technisch vernetzte Wohnraum könnte als Ausdruck eines weiteren gesellschaftlichen Wunschbildes untersucht werden.
 
-Es wäre die Vorstellung, die Außenwelt verfügbar zu machen, ohne sich ihren unmittelbaren räumlichen Bedingungen aussetzen zu müssen.
+Es wäre die Vorstellung, die Außenwelt verfügbar zu machen, ==ohne sich ihren unmittelbaren räumlichen Bedingungen aussetzen== zu müssen.
 
 Damit entsteht eine neue Frage:
 
-**Kann die mediale Innenwelt als eine moderne Form gesellschaftlicher Wunscharchitektur verstanden werden?**
+**==Kann die mediale Innenwelt als eine moderne Form gesellschaftlicher Wunscharchitektur verstanden werden?==**
 
 Diese Interpretation muss allerdings zwischen Benjamins spezifischem Begriff der kapitalistischen Warenphantasmagorie und anderen Formen medialer Illusion unterscheiden.
 
@@ -620,7 +624,7 @@ Das Ausgangszitat lautet:
 
 > „Die Raumbilder sind die Träume der Gesellschaft.“
 
-Die dahinterstehende Vorstellung ist, dass gesellschaftliche Verhältnisse in räumlichen Strukturen zum Ausdruck kommen können, ohne vollständig bewusst geplant oder reflektiert zu werden.
+Die dahinterstehende Vorstellung ist, dass gesellschaftliche Verhältnisse in räumlichen Strukturen zum Ausdruck kommen können, ==ohne vollständig bewusst geplant oder reflektiert zu werden.==
 
 Damit eröffnet Kracauer eine Methode zur Analyse von Architektur.
 
@@ -650,7 +654,7 @@ Er untersucht auch die möglichen Folgen einer Lebensweise, in der sich der Mens
 
 ### Eine mögliche Interpretation mit Kracauer
 
-**Der mediale Innenraum könnte als räumlicher Ausdruck einer Gesellschaft interpretiert werden, die einerseits den Rückzug in geschützte Privaträume ermöglicht und andererseits die permanente Verfügbarkeit äußerer Ereignisse erwartet.**
+**Der mediale Innenraum könnte als räumlicher Ausdruck einer Gesellschaft interpretiert werden, die einerseits den Rückzug in geschützte Privaträume ermöglicht und andererseits die ==permanente Verfügbarkeit äußerer Ereignisse erwartet.==** ~~==oder selbst permanent erreichbar sein will==~~
 
 Damit würdest du unmittelbar auf das Seminarthema antworten.
 
@@ -658,7 +662,7 @@ Die Architektur wird zum Ausdruck gesellschaftlicher Wünsche und Spannungen, di
 
 ---
 
-# 13. Jacques Lacan: Der Bildschirm als psychische Schnittstelle
+# 13. Jacques Lacan: Der ==Bildschirm als psychische Schnittstelle==
 
 Lacan würde ich gezielt einsetzen, aber nicht zum Haupttheoretiker machen.
 
@@ -668,7 +672,7 @@ Für deinen Vortrag sind besonders zwei Konzepte wichtig.
 
 Lacans Spiegelstadium beschreibt die Beziehung zwischen dem Subjekt und seinem eigenen Bild.
 
-Die Identifikation mit einem äußeren Bild ist an der Ausbildung des Ichs beteiligt.
+Die ==Identifikation mit einem äußeren Bild ist an der Ausbildung des Ichs== beteiligt.
 
 Dabei entsteht eine Spannung zwischen dem erlebten Körper und seiner bildhaften Repräsentation.
 
@@ -688,7 +692,7 @@ Sie nimmt gleichzeitig ihren eigenen Körper und dessen mediale Darstellung wahr
 
 Das Bild wird durch den technischen Apparat erzeugt.
 
-Es besitzt eine andere räumliche Erscheinungsform als der unmittelbar erlebte Körper.
+Es ==besitzt eine andere räumliche Erscheinungsform als der unmittelbar erlebte Körper==.
 
 Lacan könnte hier helfen, die Identifikation mit dem Bild und die Differenz zwischen leiblicher Erfahrung und Repräsentation zu untersuchen.
 
@@ -714,7 +718,7 @@ Es geht auch um die Stellung des Subjekts innerhalb des Sichtbaren.
 
 Der Bunker kontrolliert, wie der Innenraum mit der Außenwelt visuell verbunden ist.
 
-Er ermöglicht bestimmte Blickrichtungen und schränkt andere ein.
+Er ==ermöglicht bestimmte Blickrichtungen und schränkt andere ein==.
 
 Die Wahrnehmung wird räumlich organisiert.
 
@@ -748,11 +752,11 @@ Pichlers Arbeit könnte anschließend eine Verbindung zwischen dieser Architektu
 
 Die Generali Foundation beschreibt den TV-Helm als Konstruktion, die den Kopf des Trägers umschließt und dessen Aufmerksamkeit auf einen integrierten Fernsehmonitor konzentriert.
 
-Das Werk wird dort ausdrücklich als Form medialer Isolation interpretiert. [Start page](https://foundation.generali.at/de/sammlung/kunstwerke/gf0001972000-1998-tv-helm-tragbares-wohnzimmer?utm_source=chatgpt.com)
+Das Werk wird dort ausdrücklich als ==Form medialer Isolation== interpretiert. [Start page](https://foundation.generali.at/de/sammlung/kunstwerke/gf0001972000-1998-tv-helm-tragbares-wohnzimmer?utm_source=chatgpt.com)
 
 ### Warum passt das so gut?
 
-Der Helm schafft eine minimale räumliche Hülle.
+Der Helm schafft eine minimale räumliche ==Hülle==.
 
 Der Körper wird von seiner unmittelbaren Umgebung abgeschirmt.
 
@@ -760,9 +764,9 @@ Gleichzeitig erhält der Träger Zugang zu einer medialen Bilderwelt.
 
 Damit verbindet Pichler zwei Aspekte, die auch in Virilios Arbeiten auftauchen.
 
-**Der Bunker:** Die räumliche Abschirmung des Körpers.
+**Der Bunker:** Die räumliche ==Abschirmung== des Körpers.
 
-**Der mediale Innenraum:** Die technische Vermittlung der Außenwelt.
+**Der mediale Innenraum:** Die technische ==Vermittlung== der Außenwelt.
 
 Pichlers TV-Helm könnte deshalb als eine experimentelle Verdichtung dieser beiden Prinzipien verstanden werden.
 
@@ -812,14 +816,14 @@ Der Innenraum bleibt materiell begrenzt, während sich die Reichweite seiner kom
 
 **Psychische Bedeutung:** Nähe trotz Distanz, kontrollierte Wahrnehmung, Rückzug, mögliche Entfremdung.
 
-### Die übergeordnete Entwicklung
+### ==Die übergeordnete Entwicklung==
 
-|Raumkonzept|Verhältnis zum Körper|Verhältnis zur Außenwelt|Theoretischer Schwerpunkt|
-|---|---|---|---|
-|**Bunker**|Körper ist geschützt und räumlich abgeschirmt|Außenwelt ist begrenzt zugänglich und potenziell gefährlich|Virilio: _Bunkerarchäologie_|
-|**Schräge**|Körper wird zu Bewegung und Anpassung angeregt|Umgebung wird körperlich und räumlich erschlossen|Parent / Virilio: _Architecture Principe_|
-|**Medienkapsel**|Körper bleibt weitgehend stationär|Außenwelt wird durch technische Bilder vermittelt|Virilio: _Rasender Stillstand_|
-|**Psychische Innenwelt**|Körper, Selbstbild und Wahrnehmung können auseinanderfallen|Außenwelt wird durch Bilder und symbolische Bedeutungen verarbeitet|Lacan, Benjamin, Kracauer|
+| Raumkonzept              | Verhältnis zum Körper                                       | Verhältnis zur Außenwelt                                            | Theoretischer Schwerpunkt                 |
+| ------------------------ | ----------------------------------------------------------- | ------------------------------------------------------------------- | ----------------------------------------- |
+| **Bunker**               | Körper ist geschützt und räumlich abgeschirmt               | Außenwelt ist begrenzt zugänglich und potenziell gefährlich         | Virilio: _Bunkerarchäologie_              |
+| **Schräge**              | Körper wird zu Bewegung und Anpassung angeregt              | Umgebung wird körperlich und räumlich erschlossen                   | Parent / Virilio: _Architecture Principe_ |
+| **Medienkapsel**         | Körper bleibt weitgehend stationär                          | Außenwelt wird durch technische Bilder vermittelt                   | Virilio: _Rasender Stillstand_            |
+| **Psychische Innenwelt** | Körper, Selbstbild und Wahrnehmung können auseinanderfallen | Außenwelt wird durch Bilder und symbolische Bedeutungen verarbeitet | Lacan, Benjamin, Kracauer                 |
 
 Ich würde dabei nicht behaupten, dass diese vier Raumtypen einander historisch vollständig ablösen.
 
@@ -829,7 +833,7 @@ Das Nebeneinander dieser Modelle ist gerade für den architekturtheoretischen Ve
 
 ---
 
-# 16. Vorschlag für die endgültige Vortragsstruktur
+# 16. ==Vorschlag für die endgültige Vortragsstruktur==
 
 Ich würde den Vortrag auf ungefähr 25 Minuten auslegen.
 
@@ -858,11 +862,11 @@ Benjamin und Lacan dienen der Interpretation und sollten den Schwerpunkt auf Vir
 
 Für die Aufgabenstellung deines Professors ist entscheidend, dass du nicht nur technische oder formale Veränderungen beschreibst.
 
-Du solltest bei jedem Raum fragen, welche psychischen und gesellschaftlichen Vorstellungen sich in seiner Organisation ausdrücken könnten.
+==Du solltest bei jedem Raum fragen, welche psychischen und gesellschaftlichen Vorstellungen sich in seiner Organisation ausdrücken könnten.==
 
 Ich würde dafür drei Gegensatzpaare verwenden.
 
-### Schutz und Bedrohung
+### ==Schutz und Bedrohung==
 
 Der Bunker besitzt eine defensive Funktion.
 
@@ -870,7 +874,7 @@ Seine räumliche Abschirmung steht in einem Zusammenhang mit der Vorstellung äu
 
 Die Architektur entsteht aus dem Versuch, Kontrolle über eine bedrohliche Situation herzustellen.
 
-### Bewegung und Immobilität
+### ==Bewegung und Immobilität==
 
 Die Architektur der Schräge aktiviert den Körper.
 
@@ -882,7 +886,7 @@ Die eine betont Bewegung als Grundlage räumlicher Erfahrung.
 
 Die andere beschreibt eine technisch vermittelte Reichweite, die ohne entsprechende körperliche Bewegung möglich wird.
 
-### Isolation und Allgegenwart
+### ==Isolation und Allgegenwart==
 
 Der mediale Innenraum schafft eine besonders interessante Doppelstruktur.
 
@@ -926,7 +930,7 @@ Der medial vernetzte Wohnraum kann ebenfalls als Rückzugsort funktionieren.
 
 Aber seine Schutzfunktion ist nicht notwendigerweise militärisch.
 
-Sie kann sich beispielsweise auf die Abschirmung gegenüber unmittelbaren äußeren Einflüssen oder auf die technische Kontrolle der Wohnumgebung beziehen.
+Sie kann sich beispielsweise auf die ==Abschirmung gegenüber unmittelbaren äußeren Einflüssen oder auf die technische Kontrolle der Wohnumgebung beziehen.==
 
 Die beiden Raumformen sind deshalb nicht identisch.
 
@@ -936,7 +940,7 @@ Dennoch lässt sich fragen, ob sie mit verwandten Vorstellungen von Kontrolle un
 
 **Die mediale Innenwelt kann als Transformation des architektonischen Schutzraums interpretiert werden: Die massive Abschirmung des Bunkers wird durch eine Kombination aus materieller Begrenzung und technischer Vermittlung ersetzt beziehungsweise ergänzt.**
 
-Dabei würde ich den Begriff **„Medienbunker“** als eigene analytische Metapher verwenden.
+Dabei würde ich den Begriff **„==Medienbunker==“** als eigene analytische Metapher verwenden.
 
 Er könnte die besondere Verbindung zwischen Rückzug, Abschirmung und technisch vermittelter Außenwahrnehmung beschreiben.
 
@@ -1055,11 +1059,11 @@ Damit verändert sich das Verhältnis zwischen Architektur und Körper.
 
 Während die Architektur der Schräge den Körper in Bewegung versetzen möchte, beschreibt Virilio später eine Umgebung, in der die Reichweite des Menschen zunehmend durch technische Systeme vermittelt wird.
 
-**Das Paradox besteht darin, dass eine wachsende mediale Verbindung zur Außenwelt mit einer zunehmenden körperlichen Bindung an den Innenraum einhergehen kann.**
+**==Das Paradox besteht darin, dass eine wachsende mediale Verbindung zur Außenwelt mit einer zunehmenden körperlichen Bindung an den Innenraum einhergehen kann.==** ~~==Cloud Anwendungen, Lenses==~~
 
 Unter Rückgriff auf Kracauers Raumtheorie ließe sich darin ein mögliches gesellschaftliches Wunschbild erkennen:
 
-Die Vorstellung einer Welt, die verfügbar und kontrollierbar ist, ohne dass der Mensch die Sicherheit seiner unmittelbaren Umgebung verlassen muss.
+Die Vorstellung einer Welt, die ==verfügbar== und kontrollierbar ist, ohne dass der Mensch die Sicherheit seiner unmittelbaren Umgebung verlassen muss.
 
 Benjamin ermöglicht es, diese Vorstellung im Zusammenhang gesellschaftlicher Traum- und Wunschbilder zu betrachten.
 
@@ -1101,7 +1105,7 @@ Zusammen ergeben diese vier Positionen einen wesentlich präziseren theoretische
 
 Aus dem Material deines Professors ergeben sich zwei unterschiedliche Vorstellungen von einer idealen Beziehung zwischen Mensch und Raum.
 
-**Die Architektur der Schräge möchte den Körper bewegen, damit er den Raum neu erfährt.**
+**Die Architektur der Schräge ==möchte den Körper bewegen, damit er den Raum neu erfährt.==**
 
 **Die technisch organisierte Umwelt des rasenden Stillstands ermöglicht es dagegen, dass der Körper an einem Ort verbleibt, während die Welt medial zu ihm gelangt.**
 
@@ -1111,7 +1115,7 @@ Aber die Richtung dieser Veränderung ist grundlegend verschieden.
 
 Bei der Schräge muss sich der Körper an den Raum anpassen.
 
-Bei der medialen Innenwelt kann sich die technisch vermittelte Umgebung zunehmend den Handlungsmöglichkeiten des stationären Körpers anpassen.
+Bei der medialen Innenwelt kann sich die technisch vermittelte Umgebung ==zunehmend den Handlungsmöglichkeiten des stationären Körpers== anpassen.
 
 **Vielleicht liegt genau darin der interessanteste psychologische und gesellschaftliche Gegensatz innerhalb von Virilios Werk: zwischen einer Architektur, die den Menschen zur körperlichen Auseinandersetzung mit der Welt anregt, und einer technischen Umwelt, die ihm die Welt zugänglich machen soll, ohne dass er sich körperlich zu ihr hinbewegen muss.**
 
