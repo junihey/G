@@ -729,7 +729,7 @@ Ein Warteraum ist beispielsweise wesentlich durch eine zukünftige Handlung best
 
 Ein Bahnhof wird als Ort des Übergangs erlebt, weil Ankunft und Abfahrt seine Nutzung prägen.
 
-Die zeitliche Dimension ist damit Bestandteil der räumlichen Erfahrung.
+Die ==zeitliche Dimension== ist damit Bestandteil der räumlichen Erfahrung.
 
 ### Geodiversität und Chronodiversität
 
@@ -743,7 +743,7 @@ Zugleich spricht er von einer **« fin de la géographie »**, einem Ende der Ge
 
 Diese Begriffe könnten ein wichtiges theoretisches Fundament für deine Arbeit bilden.
 
-Denn die Erfahrung eines Ortes hängt auch davon ab, wie lange wir uns dort aufhalten und in welchem zeitlichen Zusammenhang wir ihn wahrnehmen.
+Denn die Erfahrung eines Ortes hängt auch davon ab, ==wie lange wir uns dort aufhalten und in welchem zeitlichen Zusammenhang wir ihn wahrnehmen.==
 
 ### Meine Bewertung
 
@@ -929,15 +929,15 @@ Für eine eigenständige architekturtheoretische Argumentation würde ich allerd
 
 Die folgende Bewertung bezieht sich ausdrücklich auf dein Seminarthema und ist keine allgemeine Bewertung der wissenschaftlichen Qualität der Bücher.
 
-| Buch | Physische Zwischenräume | Unterwelten / verborgene Räume | Mediale Räume | Psychische Räume | Gesamtbewertung |
-|---|---|---|---|---|---|
-| **Parent / Virilio: Architecture Principe** | ★★★★★ | ★★★★☆ | ★★☆☆☆ | ★★★★☆ | **5/5** |
-| **Virilio: Rasender Stillstand** | ★★★☆☆ | ★★★☆☆ | ★★★★★ | ★★★★☆ | **5/5** |
-| **Kirchmann: Blicke aus dem Bunker** | ★★★☆☆ | ★★★★★ | ★★★★☆ | ★★★★★ | **5/5** |
-| **Armitage: Paul Virilio** | ★★★★★ | ★★★★★ | ★★★★★ | ★★★☆☆ | **4,5/5** |
-| **Virilio: Der Futurismus des Augenblicks** | ★★★★☆ | ★★☆☆☆ | ★★★★★ | ★★★☆☆ | **4/5** |
-| **Becker: Botho Strauß – Dissipation** | ★★☆☆☆ | ★★★☆☆ | ★★★☆☆ | ★★★★☆ | **3/5** |
-| **Reschika: Wahnprinzip Geschwindigkeit** | ★★☆☆☆ | ★★☆☆☆ | ★★★☆☆ | ★★★☆☆ | **2,5/5** |
+| Buch                                        | Physische Zwischenräume | Unterwelten / verborgene Räume | Mediale Räume | Psychische Räume | Gesamtbewertung |
+| ------------------------------------------- | ----------------------- | ------------------------------ | ------------- | ---------------- | --------------- |
+| **Parent / Virilio: Architecture Principe** | ★★★★★                   | ★★★★☆                          | ★★☆☆☆         | ★★★★☆            | **5/5**         |
+| **Virilio: Rasender Stillstand**            | ★★★☆☆                   | ★★★☆☆                          | ★★★★★         | ★★★★☆            | **5/5**         |
+| **Kirchmann: Blicke aus dem Bunker**        | ★★★☆☆                   | ★★★★★                          | ★★★★☆         | ★★★★★            | **5/5**         |
+| **Armitage: Paul Virilio**                  | ★★★★★                   | ★★★★★                          | ★★★★★         | ★★★☆☆            | **4,5/5**       |
+| **Virilio: Der Futurismus des Augenblicks** | ★★★★☆                   | ★★☆☆☆                          | ★★★★★         | ★★★☆☆            | **4/5**         |
+| **Becker: Botho Strauß – Dissipation**      | ★★☆☆☆                   | ★★★☆☆                          | ★★★☆☆         | ★★★★☆            | **3/5**         |
+| **Reschika: Wahnprinzip Geschwindigkeit**   | ★★☆☆☆                   | ★★☆☆☆                          | ★★★☆☆         | ★★★☆☆            | **2,5/5**       |
 
 ### Welche Literatur würde ich auswählen?
 
@@ -1091,7 +1091,7 @@ Darin liegt eine wichtige Beziehung:
 
 Mit Williams könntest du physische, mediale und imaginäre Räume zusammenführen.
 
-Eine unterirdische Stadt lässt sich zugleich als Bauwerk, technologisches System und Fantasie untersuchen.
+Eine unterirdische Stadt lässt sich zugleich als ==Bauwerk, technologisches System und Fantasie== untersuchen.
 
 Das Buch wäre deshalb eine hervorragende Ergänzung zu Virilio.
 
@@ -1227,7 +1227,7 @@ Das MIT Press beschreibt seine Untersuchung als Verbindung zwischen dem Unheimli
 
 ### Warum für dein Thema geeignet?
 
-Das Unheimliche ist häufig eine Erfahrung des Dazwischen.
+Das ==Unheimliche== ist häufig eine Erfahrung des Dazwischen.
 
 Etwas erscheint vertraut und fremd zugleich.
 
@@ -1235,7 +1235,7 @@ Ein Raum besitzt bekannte architektonische Elemente, wirkt aber dennoch irritier
 
 Dafür muss er nicht unterirdisch sein.
 
-Eine ungewöhnliche Proportion, ein fehlender Orientierungspunkt oder ein irritierender Übergang können die Wahrnehmung verändern.
+==Eine ungewöhnliche Proportion, ein fehlender Orientierungspunkt oder ein irritierender Übergang können die Wahrnehmung verändern.==
 
 Damit wäre Vidler besonders für psychische Zwischenwelten interessant.
 
@@ -1263,11 +1263,11 @@ Er beschäftigt sich mit Orten, die innerhalb einer Gesellschaft eine besondere 
 
 Solche Orte funktionieren nach spezifischen Regeln und besitzen häufig ein ungewöhnliches Verhältnis zur gewöhnlichen räumlichen Ordnung.
 
-Zu seinen Beispielen gehören unter anderem Friedhöfe, Gärten, Gefängnisse und Schiffe. ([foucault.info](https://www.foucault.info/documents/heterotopia/foucault.heteroTopia.en/))
+Zu seinen Beispielen gehören unter anderem ==Friedhöfe, Gärten, Gefängnisse und Schiffe==. ([foucault.info](https://www.foucault.info/documents/heterotopia/foucault.heteroTopia.en/))
 
 ### Was ist eine Heterotopie?
 
-Vereinfacht lässt sich eine Heterotopie als real existierender Ort verstehen, der sich in besonderer Weise auf andere gesellschaftliche Orte bezieht.
+Vereinfacht lässt sich eine ==Heterotopie== als real existierender Ort verstehen, der sich in besonderer Weise ==auf andere gesellschaftliche Orte bezieht==.
 
 Er kann bestehende räumliche Ordnungen darstellen, hinterfragen oder umkehren.
 
@@ -1333,7 +1333,7 @@ Ein Architekt kann einen Raum als funktionale Verkehrsfläche planen.
 
 Seine Nutzer können ihn dagegen als unangenehm, bedrohlich oder befreiend erleben.
 
-Hier entsteht eine Differenz zwischen konzipiertem und gelebtem Raum.
+Hier entsteht eine ==Differenz zwischen konzipiertem und gelebtem Raum==.
 
 ### Meine Empfehlung
 
@@ -1351,7 +1351,7 @@ Er ermöglicht es, die anderen Autoren miteinander zu verbinden, ohne ihre Begri
 
 Dieses Werk könnte für dein Thema sogar noch geeigneter sein als *Rasender Stillstand*.
 
-Virilio untersucht darin die Veränderung des städtischen Raumes durch Kommunikationstechnologien.
+Virilio untersucht darin die ==Veränderung des städtischen Raumes durch Kommunikationstechnologien.==
 
 Besonders interessant ist die Vorstellung, dass die traditionelle städtische Architektur durch neue Formen medialer Vernetzung überlagert wird.
 
@@ -1377,17 +1377,17 @@ Digitale Netzwerke verändern dieses Verhältnis.
 
 Eine Stadt ist nicht mehr nur über physische Verkehrswege erreichbar.
 
-Bestimmte Tätigkeiten, Informationen und soziale Beziehungen sind auch aus der Ferne zugänglich.
+==Bestimmte Tätigkeiten, Informationen und soziale Beziehungen sind auch aus der Ferne zugänglich==.
 
 ### Verbindung zur Architektur
 
-Hier könntest du die Frage untersuchen, ob der Bildschirm eine neue Form des Stadttors darstellt.
+Hier könntest du die Frage untersuchen, ob der ==Bildschirm eine neue Form des Stadttors== darstellt.
 
 Nicht im Sinne einer vollständigen Ersetzung des physischen Stadtraums.
 
-Sondern als zusätzliche Schnittstelle zwischen unterschiedlichen räumlichen Ebenen.
+Sondern als ==zusätzliche Schnittstelle== zwischen unterschiedlichen räumlichen Ebenen.
 
-Dieses Buch wäre daher besonders interessant, wenn du **Zwischenwelten als Schnittstellen zwischen materieller Architektur und digitaler Umgebung** verstehen möchtest.
+Dieses Buch wäre daher besonders interessant, wenn du **==Zwischenwelten als Schnittstellen zwischen materieller Architektur und digitaler Umgebung==** verstehen möchtest.
 
 ---
 
@@ -1413,7 +1413,7 @@ Ein Gebäude existiert materiell an einem bestimmten Ort.
 
 Seine Bilder können gleichzeitig an unzähligen anderen Orten erscheinen.
 
-Für viele Menschen findet die erste Begegnung mit einem Gebäude überhaupt nicht vor Ort statt.
+==Für viele Menschen findet die erste Begegnung mit einem Gebäude überhaupt nicht vor Ort statt.==
 
 Sie erleben es über Fotografien oder Filme.
 
@@ -1423,7 +1423,7 @@ Daraus lässt sich die Frage entwickeln:
 
 Colomina liefert dafür eine wichtige Grundlage.
 
-Sie würde sich besonders gut mit Virilios Überlegungen zu Bildschirm, Wahrnehmung und Telepräsenz kombinieren lassen.
+Sie würde sich besonders gut mit Virilios Überlegungen zu ==Bildschirm, Wahrnehmung und Telepräsenz== kombinieren lassen.
 
 ---
 
@@ -1493,11 +1493,11 @@ Er besitzt eine materielle und eine psychische Dimension.
 
 Die materielle Dimension besteht aus Beton, Abschirmung, Öffnungen und Erschließung.
 
-Die psychische Dimension ergibt sich aus den Bedeutungen von Schutz, Gefahr, Isolation und Kontrolle.
+==Die psychische Dimension ergibt sich aus den Bedeutungen von Schutz, Gefahr, Isolation und Kontrolle.==
 
-Der Bunker ist aber auch ein historischer Raum.
+==Der Bunker ist aber auch ein historischer Raum.==
 
-Er kann eine frühere militärische Funktion verlieren und als Ruine, Denkmal oder Ausstellungsraum weiterexistieren.
+==Er kann eine frühere militärische Funktion verlieren und als Ruine, Denkmal oder Ausstellungsraum weiterexistieren.==
 
 Dabei verändert sich seine gesellschaftliche Bedeutung.
 
@@ -1513,7 +1513,7 @@ Dabei verändert sich seine gesellschaftliche Bedeutung.
 
 ### Mögliche These
 
-*Der Bunker ist eine architektonische Zwischenwelt, weil seine räumliche Ordnung Schutz und Bedrohung, Sichtbarkeit und Verbergen sowie Vergangenheit und Gegenwart miteinander verschränkt.*
+*Der Bunker ist eine architektonische ==Zwischenwelt==, weil seine räumliche Ordnung Schutz und Bedrohung, Sichtbarkeit und Verbergen sowie Vergangenheit und Gegenwart miteinander verschränkt.*
 
 Diesen Ansatz halte ich für besonders überzeugend, weil er sich anhand konkreter Architektur untersuchen lässt.
 
@@ -1559,9 +1559,9 @@ Hier wäre der Ausgangspunkt nicht der Keller oder Bunker, sondern der Bildschir
 
 Ein Mensch befindet sich körperlich an einem Ort, während er medial an einem anderen Ort teilnimmt.
 
-Der Raum wird dadurch zu einer Überlagerung unterschiedlicher Erfahrungen.
+Der ==Raum wird dadurch zu einer Überlagerung unterschiedlicher Erfahrungen.==
 
-Dabei stellt sich die Frage, welche Aspekte räumlicher Anwesenheit technisch übertragen werden können und welche an den Körper gebunden bleiben.
+Dabei stellt sich die Frage, ==welche Aspekte räumlicher Anwesenheit technisch übertragen werden können und welche an den Körper gebunden bleiben.==
 
 ### Theoretische Verbindung
 
@@ -1575,7 +1575,7 @@ Dabei stellt sich die Frage, welche Aspekte räumlicher Anwesenheit technisch ü
 
 ### Mögliche These
 
-*Mediale Zwischenwelten erweitern architektonische Anwesenheit, ohne die körperliche Gebundenheit des Menschen an den physischen Raum vollständig aufzuheben.*
+*Mediale Zwischenwelten ==erweitern architektonische Anwesenheit, ohne die körperliche Gebundenheit des Menschen an den physischen Raum vollständig aufzuheben.==*
 
 Das wäre die interessanteste Richtung, wenn du Virtual Reality, digitale Architektur oder die Beziehung zwischen Bildschirm und gebautem Raum behandeln möchtest.
 
@@ -1601,9 +1601,9 @@ Die unterirdische Stadt ist dem öffentlichen Blick teilweise entzogen und ermö
 
 Hier entsteht ein übergreifender Begriff von Zwischenwelten.
 
-**Zwischenwelten sind Räume, in denen vertraute räumliche Unterscheidungen ihre Eindeutigkeit verlieren.**
+**==Zwischenwelten sind Räume, in denen vertraute räumliche Unterscheidungen ihre Eindeutigkeit verlieren.**==
 
-Das betrifft insbesondere die Gegensätze von Innen und Außen, Sichtbarkeit und Unsichtbarkeit, Anwesenheit und Abwesenheit, Bewegung und Stillstand, Schutz und Bedrohung.
+==Das betrifft insbesondere die Gegensätze von Innen und Außen, Sichtbarkeit und Unsichtbarkeit, Anwesenheit und Abwesenheit, Bewegung und Stillstand, Schutz und Bedrohung.==
 
 Daraus könnte sich eine übergeordnete Seminarfrage ergeben:
 
@@ -1755,7 +1755,7 @@ Vielmehr kannst du zeigen, dass diese Räume auf unterschiedlichen Ebenen existi
 
 **Die architektonische Ebene** betrifft die materielle Organisation von Raum, seine Grenzen und Übergänge.
 
-**Die psychische Ebene** betrifft die Beziehung zwischen räumlicher Erfahrung, Erinnerung, Angst und Imagination.
+**==Die psychische Ebene** betrifft die Beziehung zwischen räumlicher Erfahrung, Erinnerung, Angst und Imagination.==
 
 **Die mediale Ebene** betrifft die Veränderung räumlicher Beziehungen durch Bilder, Kommunikationstechnologien und virtuelle Anwesenheit.
 
@@ -1765,7 +1765,7 @@ Damit ließe sich dein Thema in eine breitere raumtheoretische Diskussion einord
 
 ### Eine mögliche zentrale These für das gesamte Seminar
 
-> **Zwischenwelten und Unterwelten sind nicht allein verborgene oder unterirdische Orte. Sie entstehen überall dort, wo sich räumliche Grenzen, körperliche Erfahrungen, psychische Vorstellungen und mediale Wirklichkeiten überschneiden.**
+> **==Zwischenwelten und Unterwelten sind nicht allein verborgene oder unterirdische Orte. Sie entstehen überall dort, wo sich räumliche Grenzen, körperliche Erfahrungen, psychische Vorstellungen und mediale Wirklichkeiten überschneiden.==**
 
 Diese These würde ich allerdings nicht als allgemeingültige Definition setzen, sondern als Ausgangshypothese formulieren und anhand konkreter Räume überprüfen.
 
@@ -1808,7 +1808,7 @@ Ich würde dein Thema folgendermaßen weiterentwickeln.
 
 Deine Vorstellung von Zwischenwelten lässt sich in drei Dimensionen unterteilen.
 
-### Die psychische Unterwelt
+### ==Die psychische Unterwelt==
 
 Damit meine ich jene Dimensionen unserer Raumerfahrung, die durch Erinnerung, Verdrängung, Traum, Angst und das Unbewusste entstehen.
 
@@ -1820,7 +1820,7 @@ Ein vertrautes Zimmer kann im Traum zu einem völlig anderen Ort werden.
 
 Die psychische Unterwelt ist in diesem Sinne keine physische Welt unterhalb der Oberfläche, sondern eine Dimension, die unsere Wahrnehmung des sichtbaren Raumes überlagert.
 
-### Die imaginäre Zwischenwelt
+### ==Die imaginäre Zwischenwelt==
 
 Hier geht es um Räume, die durch Vorstellungskraft, Literatur, Kunst oder Träume entstehen.
 
@@ -1836,7 +1836,7 @@ Sie kann räumliche Ordnungen erzeugen, die sich innerhalb der materiellen Wirkl
 
 Daraus ergibt sich die Frage, ob die Vorstellung eines Raumes bereits eine Form räumlicher Erfahrung darstellt.
 
-### Die mediale Zwischenwelt
+### ==Die mediale Zwischenwelt==
 
 Diese dritte Ebene entsteht durch Medien.
 
@@ -1886,7 +1886,7 @@ Solche Erfahrungen zeigen, dass die subjektive Wahrnehmung von Raum nicht vollst
 
 ### Besonders relevante Kapitel
 
-Die folgenden Kapitel sind für dein Thema besonders interessant:
+==Die folgenden Kapitel sind für dein Thema besonders interessant:==
 
 | Kapitel | Seite | Bedeutung |
 |---|---:|---|
@@ -1907,13 +1907,13 @@ Vidler ermöglicht es, einen Raum auf mehreren Ebenen gleichzeitig zu untersuche
 
 Nehmen wir ein Zimmer.
 
-Physisch besitzt dieses Zimmer Wände, Fenster, einen Boden und bestimmte Abmessungen.
+==Physisch besitzt dieses Zimmer Wände, Fenster, einen Boden und bestimmte Abmessungen.==
 
-Psychisch kann es durch Erinnerungen, Ängste oder persönliche Vorstellungen verändert werden.
+==Psychisch kann es durch Erinnerungen, Ängste oder persönliche Vorstellungen verändert werden.==
 
-Imaginär kann es in einem Traum seine räumlichen Grenzen verlieren.
+==Imaginär kann es in einem Traum seine räumlichen Grenzen verlieren.==
 
-Medial kann es durch eine Filmkamera oder digitale Darstellung völlig anders erscheinen.
+==Medial kann es durch eine Filmkamera oder digitale Darstellung völlig anders erscheinen.==
 
 Die Architektur bleibt somit nicht auf ihre materielle Gestalt beschränkt.
 
@@ -1931,7 +1931,7 @@ Sie wird zum Ausgangspunkt unterschiedlicher Raumerfahrungen.
 
 Winnicott ist besonders interessant, weil er einen Begriff entwickelt, der deiner Vorstellung von Zwischenwelten erstaunlich nahekommt:
 
-**Potential Space – der potenzielle Raum.**
+**==Potential Space== – der potenzielle Raum.**
 
 Winnicott beschreibt eine Zwischenzone menschlicher Erfahrung, die sich weder vollständig der subjektiven Innenwelt noch der objektiven Außenwelt zuordnen lässt.
 
@@ -1971,7 +1971,7 @@ Sinngemäß: Ein Raum, der zugleich verbindet und trennt.
 
 Daraus könnte man für deine Architekturtheorie eine interessante Frage entwickeln:
 
-**Kann Architektur als Medium zwischen innerer Vorstellung und äußerer Wirklichkeit funktionieren?**
+**==Kann Architektur als Medium zwischen innerer Vorstellung und äußerer Wirklichkeit funktionieren?==**
 
 Für diese Untersuchung wäre Winnicott besonders wertvoll, weil er eine theoretische Grundlage für die Existenz eines psychischen Dazwischen liefert.
 
@@ -2003,9 +2003,9 @@ Allerdings gibt es einen entscheidenden Unterschied:
 
 Hinter einem Fenster befindet sich normalerweise ein physischer Raum.
 
-Hinter einem Bildschirm muss dagegen kein räumliches Gegenüber im gleichen Sinn existieren.
+==Hinter einem Bildschirm muss dagegen kein räumliches Gegenüber im gleichen Sinn existieren.==
 
-Der dargestellte Raum kann fotografiert, animiert, simuliert oder vollständig erfunden sein.
+==Der dargestellte Raum kann fotografiert, animiert, simuliert oder vollständig erfunden sein.==
 
 ### Der virtuelle Raum als zweite räumliche Ebene
 
@@ -2027,7 +2027,7 @@ Er schaut auf eine zweidimensionale Fläche.
 
 Trotzdem kann er eine räumlich zusammenhängende, dreidimensional erscheinende Welt erleben.
 
-**Für dein Seminar könntest du den Bildschirm deshalb als architektonische Schwelle zwischen materieller und imaginärer Wirklichkeit untersuchen.**
+**Für dein Seminar könntest du den ==Bildschirm deshalb als architektonische Schwelle zwischen materieller und imaginärer Wirklichkeit untersuchen.==**
 
 Diese Übertragung würde ich mit Friedbergs Theorie des virtuellen Fensters begründen.
 
@@ -2085,7 +2085,7 @@ Foucault bezeichnet den Spiegel als einen besonderen Fall zwischen Utopie und He
 
 Über den Spiegel schreibt er:
 
-> “In the mirror, I see myself there where I am not.”
+> “==In the mirror, I see myself there where I am not.==”
 
 Sinngemäß:
 
@@ -2103,7 +2103,7 @@ Das Spiegelbild erzeugt eine virtuelle räumliche Situation.
 
 Wir sehen uns an einem Ort, den wir körperlich nicht einnehmen.
 
-Dadurch wird der Spiegel zur Schnittstelle zwischen realem und virtuellem Raum.
+Dadurch wird der ==Spiegel zur Schnittstelle zwischen realem und virtuellem Raum==.
 
 Foucault beschreibt, wie diese virtuelle Erfahrung auf unsere Wahrnehmung der tatsächlichen eigenen Position zurückwirkt.
 
@@ -2115,9 +2115,9 @@ Der Spiegel zeigt eine virtuelle Erscheinung unserer physischen Umgebung.
 
 Der Bildschirm kann hingegen eine vollständig andere Welt darstellen.
 
-Beide verändern das Verhältnis zwischen körperlicher Anwesenheit und visueller Wahrnehmung.
+==Beide verändern das Verhältnis zwischen körperlicher Anwesenheit und visueller Wahrnehmung.==
 
-**Der Spiegel könnte deshalb ein zentraler Ausgangspunkt für deine Theorie der Zwischenwelten sein.**
+**Der ==Spiegel könnte deshalb ein zentraler Ausgangspunkt für deine Theorie der Zwischenwelten== sein.**
 
 Er ermöglicht es, das Phänomen anhand eines einfachen architektonischen Elements zu erklären.
 
@@ -2230,21 +2230,21 @@ Ein etwas präziserer Titel wäre:
 
 Ich würde dazu eine These entwickeln:
 
-> **Architektur existiert für den Menschen nicht ausschließlich als materielle Struktur. Sie wird durch Erinnerung, Imagination und mediale Wahrnehmung um zusätzliche räumliche Bedeutungsebenen erweitert. Zwischenwelten entstehen dort, wo diese Ebenen mit dem physischen Raum in Beziehung treten.**
+> **Architektur existiert für den Menschen nicht ausschließlich als materielle Struktur. Sie wird durch Erinnerung, Imagination und mediale Wahrnehmung um zusätzliche räumliche Bedeutungsebenen erweitert. ==Zwischenwelten entstehen dort, wo diese Ebenen mit dem physischen Raum in Beziehung treten.*==*
 
 Die besondere Qualität dieser Fragestellung besteht darin, dass sich die verschiedenen Welten nicht einfach in real und unreal aufteilen lassen.
 
-Ein Traum ist keine physische Architektur, kann aber eine intensive räumliche Erfahrung darstellen.
+==Ein Traum ist keine physische Architektur, kann aber eine intensive räumliche Erfahrung darstellen.==
 
-Ein Film zeigt einen Raum, den wir körperlich nicht betreten können, der jedoch Emotionen und Erinnerungen hervorruft.
+==Ein Film zeigt einen Raum, den wir körperlich nicht betreten können, der jedoch Emotionen und Erinnerungen hervorruft.==
 
-Ein Computerspiel ermöglicht räumliche Orientierung und Bewegung innerhalb einer simulierten Welt.
+==Ein Computerspiel ermöglicht räumliche Orientierung und Bewegung innerhalb einer simulierten Welt.==
 
-Ein Gebäude kann durch seine architektonischen Eigenschaften bestimmte Assoziationen begünstigen, ohne die psychische Erfahrung seiner Benutzer vollständig zu bestimmen.
+==Ein Gebäude kann durch seine architektonischen Eigenschaften bestimmte Assoziationen begünstigen, ohne die psychische Erfahrung seiner Benutzer vollständig zu bestimmen.==
 
-Das Entscheidende ist also nicht, welche dieser Welten realer ist.
+==Das Entscheidende ist also nicht, welche dieser Welten realer ist.==
 
-Interessanter ist, **wie die unterschiedlichen Formen von Räumlichkeit unsere Wahrnehmung und unser Verständnis von Architektur verändern.**
+==Interessanter ist, **wie die unterschiedlichen Formen von Räumlichkeit unsere Wahrnehmung und unser Verständnis von Architektur verändern.**==
 
 ---
 
@@ -2256,7 +2256,7 @@ Um deine Untersuchung wissenschaftlich präzise zu halten, würde ich abschließ
 
 **Parallelwelt:** Ein in sich strukturierter imaginärer oder medial erzeugter Raum, der neben der alltäglichen Wirklichkeit wahrgenommen werden kann. Beispiele wären Traumwelten, literarische Architekturen oder virtuelle Spielwelten.
 
-**Zwischenwelt:** Ein Bereich, in dem unterschiedliche Formen der Wirklichkeit miteinander in Beziehung treten. Winnicotts potenzieller Raum, Foucaults Spiegel und Friedbergs virtuelles Fenster wären drei theoretisch unterschiedliche Beispiele dafür.
+**Zwischenwelt:** ==Ein Bereich, in dem unterschiedliche Formen der Wirklichkeit miteinander in Beziehung treten. Winnicotts potenzieller Raum, Foucaults Spiegel und Friedbergs virtuelles Fenster wären drei theoretisch unterschiedliche Beispiele dafür.==
 
 Diese Unterscheidung ist mein Vorschlag für ein analytisches Modell; sie stellt keine bereits einheitlich etablierte Definition der drei Begriffe dar.
 
@@ -2276,17 +2276,17 @@ Ich könnte mir für dein Seminar eine Untersuchung des **Kinos als architektoni
 
 Das Kino verbindet die drei Dimensionen deines Themas auf besonders anschauliche Weise.
 
-Der Kinosaal ist ein realer architektonischer Raum. Seine Dunkelheit, seine akustischen Eigenschaften und seine Sitzordnung erzeugen bestimmte Bedingungen der Wahrnehmung.
+==Der Kinosaal ist ein realer architektonischer Raum. Seine Dunkelheit, seine akustischen Eigenschaften und seine Sitzordnung erzeugen bestimmte Bedingungen der Wahrnehmung.==
 
-Der Film eröffnet einen imaginären Raum, der jenseits der räumlichen Grenzen des Saals liegt.
+==Der Film eröffnet einen imaginären Raum, der jenseits der räumlichen Grenzen des Saals liegt.==
 
-Gleichzeitig verändert die filmische Darstellung die emotionale Wahrnehmung des Zuschauers.
+==Gleichzeitig verändert die filmische Darstellung die emotionale Wahrnehmung des Zuschauers.==
 
-Der Mensch befindet sich also körperlich in einer Architektur, erlebt imaginär eine andere und reagiert psychisch auf beide.
+==Der Mensch befindet sich also körperlich in einer Architektur, erlebt imaginär eine andere und reagiert psychisch auf beide.==
 
 Daraus ließe sich eine besonders interessante Frage entwickeln:
 
-**Kann Architektur Räume erzeugen, deren eigentliche räumliche Erfahrung außerhalb ihrer materiellen Grenzen stattfindet?**
+**==Kann Architektur Räume erzeugen, deren eigentliche räumliche Erfahrung außerhalb ihrer materiellen Grenzen stattfindet?**==
 
 Mit Vidler, Friedberg, Bruno und Virilio hättest du dafür vier sehr unterschiedliche theoretische Zugänge.
 
@@ -2313,9 +2313,9 @@ Dabei würde ich den Schwerpunkt deutlich verschieben: Weg von Bunkern, Kellern 
 Besonders interessant ist, dass diese vier Theoretiker unterschiedliche Erscheinungsformen solcher Zwischenwelten untersuchen:
 
 - **Virilio:** die mediale Zwischenwelt, in der physische Bewegung durch technische Übertragung ersetzt wird.
-- **Benjamin:** die kollektive Traumwelt, die sich in Architektur, Waren und städtischen Räumen materialisiert.
-- **Kracauer:** die Welt der Bilder, Oberflächen und Zerstreuung, die den modernen Alltag zugleich widerspiegelt und verdeckt.
-- **Lacan:** die psychische Wirklichkeit, in der das Subjekt durch Bilder, Sprache und unbewusste Strukturen konstituiert wird.
+- ==**Benjamin:** die kollektive Traumwelt, die sich in Architektur, Waren und städtischen Räumen materialisiert.==
+- ==**Kracauer:** die Welt der Bilder, Oberflächen und Zerstreuung, die den modernen Alltag zugleich widerspiegelt und verdeckt.==
+- ==**Lacan:** die psychische Wirklichkeit, in der das Subjekt durch Bilder, Sprache und unbewusste Strukturen konstituiert wird.==
 
 Daraus ergibt sich eine zentrale Frage für den Vortrag:
 
@@ -2349,7 +2349,7 @@ Seine soziale Anwesenheit wird durch eine technische Schnittstelle hergestellt.
 
 Sein Selbstbild wird möglicherweise gleichzeitig durch die Kamera auf dem Bildschirm präsentiert.
 
-Er befindet sich somit in mehreren miteinander verschränkten räumlichen Ordnungen.
+Er befindet sich somit in mehreren ==miteinander verschränkten räumlichen Ordnungen.==
 
 Genau hier lassen sich die vier Autoren miteinander verbinden:
 
@@ -2357,9 +2357,9 @@ Virilio untersucht die technische Ermöglichung dieser Situation.
 
 Benjamin hilft zu verstehen, wie Architektur und Medien gesellschaftliche Traum- und Vorstellungswelten erzeugen.
 
-Kracauer zeigt, wie massenmediale Bilder und Räume der Zerstreuung die moderne Wahrnehmung organisieren.
+Kracauer zeigt, wie ==massenmediale Bilder und Räume der Zerstreuung die moderne Wahrnehmung organisieren.==
 
-Lacan ermöglicht eine Analyse des Subjekts, das sich durch Bilder konstituiert und dessen Selbstwahrnehmung nicht vollständig mit seiner körperlichen Existenz zusammenfällt.
+Lacan ermöglicht eine Analyse des Subjekts, das sich durch Bilder konstituiert und ==dessen Selbstwahrnehmung nicht vollständig mit seiner körperlichen Existenz zusammenfällt.==
 
 **Diese Verbindung ist eine eigene theoretische Synthese. Die vier Autoren vertreten keine einheitliche Raumtheorie. Gerade ihre Unterschiede machen den Vergleich produktiv.**
 
@@ -2399,7 +2399,7 @@ Die technische Beschleunigung kann dazu führen, dass physische Bewegung zunehme
 
 Man muss einen Ort nicht länger aufsuchen, um Bilder von ihm zu empfangen oder bestimmte Handlungen aus der Entfernung auszuführen.
 
-Das Verhältnis zwischen Raum, Zeit und Körper verändert sich.
+Das ==Verhältnis zwischen Raum, Zeit und Körper verändert sich.==
 
 ### Der Körper als unbeweglicher Mittelpunkt
 
@@ -2409,21 +2409,21 @@ Dabei verliert der Weg zwischen Ausgangspunkt und Ziel für bestimmte Tätigkeit
 
 Das ist entscheidend.
 
-Denn Architektur wird traditionell auch durch die körperliche Bewegung ihrer Nutzer erfahrbar.
+Denn ==Architektur wird traditionell auch durch die körperliche Bewegung ihrer Nutzer erfahrbar==.
 
-Man durchquert Räume.
+==Man durchquert Räume.==
 
-Man steigt Treppen hinauf.
+==Man steigt Treppen hinauf.==
 
-Man öffnet Türen.
+==Man öffnet Türen.==
 
-Man bewegt sich durch Flure.
+==Man bewegt sich durch Flure.==
 
 Ein Gebäude organisiert dadurch eine Abfolge räumlicher Erfahrungen.
 
 In einer zunehmend medialisierten Umgebung können viele Handlungen dagegen von einem einzigen Ort aus erfolgen.
 
-Virilio untersucht diesen Wandel besonders ausführlich im Kapitel **„Die Umweltkontrolle“**.
+Virilio untersucht diesen Wandel besonders ausführlich im Kapitel **„Die ==Umweltkontrolle==“**.
 
 Dort beschreibt er, wie die Funktionen einer Wohnung durch Fernsteuerung und elektronische Kommunikation an einem einzigen Punkt konzentriert werden können.
 
@@ -2441,7 +2441,7 @@ Virilio beschreibt in diesem Zusammenhang eine technisch organisierte Wohnumgebu
 
 Diese Formulierung halte ich für eine der wichtigsten Stellen deines gesamten Vortrags.
 
-Denn Virilio verbindet hier einen architektonischen Begriff mit einer Metapher für einen Zustand radikal eingeschränkter Beziehung zur Außenwelt.
+Denn Virilio verbindet hier einen architektonischen Begriff mit einer Metapher für einen ==Zustand radikal eingeschränkter Beziehung zur Außenwelt.==
 
 Die Wohnung erscheint nicht mehr ausschließlich als Ort des Lebens und der Bewegung.
 
@@ -2491,21 +2491,21 @@ Der Bildschirm kann ebenfalls eine visuelle Verbindung zwischen unterschiedliche
 
 Allerdings unterliegt diese Verbindung anderen Bedingungen.
 
-Der sichtbare Ort muss sich nicht in unmittelbarer Nähe befinden.
+==Der sichtbare Ort muss sich nicht in unmittelbarer Nähe befinden.==
 
-Er muss nicht einmal zur gleichen Zeit existieren, wenn eine Aufzeichnung betrachtet wird.
+==Er muss nicht einmal zur gleichen Zeit existieren, wenn eine Aufzeichnung betrachtet wird.==
 
-Der Bildschirm kann vergangene, gegenwärtige, simulierte oder vollständig fiktionale Ereignisse zeigen.
+==Der Bildschirm kann vergangene, gegenwärtige, simulierte oder vollständig fiktionale Ereignisse zeigen.==
 
 Daraus ergibt sich eine für dein Thema zentrale Unterscheidung:
 
 **Das architektonische Fenster eröffnet einen Blick in einen angrenzenden Raum. Der Bildschirm ermöglicht die technisch vermittelte Wahrnehmung eines räumlich oder zeitlich entfernten Geschehens.**
 
-Diesen Unterschied würde ich im Vortrag anhand einer visuellen Gegenüberstellung zeigen.
+==Diesen Unterschied würde ich im Vortrag anhand einer visuellen Gegenüberstellung zeigen.==
 
-Auf einer Seite könnte ein Innenraum mit Fenster abgebildet sein.
+==Auf einer Seite könnte ein Innenraum mit Fenster abgebildet sein.==
 
-Auf der anderen derselbe Innenraum mit einem großen Bildschirm, auf dem eine andere räumliche Umgebung erscheint.
+==Auf der anderen derselbe Innenraum mit einem großen Bildschirm, auf dem eine andere räumliche Umgebung erscheint.==
 
 Die Frage wäre:
 
@@ -2515,7 +2515,7 @@ Physisch existiert der Bildschirm innerhalb des Zimmers.
 
 Das wahrgenommene Geschehen ist jedoch nicht notwendig Teil dieses Zimmers.
 
-Damit entsteht eine mediale Zwischenwelt.
+Damit entsteht eine ==mediale Zwischenwelt==.
 
 Wichtig ist, diese nicht als einen buchstäblich zusätzlichen, körperlich betretbaren Raum misszuverstehen. Es handelt sich um eine besondere Form technisch vermittelter Raumwahrnehmung.
 
@@ -2587,9 +2587,9 @@ Benjamin interessiert sich dafür, wie solche Erscheinungsformen gesellschaftlic
 
 Hier ergibt sich eine interessante theoretische Parallele.
 
-Benjamin untersucht die architektonische Inszenierung einer Warenwelt.
+Benjamin untersucht die ==architektonische Inszenierung einer Warenwelt.==
 
-Virilio untersucht die technische Vermittlung einer Bilderwelt.
+Virilio untersucht die ==technische Vermittlung einer Bilderwelt.==
 
 Beide beschäftigen sich mit einer Wirklichkeit, deren Erscheinungsform durch technische und gesellschaftliche Bedingungen geprägt wird.
 
@@ -2611,15 +2611,15 @@ Ein weiterer Begriff aus dem *Passagen-Werk* ist für Zwischenwelten besonders w
 
 Benjamin schreibt:
 
-> „Die Schwelle ist ganz scharf von der Grenze zu scheiden. Schwelle ist eine Zone.“
+> ==„Die Schwelle ist ganz scharf von der Grenze zu scheiden. Schwelle ist eine Zone.“==
 
 *Das Passagen-Werk*, GS V, S. 618. ([passagen.univie.ac.at](https://passagen.univie.ac.at/workshop-grenzen-schwellen-ubergange/))
 
 Das ist möglicherweise das wichtigste Benjamin-Zitat für deinen Vortrag.
 
-Die Grenze bezeichnet eine Trennung.
+Die Grenze bezeichnet eine ==Trennung==.
 
-Eine Schwelle dagegen ist eine Zone des Übergangs.
+Eine Schwelle dagegen ist eine Zone des ==Übergangs==.
 
 Sie besitzt eine zeitliche und räumliche Dimension.
 
@@ -2637,9 +2637,9 @@ Besonders wichtig ist dabei das Verhältnis zwischen Traum und Erwachen.
 
 Im Konvolut K des *Passagen-Werks* untersucht Benjamin, wie sich gesellschaftliche Vorstellungen und historische Erfahrungen in kollektiven Traumbildern niederschlagen.
 
-Das Erwachen bezeichnet dabei nicht bloß den Wechsel vom Schlaf- zum Wachzustand.
+==Das Erwachen bezeichnet dabei nicht bloß den Wechsel vom Schlaf- zum Wachzustand.==
 
-Es wird auch zu einer Metapher für historische Erkenntnis.
+==Es wird auch zu einer Metapher für historische Erkenntnis.==
 
 Die Traumwelt soll nicht einfach reproduziert, sondern kritisch erkannt werden. ([textlog.de](https://www.textlog.de/benjamin/abhandlungen/passagen/traumstadt-traumhaus-zukunftstraeume-anthropologischer-nihilismus-jung?utm_source=chatgpt.com))
 
@@ -2751,17 +2751,17 @@ Eine wissenschaftliche Untersuchung von Carsten Heinze arbeitet heraus, dass Kra
 
 Die Hotelhalle ist für deinen Vortrag nicht deshalb interessant, weil sie unterirdisch oder verborgen wäre.
 
-Sie besitzt eine besondere psychische Qualität.
+Sie besitzt eine besondere ==psychische Qualität.==
 
-Menschen befinden sich körperlich gemeinsam in einem Raum.
+==Menschen befinden sich körperlich gemeinsam in einem Raum.==
 
-Dennoch müssen sie keine gemeinsame soziale Welt bilden.
+==Dennoch müssen sie keine gemeinsame soziale Welt bilden.==
 
 Dadurch lässt sich eine Form von Anwesenheit untersuchen, bei der räumliche Nähe und soziale Distanz auseinanderfallen.
 
 Das kann als Vorstufe einer Fragestellung gelesen werden, die bei Virilio unter anderen technischen Bedingungen wiederkehrt:
 
-**Wie verändert sich das Verhältnis von Anwesenheit und Beziehung?**
+**Wie verändert sich das Verhältnis von ==Anwesenheit und Beziehung?==**
 
 ---
 
@@ -2797,11 +2797,11 @@ Gleichzeitig erlebt er eine Folge wechselnder Bilder, Räume und Ereignisse.
 
 Damit ist das Kino ein besonders anschauliches historisches Beispiel für eine mediale Zwischenwelt.
 
-Allerdings ist die Situation noch nicht identisch mit Virilios Telepräsenz.
+Allerdings ist die Situation noch nicht identisch mit Virilios ==Telepräsenz.==
 
-Der Kinobesucher sieht eine vorgeführte Bildwelt, kann aber normalerweise nicht unmittelbar in ihr handeln.
+==Der Kinobesucher sieht eine vorgeführte Bildwelt, kann aber normalerweise nicht unmittelbar in ihr handeln.==
 
-Virilio interessiert sich dagegen auch für technische Systeme, die Fernwahrnehmung und Fernhandlung miteinander verbinden.
+==Virilio interessiert sich dagegen auch für technische Systeme, die Fernwahrnehmung und Fernhandlung miteinander verbinden.==
 
 ### Von Kracauers Kinopalast zu Virilios Wohnraum
 
@@ -2819,7 +2819,7 @@ Mit Computern und interaktiven Medien wird es schließlich möglich, audiovisuel
 
 Daraus entsteht eine interessante Verschiebung:
 
-**Der mediale Erfahrungsraum löst sich zunehmend von einem eigens dafür errichteten öffentlichen Gebäude und wird zu einer Funktion des privaten oder mobilen Alltags.**
+**Der ==mediale Erfahrungsraum löst sich zunehmend von einem eigens dafür errichteten öffentlichen Gebäude und wird zu einer Funktion des privaten oder mobilen Alltags.==**
 
 Damit könnte man Virilios rasenden Stillstand als zugespitzte Fortführung eines historischen Prozesses untersuchen, den Kracauer bereits in seiner Analyse der modernen Unterhaltungskultur sichtbar macht.
 
@@ -2849,17 +2849,17 @@ Die Passage wird für ihn zu einer räumlichen Metapher für die moderne Gesells
 
 Am Ende des Essays stellt er die Frage:
 
-> „Was sollte noch eine Passage in einer Gesellschaft, die selber nur eine Passage ist?“
+> „==Was sollte noch eine Passage in einer Gesellschaft, die selber nur eine Passage ist?==“
 
 *Abschied von der Lindenpassage*, in *Das Ornament der Masse*, S. 332. ([transcript-verlag.de](https://www.transcript-verlag.de/media/pdf/8c/3c/8e/tstw7017_1v8JcNGydUk2Bf.pdf?utm_source=chatgpt.com))
 
 Dieses Zitat halte ich für außerordentlich wichtig.
 
-Denn hier wird der Zwischenraum von einer bestimmten architektonischen Typologie zu einer gesellschaftlichen Existenzform.
+==Denn hier wird der Zwischenraum von einer bestimmten architektonischen Typologie zu einer gesellschaftlichen Existenzform.==
 
 Die Passage ist nicht mehr nur ein Ort des Durchgangs.
 
-Die Gesellschaft selbst erscheint als etwas Vorübergehendes, Veränderliches und instabil Gewordenes.
+Die ==Gesellschaft selbst erscheint als etwas Vorübergehendes, Veränderliches und instabil Gewordenes.==
 
 ### Verbindung zu Virilio
 
@@ -2879,7 +2879,7 @@ Das wäre ein überzeugender Übergang zum Hauptteil deines Vortrags.
 
 Lacan würde ich als letzten größeren theoretischen Bezug einführen.
 
-Seine Theorie ist besonders geeignet, um die Frage zu vertiefen, was geschieht, wenn sich das Selbstbild und die körperliche Anwesenheit des Menschen voneinander unterscheiden.
+Seine Theorie ist besonders geeignet, um die Frage zu vertiefen, ==was geschieht, wenn sich das Selbstbild und die körperliche Anwesenheit des Menschen voneinander unterscheiden.==
 
 Dafür würde ich drei Konzepte verwenden:
 
@@ -2901,9 +2901,9 @@ Lacan untersucht darin die Entstehung des Ichs durch die Identifikation mit eine
 
 Das Kind erkennt im Spiegel eine zusammenhängende körperliche Gestalt.
 
-Dieses Bild vermittelt eine Einheit, die nicht einfach mit der unmittelbaren leiblichen Erfahrung zusammenfällt.
+==Dieses Bild vermittelt eine Einheit, die nicht einfach mit der unmittelbaren leiblichen Erfahrung zusammenfällt.==
 
-Die Identifikation mit dem Spiegelbild ist daher zugleich konstitutiv und entfremdend.
+==Die Identifikation mit dem Spiegelbild ist daher zugleich konstitutiv und entfremdend.==
 
 Das Ich entsteht nicht als vollständig autonome innere Einheit, sondern in einer Beziehung zu einem äußeren Bild. ([doi.org](https://doi.org/10.1007/978-3-031-62856-6_6?utm_source=chatgpt.com))
 
@@ -2925,9 +2925,9 @@ Der Mensch sieht andere Personen, aber möglicherweise auch sein eigenes Kamerab
 
 Dieses Bild ist keine unmittelbare körperliche Erfahrung.
 
-Es wird durch Kameraposition, Bildausschnitt, Übertragungsbedingungen und Interfacegestaltung strukturiert.
+==Es wird durch Kameraposition, Bildausschnitt, Übertragungsbedingungen und Interfacegestaltung strukturiert.==
 
-Die Person erlebt sich somit gleichzeitig als Betrachter und als dargestelltes Bild.
+==Die Person erlebt sich somit gleichzeitig als Betrachter und als dargestelltes Bild.==
 
 Diese Übertragung auf Videokonferenzen stammt nicht von Lacan selbst, sondern ist eine gegenwärtige Anwendung seiner Theorie.
 
@@ -2969,7 +2969,7 @@ Das Reale ist bei Lacan nicht einfach die physische Wirklichkeit.
 
 Das ist ein besonders wichtiger Punkt.
 
-Es bezeichnet vielmehr das, was sich einer vollständigen symbolischen Erfassung entzieht.
+==Es bezeichnet vielmehr das, was sich einer vollständigen symbolischen Erfassung entzieht.==
 
 Es geht um eine Dimension, die nicht restlos in Bildern oder sprachlichen Bedeutungen aufgeht.
 
@@ -3001,15 +3001,15 @@ Lacan behandelt die Unterscheidung von Auge und Blick in seinem Seminar XI:
 
 Besonders relevant ist der Abschnitt **„Die Spaltung von Auge und Blick“**, der in der deutschen Ausgabe von 1978 auf S. 79 beginnt. ([gams.uni-graz.at](https://gams.uni-graz.at/o%3Areko.laca.1973?utm_source=chatgpt.com))
 
-Lacan unterscheidet zwischen dem Sehen und dem Blick.
+==Lacan unterscheidet zwischen dem Sehen und dem Blick.==
 
-Der Blick ist bei ihm nicht einfach die Tätigkeit eines Auges.
+==Der Blick ist bei ihm nicht einfach die Tätigkeit eines Auges.==
 
-Er besitzt eine besondere Stellung innerhalb des Begehrens und des Verhältnisses des Subjekts zum Sichtbaren.
+==Er besitzt eine besondere Stellung innerhalb des Begehrens und des Verhältnisses des Subjekts zum Sichtbaren.==
 
-Das Subjekt ist nicht ausschließlich der souveräne Betrachter einer Welt.
+==Das Subjekt ist nicht ausschließlich der souveräne Betrachter einer Welt.==
 
-Es ist selbst in ein Feld des Sichtbaren eingebunden, das sich seinem vollständigen Zugriff entzieht.
+==Es ist selbst in ein Feld des Sichtbaren eingebunden, das sich seinem vollständigen Zugriff entzieht==.
 
 ### Verbindung zu Virilios Überwachungstechnologien
 
@@ -3031,11 +3031,11 @@ Lacan ermöglicht die weiterführende Frage, was es für das Subjekt bedeutet, n
 
 Ein Raum kann dadurch anders erlebt werden, ohne dass sich seine geometrische Form verändert.
 
-Ein unbeobachtet geglaubtes Zimmer kann beispielsweise anders wahrgenommen werden als ein Raum, in dem eine aktive Kamera sichtbar ist.
+==Ein unbeobachtet geglaubtes Zimmer kann beispielsweise anders wahrgenommen werden als ein Raum, in dem eine aktive Kamera sichtbar ist.==
 
 Diese Differenz betrifft nicht ausschließlich die physische Architektur, sondern auch die Erwartung, beobachtet zu werden.
 
-Hier entsteht eine **psychische Zwischenwelt innerhalb des materiellen Raums**.
+Hier entsteht eine **==psychische Zwischenwelt innerhalb des materiellen Raums==**.
 
 ---
 
@@ -3059,7 +3059,7 @@ Ein Mensch sitzt körperlich an einem Ort.
 
 Durch bewegte Bilder nimmt er unterschiedliche Räume und Ereignisse wahr.
 
-Die Architektur organisiert eine Situation medialer Zerstreuung.
+==Die Architektur organisiert eine Situation medialer Zerstreuung.==
 
 ### Paul Virilio: Der interaktive Bildschirm
 
@@ -3073,11 +3073,11 @@ Die technische Übertragung verändert dadurch das Verhältnis zwischen Anwesenh
 
 Der Mensch erlebt sich selbst nicht unabhängig von Bildern und symbolischen Beziehungen.
 
-Seine psychische Wirklichkeit ist nicht vollständig mit seiner körperlichen Anwesenheit identisch.
+==Seine psychische Wirklichkeit ist nicht vollständig mit seiner körperlichen Anwesenheit identisch.==
 
 Diese vier Perspektiven lassen sich zu einer gemeinsamen Fragestellung verbinden:
 
-**Wie verändert sich die Erfahrung von Raum, wenn der Körper, das Bild und das Bewusstsein nicht mehr selbstverständlich am selben Ort gedacht werden können?**
+**==Wie verändert sich die Erfahrung von Raum, wenn der Körper, das Bild und das Bewusstsein nicht mehr selbstverständlich am selben Ort gedacht werden können?**==
 
 Damit würdest du unmittelbar von Virilios Essay zur übergeordneten Frage nach psychischen und medialen Zwischenwelten gelangen.
 
@@ -3091,9 +3091,9 @@ Denn zwischen Virilios früher Architekturtheorie und *Rasender Stillstand* best
 
 Gemeinsam mit Claude Parent beschäftigte sich Virilio in den 1960er-Jahren mit der Funktion der Schräge und mit der Verbindung von Wohnen und Bewegung.
 
-Besonders wichtig war dabei das Konzept der **bewohnbaren Zirkulation**.
+Besonders wichtig war dabei das Konzept der **==bewohnbaren Zirkulation==**.
 
-Die Architektur sollte den Körper aktivieren.
+Die Architektur sollte den ==Körper aktivieren==.
 
 Bewegung und Aufenthalt sollten nicht länger strikt voneinander getrennt werden.
 
@@ -3103,9 +3103,9 @@ Hier kann der technisch organisierte Wohnraum zu einer Umgebung werden, in der i
 
 Daraus ergibt sich eine interessante Spannung innerhalb von Virilios Werk:
 
-**1966: Architektur als Aktivierung des Körpers.**
+==**1966: Architektur als Aktivierung des Körpers.**==
 
-**1990: Technologische Umwelt als Möglichkeit körperlicher Immobilisierung.**
+==**1990: Technologische Umwelt als Möglichkeit körperlicher Immobilisierung.**==
 
 Ich würde daraus nicht ohne Weiteres eine bewusste Selbstkritik Virilios ableiten.
 
@@ -3117,20 +3117,22 @@ Für ein Seminar über Raumtheorien ist das ein großer Vorteil.
 
 Denn dadurch bleibt der Vortrag auch dann architekturtheoretisch ausgerichtet, wenn die physische Architektur zeitweise hinter den medialen und psychischen Räumen zurücktritt.
 
+~~==Erweiterung der Architekturphilosophie==~~
+
 ---
 
 # 15. Vorschlag für die konkrete Gliederung eines 25-minütigen Vortrags
 
 Ich würde den Vortrag in sechs größere Abschnitte aufteilen.
 
-| Abschnitt | Dauer | Inhalt |
-|---|---:|---|
-| **1. Einführung: Was ist eine Zwischenwelt?** | 3 Min. | Die Überlagerung von physischem, medialem und psychischem Raum |
-| **2. Virilio: Rasender Stillstand** | 7 Min. | Geschwindigkeit, Telepräsenz, Bildschirm und körperliche Immobilität |
-| **3. Benjamin: Die Passage als Traumraum** | 4 Min. | Schwelle, Phantasmagorie und kollektiver Traum |
-| **4. Kracauer: Kino und Zerstreuung** | 4 Min. | Die Architektur des medialen Erlebens |
-| **5. Lacan: Spiegel, Blick und Subjekt** | 4 Min. | Bild, Selbstwahrnehmung und psychische Räume |
-| **6. Synthese und Fazit** | 3 Min. | Vom architektonischen Übergang zur medialen Überlagerung |
+| Abschnitt                                     |  Dauer | Inhalt                                                               |
+| --------------------------------------------- | -----: | -------------------------------------------------------------------- |
+| **1. Einführung: Was ist eine Zwischenwelt?** | 3 Min. | Die Überlagerung von physischem, medialem und psychischem Raum       |
+| **2. Virilio: Rasender Stillstand**           | 7 Min. | Geschwindigkeit, Telepräsenz, Bildschirm und körperliche Immobilität |
+| **3. Benjamin: Die Passage als Traumraum**    | 4 Min. | Schwelle, Phantasmagorie und kollektiver Traum                       |
+| **4. Kracauer: Kino und Zerstreuung**         | 4 Min. | Die Architektur des medialen Erlebens                                |
+| **5. Lacan: Spiegel, Blick und Subjekt**      | 4 Min. | Bild, Selbstwahrnehmung und psychische Räume                         |
+| **6. Synthese und Fazit**                     | 3 Min. | ==Vom architektonischen Übergang zur medialen Überlagerung==         |
 
 Dazu würde ich ungefähr zehn bis zwölf Präsentationsfolien verwenden.
 
@@ -3154,7 +3156,7 @@ So könnte dein Vortrag beginnen:
 >
 > Wir können uns körperlich in einem Raum befinden und gleichzeitig über einen Bildschirm an einem anderen Ort anwesend sein. Wir können Räume wahrnehmen, die nicht existieren, und uns mit Bildern identifizieren, die von unserer unmittelbaren körperlichen Erfahrung getrennt sind.
 >
-> Dabei entstehen unterschiedliche Formen räumlicher Wirklichkeit, die sich überlagern, ineinandergreifen und teilweise widersprechen.
+> Dabei entstehen unterschiedliche Formen ==räumlicher Wirklichkeit, die sich überlagern, ineinandergreifen und teilweise widersprechen.==
 >
 > In seinem 1990 veröffentlichten Essay *L'Inertie polaire*, der 1992 unter dem Titel *Rasender Stillstand* auf Deutsch erschien, untersucht Paul Virilio genau diese Veränderung.
 >
@@ -3166,7 +3168,7 @@ So könnte dein Vortrag beginnen:
 >
 > Dabei soll gezeigt werden, wie sich die Vorstellung des Zwischenraums verändert: von einem architektonischen Ort des Übergangs zu einer technischen und psychischen Überlagerung unterschiedlicher räumlicher Wirklichkeiten.
 
-Diese Einleitung würde dir erlauben, unmittelbar mit Virilios Text zu beginnen, ohne vorher längere allgemeine Definitionen erläutern zu müssen.
+==Diese Einleitung würde dir erlauben, unmittelbar mit Virilios Text zu beginnen, ohne vorher längere allgemeine Definitionen erläutern zu müssen.==
 
 ---
 
@@ -3176,11 +3178,11 @@ Ich würde im Vortrag unbedingt vermeiden, Virilios Thesen lediglich zu bestäti
 
 Seine Überlegungen sind teilweise bewusst zugespitzt.
 
-Die Vorstellung, dass technische Beschleunigung zwangsläufig körperliche Immobilität erzeugt, ist beispielsweise keine universell gültige Beschreibung sämtlicher Mediennutzung.
+==Die Vorstellung, dass technische Beschleunigung zwangsläufig körperliche Immobilität erzeugt, ist beispielsweise keine universell gültige Beschreibung sämtlicher Mediennutzung.==
 
-Digitale Technologien können Bewegung ersetzen, aber auch neue Bewegungsformen ermöglichen.
+Digitale Technologien können Bewegung ersetzen, ==aber auch neue Bewegungsformen ermöglichen.==
 
-Virtuelle Wahrnehmung kann die Aufmerksamkeit vom unmittelbaren Umfeld entfernen, zugleich aber neue Formen von Kommunikation und Teilhabe schaffen.
+Virtuelle Wahrnehmung kann die Aufmerksamkeit vom unmittelbaren Umfeld entfernen, zugleich aber ==neue Formen von Kommunikation und Teilhabe schaffen.==
 
 Außerdem bleiben digitale Welten auf materielle Infrastrukturen angewiesen.
 
@@ -3190,15 +3192,15 @@ Es wäre deshalb problematisch, Virilios Theorie als vollständige Entmaterialis
 
 Ich würde vielmehr argumentieren:
 
-**Nicht die materielle Existenz des Raumes verschwindet, sondern bestimmte Beziehungen zwischen Raum, Zeit, körperlicher Anwesenheit und Wahrnehmung werden neu organisiert.**
+**==Nicht die materielle Existenz des Raumes verschwindet, sondern bestimmte Beziehungen zwischen Raum, Zeit, körperlicher Anwesenheit und Wahrnehmung werden neu organisiert.==**
 
 Hier könnten Benjamin, Kracauer und Lacan zu einer differenzierteren Perspektive beitragen.
 
 Benjamin zeigt, dass räumliche Erscheinungen auch gesellschaftlich produzierte Vorstellungen enthalten.
 
-Kracauer verdeutlicht, dass technische Bilder nicht nur entfremden, sondern auch bisher übersehene Aspekte der Wirklichkeit erschließen können.
+Kracauer verdeutlicht, ==dass technische Bilder nicht nur entfremden, sondern auch bisher übersehene Aspekte der Wirklichkeit erschließen können.==
 
-Lacan wiederum macht deutlich, dass das Subjekt bereits unabhängig von digitalen Medien in komplexe Beziehungen zwischen Körper, Bild und symbolischer Ordnung eingebunden ist.
+Lacan wiederum macht deutlich, ==dass das Subjekt bereits unabhängig von digitalen Medien in komplexe Beziehungen zwischen Körper, Bild und symbolischer Ordnung eingebunden ist.==
 
 Virilios Befund wäre dadurch nicht grundsätzlich widerlegt.
 
@@ -3210,23 +3212,23 @@ Er würde jedoch in einen umfassenderen theoretischen Zusammenhang gestellt.
 
 Für das Fazit würde ich einen Gedanken aus *Rasender Stillstand* besonders hervorheben.
 
-Virilio fragt im Zusammenhang seiner Überlegungen zur Telepräsenz:
+Virilio fragt im Zusammenhang seiner Überlegungen zur ==Telepräsenz:==
 
-> „Wo bin ich, wenn ich überall bin?“
+> ==„Wo bin ich, wenn ich überall bin?“==
 
 *Rasender Stillstand*, 1992, S. 147. ([de.scribd.com](https://de.scribd.com/document/859959321/Edition-Akzente-Paul-Virilio-Rasender-Stillstand-Hanser-1992))
 
-Diese Frage eignet sich hervorragend als Ausgangspunkt für den Schluss.
+Diese Frage eignet sich hervorragend als Ausgangspunkt für den ==Schluss==.
 
 Denn sie betrifft nicht nur die technische Veränderung von Raum.
 
-Sie berührt auch das Verhältnis zwischen körperlicher Anwesenheit, Selbstwahrnehmung und Identität.
+Sie berührt auch das Verhältnis zwischen ==körperlicher Anwesenheit, Selbstwahrnehmung und Identität.==
 
 Der Mensch kann sich in einer technisch vermittelten Umgebung an entfernten Orten bemerkbar machen.
 
 Sein Körper bleibt dennoch an einen konkreten physischen Standort gebunden.
 
-Damit entsteht eine Spannung zwischen körperlicher Begrenztheit und medial erweiterter Präsenz.
+Damit entsteht eine Spannung zwischen ==körperlicher Begrenztheit und medial erweiterter Präsenz.==
 
 ### Was würde Benjamin dazu beitragen?
 
@@ -3234,7 +3236,7 @@ Benjamin würde es ermöglichen, die kulturellen und historischen Vorstellungen 
 
 Die technische Umgebung ist nicht nur funktional.
 
-Sie kann auch gesellschaftliche Wünsche, Zukunftsvorstellungen und Formen der Selbstinszenierung verkörpern.
+Sie kann auch ==gesellschaftliche Wünsche, Zukunftsvorstellungen und Formen der Selbstinszenierung verkörpern.==
 
 ### Was würde Kracauer dazu beitragen?
 
@@ -3254,19 +3256,19 @@ Die Frage nach dem Ort des Subjekts lässt sich dann nicht allein anhand geograf
 
 Ich würde das Fazit ungefähr folgendermaßen formulieren:
 
-> Paul Virilios *Rasender Stillstand* beschreibt eine Veränderung, bei der die Geschwindigkeit technischer Übertragung die Beziehung zwischen menschlichem Körper und architektonischem Raum grundlegend beeinflusst.
+> Paul Virilios *Rasender Stillstand* beschreibt eine Veränderung, bei der die Geschwindigkeit technischer Übertragung die ==Beziehung zwischen menschlichem Körper und architektonischem Raum grundlegend beeinflusst.==
 >
 > Während Walter Benjamin die Passage noch als einen Ort untersuchen konnte, in dem sich Architektur und kollektive Traumwelten verschränken, beschreibt Siegfried Kracauer mit dem Kino eine Situation, in der der Körper bereits zum weitgehend unbeweglichen Zuschauer einer medial erzeugten Wirklichkeit wird.
 >
-> Virilio radikalisiert diese Entwicklung, indem er zeigt, dass die technische Übertragung nicht länger ausschließlich der Darstellung einer entfernten Wirklichkeit dient, sondern zunehmend auch Fernhandlung und interaktive Anwesenheit ermöglicht.
+> Virilio radikalisiert diese Entwicklung, indem er zeigt, dass die technische Übertragung nicht länger ausschließlich der Darstellung einer entfernten Wirklichkeit dient, ==sondern zunehmend auch Fernhandlung und interaktive Anwesenheit ermöglicht.==
 >
 > Jacques Lacans Theorie des Imaginären und des Blicks macht schließlich deutlich, dass die Beziehung zwischen Körper, Bild und Subjekt nicht allein ein technisches Problem ist. Sie besitzt eine grundlegende psychische Dimension.
 >
-> Die Zwischenwelten der Moderne sind deshalb nicht ausschließlich als architektonische Übergangsräume zu verstehen. Sie entstehen auch durch die Überlagerung körperlicher, medialer, gesellschaftlicher und psychischer Formen von Anwesenheit.
+> ==Die Zwischenwelten der Moderne sind deshalb nicht ausschließlich als architektonische Übergangsräume zu verstehen. Sie entstehen auch durch die Überlagerung körperlicher, medialer, gesellschaftlicher und psychischer Formen von Anwesenheit.==
 >
 > Virilios rasender Stillstand bezeichnet dabei einen besonderen Widerspruch: Je umfassender der Mensch durch technische Übertragung mit entfernten Orten verbunden wird, desto weniger muss er sich für bestimmte Handlungen selbst räumlich bewegen.
 >
-> **Die entscheidende architekturtheoretische Frage lautet daher nicht mehr ausschließlich, welche Räume wir bauen, sondern auch, wie Architektur unsere körperliche und mediale Anwesenheit organisiert.**
+> **Die entscheidende architekturtheoretische Frage lautet daher nicht mehr ausschließlich, welche Räume wir bauen, sondern auch, ==wie Architektur unsere körperliche und mediale Anwesenheit organisiert.==**
 
 ---
 
@@ -3419,21 +3421,21 @@ Mit deinem inzwischen festgelegten Schwerpunkt auf Paul Virilio würde ich aller
 
 Ich würde dazu folgende These entwickeln:
 
-> Architektur existiert für den Menschen nicht ausschließlich als materielle Struktur. Sie wird durch Erinnerung, Imagination und mediale Wahrnehmung um zusätzliche räumliche Bedeutungsebenen erweitert. Zwischenwelten entstehen dort, wo diese Ebenen mit dem physischen Raum in Beziehung treten.
+> ==Architektur existiert für den Menschen nicht ausschließlich als materielle Struktur. Sie wird durch Erinnerung, Imagination und mediale Wahrnehmung um zusätzliche räumliche Bedeutungsebenen erweitert. Zwischenwelten entstehen dort, wo diese Ebenen mit dem physischen Raum in Beziehung treten.==
 
 Die besondere Qualität dieser Fragestellung besteht darin, dass sich die verschiedenen Welten nicht einfach in real und unreal aufteilen lassen.
 
-Ein Traum ist keine physische Architektur, kann aber eine intensive räumliche Erfahrung darstellen.
+==Ein Traum ist keine physische Architektur, kann aber eine intensive räumliche Erfahrung darstellen.==
 
-Ein Film zeigt einen Raum, den wir körperlich nicht betreten können, der jedoch Emotionen und Erinnerungen hervorruft.
+==Ein Film zeigt einen Raum, den wir körperlich nicht betreten können, der jedoch Emotionen und Erinnerungen hervorruft.==
 
-Ein Computerspiel ermöglicht räumliche Orientierung und Bewegung innerhalb einer simulierten Welt.
+==Ein Computerspiel ermöglicht räumliche Orientierung und Bewegung innerhalb einer simulierten Welt.==
 
-Ein Gebäude kann durch seine architektonischen Eigenschaften bestimmte Assoziationen begünstigen, ohne die psychische Erfahrung seiner Benutzer vollständig zu bestimmen.
+==Ein Gebäude kann durch seine architektonischen Eigenschaften bestimmte Assoziationen begünstigen, ohne die psychische Erfahrung seiner Benutzer vollständig zu bestimmen.==
 
 Das Entscheidende ist also nicht, welche dieser Welten realer ist.
 
-Interessanter ist, **wie die unterschiedlichen Formen von Räumlichkeit unsere Wahrnehmung und unser Verständnis von Architektur verändern.**
+Interessanter ist, **==wie die unterschiedlichen Formen von Räumlichkeit unsere Wahrnehmung und unser Verständnis von Architektur verändern.**==
 
 ---
 
@@ -3473,7 +3475,7 @@ Sie entstünde vielmehr durch deren ästhetische und gesellschaftliche Überform
 
 Ein Bereich, in dem unterschiedliche Formen der Wirklichkeit miteinander in Beziehung treten.
 
-Winnicotts potenzieller Raum, Foucaults Spiegel und Friedbergs virtuelles Fenster wären drei theoretisch unterschiedliche Beispiele dafür.
+==Winnicotts potenzieller Raum, Foucaults Spiegel und Friedbergs virtuelles Fenster== wären drei theoretisch unterschiedliche Beispiele dafür.
 
 Mit Virilios *Rasender Stillstand* könnte man die Zwischenwelt jedoch noch grundsätzlicher untersuchen.
 
@@ -3483,7 +3485,7 @@ Der Mensch verbleibt physisch an einem Ort, während technisch vermittelte Bilde
 
 Die Zwischenwelt befindet sich dann nicht einfach zwischen zwei geografischen Orten.
 
-Sie entsteht vielmehr **zwischen dem materiellen Aufenthaltsort des Körpers und dem medial vermittelten Raum seiner Wahrnehmung.**
+Sie entsteht vielmehr ==**zwischen dem materiellen Aufenthaltsort des Körpers und dem medial vermittelten Raum seiner Wahrnehmung.**==
 
 Diese Unterscheidung ist mein Vorschlag für ein analytisches Modell; sie stellt keine bereits einheitlich etablierte Definition der drei Begriffe dar.
 
@@ -3503,13 +3505,13 @@ Ich könnte mir für dein Seminar eine Untersuchung des **Kinos als architektoni
 
 Das Kino verbindet die drei Dimensionen deines Themas auf besonders anschauliche Weise.
 
-Der Kinosaal ist ein realer architektonischer Raum. Seine Dunkelheit, seine akustischen Eigenschaften und seine Sitzordnung erzeugen bestimmte Bedingungen der Wahrnehmung.
+==Der Kinosaal ist ein realer architektonischer Raum. Seine Dunkelheit, seine akustischen Eigenschaften und seine Sitzordnung erzeugen bestimmte Bedingungen der Wahrnehmung.==
 
-Der Film eröffnet einen imaginären Raum, der jenseits der räumlichen Grenzen des Saals liegt.
+==Der Film eröffnet einen imaginären Raum, der jenseits der räumlichen Grenzen des Saals liegt.==
 
-Gleichzeitig verändert die filmische Darstellung die emotionale Wahrnehmung des Zuschauers.
+==Gleichzeitig verändert die filmische Darstellung die emotionale Wahrnehmung des Zuschauers.==
 
-Der Mensch befindet sich also körperlich in einer Architektur, erlebt imaginär eine andere und reagiert psychisch auf beide.
+==Der Mensch befindet sich also körperlich in einer Architektur, erlebt imaginär eine andere und reagiert psychisch auf beide.==
 
 Daraus ließe sich eine besonders interessante Frage entwickeln:
 
