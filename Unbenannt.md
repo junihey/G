@@ -1,3 +1,30 @@
+Drei Varianten (Deckenpunkt)
+Kacheln
+
+Klang mit
+- Körperschaft 
+- Parabolspiegel
+- bigbag Nische
+
+Raum als 
+- Erkenntnisraum
+- Schwelle durch menschliche Interaktion (barfuß)
+- Raum durch Verhalten
+- Kugel (Tetraeder)
+Projektion in
+- Schaukasten 
+- Transparenter Tetreader (Beamer darin, Kamera außen)
+- zweiter Bildschirm
+
+Wwww als Netz ohne Internet und als Laut des Windes und Atems
+
+Arbeit als Übergang und Verwandlung und Zusammenarbeit als Form
+
+
+Klang durch Interaktion oder durch Raumlautstärke?
+
+
+
 Dein Professor hat vier Punkte kritisiert: den Raum, einen eigenen Raum im Raum, den Titel und die fremden Arbeiten. Hier sind Vorschläge zu jedem Punkt. Sie bauen auf dem auf, was es in wwww schon gibt: Teppich, Federzug, Zwilling V4, Kette, Motive. Vieles davon muss nicht neu gebaut werden, es muss nur anders gedacht werden.
 
 ## 1 · Raumunabhängig, ohne die Nachbarn zu stören
