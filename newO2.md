@@ -5418,6 +5418,13 @@ Kurz gesagt: bb ist eine Steuerzentrale für KI-Coding-Agenten, OrbStack eine sc
 - [WebMCP  |  AI in Chrome  |  Chrome for Developers](https://developer.chrome.com/docs/ai/webmcp?hl=de)
 - [GitHub - GoogleChromeLabs/webmcp-tools: This repository contains a suite of developer utilities and demos designed to support the adoption of the WebMCP API. · GitHub](https://github.com/GoogleChromeLabs/webmcp-tools)
 ---
+# Spatialisation 20261102
+- [SpatGRIS4 download | SourceForge.net](https://sourceforge.net/projects/spatgris4/)
+# to Voice
+- [Making Self-Expression Accessible for Everyone | #1 The Instrument Expanding the Freedom of Music Creators - The Key - Yamaha Corporation](https://www.yamaha.com/en/stories/the-key/003-01/)
+# KI DSP
+- https://fixationstudios.com.au/blog/how-i-use-ai/
+---
 # canvas 2026050920
 ## patch 
 ### Granulares Wave-Stitching mit Jitter-Modulation
