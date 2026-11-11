@@ -11,7 +11,7 @@ verification: 'Arveds Schwerpunkt nach der Nachricht des Nutzers vom 2026-11-10.
 Stand 2026-11-10. **Materialsammlung, noch nichts ausgewählt.**
 
 > [!abstract] Die Festung zerfällt in Atome, und das letzte Atom ist der Einzelne
-> Arved zeigt, wie sich die Festung über die Stadt verteilt: Befestigt wird überall dort, wo Waren und Menschen reibungslos zirkulieren sollen. Mein Teil verfolgt dieselbe Bewegung weiter nach innen, über die Haustür und die Wohnung bis in den Körper und das eigene Bild. Jeder Einstieg setzt an einer anderen Stelle von Arveds Material an, führt aber in dieselbe Kette von Bausteinen. Die Kritik prüft dann, ob die Festung wirklich nach innen wandert oder ob sie nur filtert, wer sich bewegen darf.
+> Arved zeigt, wie sich die Festung über die Stadt verteilt: Befestigt wird überall dort, wo Waren und Menschen reibungslos zirkulieren sollen. Mein Teil verfolgt dieselbe Bewegung weiter nach innen, ==über die Haustür und die Wohnung bis in den Körper und das eigene Bild==. Jeder Einstieg setzt an einer anderen Stelle von Arveds Material an, führt aber in dieselbe Kette von Bausteinen. Die Kritik prüft dann, ob die Festung wirklich nach innen wandert oder ob sie nur filtert, wer sich bewegen darf.
 >
 > ```mermaid
 > flowchart TD
@@ -44,38 +44,38 @@ Jeder Einstieg hat dieselbe Form: womit Arved endet, mein erster Satz, der Beleg
 
 ### E1 · Der Sehschlitz
 
-- **Arved endet:** beim Bunker des Atlantikwalls, an der Schießscharte.
-- **Mein erster Satz:** „Arved hat den Bunker als Festung gezeigt. Ich bleibe an seiner Öffnung stehen, am Sehschlitz.“
+- **Arved endet:** beim ==Bunker== des Atlantikwalls, an der Schießscharte.
+- **Mein erster Satz:** „Arved hat den Bunker als Festung gezeigt. Ich bleibe an seiner Öffnung stehen, am ==Sehschlitz==.“
 - **Beleg:** Der Sehschlitz reduziert „wie das Zusammenkneifen des Lids das Blickfeld auf das Wesentliche, auf das Ziel“. „Der Schutz erzeugt Sehschärfe, und die Sehschärfe gewährleistet dafür Schutz.“ (*Bunkerarchäologie*, S. 44) Was nicht zum Ziel gehört, die „uninteressanten Nebenerscheinungen der Landschaft“, fällt weg (ebd.).
-- **Warum er trägt:** Die Festung ist nicht nur Wand, sie ist auch eine Anordnung des Blicks. Der Bunker sieht schon durch Apparate: „Periskope, Bildschirme, Filter usw.“ (S. 39). Damit ist der Weg zum Bildschirm in der Wohnung kurz.
-- **Weiter in:** B2 Wohnung (Sehschlitz und Feed). Wer B1 Tor nicht auslassen will, springt danach zurück: Der Sehschlitz ist das Auge der Festung, die Türkamera ist das Auge der verteilten Festung.
+- **Warum er trägt:** Die Festung ist nicht nur Wand, sie ist auch eine ==Anordnung des Blicks==. Der Bunker sieht schon durch Apparate: „Periskope, Bildschirme, Filter usw.“ (S. 39). Damit ist der Weg zum Bildschirm in der Wohnung kurz.
+- **Weiter in:** ==B2 Wohnung (Sehschlitz und Feed)==. Wer B1 Tor nicht auslassen will, springt danach zurück: Der Sehschlitz ist das Auge der Festung, die Türkamera ist das Auge der verteilten Festung.
 - **Bild an der Übergabe:** `raw\bilder\f01-links-sehschlitz.jpg`, vorhanden.
 
 ### E2 · Der Poller
 
-- **Arved endet:** bei Hostile Vehicle Mitigation, bei den Pollern vor einem Weihnachtsmarkt oder einem Bahnhof.
-- **Mein erster Satz:** „Der Poller hält das Fahrzeug auf. Ich frage nach dem letzten Fahrzeug, das gar nicht mehr fährt.“
-- **Beleg:** Die Rolle des „LETZTEN VEHIKELS“ ist es, aus seinem Bewohner „diesen Reisenden ohne Reise, diesen Passagier ohne Passage zu machen“ (*Rasender Stillstand*, S. 152). „Das Bild ist nunmehr das einzige leistungsfähige Vehikel“ (S. 31).
-- **Warum er trägt:** Hostile Vehicle Mitigation schützt die Zirkulation vor dem Fahrzeug. Virilio beschreibt, wie das Fahrzeug selbst verschwindet: Nicht mehr der Mensch fährt zur Welt, die Welt fährt als Bild zum Menschen. Das Fahrzeug, das man nicht mehr aufhalten muss, ist der Mensch, der sitzen bleibt.
+- **Arved endet:** bei ==Hostile Vehicle Mitigation==, bei den Pollern vor einem Weihnachtsmarkt oder einem Bahnhof.
+- **Mein erster Satz:** „Der Poller hält das Fahrzeug auf. Ich frage nach dem ==letzten Fahrzeug, das gar nicht mehr fährt.==“
+- **Beleg:** Die Rolle des „LETZTEN VEHIKELS“ ist es, aus seinem Bewohner „diesen ==Reisenden ohne Reise, diesen Passagier ohne Passage zu machen==“ (*Rasender Stillstand*, S. 152). „Das Bild ist nunmehr das einzige leistungsfähige Vehikel“ (S. 31).
+- **Warum er trägt:** Hostile Vehicle Mitigation schützt die Zirkulation vor dem Fahrzeug. Virilio beschreibt, wie das Fahrzeug selbst verschwindet: Nicht mehr der Mensch fährt zur Welt, die ==Welt fährt als Bild zum Menschen==. Das Fahrzeug, das man nicht mehr aufhalten muss, ist der Mensch, der sitzen bleibt.
 - **Weiter in:** B1 Tor, dann der Reihe nach. Oder direkt in B5 Stillstand, wenn die Zeit knapp ist.
-- **Bild an der Übergabe:** Arveds Pollerbild, dann bei mir die Laufbänder oder die Buchseite mit dem Rennfahrer (`raw\bilder\t4b-rennfahrer.jpg`, vorhanden).
+- **Bild an der Übergabe:** Arveds Pollerbild, dann bei mir die ==Laufbänder== oder die Buchseite mit dem ==Rennfahrer== (`raw\bilder\t4b-rennfahrer.jpg`, vorhanden).
 
 ### E3 · Die Festungsregel
 
 - **Arved endet:** bei der Festung, die gegen Belagerung gebaut ist, oder bei der Stadt, die nie schläft.
 - **Mein erster Satz:** „Für die Festung gab es eine Regel. 1870 schreibt ein Festungsbauer: Verharren, Stillstand bedeutet den Tod.“
-- **Beleg:** Colonel Delair, 1870: „Verharren, Stillstand bedeutet den Tod.“ Hinter der „hellerleuchteten Megalopole – eine Stadt, die keine Ruhe mehr kennt –“ sieht Virilio nur noch „die verschwommene Silhouette der alten Festung“, „die gegen ihre Trägheit ankämpft und für die das Verharren den Tod bedeutet“ (*Geschwindigkeit und Politik*, S. 20 und 23).
+- **Beleg:** Colonel Delair, 1870: „Verharren, Stillstand bedeutet den Tod.“ Hinter der „hellerleuchteten Megalopole – eine Stadt, die keine Ruhe mehr kennt –“ sieht Virilio nur noch „die verschwommene Silhouette der alten Festung“, „die gegen ihre Trägheit ankämpft und für die das ==Verharren den Tod bedeutet==“ (*Geschwindigkeit und Politik*, S. 20 und 23).
 - **Warum er trägt:** Virilio sagt selbst, dass die Festung in der Stadt weiterlebt. Das ist Arveds These, von Virilio 1977 schon formuliert. Bei Arved lebt die Festung in den Pollern weiter. Bei mir lebt ihre Regel im Alltag weiter: in der Angst vor dem Stillstand.
 - **Weiter in:** B5 Stillstand, danach rückwärts zu B4 Körper und B6 eigenes Bild. Oder: Die Regel wird angekündigt, und die Bausteine B1 bis B4 zeigen, wo sie überall gilt.
 - **Bild an der Übergabe:** Buchseite S. 20 mit Unterstreichung, `raw\photo_2026-11-06_00-18-11.jpg`, vorhanden.
 
 ### E4 · Die Polizei als Verwaltung der Verkehrswege
 
-- **Arved endet:** bei der Frage, wer befestigt und wozu: Zirkulation gewährleisten.
+- **Arved endet:** bei der Frage, ==wer befestigt und wozu: Zirkulation gewährleisten==.
 - **Mein erster Satz:** „Virilio nennt die Staatsgewalt 1977 eine Polizei, und Polizei heißt bei ihm: Verwaltung der Verkehrswege.“
 - **Beleg:** Der politische Diskurs vermenge „die gesellschaftliche Ordnung mit der Kontrolle der Zirkulation (von Personen und Waren)“ (*Geschwindigkeit und Politik*, S. 22).
 - **Warum er trägt:** Das ist fast wörtlich Arveds These. **Absprache nötig:** Ich empfehle, dass Arved die Stelle im Fokus zeigt. Dann nehme ich sie in der Kritik wieder auf (K2). Zeigt Arved sie nicht, ist sie mein stärkster Einstieg.
-- **Weiter in:** B1 Tor: Die Verkehrswege enden heute an der Haustür, und dort steht eine Kamera.
+- **Weiter in:** B1 Tor: Die ==Verkehrswege enden heute an der Haustür, und dort steht eine Kamera.==
 - **Bild an der Übergabe:** Buchseite S. 22, noch nicht fotografiert.
 
 ### E5 · Die Straße leeren, ohne sie zu sperren
@@ -85,14 +85,14 @@ Jeder Einstieg hat dieselbe Form: womit Arved endet, mein erster Satz, der Beleg
 - **Beleg:** „Je mehr Massen unterwegs sind, umso weniger ergibt sich die Notwendigkeit zu großen Repressionen; um die Straße zu leeren, genügt es, allen die Straße zu versprechen.“ (*Geschwindigkeit und Politik*, S. 35, am Volkswagen) Dazu die Agora als „Garant des Bürgerrechts der versammelten Bürger gegen die Bedrohung durch einen Tyrannen“ (*Rasender Stillstand*, S. 27).
 - **Warum er trägt:** Der Poller sperrt den Platz für Fahrzeuge. Der Bildschirm leert ihn von Menschen, ohne Sperre. Heute genügt es, allen das Netz zu versprechen. Das sind zwei Formen derselben Befestigung: eine aus Beton, eine aus Bildern.
 - **Weiter in:** B1 Tor oder B2 Wohnung.
-- **Bild an der Übergabe:** Demonstration, alle halten ihr Handy hoch (offen), gegen Arveds Poller.
+- **Bild an der Übergabe:** ==Demonstration, alle halten ihr Handy hoch== (offen), gegen Arveds Poller.
 
 ### E6 · Die Kirche
 
 - **Arved endet:** bei Sainte-Bernadette-du-Banlay als Kirche, die aussieht wie ein Bunker.
 - **Mein erster Satz:** „Von außen ist die Kirche eine Festung. Ich gehe hinein.“
 - **Beleg:** Die „undurchsichtige Betonschale“ wirkt abwehrend, „sogar bewusst ‚abstoßend‘“, bildet aber zugleich „eine schützende Hülle für das Innere, das als Grotte gedacht ist“ (Parent, in: *The Function of the Oblique*, S. 18). Im Inneren steigt der Boden in zwei Richtungen an.
-- **Warum er trägt:** Die Kirche ist das einzige Bauwerk im Material, das außen Festung und innen Körperraum ist. Sie zeigt, dass Abschirmung nicht in die Starre führen muss. Die Schräge weckt den Gleichgewichtssinn.
+- **Warum er trägt:** Die Kirche ist das einzige Bauwerk im Material, das außen Festung und innen ==Körperraum== ist. Sie zeigt, dass Abschirmung nicht in die Starre führen muss. Die Schräge weckt den Gleichgewichtssinn.
 - **Weiter in:** B3 Hülle und B4 Körper. Die Kirche ist dann der positive Gegenpol, an dem alles Spätere gemessen wird.
 - **Absprache nötig:** Teilt Arved die Kirche mit mir? Er zeigt die Schale außen, ich zeige die Grotte innen.
 - **Bild an der Übergabe:** `f02-innen-sainte-bernadette-schiff-fertig.jpg`, vorhanden.
@@ -100,17 +100,17 @@ Jeder Einstieg hat dieselbe Form: womit Arved endet, mein erster Satz, der Beleg
 ### E7 · Krieg im Frieden
 
 - **Arved endet:** bei der Frage, warum man befestigt, obwohl kein Krieg ist.
-- **Mein erster Satz:** „Virilio sagt: Es gibt kein Danach, in dem man den Schutz ablegen könnte.“
-- **Beleg:** Eine Anordnung de Gaulles vom 7. Januar 1959, „in der die Unterscheidung von Kriegszeit und Friedenszeit aufgehoben wird“, und der Übergang „zu einem Krieg um Zeit im Frieden, zu diesem totalen Frieden“ (*Geschwindigkeit und Politik*, S. 187). Der Bunker warnt vor „der großen Verschmelzung des Militärischen und des Zivilen“ (*Bunkerarchäologie*, S. 46).
-- **Warum er trägt:** Es erklärt Arveds Befund: Im totalen Frieden wird befestigt wie im Krieg. Bei mir wird daraus die Wohnung als Bunker, der den Krieg überlebt hat.
+- **Mein erster Satz:** „Virilio sagt: ==Es gibt kein Danach, in dem man den Schutz ablegen könnte.“==
+- **Beleg:** Eine Anordnung de Gaulles vom 7. Januar 1959, „in der die Unterscheidung von Kriegszeit und Friedenszeit aufgehoben wird“, und der Übergang „zu einem Krieg um Zeit im Frieden, zu diesem totalen Frieden“ (*Geschwindigkeit und Politik*, S. 187). ==Der Bunker warnt vor „der großen Verschmelzung des Militärischen und des Zivilen“== (*Bunkerarchäologie*, S. 46).
+- **Warum er trägt:** Es erklärt Arveds Befund: Im ==totalen Frieden wird befestigt wie im Krieg.== Bei mir wird daraus die ==Wohnung== als Bunker, der den Krieg überlebt hat.
 - **Weiter in:** B2 Wohnung.
-- **Bild an der Übergabe:** Strand mit Bunker. In `bildersuche.md` steht dieses Motiv bisher unter „Nicht mehr suchen“, weil es zu sehr nach Krieg aussieht. An dieser Stelle wäre es aber richtig: die Schießscharte, die heute „auf harmlose Badende“ zielt (S. 11).
+- **Bild an der Übergabe:** Strand mit Bunker. In `bildersuche.md` steht dieses Motiv bisher unter „Nicht mehr suchen“, weil es zu sehr nach Krieg aussieht. An dieser Stelle wäre es aber richtig: die ==Schießscharte, die heute „auf harmlose Badende“ zielt== (S. 11).
 
 ### E8 · Der Bunker, der weiter schützt
 
 - **Arved endet:** beim umgenutzten Bunker, als Dachgarten, Rechenzentrum oder Sammlung.
-- **Mein erster Satz:** „Virilio findet in einem Bunker am Strand Kleider und Fahrräder. Der Krieg ist vorbei, der Schutz ist geblieben.“
-- **Beleg:** „ein Gegenstand hatte seine Bedeutung verändert, und dennoch bestand eine Schutzfunktion weiterhin fort“ (*Bunkerarchäologie*, S. 11). Bunker füllen sich mit Müll und Reklame: „Yvette Horner lächelte in der Schießscharte“ (S. 14).
+- **Mein erster Satz:** „Virilio findet in einem Bunker am Strand Kleider und Fahrräder. ==Der Krieg ist vorbei, der Schutz ist geblieben.“==
+- **Beleg:** „ein Gegenstand hatte seine ==Bedeutung verändert, und dennoch bestand eine Schutzfunktion weiterhin fort==“ (*Bunkerarchäologie*, S. 11). Bunker füllen sich mit Müll und Reklame: „Yvette Horner lächelte in der Schießscharte“ (S. 14).
 - **Warum er trägt:** Die Werbung in der Schießscharte ist der Moment, in dem Festung und Warenzirkulation zusammenfallen. Das ist Arveds These im Kleinen, 1975 fotografiert.
 - **Weiter in:** B2 Wohnung.
 - **Bild an der Übergabe:** Rechenzentrum Pionen oder Hamburger Bunker an der Feldstraße (beide offen).
@@ -118,9 +118,9 @@ Jeder Einstieg hat dieselbe Form: womit Arved endet, mein erster Satz, der Beleg
 ### E9 · Das Tor, das zurückschaut
 
 - **Arved endet:** bei der Stadt ohne Mauer, bei den Zugängen, die heute kontrolliert werden: Drehkreuz, Sicherheitsschleuse, Kamera.
-- **Mein erster Satz:** „Die Stadt hat keine Tore mehr. Aber jede Haustür ist befestigt, mit einem Auge.“
+- **Mein erster Satz:** „==Die Stadt hat keine Tore mehr. Aber jede Haustür ist befestigt, mit einem Auge.“==
 - **Beleg:** Virilio erlebt, wie „die Sichtspiegel auf den Bahnsteigen der Metro durch Video-Bildschirme ersetzt“ werden, dann Kameras an Hochschulen, Boulevards, Kreuzungen. Schließlich erscheint „oberhalb der Tastatur für den Code der automatischen Öffnungsmechanismen an den Wohnhäusern das Objektiv einer Mikrokamera“ (*Rasender Stillstand*, S. 9).
-- **Warum er trägt:** Virilio beschreibt hier selbst die Atomisierung der Festung, Schritt für Schritt von der Metro bis zur Klingel.
+- **Warum er trägt:** Virilio beschreibt hier selbst die ==Atomisierung der Festung, Schritt für Schritt von der Metro bis zur Klingel==.
 - **Weiter in:** B1 Tor ist dieser Einstieg selbst, danach B2.
 - **Bild an der Übergabe:** Video-Türklingel (offen).
 
@@ -205,11 +205,11 @@ Die Bausteine folgen der These von außen nach innen. Jeder lässt sich einzeln 
 
 ### Vorschläge zum Kürzen auf 5 Minuten
 
-| Fassung | Bausteine | Passt zu |
-|---|---|---|
-| Blick | E1 Sehschlitz → B2 → B3 → B6 | Arved endet beim Bunker. Der rote Faden ist der Blick: Sehschlitz, Feed, Helm, eigenes Bild. |
-| Bewegung | E2 Poller → B1 → B4 → B5 | Arved endet beim Poller. Der rote Faden ist das Fahrzeug: aufgehalten, ersetzt, zum Laufband geworden. |
-| Hülle | E6 Kirche → B3 → B4 → B6 | Arved endet bei der Kirche. Der rote Faden ist die Hülle: Kirche, Helm, Zelle, Bild. |
+| Fassung  | Bausteine                    | Passt zu                                                                                                       |
+| -------- | ---------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| Blick    | E1 Sehschlitz → B2 → B3 → B6 | Arved endet beim ==Bunker==. ==Der rote Faden ist der Blick==: Sehschlitz, Feed, Helm, eigenes Bild.           |
+| Bewegung | E2 Poller → B1 → B4 → B5     | Arved endet beim ==Poller==. Der rote Faden ist das ==Fahrzeug==: aufgehalten, ersetzt, zum Laufband geworden. |
+| Hülle    | E6 Kirche → B3 → B4 → B6     | Arved endet bei der ==Kirche==. Der rote Faden ist die ==Hülle==: Kirche, Helm, Zelle, Bild.                   |
 
 ---
 
