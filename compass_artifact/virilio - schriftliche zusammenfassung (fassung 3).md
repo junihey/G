@@ -73,6 +73,8 @@ Sieben Autoren geben die Blickwinkel vor, unter denen die Räume gelesen werden.
 
 Die Arbeit folgt der These von außen nach innen. Teil 1 zeigt die **Welt**, die bestellt wird, und das Ende der Geografie. Teil 2 zeigt die **Stadt**, die ihre Tore verliert, von Benjamins Passage bis zum Flughafen. Teil 3 geht in den **Bunker**, erst als Abschirmung, dann als Übertragung: Fenster, Bildschirm, Kino und die vernetzte Wohnung. Teil 4 erreicht den **Körper**, erst als Projektion in den Kapseln von Pichler, Haus-Rucker-Co und Absalon, dann als Überlagerung im rasenden Stillstand. Teil 5 führt in die **Unterwelt** des eigenen Bildes: Spiegel, Projektion und Versteck. Teil 6 stellt die These der Rezeption und Kritik gegenüber. Teil 7 kehrt die Richtung um: Er liest Virilios Unfall als Wunde, die eine Heilkraft aufruft, und geht die Stufen der These rückwärts: vom selbst gebildeten Bild über das bewegliche Denken und Steiners Dreischritt in den Körper mit seinen zwölf Sinnen, zur gewählten Hülle und zum anderen Menschen. So führt er zu einer Tat, die nach außen setzt, was nach innen gezogen wurde.
 
+==~~Vorgehen und Auf au zusammebringen bzw. Inhaltsverzeichnis~~==
+
 ---
 
 ## 1 Welt: Die Welt wird bestellt
@@ -87,11 +89,11 @@ Ein Bildschirm ermöglicht es, einen anderen Ort wahrzunehmen, ohne körperlich 
 
 Virilio nennt das den „Primat des Bildes über das Ding“, der seinerseits aus dem „Vorrang der Zeit gegenüber dem Raum“ folgt (*Rasender Stillstand*, S. 20). Die Wirklichkeit wird nicht mehr nur sichtbar, sondern „hindurch-sichtbar“. Licht ist nicht mehr nur künstlich, sondern indirekt: übertragenes Licht, das das direkte Licht zu verdrängen beginnt (ebd.). Ein Gegenstand ist dem Auge dann „nicht nur präsent, sondern telepräsent“ (S. 18).
 
-Damit ändert sich, was eine Oberfläche ist. Die südtunesische Wüste wird unter dem Blick der Satelliten „plötzlich eine Beschriftungsoberfläche, ein Bildschirm“, und Kinosaal, Bühne und Bildschirm werden „lediglich der Himmel und der Erdboden“ (S. 18 f.). Die ganze Erdoberfläche ist zur Projektionsfläche geworden.
+Damit ändert sich, was eine Oberfläche ist. Die südtunesische Wüste wird unter dem Blick der Satelliten „plötzlich eine ==Beschriftungsoberfläche==, ein Bildschirm“, und Kinosaal, Bühne und Bildschirm werden „==lediglich der Himmel und der Erdboden==“ (S. 18 f.). Die ganze Erdoberfläche ist zur Projektionsfläche geworden.
 
 ### Beispiele
 
-**Tian'anmen 1989.** Virilios Schlüsselbeispiel. Mit dem weltweit übertragenen Bild vom Platz nehmen die Zuschauer „gleichzeitig an einer unendlichen Ausweitung dieser Oberfläche sowie an einer Miniaturisierung teil“, denn der Bildschirm von 51 Zentimetern lässt die Tiefe des Ereignisses nicht erfassen (S. 28 f.). In Hongkong versammeln sich die Menschen vor dem Riesenbildschirm im Stadion: „Genau das ist die TELETOPIE, die realzeitliche Kontinuität, die die Abwesenheit der Kontiguität des realen Raums ersetzt“ (S. 29). Nach dem Massaker sendet das chinesische Fernsehen nur Aufzeichnungen. Die Herrschaft über ein Land wird zur Herrschaft über die Zeit des Bildes, zum „Belagerungszustand der Zeit“ (S. 30). Am Ende steht der Satz: „Die TELEOPTISCHE Wirklichkeit setzt sich gegen die TOPISCHE Wirklichkeit des Ereignisses durch“ (S. 31).
+**Tian'anmen 1989.** Virilios Schlüsselbeispiel. Mit dem weltweit übertragenen Bild vom Platz nehmen die Zuschauer „gleichzeitig an einer unendlichen Ausweitung dieser Oberfläche sowie an einer Miniaturisierung teil“, denn der Bildschirm von 51 Zentimetern lässt die Tiefe des Ereignisses nicht erfassen (S. 28 f.). In Hongkong versammeln sich die Menschen vor dem Riesenbildschirm im Stadion: „Genau das ist die TELETOPIE, die realzeitliche Kontinuität, die die Abwesenheit der Kontiguität des realen Raums ersetzt“ (S. 29). Nach dem Massaker sendet das chinesische Fernsehen nur Aufzeichnungen. ==Die Herrschaft über ein Land wird zur Herrschaft über die Zeit des Bildes, zum „Belagerungszustand der Zeit“ (S. 30)==. Am Ende steht der Satz: „Die TELEOPTISCHE Wirklichkeit setzt sich gegen die ==TOPISCHE== Wirklichkeit des Ereignisses durch“ (S. 31).
 
 **Die Lieferung.** „Das Bild ist nunmehr das einzige leistungsfähige Vehikel“ (S. 31). Nicht mehr der Mensch fährt zur Welt, die Welt fährt zum Menschen. Heute heißt das: Virtual Reality, digitale Kommunikationsplattformen, vernetzte Räume, Lieferdienste, Livestreams.
 
@@ -103,7 +105,7 @@ Damit ändert sich, was eine Oberfläche ist. Die südtunesische Wüste wird unt
 
 Heidegger hat diese Bewegung schon 1927 benannt. In *Sein und Zeit* (§ 23) heißt es: „Entfernen besagt ein Verschwindenmachen der Ferne, das heißt der Entferntheit von etwas, Näherung.“ Und weiter: „Im Dasein liegt eine wesenhafte Tendenz auf Nähe. Alle Arten der Steigerung der Geschwindigkeit, die wir heute mehr oder minder gezwungen mitmachen, drängen auf Überwindung der Entferntheit. Mit dem ‚Rundfunk‘ zum Beispiel vollzieht das Dasein heute eine in ihrem Daseinssinn noch nicht übersehbare Ent-fernung der ‚Welt‘ auf dem Wege einer Erweiterung der alltäglichen Umwelt.“ (*Sein und Zeit*, Tübingen 1967, S. 105) Das Ent-fernen ist dabei „zunächst und zumeist umsichtige Näherung, in die Nähe bringen als beschaffen, bereitstellen, zur Hand haben“ (ebd.). Schon hier ist die Welt etwas, das man sich bereitstellt. Virilios These, dass Geschwindigkeit den Raum vernichtet, lässt sich als Radikalisierung dieses Gedankens lesen.
 
-**Anwesenheit und Abwesenheit.** Welche Aspekte räumlicher Anwesenheit lassen sich technisch übertragen, und welche bleiben an den Körper gebunden? Mediale Zwischenwelten erweitern architektonische Anwesenheit, ohne die körperliche Gebundenheit des Menschen an den physischen Raum ganz aufzuheben.
+**Anwesenheit und Abwesenheit.** ==Welche Aspekte räumlicher Anwesenheit lassen sich technisch übertragen, und welche bleiben an den Körper gebunden? Mediale Zwischenwelten erweitern architektonische Anwesenheit, ohne die körperliche Gebundenheit des Menschen an den physischen Raum ganz aufzuheben.==
 
 **Eingeschränkt und entgrenzt.** Die Verbindung zur Außenwelt ist zugleich radikal eingeschränkt und durch mediale Entgrenzung unbegrenzt. Die Außenwelt wird ausgeblendet und als Bild zurückgeholt, der Raum ist abgeschlossen und zur ganzen Welt geöffnet.
 
@@ -122,9 +124,9 @@ Der letzte Wunsch steht quer zu den ersten drei. Er führt von der Welt zum Bunk
 
 **Die Welt als Bestand.** Der Wunsch nach vollständiger Verfügbarkeit ist die Haltung, die Heidegger das Stellen der Welt als *Bestand* nennt: Die Welt soll sich melden, wann man sie ruft. Was sich so nicht stellen lässt, verschwindet aus dem Blick.
 
-**Verwirklichung der Imagination.** Mediale Welten haben eine Verbindung zur Imagination. Technik macht sichtbar, was vorher nur vorgestellt war. Mit Technik bauen wir zudem Fähigkeiten nach, die wir als Menschen nicht mehr besitzen, oder lernen sie dadurch wieder: Telekinese als Fernsteuerung, Telepräsenz als Anwesenheit in der Ferne.
+==**Verwirklichung der Imagination.** Mediale Welten haben eine Verbindung zur Imagination. Technik macht sichtbar, was vorher nur vorgestellt war. Mit Technik bauen wir zudem Fähigkeiten nach, die wir als Menschen nicht mehr besitzen, oder lernen sie dadurch wieder: Telekinese als Fernsteuerung, Telepräsenz als Anwesenheit in der Ferne.==
 
-**Leitfrage.** Ist eine Architektur, die uns die Außenwelt medial verfügbar macht, eine Erweiterung unseres Raumes, oder eine neue Form seiner Begrenzung?
+**==Leitfrage==.** Ist eine Architektur, die uns die Außenwelt medial verfügbar macht, eine Erweiterung unseres Raumes, oder eine neue Form seiner Begrenzung?
 
 ### Exkurs: Entbergen und Verbergen (Heidegger)
 
@@ -136,6 +138,8 @@ Heidegger wird hier nach Rafael Capurro zitiert (*Heidegger über Sprache und In
 - **Entbergen und zugleich Verbergen.** Capurro beschreibt die Informationstechnologie als die heute herrschende Art, „wie die Sprache sich uns entbirgt und dabei zugleich in ihrer Unerschöpflichkeit verbirgt“. Er fragt, ob die Rationalisierung der Sprache nicht immer schon in deren „Lichtung“ geschieht, die von der Information aus gesehen als das „Verborgene“ erscheint. Heidegger beschreibt Wahrheit als „schwebende Innigkeit von Entbergen und Verbergen“ (*Aletheia*, in *Vorträge und Aufsätze*), also als die Lichtung selbst. Zum Bild: Das Ge-Stell ist „gleichsam das photographische Negativ des Ereignisses“ (*Vier Seminare*, S. 104).
 - **Welt als Bild** (*Die Zeit des Weltbildes*, in *Holzwege*). In der Neuzeit wird der Mensch zum *subjectum* und die Welt zum Bild. Die Wissenschaft erfasst die Natur nur in ihrer Gegenständigkeit, nie in ihrer „Wesensfülle“ (*Wissenschaft und Besinnung*).
 - **Übertragen auf digitale Bilder.** Jede Weise des Zeigens ist ein Entbergen, das zugleich verbirgt. Digitale Bilder machen Orte, Personen und das eigene Gesicht als Bestand abrufbar und übertragbar. Dabei verbergen sie, was sich nicht stellen lässt: die Lichtung, in der etwas überhaupt erscheint, und die Wesensfülle, die keine Vergegenständlichung erfasst.
+
+~~==In Fließtext einfügen bzw. An die richtigen Stelle ==~~
 
 ### Exkurs: „Tele-“
 
@@ -152,6 +156,8 @@ Virilio selbst schlüsselt die Tele-Techniken auf. Nach der Telerealität, „od
 Eine anthroposophische Lesart geht noch weiter. Steiner schreibt von der sagenhaften Atlantis, dort seien „die besten Techniker, die ihre magischen Kräfte am besten gebrauchen konnten“, gewesen, und die heutigen Naturforscher entsprächen „den am meisten hellseherisch begabten Menschen der damaligen Zeit“, die in „Orakelstätten“ lehrten (*Aus der Bilderschrift der Apokalypse des Johannes*, GA 104a, S. 71). Der Pfarrer Michael Rheinheimer beschreibt nach Emil Bock, wie „das alte blutsgebundene Hellsehen“ sich „zu intellektuellen Einzelgedanken“ zerstückelt (*Lawrence von Arabien*, ChorForum Essen, 25. Juni 2026, ab 00:48:30). Von hier aus lässt sich die Entstehung der Tele-Medien geistesgeschichtlich deuten: als technische Materialisierung und Veräußerlichung von Kräften, die früher als innere, seelisch-geistige Wahrnehmungen vorhanden waren, etwa als Fernwahrnehmung, oder rituell geübt wurden. Damit schließt sich der Kreis zum Gedanken, dass Technik verlorene Fähigkeiten nachbaut.
 
 **Quellen:** Peter Sloterdijk, „Die Zukunft der Arbeit“, Vortrag zum Auftakt des Projekts TEAM 4.0, TH Augsburg (YouTube). Peter Sloterdijk, „Actio in distans“, spanische Übersetzung in *Nómadas* 28 (2008), online bei SciELO Kolumbien. Michael Rheinheimer, Vortragsabschriften auf anthro.world. Die Zeitmarken geben den Beginn der Stelle an.
+
+~~==Bei Nah und fern oder bei Verwirklichung und Imagination integrieren?==~~
 
 ---
 

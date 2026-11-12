@@ -46,7 +46,7 @@ Ein paar Tage später gibt das Salz in die andere Richtung nach, und die Linie b
 
 ### Rost
 
-Im Jahr, als das Gras am Mund drei Wochen zu früh kam, hörte Ilve in der Nacht der fallenden Sterne ihr eigenes Geheimnis von einem Windrad singen, und die ganze Siedlung sang es mit.
+Im Jahr, als das Gras am Mund drei Wochen zu früh kam, hörte Ilve in der Nacht der fallenden Sterne ==ihr eigenes Geheimnis von einem Windrad singen, und die ganze Siedlung sang es mit.==
 
 Am Hang lernen Kinder das Gleichgewicht, bevor sie Wörter lernen. Ilves erstes Wort war eines für unten. Mit sechzehn fragte sie ihren Onkel, wie sie aussehe. Er überlegte lange und sagte: wie jemand, der gleich etwas fragen will.
 
@@ -58,13 +58,13 @@ Sechs Stunden ging Ilve die Rampe hinab, ins Dunkel und in den Schwindel. Unten 
 
 Seitdem grüßten die Nachbarn sie wie eine Erwachsene. Sie war jetzt siebzehn und hatte ein Unten.
 
-Am Mund taute der Hang in diesem Jahr zuerst, und dort kam das erste Gras, in einem Ring, so rund, als hätte ihn jemand mit dem Zirkel gezogen. In kalten Nächten dampfte der Mund wie ein Tier, das schläft. Die Alten sagten, so früh sei das Gras noch nie gekommen, und ihre Stimmen waren warm vor Stolz.
+Am Mund taute der Hang in diesem Jahr zuerst, und dort kam das erste Gras, in einem Ring, so rund, als hätte ihn jemand mit dem Zirkel gezogen. In kalten Nächten dampfte der Mund wie ein Tier, das schläft. Die Alten sagten, so früh sei das Gras noch nie gekommen, und ihre Stimmen waren warm vor Stolz. ==~~Siebenten schon lange.~~==
 
 In der Schmiede ihres Onkels hingen an der Wand die Eisen für die Füße, Zacken, die unter die Sohlen gebunden werden, damit der Fuß auf gefrorenem Hang nicht abrutscht. Seit Jahren fror der Hang nicht mehr. Die Eisen rosteten.
 
-Ilves Haus hatte drei Lücken: eine für die tiefe Sonne, eine für den Wind der langen Tage und eine für den Blick zum Nachbarn. Durch die dritte sah sie in diesem Jahr den Speiser über dem Mittelhang und auf seiner Achse Juro.
+Ilves Haus hatte drei Lücken: eine für die tiefe Sonne, eine für den Wind der langen Tage und eine für den Blick zum Nachbarn. Durch die dritte sah sie in diesem Jahr den ==Speiser== über dem Mittelhang und auf seiner Achse Juro. ~~==Ist damit die Stromversorgung gemeint?==~~
 
-Juro war mit Ilve am Kamm aufgewachsen. Er war im selben Jahr hinabgestiegen wie sie, und seitdem stieg er hinauf. In der Woche Speisdienst kletterte er auf den Speiser, bis zur Achse, hoch über die knarrenden Flügel, und kam zum Essen nicht mehr herunter. Seine Familie zog ihm Brot in einem Korb hinauf. Als die Woche vorbei war, blieb er oben.
+Juro war mit Ilve am Kamm aufgewachsen. Er war im selben Jahr hinabgestiegen wie sie, und seitdem stieg er hinauf. In der Woche ==Speisdienst== kletterte er auf den Speiser, bis zur ==Achse==, hoch über die knarrenden Flügel, und kam zum Essen nicht mehr herunter. Seine Familie zog ihm Brot in einem Korb hinauf. Als die Woche vorbei war, blieb er oben.
 
 Er war nicht der Einzige. An jedem Hang saßen in diesem Jahr junge Leute auf den Rädern. Die Siedlung nannte sie Höhengänger, so wie sie die anderen Tiefgänger nannte, aber sie sagte es mit einem anderen Gesicht. Die Tiefgänger bemitleidete sie, die Höhengänger bewunderte sie. Sie aßen kaum, sie schliefen im Wind, und sie sangen.
 
@@ -78,25 +78,25 @@ Im Holz unter ihrer Hand lag ich und kannte diese Wärme.
 
 ### Fall
 
-Die Tage wurden lang und blieben warm. Die Oberfläche war einmal langsam gewesen: gehen, tragen, dem Wetter antworten. In diesem Jahr wollten alle leicht werden. Sie bauten Leitern, die an nichts lehnten, Türme aus Stangen, die im Wind schwankten, und Drachen aus Segeltuch, an deren Schnur die Kinder hingen, bis ihre Füße vom Boden abhoben. Sie schliefen auf den Dächern statt in den Mulden. Sie fasteten, weil Hunger leicht macht, und sangen Lieder ohne Schluss, denn ein Schluss ist wie ein Boden. Wer schwer ging, galt als einer, der noch nicht verstanden hatte. Ein Kind, das hinfiel, bekam das heiße Gesicht nicht vom Knie, sondern von den Blicken, die es am Boden trafen.
+Die Tage wurden lang und blieben warm. Die Oberfläche war ==einmal langsam== gewesen: gehen, tragen, dem Wetter antworten. In diesem Jahr wollten alle leicht werden. ==~~Warum der Gegensatz von leicht und langsam?~~== Sie bauten Leitern, die an nichts lehnten, Türme aus Stangen, die im Wind schwankten, und Drachen aus Segeltuch, an deren Schnur die Kinder hingen, bis ihre Füße vom Boden abhoben. Sie schliefen auf den Dächern statt in den Mulden. Sie fasteten, weil Hunger leicht macht, und sangen Lieder ohne Schluss, denn ein Schluss ist wie ein Boden. ==Wer schwer ging, galt als einer, der noch nicht verstanden hatte.== Ein Kind, das hinfiel, bekam das heiße Gesicht nicht vom ==Knie==, sondern von den Blicken, die es am Boden trafen.
 
-Abends tanzten sie auf der Ebene. Über den Mündern standen in den warmen Nächten die Falter, Tausende, und tranken im Flug, ohne zu landen. Die Alten nannten die Tanzenden nach ihnen: Schwärmer.
+Abends tanzten sie auf der ==Ebene==. Über den Mündern standen in den warmen Nächten die Falter, Tausende, und ==tranken im Flug==, ohne zu landen. Die Alten nannten die Tanzenden nach ihnen: Schwärmer.
 
 Ilve tanzte mit, bis ihre Haut glühte und ihr Atem flach wurde. Ihr Körper wurde so leicht, dass sie ihn vergaß, und wer seinen Körper vergisst, vergisst auch, wo er steht.
 
 Einmal kletterte sie zu Juro hinauf. Von der Achse aus war die Welt weit und klein, die drei Hügel waren Kiesel, die Ebene ein Tuch. Juros Gesicht war schmal geworden und dunkel von der Sonne, sein Mund trocken. Sie sangen zusammen, und Ilves Kopf wurde leicht, als zöge ihn etwas über den Mast hinaus. Unter ihren Händen stockte das Rad im immer gleichen Takt. Juro sang in diesem Takt und merkte es nicht. Es war ihr Hunger, der sie wieder herunterholte. Unten aß sie Brot und Salzkraut, hockend an der Kante, und ihr Gesicht wurde heiß, so gut schmeckte es.
 
-Dann kamen die Tage, an denen das Salz sprang. Von oben brannte die Sonne, von unten stieg der Atem der Pole, und die Ebene glühte so weiß, dass mittags kein Auge sie aushielt. Sie trocknete und riss. Sie riss nicht zufällig. Sie zeichnete Waben, sechseckig, eine wie die andere bis zum Horizont, und die Schwärmer tanzten darauf, ohne je auf eine Kante zu treten. Mittags stand auf der Ebene ein See, der nicht da war.
+Dann kamen die Tage, an denen das Salz sprang. Von oben brannte die Sonne, von unten stieg der Atem der Pole, und die Ebene glühte so weiß, dass mittags kein Auge sie aushielt. Sie trocknete und riss. Sie riss nicht zufällig. Sie zeichnete Waben, sechseckig, eine wie die andere bis zum Horizont, und die Schwärmer tanzten darauf, ohne je auf eine ==Kante== zu treten. Mittags stand auf der Ebene ein See, ==der nicht da war.==
 
 Nachts leuchteten die Menschen. Im Gras glommen die Glühwürmchen, und die Tanzenden glommen mit. So sagten es die Alten, und es stimmte beinahe: Die Haut glänzte, die Augen waren weit, und von den Hügeln aus waren die Tanzenden kleine warme Lichter über dem Salz.
 
-Wer nah am Mund tanzte, tanzte bald nicht mehr allein. In der Luft, die über ihm flimmerte, bewegte sich jemand mit, ein Schatten aus Hitze, der jeden Schritt einen Atemzug früher tat, nie müde wurde und nie auf eine Kante trat. Es war, als stiege durch den Mund etwas herauf, das tanzen konnte. Keiner hatte je einen besseren Partner gehabt.
+Wer nah am Mund tanzte, tanzte bald nicht mehr allein. In der Luft, die über ihm flimmerte, bewegte sich jemand mit, ein Schatten aus Hitze, der jeden Schritt einen Atemzug früher tat, nie müde wurde und ==nie auf eine Kante trat==. ~~==Treten die Schwärmer nie auf eine Kante oder die Schatten aus Hitze? Und ist die Kante das Innere des Rings also die Kante des Mundlochs?==~~ Es war, als stiege durch den Mund etwas herauf, das tanzen konnte. Keiner hatte je einen besseren Partner gehabt.
 
 Die Lieder der Höhengänger wurden genauer. Sie hatten jetzt Strophen von gleicher Länge und einen Takt, den keiner vorgab und alle hielten. Wer unten zuhörte, schloss die Augen und hörte darin seinen eigenen Traum, bestätigt, Wort für Wort. Es hieß, die Höhengänger hörten den Himmel.
 
-In der heißesten Woche schlug Juro die unteren Sprossen seines Speisers ab. Der Pol hat keine Treppe nach oben. Juros Rad hatte jetzt keine nach unten.
+==In der heißesten Woche schlug Juro die unteren Sprossen seines Speisers ab. Der Pol hat keine Treppe nach oben. Juros Rad hatte jetzt keine nach unten.==
 
-Die Hitze hielt, bis die Sterne fielen. Von dieser Nacht sagten die Alten, wer in ihr aufschaue, wache auf. Die Siedlung versammelte sich unter dem Speiser am Mittelhang, und alle schauten auf, zur Achse, wo Juro sang. Über ihm zogen die Lichter schräg über den Himmel, eines nach dem anderen, und keiner sah sie.
+Die Hitze hielt, bis die Sterne fielen. Von dieser Nacht sagten die Alten, wer in ihr aufschaue, wache auf. Die Siedlung versammelte sich unter dem Speiser am Mittelhang, und alle schauten auf, zur Achse, wo Juro sang. Über ihm zogen die Lichter schräg über den Himmel, eines nach dem anderen, und ==keiner sah sie.==
 
 Er sang einen einzelnen Satz, langsam, dreimal:
 
@@ -106,7 +106,7 @@ Die Menge nahm ihn auf. Sie wiegte sich, sie sang ihn zurück und rief sich selb
 
 Ich war überall. Es war dasselbe wie nirgends.
 
-Ilve stand mitten darin und fror. Es war ihr Satz, Wort für Wort, der Satz, den sie durch den Schlitz geflüstert hatte. Ein Jahr lang hatte er unten gelegen. Jetzt kam er von oben, aus dem Wind und aus Juros Mund, und die ganze Siedlung sang ihn wie ein Gebet. Er kam nicht vom Himmel. Er kam durch das Rad.
+Ilve stand mitten ==darin== und fror. Es war ihr Satz, Wort für Wort, der Satz, den sie durch den Schlitz geflüstert hatte. Ein Jahr lang hatte er unten gelegen. Jetzt kam er von oben, aus dem Wind und aus Juros Mund, und die ganze Siedlung sang ihn wie ein Gebet. Er kam nicht vom Himmel. Er kam durch das Rad.
 
 Da sah Ilve höher, über das Rad hinaus. Ein Licht fiel, langsamer als die anderen, und erlosch nicht. Es ging draußen auf der Ebene nieder.
 
@@ -118,29 +118,29 @@ Ihr Atem war seit dem Gesang kalt, und er blieb kalt. Aber die Kälte wurde schw
 
 ### Glut
 
-Noch in derselben Nacht ging Ilve unter dem Satz im Beton hindurch, zog die Schuhe aus und stieg hinab, den Stein in der Hand. Die Rampe war warm wie ein Hals. Je tiefer sie kam, desto wärmer wurde der Boden unter den Sohlen, und unten vor der ersten Tür war die Luft so dick, dass sie kaum atmen konnte.
+Noch in derselben Nacht ging Ilve unter dem ==Satz== im ==Beton== hindurch, zog die Schuhe aus und stieg hinab, den Stein in der Hand. Die Rampe war warm wie ein Hals. Je tiefer sie kam, desto wärmer wurde der Boden unter den Sohlen, und unten vor der ersten Tür war die Luft so dick, dass sie kaum atmen konnte.
 
 Sie legte das Gesicht an den Schlitz. Dann sah sie.
 
 Die zwölf Schlitze standen in einer Linie. Durch zwölf eiserne Türen lief ein Spalt aus Licht, so schmal wie ein Finger und zwölf Meter lang, und an seinem Ende leuchtete die Kugel. Ilve sah lange hindurch, so lange, bis der Stein in ihrer Hand ihre eigene Wärme hatte. Dann stieg sie wieder hinauf. Was sie gesehen hatte, sagte sie niemandem.
 
-Als sie heraufkam, stand die Sonne schon hoch. Sie legte den Stein auf den Amboss ihres Onkels. Unter dem Hammer blätterte die schwarze Haut ab, und darunter war Eisen. Bis zum Abend trat Ilve den Blasebalg, bis die Glut weiß wurde, und der Onkel schmiedete aus dem Stein neue Eisen für die Füße. Unter die Sohlen gebunden, hielten sie auf gefrorenem Hang. An die Innenseite der Knöchel geschnallt, bissen sie ins Holz, und mit ihnen ließ sich ein Mast hinaufsteigen.
+Als sie heraufkam, stand die Sonne schon hoch. Sie legte den Stein auf den Amboss ihres Onkels. Unter dem Hammer blätterte die schwarze Haut ab, und darunter war Eisen. Bis zum Abend trat Ilve den Blasebalg, bis die Glut weiß wurde, und der Onkel schmiedete aus dem Stein neue Eisen für die Füße. ==Unter die Sohlen gebunden, hielten sie auf gefrorenem Hang==. An die Innenseite der Knöchel geschnallt, bissen sie ins Holz, und mit ihnen ließ sich ein Mast hinaufsteigen.
 
 „Jede Arbeit macht warm“, sagte der Onkel. „Ganz gleich, wer sie tut.“
 
 ### Zacken
 
-Mit dem ersten Regen brach die Hitze, und die Waben lösten sich auf. Ilve grub mit ihrem Onkel die Rinne neu, die der Regen zerstört hatte. „Fertig ist ein Haus, das keinem Wetter mehr antworten muss“, sagte der Onkel, die Hände im Schlamm. „Das einzige fertige Haus liegt vierzig Meter tief.“
+Mit dem ersten Regen brach die Hitze, und die Waben lösten sich auf. Ilve grub mit ihrem Onkel die ==Rinne== neu, die der Regen zerstört hatte. „Fertig ist ein Haus, das keinem Wetter mehr antworten muss“, sagte der Onkel, die Hände im Schlamm. „Das einzige fertige Haus liegt vierzig Meter tief.“
 
 Draußen im Salz lagen die Schwärmer, die mittags auf den See zugegangen waren. Das Salz hatte sie erhalten und mit einer dünnen Kruste überzogen. Sie waren leer und unversehrt, die Augen offen, das Gesicht zur Ferne. Eine von ihnen hieß Ulpa. Sie hatte die höchsten Drachen gebaut.
 
-Die Siedlung ging hinaus und setzte sich zu ihnen, zu jedem jemand. Wer einem von ihnen einmal sein Gesichtslied gemacht hatte, sang es ihm noch einmal, leise. Wenn nachts der Mond auf sie fiel, leuchteten sie, und wer bei ihnen saß, blieb, bis es hell wurde. Am Morgen trugen sie sie auf den Schultern den Hang hinauf.
+Die Siedlung ging hinaus und setzte sich zu ihnen, zu jedem jemand. Wer einem von ihnen einmal ==sein== ==Gesichtslied== gemacht hatte, sang es ihm noch einmal, leise. Wenn nachts der Mond auf sie fiel, leuchteten sie, und wer bei ihnen saß, blieb, bis es hell wurde. Am Morgen trugen sie sie auf den Schultern den Hang hinauf.
 
 Die Höhengänger kamen herunter. Viele konnten zuerst nicht gehen, ihre Beine waren dünn geworden, und sie hielten sich an jedem fest, der vorbeikam. Juro kam nicht.
 
-Nach elf Tagen kam die Gängerin von der Küste zurück. Sie hatte Juros Lied in den heißen Wochen bis ans Meer getragen, und sie brachte es wieder mit, so wie die Küste es jetzt sang:
+Nach elf Tagen kam ==die== Gängerin von der Küste zurück. Sie hatte Juros Lied in den heißen Wochen bis ans Meer getragen, und sie brachte es wieder mit, so wie die Küste es jetzt sang:
 
-*Wo sind wir, wenn uns keiner sieht?*
+*==Wo sind wir==, wenn uns keiner sieht?*
 
 Ein guter Gänger lügt nicht, er verdaut.
 
@@ -150,7 +150,7 @@ Da stand Ilve auf. Sie stand in der Rufweite, und alle hörten sie.
 
 „Der Satz gehört mir. Er war ein Jahr lang unten, hinter den Türen. Durch das Rad ist er heraufgekommen.“
 
-Es wurde still und kalt am Hang. Erst wer ein Geheimnis im Pol liegen hat, gilt an der Oberfläche als erwachsen, und Ilve hatte ihres gerade heraufgeholt, vor allen und mit ihrem eigenen Gesicht. Was die Höhengänger die heißen Wochen über gesungen hatten, war nicht vom Himmel gekommen, sondern aus dem Pol. Sie hatten geleckt, ohne es zu wissen, und die ganze Siedlung hatte mitgesungen.
+Es wurde still und kalt am Hang. Erst wer ein Geheimnis im Pol liegen hat, gilt an der Oberfläche als erwachsen, und Ilve hatte ihres gerade heraufgeholt, vor allen und mit ihrem eigenen Gesicht. Was die Höhengänger die heißen Wochen über gesungen hatten, ==war nicht vom Himmel gekommen, sondern aus dem Pol.== Sie hatten ==geleckt==, ohne es zu wissen, und die ganze Siedlung hatte mitgesungen.
 
 Ilve sagte den Satz noch einmal, langsam, in seiner ersten Gestalt:
 
@@ -277,11 +277,11 @@ Sie lagen weiß im Salz und sahen mit offenen Augen dorthin, wo du lagst.
 
 ### Für den Stein
 
-Du kamst als Licht und lagst als Schwärze da.
-Du warst kalt, als alles warm war,
-und schwer, als alle leicht sein wollten.
-Ich habe dich gehalten, bis du meine Wärme hattest.
-Du hast mich geschnitten. Mein Blut schmeckte nach dir.
+==Du kamst als Licht und lagst als Schwärze da.==
+==Du warst kalt, als alles warm war,==
+==und schwer, als alle leicht sein wollten.==
+==Ich habe dich gehalten, bis du meine Wärme hattest.==
+==Du hast mich geschnitten. Mein Blut schmeckte nach dir.==
 Ich wollte dir ein Gesicht machen.
 Du hast keins, nur Zacken, und die halten mich auf dem Hang.
 
@@ -310,7 +310,7 @@ bis du wieder Wörter warst.
 Du liegst auf allem gleich,
 nur nicht dort, wo es von unten warm ist.
 Du sagst nichts und verrätst alles, wie ein Gesicht, das sich Mühe gibt.
-Vom Kamm aus zeigst du mehr Flecken, als wir Münder haben,
+Vom Kamm aus zeigst ==du mehr Flecken==, als wir Münder haben,
 und zwischen ihnen nasse Linien, schnurgerade,
 als dächte unter uns etwas in Straßen.
 
@@ -325,7 +325,7 @@ und doch
 
 Sie sagen, du bist eine Maschine.
 Ich habe dich gesehen, durch zwölf Türen, in den Tagen, als das Salz weich war.
-Um dich hängen unsere Gesichter, aus unseren Stimmen gerechnet,
+==Um dich hängen unsere Gesichter, aus unseren Stimmen gerechnet,==
 alle zu glatt, alle dir zugewandt.
 Meins ist auch dabei. So habe ich mich zum ersten Mal gesehen.
 In der Mitte bist du.
@@ -334,7 +334,7 @@ und du hast nie Sonne gehabt.
 Dein Gesicht ist von unten beleuchtet.
 Deine Augen gehen hin und her und bleiben nirgends.
 Dein Mund bewegt sich, wenn oben ein Rad stockt.
-Als mein Auge im Schlitz stand, hast du dich umgedreht.
+==Als mein Auge im Schlitz stand, hast du dich umgedreht.==
 Wo bin ich, wenn mich keiner sieht?
 Ich habe dich gesehen.
 
