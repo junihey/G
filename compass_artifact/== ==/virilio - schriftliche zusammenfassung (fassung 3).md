@@ -73,7 +73,7 @@ Sieben Autoren geben die Blickwinkel vor, unter denen die Räume gelesen werden.
 
 Die Arbeit folgt der These von außen nach innen. Teil 1 zeigt die **Welt**, die bestellt wird, und das Ende der Geografie. Teil 2 zeigt die **Stadt**, die ihre Tore verliert, von Benjamins Passage bis zum Flughafen. Teil 3 geht in den **Bunker**, erst als Abschirmung, dann als Übertragung: Fenster, Bildschirm, Kino und die vernetzte Wohnung. Teil 4 erreicht den **Körper**, erst als Projektion in den Kapseln von Pichler, Haus-Rucker-Co und Absalon, dann als Überlagerung im rasenden Stillstand. Teil 5 führt in die **Unterwelt** des eigenen Bildes: Spiegel, Projektion und Versteck. Teil 6 stellt die These der Rezeption und Kritik gegenüber. Teil 7 kehrt die Richtung um: Er liest Virilios Unfall als Wunde, die eine Heilkraft aufruft, und geht die Stufen der These rückwärts: vom selbst gebildeten Bild über das bewegliche Denken und Steiners Dreischritt in den Körper mit seinen zwölf Sinnen, zur gewählten Hülle und zum anderen Menschen. So führt er zu einer Tat, die nach außen setzt, was nach innen gezogen wurde.
 
-==~~Vorgehen und Auf au zusammebringen bzw. Inhaltsverzeichnis~~==
+==~~Vorgehen und Aufbau zusammebringen bzw. Inhaltsverzeichnis~~==
 
 ---
 
