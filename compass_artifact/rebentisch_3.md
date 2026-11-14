@@ -28,6 +28,7 @@ Stand 2026-11-13. **Gliederung und Andockstellen, kein Fließtext.**
 - Im Mittelpunkt steht Juliane Rebentisch, *Theorien der Gegenwartskunst zur Einführung*.
 - Fünf Quellen aus ihrem Literaturverzeichnis: Eco, Fried, Bishop, Rancière, Deleuze.
 	- vier liegen in `zaehlen\quellen\scans\rebentisch\5 quellen\`, Deleuze fehlt dort
+	- ~~==Was ist aus Adorno oder anderen Quellen aus Rebentisch_1 und rebentisch_2 geworden==~~
 - Jede Quelle bekommt drei Schritte:
 	- die Quelle selbst
 	- Rebentischs Verwendung der Quelle, kritisch gelesen
@@ -39,7 +40,7 @@ Stand 2026-11-13. **Gliederung und Andockstellen, kein Fließtext.**
 - Schreibregel: ästhetische Begriffe überall einflechten und als bekannt voraussetzen. Nur erklären, wo der Text sie erweitert. (N)
 	- produktionsästhetisch, rezeptionsästhetisch
 	- ästhetische Erfahrung
-
+	- ~~==Weitere aus Rebentisch heraussuchen==~~
 ---
 # Frage und These
 ## Forschungsfrage
