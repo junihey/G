@@ -2,13 +2,13 @@
 - Frage nach der menschlichen Selbstbestimmung innerhalb technisch erzeugter Erfahrungswelten
 	- Was geschieht mit ästhetischer Erfahrung, Wahrnehmung und menschlicher Freiheit, wenn der Mensch zunehmend durch technische Medien mit seiner Umwelt in Beziehung tritt?
 		- Autonomie/Fremdbestimmung und Mensch/Maschine
-		- digitaler Raum als offenes Kunstwerk S. 27–40
-			- Entgrenzung? S. 93–105 Adornos Begriff der Verfransung
+		- ==digitaler Raum als offenes Kunstwerk S. 27–40==
+			- ==Entgrenzung? S. 93–105 Adornos Begriff der Verfransung==
 			- Was geschieht mit der Kunst, wenn Architektur, Film, Klang, Programmierung und körperliche Erfahrung zu einer einzigen Umgebung verschmelzen?
 		- Ist ästhetische Erfahrung frei oder kann sie auch durch technisches System vorgegeben werden? S. 62–63
 			- vorprogrammierte Handlungsfähigkeit?
 			- unfreiwillige Aktivität
-		- Machen technische Medien Wirklichkeit erfahrbar, oder erzeugen sie eine Distanz zu ihr?
+		- ==Machen technische Medien Wirklichkeit erfahrbar, oder erzeugen sie eine Distanz zu ihr?== ~~==Verbindung zur Reflexionsfähigkeit==~~
 - Kann eine durch Maschinen vermittelte ästhetische Erfahrung eine Form menschlicher Freiheit sein?
 - Ist der Mensch in einer digitalen Kunstwelt frei, weil er mit ihr interagieren kann – oder erst dann, wenn er die Bedingungen dieser Interaktion zum Gegenstand seiner eigenen Wahrnehmung und Reflexion machen kann?
 - Rebentisch: Sie hinterfragt, ob die aktive Beteiligung eines Publikums an einem Kunstwerk bereits als ästhetische oder politische Emanzipation verstanden werden darf?
@@ -20,7 +20,7 @@
 # Eigener Hintergrund
 - Virilio untersucht, wie technische Beschleunigung und Übertragung körperliche Bewegung teilweise ersetzen und die menschliche Wahrnehmung verändern.
 - Rebentisch beschäftigt sich dagegen mit der Frage, wie sich Kunst, Wahrnehmung und ästhetische Erfahrung verändern, wenn die Grenzen zwischen Kunstformen, Medien, Werk und Betrachter durchlässig werden.
-- Rudolf Steiner eröffnet eine dritte Perspektive: die Frage nach dem Verhältnis von technischem Denken, Bewusstsein, geistiger Entwicklung und menschlicher Freiheit.
+- Rudolf Steiner eröffnet eine dritte Perspektive: die Frage nach dem Verhältnis von ==technischem Denken, Bewusstsein, geistiger Entwicklung und menschlicher Freiheit.==
 ## Steiner
 
 > [!NOTE]- Drei Werke
@@ -105,7 +105,7 @@
 
 #### ggf. am Ende
 - In Die Philosophie der Freiheit (1894) geht es bei Steiner nicht bloß um die Fähigkeit, über das eigene Handeln nachzudenken. Zentral sind vielmehr die Rolle des intuitiven Denkens, der bewussten Handlungsmotive und der moralischen Phantasie.
-- Virilio problematisiert die Veränderung menschlicher Wahrnehmung durch Technik; Steiner fragt nach den Möglichkeiten einer bewussten geistigen Tätigkeit im Verhältnis zur technischen Welt.
+- Virilio problematisiert die Veränderung menschlicher Wahrnehmung durch Technik; Steiner fragt nach den Möglichkeiten einer ==bewussten geistigen Tätigkeit im Verhältnis zur technischen Welt==.
 
 > [!NOTE]- Unterschied selbstbestimmtes Handeln und Durchschauen einer Handlung bei Rebentisch
 > 
@@ -610,7 +610,7 @@
 ## Forschungsfrage
 - Inwiefern ermöglichen digitale, interaktive Kunstwerke eine selbstbestimmte ästhetische Erfahrung, wenn die möglichen Handlungen des Betrachters bereits technisch vorstrukturiert sind?
 ## Arbeitsthese
-- Die Freiheit des Betrachters besteht nicht notwendig in der uneingeschränkten Kontrolle über ein digitales Kunstwerk. Sie kann vielmehr in der reflektierenden Auseinandersetzung mit den vorgegebenen Möglichkeiten, Grenzen und Widersprüchen des technischen Systems entstehen.
+- ==Die Freiheit des Betrachters besteht nicht notwendig in der uneingeschränkten Kontrolle über ein digitales Kunstwerk. Sie kann vielmehr in der reflektierenden Auseinandersetzung mit den vorgegebenen Möglichkeiten, Grenzen und Widersprüchen des technischen Systems entstehen.==
 - Das ist besonders geeignet, weil du hier vier unterschiedliche Begriffe von Aktivität untersuchen kannst: körperliche Bewegung, technische Interaktion, ästhetische Reflexion und bewusstes Handeln.
 ## Anreicherung der Themen
 ### Körperliche Aktivität - Bewegt sich der Zuschauer?
@@ -626,7 +626,9 @@ Kann ein medial erzeugter Raum eine eigenständige ästhetische Erfahrungswelt e
 
 Arbeitsthese
 
-Virtuelle und intermediale Kunstwerke können die Beziehung zwischen Körper, Bild und Raum neu organisieren. Entscheidend ist nicht, ob sie eine physische Wirklichkeit ersetzen, sondern welche Formen von Wahrnehmung und Reflexion durch ihre mediale Struktur ermöglicht werden.
+==Virtuelle und intermediale Kunstwerke können die Beziehung zwischen Körper, Bild und Raum neu organisieren. Entscheidend ist nicht, ob sie eine physische Wirklichkeit ersetzen, sondern welche Formen von Wahrnehmung und Reflexion durch ihre mediale Struktur ermöglicht werden.==
+
+~~==Aus Virilio schöpfen==~~
 
 Hauptliteratur: Rebentisch S. 25–57 und 93–105; Eco; Adorno; Benjamin; Virilio, Rasender Stillstand.
 
@@ -636,7 +638,7 @@ Dieses Thema bietet die engste Verbindung zu deiner bisherigen Arbeit im Archite
 
 Forschungsfrage
 
-Welche Rolle spielt bewusstes Denken für menschliche Freiheit, wenn Wahrnehmung und Handlung zunehmend durch technische Systeme vermittelt werden?
+==Welche Rolle spielt bewusstes Denken für menschliche Freiheit, wenn Wahrnehmung und Handlung zunehmend durch technische Systeme vermittelt werden?==
 
 Arbeitsthese
 
@@ -655,7 +657,7 @@ Besonders geeignet für Virilios Rasender Stillstand. Der Körper wird von seine
 
 ![Nam June Paik’s TV Buddhas – His best-known work](https://images.openai.com/static-rsc-4/khjJUBw1af9tnaI1g6sEjJBJj_u9yQBsHqh57wccoqTPX1hJDWW0vdD2UALK4zMrjFEg64LA7gwSQYP4uiqNG8vMOJZsLeiWx2S9ZuAme9xiuErdKovACx1LDXT2AQoKQKo4XTExOU-N7ycZK0Y0oTaIuWjvcYPcedQQOBh-OwY?purpose=inline)
 
-#### Nam June Paik – TV Buddha, 1974
+#### ==Nam June Paik – TV Buddha, 1974==
 
 Selbstbild · Meditation · Technik
 
@@ -700,14 +702,14 @@ Damit wäre nicht entschieden, dass digitale Kunst Freiheit automatisch ermögli
 
 Selbstbestimmung: Freiheit muss von bloßer Beteiligung unterschieden werden und verlangt eine genauere philosophische Bestimmung.
 
-Eine entscheidende Präzisierung: Auch die reflektierte Wahrnehmung eines Kunstwerks ist nicht automatisch mit menschlicher Freiheit gleichzusetzen. Sie könnte aber eine Voraussetzung oder einen Erfahrungsraum für Selbstbestimmung bilden. Genau das solltest du in der Arbeit untersuchen, statt es schon vorauszusetzen.
+Eine entscheidende Präzisierung: Auch die reflektierte Wahrnehmung eines Kunstwerks ist nicht automatisch mit menschlicher Freiheit gleichzusetzen. Sie könnte aber eine ==Voraussetzung oder einen Erfahrungsraum für Selbstbestimmung bilden==. Genau das solltest du in der Arbeit untersuchen, statt es schon vorauszusetzen.
 ### Zugespitzte Hauptthese
 
 > Die menschliche Freiheit innerhalb digitaler Erfahrungsräume besteht nicht notwendig darin, technische Systeme vollständig beherrschen zu können. Sie kann vielmehr dort entstehen, wo die ästhetische Erfahrung die Bedingungen der eigenen Wahrnehmung und Handlung reflektierbar macht. Während Paul Virilio die Gefahr einer technisch vermittelten Immobilisierung des Menschen beschreibt, eröffnen Juliane Rebentisch, Umberto Eco und Jacques Rancière die Möglichkeit, mediale Erfahrungen als aktive Prozesse der Interpretation und Reflexion zu begreifen. Rudolf Steiners Freiheitsphilosophie kann diesen Vergleich um die Frage nach bewusstem, selbstbestimmtem Handeln erweitern.
 
 ODER
 
-> Digitale Kunstwerke ermöglichen dem Zuschauer Handlungsmöglichkeiten, deren technische Bedingungen er nicht vollständig selbst bestimmt. Die daraus entstehende ästhetische Erfahrung ist jedoch nicht notwendig auf die Ausführung eines vorgegebenen Programms reduzierbar. Im Anschluss an Eco, Rancière und Rebentisch lässt sich untersuchen, ob gerade die reflexive Auseinandersetzung mit dem Verhältnis von technischer Vorgabe und eigener Wahrnehmung einen Erfahrungsraum für Selbstbestimmung eröffnet. Mit Steiners Freiheitsphilosophie ist darüber hinaus zu prüfen, inwiefern solche Reflexion bereits als Ausdruck freien Handelns gelten kann.
+> Digitale Kunstwerke ermöglichen dem Zuschauer Handlungsmöglichkeiten, deren technische Bedingungen er nicht vollständig selbst bestimmt. Die daraus ==entstehende ästhetische Erfahrung ist jedoch nicht notwendig auf die Ausführung eines vorgegebenen Programms reduzierbar.== Im Anschluss an Eco, Rancière und Rebentisch lässt sich untersuchen, ob gerade die reflexive Auseinandersetzung mit dem Verhältnis von technischer Vorgabe und eigener Wahrnehmung einen Erfahrungsraum für Selbstbestimmung eröffnet. Mit Steiners Freiheitsphilosophie ist darüber hinaus zu prüfen, inwiefern solche Reflexion bereits als Ausdruck freien Handelns gelten kann.
 
 > [!NOTE]- ## Vorschlag verfeinerte Gliederung
 > # Die Freiheit des Zuschauers in der Maschine

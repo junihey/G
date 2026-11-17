@@ -54,7 +54,7 @@ Stand 2026-11-13. **Gliederung und Andockstellen, kein Fließtext.**
 
 ## Zugespitzte Hauptthese (V)
 > Digitale, interaktive Kunstwerke geben dem Zuschauer Handlungen vor, deren Bedingungen er nicht selbst bestimmt. Frei wird er nicht durch die Auswahl, die sie ihm lassen, sondern durch die ästhetische Erfahrung, in der sich das Werk seiner Verfügung entzieht und ihm die Bedingungen seines Wahrnehmens und Handelns reflektierbar macht. So weit reicht Rebentisch. Diese Reflexion ist noch keine freie Handlung. Sie trägt dazu bei, wenn der Zuschauer aus ihr ein eigenes Motiv gewinnt und zum Gestalter wird. Als Gegenstand dieses Schritts lässt sich eine erweiterte Maschine denken, die keine Auswahl anbietet, sondern eine Fähigkeit verlangt.
-
+~~==Ich dachte die These sollte einen eigenen Gesanken bzw. Gedankenkette darstellen. Also nicht eins zu eins Rebentisch wiederholen, sondern sie nur als Grubdverständnis für die These voraussetzen==~~
 ## Die Leitfrage
 - Ist es bereits ein Schritt zur Freiheit, die eigene Fremdbestimmung zu erkennen? Oder beginnt Freiheit erst dort, wo wir aus dieser Erkenntnis heraus unsere eigenen Handlungsmotive bestimmen? (aus `rebentisch.md`)
 
@@ -68,12 +68,12 @@ Stand 2026-11-13. **Gliederung und Andockstellen, kein Fließtext.**
 
 Die vier Arten von Aktivität stehen schon in `rebentisch.md`. Hier bekommt jede ihre Maschine, ihre Freiheit und ihren Autor. (V)
 
-|Stufe|Tätigkeit des Zuschauers|Maschine|Freiheit|Autor|Fall|
-|---|---|---|---|---|---|
-|1|körperliche Bewegung, bedienen|enge Maschine|keine, der Körper wird stillgestellt|Virilio, Deleuze|–|
-|2|technische Interaktion|interaktive Maschine|Freiheit der Wahl|Eco, Bishop|*Body Movies*|
-|3|ästhetische Reflexion|die Maschine, die ihre Konstruktion zeigt|Freiheit zum Objekt|Rebentisch, Fried, Rancière|Eliasson|
-|4|bewusstes Handeln aus eigenem Motiv|erweiterte Maschine, als Gedankenexperiment|Freiheit im Sinne Steiners|Steiner|Musikinstrument als Bild|
+| Stufe | Tätigkeit des Zuschauers            | Maschine                                    | Freiheit                             | Autor                       | Fall                     |
+| ----- | ----------------------------------- | ------------------------------------------- | ------------------------------------ | --------------------------- | ------------------------ |
+| 1     | körperliche Bewegung, bedienen      | enge Maschine                               | keine, der Körper wird stillgestellt | Virilio, Deleuze            | ==–==                    |
+| 2     | technische Interaktion              | interaktive Maschine                        | Freiheit der Wahl                    | Eco, Bishop                 | *Body Movies*            |
+| 3     | ästhetische Reflexion               | die Maschine, die ihre Konstruktion zeigt   | Freiheit zum Objekt                  | Rebentisch, Fried, Rancière | Eliasson                 |
+| 4     | bewusstes Handeln aus eigenem Motiv | erweiterte Maschine, als Gedankenexperiment | Freiheit im Sinne Steiners           | Steiner                     | Musikinstrument als Bild |
 
 - Stufe 2 heißt in `rebentisch.md`: Ich handle innerhalb der Möglichkeiten des Systems.
 - Stufe 3 heißt dort: Ich durchschaue die Bedingungen meiner Handlung.
@@ -83,15 +83,15 @@ Die vier Arten von Aktivität stehen schon in `rebentisch.md`. Hier bekommt jede
 ---
 # Dramaturgie
 
-|Kapitel|Inhalt|Stufe|Quelle|Seiten|
-|---|---|---|---|---|
-|1|Einleitung: Frage, These, die Lücke bei Rebentisch|–|–|1|
-|2|Die enge Maschine: Verfügung und Kontrolle|1|Deleuze, Virilio|2|
-|3|Das offene Kunstwerk: Freiheit zum Objekt|Maßstab|Eco, Fried|2|
-|4|Partizipation: die interaktive Maschine|2|Bishop, Rancière|2|
-|5|Zwei Fälle: *Body Movies* und Eliassons Wasserfälle|2 und 3|Rebentisch selbst|2|
-|6|Von der Reflexion zur freien Handlung, die erweiterte Maschine|3 nach 4|Steiner|3|
-|7|Fazit und Ausblick|–|–|1|
+| Kapitel | Inhalt                                                         | Stufe       | Quelle            | Seiten |
+| ------- | -------------------------------------------------------------- | ----------- | ----------------- | ------ |
+| 1       | Einleitung: Frage, These, die Lücke bei Rebentisch             | –           | –                 | 1      |
+| 2       | Die enge Maschine: Verfügung und Kontrolle                     | 1           | Deleuze, Virilio  | 2      |
+| 3       | Das offene Kunstwerk: Freiheit zum Objekt                      | ==Maßstab== | Eco, Fried        | 2      |
+| 4       | Partizipation: die interaktive Maschine                        | 2           | Bishop, Rancière  | 2      |
+| 5       | Zwei Fälle: *Body Movies* und Eliassons Wasserfälle            | 2 und 3     | Rebentisch selbst | 2      |
+| 6       | Von der Reflexion zur freien Handlung, die erweiterte Maschine | 3 nach 4    | Steiner           | 3      |
+| 7       | Fazit und Ausblick                                             | –           | –                 | 1      |
 
 Die Kapitel folgen der verfeinerten Gliederung in `rebentisch.md`. Kapitel 4 gibt eine Seite an Kapitel 6 ab. (V)
 
@@ -140,7 +140,7 @@ Die Tabelle rechnet mit 13 Seiten. Die vorläufigen Stücke kosten etwa andertha
 	- Der Text steht nicht in Rebentischs Verzeichnis. Dort steht nur „Der Ursprung des Kunstwerkes“, einmal und kritisch zitiert. (R)
 	- deshalb kurz halten
 - Virilio: Immobilisierung des Körpers, wie in `rebentisch.md`
-	- Beobachtungen dazu: Handynutzer wirken befriedigt, abwesend, ruhig. Unruhe entsteht, wenn die Maschine stehen bleibt, etwa der Bus an der Kreuzung. Die Angst vor der Ruhe der Festung. (N)
+	- Beobachtungen dazu: Handynutzer wirken befriedigt, abwesend, ruhig. Unruhe entsteht, wenn die Maschine stehen bleibt, etwa der Bus an der Kreuzung. Die Angst vor der Ruhe der Festung. (N) ~~==wie bei Notizen allgemein noch Belege in der Literstur finden?==~~
 	- **[vorläufig]** Fußnote, das Leib-Konzept: Steiner unterscheidet physischen Leib, ätherischen Leib, astralischen Leib und Ich, jeden mit seiner eigenen Umwelt. Damit lässt sich sagen, welche Schicht der Wahrnehmung die Maschine anspricht und welche sie stillstellt. *Die Schwelle der geistigen Welt*, GA 17, S. 29. (belegt)
 		- „Umgekehrt“ steht dort nicht. Steiner spricht vom „ätherischen Spiegelbild“ des astralischen Leibes, und das gewöhnliche Ich sei nur die „Spiegelung des wahren Ich“. GA 17, S. 41. Der Astralleib wirke „gegen die Gesetzmäßigkeit“, die dem Menschen zukommt. (belegt)
 		- Die Spiegelung passt zu Symmetrie, Schritt 3. (V)
@@ -164,15 +164,15 @@ Die Tabelle rechnet mit 13 Seiten. Die vorläufigen Stücke kosten etwa andertha
 - Rebentischs Verwendung, Buchseiten 30–39
 	- sie übernimmt die semantische Unausschöpfbarkeit (R)
 	- sie lehnt die Design-Beispiele ab: „Der Sessel bleibt bei aller Flexibilität der Form dennoch Sessel“. Sein Sinn liegt im Gebrauch fest. (R)
-	- der Gebrauchsgegenstand hat „als Gegenstand des Gebrauchs“ keinen Rätselcharakter (über Adorno) (R)
-	- gegen Ecos „Freiheit der Wahl – als wäre das Kunstwerk bloß ein weiterer Gegenstand unseres Konsums“ setzt sie die „Freiheit zum Objekt“ (Hegel, über Adorno, Ästhetische Theorie S. 33) (R)
+	- der Gebrauchsgegenstand hat „als Gegenstand des Gebrauchs“ keinen Rätselcharakter (über Adorno) (R) ~~==ggf. Verschiedene Maschinen beispielhaft anführen und nach rebentisch bzw. Den hier entwickelten Maschinengewehren, charakterisieren und klassifizieren==~~
+	- gegen Ecos „Freiheit der Wahl – als wäre das Kunstwerk bloß ein weiterer Gegenstand unseres Konsums“ setzt sie die „==Freiheit zum Objekt==“ (Hegel, über Adorno, Ästhetische Theorie S. 33) (R) ~~==Versöhnung und Bewahrung des Nicht-Identischen als Wahrnehmubg unterschiedlicher Leiber gegenüberstellen. Ich ist nicht identisch, Ätherleib lässt sich versöhnen?==~~==~~Hinführen auf ätherische Kräfte zur Bedienung moralischer Technik und resonanter Maschinen?~~==
 - Die Bedingungen der Reflexion (N), mit ihren Stellen
-	- Ferne: Benjamins Aura, „einmalige Erscheinung einer Ferne, so nahe sie sein mag“, zitiert über Adorno, Buchseite 204–205 (R)
+	- Ferne: Benjamins Aura, „einmalige Erscheinung einer Ferne, so nahe sie sein mag“, zitiert über Adorno, Buchseite 204–205 (R) ~~==Astralleib?==~~
 	- Fremde, die mit Intimität einhergeht: „Die Fremdheit der Kunst ist dann eine Implikation der intimen Auseinandersetzung mit ihr“, Buchseite 36–37 (R)
 	- gegen die Aneignung: Man kann der Kunst „nur im Modus der Distanz nah sein“ (R)
 	- Urteilskraft: Sie kommt nicht im bestimmenden Urteil zur Ruhe und „wendet sich reflexiv auf sich zurück“. Das Subjekt „erfährt sich in seinen Leistungen“. Buchseite 46–47. Bei Kant selbst heißt sie „reflektierende Urteilskraft“. (R)
-		- **[vorläufig]** Fußnote, GA 128: Steiner beschreibt eine Übung, in der die Seele sich in scharfer Konzentration auf Sinnbilder von den äußeren Eindrücken abzieht. Dadurch werde der Nerv „befreit … von den gewöhnlichen Erlebnissen des Ich“. Die Parallele: Auch hier wendet sich die Tätigkeit auf sich selbst zurück. *Eine okkulte Physiologie*, GA 128, Prag, 21.3.1911, S. 43. (belegt)
-		- Eine „Auflösung von Symbolik und Sprache“ steht nicht in GA 128, sondern in GA 13, S. 320 und 359–360. Die Materialliste steht in den Beiträgen zur GA, Heft 107. Sie steht in *Die Geheimwissenschaft im Umriß*, GA 13, Kapitel „Die Erkenntnis der höheren Welten“. (belegt)
+		- **[vorläufig]** Fußnote, GA 128: Steiner beschreibt eine Übung, in der die Seele sich in scharfer Konzentration auf Sinnbilder von den äußeren Eindrücken abzieht. Dadurch werde der Nerv „befreit … von den gewöhnlichen Erlebnissen des Ich“. Die Parallele: Auch hier wendet sich die Tätigkeit auf sich selbst zurück. *Eine okkulte Physiologie*, GA 128, Prag, 21.3.1911, S. 43. (belegt) ~~==Steiner hat hier viele Methoden die unteren Leiber auszublenden, um die höheren Leiber und ihre Welten wahrzunehmen auch inGA 17==~~
+		- Eine „Auflösung von Symbolik und Sprache“ steht nicht in GA 128, sondern in GA 13, S. 320 und 359–360. Die Materialliste steht in den Beiträgen zur GA, Heft 107. Sie steht in *Die Geheimwissenschaft im Umriß*, GA 13, Kapitel „Die Erkenntnis der höheren Welten“. (belegt) ~~==nochmal auf anderen PC suchen in anderen GAs==~~
 			- Auslöschen der Bilder, S. 320: Die Seele muss erkennen, dass die Imaginationen zunächst „die Widerspiegelung ihres eigenen … Wesens“ sind, und sie muss sie „jederzeit … wieder aus dem Bewußtsein entfernen, auslöschen“ können. „Die Seele muß innerhalb dieser Bilder völlig frei und vollbesonnen walten können.“ Wer das nicht kann, gleicht einem Auge, das „von demselben nicht mehr wegschauen könnte“.
 			- Auflösung des Symbols, S. 359–360: Beim Sinnbild des Rosenkreuzes soll man Kreuz und Rosen „ganz verschwinden … lassen und nur in der Seele jene geistige Tätigkeit … behalten, welche diese Teile zusammengesetzt hat“. „Ich will nunmehr ganz innerlich leben in meiner eigenen Tätigkeit, welche das Bild geschaffen hat.“ Das führt zur Inspiration.
 			- Sprache, S. 353: Inspiration ist „vergleichsweise … das ‚Lesen der verborgenen Schrift‘“. Ein Wort wirkt „durch den Zusammenklang der Laute“, nicht durch Anstoß von einem Laut zum nächsten.
@@ -237,16 +237,16 @@ Die Tabelle rechnet mit 13 Seiten. Die vorläufigen Stücke kosten etwa andertha
 
 ### Rancière – Der emanzipierte Zuschauer
 - Die Quelle selbst
-	- Zuschauen ist nicht Passivität. Der Zuschauer vergleicht, deutet, verbindet.
+	- Zuschauen ist nicht Passivität. Der Zuschauer vergleicht, deutet, verbindet. ~~==Handelnde Tätigkeit ==~~
 	- Das Werk ist ein „third thing that is owned by no one, whose meaning is owned by no one, but which subsists between them“, zwischen Künstler und Zuschauer. Kap. 1. (belegt aus dem PDF, Verso 2009)
 	- Es gibt nur „individuals plotting their own paths in the forest of things, acts and signs“. Kap. 1. (belegt)
 - Rebentischs Verwendung, Buchseiten 84–89
 	- sie stimmt zu, dass Zuschauen und Passivität nicht gleichzusetzen sind (R)
-	- ihr Einwand: Rancière argumentiert pädagogisch, nicht ästhetisch. Seine Distanz ist „nicht die ästhetische Distanz“. Buchseite 86–87. (R)
+	- ihr Einwand: Rancière argumentiert pädagogisch, nicht ästhetisch. Seine Distanz ist „nicht die ästhetische Distanz“. Buchseite 86–87. (R) ~~==was ist der unterschied==~~
 - Kritik (V)
 	- Sie liest nur das erste Kapitel, S. 11–34. Im selben Buch hat Rancière ein Kapitel „Aesthetic Separation, Aesthetic Community“ (Kap. 3). Dort beschreibt er eine Kunst, die einen Ort der Einsamkeit schafft, „being together apart“, und eine „aesthetic community“ als „sensus communis“. Das ist eine ästhetische Distanz.
 	- Ihr Einwand trifft also das erste Kapitel, nicht Rancière. Die Arbeit kann das zeigen und Rancière gegen Rebentisch stärker machen.
-	- Das „dritte Ding, das niemandem gehört“ ist ein Bild für die erweiterte Maschine: Sie gehört weder dem Konstrukteur noch dem Nutzer.
+	- Das „dritte Ding, das niemandem gehört“ ist ein Bild für die erweiterte Maschine: Sie gehört weder dem Konstrukteur noch dem Nutzer. ~~==Ist die Resonanzen Maschine aber nicht trotzdem auf die moralische Gesinnung des Menschen angepasst bzw. Prüft dessen Fähigkeiten?==~~
 - Weiterführung
 	- Rancière trägt den Schritt von Stufe 2 zu Stufe 3: Wer nur schaut, kann freier sein als der, der mitmacht.
 	- vom Zuschauer zum Gestalter: Die rezeptionsästhetische Frage bekommt eine produktionsästhetische Seite. (N)
@@ -256,7 +256,7 @@ Die Tabelle rechnet mit 13 Seiten. Die vorläufigen Stücke kosten etwa andertha
 - Das ist Rebentischs Sessel: Man wählt zwischen ein paar Formen. (V)
 - **[vorläufig]** **KI, zweiter Satz:** Die KI ist durch Sprache von jedem bedienbar. Sie bietet Auswahl, also Freiheit der Wahl. (V)
 
-**Zwischenergebnis:** Die interaktive Maschine gewährt Freiheit der Wahl. Nach Rebentisch ist das noch keine Freiheit der Kunst.
+**Zwischenergebnis:** Die interaktive Maschine gewährt Freiheit der Wahl. Nach Rebentisch ist das noch keine Freiheit der Kunst. ~~==Nochmal genauer wie diese Freiheiten zusammengehören==~~
 
 ## 5 · Zwei Fälle
 Die Fälle stehen für Stufe 2 und Stufe 3. Zusammen zeigen sie: Selbstbestimmte ästhetische Erfahrung hängt nicht an der Interaktion. Damit bleibt die Forschungsfrage, wie sie ist. (V)
@@ -282,7 +282,7 @@ Die Fälle stehen für Stufe 2 und Stufe 3. Zusammen zeigen sie: Selbstbestimmte
 	- Die Maschine wirkt also auf ihre Umgebung zurück, aber ungewollt und als Schaden. Das ist Reziprozität ohne Gestaltung. (V)
 - Die Analyse (V)
 	- Der Zuschauer tut nichts. Nichts antwortet auf ihn. Er steht am Ufer und schaut.
-	- Trotzdem entsteht Reflexion: Das Gerüst zeigt die Konstruktion. Das ist Stufe 3, und Rebentischs Maßstab ist erfüllt.
+	- Trotzdem entsteht Reflexion: Das Gerüst zeigt die Konstruktion. Das ist Stufe 3, und Rebentischs Maßstab ist erfüllt. ~~==Muss zwischen Stufe 2 und 3 nicht deutlich werden, dass es eine physische Handlung und eine geistig-seelische Habdlung ist? Weil die Interaktion vollzieht sich bei Stufe 3 nicht physisch. Und gibt es physische Handlungen mit Maschinen die trotzdem der Stufe 3 entsprechen? Ich sehe gerade dass du bereits in den nächsten Zeilen Unterscheidungen triffst==~~
 	- als Maschine bleibt das Werk eng: Die Pumpe verfügt über das Wasser und hebt es gegen sein Gefälle.
 	- nach deinen Kriterien: Offenheit und Transparenz ja, Reziprozität nein.
 	- Gegenstück in einem Absatz: die Flowform. Sie lässt das Wasser in seinem eigenen Rhythmus schwingen. (N)
@@ -301,7 +301,7 @@ Die Fälle stehen für Stufe 2 und Stufe 3. Zusammen zeigen sie: Selbstbestimmte
 	- Freies Handeln: „Ich handle aus einer individuell erfassten moralischen Intuition und gestalte bewusst ihre Verwirklichung.“
 - *Die Philosophie der Freiheit*, GA 4, belegt
 	- moralische Intuition, Kap. IX, S. 110: Auf der höchsten Stufe fallen Triebfeder und Motiv zusammen. Die Handlung ist „keine schablonenmäßige … und auch keine solche, die der Mensch auf äußeren Anstoß hin automatenhaft vollzieht“. Dazu braucht es „die Fähigkeit der moralischen Intuitionen“.
-	- Dort stellt Steiner sich ausdrücklich gegen Kants kategorischen Imperativ: Er sei „der Tod aller individuellen Antriebe des Handelns“. Das betrifft die Arbeit, weil Rebentisch auf Kant baut, wenn auch auf seine Ästhetik. (V)
+	- Dort stellt Steiner sich ausdrücklich gegen Kants kategorischen Imperativ: Er sei „der Tod aller individuellen Antriebe des Handelns“. Das betrifft die Arbeit, weil Rebentisch auf Kant baut, wenn auch auf seine Ästhetik. (V) ~~==verstehe ich nicht ==~~
 	- moralische Phantasie, Kap. XII, S. 136: „Was der freie Geist nötig hat, um seine Ideen zu verwirklichen, … ist also die moralische Phantasie.“ Moralprediger ohne sie „gleichen den Kritikern, die verständig auseinanderzusetzen wissen, wie ein Kunstwerk beschaffen sein soll, selbst aber auch nicht das geringste zustande bringen“.
 	- moralische Technik, Kap. XII, S. 137: die Fähigkeit, „die Welt der Wahrnehmungen umzuformen, ohne ihren naturgesetzlichen Zusammenhang zu durchbrechen“. Sie ist „lernbar, wie Wissenschaft überhaupt lernbar ist“.
 	- Die Handlung „schafft keine Wahrnehmungen, sondern prägt die Wahrnehmungen, die bereits vorhanden sind, um“. S. 136. Das ist die Brücke zur Maschine. (V)
@@ -316,13 +316,13 @@ Die Fälle stehen für Stufe 2 und Stufe 3. Zusammen zeigen sie: Selbstbestimmte
 	- Steiner, GA 12, S. 20: „Im gewöhnlichen Leben hat der Mensch nur eine Intuition, das ist diejenige des ‚Ich‘ selber.“ Das Ich kennt sich nur von innen. (belegt)
 	- Fichte selbst ist für das Zitat am Original zu holen: *Grundlage der gesamten Wissenschaftslehre*, 1794, § 1.
 - Schritt c: Der Zuschauer fragt nicht mehr, was das System mit ihm macht, sondern warum er selbst so handeln will. (aus `rebentisch.md`)
-- Schritt d: Aus der Intuition wird eine Vorstellung, aus der Vorstellung eine Technik. Das dritte Glied heißt bei Steiner wörtlich Technik. Hier wird der Zuschauer zum Gestalter. (N, V)
+- Schritt d: Aus der Intuition wird eine Vorstellung, aus der Vorstellung eine Technik. Das dritte Glied heißt bei Steiner wörtlich Technik. Hier wird der Zuschauer zum Gestalter. (N, V) ~~==könnte eine Intuition und ein Wille zum freien individuellen Handeln mit der dazugehörigen Techbik aber nicht auch bei den waterfalls von elliasson entstehen, also zusätzlich?==~~
 - Die Grenze, mit Rebentisch gelesen (V)
 	- Die ästhetische Erfahrung garantiert diesen Schritt nicht. Deshalb das Wort „beitragen“.
 	- Rebentisch hätte einen Grund, hier anzuhalten: Wer von der Kunst verlangt, dass sie frei macht, verkürzt sie auf eine Funktion. Das wirft sie Bourriaud und Bishop vor.
 	- Die Arbeit behauptet deshalb nicht, dass Kunst frei macht. Sie fragt, an welchem Gegenstand der Schritt möglich wäre.
 
-### 6.3 Das Gedankenexperiment: die erweiterte Maschine
+### 6.3 Das Gedankenexperiment: die erweiterte Maschine ~~==dieser Abschnitt entfernt sich relativ weit von rebentisch und geht tief in Steiner hinein, ich finde es perfekt und wichtig und sollte nicht gekürzt werden, sondern verständlich ausgeführt werden. Dennoch geht es weit von rebentisch weg. Ich habe deshalb überlegt, ob man es als gesonderten Exkurs herausisoöiert und in den Anhang stellt? Oder hast du bessere Ideen, ohne das Gedanken und Tiefe verloren gehen? ==~~
 - Stellung des Experiments
 	- Die erweiterte Maschine ist eine Vorstellung, kein Bauplan. (N)
 	- Halt bei Rebentisch: Kants „ästhetische Idee“, die sie selbst zitiert. Es ist „diejenige Vorstellung der Einbildungskraft, die viel zu denken veranlaßt, ohne daß ihr doch irgendein bestimmter Gedanke, d.i. Begriff, adäquat sein kann“. Kap. I, Anm. 19. (R)
@@ -335,8 +335,8 @@ Die Fälle stehen für Stufe 2 und Stufe 3. Zusammen zeigen sie: Selbstbestimmte
 	- Die Erkenntnis steigt bis zur Intuition auf. Das Handeln steigt von der moralischen Intuition über Phantasie und Technik in die Materie ab. Die Intuition wäre der Wendepunkt, an dem Erkennen zu Handeln wird. (V)
 	- Sind es zwei Begriffe? Befund:
 		- GA 12, S. 20–21: Intuition ist das Erleben der Dinge in der Seele selbst, „man kriecht durch sie in alle Dinge hinein“. Im gewöhnlichen Leben gibt es nur eine Intuition, die des Ich. (belegt)
-		- GA 12, S. 65–66: Die Intuition der Geheimwissenschaft hat „nichts zu tun“ mit dem populären unsicheren „Einfall“. Sie ist „eine hohe Erkenntnisart“. (belegt)
-		- GA 4, S. 66: Intuition ist „für das Denken, was die Beobachtung für die Wahrnehmung ist“. GA 4, S. 102: „Intuition ist das im rein Geistigen verlaufende bewußte Erleben eines rein geistigen Inhaltes.“ (belegt)
+		- GA 12, S. 65–66: Die Intuition der Geheimwissenschaft hat „nichts zu tun“ mit dem populären unsicheren „Einfall“. Sie ist „eine hohe Erkenntnisart“. (belegt) ~~==das muss genauer und konkreter erklärt werden==~~
+		- GA 4, S. 66: Intuition ist „für das Denken, was die Beobachtung für die Wahrnehmung ist“. GA 4, S. 102: „Intuition ist das im rein Geistigen verlaufende bewußte Erleben eines rein geistigen Inhaltes.“ (belegt) ==~~kann man das auch greifbarer machen?~~==
 		- Ergebnis: Beide meinen dasselbe, ein bewusstes Erleben von innen. GA 4 setzt es schon im gewöhnlichen Denken an, GA 12 als Stufe nach Schulung. Die Brücke ist das Ich: In beiden Schriften ist es der Ort, an dem man Intuition ohne Schulung hat. Der Wendepunkt in diesem Abschnitt trägt also, wenn er über das Ich geführt wird. (V)
 	- Inspiration bei Steiner: Sie erkennt die Dinge „den Gesetzen und Verhältnissen nach“ und durchdringt die Imaginationen „als eine ‚geistige Musik‘“. GA 12, S. 65. Das passt zum Klang und zur Resonanz. (belegt, V)
 - Der Begriff
@@ -374,7 +374,7 @@ Die Fälle stehen für Stufe 2 und Stufe 3. Zusammen zeigen sie: Selbstbestimmte
 	- *Du mode d'existence des objets techniques*, 1958; deutsch *Die Existenzweise technischer Objekte*, diaphanes 2012.
 	- Die technische Vollkommenheit einer Maschine steigt nicht mit ihrem Automatismus, sondern mit ihrer Offenheit. Sie behält eine „marge d'indétermination“, einen Spielraum der Unbestimmtheit.
 	- Das Ensemble offener Maschinen setzt den Menschen als ständigen Organisator und als „lebendigen Interpreten“ dieses Spielraums voraus.
-	- Das ist die erweiterte Maschine ohne Anthroposophie: Sie verlangt eine menschliche Fähigkeit, statt sie zu ersetzen. Simondon steht nicht in Rebentischs Verzeichnis. (V)
+	- Das ist die erweiterte Maschine ohne Anthroposophie: ==Sie verlangt eine menschliche Fähigkeit, statt sie zu ersetzen.==~~==Absolut grundlegender Satz==~~ Simondon steht nicht in Rebentischs Verzeichnis. (V)
 - Das Bild: das Musikinstrument (N, V)
 	- nicht von jedem beliebig bedienbar
 	- gibt zurück, was der Spieler hineinträgt
@@ -422,7 +422,7 @@ Die Fälle stehen für Stufe 2 und Stufe 3. Zusammen zeigen sie: Selbstbestimmte
 	- Sie prüft die Gesinnung ihres Nutzers. Das ist Deleuzes Kontrolle. (V)
 	- Der Vergleich ist genau: Deleuzes Karte öffnet die Schranke nur, wenn der Computer die Position erlaubt (S. 261). Steiners Maschine geht nur, wenn das Zeichen von einem Gutgesinnten kommt (GA 172, S. 91–92). Beide Male entscheidet die Maschine über den Zugang. Der Unterschied: Deleuzes Computer liest eine Chiffre, Steiners Maschine eine Fähigkeit. (V)
 	- Wer bestimmt, welche Gesinnung moralisch ist? (N)
-	- Antwort: unterscheiden zwischen einer Maschine, die **prüft**, und einer, die **antwortet**. Die prüfende schließt aus. Die antwortende lässt jeden zu, wie das Instrument. (V, entschieden)
+	- Antwort: unterscheiden zwischen einer Maschine, die **prüft**, und einer, die **antwortet**. Die prüfende schließt aus. Die antwortende lässt jeden zu, wie das Instrument. (V, entschieden) ~~==Liese sich noch neben dem Instrument ein zweites Beispiel finden, welches noch nicht existiert, aber zumindest vorgestellt werden kann, auch wenn es abstrakt ist oder nur charakterisiert, um noch näher an die Resonante Maschine, die moralische Technik und den erweiterten Maschinenbegriff heranzukommen?==~~
 	- Steiner selbst: Frei ist nur das Handeln aus individueller moralischer Intuition, nicht das Befolgen einer fremden Vorschrift. (N)
 - Einwand 2: Resonanz ohne Widerstand ist Bourriaud.
 	- Rebentisch lehnt Harmonie und Antagonismus beide ab und setzt die Distanz. Buchseite 70–71. (R)
@@ -442,10 +442,10 @@ Die Fälle stehen für Stufe 2 und Stufe 3. Zusammen zeigen sie: Selbstbestimmte
 - Unterscheidung von Interaktion, ästhetischer Reflexion und selbstbestimmtem Handeln
 - Was die Arbeit an Rebentisch kritisiert: die feste Grenze zwischen Kunst und Gebrauch, den fehlenden Maschinenbegriff, das Anhalten bei der Reflexion.
 - Was sie von ihr übernimmt: die Freiheit zum Objekt als Maßstab, auch für die Maschine.
-- **[vorläufig]** Ausblick: die Sprache als Urkunst. GA 276, 8.6.1923, S. 80. (belegt)
+- **[vorläufig]** Ausblick: die Sprache als Urkunst. GA 276, 8.6.1923, S. 80. (belegt) ~~==warum hast du das als Ausblick gewählt==~~
 	- Die Sprache stellt etwas in die Welt, ohne dass es eine Funktion haben muss wie bei Handwerk und Design. (N)
 	- Programmieren als Sprache, die in die Materie setzt. KI als erweitertes Sprachfeld des Nutzers. (N)
-	- Kants ästhetische Idee ist das, was „keine Sprache völlig erreicht“. (R)
+	- Kants ästhetische Idee ist das, was „keine Sprache völlig erreicht“. (R) ~~==erkläre das genauer, es klingt wie das reale bei Kant==~~
 
 ---
 # Vorläufig aufgenommen

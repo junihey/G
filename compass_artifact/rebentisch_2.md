@@ -18,8 +18,8 @@
 		- Notwendigkeit des Leib-Konzepts (physische, ätherische, astrale, Ich-Wahrnehmung) zur Differenzierung der Wahrnehmung und ihrem Wesen und Qualität nach "Die Schwelle der geistigen Welt GA 17"
 			- Astralleib ist einmal umgekehrt oder steht auf dem Kopf zur physischen Wahrnehmung (karmisch)
 			- Beispiele: Handynutzer erscheinen befriedigt, abwesend, ruhig; Unruhe, wenn Maschine nicht läuft, wie wenn der Bus elektrisiert ist und an der Kreuzung beim Warten ausgeht oder allgemein die Maschine nicht mehr läuft; Angst vor der Ruhe der Festung (Virilio)
-			- In Maschine werden Emotionen projiziert und Elementarwesen erschaffen (Machinationen)
-	- Notnwedigkeit und Ausblick auf Ich-Philosophie (Fichte, das sich selbst setzende Ich)
+			- In Maschine werden Emotionen projiziert und Elementarwesen erschaffen (==Machinationen==)
+	- Notnwedigkeit und Ausblick auf ==Ich-Philosophie== (Fichte, das sich selbst setzende Ich) ~~==weitere Vertreter recherchieren, Martin Buber?==~~
 
 # Kunstbegriff
 - Unterscheidung Kunst-Handwerkskunst
