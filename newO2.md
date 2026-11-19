@@ -5425,6 +5425,12 @@ Kurz gesagt: bb ist eine Steuerzentrale für KI-Coding-Agenten, OrbStack eine sc
 # KI DSP
 - https://fixationstudios.com.au/blog/how-i-use-ai/
 ---
+# Armin Ronacher 20261118
+- Software, die mit KI möglich wird
+	- [Nix & NixOS | Reproducible builds and deployments](https://nixos.org/)
+	- [Rust Programming Language](https://rust-lang.org/)
+	- [Introduction | Apache Kafka](https://kafka.apache.org/intro/)
+---
 # canvas 2026050920
 ## patch 
 ### Granulares Wave-Stitching mit Jitter-Modulation
