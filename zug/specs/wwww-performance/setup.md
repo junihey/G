@@ -47,7 +47,7 @@ Stand 2026-11-11. **Gebaut sind der Baustein `platz` und der Patch für die erst
 | Mix-Patch | Ein gemeinsamer Max-Patch, in den alle Signale gehen. Er ist Mixer und Panner. | 2026-11-04 |
 | Vierte Stimme | Aus der Analyse der drei Stimmen, nüchterne Resynthese über die FM- oder PM-Bank in `Desktop\fft\resynth`. | 2026-11-04 |
 | Vierter Lautsprecher | Direkt an OUT 4, seit dem 2026-11-21 ohne den Organ Drive davor. Der Lautsprecher ist der Geist, mit zwei Stoffen: Hahnentritt-Jacquard und Kubus-Schal, beide schwarz-weiß. | 2026-11-04 |
-| Interface | Jeder hat einen oder zwei Ausgänge. Sie gehen ins UltraLite mk3 und von dort in den Mix-Patch. Es bleibt beim UltraLite. | 2026-11-04 |
+| Interface | Peter und Yoga liefern je zwei Line-Signale ins UltraLite mk3, von dort gehen sie in den Mix-Patch. Was sie davor benutzen, ist ihre Sache. Es bleibt beim UltraLite. | 2026-11-23 |
 | Rechner | Mix-Patch und Sax-Patch laufen auf dem PC (20 Kerne, 32 GB, Windows 11). Die Installation bleibt auf dem Mac mini. | 2026-11-04 |
 | Installation | Nur die Lautsprecher werden umgesteckt. Ihr Ausgang geht ins UltraLite, wenn Platz ist. | 2026-11-04 |
 | Saxophon | Sägezahn-Dopplung, Rechteck für Obertöne, Gating über PLL oder Lautstärke, Phase Distortion daneben, Transienten über einen Envelope Follower im Rack abrunden. | 2026-11-04 |
@@ -526,9 +526,9 @@ Zwei Max-Runden liegen auf dem Weg des Saxophons durch das Rack. Allein die Puff
 
 - **Die Bestückung der beiden Pods.** Der Vorschlag oben kommt ganz aus dem Bestand.
 - **Der vierte Lautsprecher.** Das Modell kann noch nicht entschieden werden.
-- **Was Peter und Yoga mitbringen.** Akustische oder elektronische Drums, eigene Pulte, Mikrofone, und ob die zwei Ausgänge so gehen.
+- **Was Peter und Yoga mitbringen.** Die Schnittstelle steht seit dem 2026-11-23: je zwei Line-Signale ins MOTU. Offen ist nur, ob ihre Instrumente das ohne eigenes Pult schaffen.
 - **Wann die Performance stattfindet.** `raum.md` sagt: Die Nachbarn der Gruppenausstellung dürfen nicht gestört werden. Drums und Saxophon stören. Das braucht einen eigenen Zeitpunkt.
 - **Welche Genelec.** Der Typ ist offen, und Bass und Drums brauchen Tiefe. Reicht das nicht, fehlt ein Subwoofer.
 - **Wie laut das Saxophon im Raum ist.** Der Direktschall bleibt, die Wirkungen müssen dagegen ankommen.
-- **Ob die Handys der Besucher während der Performance spielen.**
+- **Ob die Handys der Besucher während der Performance spielen.** Nicht vorgesehen, aber bewusst offen gelassen (2026-11-23).
 - **Die Form des Stücks.** Abschnitte und Stimmung, siehe `specs\wwww-main\zahlen.md`.

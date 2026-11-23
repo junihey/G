@@ -11,7 +11,7 @@ Stand 23.11.2026. Hier steht alles, was sich seit dem 9.11. in `specs\` und `zae
 ## wwww-installation · Spec · aktiv
 
 - [ ] `specs\wwww-installation\aufbau-technik.pdf` · 23.11. · Vorschlag: nein, kein Abschnitt „Offen“
-- [ ] `specs\wwww-installation\aufbau-kurator.pdf` · 23.11. · Vorschlag: nein, kein Abschnitt „Offen“
+- [x] `specs\wwww-installation\aufbau-kurator.pdf` · 23.11. · Vorschlag: ja, heute neu erzeugt, noch nicht von dir gelesen
 - [ ] `specs\wwww-installation\aufbau-kurator.html` · 23.11. · Vorschlag: nein, kein Abschnitt „Offen“
 - [ ] `specs\wwww-installation\aufbau-technik.html` · 23.11. · Vorschlag: nein, kein Abschnitt „Offen“
 - [ ] `specs\wwww-installation\README.md` · 14.11. · Vorschlag: nein, kein Abschnitt „Offen“
@@ -24,7 +24,7 @@ Stand 23.11.2026. Hier steht alles, was sich seit dem 9.11. in `specs\` und `zae
 - [x] `specs\wwww-main\discord.md` · 13.11. · Vorschlag: ja, 5 offene Punkte
 - [ ] `specs\wwww-main\motive.md` · 10.11. · Vorschlag: nein, kein Abschnitt „Offen“
 - [ ] `specs\wwww-main\originale.md` · 10.11. · Vorschlag: nein, kein Abschnitt „Offen“
-- [ ] `specs\wwww-main\konzept.md` · 10.11. · Vorschlag: nein, kein Abschnitt „Offen“
+- [x] `specs\wwww-main\konzept.md` · 10.11. · Vorschlag: ja, zwei offene Fragen als Absätze, die Regel übersieht sie
 
 ## wwww-performance · Projekt
 
