@@ -65,8 +65,8 @@ Von dieser Antwort hängen drei andere Punkte in `setup.md` ab: die Bestückung 
 a) Weißt du schon, was die beiden mitbringen, oder fragst du sie?
 b) Spielen die Handys der Besucher während der Performance mit?
 
-**Antwort a:**
-**Antwort b:**
+**Antwort a:** eigentlich schon beantwortet, wichtig ist dass ich von beiden zwei line Signale ins motu bekomme
+**Antwort b:** nicht vorgesehen, aber offen lassen
 
 Datei: [[zug/specs/wwww-performance/setup|setup.md]], Abschnitt „Was offen ist“
 

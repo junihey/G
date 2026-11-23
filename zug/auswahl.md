@@ -23,7 +23,7 @@ Gepackt am 23.11.2026. Hier stehen alle wwww-Dateien, die sich seit dem 9.11. ge
 
 - [x] `setup.md` · 22.11. · Vorschlag: ja, acht Punkte offen, die meisten hängen an Peter und Yoga
 - [x] `handoffs\2026-11-22-wwww-performance-weiter.md` · 22.11. · Vorschlag: ja, die Reihenfolge der neun offenen Punkte
-- [ ] `raum.md` · 14.11. · Vorschlag: nein, ein offener Punkt, der bis zur Probe warten kann
+- [x] `raum.md` · 14.11. · Vorschlag: nein, ein offener Punkt, der bis zur Probe warten kann
 - [ ] `zaehlen\wwww-performance\README.md`, `VERKABELUNG.md` · 22.11. · Vorschlag: nein, Bauanleitung, keine Entscheidung
 - [ ] `zaehlen\max-bausteine\README.md` · 22.11. · Vorschlag: nein, Bauanleitung
 
