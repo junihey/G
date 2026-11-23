@@ -99,3 +99,13 @@ Stimmt etwas nicht, oder fehlt etwas? Schreib es hierhin.
 **Antwort:**
 
 Datei: [[zug/specs/wwww-installation/aufbau-kurator.pdf|aufbau-kurator.pdf]]
+
+## 10 · Wegkurven-Funken am Handy
+
+Der Prototyp aus `zaehlen\threejs-wegkurven-funken` ist eine three.js-Szene in einer einzigen Datei. Auf dem Handy hast du ihn noch nie gesehen. Unten rechts sitzt ein Knopf „Kommentar“, der Obsidian in [[zug/kommentare/wegkurven|kommentare/wegkurven]] öffnet.
+
+Läuft er flüssig, und trägt das Bild auf dem kleinen Schirm? Schreib es über den Knopf oder hierhin.
+
+**Antwort:**
+
+Prototyp: https://pruefen.julianniklasheynert.xyz/wegkurven/
