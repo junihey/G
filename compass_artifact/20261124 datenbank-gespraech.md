@@ -687,13 +687,13 @@ flowchart LR
 
 #### Welches Interface wofür
 
-|Tätigkeit|Interface|Warum dort|
-|---|---|---|
-|Vokabular pflegen: Gruppen, Tags, Zusammenlegungen|Obsidian, Notizen und Bases|Das Vokabular ist Wissen. Eine Geist-Notiz kann auf die Steiner-Stelle verlinken, aus der die Gruppe stammt.|
-|Hören und einordnen|eigene Seite `einordnen\`|Obsidian spielt keinen Ton ab und setzt keine Zeitmarken. Das Google-Formular ließ jeden Tag frei zu, daher die rund 200.|
-|Werke eintragen, Uploads freigeben|eigene Seite `verwaltung\`, am Anfang Drizzle Studio|Nur hier lassen sich Pflichtfelder wie die Bildbeschreibung durchsetzen.|
-|Auswerten|SQL in einem Datenbank-Programm|Eine Frage wie „Welche Geister dominieren in fremden Tracks mit hoher Lautheit?“ ist ein JOIN.|
-|Patches bauen|Max mit RNBO, dazu die Notiz in `katalog\patches\`|bleibt wie heute|
+| Tätigkeit                                          | Interface                                            | Warum dort                                                                                                                |
+| -------------------------------------------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| Vokabular pflegen: Gruppen, Tags, Zusammenlegungen | Obsidian, Notizen und Bases                          | Das Vokabular ist Wissen. Eine Geist-Notiz kann auf die Steiner-Stelle verlinken, aus der die Gruppe stammt.              |
+| Hören und einordnen                                | eigene Seite `einordnen\`                            | Obsidian spielt keinen Ton ab und setzt keine Zeitmarken. Das Google-Formular ließ jeden Tag frei zu, daher die rund 200. |
+| Werke eintragen, Uploads freigeben                 | eigene Seite `verwaltung\`, am Anfang Drizzle Studio | Nur hier lassen sich Pflichtfelder wie die Bildbeschreibung durchsetzen.                                                  |
+| Auswerten                                          | SQL in einem Datenbank-Programm                      | Eine Frage wie „Welche Geister dominieren in fremden Tracks mit hoher Lautheit?“ ist ein JOIN.                            |
+| Patches bauen                                      | Max mit RNBO, dazu die Notiz in `katalog\patches\`   | bleibt wie heute                                                                                                          |
 
 #### Was nicht in den Vault kommt
 
