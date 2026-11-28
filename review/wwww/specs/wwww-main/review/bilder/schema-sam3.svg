@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" font-family="system-ui, sans-serif" font-size="12">
+  <defs>
+    <marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7d838a"/></marker>
+  </defs>
+  <rect width="600" height="300" rx="10" fill="#15171c"/>
+  <!-- Kamerabild -->
+  <text x="20" y="34" fill="#e8e8e8">Kamerabild</text>
+  <rect x="20" y="44" width="200" height="140" fill="#3f6b38"/>
+  <rect x="20" y="140" width="200" height="44" fill="#5c8a4f"/>
+  <line x1="40" y1="70" x2="200" y2="70" stroke="#c8c8c8" stroke-width="1"/>
+  <g fill="#e8e0a0"><polygon points="70,90 74,100 84,100 76,106 79,116 70,110 61,116 64,106 56,100 66,100"/><polygon points="120,84 124,94 134,94 126,100 129,110 120,104 111,110 114,100 106,94 116,94"/><polygon points="170,92 174,102 184,102 176,108 179,118 170,112 161,118 164,108 156,102 166,102"/></g>
+  <path d="M150 130 L176 128 L186 150 L160 160 Z" fill="#c8402f"/>
+  <!-- Masken über dem Bild -->
+  <g fill="none" stroke="#78c8ff" stroke-width="2"><rect x="52" y="82" width="36" height="40" rx="4"/><rect x="102" y="76" width="36" height="40" rx="4"/><rect x="152" y="84" width="36" height="40" rx="4"/></g>
+  <text x="20" y="204" fill="#78c8ff" font-size="11">Text: „star lamp“ → drei Masken, Score 0,86–0,89</text>
+  <path d="M226 114 L262 114" stroke="#7d838a" stroke-width="1.5" marker-end="url(#p)"/>
+  <!-- SAM3 -->
+  <rect x="266" y="90" width="90" height="48" rx="8" fill="#7d838a"/>
+  <text x="311" y="112" fill="#15171c" text-anchor="middle" font-weight="600">SAM3</text>
+  <text x="311" y="128" fill="#15171c" text-anchor="middle" font-size="10">findet per Wort</text>
+  <path d="M360 114 L396 114" stroke="#7d838a" stroke-width="1.5" marker-end="url(#p)"/>
+  <!-- OSC-Zahlen -->
+  <rect x="400" y="56" width="180" height="116" rx="6" fill="#22262d" stroke="#2b3038"/>
+  <g font-family="ui-monospace, monospace" font-size="11" fill="#e8b04a">
+    <text x="410" y="78">/sam3 star_lamp 1</text>
+    <text x="410" y="94">  x 0.27 y 0.41</text>
+    <text x="410" y="110">  w 0.18 h 0.29</text>
+    <text x="410" y="126">  score 0.89</text>
+    <text x="410" y="150">/sam3 star_lamp 2 …</text>
+  </g>
+  <text x="400" y="46" fill="#e8e8e8" font-size="11">über OSC</text>
+  <path d="M490 176 L490 214" stroke="#7d838a" stroke-width="1.5" marker-end="url(#p)"/>
+  <rect x="440" y="218" width="100" height="36" rx="6" fill="#7d838a"/>
+  <text x="490" y="241" fill="#15171c" text-anchor="middle" font-weight="600">Max</text>
+  <text x="20" y="276" fill="#a0a8b0" font-size="11">Die OSC-Nachricht ist ein Beispiel. Gemessen sind nur die Scores, am 30.10. mit standbild.py</text>
+</svg>

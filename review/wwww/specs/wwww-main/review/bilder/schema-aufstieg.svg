@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" font-family="system-ui, sans-serif" font-size="13">
+  <defs>
+    <linearGradient id="raum" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#f2f2f2"/><stop offset="1" stop-color="#0d0d0d"/>
+    </linearGradient>
+    <pattern id="metall" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="5" height="5" fill="#78c8ff" opacity="0.35"/>
+      <line x1="0" y1="0" x2="0" y2="5" stroke="#e8e8e8" stroke-width="2"/>
+    </pattern>
+  </defs>
+  <rect width="600" height="300" rx="10" fill="#15171c"/>
+  <!-- Seitenansicht: Raum als Verlauf, unten weiß, oben schwarz -->
+  <rect x="16" y="16" width="380" height="268" rx="6" fill="url(#raum)"/>
+  <!-- Ebenen, gewölbt; Ebene 2 mit Spalt -->
+  <path d="M30 206 Q206 170 382 206" fill="none" stroke="#e8b04a" stroke-width="3"/>
+  <path d="M30 136 Q100 112 170 106" fill="none" stroke="#e8b04a" stroke-width="3"/>
+  <path d="M242 106 Q312 112 382 136" fill="none" stroke="#e8b04a" stroke-width="3"/>
+  <path d="M30 66 Q206 30 382 66" fill="none" stroke="#e8b04a" stroke-width="3" opacity="0.6"/>
+  <!-- Arbeiten auf einer Höhe, Lichtpunkt darunter -->
+  <g fill="#7d838a"><rect x="58" y="246" width="34" height="18"/><rect x="134" y="246" width="34" height="18"/><rect x="244" y="246" width="34" height="18"/><rect x="320" y="246" width="34" height="18"/></g>
+  <circle cx="206" cy="272" r="5" fill="#e8b04a"/>
+  <!-- Weg des Besuchers durch den Spalt -->
+  <path d="M206 236 L206 46" fill="none" stroke="#78c8ff" stroke-width="2" stroke-dasharray="5 5"/>
+  <circle cx="206" cy="150" r="7" fill="#78c8ff"/>
+  <g font-size="12">
+    <text x="36" y="222" fill="#15171c">Ebene 1</text><text x="36" y="152" fill="#15171c">Ebene 2</text><text x="36" y="84" fill="#e8e8e8">Ebene 3</text>
+    <text x="214" y="98" fill="#e8e8e8">Spalt: kein Halt</text>
+    <text x="96" y="240" fill="#15171c">Arbeiten, alle auf einer Höhe</text>
+  </g>
+  <!-- Klangspalte rechts, auf denselben Höhen wie links (Mitte der Bögen) -->
+  <text x="420" y="30" fill="#e8e8e8" font-weight="600">Was man hört</text>
+  <line x1="430" y1="44" x2="430" y2="262" stroke="#e8e8e8"/>
+  <!-- Stockwerk 1: voll an den Arbeiten, still an Ebene 1 (y 190) -->
+  <path d="M430 262 L470 262 L470 252 Q470 220 430 190 Z" fill="#78c8ff" opacity="0.55"/>
+  <path d="M430 234 Q458 222 430 204 Z" fill="url(#metall)"/>
+  <!-- Stockwerk 2: zwischen y 190 und 118 -->
+  <path d="M430 190 Q470 154 430 118 Z" fill="#78c8ff" opacity="0.35"/>
+  <path d="M430 174 Q458 154 430 134 Z" fill="url(#metall)"/>
+  <!-- Stockwerk 3: zwischen y 118 und 48 -->
+  <path d="M430 118 Q460 83 430 48 Z" fill="#78c8ff" opacity="0.2"/>
+  <path d="M430 102 Q452 83 430 64 Z" fill="url(#metall)"/>
+  <g fill="#e8e8e8" font-size="12">
+    <text x="480" y="260">pur an den Arbeiten</text>
+    <text x="466" y="224">metallisch</text>
+    <text x="440" y="194" fill="#e8b04a">still · Ebene 1</text>
+    <text x="474" y="158">2 Stufen, höher</text>
+    <text x="440" y="122" fill="#e8b04a">still · Ebene 2</text>
+    <text x="466" y="88">3 Stufen, leiser</text>
+    <text x="440" y="52" fill="#e8b04a">still · Ebene 3</text>
+  </g>
+</svg>

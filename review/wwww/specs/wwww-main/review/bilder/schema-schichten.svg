@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" font-family="system-ui, sans-serif" font-size="12">
+  <defs>
+    <g id="motiv">
+      <ellipse cx="40" cy="40" rx="30" ry="18" fill="#d9534f" opacity="0.8"/>
+      <ellipse cx="90" cy="60" rx="34" ry="22" fill="#4aa3df" opacity="0.8"/>
+      <rect x="20" y="70" width="60" height="14" fill="#5cb85c" opacity="0.8"/>
+      <circle cx="120" cy="30" r="12" fill="#e8c14a"/>
+      <path d="M60 20 L100 30 L80 50 Z" fill="#b05cc8" opacity="0.8"/>
+      <line x1="10" y1="92" x2="140" y2="88" stroke="#3a3a3a" stroke-width="3"/>
+    </g>
+  </defs>
+  <rect width="600" height="300" rx="10" fill="#15171c"/>
+  <!-- links: der Scan, alles in einer Fläche -->
+  <rect x="24" y="90" width="150" height="100" fill="#f4efe6"/>
+  <use href="#motiv" x="24" y="90"/>
+  <text x="24" y="80" fill="#e8e8e8">gap = 0: der Scan</text>
+  <!-- Pfeil -->
+  <path d="M190 140 L238 140" stroke="#78c8ff" stroke-width="2"/><path d="M238 140 l-8 -5 v10 z" fill="#78c8ff"/>
+  <text x="192" y="130" fill="#78c8ff">gap</text>
+  <!-- rechts: sechs Form-Ebenen, schräg in die Tiefe -->
+  <g>
+    <g transform="translate(400 30) skewY(-12)"><rect width="120" height="80" fill="#f4efe6" opacity="0.25" stroke="#e8e8e8" stroke-opacity="0.5"/><circle cx="96" cy="24" r="10" fill="#e8c14a"/></g>
+    <g transform="translate(380 60) skewY(-12)"><rect width="120" height="80" fill="#f4efe6" opacity="0.25" stroke="#e8e8e8" stroke-opacity="0.5"/><path d="M48 16 L80 24 L64 40 Z" fill="#b05cc8" opacity="0.8"/></g>
+    <g transform="translate(360 90) skewY(-12)"><rect width="120" height="80" fill="#f4efe6" opacity="0.25" stroke="#e8e8e8" stroke-opacity="0.5"/><ellipse cx="72" cy="48" rx="27" ry="18" fill="#4aa3df" opacity="0.8"/></g>
+    <g transform="translate(340 120) skewY(-12)"><rect width="120" height="80" fill="#f4efe6" opacity="0.25" stroke="#e8e8e8" stroke-opacity="0.5"/><ellipse cx="32" cy="32" rx="24" ry="14" fill="#d9534f" opacity="0.8"/></g>
+    <g transform="translate(320 150) skewY(-12)"><rect width="120" height="80" fill="#f4efe6" opacity="0.25" stroke="#e8e8e8" stroke-opacity="0.5"/><rect x="16" y="56" width="48" height="11" fill="#5cb85c" opacity="0.8"/></g>
+    <g transform="translate(300 180) skewY(-12)"><rect width="120" height="80" fill="#f4efe6" opacity="0.9" stroke="#e8e8e8" stroke-opacity="0.5"/><line x1="8" y1="74" x2="112" y2="70" stroke="#3a3a3a" stroke-width="3"/></g>
+  </g>
+  <!-- Leuchttisch: Licht von hinten -->
+  <circle cx="560" cy="40" r="7" fill="#e8b04a"/>
+  <path d="M552 46 L470 120" stroke="#e8b04a" stroke-width="1" opacity="0.6"/>
+  <path d="M553 48 L440 190" stroke="#e8b04a" stroke-width="1" opacity="0.6"/>
+  <g fill="#e8e8e8">
+    <text x="300" y="286">gap &gt; 0: sechs Form-Ebenen, auseinandergezogen</text>
+    <text x="484" y="66" font-size="11" fill="#e8b04a">Leuchttisch:</text>
+    <text x="484" y="80" font-size="11" fill="#e8b04a">Licht von hinten</text>
+  </g>
+</svg>

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" font-family="system-ui, sans-serif" font-size="12">
+  <defs>
+    <marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7d838a"/></marker>
+  </defs>
+  <rect width="600" height="300" rx="10" fill="#15171c"/>
+  <!-- Kette: ein Block alle 3,33 s -->
+  <g>
+    <rect x="20" y="96" width="56" height="44" rx="5" fill="#22262d" stroke="#7d838a"/><text x="48" y="124" fill="#e8b04a" text-anchor="middle" font-size="16">☉</text>
+    <rect x="92" y="96" width="56" height="44" rx="5" fill="#22262d" stroke="#7d838a"/><text x="120" y="124" fill="#e8b04a" text-anchor="middle" font-size="16">☉☉</text>
+    <rect x="164" y="96" width="56" height="44" rx="5" fill="#22262d" stroke="#7d838a"/><text x="192" y="124" fill="#a0a8b0" text-anchor="middle" font-size="11">leer</text>
+    <rect x="236" y="96" width="56" height="44" rx="5" fill="#22262d" stroke="#78c8ff"/><text x="264" y="124" fill="#78c8ff" text-anchor="middle" font-size="16">☽</text>
+    <rect x="308" y="96" width="56" height="44" rx="5" fill="#22262d" stroke="#7d838a"/><text x="336" y="124" fill="#e8b04a" text-anchor="middle" font-size="16">☉ ✶</text>
+    <rect x="380" y="96" width="56" height="44" rx="5" fill="#22262d" stroke="#7d838a"/><text x="408" y="124" fill="#e8b04a" text-anchor="middle" font-size="16">☉</text>
+  </g>
+  <g stroke="#7d838a" stroke-width="2"><line x1="76" y1="118" x2="92" y2="118"/><line x1="148" y1="118" x2="164" y2="118"/><line x1="220" y1="118" x2="236" y2="118"/><line x1="292" y1="118" x2="308" y2="118"/><line x1="364" y1="118" x2="380" y2="118"/><line x1="436" y1="118" x2="452" y2="118" stroke-dasharray="3 3"/></g>
+  <text x="20" y="84" fill="#e8e8e8" font-size="11">ein Block je Atemzug, alle 3,33 s · 25.920 am Tag · darin nur Hashes, nie Text</text>
+  <g font-size="11"><text x="20" y="164" fill="#e8b04a">☉ Besucher</text><text x="110" y="164" fill="#78c8ff">☽ der Raum, alle 72 Atemzüge</text><text x="350" y="164" fill="#e8b04a">✶ gekaufte Erinnerung</text></g>
+  <!-- Tagesende: Anker -->
+  <path d="M460 118 C500 118 510 70 530 60" fill="none" stroke="#7d838a" stroke-width="1.5" marker-end="url(#p)"/>
+  <rect x="500" y="22" width="84" height="38" rx="6" fill="#e8b04a" opacity="0.9"/>
+  <text x="542" y="38" fill="#15171c" text-anchor="middle" font-size="11" font-weight="600">Tages-Hash</text>
+  <text x="542" y="52" fill="#15171c" text-anchor="middle" font-size="10">Bitcoin und Base</text>
+  <text x="470" y="88" fill="#a0a8b0" font-size="10">nach dem Ausstellungstag</text>
+  <!-- Erinnerung: 72 €, kehrt ins Beamerbild zurück -->
+  <path d="M336 142 C336 200 300 210 260 216" fill="none" stroke="#e8b04a" stroke-width="1.5" marker-end="url(#p)"/>
+  <rect x="150" y="200" width="106" height="40" rx="6" fill="#22262d" stroke="#e8b04a"/>
+  <text x="203" y="216" fill="#e8b04a" text-anchor="middle" font-size="11">Erinnerung</text>
+  <text x="203" y="231" fill="#a0a8b0" text-anchor="middle" font-size="10">72 € · Token, Plot</text>
+  <path d="M150 220 L104 220" stroke="#7d838a" stroke-width="1.5" marker-end="url(#p)"/>
+  <!-- Beamerkegel -->
+  <path d="M30 220 L96 200 L96 240 Z" fill="#e8b04a" opacity="0.25"/>
+  <rect x="18" y="212" width="16" height="16" rx="3" fill="#7d838a"/>
+  <text x="20" y="262" fill="#e8e8e8" font-size="11">läuft danach wieder im Beamerbild</text>
+</svg>

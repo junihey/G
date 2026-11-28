@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" font-family="system-ui, sans-serif" font-size="12">
+  <rect width="600" height="300" rx="10" fill="#15171c"/>
+  <!-- Raster: Zeit (Samplerate) und Wert (Bits) -->
+  <g stroke="#2b3038" stroke-width="1">
+    <line x1="30" y1="50" x2="30" y2="230"/><line x1="54" y1="50" x2="54" y2="230"/><line x1="78" y1="50" x2="78" y2="230"/><line x1="102" y1="50" x2="102" y2="230"/>
+    <line x1="126" y1="50" x2="126" y2="230"/><line x1="150" y1="50" x2="150" y2="230"/><line x1="174" y1="50" x2="174" y2="230"/><line x1="198" y1="50" x2="198" y2="230"/>
+    <line x1="222" y1="50" x2="222" y2="230"/><line x1="246" y1="50" x2="246" y2="230"/><line x1="270" y1="50" x2="270" y2="230"/>
+    <line x1="30" y1="60" x2="270" y2="60"/><line x1="30" y1="90" x2="270" y2="90"/><line x1="30" y1="120" x2="270" y2="120"/><line x1="30" y1="150" x2="270" y2="150"/>
+    <line x1="30" y1="180" x2="270" y2="180"/><line x1="30" y1="210" x2="270" y2="210"/>
+  </g>
+  <!-- die glatte Welle -->
+  <path d="M30 135.0 L33 127.2 L36 119.4 L39 111.8 L42 104.5 L45 97.5 L48 90.9 L51 84.8 L54 79.3 L57 74.3 L60 70.0 L63 66.5 L66 63.7 L69 61.6 L72 60.4 L75 60.0 L78 60.4 L81 61.6 L84 63.7 L87 66.5 L90 70.0 L93 74.3 L96 79.3 L99 84.8 L102 90.9 L105 97.5 L108 104.5 L111 111.8 L114 119.4 L117 127.2 L120 135.0 L123 142.8 L126 150.6 L129 158.2 L132 165.5 L135 172.5 L138 179.1 L141 185.2 L144 190.7 L147 195.7 L150 200.0 L153 203.5 L156 206.3 L159 208.4 L162 209.6 L165 210.0 L168 209.6 L171 208.4 L174 206.3 L177 203.5 L180 200.0 L183 195.7 L186 190.7 L189 185.2 L192 179.1 L195 172.5 L198 165.5 L201 158.2 L204 150.6 L207 142.8 L210 135.0 L213 127.2 L216 119.4 L219 111.8 L222 104.5 L225 97.5 L228 90.9 L231 84.8 L234 79.3 L237 74.3 L240 70.0 L243 66.5 L246 63.7 L249 61.6 L252 60.4 L255 60.0 L258 60.4 L261 61.6 L264 63.7 L267 66.5 L270 70.0" fill="none" stroke="#78c8ff" stroke-width="1.5" opacity="0.6"/>
+  <!-- die Treppe auf dem Raster -->
+  <path d="M30 150 V150 H54 V90 H78 V60 H102 V90 H126 V150 H150 V210 H174 V210 H198 V180 H222 V90 H246 V60 H270" fill="none" stroke="#e8b04a" stroke-width="2.5"/>
+  <text x="30" y="40" fill="#e8e8e8">Zeitraster: Samplerate · Wertraster: Bits</text>
+  <text x="30" y="252" fill="#e8b04a" font-size="11">Takt senken, Bits schalten: die Welle wird zur Treppe</text>
+  <!-- Spektrum mit Faltung -->
+  <line x1="320" y1="220" x2="580" y2="220" stroke="#7d838a"/>
+  <line x1="470" y1="60" x2="470" y2="226" stroke="#d9534f" stroke-dasharray="4 3"/>
+  <text x="452" y="52" fill="#d9534f" font-size="11">halbe Samplerate</text>
+  <rect x="360" y="120" width="10" height="100" fill="#78c8ff"/>
+  <rect x="520" y="150" width="10" height="70" fill="#78c8ff" opacity="0.35" stroke="#78c8ff" stroke-dasharray="3 2"/>
+  <rect x="410" y="150" width="10" height="70" fill="#e8b04a"/>
+  <path d="M525 146 C510 96 430 96 415 146" fill="none" stroke="#e8b04a" stroke-width="1.5"/>
+  <path d="M415 146 l-3 -9 l8 2 z" fill="#e8b04a"/>
+  <text x="330" y="244" fill="#a0a8b0" font-size="11">Ton</text>
+  <text x="400" y="244" fill="#e8b04a" font-size="11">Spiegelton</text>
+  <text x="500" y="244" fill="#a0a8b0" font-size="11">zu hoch</text>
+  <text x="320" y="276" fill="#e8e8e8" font-size="11">Aliasing: was zu hoch ist, faltet zurück</text>
+  <text x="30" y="276" fill="#a0a8b0" font-size="11">jeder Eingriff hat einen Regler, ein Ende klingt sauber</text>
+</svg>

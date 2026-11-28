@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" font-family="system-ui, sans-serif" font-size="12">
+  <defs>
+    <pattern id="granit" width="14" height="14" patternUnits="userSpaceOnUse">
+      <rect width="14" height="14" fill="#c9b8ae"/><circle cx="3" cy="4" r="2" fill="#3a3a3a"/><circle cx="10" cy="9" r="2.5" fill="#efe9e4"/><rect x="6" y="1" width="4" height="3" fill="#d79b8a"/><circle cx="4" cy="11" r="1.5" fill="#6b6b6b"/>
+    </pattern>
+    <clipPath id="fenster"><rect x="190" y="70" width="220" height="130" rx="4"/></clipPath>
+  </defs>
+  <rect width="600" height="300" rx="10" fill="#15171c"/>
+  <!-- das Netz, nur schwach -->
+  <g stroke="#2b3038" stroke-width="2"><line x1="60" y1="135" x2="540" y2="135"/><line x1="60" y1="135" x2="140" y2="40"/><line x1="60" y1="135" x2="120" y2="260"/><line x1="540" y1="135" x2="500" y2="40"/></g>
+  <circle cx="60" cy="135" r="12" fill="#c9b8ae"/><circle cx="540" cy="135" r="12" fill="#efe9e4"/>
+  <circle cx="140" cy="40" r="7" fill="#7d838a"/><circle cx="120" cy="260" r="7" fill="#7d838a"/><circle cx="500" cy="40" r="7" fill="#7d838a"/>
+  <text x="34" y="164" fill="#e8e8e8" font-size="11">Granit</text><text x="526" y="164" fill="#e8e8e8" font-size="11">Quarz</text>
+  <!-- das Projektionsfenster unterwegs auf der Kante -->
+  <g clip-path="url(#fenster)">
+    <rect x="190" y="70" width="220" height="130" fill="url(#granit)"/>
+    <!-- rechts zerfällt Granit in Punkte und wird Quarz -->
+    <rect x="300" y="70" width="110" height="130" fill="#15171c" opacity="0.85"/>
+    <g fill="#efe9e4">
+      <circle cx="306" cy="80" r="2"/><circle cx="318" cy="96" r="2"/><circle cx="312" cy="120" r="2"/><circle cx="330" cy="88" r="2"/><circle cx="326" cy="140" r="2"/><circle cx="340" cy="110" r="2"/>
+      <circle cx="350" cy="160" r="2"/><circle cx="358" cy="84" r="2"/><circle cx="366" cy="130" r="2"/><circle cx="376" cy="104" r="2"/><circle cx="384" cy="176" r="2"/><circle cx="394" cy="92" r="2"/>
+      <circle cx="304" cy="150" r="2"/><circle cx="316" cy="182" r="2"/><circle cx="342" cy="190" r="2"/><circle cx="398" cy="150" r="2"/><circle cx="372" cy="70" r="2"/><circle cx="404" cy="196" r="2"/>
+    </g>
+  </g>
+  <rect x="190" y="70" width="220" height="130" rx="4" fill="none" stroke="#e8b04a" stroke-width="2.5"/>
+  <rect x="246" y="122" width="108" height="26" rx="4" fill="#15171c" opacity="0.85"/><text x="300" y="140" fill="#e8b04a" font-size="15" text-anchor="middle" font-weight="600" opacity="0.95">Bestandteil</text>
+  <path d="M410 214 L460 214" stroke="#e8b04a" stroke-width="1.5"/><path d="M460 214 l-8 -5 v10 z" fill="#e8b04a"/>
+  <text x="190" y="60" fill="#e8e8e8" font-size="11">das Fenster wandert die Kante entlang, nie das ganze Netz</text>
+  <!-- Kategorie wählt den Übergang -->
+  <g font-size="11" fill="#a0a8b0">
+    <text x="190" y="234">Bestandteil → zerfällt in Punkte</text>
+    <text x="190" y="250">Verwandtschaft → Nebel</text>
+    <text x="190" y="266">Bildungsweg → Linien schieben</text>
+    <text x="190" y="282">Klassifikation → harter Schnitt</text>
+  </g>
+  <text x="430" y="250" fill="#e8b04a" font-size="11">der Begriff erscheint</text><text x="430" y="264" fill="#e8b04a" font-size="11">nur unterwegs</text>
+</svg>

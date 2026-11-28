@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" font-family="system-ui, sans-serif" font-size="12">
+  <defs>
+    <marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#78c8ff"/></marker>
+    <marker id="q" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#e8b04a"/></marker>
+  </defs>
+  <rect width="600" height="300" rx="10" fill="#15171c"/>
+  <!-- Handy im Schnitt -->
+  <rect x="40" y="16" width="190" height="268" rx="22" fill="#22262d" stroke="#7d838a" stroke-width="2"/>
+  <!-- Mikrofon, durchgestrichen -->
+  <rect x="127" y="24" width="16" height="22" rx="8" fill="none" stroke="#7d838a" stroke-width="2"/>
+  <line x1="118" y1="48" x2="152" y2="22" stroke="#d9534f" stroke-width="2.5"/>
+  <text x="240" y="40" fill="#d9534f" font-size="11">kein Mikrofon</text>
+  <!-- Bildschirm: three.js -->
+  <rect x="54" y="56" width="162" height="44" rx="4" fill="#2b3038" stroke="#e8b04a" stroke-opacity="0.6"/>
+  <text x="62" y="74" fill="#e8b04a">three.js</text><text x="62" y="90" fill="#a0a8b0" font-size="11">Welt, 12 Punkte, Gesten</text>
+  <!-- Klangschichten -->
+  <g>
+    <rect x="54" y="108" width="162" height="26" rx="4" fill="#78c8ff" opacity="0.85"/>
+    <text x="62" y="126" fill="#15171c" font-weight="600">RNBO · der Klang</text>
+    <rect x="54" y="138" width="162" height="22" rx="4" fill="#78c8ff" opacity="0.6"/>
+    <text x="62" y="153" fill="#15171c">fft~ / ifft~ · spektral</text>
+    <rect x="54" y="164" width="162" height="22" rx="4" fill="#78c8ff" opacity="0.45"/>
+    <text x="62" y="179" fill="#15171c">RAVE v1 · Klangfarbe z1–z4</text>
+    <rect x="54" y="190" width="162" height="22" rx="4" fill="#78c8ff" opacity="0.32"/>
+    <text x="62" y="205" fill="#e8e8e8">Loris · Teiltöne vom PC</text>
+    <rect x="54" y="216" width="162" height="22" rx="4" fill="#78c8ff" opacity="0.2"/>
+    <text x="62" y="231" fill="#e8e8e8">Analyse · Meyda</text>
+  </g>
+  <!-- Lautsprecher -->
+  <rect x="122" y="248" width="26" height="18" rx="3" fill="#7d838a"/>
+  <g fill="none" stroke="#78c8ff" stroke-width="2"><path d="M156 250 Q164 257 156 264"/><path d="M164 245 Q176 257 164 269"/></g>
+  <!-- OSC zur Installation -->
+  <rect x="420" y="96" width="160" height="108" rx="8" fill="#22262d" stroke="#7d838a" stroke-width="2"/>
+  <text x="432" y="120" fill="#e8e8e8" font-weight="600">Installation</text>
+  <text x="432" y="138" fill="#a0a8b0" font-size="11">über OSC, wss://</text>
+  <path d="M232 128 L414 128" stroke="#78c8ff" stroke-width="2" marker-end="url(#p)"/>
+  <path d="M414 176 L232 176" stroke="#e8b04a" stroke-width="2" marker-end="url(#q)"/>
+  <g font-size="11">
+    <text x="246" y="104" fill="#78c8ff">hin: Gesten, Position, Blick,</text>
+    <text x="246" y="118" fill="#78c8ff">z1–z4, Merkmale, ☉</text>
+    <text x="246" y="196" fill="#e8b04a">zurück: /raum/merkmale, ☽</text>
+  </g>
+</svg>

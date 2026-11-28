@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" font-family="system-ui, sans-serif" font-size="12">
+  <defs>
+    <pattern id="fill" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#f4efe6"/><line x1="0" y1="0" x2="0" y2="6" stroke="#78c8ff" stroke-width="2"/></pattern>
+    <linearGradient id="tiefe" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#202020"/></linearGradient>
+    <marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7d838a"/></marker>
+  </defs>
+  <rect width="600" height="300" rx="10" fill="#15171c"/>
+  <!-- 0: Zeichnung wird quadratisch -->
+  <rect x="24" y="110" width="90" height="56" fill="#f4efe6"/>
+  <ellipse cx="54" cy="134" rx="16" ry="10" fill="#d9534f" opacity="0.8"/><ellipse cx="86" cy="144" rx="18" ry="12" fill="#4aa3df" opacity="0.8"/>
+  <text x="24" y="100" fill="#e8e8e8">Zeichnung</text>
+  <path d="M120 138 L142 138" stroke="#7d838a" stroke-width="2" marker-end="url(#p)"/>
+  <rect x="148" y="93" width="90" height="90" fill="url(#fill)"/>
+  <rect x="148" y="110" width="90" height="56" fill="#f4efe6"/>
+  <ellipse cx="178" cy="134" rx="16" ry="10" fill="#d9534f" opacity="0.8"/><ellipse cx="210" cy="144" rx="18" ry="12" fill="#4aa3df" opacity="0.8"/>
+  <text x="148" y="83" fill="#e8e8e8">0 · quadratisch</text>
+  <text x="148" y="200" fill="#78c8ff" font-size="11">blau: von FLUX ergänzt</text>
+  <!-- Pfeile zu den Wegen -->
+  <g stroke="#7d838a" stroke-width="1.5" fill="none" marker-end="url(#p)">
+    <path d="M240 120 L300 60"/><path d="M240 138 L300 150"/><path d="M240 160 L300 240"/>
+    <path d="M388 60 L428 60"/><path d="M388 72 L428 140"/>
+  </g>
+  <!-- 1 Tiefenkarte -->
+  <rect x="304" y="28" width="80" height="60" fill="url(#tiefe)"/>
+  <text x="304" y="20" fill="#e8e8e8">1 · Tiefenkarte</text>
+  <!-- 2 Schalen -->
+  <g fill="none" stroke="#f4efe6" stroke-width="2"><path d="M434 80 Q474 40 514 80"/><path d="M444 70 Q484 34 524 70" opacity="0.7"/><path d="M454 60 Q494 28 534 60" opacity="0.45"/></g>
+  <text x="434" y="20" fill="#e8e8e8">2 · Schalen</text>
+  <!-- 5 Voxel -->
+  <g fill="#7d838a" stroke="#15171c">
+    <rect x="434" y="150" width="18" height="18"/><rect x="452" y="150" width="18" height="18"/><rect x="470" y="150" width="18" height="18"/>
+    <rect x="452" y="132" width="18" height="18"/><rect x="470" y="132" width="18" height="18"/><rect x="470" y="114" width="18" height="18"/>
+    <rect x="488" y="150" width="18" height="18"/><rect x="488" y="132" width="18" height="18"/>
+  </g>
+  <text x="434" y="190" fill="#e8e8e8">5 · Voxel</text>
+  <!-- 3 Objekte -->
+  <ellipse cx="324" cy="150" rx="16" ry="20" fill="#d9534f" opacity="0.85"/><ellipse cx="358" cy="156" rx="20" ry="14" fill="#4aa3df" opacity="0.85"/>
+  <ellipse cx="324" cy="144" rx="6" ry="8" fill="#ffffff" opacity="0.35"/>
+  <text x="304" y="186" fill="#e8e8e8">3 · Objekte</text>
+  <!-- 4 Welt aus Splats -->
+  <g fill="#f4efe6">
+    <circle cx="310" cy="236" r="3" opacity="0.8"/><circle cx="322" cy="230" r="4" opacity="0.6"/><circle cx="336" cy="240" r="3" opacity="0.9"/><circle cx="348" cy="226" r="5" opacity="0.5"/>
+    <circle cx="360" cy="244" r="3" opacity="0.8"/><circle cx="372" cy="232" r="4" opacity="0.6"/><circle cx="318" cy="250" r="2" opacity="0.9"/><circle cx="384" cy="246" r="3" opacity="0.7"/>
+    <circle cx="344" cy="252" r="2" opacity="0.7"/><circle cx="330" cy="218" r="2" opacity="0.6" fill="#4aa3df"/><circle cx="366" cy="216" r="3" opacity="0.6" fill="#d9534f"/>
+  </g>
+  <text x="304" y="276" fill="#e8e8e8">4 · Welt aus Splats</text>
+  <text x="434" y="230" fill="#a0a8b0" font-size="11">jeder Weg wird eine</text>
+  <text x="434" y="244" fill="#a0a8b0" font-size="11">Ansicht im Viewer</text>
+</svg>
