@@ -15,6 +15,9 @@ verification: 'Von Claude am 2026-11-25 aus daten.md und dem Gespraech geschrieb
 
 ![[daten#^blick]]
 
+~~Läuft Postgres hier auf dem vps~~
+~~Lässt sich das Vokabular auf Obsidian bearbeiten?~~
+
 ---
 
 ## 1 · Die Wörter, die du für den Rest brauchst
@@ -49,19 +52,20 @@ verification: 'Von Claude am 2026-11-25 aus daten.md und dem Gespraech geschrieb
 
 Für die Beispielzeilen in Abschnitt 6 gilt: **Statt der langen uuid steht ein Kürzel in spitzen Klammern**, etwa `‹T1›` für einen Track und `‹S1›` für einen Abschnitt. So siehst du, wer auf wen zeigt.
 
+??
 ## 2 · Die eine Regel: jede Art von Daten hat genau eine Quelle
 
 **Was schiefgeht, wenn es zwei Quellen gibt.** Angenommen, der Titel eines Werks steht im Vault und in der Datenbank. Du änderst ihn in Obsidian auf „Blau, Ocker, Rot“. Zur selben Zeit korrigiert Peter online einen Tippfehler im alten Titel. Jetzt laufen zwei Abgleiche: Vault → Datenbank und Datenbank → Vault. Wer zuletzt läuft, gewinnt, und die andere Änderung ist ohne Meldung weg.
 
 **Deshalb hat jede Art genau eine Quelle:**
 
-| Art | Quelle | Wer schreibt | Wohin es kopiert wird |
-|---|---|---|---|
-| Vokabular: Geist-Gruppen und Tags | der Vault | nur du, in Obsidian | in die Datenbank, nur in diese Richtung |
-| Klänge, Abschnitte, Einordnungen, Messwerte | die Datenbank | du, Johannes, Peter und die Skripte | in die Kopie für die Installation |
-| Werke, Personen, Konten, Uploads | die Datenbank | du und die, die sich anmelden | in die Kopie, nur was öffentlich ist |
-| Max-Patches | git, in `zaehlen\wwww\rnbo\` oder bei einem geteilten Patch dort, wo die Notiz in `katalog\patches\` hinzeigt | du, in Max | Die Datenbank kennt nur Name und Commit. |
-| Dateien: WAV, Scans, `.glb` | der Speicher auf dem VPS | Upload und das Skript `fassungen` | in die Kopie, nur die öffentlichen Fassungen |
+| Art                                         | Quelle                                                                                                        | Wer schreibt                          | Wohin es kopiert wird                                                                                                                        |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Vokabular: ==Geist-Gruppen und Tags==       | der Vault                                                                                                     | nur du, in Obsidian                   | in die Datenbank, nur in diese Richtung                                                                                                      |
+| Klänge, Abschnitte, Einordnungen, Messwerte | die Datenbank                                                                                                 | du, Johannes, Peter und die Skripte   | in die Kopie für die Installation                                                                                                            |
+| Werke, Personen, Konten, Uploads            | die Datenbank                                                                                                 | du und die, die sich anmelden         | ==in die Kopie, nur was öffentlich ist==                                                                                                     |
+| Max-Patches                                 | git, in `zaehlen\wwww\rnbo\` oder bei einem geteilten Patch dort, wo die Notiz in `katalog\patches\` hinzeigt | du, in Max                            | Die Datenbank kennt nur Name und Commit. ~~==Wie wird es dann auf den Installationstechner bzw. Auf die Webseite auf dem VPS übertragen?==~~ |
+| Dateien: WAV, Scans, `.glb`                 | der Speicher auf dem VPS ==~~wird hier cloudflare oder ähnliches verwendet?~~==                               | ==Upload und das Skript `fassungen`== | in die Kopie, nur die öffentlichen Fassungen                                                                                                 |
 
 Eine Kopie ist nie eine Quelle. Änderst du etwas in der Kopie für den Mac mini, ist es beim nächsten Lauf von `kopie-installation` wieder weg, und das ist richtig so.
 
@@ -75,19 +79,19 @@ Eine Kopie ist nie eine Quelle. Änderst du etwas in der Kopie für den Mac mini
 
 **Millisekunden statt `HH:MM:SS`.** Ein Abschnitt von 1:02,000 bis 1:02,300 ist 300 ms lang. In `HH:MM:SS` wären Anfang und Ende beide `00:01:02`. In Millisekunden sind es `62000` und `62300`.
 
-**Fremde Musik bleibt privat.** „How Long Can I Burn?“ von Special Guest DJ steht im Formular. Du darfst ihn hören und einordnen, das ist Forschung. Die Seite darf die Datei nicht ausliefern, denn niemand hat zugestimmt. Deshalb trägt der Track `origin = 'foreign'` und fehlt in der View `public_tracks`.
+**Fremde Musik bleibt privat.** „How Long Can I Burn?“ von Special Guest DJ steht im Formular. Du darfst ihn hören und einordnen, das ist Forschung. Die Seite darf die Datei nicht ausliefern, denn niemand hat zugestimmt. Deshalb trägt der Track `origin = 'foreign'` und fehlt in der View `public_tracks`. ==~~Erkläre genauer, wo Views verwendet werden?~~==
 
 **Ein ganzer Patch gehört in git.** Speicherst du `granular.maxpat` in einer Zelle, gibt es ihn zweimal: in der Zelle und in Max. Nach der nächsten Änderung in Max ist die Zelle veraltet, und niemand merkt es. In git zeigt `git log` jede Änderung, und die Datenbank merkt sich nur den Commit, etwa `a41f9c2`.
 
-**Echtzeit braucht wwww nicht.** Peter lädt ein Bild hoch. Es erscheint erst, wenn du es freigibst. Ob ein Besucher es eine Sekunde oder eine Stunde danach sieht, ändert nichts.
+**Echtzeit braucht wwww nicht.** Peter lädt ein Bild hoch. Es erscheint erst, wenn du es freigibst. Ob ein Besucher es eine Sekunde oder eine Stunde danach sieht, ändert nichts. ~~==wie ist es bei Multiplayer Interaktion in three.js und rnbo==~~
 
-**Jede Sperre hängt an der Maschine.** Ein Satz wie „Claude führt keine Migration aus“ ist Disziplin. Eine Rolle in Postgres, die keine Tabelle löschen darf, ist eine Sperre: Sie hält auch dann, wenn jemand den Satz vergisst.
+**Jede Sperre hängt an der Maschine.** Ein Satz wie „Claude führt keine Migration aus“ ist Disziplin. Eine Rolle in Postgres, die keine Tabelle löschen darf, ist eine Sperre: Sie hält auch dann, wenn jemand den Satz vergisst. ~~==Das verstehe ich nicht==~~ 
 
 ## 4 · Der Stack: was jedes Teil tut
 
 ### Postgres
 
-Die Datenbank selbst. Sie läuft in einem Container aus dem Image `pgvector/pgvector:0.8.7-pg19`, das ist das offizielle Postgres 19 mit der Erweiterung pgvector. Die Daten liegen in einem Docker-Volume, also auf der Platte des Rechners, nicht im Container. Ab Postgres 18 bindet man dafür `/var/lib/postgresql` ein.
+Die Datenbank selbst. Sie läuft in einem Container aus dem Image `pgvector/pgvector:0.8.7-pg19`, das ist das offizielle Postgres 19 mit der Erweiterung pgvector. Die Daten liegen in einem Docker-Volume, also auf der Platte des Rechners, nicht im Container. ~~==Was ist hier der Unterschied?==~~ Ab Postgres 18 bindet man dafür `/var/lib/postgresql` ein.
 
 ### Drizzle
 
@@ -116,7 +120,7 @@ export const segments = pgTable('segments', {
 ])
 ```
 
-Im Code heißt die Spalte `startMs`, in der Datenbank `start_ms`. Der Name in der Datenbank steht ausdrücklich in der Klammer, so siehst du ihn beim Lesen. Drizzle könnte ihn mit `casing: 'snake_case'` auch selbst ableiten, der Prototyp schreibt ihn lieber hin.
+Im Code heißt die Spalte `startMs`, in der Datenbank `start_ms`. Der Name in der Datenbank steht ausdrücklich in der Klammer, so siehst du ihn beim Lesen. Drizzle könnte ihn mit `casing: 'snake_case'` auch selbst ableiten, der Prototyp schreibt ihn lieber hin. ~~==Du meinst dadurch könnte er verschlüsselt werden? Könnten wir ihn der Leichtigkeit auch 1zu1 in Drizzel und in der Datenbank identisch benennen?==~~
 
 Eine Abfrage mit Drizzle:
 
@@ -130,7 +134,7 @@ const rows = await db
   .where(and(eq(geistTags.geistId, 'kyriotetes'), gt(metaGeist.intensity, 0.6)))
 ```
 
-Ändert sich `schema.ts`, erzeugt `drizzle-kit generate` die Migration als `.sql`-Datei. `drizzle-kit migrate` spielt sie ein. Den zweiten Befehl führst nur du aus, siehe Abschnitt 13.
+Ändert sich `schema.ts`, erzeugt `drizzle-kit generate` die Migration als `.sql`-Datei. `drizzle-kit migrate` spielt sie ein. Den zweiten Befehl führst nur du aus, siehe Abschnitt 13. heist es, dass ich über Schema.ts die Datenbank selbst strukturell bearbeiten kann. Also zum Beispiel eine Spalte hinzufügen?
 
 ### Hono
 
@@ -172,7 +176,7 @@ const res = await api.api.segments.$get({ query: { geist: 'kyriotetes', min: '0.
 const segments = await res.json()   // der Typ kommt aus der Route
 ```
 
-Benennt jemand in der Route `start` in `startMs` um, meldet der Compiler den Fehler in der Szene, bevor die Seite lädt. Das ist die Typsicherheit, die dich an Convex gereizt hat. Laut Hono-Doku braucht sie `"strict": true` in der `tsconfig.json`.
+Benennt jemand in der Route `start` in `startMs` um, meldet der Compiler den Fehler in der Szene, bevor die Seite lädt. ~~==Was ist eine Route? Eine Änderung an Schema.ts? Erkläre das mit dem schiebt allgemeiner. Ist nicht jeder der mit der API interagiert sofort ein Client?==~~  Das ist die Typsicherheit, die dich an Convex gereizt hat. Laut Hono-Doku braucht sie `"strict": true` in der `tsconfig.json`.
 
 ### Zod
 
@@ -186,7 +190,7 @@ const NewSegment = z.object({
 })
 ```
 
-Schickt jemand `startMs: "1:02"`, antwortet die Route mit 400, bevor etwas in die Datenbank kommt.
+Schickt jemand `startMs: "1:02"`, antwortet die Route mit 400, bevor etwas in die Datenbank kommt. ~~==Das heißt es gibt zwei Schutzmechanismen? Einen für das lauffähig machen / compiling und einen weiteren für aktive API Transaktionen? D.h. Eine falsche Nachricht verschwindet nicht nur, sondern sie gibt auch einen Fehler zurück?==~~
 
 ### Better Auth
 
@@ -218,7 +222,7 @@ export const auth = betterAuth({
 // .on(['GET', 'POST'], '/api/auth/*', (c) => auth.handler(c.req.raw))
 ```
 
-`input: false` heißt: Diese Felder setzt nur der Server. Niemand kann sich beim Login selbst zum Admin machen. Die Callback-Adresse im Discord-Entwicklerportal ist `https://julianniklasheynert.xyz/api/auth/callback/discord`. Better Auth bringt seine Tabellen als Drizzle-Schema mit (`npx auth@latest generate`), sie kommen in `schema.ts` wie alle anderen.
+`input: false` heißt: Diese Felder setzt nur der Server. Niemand kann sich beim Login selbst zum Admin machen. Die Callback-Adresse im Discord-Entwicklerportal ist `https://julianniklasheynert.xyz/api/auth/callback/discord`. Better Auth bringt seine Tabellen als Drizzle-Schema mit (`npx auth@latest generate`), sie kommen in `schema.ts` wie alle anderen. ==~~Das verstehe ich nicht. Ich kann also mit der api das Schema.ts verändern, oder aus obsidian heraus oder sogar aus discord heraus?~~==
 
 ### pg-boss
 
@@ -269,12 +273,12 @@ Den `AudioContext` erlaubt iOS erst nach einer Berührung. Das kann derselbe Tap
 
 **Was ein Besucher an jedem Ort bekommt:**
 
-| | dieser PC | VPS | Mac mini |
-|---|---|---|---|
-| Adresse | `http://localhost:8080` | `https://julianniklasheynert.xyz` | der Name vor Ort, über den Slate AX |
-| Container | `app`, `api`, `db` | `app`, `api`, `db` | `app` und `tls` |
-| Woher die Seite ihre Daten hat | aus der API | aus der API | aus `/daten/`, der Kopie |
-| Login, Upload, Einordnen | ja | ja | nein |
+|                                                                                                                                                                                                                                                                                 | dieser PC               | VPS                               | Mac mini                            |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------- | --------------------------------- | ----------------------------------- |
+| Adresse                                                                                                                                                                                                                                                                         | `http://localhost:8080` | `https://julianniklasheynert.xyz` | der Name vor Ort, über den Slate AX |
+| Container ~~==Erkläre die unterschiedlichen Container noch einmal genauer.==~~                                                                                                                                                                                                  | `app`, `api`, `db`      | `app`, `api`, `db`                | `app` und `tls`                     |
+| Woher die Seite ihre Daten hat ~~==Liegen die Daten nicht in der Datenbank. Oder meinst du, worüber die Seite ihre Daten bekommt? Also über API wird nicht nur geschrieben sondern auch erhalten? Läuft oder braucht es die API dann gar nicht auf dem Ibstallationstechner==~~ | aus der API             | aus der API                       | aus `/daten/`, der Kopie            |
+| Login, Upload, Einordnen                                                                                                                                                                                                                                                        | ja                      | ja                                | nein                                |
 
 **Wie dieselbe `docker-compose.yml` das schafft:**
 
@@ -402,13 +406,13 @@ Fast jede Tabelle hat dazu `created_by` (zeigt auf `users.id`) und `created_at`.
 
 **Wiederkehrende Spalten**, damit sie unten nicht 14-mal erklärt werden:
 
-| Spalte | Typ | Bedeutung |
-|---|---|---|
-| `id` | `uuid`, PK, Vorgabe: eine neue Zufallskennung | die Kennung der Zeile. Nur das Vokabular und die Konten haben andere IDs. |
-| `created_by` | `text`, FK → `users.id` | wer die Zeile angelegt hat. Leer bei Importen. |
-| `created_at` | `timestamptz`, Pflicht, Vorgabe: jetzt | wann die Zeile entstand |
-| `status` | `text`, Pflicht, nur `submitted` oder `approved`, Vorgabe `submitted` | eingereicht oder freigegeben. Nur Freigegebenes ist öffentlich. |
-| `rights_confirmed_at` | `timestamptz` | wann jemand, der nicht Admin ist, die Rechte am Upload bestätigt hat |
+| Spalte                | Typ                                                                   | Bedeutung                                                                 |
+| --------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `id`                  | `uuid`, PK, Vorgabe: eine neue Zufallskennung                         | die Kennung der Zeile. Nur das Vokabular und die Konten haben andere IDs. |
+| `created_by`          | `text`, FK → `users.id`                                               | wer die Zeile angelegt hat. Leer bei Importen.                            |
+| `created_at`          | `timestamptz`, Pflicht, Vorgabe: jetzt                                | wann die Zeile entstand                                                   |
+| `status`              | `text`, Pflicht, nur `submitted` oder `approved`, Vorgabe `submitted` | eingereicht oder freigegeben. Nur Freigegebenes ist öffentlich.           |
+| `rights_confirmed_at` | `timestamptz`                                                         | wann jemand, der nicht Admin ist, die Rechte am Upload bestätigt hat      |
 
 ### 6.2 · Vokabular
 
@@ -441,22 +445,22 @@ Fast jede Tabelle hat dazu `created_by` (zeigt auf `users.id`) und `created_at`.
 
 **Alle 14, aus `meta_geist_def.csv`:**
 
-| `id` | `musical_term` | `hierarchy` | `alias` |
-|---|---|---|---|
-| `throne-asuras` | opfer | 1 | Was es nicht ist |
-| `cherubim` | harmonie | 1 | Poly, Verhältnis, Weltanschauung, 3x4, Tierkreis, Spiegelung |
-| `seraphim` | richtung | 1 | Sturz, Menschheitsrepräsentant, Planeten |
-| `kyriotetes` | timbre | 2 | Tone, Frequency, Spectral, Herrschaft, Weisheit |
-| `exusiai` | spatiality | 2 | Form, Gewalten |
-| `dynamis` | dynamics | 2 | Envelope, Bewegung, Mächte |
-| `archai` | texture | 3 | Dichte, Geste, Persönlichkeit, Urbeginne, Zeit |
-| `angeloi` | context | 3 | Mood, Use, Function, Energy, Leben, Zwielicht |
-| `archangeloi` | semantics | 3 | Feuer |
-| `elementarwesen` | wesen | 4 | individuell erkannter Wesenssatz in Beziehung zum Hüter |
-| `luzifer` | instruments | 4 | — |
-| `sorat` | techniques | 4 | — |
-| `umlaufzeiten` | patterns | 4 | — |
-| `ahriman` | material | 4 | Beschreibung, Wissen |
+| `id`             | `musical_term` | `hierarchy` | `alias`                                                      |
+| ---------------- | -------------- | ----------- | ------------------------------------------------------------ |
+| `throne-asuras`  | opfer          | 1           | Was es nicht ist                                             |
+| `cherubim`       | harmonie       | 1           | Poly, Verhältnis, Weltanschauung, 3x4, Tierkreis, Spiegelung |
+| `seraphim`       | richtung       | 1           | Sturz, Menschheitsrepräsentant, Planeten                     |
+| `kyriotetes`     | timbre         | 2           | Tone, Frequency, Spectral, Herrschaft, Weisheit              |
+| `exusiai`        | spatiality     | 2           | Form, Gewalten                                               |
+| `dynamis`        | dynamics       | 2           | Envelope, Bewegung, Mächte                                   |
+| `archai`         | texture        | 3           | Dichte, Geste, Persönlichkeit, Urbeginne, Zeit               |
+| `angeloi`        | context        | 3           | Mood, Use, Function, Energy, Leben, Zwielicht                |
+| `archangeloi`    | semantics      | 3           | Feuer                                                        |
+| `elementarwesen` | wesen          | 4           | individuell erkannter Wesenssatz in Beziehung zum Hüter      |
+| `luzifer`        | instruments    | 4           | —                                                            |
+| `sorat`          | techniques     | 4           | —                                                            |
+| `umlaufzeiten`   | patterns       | 4           | —                                                            |
+| `ahriman`        | material       | 4           | Beschreibung, Wissen                                         |
 
 #### `geist_tags` — ein Tag mit seiner Gruppe
 
@@ -482,15 +486,15 @@ Fast jede Tabelle hat dazu `created_by` (zeigt auf `users.id`) und `created_at`.
 
 #### `tag_suggestions` — ein Tag, den es noch nicht gibt
 
-| Spalte | Typ | Pflicht | Bedeutung | Beispiel |
-|---|---|---|---|---|
-| `id` | `uuid`, PK | ja | | `‹V1›` |
-| `text` | `text` | ja | was getippt wurde | `staccatosax` |
-| `segment_id` | `uuid`, FK → `segments.id` | nein | der Abschnitt, an dem der Tag aufkam | `‹S2›` |
-| `intensity`, `polarity`, `dominance`, `confidence` | `real` | nein | die vier Regler, wie bei `meta_geist` | `0.7`, `0`, `0.5`, `0.6` |
-| `created_by`, `created_at` | | | wer und wann | |
-| `resolved_in` | `integer`, FK → `vocabulary_versions.id` | nein | in welcher Fassung entschieden wurde | `3` |
-| `resolved_as` | `text[]` | nein | was daraus wurde. Ein Vorschlag kann zu mehreren Tags werden. | `{staccato, sax}` |
+| Spalte                                             | Typ                                      | Pflicht | Bedeutung                                                     | Beispiel                 |
+| -------------------------------------------------- | ---------------------------------------- | ------- | ------------------------------------------------------------- | ------------------------ |
+| `id`                                               | `uuid`, PK                               | ja      |                                                               | `‹V1›`                   |
+| `text`                                             | `text`                                   | ja      | was getippt wurde                                             | `staccatosax`            |
+| `segment_id`                                       | `uuid`, FK → `segments.id`               | nein    | der Abschnitt, an dem der Tag aufkam                          | `‹S2›`                   |
+| `intensity`, `polarity`, `dominance`, `confidence` | `real`                                   | nein    | die vier Regler, wie bei `meta_geist`                         | `0.7`, `0`, `0.5`, `0.6` |
+| `created_by`, `created_at`                         |                                          |         | wer und wann                                                  |                          |
+| `resolved_in`                                      | `integer`, FK → `vocabulary_versions.id` | nein    | in welcher Fassung entschieden wurde                          | `3`                      |
+| `resolved_as`                                      | `text[]`                                 | nein    | was daraus wurde. Ein Vorschlag kann zu mehreren Tags werden. | `{staccato, sax}`        |
 
 **Warum es sie gibt:** Auf der Seite `einordnen\` sollst du nicht anhalten müssen, nur weil ein Tag fehlt. Du tippst ihn, er landet hier, und du arbeitest weiter. Später ordnest du ihn in Obsidian zu. Der nächste Import legt aus dem Vorschlag die Einordnungen in `meta_geist` an und setzt `resolved_in`.
 
@@ -672,14 +676,14 @@ Die Datenbank erzwingt sie mit `not null` und `CHECK (length(trim(image_descript
 
 #### `persons` — ein Mensch
 
-| Spalte | Typ | Pflicht | Bedeutung | Beispiel |
-|---|---|---|---|---|
-| `id` | `uuid`, PK | ja | | `‹P2›` |
-| `name` | `text` | ja | der Name, wie er auf dem Schild steht | „Peter Piek“ |
-| `born_year` | `smallint` | nein | das Geburtsjahr, für die Lebensdaten | — |
-| `died_year` | `smallint` | nein | das Todesjahr | leer |
-| `link` | `text` | nein | Website oder Bandcamp | |
-| `user_id` | `text`, FK → `users.id`, `unique` | nein | das Konto, wenn die Person sich anmeldet | leer |
+| Spalte      | Typ                               | Pflicht | Bedeutung                                | Beispiel     |
+| ----------- | --------------------------------- | ------- | ---------------------------------------- | ------------ |
+| `id`        | `uuid`, PK                        | ja      |                                          | `‹P2›`       |
+| `name`      | `text`                            | ja      | der Name, wie er auf dem Schild steht    | „Peter Piek“ |
+| `born_year` | `smallint`                        | nein    | das Geburtsjahr, für die Lebensdaten     | —            |
+| `died_year` | `smallint`                        | nein    | das Todesjahr                            | leer         |
+| `link`      | `text`                            | nein    | Website oder Bandcamp                    |              |
+| `user_id`   | `text`, FK → `users.id`, `unique` | nein    | das Konto, wenn die Person sich anmeldet | leer         |
 
 **Warum Person und Konto getrennt sind:** Peter steht auch ohne Discord als Urheber in der Galerie. Meldet er sich später an, bekommt `persons.user_id` sein Konto, und nichts anderes ändert sich. Die Leute hinter den Bandcamp-Tracks melden sich nie an und stehen trotzdem hier.
 
@@ -730,7 +734,7 @@ Diese Tabellen legt Better Auth an. Die Felder stammen aus seinem Quelltext. Mit
 | `scope` | `text` | nein | was Discord erlaubt hat |
 | `password` | `text` | nein | bleibt leer, es gibt nur Discord |
 | `created_at`, `updated_at` | `timestamptz` | ja | |
-
+~~==Sind das neu erzeugte Felder und Tabellen?==~~
 #### `sessions` — eine Anmeldung in einem Browser
 
 | Spalte | Typ | Pflicht | Bedeutung |
