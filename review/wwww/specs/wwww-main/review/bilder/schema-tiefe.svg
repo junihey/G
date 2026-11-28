@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" font-family="system-ui, sans-serif" font-size="12">
+  <defs>
+    <linearGradient id="himmel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9cc6e8"/><stop offset="1" stop-color="#e8eef2"/></linearGradient>
+    <linearGradient id="tiefe" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#111"/><stop offset="1" stop-color="#fff"/></linearGradient>
+    <marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7d838a"/></marker>
+  </defs>
+  <rect width="600" height="300" rx="10" fill="#15171c"/>
+  <!-- Foto -->
+  <rect x="20" y="40" width="120" height="80" fill="url(#himmel)"/>
+  <path d="M20 96 Q60 80 90 92 T140 88 V120 H20 Z" fill="#5c8a4f"/>
+  <rect x="96" y="60" width="6" height="40" fill="#5a4030"/><circle cx="99" cy="58" r="14" fill="#3f6b38"/>
+  <text x="20" y="32" fill="#e8e8e8">Foto</text>
+  <!-- Tiefenkarte -->
+  <rect x="20" y="160" width="120" height="80" fill="url(#tiefe)"/>
+  <circle cx="99" cy="178" r="14" fill="#b0b0b0"/><rect x="96" y="180" width="6" height="40" fill="#c8c8c8"/>
+  <text x="20" y="152" fill="#e8e8e8">Tiefenkarte</text>
+  <text x="20" y="256" fill="#a0a8b0" font-size="11">hell = nah</text>
+  <path d="M150 140 L196 140" stroke="#7d838a" stroke-width="1.5" marker-end="url(#p)"/>
+  <!-- räumlich: Schichten nach Tiefe in Perspektive -->
+  <g>
+    <polygon points="210,230 560,230 500,180 270,180" fill="#5c8a4f" opacity="0.35"/>
+    <g fill="none" stroke="#78c8ff" stroke-width="1" opacity="0.7">
+      <path d="M220 222 L550 222"/><path d="M236 208 L534 208"/><path d="M252 194 L518 194"/><path d="M268 182 L502 182"/>
+    </g>
+    <!-- Punktwolke des Baums, nah = groß -->
+    <g fill="#e8e8e8">
+      <circle cx="420" cy="120" r="3"/><circle cx="432" cy="110" r="3"/><circle cx="410" cy="104" r="3"/><circle cx="440" cy="126" r="3"/><circle cx="426" cy="96" r="3"/>
+      <circle cx="414" cy="130" r="3"/><circle cx="446" cy="104" r="3"/><circle cx="402" cy="118" r="3"/><circle cx="436" cy="140" r="3"/><circle cx="424" cy="150" r="2.5"/>
+      <circle cx="424" cy="166" r="2.5"/><circle cx="424" cy="182" r="2.5"/><circle cx="424" cy="198" r="2.5"/>
+    </g>
+    <!-- Nebel hinten -->
+    <rect x="270" y="60" width="232" height="122" fill="#e8eef2" opacity="0.08"/>
+    <g fill="#e8e8e8" opacity="0.35"><circle cx="300" cy="150" r="2"/><circle cx="330" cy="140" r="2"/><circle cx="360" cy="160" r="2"/><circle cx="480" cy="150" r="2"/><circle cx="500" cy="160" r="2"/></g>
+  </g>
+  <text x="210" y="40" fill="#e8e8e8">das Foto wird räumlich</text>
+  <g font-size="11" fill="#a0a8b0"><text x="210" y="258">Linien · Licht · Nebel · Unschärfe · Gitter · Punktwolke</text><text x="210" y="274">Bausteine für Jitter</text></g>
+  <text x="458" y="100" fill="#e8e8e8" font-size="11">nah: Punkte groß</text>
+  <text x="296" y="128" fill="#a0a8b0" font-size="11">fern: im Nebel</text>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" font-family="system-ui, sans-serif" font-size="12">
+  <defs>
+    <marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7d838a"/></marker>
+  </defs>
+  <rect width="600" height="300" rx="10" fill="#15171c"/>
+  <!-- Original -->
+  <text x="20" y="34" fill="#e8e8e8">Original</text>
+  <path d="M20 66 Q30 46 40 66 T60 66 T80 66 T100 66 T120 66" fill="none" stroke="#78c8ff" stroke-width="2"/>
+  <path d="M126 66 L156 66" stroke="#7d838a" stroke-width="1.5" marker-end="url(#p)"/>
+  <!-- Modell mit Schwachstelle -->
+  <rect x="160" y="40" width="110" height="52" rx="8" fill="#7d838a"/>
+  <text x="215" y="62" fill="#15171c" text-anchor="middle" font-weight="600">Modell</text>
+  <text x="215" y="78" fill="#15171c" text-anchor="middle" font-size="10">RAVE · RT2 · SA3 …</text>
+  <circle cx="258" cy="48" r="6" fill="#d9534f"/>
+  <path d="M274 66 L304 66" stroke="#7d838a" stroke-width="1.5" marker-end="url(#p)"/>
+  <!-- Ausgabe mit kleinem Fehler -->
+  <text x="310" y="34" fill="#e8e8e8">Ausgabe</text>
+  <path d="M310 66 Q320 46 330 66 T350 66 T370 66 l3 -6 l3 10 l3 -6 Q394 46 404 66 T424 66" fill="none" stroke="#78c8ff" stroke-width="2"/>
+  <!-- Lupe: die Schwäche wird verstärkt -->
+  <circle cx="376" cy="138" r="34" fill="none" stroke="#e8b04a" stroke-width="3"/>
+  <line x1="400" y1="162" x2="424" y2="186" stroke="#e8b04a" stroke-width="5" stroke-linecap="round"/>
+  <path d="M348 138 l7 -20 l7 36 l7 -30 l7 26 l7 -22 l7 18 l6 -8" fill="none" stroke="#d9534f" stroke-width="2"/>
+  <line x1="376" y1="72" x2="376" y2="102" stroke="#e8b04a" stroke-dasharray="3 3"/>
+  <text x="430" y="114" fill="#e8b04a" font-size="11">eine Methode nimmt</text><text x="430" y="128" fill="#e8b04a" font-size="11">die Schwäche und</text>
+  <text x="430" y="142" fill="#e8b04a" font-size="11">verstärkt sie,</text><text x="430" y="156" fill="#e8b04a" font-size="11">bis man sie hört</text>
+  <!-- Residuum -->
+  <text x="20" y="214" fill="#e8e8e8">Residuum = Ausgabe − Original</text>
+  <path d="M20 250 L60 250 l3 -10 l3 18 l3 -14 l3 10 l3 -6 l3 4 L120 250 L200 250 l3 -6 l3 12 l3 -8 l3 4 L260 250" fill="none" stroke="#d9534f" stroke-width="2"/>
+  <text x="20" y="276" fill="#a0a8b0" font-size="11">alles, was das Modell verändert hat, und nur das</text>
+  <!-- Beispiele -->
+  <g font-size="11" fill="#a0a8b0">
+    <text x="310" y="220">Codec-Schmieren → Codec-Rundreisen</text>
+    <text x="310" y="236">Tonhöhen-Eiern → Differenz verstärken</text>
+    <text x="310" y="252">Chunk-Brüche → Grenzen loopen</text>
+    <text x="310" y="268">Pseudo-Stereo → Mid/Side spreizen</text>
+  </g>
+</svg>

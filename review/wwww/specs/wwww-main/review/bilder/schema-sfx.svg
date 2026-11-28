@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" font-family="system-ui, sans-serif" font-size="12">
+  <rect width="600" height="300" rx="10" fill="#15171c"/>
+  <!-- Spaltenköpfe: Materialien -->
+  <g text-anchor="middle" fill="#e8e8e8">
+    <text x="250" y="40">Metall</text><text x="390" y="40">Holz</text><text x="530" y="40">Glas</text>
+  </g>
+  <!-- Material-Zeichen -->
+  <rect x="236" y="50" width="28" height="12" fill="#9aa4ae"/><rect x="236" y="50" width="28" height="3" fill="#e8e8e8"/>
+  <rect x="376" y="50" width="28" height="12" fill="#a0703f"/><line x1="378" y1="55" x2="402" y2="55" stroke="#7a5230"/><line x1="378" y1="59" x2="402" y2="58" stroke="#7a5230"/>
+  <rect x="516" y="50" width="28" height="12" fill="#78c8ff" opacity="0.4" stroke="#78c8ff"/>
+  <!-- Zeilenköpfe: Handlungen -->
+  <g fill="#e8e8e8"><text x="24" y="126">fallen</text><text x="24" y="226">schaben</text></g>
+  <path d="M110 96 L110 132" stroke="#e8b04a" stroke-width="2"/><path d="M104 126 L110 136 L116 126" fill="none" stroke="#e8b04a" stroke-width="2"/>
+  <path d="M90 222 L134 222" stroke="#e8b04a" stroke-width="2"/><path d="M92 228 L132 228" stroke="#e8b04a" stroke-width="1" stroke-dasharray="2 3"/>
+  <!-- Zellen: je ein Klang, als Wellenform in Materialfarbe -->
+  <g fill="none" stroke-width="1.8">
+    <rect x="180" y="80" width="140" height="80" rx="6" stroke="#2b3038"/><rect x="320" y="80" width="140" height="80" rx="6" stroke="#2b3038"/><rect x="460" y="80" width="140" height="80" rx="6" stroke="#2b3038"/>
+    <rect x="180" y="180" width="140" height="80" rx="6" stroke="#2b3038"/><rect x="320" y="180" width="140" height="80" rx="6" stroke="#2b3038"/><rect x="460" y="180" width="140" height="80" rx="6" stroke="#2b3038"/>
+    <!-- fallen: Anschlag, Ausklang je Material -->
+    <path d="M196 120 l6 -28 l6 52 l6 -40 l6 30 l6 -22 l6 16 l6 -10 l6 8 l6 -6 l6 4 l6 -3 l6 2 l6 -2 l6 1 l6 0 l6 0" stroke="#9aa4ae"/>
+    <path d="M336 120 l6 -24 l6 44 l6 -24 l6 10 l6 -6 l6 2 l6 -1 l6 0 l40 0" stroke="#a0703f"/>
+    <path d="M476 120 l4 -30 l4 56 l4 -50 l4 44 l4 -36 l4 30 l4 -22 l4 20 l4 -14 l4 12 l4 -8 l4 6 l4 -4 l4 3 l4 -2 l4 1 l4 0 l30 0" stroke="#78c8ff"/>
+    <!-- schaben: anhaltend, rau -->
+    <path d="M196 220 l3 -8 l3 12 l3 -10 l3 9 l3 -12 l3 11 l3 -9 l3 10 l3 -12 l3 9 l3 -8 l3 12 l3 -10 l3 9 l3 -11 l3 10 l3 -9 l3 10 l3 -12 l3 9 l3 -8 l3 12 l3 -10 l3 9 l3 -11 l3 10 l3 -9 l3 10 l3 -6 l3 4 l3 -2" stroke="#9aa4ae"/>
+    <path d="M336 220 l5 -10 l5 14 l5 -12 l5 12 l5 -14 l5 10 l5 -12 l5 14 l5 -10 l5 12 l5 -12 l5 10 l5 -12 l5 12 l5 -10 l5 8 l5 -4 l5 2" stroke="#a0703f"/>
+    <path d="M476 220 l2 -6 l2 10 l2 -14 l2 16 l2 -12 l2 8 l2 -10 l2 14 l2 -16 l2 12 l2 -8 l2 10 l2 -14 l2 16 l2 -12 l2 8 l2 -10 l2 14 l2 -16 l2 12 l2 -8 l2 10 l2 -14 l2 16 l2 -12 l2 8 l2 -10 l2 6 l2 -4 l2 2" stroke="#78c8ff"/>
+  </g>
+  <text x="24" y="284" fill="#a0a8b0" font-size="11">Dieselbe Handlung, vom Material gefärbt: jede Zelle ein Klang aus SA3 Small-SFX</text>
+</svg>

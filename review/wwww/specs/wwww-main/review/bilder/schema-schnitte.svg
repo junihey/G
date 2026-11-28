@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" font-family="system-ui, sans-serif" font-size="12">
+  <rect width="600" height="300" rx="10" fill="#15171c"/>
+  <!-- drei Spuren mit einem gemeinsamen harten Schnitt -->
+  <g fill="#e8e8e8" font-size="11"><text x="20" y="48">Handy</text><text x="20" y="98">Installation</text><text x="20" y="148">Bild</text></g>
+  <!-- Handy: Klang setzt aus -->
+  <path d="M100 44 l4 -10 l4 16 l4 -12 l4 10 l4 -14 l4 12 l4 -8 l4 10 l4 -12 l4 14 l4 -10 l4 8 l4 -12 l4 10 l4 -8 l4 12 l4 -10 l4 8 L176 44 M280 44 l4 -10 l4 16 l4 -12 l4 10 l4 -14 l4 12 l4 -8 l4 10 l4 -12 l4 14 l4 -10 l4 8 l4 -12 l4 10 l4 -8 l4 12 l4 -10 l4 8 l4 -12 l4 14 l4 -10 l4 8 l4 -12 l4 10 l4 -8 l4 12 l4 -10 l4 8 l4 -12 l4 14 l4 -10 l4 8 l4 -12 l4 10" fill="none" stroke="#78c8ff" stroke-width="1.5"/>
+  <text x="196" y="48" fill="#78c8ff" font-size="11">Lücke</text>
+  <!-- Installation: Impuls ins FDN -->
+  <path d="M100 94 Q120 86 140 94 T180 94 T220 94" fill="none" stroke="#7d838a" stroke-width="1.5"/>
+  <line x1="228" y1="94" x2="228" y2="66" stroke="#e8b04a" stroke-width="3"/>
+  <path d="M234 94 Q244 74 254 94 Q262 80 270 94 Q276 86 282 94 Q290 90 300 94 T360 94 T420 94 T480 94 T560 94" fill="none" stroke="#7d838a" stroke-width="1.5"/>
+  <text x="238" y="114" fill="#e8b04a" font-size="11">Impuls ins FDN</text>
+  <!-- Bild: Kamera pausiert -->
+  <g fill="#3f6b38"><rect x="100" y="128" width="26" height="30"/><rect x="128" y="128" width="26" height="30" fill="#4a7a42"/><rect x="156" y="128" width="26" height="30" fill="#5c8a4f"/></g>
+  <g fill="#5c8a4f"><rect x="184" y="128" width="26" height="30"/><rect x="212" y="128" width="26" height="30"/><rect x="240" y="128" width="26" height="30"/></g>
+  <g fill="#6c9a5f"><rect x="280" y="128" width="26" height="30"/><rect x="308" y="128" width="26" height="30" fill="#7caa6f"/><rect x="336" y="128" width="26" height="30" fill="#8cba7f"/></g>
+  <text x="184" y="174" fill="#a0a8b0" font-size="11">dasselbe Bild steht</text>
+  <!-- der gemeinsame Schnitt -->
+  <rect x="178" y="22" width="98" height="140" fill="#e8e8e8" opacity="0.06"/>
+  <line x1="178" y1="20" x2="178" y2="164" stroke="#d9534f" stroke-width="2"/>
+  <text x="182" y="18" fill="#d9534f" font-size="11">Schnitt durch alle drei</text>
+  <!-- Leiter der Längen, logarithmisch -->
+  <line x1="100" y1="236" x2="560" y2="236" stroke="#7d838a"/>
+  
+  <g fill="#e8b04a">
+    <circle cx="100" cy="236" r="4"/><circle cx="155" cy="236" r="4"/><circle cx="217" cy="236" r="4"/><circle cx="273" cy="236" r="4"/><circle cx="530" cy="236" r="5"/>
+  </g>
+  <g font-size="11" fill="#e8e8e8" text-anchor="middle">
+    <text x="100" y="258">1 ms</text><text x="155" y="258">4 ms</text><text x="217" y="258">20 ms</text><text x="273" y="258">80 ms</text><text x="530" y="258">3,33 s</text>
+  </g>
+  <g font-size="10" fill="#a0a8b0" text-anchor="middle">
+    <text x="100" y="274">Tap</text><text x="155" y="274">Wischen</text><text x="217" y="274">Feldgrenze</text><text x="273" y="274">Schütteln</text><text x="530" y="274">Fang vom Mikrofon</text>
+  </g>
+  <text x="20" y="240" fill="#e8e8e8" font-size="11">Länge</text>
+  <text x="320" y="214" fill="#a0a8b0" font-size="11">je mehr Körper, desto länger</text>
+</svg>

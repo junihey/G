@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" font-family="system-ui, sans-serif" font-size="12">
+  <rect width="600" height="300" rx="10" fill="#15171c"/>
+  <!-- Kanten nach Kategorie -->
+  <g stroke-width="2">
+    <line x1="260" y1="150" x2="140" y2="70" stroke="#78c8ff"/><line x1="260" y1="150" x2="130" y2="160" stroke="#78c8ff"/><line x1="260" y1="150" x2="170" y2="240" stroke="#78c8ff"/>
+    <line x1="260" y1="150" x2="380" y2="80" stroke="#b05cc8"/><line x1="380" y1="80" x2="470" y2="50" stroke="#b05cc8"/><line x1="260" y1="150" x2="400" y2="170" stroke="#b05cc8"/>
+    <line x1="260" y1="150" x2="330" y2="250" stroke="#5cb85c"/><line x1="330" y1="250" x2="460" y2="240" stroke="#5cb85c"/>
+    <line x1="260" y1="150" x2="250" y2="40" stroke="#e8b04a"/><line x1="400" y1="170" x2="520" y2="140" stroke="#e8b04a"/><line x1="380" y1="80" x2="250" y2="40" stroke="#e8b04a"/>
+    <line x1="140" y1="70" x2="60" y2="110" stroke="#78c8ff" opacity="0.5"/><line x1="470" y1="50" x2="550" y2="90" stroke="#b05cc8" opacity="0.5"/><line x1="460" y1="240" x2="540" y2="210" stroke="#5cb85c" opacity="0.5"/>
+  </g>
+  <!-- Knoten: Steine und Stoffe -->
+  <g fill="#9aa4ae" stroke="#15171c" stroke-width="2">
+    <circle cx="260" cy="150" r="16" fill="#d8c8c0"/>
+    <circle cx="140" cy="70" r="9"/><circle cx="130" cy="160" r="9"/><circle cx="170" cy="240" r="9"/><circle cx="380" cy="80" r="11"/><circle cx="470" cy="50" r="8"/>
+    <circle cx="400" cy="170" r="10"/><circle cx="330" cy="250" r="9"/><circle cx="460" cy="240" r="8"/><circle cx="250" cy="40" r="9"/><circle cx="520" cy="140" r="8"/>
+    <circle cx="60" cy="110" r="6"/><circle cx="550" cy="90" r="6"/><circle cx="540" cy="210" r="6"/>
+  </g>
+  <g fill="#e8e8e8" font-size="11">
+    <text x="282" y="146">Granit</text><text x="98" y="56">Quarz</text><text x="74" y="178">Feldspat</text><text x="150" y="264">Glimmer</text>
+    <text x="394" y="76">Diorit</text><text x="414" y="188">Gabbro</text><text x="302" y="276">Gneis</text><text x="264" y="46">Plutonit</text>
+  </g>
+  <!-- Legende -->
+  <g font-size="11">
+    <rect x="440" y="252" width="10" height="3" fill="#78c8ff"/><text x="454" y="257" fill="#78c8ff">Bestandteil</text>
+    <rect x="440" y="266" width="10" height="3" fill="#b05cc8"/><text x="454" y="271" fill="#b05cc8">Verwandtschaft</text>
+    <rect x="530" y="252" width="10" height="3" fill="#5cb85c"/><text x="544" y="257" fill="#5cb85c">Bildung</text>
+    <rect x="530" y="266" width="10" height="3" fill="#e8b04a"/><text x="544" y="271" fill="#e8b04a">Klasse</text>
+  </g>
+  <text x="20" y="24" fill="#a0a8b0" font-size="11">109 Steine und Stoffe, 178 Beziehungen mit Quellen · Namen hier als Beispiel</text>
+</svg>

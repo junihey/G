@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" font-family="system-ui, sans-serif" font-size="12">
+  <defs>
+    <marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7d838a"/></marker>
+  </defs>
+  <rect width="600" height="300" rx="10" fill="#15171c"/>
+  <!-- Stimmen hinein -->
+  <text x="20" y="34" fill="#e8e8e8">Stimmen</text>
+  <path d="M30 44 Q40 34 50 44 T70 44 T90 44" fill="none" stroke="#78c8ff" stroke-width="2"/>
+  <path d="M96 44 L120 44" stroke="#7d838a" stroke-width="1.5" marker-end="url(#p)"/>
+  <!-- 16 Leitungen, verschieden lang -->
+  <g fill="#78c8ff">
+    <rect x="130" y="30" width="150" height="6" opacity="0.9"/><rect x="130" y="40" width="210" height="6" opacity="0.85"/>
+    <rect x="130" y="50" width="120" height="6" opacity="0.9"/><rect x="130" y="60" width="250" height="6" opacity="0.8"/>
+    <rect x="130" y="70" width="180" height="6" opacity="0.85"/><rect x="130" y="80" width="230" height="6" opacity="0.8"/>
+    <rect x="130" y="90" width="140" height="6" opacity="0.9"/><rect x="130" y="100" width="270" height="6" opacity="0.75"/>
+    <rect x="130" y="110" width="160" height="6" opacity="0.85"/><rect x="130" y="120" width="200" height="6" opacity="0.8"/>
+    <rect x="130" y="130" width="130" height="6" opacity="0.9"/><rect x="130" y="140" width="260" height="6" opacity="0.75"/>
+    <rect x="130" y="150" width="190" height="6" opacity="0.85"/><rect x="130" y="160" width="220" height="6" opacity="0.8"/>
+    <rect x="130" y="170" width="170" height="6" opacity="0.85"/><rect x="130" y="180" width="240" height="6" opacity="0.8"/>
+  </g>
+  <text x="130" y="204" fill="#a0a8b0" font-size="11">16 Leitungen, teilerfremd lang</text>
+  <!-- Butterfly: Kreuzungen -->
+  <g stroke="#e8b04a" stroke-width="1.2" fill="none" opacity="0.85">
+    <path d="M420 33 L450 63"/><path d="M420 63 L450 33"/><path d="M420 93 L450 123"/><path d="M420 123 L450 93"/>
+    <path d="M420 153 L450 183"/><path d="M420 183 L450 153"/>
+    <path d="M460 33 L490 93"/><path d="M460 93 L490 33"/><path d="M460 123 L490 183"/><path d="M460 183 L490 123"/>
+  </g>
+  <text x="418" y="204" fill="#e8b04a" font-size="11">Butterfly</text><text x="418" y="218" fill="#e8b04a" font-size="11">Winkel d · 45°</text>
+  <!-- Rückkopplung -->
+  <path d="M500 108 C560 108 560 250 300 250 C110 250 110 120 124 116" fill="none" stroke="#7d838a" stroke-width="1.5" stroke-dasharray="4 4" marker-end="url(#p)"/>
+  <text x="300" y="244" fill="#a0a8b0" font-size="11" text-anchor="middle">verlustfrei zurück, gedämpft</text>
+  <!-- Regler d -->
+  <line x1="40" y1="278" x2="200" y2="278" stroke="#7d838a" stroke-width="3"/>
+  <circle cx="90" cy="278" r="7" fill="#e8b04a"/>
+  <text x="204" y="282" fill="#e8e8e8">ein Regler d</text>
+  <path d="M20 262 Q24 240 28 262 Q32 250 36 262 Q40 256 44 262" fill="none" stroke="#78c8ff" stroke-width="1.5"/>
+  <text x="20" y="232" fill="#78c8ff" font-size="11">Hall</text>
+  <path d="M300 270 l3 -12 l3 18 l3 -20 l3 14 l3 -10 l3 16 l3 -18 l3 12 l3 -8 l3 10" fill="none" stroke="#78c8ff" stroke-width="1.5"/>
+  <text x="340" y="282" fill="#78c8ff" font-size="11">bis Rauschen</text>
+  <!-- Ausgang -->
+  <g fill="#7d838a"><rect x="540" y="30" width="22" height="30" rx="3"/><rect x="540" y="90" width="22" height="30" rx="3"/><rect x="540" y="150" width="22" height="30" rx="3"/></g>
+  <g stroke="#7d838a" stroke-width="1.2" marker-end="url(#p)"><path d="M494 45 L534 45"/><path d="M494 105 L534 105"/><path d="M494 165 L534 165"/></g>
+  <text x="526" y="200" fill="#e8e8e8" font-size="11">drei</text><text x="516" y="214" fill="#e8e8e8" font-size="11">Genelec</text>
+</svg>

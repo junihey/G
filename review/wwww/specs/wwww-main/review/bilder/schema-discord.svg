@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" font-family="system-ui, sans-serif" font-size="12">
+  <defs>
+    <marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7d838a"/></marker>
+  </defs>
+  <rect width="600" height="300" rx="10" fill="#15171c"/>
+  <!-- Textfeld mit zwei Knöpfen -->
+  <rect x="20" y="40" width="170" height="80" rx="6" fill="#22262d" stroke="#7d838a"/>
+  <text x="30" y="62" fill="#a0a8b0" font-size="11">Dein Anliegen …</text>
+  <g stroke="#a0a8b0" stroke-width="1"><line x1="30" y1="76" x2="170" y2="76"/><line x1="30" y1="90" x2="140" y2="90"/></g>
+  <rect x="20" y="130" width="80" height="28" rx="14" fill="#e8e8e8"/><text x="60" y="148" fill="#15171c" text-anchor="middle" font-size="11">Berührung</text>
+  <rect x="110" y="130" width="80" height="28" rx="14" fill="none" stroke="#e8e8e8"/><text x="150" y="148" fill="#e8e8e8" text-anchor="middle" font-size="11">Begegnung</text>
+  <text x="20" y="180" fill="#a0a8b0" font-size="10">Hinweis: der Text geht an Discord</text>
+  <!-- Bot im Container -->
+  <path d="M194 144 L246 144" stroke="#7d838a" stroke-width="1.5" marker-end="url(#p)"/>
+  <rect x="250" y="112" width="104" height="64" rx="8" fill="#7d838a"/>
+  <text x="302" y="138" fill="#15171c" text-anchor="middle" font-weight="600">Bot</text>
+  <text x="302" y="154" fill="#15171c" text-anchor="middle" font-size="10">Container</text>
+  <text x="302" y="166" fill="#15171c" text-anchor="middle" font-size="10">auf dem VPS</text>
+  <!-- zwei Foren mit Threads -->
+  <path d="M356 130 L410 76" stroke="#7d838a" stroke-width="1.5" marker-end="url(#p)"/>
+  <path d="M356 158 L410 212" stroke="#7d838a" stroke-width="1.5" marker-end="url(#p)"/>
+  <rect x="414" y="40" width="168" height="76" rx="6" fill="#22262d" stroke="#e8e8e8"/>
+  <text x="424" y="58" fill="#e8e8e8" font-weight="600"># similis</text><text x="490" y="58" fill="#a0a8b0" font-size="10">Gleichgesinnte</text>
+  <g fill="#3a3f47"><rect x="424" y="66" width="148" height="12" rx="3"/><rect x="424" y="82" width="148" height="12" rx="3"/><rect x="424" y="98" width="110" height="12" rx="3"/></g>
+  <rect x="414" y="180" width="168" height="76" rx="6" fill="#22262d" stroke="#e8e8e8" stroke-dasharray="4 3"/>
+  <text x="424" y="198" fill="#e8e8e8" font-weight="600"># varius</text><text x="482" y="198" fill="#a0a8b0" font-size="10">Widerstände</text>
+  <g fill="#3a3f47"><rect x="424" y="206" width="148" height="12" rx="3"/><rect x="424" y="222" width="120" height="12" rx="3"/></g>
+  <!-- Link zurück -->
+  <path d="M302 178 C302 230 200 236 140 200" fill="none" stroke="#78c8ff" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#p)"/>
+  <text x="170" y="236" fill="#78c8ff" font-size="11">Link zum Thread und Einladung</text>
+  <!-- 1, 3, 7, 12 -->
+  <line x1="250" y1="40" x2="380" y2="40" stroke="#7d838a"/>
+  <g fill="#e8e8e8"><circle cx="256" cy="40" r="4"/><circle cx="272" cy="40" r="4"/><circle cx="304" cy="40" r="4"/><circle cx="348" cy="40" r="4"/></g>
+  <g fill="#e8e8e8" font-size="10" text-anchor="middle"><text x="256" y="30">1</text><text x="272" y="30">3</text><text x="304" y="30">7</text><text x="348" y="30">12</text></g>
+  <text x="250" y="62" fill="#a0a8b0" font-size="10">Tage bis zur Erinnerung,</text>
+  <text x="250" y="74" fill="#a0a8b0" font-size="10">Stufen der Teilnahme</text>
+  <text x="20" y="284" fill="#a0a8b0" font-size="10">erste Stufe: öffentliche Threads ohne Anmeldung · später Anmeldung mit Discord, Rollen wechseln wie in Moodle</text>
+</svg>

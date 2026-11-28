@@ -1,0 +1,625 @@
+{
+	"nodes": [
+		{
+			"id": "g-allgemein",
+			"type": "group",
+			"label": "Legende und Treffen",
+			"x": -4635,
+			"y": -215,
+			"width": 2460,
+			"height": 1280
+		},
+		{
+			"id": "g-raum",
+			"type": "group",
+			"label": "Der Raum · 2026-11-17 · aus aufbau.json",
+			"x": -175,
+			"y": -215,
+			"width": 2560,
+			"height": 8167,
+			"color": "4"
+		},
+		{
+			"id": "raum-karte",
+			"type": "file",
+			"file": "review/wwww/specs/wwww-main/review/bilder/aufbau-karte-insel.svg",
+			"x": -135,
+			"y": -135,
+			"width": 2070,
+			"height": 1689
+		},
+		{
+			"id": "raum-legende",
+			"type": "text",
+			"text": "**Groß: Insel**, wenn eine freie Fläche im Raum da ist. Klein darunter: Bahn und Ecke.\nNur in Insel: O21. **Offen, in keinem Plan:** .\n\n| Kürzel | Element | Kürzel | Element |\n|---|---|---|---|\n| **O9** | Papier-Blätter · „barfuß“ | **L1** | Blaue LEDs |\n| **O8** | Teppich aus gewebten Kacheln | **V4** | Ultrawide-Bildschirm |\n| **O10** | Tetraeder | **O11** | Farbstiftzeichnung · Johannes Myller · „Kortex“ |\n| **R1** | Installationsrechner | **O30** | Ölbild · Peter Piek · „Blaues Bild“ |\n| **A1** | Audio-Interface | **O13** | Calcit-Stufe |\n| **A2** | Nahfeld-Monitore | **O12** | Hibiskus-Blätter |\n| **A5** | Raum-Mikrofon | **O14** | Papier-Blätter · „einlesen“ |\n| **V1** | Tageslicht-Beamer | **E1** | Stromanschluss |\n| **V2** | Tageslicht-Kamera | **O18** | Versandkarton |\n| **V3** | Projektionsfläche | **O19** | Vogelmaske |\n| **N1** | WLAN-Router | **O20** | Getreide-Sack |\n| **N2** | QR-Codes · Standorte A, B, C | **O21** | Toast-Scheiben |\n| **M1** | Festes Handy | **O22** | Teppich aus Hafermilchpackungen |\n| **M2** | Besucher-Handys | **O23** | Eurobehälter |\n| **O1** | Apfelstab | **B1** | Federzug |\n| **O3** | Heft · Kommentarspalte „Himmel“ | **O25** | Quarz-Stufe |\n| **O4** | Veröffentlichung · Herz | **O26** | Granit-Quader |\n| **O5** | Big Bag | **O28** | Feldspat-Turmalin-Handstück |\n| **O6** | Baumscheiben | **O29** | Gneis-Azurit-Perlenkette |\n| **O7** | Big Bag |  |  |",
+			"x": -135,
+			"y": 1594,
+			"width": 2070,
+			"height": 940
+		},
+		{
+			"id": "raum-titel-bahn",
+			"type": "text",
+			"text": "**Bahn**, wenn ein Flur oder ein langer Streifen frei ist",
+			"x": -135,
+			"y": 2574,
+			"width": 1015,
+			"height": 120
+		},
+		{
+			"id": "raum-karte-bahn",
+			"type": "file",
+			"file": "review/wwww/specs/wwww-main/review/bilder/aufbau-karte-bahn.svg",
+			"x": -135,
+			"y": 2714,
+			"width": 1015,
+			"height": 587
+		},
+		{
+			"id": "raum-titel-ecke",
+			"type": "text",
+			"text": "**Ecke**, wenn zwei Wände frei sind",
+			"x": 920,
+			"y": 2574,
+			"width": 1015,
+			"height": 120
+		},
+		{
+			"id": "raum-karte-ecke",
+			"type": "file",
+			"file": "review/wwww/specs/wwww-main/review/bilder/aufbau-karte-ecke.svg",
+			"x": 920,
+			"y": 2714,
+			"width": 758,
+			"height": 801
+		},
+		{
+			"id": "g-konzept",
+			"type": "group",
+			"label": "Konzept",
+			"x": -2015,
+			"y": -215,
+			"width": 1680,
+			"height": 6356,
+			"color": "1"
+		},
+		{
+			"id": "konzept",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> kein Element, gilt für alle Teile von wwww\n> \n> **Bezug**\n> → **raum**: was die Arbeit ist und wie sie steht\n> ← **einordnung**: antwortet auf die Kritik des Professors\n> ← **welt**: ein Ort für das Kaleidoskop\n\n**[[review/wwww/specs/wwww-main/konzept.md|konzept]]**\n\n![[review/wwww/specs/wwww-main/konzept.md#^blick]]",
+			"x": -1995,
+			"y": -155,
+			"width": 760,
+			"height": 1138
+		},
+		{
+			"id": "nachbarn",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> kein Element, steht neben der Arbeit, keine Quelle\n\n**[[review/wwww/specs/wwww-main/nachbarn.md|nachbarn]]**\n\n![[review/wwww/specs/wwww-main/nachbarn.md#^blick]]",
+			"x": -1115,
+			"y": -155,
+			"width": 760,
+			"height": 1214
+		},
+		{
+			"id": "motive",
+			"type": "text",
+			"text": "> [!info] Motive\n> Zehn Motive ziehen sich durch die ganze Arbeit. Jede Karte nennt im blauen Kasten, welche bei ihr vorkommen. **„Ausdrücklich“** heißt, ihre Spec nennt das Motiv selbst. **„Klingt an“** ist eine Lesart, nicht festgelegt.\n\n**[[review/wwww/specs/wwww-main/motive.md|motive]]**\n\n![[review/wwww/specs/wwww-main/motive.md#^blick]]\n\n![[review/wwww/specs/wwww-main/motive.md#^orte]]",
+			"x": -1995,
+			"y": 1179,
+			"width": 1640,
+			"height": 2418
+		},
+		{
+			"id": "einordnung",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> kein Element, ordnet die Arbeit ein, kein Teil im Raum\n> \n> **Bezug**\n> → **konzept**: antwortet auf die Kritik des Professors\n> ← **originale**: der Grund, warum wwww nicht aneignet\n\n**[[review/wwww/specs/wwww-main/einordnung.md|einordnung]]**\n\n![[review/wwww/specs/wwww-main/einordnung.md#^blick]]",
+			"x": -1995,
+			"y": 3717,
+			"width": 760,
+			"height": 978
+		},
+		{
+			"id": "originale",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> **O11** Farbstiftzeichnung · Johannes Myller · „Kortex“ · **O30** Ölbild · Peter Piek · „Blaues Bild“\n> \n> **Bezug**\n> → **einordnung**: der Grund, warum wwww nicht aneignet\n> → **vereinbarung**: macht den Widerruf technisch möglich\n> → **daten**: die Bildbeschreibung als Pflichtfeld\n\n**[[review/wwww/specs/wwww-main/originale.md|originale]]**\n\n![[review/wwww/specs/wwww-main/originale.md#^blick]]",
+			"x": -1115,
+			"y": 3717,
+			"width": 760,
+			"height": 1162
+		},
+		{
+			"id": "vereinbarung",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> **O11** Farbstiftzeichnung · Johannes Myller · „Kortex“ · **O30** Ölbild · Peter Piek · „Blaues Bild“\n> \n> **Bezug**\n> → **daten**: der Widerruf als Spalte\n> ← **originale**: macht den Widerruf technisch möglich\n\n**[[review/wwww/specs/wwww-main/vereinbarung.md|vereinbarung]]**\n\n![[review/wwww/specs/wwww-main/vereinbarung.md#^blick]]",
+			"x": -1995,
+			"y": 4999,
+			"width": 760,
+			"height": 1102
+		},
+		{
+			"id": "kopf",
+			"type": "text",
+			"text": "> [!info] So liest du jede Karte\n> Ganz oben steht ein blauer Kasten **„Im Raum“**. Er nennt die Elemente der Karte, etwa „**R1** Installationsrechner · **M2** Besucher mit ihren Handys“. Die Kürzel stehen auf der Karte vom Raum und in der Legende darunter.\n> Vermutungen stehen unter **„vermutet“**.\n> **„Bezug“** nennt Karten, die zusammengehören: → zeigt zu einer anderen Karte, ← kommt von ihr. Ein „?“ ist eine Vermutung, in den Specs noch nicht beschrieben.\n\n# Legende\n\n- **Karten mit Farbe** sind Prototypen aus `zaehlen`, mit Frage, Stand und Start.\n- **Karten ohne Farbe** zeigen eine Spec, meist ihren Blick: den Kasten mit Kurzfassung und Diagramm.\n- **Rote Kästen** sind Fragen an dich.\n- **Die Motive** stehen in der Gruppe „Konzept“. Jede Karte nennt ihre im blauen Kasten, „klingt an“ ist eine Lesart, nicht festgelegt.\n- **Eine pinke Marke** oben rechts heißt: Die Quelle dieser Karte gehört zu den 7 zuletzt geänderten.\n\n**Zuletzt geändert**\n1. 27.11. · **netz** · wwww-rnbo: Die Mitte eines Felds bearbeitet, der Rand faerbt, die Grenze verbindet\n2. 27.11. · **sa3-sfx-matrix** · Die Bruecke ist ein Objekt [comfy matrix sfx] -- Modus und Modell stehen in den Argumenten\n3. 27.11. · **sa3-medium** · Die Bruecke ist ein Objekt [comfy] -- der Patch baut die Antwort auf bereit nicht mehr selbst\n4. 27.11. · **max-bausteine/tiefe** · Kein Patch in max-bausteine nennt mehr C:/Users -- Bilder ueber den Suchpfad, Pfade relativ zur Anwendung\n5. 27.11. · **max-bausteine/vektorfiguren** · Kein Patch in max-bausteine nennt mehr C:/Users -- Bilder ueber den Suchpfad, Pfade relativ zur Anwendung\n6. 26.11. · **welt** · wwww-threejs: Im Stillhalten trennt ein Schleier Schwarz von Weiss, quer zum Raum\n7. 26.11. · **setup der Performance** · wwww-performance: Der Handoff traegt die Controller vom 26.11., die alte Liste steht vollstaendig weiter\n\n**Aufbau:** [Kuration](file:///C:/Users/nolte/Desktop/C/specs/wwww-installation/aufbau-kuration.html) · [Technik](file:///C:/Users/nolte/Desktop/C/specs/wwww-installation/aufbau-technik.html) · [Generator](file:///C:/Users/nolte/Desktop/zaehlen/aufbau-generator/index.html)",
+			"x": -3755,
+			"y": -155,
+			"width": 1560,
+			"height": 1180
+		},
+		{
+			"id": "raum",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> **O9** Papier-Blätter · „barfuß“ · **O5** Big Bag · **O7** Big Bag · **O10** Tetraeder\n> \n> **Bezug**\n> → **teppich**: die Ruhe als Regel\n> → **kommunikation**: das Raummikrofon\n> ← **konzept**: was die Arbeit ist und wie sie steht\n\n**[[review/wwww/specs/wwww-installation/raum.md|raum]]**\n\n![[review/wwww/specs/wwww-installation/raum.md#^blick]]",
+			"x": -155,
+			"y": 3595,
+			"width": 760,
+			"height": 1346
+		},
+		{
+			"id": "heft",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> **O3** Heft · Kommentarspalte „Himmel“ · **B1** Federzug\n> \n> **Bezug**\n> → **zahlen**: dieselbe Zahl 25920\n> \n> **Motive, klingt an:** 3 in 1 in 3 · Vokale\n\n## Heft · Kommentarspalte „Himmel“\n![[review/wwww/specs/wwww-main/review/bilder/heft-25920.png]]\n60 Seiten, A5, Risodruck in Schwarz und Zitronengelb: außen die Geschichte Widmanstätten, innen der Gedichtteil „25920“. Hängt am Federzug über dem festen Handy.\n\n**Stand:** das Buch seit 15.11., die Motive seit 28.10.\n**Öffnen:** [Vorschau des Buchs](file:///C:/Users/nolte/Desktop/zaehlen/heft-25920/ausgaben/buch/vorschau.html) · [Übersicht der Druckseiten](file:///C:/Users/nolte/Desktop/zaehlen/heft-25920/ausgaben/uebersicht.html)\n\n> [!danger] Frage an dich\n> Liest man das Heft als Schlüssel zur Installation oder als eigene Arbeit daneben?",
+			"x": -155,
+			"y": 5061,
+			"width": 760,
+			"height": 1248,
+			"color": "3"
+		},
+		{
+			"id": "herz",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> **O4** Veröffentlichung · Herz\n\n## Herz Wasserstoff\nEine weitere Veröffentlichung, die ausliegt. Das Material: Herz, Wasserstoff, Wärmeäther, die sechs Nebenübungen.\n\n**Stand:** Sammlung, Format noch offen.\n**Öffnen:** [[review/wwww/specs/wwww-installation/raw/herz wasserstoff/wasserstoff.md|wasserstoff.md]]\n\n> [!danger] Frage an dich\n> Welche Form trägt das Material: ein Heft wie 25920, ein Faltblatt oder ein Plakat?",
+			"x": 725,
+			"y": 5061,
+			"width": 760,
+			"height": 1108,
+			"color": "3"
+		},
+		{
+			"id": "qr",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> **N2** QR-Codes · Standorte A, B, C · **O14** Papier-Blätter · „einlesen“\n\n## QR-Codes, Reihe v19\nScannbare QR-Codes für die Domain wwww, als schraffierte Schreckwesen. DreamShaper 8 mit QR Code Monster v2. **Handy draufhalten.**\n\n![[review/wwww/zaehlen/comfyui-qr-monster/ausgaben/monster/gnom_v19_q140_base_00002_.png|330]] ![[review/wwww/zaehlen/comfyui-qr-monster/ausgaben/monster/gnom_v19_q140_hires_00001_.png|330]]\n\nZwei Motive mit derselben Stärke q140. Links Motiv 6, Scan-Wert 16. Rechts Motiv 5, nicht gemessen.\n\n> [!danger] Frage an dich\n> Laden die Schreckwesen an den drei Standorten zum Eintreten ein, oder schrecken sie ab?",
+			"x": 1605,
+			"y": 5061,
+			"width": 760,
+			"height": 1136,
+			"color": "2"
+		},
+		{
+			"id": "g-handy",
+			"type": "group",
+			"label": "Handy",
+			"x": 2545,
+			"y": -215,
+			"width": 1680,
+			"height": 9554,
+			"color": "6"
+		},
+		{
+			"id": "schichten",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> **O11** Farbstiftzeichnung · Johannes Myller · „Kortex“\n> **vermutet:** **M2** Besucher-Handys · **V4** Ultrawide-Bildschirm\n> \n> **Bezug**\n> ← **verraeumlichung**: jede Ansicht ein Eintrag im Viewer\n> ← **welt**: Leuchttisch und Mikroräume\n> \n> **Motive, klingt an:** 3 in 1 in 3\n\n## wwww-threejs-schichten\n![[review/wwww/specs/wwww-main/review/bilder/schema-schichten.svg]]\n\n![[review/wwww/specs/wwww-main/review/bilder/schichten.png]]\nTragen Form-Ebenen den Raum, den das Bild selbst zeigt? Eine Buntstiftzeichnung wird in sechs Ebenen zerlegt und in three.js gezeigt.\n\n**Start:** `review\\start.cmd` öffnet den [Leuchttisch](http://127.0.0.1:8765/?mode=leuchttisch&gap=0.6&yaw=38&clean=1)\n\n> [!danger] Frage an dich\n> Zusammengeschoben ist es der Scan, auseinandergezogen ein Stapel Folien. Welche Ansicht gehört auf das Handy?",
+			"x": 2565,
+			"y": -155,
+			"width": 760,
+			"height": 1684,
+			"color": "6"
+		},
+		{
+			"id": "steuerung",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> **M2** Besucher-Handys · **M1** Festes Handy · **V4** Ultrawide-Bildschirm\n> \n> **Bezug**\n> → **aufstieg**: Felder werden über den Arbeiten zu Säulen\n> ← **welt**: Schnatz und Mikroräume bedienen\n> ← **netz**: Verbinder, wo sich zwei Felder überlappen\n> ← **webmcp**: jede Taste ein Werkzeug\n> ← **Klang des Handys**: die Gesten mischen die Presets in RNBO\n> ← **morphing**: Gruppenkurven für die Mischung ?\n> \n> **Motive:** 12 Kraftzentren, 7 Bewegungen\n> **Motive, klingt an:** Polaritäten, Dopplung, Symmetrie, Zwilling · Kugel als Absolutum?\n\n**[[review/wwww/specs/wwww-threejs/steuerung.md|steuerung]]**\n\n![[review/wwww/specs/wwww-main/review/bilder/schema-steuerung.svg]]\n\n![[review/wwww/specs/wwww-threejs/steuerung.md#^blick]]",
+			"x": 3445,
+			"y": -155,
+			"width": 760,
+			"height": 2216
+		},
+		{
+			"id": "verraeumlichung",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> **O11** Farbstiftzeichnung · Johannes Myller · „Kortex“\n> **vermutet:** **M2** Besucher-Handys\n> \n> **Bezug**\n> → **wwww-threejs-schichten**: jede Ansicht ein Eintrag im Viewer\n> ← **welt**: Splats als Inhalt eines Mikroraums\n> \n> **Motive, klingt an:** 3 in 1 in 3\n\n**[[review/wwww/specs/wwww-threejs/verraeumlichung.md|verraeumlichung]]**\n\n![[review/wwww/specs/wwww-main/review/bilder/schema-verraeumlichung.svg]]\n\n![[review/wwww/specs/wwww-threejs/verraeumlichung.md#^blick]]",
+			"x": 2565,
+			"y": 2181,
+			"width": 760,
+			"height": 1486
+		},
+		{
+			"id": "handy-klang",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> **M2** Besucher-Handys\n> \n> **Bezug**\n> → **steuerung**: die Gesten mischen die Presets in RNBO\n> ← **welt**: der Klang des Schnatzes, in RNBO\n> ← **aufstieg**: Netz und Schnatz im RNBO-Patch\n> ← **netz**: wie Loris, RAVE und FFT sich treffen\n> ← **modelle**: RAVE v1, das einzige Modell auf dem Handy\n> \n> **Motive, klingt an:** Polaritäten, Dopplung, Symmetrie, Zwilling · Verwandlung, Metamorphose, Kaleidoskop\n\n## Klang des Handys\nWas im Browser des Besuchers läuft, ohne Mikrofon. Festgelegt am 15.10., aus [[review/wwww/specs/wwww-installation/kommunikation.md#Was wo läuft|kommunikation.md]].\n\n![[review/wwww/specs/wwww-main/review/bilder/schema-handy-klang.svg]]\n\n![[review/wwww/specs/wwww-installation/kommunikation.md#^handy-klang]]",
+			"x": 3445,
+			"y": 2181,
+			"width": 760,
+			"height": 2088
+		},
+		{
+			"id": "welt",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> **M2** Besucher-Handys · **M1** Festes Handy · **V4** Ultrawide-Bildschirm\n> \n> **Bezug**\n> → **steuerung**: Schnatz und Mikroräume bedienen\n> → **wwww-threejs-schichten**: Leuchttisch und Mikroräume\n> → **verraeumlichung**: Splats als Inhalt eines Mikroraums\n> → **konzept**: ein Ort für das Kaleidoskop\n> → **Klang des Handys**: der Klang des Schnatzes, in RNBO\n> → **aufstieg**: die Ebenen klingen\n> → **netz**: der Schnatz spielt die Samples unbearbeitet\n> ← **startseite**: O führt in die Ausstellung\n> ← **daten**: die Szene liest die Abschnitte\n> \n> **Motive, klingt an:** Polaritäten, Dopplung, Symmetrie, Zwilling · Verwandlung, Metamorphose, Kaleidoskop · Kugel als Absolutum?\n\n**[[review/wwww/specs/wwww-threejs/welt.md|welt]]**\n\n![[review/wwww/specs/wwww-main/review/bilder/schema-welt.svg]]\n\n![[review/wwww/specs/wwww-threejs/welt.md#^blick]]",
+			"x": 2565,
+			"y": 4389,
+			"width": 760,
+			"height": 1842
+		},
+		{
+			"id": "aufstieg",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> **M2** Besucher-Handys\n> \n> **Bezug**\n> → **Klang des Handys**: Netz und Schnatz im RNBO-Patch\n> ← **welt**: die Ebenen klingen\n> ← **steuerung**: Felder werden über den Arbeiten zu Säulen\n> ← **netz**: das Allpass-Netz liegt hinter allem\n> ← **daten**: Klänge kommen zur Laufzeit in den Puffer\n\n**[[review/wwww/specs/wwww-rnbo/aufstieg.md|aufstieg]]**\n\n![[review/wwww/specs/wwww-main/review/bilder/schema-aufstieg.svg]]\n\n![[review/wwww/specs/wwww-rnbo/aufstieg.md#^blick]]",
+			"x": 3445,
+			"y": 4389,
+			"width": 760,
+			"height": 1850
+		},
+		{
+			"id": "startseite",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> kein Element, läuft auf Prod, nicht im Raum\n> \n> **Bezug**\n> → **welt**: O führt in die Ausstellung\n> → **discord**: die Wurst führt dorthin\n> ← **webmcp**: die Symbole sind echte Links\n\n**[[review/wwww/specs/wwww-main/startseite.md|startseite]]**\n\n![[review/wwww/specs/wwww-main/review/bilder/schema-startseite.svg]]\n\n![[review/wwww/specs/wwww-main/startseite.md#^blick]]",
+			"x": 2565,
+			"y": 6359,
+			"width": 760,
+			"height": 1458
+		},
+		{
+			"id": "discord",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> kein Element, läuft auf Prod, nicht im Raum\n> \n> **Bezug**\n> → **zahlen**: 1, 3, 7, 12 bestimmen die Struktur\n> ← **startseite**: die Wurst führt dorthin\n> ← **daten**: die Konten und die Stufen 1, 3, 7, 12\n\n**[[review/wwww/specs/wwww-main/discord.md|discord]]**\n\n![[review/wwww/specs/wwww-main/review/bilder/schema-discord.svg]]\n\n![[review/wwww/specs/wwww-main/discord.md#^blick]]",
+			"x": 3445,
+			"y": 6359,
+			"width": 760,
+			"height": 1538
+		},
+		{
+			"id": "webmcp",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> kein Element, betrifft Prod, nicht den Raum\n> \n> **Bezug**\n> → **startseite**: die Symbole sind echte Links\n> → **steuerung**: jede Taste ein Werkzeug\n\n**[[review/wwww/specs/wwww-main/webmcp.md|webmcp]]**\n\n![[review/wwww/specs/wwww-main/review/bilder/schema-webmcp.svg]]\n\n![[review/wwww/specs/wwww-main/webmcp.md#^blick]]",
+			"x": 2565,
+			"y": 8017,
+			"width": 760,
+			"height": 1282
+		},
+		{
+			"id": "daten",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> **R1** Installationsrechner · **M2** Besucher-Handys\n> \n> **Bezug**\n> → **welt**: die Szene liest die Abschnitte\n> → **aufstieg**: Klänge kommen zur Laufzeit in den Puffer\n> → **discord**: die Konten und die Stufen 1, 3, 7, 12\n> ← **originale**: die Bildbeschreibung als Pflichtfeld\n> ← **vereinbarung**: der Widerruf als Spalte\n\n**[[review/wwww/specs/wwww-main/daten.md|daten]]**\n\n![[review/wwww/specs/wwww-main/daten.md#^blick]]",
+			"x": 3445,
+			"y": 8017,
+			"width": 760,
+			"height": 1197
+		},
+		{
+			"id": "g-klang",
+			"type": "group",
+			"label": "Rechner und Klang",
+			"x": 4385,
+			"y": -215,
+			"width": 3440,
+			"height": 7599,
+			"color": "5"
+		},
+		{
+			"id": "kommunikation",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> **R1** Installationsrechner · **N1** WLAN-Router\n> \n> **Bezug**\n> ← **raum**: das Raummikrofon\n> \n> **Motive:** 12 Kraftzentren, 7 Bewegungen\n> **Motive, klingt an:** Polaritäten, Dopplung, Symmetrie, Zwilling · Feedback, Kopplung\n\n**[[review/wwww/specs/wwww-installation/kommunikation.md|kommunikation]]**\n\n![[review/wwww/specs/wwww-installation/kommunikation.md#^blick]]",
+			"x": 4405,
+			"y": -155,
+			"width": 760,
+			"height": 1371
+		},
+		{
+			"id": "fdn",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> **R1** Installationsrechner · **A2** Nahfeld-Monitore\n> \n> **Bezug**\n> ← **teppich**: läuft in den 16 Leitungen\n> ← **zahlen**: Längen der 16 Leitungen ?\n> ← **morphing**: eine Kurve für d ?\n> \n> **Motive, klingt an:** Feedback, Kopplung\n\n**[[review/wwww/specs/wwww-installation/fdn.md|fdn]]**\n\n![[review/wwww/specs/wwww-main/review/bilder/schema-fdn.svg]]\n\n![[review/wwww/specs/wwww-installation/fdn.md#^blick]]",
+			"x": 5285,
+			"y": -155,
+			"width": 760,
+			"height": 2169
+		},
+		{
+			"id": "teppich",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> **A5** Raum-Mikrofon\n> \n> **Bezug**\n> → **fdn**: läuft in den 16 Leitungen\n> ← **raum**: die Ruhe als Regel\n> ← **sa3-medium**: Stimme SA3\n> ← **zahlen**: 3,33 s als Takt ?\n> ← **morphing**: das Versinken als Tabelle ?\n> ← **artefakte-digital**: Färbung vor dem Netz ?\n> ← **setup der Performance**: der Teppich kommt auf IN 2\n> \n> **Motive, klingt an:** Feedback, Kopplung\n\n**[[review/wwww/specs/wwww-installation/teppich.md|teppich]]**\n\n![[review/wwww/specs/wwww-main/review/bilder/schema-teppich.svg]]\n\n![[review/wwww/specs/wwww-installation/teppich.md#^blick]]",
+			"x": 6165,
+			"y": -155,
+			"width": 760,
+			"height": 1906
+		},
+		{
+			"id": "zahlen",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> kein Element, gilt für alle Teile von wwww\n> \n> **Bezug**\n> → **kette-entwurf**: 25.920 Blöcke am Tag\n> → **teppich**: 3,33 s als Takt ?\n> → **fdn**: Längen der 16 Leitungen ?\n> → **threejs-wegkurven-funken**: Umläufe als Bewegung in three.js ?\n> ← **discord**: 1, 3, 7, 12 bestimmen die Struktur\n> ← **Heft 25920**: dieselbe Zahl 25920\n> \n> **Motive, klingt an:** 12 Kraftzentren, 7 Bewegungen · 3 in 1 in 3 · Minerale\n\n**[[review/wwww/specs/wwww-main/zahlen.md|zahlen]]**\n\n![[review/wwww/specs/wwww-main/zahlen.md#^blick]]",
+			"x": 7045,
+			"y": -155,
+			"width": 760,
+			"height": 1598
+		},
+		{
+			"id": "magenta",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> **R1** Installationsrechner\n> \n> **Bezug**\n> ← **modelle**: RT2 Small auf dem Mac mini\n> \n> **Motive, klingt an:** 12 Kraftzentren, 7 Bewegungen · Feedback, Kopplung\n\n## magenta-rt2\n![[review/wwww/specs/wwww-main/review/bilder/schema-magenta.svg]]\n\nKann Magenta RealTime 2 live spielen, während Max die Stilstärke moduliert?\n\n**Stand:** Auf dem PC nur ein Konzept, es braucht WSL2. Auf dem Mac mini läuft RT2 Small mit `mrt2~`, gemessen am 13.10.: etwa 1 GB Speicher, 25 bis 28 % CPU. Das Rattern verschwand mit `buffersize 8192`, das kostet 170 ms Verzögerung.\n**Start:** nichts zu starten auf diesem Rechner.\n\n> [!danger] Frage an dich\n> Die Zahl der Handys an jedem der 12 Punkte gewichtet die Stil-Vorgaben. Merkt ein Besucher, dass er mitspielt?",
+			"x": 4405,
+			"y": 2134,
+			"width": 760,
+			"height": 1656,
+			"color": "5"
+		},
+		{
+			"id": "sfx",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> **vermutet:** **R1** Installationsrechner\n> \n> **Bezug**\n> → **sa3-medium**: dieselbe Brücke aus Max\n\n## sa3-sfx-matrix\n![[review/wwww/specs/wwww-main/review/bilder/schema-sfx.svg]]\n\nWie färbt ein Material dieselbe Handlung? Zeilen sind Handlungen, Spalten Materialien, jede Zelle ein Klang aus Stable Audio 3 Small-SFX.\n\n| | metallic | wooden | glass |\n|---|---|---|---|\n| **falling** | [▶](file:///C:/Users/nolte/Desktop/zaehlen/sa3-sfx-matrix/ausgaben/matrix/20260929093410/r0_c0_00001.flac) | [▶](file:///C:/Users/nolte/Desktop/zaehlen/sa3-sfx-matrix/ausgaben/matrix/20260929093410/r0_c1_00001.flac) | [▶](file:///C:/Users/nolte/Desktop/zaehlen/sa3-sfx-matrix/ausgaben/matrix/20260929093410/r0_c2_00001.flac) |\n| **scraping** | [▶](file:///C:/Users/nolte/Desktop/zaehlen/sa3-sfx-matrix/ausgaben/matrix/20260929093410/r1_c0_00001.flac) | [▶](file:///C:/Users/nolte/Desktop/zaehlen/sa3-sfx-matrix/ausgaben/matrix/20260929093410/r1_c1_00001.flac) | [▶](file:///C:/Users/nolte/Desktop/zaehlen/sa3-sfx-matrix/ausgaben/matrix/20260929093410/r1_c2_00001.flac) |\n\n**Stand:** läuft, in Max gespielt am 29. und 30.09.\n**Live:** `max\\sa3-sfx-matrix.maxpat`. Beim Öffnen sind die sechs Klänge vom 29.09. geladen, ein Klick auf eine Zelle spielt sie. Vorher den Lautsprecher im Patch einschalten. `go` rechnet neu und braucht Comfy.\n\n> [!danger] Frage an dich\n> Gehört der Vergleich in die Installation, etwa als Antwort auf das Material im Raum, Hafer und Holz? Oder ist er ein Werkzeug für die Vorproduktion?",
+			"x": 5285,
+			"y": 2134,
+			"width": 760,
+			"height": 1572,
+			"color": "5"
+		},
+		{
+			"id": "medium",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> kein Element, läuft vorab auf dem PC\n> \n> **Bezug**\n> → **teppich**: Stimme SA3\n> ← **sa3-sfx-matrix**: dieselbe Brücke aus Max\n> ← **modelle**: SA3 Medium vorab auf dem PC\n> \n> **Motive, klingt an:** Verwandlung, Metamorphose, Kaleidoskop\n\n## sa3-medium\n![[review/wwww/specs/wwww-main/review/bilder/schema-medium.svg]]\n\nMusik und Klänge aus Text mit Stable Audio 3 Medium, gestartet aus Max über ComfyUI.\n\n**Hören:** derselbe Prompt [ohne Qwen](file:///C:/Users/nolte/Desktop/zaehlen/sa3-medium/ausgaben/qwen/jazz_ohne_qwen_00001.flac) und [mit Qwen erweitert](file:///C:/Users/nolte/Desktop/zaehlen/sa3-medium/ausgaben/qwen/jazz_seed0_00001.flac)\n\n**Stand:** 87 Ausgaben, unter anderem Audio-zu-Audio, CFG und Pegel. Die README sagt noch „Konzept“, sie ist veraltet.\n**Live:** `max\\sa3-medium.maxpat`, die Comfy-Desktop-App startet `review\\start.cmd`\n\n> [!danger] Frage an dich\n> SA3 antwortet auf jeden Prompt der Besucher. Soll man den Text im Klang wiedererkennen?",
+			"x": 6165,
+			"y": 2134,
+			"width": 760,
+			"height": 1684,
+			"color": "5"
+		},
+		{
+			"id": "kette-entwurf",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> **M2** Besucher-Handys · **A5** Raum-Mikrofon · **V1** Tageslicht-Beamer\n> \n> **Bezug**\n> ← **zahlen**: 25.920 Blöcke am Tag\n> \n> **Motive, klingt an:** 3 in 1 in 3 · Polaritäten, Dopplung, Symmetrie, Zwilling\n\n**[[review/wwww/specs/wwww-main/kette-entwurf.md|kette-entwurf]]**\n\n![[review/wwww/specs/wwww-main/review/bilder/schema-kette-entwurf.svg]]\n\n![[review/wwww/specs/wwww-main/kette-entwurf.md#^blick]]",
+			"x": 7045,
+			"y": 2134,
+			"width": 760,
+			"height": 1698
+		},
+		{
+			"id": "modelle",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> **R1** Installationsrechner · **M2** Besucher-Handys\n> \n> **Bezug**\n> → **magenta-rt2**: RT2 Small auf dem Mac mini\n> → **sa3-medium**: SA3 Medium vorab auf dem PC\n> → **Klang des Handys**: RAVE v1, das einzige Modell auf dem Handy\n> ← **artefakte**: verstärkt ihre Schwächen\n> \n> **Motive:** Keine Entscheidung darf Kraft kosten · 12 Kraftzentren, 7 Bewegungen · 3 in 1 in 3 · Vokale · Polaritäten, Dopplung, Symmetrie, Zwilling · Verwandlung, Metamorphose, Kaleidoskop · Feedback, Kopplung · Kugel als Absolutum?\n\n**[[review/wwww/specs/wwww-installation/modelle.md|modelle]]**\n\n![[review/wwww/specs/wwww-installation/modelle.md#^blick]]",
+			"x": 4405,
+			"y": 3952,
+			"width": 760,
+			"height": 1513
+		},
+		{
+			"id": "artefakte",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> **vermutet:** **R1** Installationsrechner · **M2** Besucher-Handys\n> \n> **Bezug**\n> → **modelle**: verstärkt ihre Schwächen\n> ← **artefakte-digital**: das Gegenstück zu den Modellen\n> \n> **Motive, klingt an:** Polaritäten, Dopplung, Symmetrie, Zwilling · Feedback, Kopplung\n\n**[[review/wwww/specs/wwww-installation/artefakte.md|artefakte]]**\n\n![[review/wwww/specs/wwww-main/review/bilder/schema-artefakte.svg]]\n\n![[review/wwww/specs/wwww-installation/artefakte.md#^blick]]",
+			"x": 5285,
+			"y": 3952,
+			"width": 760,
+			"height": 1882
+		},
+		{
+			"id": "morphing",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> **R1** Installationsrechner · **M2** Besucher-Handys\n> \n> **Bezug**\n> → **steuerung**: Gruppenkurven für die Mischung ?\n> → **teppich**: das Versinken als Tabelle ?\n> → **fdn**: eine Kurve für d ?\n\n**[[review/wwww/specs/wwww-main/morphing.md|morphing]]**\n\n![[review/wwww/specs/wwww-main/morphing.md#^blick]]",
+			"x": 6165,
+			"y": 3952,
+			"width": 760,
+			"height": 1010
+		},
+		{
+			"id": "artefakte-digital",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> **R1** Installationsrechner · **M1** Festes Handy · **M2** Besucher-Handys\n> \n> **Bezug**\n> → **artefakte**: das Gegenstück zu den Modellen\n> → **schnitte**: harte Schnitte im Audio ?\n> → **teppich**: Färbung vor dem Netz ?\n\n**[[review/wwww/specs/wwww-installation/artefakte-digital.md|artefakte-digital]]**\n\n![[review/wwww/specs/wwww-main/review/bilder/schema-artefakte-digital.svg]]\n\n![[review/wwww/specs/wwww-installation/artefakte-digital.md#^blick]]",
+			"x": 7045,
+			"y": 3952,
+			"width": 760,
+			"height": 1570
+		},
+		{
+			"id": "netz",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> **M2** Besucher-Handys · **M1** Festes Handy\n> \n> **Bezug**\n> → **aufstieg**: das Allpass-Netz liegt hinter allem\n> → **steuerung**: Verbinder, wo sich zwei Felder überlappen\n> → **Klang des Handys**: wie Loris, RAVE und FFT sich treffen\n> ← **welt**: der Schnatz spielt die Samples unbearbeitet\n\n**[[review/wwww/specs/wwww-rnbo/netz.md|netz]]**\n\n![[review/wwww/specs/wwww-main/review/bilder/schema-netz.svg]]\n\n![[review/wwww/specs/wwww-rnbo/netz.md#^blick]]",
+			"x": 4405,
+			"y": 5954,
+			"width": 760,
+			"height": 1390
+		},
+		{
+			"id": "g-bild",
+			"type": "group",
+			"label": "Bild",
+			"x": 7985,
+			"y": -215,
+			"width": 3440,
+			"height": 4880,
+			"color": "2"
+		},
+		{
+			"id": "granit",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> **V1** Tageslicht-Beamer · **V3** Projektionsfläche\n> \n> **Bezug**\n> → **granit-projektion**: Kanten werden Übergänge\n> \n> **Motive, klingt an:** Minerale\n\n## granit-atlas\n![[review/wwww/specs/wwww-main/review/bilder/schema-granit.svg]]\n\n![[review/wwww/specs/wwww-main/review/bilder/granit-atlas.png]]\nGranit und seine Familien als Netz: 109 Steine und Stoffe, 178 Beziehungen mit Quellen.\n\n**Stand:** Ausgabe 2 vom 19.10., läuft ohne Server.\n**Öffnen:** [Atlas](file:///C:/Users/nolte/Desktop/zaehlen/granit-atlas/index.html)\n\n> [!danger] Frage an dich\n> Liest man die Verwandlung in der Projektion, ohne die Begriffe zu kennen? Oder braucht es das Mesh mit den Wörtern?",
+			"x": 8005,
+			"y": -155,
+			"width": 760,
+			"height": 1628,
+			"color": "2"
+		},
+		{
+			"id": "granit-projektion",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> **V1** Tageslicht-Beamer · **V3** Projektionsfläche\n> \n> **Bezug**\n> ← **granit-atlas**: Kanten werden Übergänge\n> ← **max-bausteine/tiefe**: Punkte, Linien, Nebel\n> ← **typo-katalog**: Begriffe unterwegs ?\n> \n> **Motive, klingt an:** 3 in 1 in 3 · Minerale · Verwandlung, Metamorphose, Kaleidoskop\n\n**[[review/wwww/specs/wwww-installation/granit-projektion.md|granit-projektion]]**\n\n![[review/wwww/specs/wwww-main/review/bilder/schema-granit-projektion.svg]]\n\n![[review/wwww/specs/wwww-installation/granit-projektion.md#^blick]]",
+			"x": 8885,
+			"y": -155,
+			"width": 760,
+			"height": 1390
+		},
+		{
+			"id": "tiefe",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> **vermutet:** **V1** Tageslicht-Beamer\n> \n> **Bezug**\n> → **granit-projektion**: Punkte, Linien, Nebel\n\n## max-bausteine/tiefe\n![[review/wwww/specs/wwww-main/review/bilder/schema-tiefe.svg]]\n\n![[review/wwww/specs/wwww-main/review/bilder/tiefe.png]]\n![[review/wwww/specs/wwww-main/review/bilder/tiefe-filter.png]]\n![[review/wwww/specs/wwww-main/review/bilder/tiefe-punkte.png]]\n*Oben Gitter, in der Mitte die vier Filter in Reihe (Linien, Licht, Nebel, Unschärfe), unten Punkte, alle mit Testbild und Depth Map.*\n\nEin Foto und seine Depth Map werden räumlich: Linien, Licht, Nebel, Unschärfe, Gitter, Punktwolke. Bausteine für Jitter.\n\n**Stand:** Alle Bausteine und alle drei Demos zeigen das Testbild, gesehen am 30.10.\n**Start:** `review\\start.cmd` öffnet alle drei Demos zugleich, jede in ihrem eigenen Fenster. Gitter und Punkte drehen sich langsam, `tiefe-filter` zeigt alle vier Filter. Alle laden Testbild und Depth Map von selbst.\n\n> [!danger] Frage an dich\n> Passt ein Raum aus einem Foto zur Bild-Schleife, oder wird er ein zweites Bild neben ihr?",
+			"x": 9765,
+			"y": -155,
+			"width": 760,
+			"height": 2672,
+			"color": "2"
+		},
+		{
+			"id": "vektor",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> **vermutet:** **V1** Tageslicht-Beamer\n> \n> **Motive, klingt an:** Polaritäten, Dopplung, Symmetrie, Zwilling · Verwandlung, Metamorphose, Kaleidoskop\n\n## max-bausteine/vektorfiguren\n![[review/wwww/specs/wwww-main/review/bilder/schema-vektor.svg]]\n\n![[review/wwww/specs/wwww-main/review/bilder/vektorfiguren.png]]\n![[review/wwww/specs/wwww-main/review/bilder/vektorfiguren-figur.png]]\n*Oben das Fenster `look`, unten das Fenster `figur`, beide halb zwischen Geländer und Wald.*\n\nEin Editor in Jitter für Figuren aus Punkten, Linien und Flächen. Eine Bewegung legt sich darüber, auf Ankern sitzen Kopien von Formen. Das Fenster `look` blendet zwischen Bild A und Bild B über.\n\n**Stand:** drei Ebenen und die Überblendung seit 16.10., Speichern und Laden seit 21.10. Seit 29.10. liegen drei Stände über Nachtfotos. Zwischen Geländer und Wald wandern Punkte und Foto zugleich, die Pfosten werden zu Stämmen.\n**Start:** `max\\figur-editor.maxpat` lädt Stand 2 und 3 mit ihren Fotos von selbst. Das Zahlenfeld „Überblenden Stand 2 → 3“ unten links morpht vom Geländer in den Wald.\n\n> [!danger] Frage an dich\n> Handgesetzte Figuren neben generierten Bildern: wofür stehen sie im Raum?",
+			"x": 10645,
+			"y": -155,
+			"width": 760,
+			"height": 2172,
+			"color": "2"
+		},
+		{
+			"id": "schnitte",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> **V2** Tageslicht-Kamera · **M2** Besucher-Handys · **A5** Raum-Mikrofon\n> \n> **Bezug**\n> ← **artefakte-digital**: harte Schnitte im Audio ?\n\n**[[review/wwww/specs/wwww-installation/schnitte.md|schnitte]]**\n\n![[review/wwww/specs/wwww-main/review/bilder/schema-schnitte.svg]]\n\n![[review/wwww/specs/wwww-installation/schnitte.md#^blick]]",
+			"x": 8005,
+			"y": 2637,
+			"width": 760,
+			"height": 1913
+		},
+		{
+			"id": "typo-katalog",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> **vermutet:** **V1** Tageslicht-Beamer\n> \n> **Bezug**\n> → **granit-projektion**: Begriffe unterwegs ?\n> \n> **Motive, klingt an:** Vokale · Verwandlung, Metamorphose, Kaleidoskop\n\n**[[review/wwww/specs/wwww-threejs/typo-katalog.md|typo-katalog]]**\n\n![[review/wwww/specs/wwww-main/review/bilder/schema-typo-katalog.svg]]\n\n![[review/wwww/specs/wwww-threejs/typo-katalog.md#^blick]]",
+			"x": 8885,
+			"y": 2637,
+			"width": 760,
+			"height": 1486
+		},
+		{
+			"id": "sam3",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> **V2** Tageslicht-Kamera\n\n## sam3-osc\n![[review/wwww/specs/wwww-main/review/bilder/schema-sam3.svg]]\n\n![[review/wwww/specs/wwww-main/review/bilder/sam3-sterne.png]]\n![[review/wwww/specs/wwww-main/review/bilder/sam3-waesche.png]]\n*Das Gartenfoto der Vektorfiguren mit „star lamp“ (oben, alle drei Sterne, Score 0,86 bis 0,89) und „laundry“ (unten, das rote Tuch, Score 0,63), am 30.10. mit `standbild.py`.*\n\nErkennt Meta SAM 3 live, was im Kamerabild ist? Der Textprompt kommt aus Max, Klassen, Größen und Positionen gehen per OSC zurück.\n\n**Stand:** läuft mit OSC seit 29.09., mit einem Video getestet. Mit der echten Kamera noch nicht.\n**Start:** `review\\start.cmd`. Ohne Kamera läuft ein Testvideo, etwa 3 Bilder pro Sekunde.\n\n> [!danger] Frage an dich\n> Soll die Kamera erkennen, was im Raum ist, etwa „person“ oder „hand“? Oder reicht, wie viel sich bewegt? Die Schnitte brauchen nur die Bewegung.",
+			"x": 9765,
+			"y": 2637,
+			"width": 760,
+			"height": 1988,
+			"color": "2"
+		},
+		{
+			"id": "funken",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> kein Element, noch offen\n> \n> **Bezug**\n> ← **zahlen**: Umläufe als Bewegung in three.js ?\n> \n> **Motive, klingt an:** Minerale · Verwandlung, Metamorphose, Kaleidoskop · Kugel als Absolutum?\n\n## threejs-wegkurven-funken\n![[review/wwww/specs/wwww-main/review/bilder/schema-funken.svg]]\n\n![[review/wwww/specs/wwww-main/review/bilder/wegkurven-funken.png]]\nEin Körper verwandelt sich projektiv, aus seinen Ecken und Kanten sprühen Wegkurven als Funken.\n\n**Öffnen:** [Ei](file:///C:/Users/nolte/Desktop/zaehlen/threejs-wegkurven-funken/index.html#ei) · [Kongruenz](file:///C:/Users/nolte/Desktop/zaehlen/threejs-wegkurven-funken/index.html#kongruenz) · [Kristall](file:///C:/Users/nolte/Desktop/zaehlen/threejs-wegkurven-funken/index.html#kristall). Braucht Internet für three.js und zwei Schriften, zusammen etwa 0,3 MB.\n\n> [!danger] Frage an dich\n> Wo steht diese Skizze in wwww? In den Specs ist der Bezug noch nicht beschrieben.",
+			"x": 10645,
+			"y": 2637,
+			"width": 760,
+			"height": 1656,
+			"color": "2"
+		},
+		{
+			"id": "g-performance",
+			"type": "group",
+			"label": "Performance",
+			"x": 11585,
+			"y": -215,
+			"width": 1680,
+			"height": 1322,
+			"color": "4"
+		},
+		{
+			"id": "performance-setup",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> kein Element, gehört zur Aufführung, nicht zur Installation; leiht sich deren Genelec\n> \n> **Bezug**\n> → **teppich**: der Teppich kommt auf IN 2\n> ← **raum der Performance**: der Panner des Mix-Patch\n\n**[[review/wwww/specs/wwww-performance/setup.md|setup]]**\n\n![[review/wwww/specs/wwww-performance/setup.md#^blick]]",
+			"x": 11605,
+			"y": -155,
+			"width": 760,
+			"height": 1214
+		},
+		{
+			"id": "performance-raum",
+			"type": "text",
+			"text": "> [!info] Im Raum\n> kein Element, gehört zur Aufführung, nicht zur Installation\n> \n> **Bezug**\n> → **setup der Performance**: der Panner des Mix-Patch\n\n**[[review/wwww/specs/wwww-performance/raum.md|raum]]**\n\n![[review/wwww/specs/wwww-performance/raum.md#^blick]]",
+			"x": 12485,
+			"y": -155,
+			"width": 760,
+			"height": 1222
+		},
+		{
+			"id": "marke-netz",
+			"type": "text",
+			"text": "**geändert 27.11.**",
+			"x": 4865,
+			"y": 5924,
+			"width": 280,
+			"height": 60,
+			"color": "#ff2d95"
+		},
+		{
+			"id": "marke-sfx",
+			"type": "text",
+			"text": "**geändert 27.11.**",
+			"x": 5745,
+			"y": 2104,
+			"width": 280,
+			"height": 60,
+			"color": "#ff2d95"
+		},
+		{
+			"id": "marke-medium",
+			"type": "text",
+			"text": "**geändert 27.11.**",
+			"x": 6625,
+			"y": 2104,
+			"width": 280,
+			"height": 60,
+			"color": "#ff2d95"
+		},
+		{
+			"id": "marke-tiefe",
+			"type": "text",
+			"text": "**geändert 27.11.**",
+			"x": 10225,
+			"y": -185,
+			"width": 280,
+			"height": 60,
+			"color": "#ff2d95"
+		},
+		{
+			"id": "marke-vektor",
+			"type": "text",
+			"text": "**geändert 27.11.**",
+			"x": 11105,
+			"y": -185,
+			"width": 280,
+			"height": 60,
+			"color": "#ff2d95"
+		},
+		{
+			"id": "marke-welt",
+			"type": "text",
+			"text": "**geändert 26.11.**",
+			"x": 3025,
+			"y": 4359,
+			"width": 280,
+			"height": 60,
+			"color": "#ff2d95"
+		},
+		{
+			"id": "marke-performance-setup",
+			"type": "text",
+			"text": "**geändert 26.11.**",
+			"x": 12065,
+			"y": -185,
+			"width": 280,
+			"height": 60,
+			"color": "#ff2d95"
+		},
+		{
+			"id": "5597d6273727c7ac",
+			"type": "text",
+			"text": "## Treffen 01.12.2026 · Kolloquium wwww\n\n### Vorstellen, vom Besucher zur Technik\n1. **Worum es geht.** Der Raum entsteht durch Verhalten, nicht durch Wände. Deshalb lässt sich der Klang begrenzen, aber nicht abschotten. → [[review/wwww/specs/wwww-installation/raum|raum]]\n2. **Wann der Klang angeht.** Geste am Handy oder jemand auf dem Teppich. Die Raumlautstärke regelt nur den Pegel, nach bis zu 60 s ohne Besucher ist es still. → [[review/wwww/specs/wwww-installation/raum#Aktivierung|raum · Aktivierung]]\n3. **Der Teppich als „3 in 1 in 3“.** 16 Leitungen, jeder der drei Genelecs trägt 4 der 12 Punkte. → [[review/wwww/specs/wwww-installation/teppich|teppich]] · [[review/wwww/specs/wwww-installation/fdn|fdn]]\n4. **Das Raummikrofon und die Fänge.** Nie laufend auf die Lautsprecher, nur in Fängen von 3,33 s. → [[review/wwww/specs/wwww-installation/kommunikation#Das Raummikrofon|kommunikation · Das Raummikrofon]]\n5. **Artefakte als Material.** Ein umgeschaltetes Bit macht leise Töne um 22,5 dB lauter. → [[review/wwww/specs/wwww-installation/artefakte-digital#Was für den Bau gilt|artefakte-digital · Was für den Bau gilt]]\n6. **Die Performance.** Drei Stimmen und ein Geist auf vier Lautsprechern, die Genelecs werden geliehen. → [[review/wwww/specs/wwww-performance/raum|raum (Performance)]] · [[review/wwww/specs/wwww-performance/setup|setup]]\n\n### Fragen\n\n**Raum und Bild** → [[review/wwww/specs/wwww-installation/raum#Die Abgrenzung des Bilds|raum · Abgrenzung des Bilds]] · [[review/wwww/specs/wwww-installation/aufbau-technik.pdf|aufbau-technik.pdf]]\n- Wohin kommt das Bild? Kamera und Beamer, Kamera und Bildschirm, oder beides zusammen?\n- Was kann Uwe Gönnert stellen? Einen Tageslicht-Beamer, zum Beispiel ViewSonic LS740HD, vielleicht einen zweiten Bildschirm. Wie hell, welcher Abstand, welche Kabelwege?\n\n**Sicherung und Betrieb** → [[review/wwww/specs/mac-mini/konzept#5. Der macOS-Host: Ausstellung|mac-mini · Host als Ausstellung]] · [[review/wwww/specs/wwww-main/raw/Installation_Betriebsdokumentation|Betriebsdokumentation]]\n- Wie sichern wir den Mac mini? Ein abschließbares Gehäuse wie Maclock?\n- Wer schaltet ein und aus: Taster, Steckdosenleiste oder Zeitplan? Nach einem Stromausfall startet der Mac von selbst.\n- Wie lange dürfen die Genelecs am Stück laufen? Der Teppich läuft den ganzen Ausstellungstag.\n\n**Genelecs** → [[review/wwww/specs/wwww-installation/teppich|teppich]] · [[review/wwww/specs/wwww-installation/aufbau-technik.pdf|aufbau-technik.pdf]]\n- Welches Modell, wie viele? Geplant sind drei, `aufbau.json` nennt vier.\n- Lassen sie sich einmessen? GLM gibt es nur bei den SAM-Modellen 83x0.\n- Gehen sie bei Stille in Standby, und wachen sie schnell genug auf?\n- Wo stehen sie: Abstand, Höhe, Ausrichtung um den Teppich?\n\n**Lautstärke** → [[review/wwww/specs/wwww-installation/raum#Die Abgrenzung des Klangs|raum · Abgrenzung des Klangs]] · [[review/wwww/specs/wwww-installation/kommunikation#Was offen ist|kommunikation · Was offen ist]]\n- Wie laut darf es hier werden, und wer ist nebenan?\n- Welcher Limiter schützt die Lautsprecher gegen den Sprung um 22,5 dB?\n- Wo steht das Mikrofon? Gibt es Rückkopplung, und wie viel Zeit bleibt zum Einmessen?\n\n**Performance** → [[review/wwww/specs/wwww-performance/setup#Die Installation einbinden|setup · Installation einbinden]] · [[review/wwww/specs/wwww-performance/setup#Aufstellung|setup · Aufstellung]]\n- Dürfen die Genelecs für die Performance anders stehen? Kommt ein Sub dazu?\n- Wann und wie lange? Termin, Zeit für Umbau und Probe. Drums und Teppich (2,4 × 2,4 m) passen nicht zusammen.",
+			"x": -4615,
+			"y": -155,
+			"width": 820,
+			"height": 1200,
+			"color": "3"
+		},
+		{
+			"id": "e57909e8aa465100",
+			"type": "file",
+			"file": "review/wwww/specs/wwww-installation/raw/herz wasserstoff/g37.png",
+			"x": 725,
+			"y": 6429,
+			"width": 760,
+			"height": 1483
+		}
+	],
+	"edges": []
+}
